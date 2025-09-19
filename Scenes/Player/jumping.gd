@@ -24,6 +24,7 @@ func onPhysics(delta:float):
 
 func onStateEntered(_old):
 	var player:PlayerCharacter = stateMachine.character
+	player.sprite.play("jump")
 	player.variable_velocity.y = 0
 	jumptime = 0
 

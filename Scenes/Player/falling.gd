@@ -20,6 +20,8 @@ func onPhysics(delta:float):
 	if player.is_on_floor(): stateMachine.requestStateChange("Running")
 
 func onStateEntered(oldState):
+	var player:PlayerCharacter = stateMachine.character
+	player.sprite.play("fall")
 	if oldState.name.to_lower() == "running"\
 	or oldState.name.to_lower() == "idle"\
 	or oldState.name.to_lower() == "crouching":

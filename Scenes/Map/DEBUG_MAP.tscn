@@ -35,6 +35,7 @@ size = Vector2(158, 181)
 position = Vector2(-41, -150)
 
 [node name="Rope" parent="CharacterBody2D" instance=ExtResource("2_a0ayn")]
+visible = false
 top_level = false
 position = Vector2(0, -29)
 rotation = -0.607907

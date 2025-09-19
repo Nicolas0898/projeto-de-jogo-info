@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxp0lskid3b8b"
-path="res://.godot/imported/corrida3.png-9678cc7ffbf4660dff58425fcca5ead4.ctex"
+uid="uid://4mxb55rbk68e"
+path="res://.godot/imported/corrida14.png-60f349db78c01489ba3fc1ff036c9a7d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/corrida/corrida3.png"
-dest_files=["res://.godot/imported/corrida3.png-9678cc7ffbf4660dff58425fcca5ead4.ctex"]
+source_file="res://Images/Player/corrida/corrida14.png"
+dest_files=["res://.godot/imported/corrida14.png-60f349db78c01489ba3fc1ff036c9a7d.ctex"]
 
 [params]
 

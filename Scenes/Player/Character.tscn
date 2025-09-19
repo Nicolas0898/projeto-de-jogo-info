@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://brkn5mjfr67t4"]
+[gd_scene load_steps=26 format=3 uid="uid://brkn5mjfr67t4"]
 
 [ext_resource type="Script" uid="uid://bhahlqc4v651w" path="res://Scripts/Player/character.gd" id="1_d8n76"]
 [ext_resource type="Script" uid="uid://d0xnltbvtmvwv" path="res://Scripts/Components/Hurtbox.gd" id="2_mj1qn"]
@@ -10,30 +10,55 @@
 [ext_resource type="Script" uid="uid://bub1gegedpdbu" path="res://Scenes/Player/falling.gd" id="6_try8w"]
 [ext_resource type="Script" uid="uid://dfc0mjbfa4jjx" path="res://Scenes/Player/crouching.gd" id="7_8qehs"]
 [ext_resource type="Script" uid="uid://1ughpmhhrew" path="res://Scripts/Components/HealthComponent.gd" id="9_scwnk"]
-[ext_resource type="Texture2D" uid="uid://fu2g1kbm22vm" path="res://Images/corrida/corrida1.png" id="11_2yp3h"]
-[ext_resource type="Texture2D" uid="uid://vwt3ugjwdepk" path="res://Images/corrida/corrida5.png" id="12_tfsh6"]
-[ext_resource type="Texture2D" uid="uid://bn6esusam6r6p" path="res://Images/corrida/corrida6.png" id="13_cirso"]
-[ext_resource type="Texture2D" uid="uid://dy5rg4cdjpogl" path="res://Images/corrida/corrida7.png" id="14_ustff"]
-[ext_resource type="Texture2D" uid="uid://cjj4wxh01hmq4" path="res://Images/corrida/corrida8.png" id="15_bx0bv"]
-[ext_resource type="Texture2D" uid="uid://syaj0crblbiv" path="res://Images/corrida/corrida9.png" id="16_63q1e"]
-[ext_resource type="Texture2D" uid="uid://bq3o260x6k2uf" path="res://Images/corrida/corrida10.png" id="17_dc8lg"]
-[ext_resource type="Texture2D" uid="uid://68evddedjkva" path="res://Images/corrida/corrida11.png" id="18_u5us2"]
-[ext_resource type="Texture2D" uid="uid://cdtbxkwpfrmji" path="res://Images/corrida/corrida12.png" id="19_qk417"]
+[ext_resource type="Texture2D" uid="uid://fu2g1kbm22vm" path="res://Images/Player/corrida/corrida1.png" id="11_2yp3h"]
+[ext_resource type="Texture2D" uid="uid://bj2h7m3qykdle" path="res://Images/Player/fall/pulo-descendo.1.png" id="11_qk417"]
+[ext_resource type="Texture2D" uid="uid://vwt3ugjwdepk" path="res://Images/Player/corrida/corrida5.png" id="12_tfsh6"]
+[ext_resource type="Texture2D" uid="uid://bn6esusam6r6p" path="res://Images/Player/corrida/corrida6.png" id="13_cirso"]
+[ext_resource type="Texture2D" uid="uid://dy5rg4cdjpogl" path="res://Images/Player/corrida/corrida7.png" id="14_ustff"]
+[ext_resource type="Texture2D" uid="uid://cjj4wxh01hmq4" path="res://Images/Player/corrida/corrida8.png" id="15_bx0bv"]
+[ext_resource type="Texture2D" uid="uid://syaj0crblbiv" path="res://Images/Player/corrida/corrida9.png" id="16_63q1e"]
+[ext_resource type="Texture2D" uid="uid://ci5ly2a176jra" path="res://Images/Player/pulo/pulo-subindo5.png" id="16_aeg27"]
+[ext_resource type="Texture2D" uid="uid://bq3o260x6k2uf" path="res://Images/Player/corrida/corrida10.png" id="17_dc8lg"]
+[ext_resource type="Texture2D" uid="uid://cnaxb2j18b7ao" path="res://Images/Player/pulo/pulo-subindo6.png" id="17_qyni0"]
+[ext_resource type="Texture2D" uid="uid://68evddedjkva" path="res://Images/Player/corrida/corrida11.png" id="18_u5us2"]
+[ext_resource type="Texture2D" uid="uid://cdtbxkwpfrmji" path="res://Images/Player/corrida/corrida12.png" id="19_qk417"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fhrm7"]
-size = Vector2(22, 56)
+size = Vector2(22, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aflf6"]
-size = Vector2(30, 62)
+size = Vector2(30, 46)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a0efk"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("11_2yp3h")
+"texture": ExtResource("11_qk417")
 }],
 "loop": true,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_2yp3h")
+}],
+"loop": false,
 "name": &"idle",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_aeg27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_qyni0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_qk417")
+}],
+"loop": false,
+"name": &"jump",
 "speed": 12.0
 }, {
 "frames": [{
@@ -80,6 +105,7 @@ metadata/_custom_type_script = "uid://d0xnltbvtmvwv"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
 z_index = 2
+position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_fhrm7")
 debug_color = Color(0.978269, 0, 0.397535, 0.42)
 
@@ -113,7 +139,7 @@ script = ExtResource("7_8qehs")
 metadata/_custom_type_script = "uid://ca8wa4d6wsrqb"
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
-position = Vector2(0, -32)
+position = Vector2(0, -24)
 shape = SubResource("RectangleShape2D_aflf6")
 
 [node name="_" type="Polygon2D" parent="."]
@@ -123,7 +149,7 @@ polygon = PackedVector2Array(-16, 32, 16, 32, 16, -32, -16, -32)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -90)
-zoom = Vector2(0.6, 0.6)
+zoom = Vector2(0.7, 0.7)
 position_smoothing_enabled = true
 position_smoothing_speed = 7.0
 
@@ -150,6 +176,7 @@ target_position = Vector2(0, -64)
 position = Vector2(0, -29)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_a0efk")
-animation = &"run"
-frame_progress = 0.233029
+animation = &"jump"
+autoplay = "idle"
+frame_progress = 1.0
 offset = Vector2(0.920864, -1.3813)

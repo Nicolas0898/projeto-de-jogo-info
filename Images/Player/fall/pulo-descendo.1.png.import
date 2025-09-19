@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://62qinqyyepyp"
-path="res://.godot/imported/corrida17.png-9635e4e321f9e58743ac4c14f98c0f60.ctex"
+uid="uid://bj2h7m3qykdle"
+path="res://.godot/imported/pulo-descendo.1.png-2f716d7434c1a55053e9ff39a4b5219d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/corrida/corrida17.png"
-dest_files=["res://.godot/imported/corrida17.png-9635e4e321f9e58743ac4c14f98c0f60.ctex"]
+source_file="res://Images/Player/fall/pulo-descendo.1.png"
+dest_files=["res://.godot/imported/pulo-descendo.1.png-2f716d7434c1a55053e9ff39a4b5219d.ctex"]
 
 [params]
 
