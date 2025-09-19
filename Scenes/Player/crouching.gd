@@ -24,7 +24,7 @@ func onPhysics(delta:float):
 func onStateEntered(_old):
 	var player:PlayerCharacter = stateMachine.character
 	player.hitbox.scale = Vector2(1,0.5)
-	player.sprite.scale = Vector2(1,0.5)
+	player.sprite.scale *= Vector2(1,0.5)
 	player.hurtbox.scale = Vector2(1,0.5)
 	player.position.y  += 16
 	player.crouch_cast.enabled = true
@@ -34,7 +34,7 @@ func onStateEntered(_old):
 func onStateExit():
 	var player:PlayerCharacter = stateMachine.character
 	player.hitbox.scale = Vector2(1,1)
-	player.sprite.scale = Vector2(1,1)
+	player.sprite.scale *= Vector2(1,2)
 	player.hurtbox.scale = Vector2(1,1)
 	player.position.y  -= 16
 	player.crouch_cast.enabled = false

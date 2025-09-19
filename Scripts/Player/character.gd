@@ -8,7 +8,7 @@ var speed_multiplier = 1
 
 @onready var state_machine: StateMachine = $StateMachine
 @onready var hitbox: CollisionShape2D = $Hitbox
-@onready var sprite: Polygon2D = $Sprite
+@onready var sprite: AnimatedSprite2D = $Sprite
 @onready var crouch_cast: RayCast2D = $CrouchCast
 @onready var crouch_cast_2: RayCast2D = $CrouchCast2
 @onready var top_edge_cast: RayCast2D = $TopEdgeCast
@@ -32,6 +32,10 @@ func _ready() -> void:
 func default_player_input():
 	var axis = Input.get_axis("left","right")
 	constant_velocity.input =  Vector2(axis*speed*speed_multiplier,0)
+	if axis>0:
+		sprite.flip_h = false
+	elif axis<0:
+		sprite.flip_h = true
 	top_edge_cast.position.x = axis*13
 	player_input = Input.get_vector("left","right","up","down")*50
 

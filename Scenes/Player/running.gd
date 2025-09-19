@@ -7,6 +7,8 @@ func onPhysics(delta:float):
 	player.default_player_input()
 	player.default_move()
 	
+	player.sprite.play("run")
+	
 	if is_zero_approx(Input.get_axis("left","right")):
 		stateMachine.requestStateChange("Idle")
 		

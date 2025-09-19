@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjbe2w6184ga5"]
+
+[ext_resource type="Script" uid="uid://ia6u1161s6bq" path="res://Scenes/Objects/rope.gd" id="1_ig1xv"]
+[ext_resource type="Texture2D" uid="uid://1nmf0a3yqnf7" path="res://Images/corda (1).png" id="1_nww1f"]
+
+[node name="Rope" type="Line2D"]
+top_level = true
+texture_repeat = 2
+width = 32.0
+texture = ExtResource("1_nww1f")
+texture_mode = 1
+script = ExtResource("1_ig1xv")
+n_points = 2
+
+[node name="Target" type="Node2D" parent="."]
+top_level = true
+position = Vector2(250, 0)
