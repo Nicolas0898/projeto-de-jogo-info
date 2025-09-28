@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cc2qsjoqgcdqu"]
+[gd_scene load_steps=20 format=3 uid="uid://cc2qsjoqgcdqu"]
 
 [ext_resource type="Script" uid="uid://dfxy21hd8djmg" path="res://script/ui.gd" id="1_nt7q6"]
 [ext_resource type="Script" uid="uid://cffdhewqtjjw1" path="res://script/dialogue_scripts/dialogue_node.gd" id="2_yev5y"]
 [ext_resource type="FontFile" uid="uid://b71f1nslp8bqt" path="res://fonts/BoldPixels.ttf" id="3_gdt2y"]
+[ext_resource type="Script" uid="uid://ewrkrfl4tybb" path="res://script/inventory.gd" id="4_gdt2y"]
+[ext_resource type="PackedScene" uid="uid://cfu0ryng2qboi" path="res://scenes/item_panel.tscn" id="5_wm3ai"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nt7q6"]
 bg_color = Color(0, 0, 0, 0.290196)
@@ -21,10 +23,70 @@ Panel/styles/panel = SubResource("StyleBoxFlat_nt7q6")
 font = ExtResource("3_gdt2y")
 font_size = 20
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gdt2y"]
+bg_color = Color(0.0588235, 0.0588235, 0.0588235, 0.529412)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_blend = true
+corner_radius_top_left = 25
+corner_radius_bottom_right = 25
+
+[sub_resource type="Theme" id="Theme_hj2ta"]
+Panel/styles/panel = SubResource("StyleBoxFlat_gdt2y")
+
+[sub_resource type="LabelSettings" id="LabelSettings_yev5y"]
+font = ExtResource("3_gdt2y")
+font_size = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wm3ai"]
+bg_color = Color(0.290196, 0.647059, 0.8, 0.0941176)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_gdt2y"]
+font = ExtResource("3_gdt2y")
+
+[sub_resource type="LabelSettings" id="LabelSettings_8dubc"]
+font = ExtResource("3_gdt2y")
+font_size = 13
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8dubc"]
+bg_color = Color(0.709804, 0.541176, 0.639216, 0.337255)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p7vwb"]
+bg_color = Color(0.6, 0.6, 0.6, 0.168627)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ktti3"]
+bg_color = Color(0.72935, 0.502269, 0.773053, 0.0666667)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_p7vwb"]
+font = ExtResource("3_gdt2y")
+font_size = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_ktti3"]
+font = ExtResource("3_gdt2y")
+
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_nt7q6")
 
 [node name="Dialogue" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -102,3 +164,268 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 expand_mode = 3
+
+[node name="Inventory" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_hj2ta")
+script = ExtResource("4_gdt2y")
+
+[node name="Panel" type="Panel" parent="Inventory"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -150.0
+offset_right = 300.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Inventory/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="Inventory/Panel/VBoxContainer"]
+layout_mode = 2
+text = "Inventário"
+label_settings = SubResource("LabelSettings_yev5y")
+horizontal_alignment = 1
+
+[node name="Line2D" type="Line2D" parent="Inventory/Panel/VBoxContainer/Label"]
+position = Vector2(61.565, 32)
+scale = Vector2(0.782392, 1)
+points = PackedVector2Array(0, 0, 598, 0)
+width = 2.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Inventory/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Inventory/Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="Inventory/Panel/VBoxContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(150, 100)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wm3ai")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Inventory/Panel/VBoxContainer/HBoxContainer/VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_right = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="Inventory/Panel/VBoxContainer/HBoxContainer/VBoxContainer/Panel/VBoxContainer"]
+layout_mode = 2
+text = "Status"
+label_settings = SubResource("LabelSettings_gdt2y")
+horizontal_alignment = 1
+
+[node name="Line2D" type="Line2D" parent="Inventory/Panel/VBoxContainer/HBoxContainer/VBoxContainer/Panel/VBoxContainer/Label"]
+position = Vector2(6.42192, 17.5)
+scale = Vector2(0.210963, 0.75)
+points = PackedVector2Array(0, 0, 598, 0)
+width = 2.0
+
+[node name="Label2" type="Label" parent="Inventory/Panel/VBoxContainer/HBoxContainer/VBoxContainer/Panel/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+text = "*Quantia dinheiro"
+label_settings = SubResource("LabelSettings_8dubc")
+
+[node name="Panel2" type="Panel" parent="Inventory/Panel/VBoxContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(150, 130)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8dubc")
+
+[node name="GridContainer" type="GridContainer" parent="Inventory/Panel/VBoxContainer/HBoxContainer/VBoxContainer/Panel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 17.0
+offset_top = 10.0
+offset_right = -6.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 7
+columns = 3
+
+[node name="Panel" parent="Inventory/Panel/VBoxContainer/HBoxContainer/VBoxContainer/Panel2/GridContainer" instance=ExtResource("5_wm3ai")]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="Panel2" parent="Inventory/Panel/VBoxContainer/HBoxContainer/VBoxContainer/Panel2/GridContainer" instance=ExtResource("5_wm3ai")]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="Panel3" parent="Inventory/Panel/VBoxContainer/HBoxContainer/VBoxContainer/Panel2/GridContainer" instance=ExtResource("5_wm3ai")]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="Panel4" parent="Inventory/Panel/VBoxContainer/HBoxContainer/VBoxContainer/Panel2/GridContainer" instance=ExtResource("5_wm3ai")]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="Panel5" parent="Inventory/Panel/VBoxContainer/HBoxContainer/VBoxContainer/Panel2/GridContainer" instance=ExtResource("5_wm3ai")]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="Panel6" parent="Inventory/Panel/VBoxContainer/HBoxContainer/VBoxContainer/Panel2/GridContainer" instance=ExtResource("5_wm3ai")]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="Panel7" parent="Inventory/Panel/VBoxContainer/HBoxContainer/VBoxContainer/Panel2/GridContainer" instance=ExtResource("5_wm3ai")]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="Panel8" parent="Inventory/Panel/VBoxContainer/HBoxContainer/VBoxContainer/Panel2/GridContainer" instance=ExtResource("5_wm3ai")]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="Panel9" parent="Inventory/Panel/VBoxContainer/HBoxContainer/VBoxContainer/Panel2/GridContainer" instance=ExtResource("5_wm3ai")]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="Inventory/Panel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_p7vwb")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Inventory/Panel/VBoxContainer/HBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 1.0
+offset_right = -5.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="Inventory/Panel/VBoxContainer/HBoxContainer/Panel/VBoxContainer"]
+layout_mode = 2
+text = "Utilitários"
+label_settings = SubResource("LabelSettings_gdt2y")
+horizontal_alignment = 1
+
+[node name="Line2D" type="Line2D" parent="Inventory/Panel/VBoxContainer/HBoxContainer/Panel/VBoxContainer/Label"]
+position = Vector2(6.62126, 17.5)
+scale = Vector2(0.310631, 0.75)
+points = PackedVector2Array(0, 0, 598, 0)
+width = 2.0
+
+[node name="GridContainer" type="GridContainer" parent="Inventory/Panel/VBoxContainer/HBoxContainer/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 5
+
+[node name="Panel" parent="Inventory/Panel/VBoxContainer/HBoxContainer/Panel/VBoxContainer/GridContainer" instance=ExtResource("5_wm3ai")]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="Panel2" parent="Inventory/Panel/VBoxContainer/HBoxContainer/Panel/VBoxContainer/GridContainer" instance=ExtResource("5_wm3ai")]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="Panel3" parent="Inventory/Panel/VBoxContainer/HBoxContainer/Panel/VBoxContainer/GridContainer" instance=ExtResource("5_wm3ai")]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="Panel4" parent="Inventory/Panel/VBoxContainer/HBoxContainer/Panel/VBoxContainer/GridContainer" instance=ExtResource("5_wm3ai")]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="Panel5" parent="Inventory/Panel/VBoxContainer/HBoxContainer/Panel/VBoxContainer/GridContainer" instance=ExtResource("5_wm3ai")]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="Panel6" parent="Inventory/Panel/VBoxContainer/HBoxContainer/Panel/VBoxContainer/GridContainer" instance=ExtResource("5_wm3ai")]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="Panel7" parent="Inventory/Panel/VBoxContainer/HBoxContainer/Panel/VBoxContainer/GridContainer" instance=ExtResource("5_wm3ai")]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="Panel8" parent="Inventory/Panel/VBoxContainer/HBoxContainer/Panel/VBoxContainer/GridContainer" instance=ExtResource("5_wm3ai")]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="Panel9" parent="Inventory/Panel/VBoxContainer/HBoxContainer/Panel/VBoxContainer/GridContainer" instance=ExtResource("5_wm3ai")]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="Panel10" parent="Inventory/Panel/VBoxContainer/HBoxContainer/Panel/VBoxContainer/GridContainer" instance=ExtResource("5_wm3ai")]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="Panel2" type="Panel" parent="Inventory/Panel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ktti3")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Inventory/Panel/VBoxContainer/HBoxContainer/Panel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = 9.0
+offset_right = -9.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="Inventory/Panel/VBoxContainer/HBoxContainer/Panel2/VBoxContainer"]
+layout_mode = 2
+text = "*Nome do item"
+label_settings = SubResource("LabelSettings_p7vwb")
+horizontal_alignment = 1
+
+[node name="Line2D" type="Line2D" parent="Inventory/Panel/VBoxContainer/HBoxContainer/Panel2/VBoxContainer/Label"]
+position = Vector2(6.62126, 27)
+scale = Vector2(0.310631, 1)
+points = PackedVector2Array(0, 0, 561.369, 0)
+width = 2.0
+
+[node name="Label2" type="Label" parent="Inventory/Panel/VBoxContainer/HBoxContainer/Panel2/VBoxContainer"]
+custom_minimum_size = Vector2(1, 175)
+layout_mode = 2
+text = "*descrição - \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim "
+label_settings = SubResource("LabelSettings_ktti3")
+autowrap_mode = 3

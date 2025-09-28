@@ -6,16 +6,16 @@ extends Node
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("up"):
-		if Ui.dialogue.current_loaded_dialogue!=null: #Dialogue Handler
-			Ui.dialogue.loadNextMessage()
-		else:
-			active(current_action)
+		if action is Dialogue: Ui.dialogue.loadNextMessage()
+		else:active(current_action)
+	
 	if event.is_action_pressed("down"):
-		if Ui.dialogue.current_loaded_dialogue!=null:
-			Ui.dialogue.question_handler(0)
+		if action is Dialogue: Ui.dialogue.question_handler(0)
+	
 	if event.is_action_pressed("z"):
-		if Ui.dialogue.current_loaded_dialogue!=null: #Dialogue Handler
-			Ui.dialogue.confirm()
+		if action is Dialogue: Ui.dialogue.confirm()
+	
+	if event.is_action_pressed("i"): Ui.inventory.input()
 
 func active(resource : Resource):
 	if resource is Interactable:

@@ -1,14 +1,14 @@
 extends CanvasLayer
 
 @onready var dialogue: Control = $Dialogue
+@onready var inventory: Control = $Inventory
 
 var tween : Tween
 
 
 func _ready() -> void:
 	dialogue.modulate = Color(1, 1, 1, 0)
-
-
+	inventory.modulate = Color(1, 1, 1, 0)
 
 func fade_in(p):
 	tween = create_tween()
