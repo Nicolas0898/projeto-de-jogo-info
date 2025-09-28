@@ -41,15 +41,21 @@ func question_handler(i : int):
 	#print(question_box.get_node("question" + str(option)))
 	question_box.get_node("question" + str(option)).modulate = Color("#15ee00")
 
+func os():
+	if current_loaded_dialogue.oneshot:
+		InteractionSystem.current_area.queue_free()
+
 func start(new_dialogue : Dialogue):
 	if new_dialogue != current_loaded_dialogue:
+		InteractionSystem.action = new_dialogue
 		current_loaded_dialogue = new_dialogue
 		c = 0
 		Ui.fade_in(self)
 		anchor(current_loaded_dialogue.messages[c].sprite_pos)
 		updateSprite(sprite, current_loaded_dialogue.messages[c].sprite)
 		updateSprite(border, current_loaded_dialogue.messages[c].border)
-		updateText(dialogue_text, new_dialogue.messages[c].text)
+		updateText(dialogue_text, current_loaded_dialogue.messages[c].text)
+		os()
 
 func loadNextMessage():
 	if current_loaded_dialogue.messages[c] is Question:
@@ -65,6 +71,7 @@ func loadNextMessage():
 		updateText(dialogue_text, "")
 		current_loaded_dialogue.onDialogueEnd()
 		current_loaded_dialogue = null
+		InteractionSystem.action = null
 		return
 	
 	Ui.fade_out(margin_container)

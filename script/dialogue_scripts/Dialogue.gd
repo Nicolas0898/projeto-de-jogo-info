@@ -3,7 +3,6 @@ class_name Dialogue
 
 @export var messages : Array[Message]
 @export var next_dialogue : Dialogue
-@export var oneshot : bool
 var dialogue_just_ended = false
 
 
@@ -13,6 +12,7 @@ func activate():
 func onDialogueEnd():
 	if next_dialogue == null: return
 	messages = next_dialogue.messages
+	oneshot = next_dialogue.oneshot
 	next_dialogue = next_dialogue.next_dialogue
 
 func question(q : Resource):

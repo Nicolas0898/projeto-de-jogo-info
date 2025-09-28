@@ -55,7 +55,7 @@ metadata/_custom_type_script = "uid://crbolew7dydjc"
 [sub_resource type="Resource" id="Resource_tefeu"]
 script = ExtResource("3_ro8ku")
 messages = Array[ExtResource("1_xvald")]([SubResource("Resource_tbgi4"), SubResource("Resource_eb6dy")])
-oneshot = false
+oneshot = true
 metadata/_custom_type_script = "uid://8err0wuw08y8"
 
 [resource]
