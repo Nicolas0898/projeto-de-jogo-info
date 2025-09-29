@@ -29,9 +29,9 @@ func _ready() -> void:
 	%DebugMenu.watch_as_vector(self,"velocity")
 	%DebugMenu.watch_as_vector(self,"player_input")
 
-func default_player_input():
+func default_player_input(local_mult=1):
 	var axis = Input.get_axis("left","right")
-	constant_velocity.input =  Vector2(axis*speed*speed_multiplier,0)
+	constant_velocity.input =  Vector2(axis*speed*speed_multiplier*local_mult,0)
 	if axis>0:
 		sprite.flip_h = false
 	elif axis<0:
@@ -44,6 +44,7 @@ func clear_player_input():
 
 func apply_gravity(delta:float):
 	variable_velocity  += get_gravity()*delta
+	variable_velocity.x += -variable_velocity.normalized().x*40
 
 func check_for_collisions(wall=true,floor=true,ceiling=true):
 	if wall and is_on_wall():
@@ -55,9 +56,13 @@ func check_for_collisions(wall=true,floor=true,ceiling=true):
 	if floor and is_on_ceiling() and variable_velocity.y<0:
 		variable_velocity.y = 0
 
-func default_move():
+func update_velocity():
 	true_constant_velocity = Vector2.ZERO
 	for index in constant_velocity:
 		true_constant_velocity+=constant_velocity[index]
 	velocity = variable_velocity + true_constant_velocity
+
+func default_move():
+	update_velocity()
 	move_and_slide()
+	

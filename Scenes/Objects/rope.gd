@@ -53,10 +53,10 @@ class point:
 		position = line.to_local(anchor.global_position)
 		updatePos()
 
-func _ready() -> void:
+func start() -> void:
 	var last = null
 	for i in range(n_points):
-		var pos = Vector2.ZERO.lerp(target.position,float(i)/n_points)
+		var pos = Vector2.ZERO.lerp(to_local(target.position),float(i)/n_points)
 		var new_p = point.new(pos,i,self,tension,roughness,distance)
 		
 		c_points.push_back(new_p)
@@ -71,8 +71,9 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	for p in c_points:
+		pass
 		p.process(delta)
-	target.position = get_global_mouse_position()
+	#target.position = get_global_mouse_position()
 	
 	#position+=Input.get_vector("left","right","up","down")*3
 

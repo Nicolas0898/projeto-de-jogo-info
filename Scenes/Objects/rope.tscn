@@ -4,13 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://1nmf0a3yqnf7" path="res://Images/corda (1).png" id="1_nww1f"]
 
 [node name="Rope" type="Line2D"]
-top_level = true
+z_index = -1
 texture_repeat = 2
 width = 32.0
 texture = ExtResource("1_nww1f")
 texture_mode = 1
 script = ExtResource("1_ig1xv")
-n_points = 2
+n_points = 7
 
 [node name="Target" type="Node2D" parent="."]
 top_level = true

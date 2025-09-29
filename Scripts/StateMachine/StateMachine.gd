@@ -18,7 +18,7 @@ func _ready() -> void:
 	initialState.onStateEntered(null)
 	print(avaliableStates)
 
-func requestStateChange(newState:String):
+func requestStateChange(newState:String,data={}):
 	newState = newState.to_lower()
 
 	if not avaliableStates.get(newState,null) :
@@ -28,6 +28,7 @@ func requestStateChange(newState:String):
 	currentState = avaliableStates[newState]
 	
 	oldState.onStateExit()
+	currentState.stateData = data
 	currentState.onStateEntered(oldState)
 	
 	onStateChange.emit(currentState,oldState)

@@ -2,6 +2,7 @@ extends Node
 class_name State
 
 var stateMachine:StateMachine 
+var stateData = {}
 
 func _ready() -> void:
 	if get_parent() is not StateMachine:
