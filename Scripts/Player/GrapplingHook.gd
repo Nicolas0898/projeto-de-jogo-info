@@ -61,7 +61,7 @@ func set_current_active_hook_point(new_node:GrappleNode):
 		t.set_trans(Tween.TRANS_BACK)
 		t.set_ease(Tween.EASE_OUT)
 		t.parallel().tween_property(hook_select,"global_position"\
-		,new_node.global_position,0.5)
+		,new_node.global_position,0.35)
 		var rot_sum = 90
 		
 		if selected_hook.global_position.x>new_node.global_position.x:

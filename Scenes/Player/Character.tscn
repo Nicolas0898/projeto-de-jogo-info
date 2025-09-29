@@ -188,10 +188,9 @@ position_smoothing_speed = 7.0
 
 [node name="DebugMenu" parent="CanvasLayer" instance=ExtResource("5_owfaj")]
 unique_name_in_owner = true
-visible = false
 
 [node name="CrouchCast" type="RayCast2D" parent="."]
-position = Vector2(-15, -16)
+position = Vector2(-13, -16)
 enabled = false
 target_position = Vector2(0, -64)
 

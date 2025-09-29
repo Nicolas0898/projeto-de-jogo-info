@@ -44,7 +44,7 @@ func onPhysics(delta:float):
 	player.default_player_input(2.2)
 	player.apply_gravity(delta)
 	player.check_for_collisions()
-	player.update_velocity()
+	
 	
 	var nextpos = plrpos + player.velocity*delta
 	
@@ -55,7 +55,10 @@ func onPhysics(delta:float):
 		player.variable_velocity += -player.variable_velocity
 	var factor = max(distance-start_distance,0)
 	player.variable_velocity += direction*factor*20
+	if player.constant_velocity.input == Vector2.ZERO:
+		player.constant_velocity.input = Vector2(direction.x*440,0)
 	
+	player.update_velocity()
 		
 	
 	player.move_and_slide()
