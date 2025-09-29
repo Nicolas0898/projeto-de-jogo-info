@@ -37,6 +37,7 @@ func onPhysics(delta:float):
 	var player:PlayerCharacter = stateMachine.character
 	var hookpos = stateData.hook.global_position
 	var plrpos = player.global_position
+	current_active_rope.target.global_position = stateData.hook.global_position
 	
 	
 	var distance = plrpos.distance_to(hookpos)

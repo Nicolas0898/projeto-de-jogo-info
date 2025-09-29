@@ -74,7 +74,7 @@ func set_current_active_hook_point(new_node:GrappleNode):
 		t.set_ease(Tween.EASE_OUT)
 		hook_select.position = new_node.global_position
 		#t.parallel().tween_property(hook_select,"global_position"\
-		#,new_node.global_position,0.35)
+		#a,new_node.global_position,0.35)
 		var rot_sum = 90
 		
 		if selected_hook.global_position.x>new_node.global_position.x:
@@ -92,6 +92,10 @@ func _physics_process(delta: float) -> void:
 	
 	if hook_point!=selected_hook:
 		set_current_active_hook_point(hook_point)
+
+func _process(delta: float) -> void:
+	if selected_hook:
+		hook_select.position = selected_hook.global_position
 
 func _ready() -> void:
 	state_machine.onStateChange.connect(state_changed)
