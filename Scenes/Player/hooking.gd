@@ -30,7 +30,7 @@ func onStateExit():
 	current_active_rope.queue_free()
 	character.variable_velocity.y = 0
 	character.variable_velocity.y+=-700
-	character.variable_velocity += character.true_constant_velocity*2
+	character.variable_velocity += character.true_constant_velocity*1.3
 	
 
 func onPhysics(delta:float):
