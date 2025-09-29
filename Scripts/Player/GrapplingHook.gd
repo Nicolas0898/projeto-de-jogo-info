@@ -6,13 +6,24 @@ extends Node
 
 var max_distance := 300.0
 var selected_hook:GrappleNode
+var disabled_points = []
 
 func _input(event: InputEvent) -> void:
 	if state_machine.currentState.name == "Falling"\
 	and event.is_action_pressed("jump")\
 	and is_instance_valid(selected_hook):
 		state_machine.requestStateChange("Hooking",{"hook":selected_hook})
+		disabled_points.append(selected_hook)
 		
+
+func state_changed(new,old):
+	if old.name == "Hooking":
+		old.stateData.hook.enabled = false
+		disabled_points.append(old.stateData.hook)
+	if new.name != "Falling":
+		for i in disabled_points:
+			i.enabled = true
+		disabled_points.clear()
 
 func get_closest_hook_point():
 	var hookpoints = get_tree().get_nodes_in_group("GrappleNode")
@@ -22,7 +33,8 @@ func get_closest_hook_point():
 	for hook in hookpoints:
 		var current_distance = hook.global_position.distance_to(character.global_position)
 
-		if current_distance>max_distance:continue
+		if current_distance>hook.range:continue
+		if hook.enabled == false:continue
 		if nearest_instance==null or nearest_distance >  current_distance:
 			nearest_instance = hook
 			nearest_distance = current_distance
@@ -60,8 +72,9 @@ func set_current_active_hook_point(new_node:GrappleNode):
 		var t = create_tween()
 		t.set_trans(Tween.TRANS_BACK)
 		t.set_ease(Tween.EASE_OUT)
-		t.parallel().tween_property(hook_select,"global_position"\
-		,new_node.global_position,0.35)
+		hook_select.position = new_node.global_position
+		#t.parallel().tween_property(hook_select,"global_position"\
+		#,new_node.global_position,0.35)
 		var rot_sum = 90
 		
 		if selected_hook.global_position.x>new_node.global_position.x:
@@ -79,3 +92,6 @@ func _physics_process(delta: float) -> void:
 	
 	if hook_point!=selected_hook:
 		set_current_active_hook_point(hook_point)
+
+func _ready() -> void:
+	state_machine.onStateChange.connect(state_changed)

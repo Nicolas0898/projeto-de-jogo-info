@@ -1,7 +1,7 @@
 extends Node
 class_name StateMachine
 
-signal onStateChange(stateObject)
+signal onStateChange(currentState,oldState)
 
 var character:CharacterBody2D
 var avaliableStates = {}
