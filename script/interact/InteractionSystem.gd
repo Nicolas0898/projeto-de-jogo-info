@@ -6,17 +6,22 @@ extends Node
 # i = inventario
 # d = dialogo
 
+func _physics_process(delta: float) -> void:
+	Ui.debug.text = str(current_action)
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("up"):
 		if action is Dialogue: Ui.dialogue.loadNextMessage()
 		elif action == null:active(current_action)
 	
+	
 	if event.is_action_pressed("down"):
 		if action is Dialogue: Ui.dialogue.question_handler(0)
 	
 	if event.is_action_pressed("z"):
 		if action is Dialogue: Ui.dialogue.confirm()
+		if action is Confirm: Ui.confirm.input()
+		if action is Inventory: Ui.inventory.use()
 	
 	if event.is_action_pressed("i"): Ui.inventory.input()
 

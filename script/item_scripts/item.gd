@@ -11,3 +11,4 @@ enum types{
 @export var amount : int = 1
 @export var type : types
 @export var sprite : Texture
+@export var confirm : bool

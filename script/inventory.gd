@@ -4,6 +4,7 @@ class_name Inventory
 var open : bool = false
 var selected : Button = null
 var displaying : Array
+var buttons : Array
 @export var inventario : Array[Item]
 
 @onready var item_display = preload("res://scenes/item_display.tscn")
@@ -16,12 +17,12 @@ var displaying : Array
 
 func refreshing():
 	for i in range(len(inventario)):
-		
 		if inventario[i].amount <= 0: #Caso seja removido do inventário
 			if inventario[i].type == 0: util.get_node(inventario[i].name).queue_free()
 			if inventario[i].type == 1: desc.get_node(inventario[i].name).queue_free()
-			displaying.remove_at(i)
-			inventario.remove_at(i)
+			displaying[i] = null
+			inventario[i] = null
+			buttons[i] = null
 		else:
 			if inventario[i] in displaying:
 				if inventario[i].type == 0: util.get_node(inventario[i].name).amount.text = str(inventario[i].amount) #util
@@ -32,15 +33,30 @@ func refreshing():
 				display.name = inventario[i].name
 				if inventario[i].type == 0: util.add_child(display) #util
 				if inventario[i].type == 1: desc.add_child(display) #desc
-				if selected == null: selected = display
 				
 				display.sprite.texture = inventario[i].sprite
 				display.amount.text = str(inventario[i].amount)
 				displaying.append(inventario[i])
+				buttons.append(display)
+	
+	if selected == null and len(buttons) > 0: selected = buttons[0]
+	while inventario.has(null): inventario.erase(null)
+	while displaying.has(null): displaying.erase(null)
+	while buttons.has(null): buttons.erase(null)
 
 func refresh_desc(i : Item):
 	desc_tittle.text = i.name
 	desc_text.text = i.desc
+
+func use():
+	if selected.i.confirm:
+		input() 
+		Ui.confirm.called("Você deseja usar " + str(selected.i.name), self)
+	else:
+		inventario[inventario.find(selected.i)].amount-=1
+		refreshing()
+		if len(buttons) > 0: selected = buttons[0]
+		selected.grab_focus()
 
 func _ready():
 	refreshing()
