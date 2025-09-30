@@ -3,6 +3,7 @@ class_name Dialogue
 
 @export var messages : Array[Message]
 @export var next_dialogue : Dialogue
+@export var oneshot : bool
 var dialogue_just_ended = false
 
 

@@ -2,6 +2,7 @@ extends CanvasLayer
 
 @onready var dialogue: Control = $Dialogue
 @onready var inventory: Control = $Inventory
+@onready var debug: Label = $debug
 
 var tween : Tween
 
