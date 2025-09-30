@@ -52,7 +52,7 @@ offset_bottom = 30.0
 theme = SubResource("Theme_qv0ky")
 script = ExtResource("1_qv0ky")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="sprite" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

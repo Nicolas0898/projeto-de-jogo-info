@@ -16,6 +16,7 @@ var displaying : Array
 
 func refreshing():
 	for i in range(len(inventario)):
+		
 		if inventario[i].amount <= 0: #Caso seja removido do inventário
 			if inventario[i].type == 0: util.get_node(inventario[i].name).queue_free()
 			if inventario[i].type == 1: desc.get_node(inventario[i].name).queue_free()
@@ -33,6 +34,7 @@ func refreshing():
 				if inventario[i].type == 1: desc.add_child(display) #desc
 				if selected == null: selected = display
 				
+				display.sprite.texture = inventario[i].sprite
 				display.amount.text = str(inventario[i].amount)
 				displaying.append(inventario[i])
 
@@ -49,6 +51,9 @@ func input():
 	open = not open
 	InteractionSystem.action = self if InteractionSystem.action == null else null
 	
-	selected.grab_focus()
+	if open:
+		selected.grab_focus()
+	else:
+		get_viewport().gui_release_focus()
 	
 	await Ui.fade_in(self) if open else await Ui.fade_out(self)

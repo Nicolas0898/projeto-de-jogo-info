@@ -11,6 +11,9 @@ func _ready() -> void:
 	dialogue.modulate = Color(1, 1, 1, 0)
 	inventory.modulate = Color(1, 1, 1, 0)
 
+func _physics_process(delta: float) -> void:
+	debug.text = str(inventory.inventario)
+
 func fade_in(p):
 	tween = create_tween()
 	tween.tween_property(p,"modulate",Color(1,1,1,1),0.2)
