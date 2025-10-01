@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://drcf5t5l70dxw" path="res://Images/hookpoint.png" id="2_s474p"]
 
 [node name="GrappleNode" type="Node2D" groups=["GrappleNode"]]
+modulate = Color(0.996078, 1, 0.658824, 1)
 z_index = 2
 script = ExtResource("1_wkgti")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.99619, 1, 0.657234, 1)
 texture_repeat = 2
 texture = ExtResource("2_s474p")

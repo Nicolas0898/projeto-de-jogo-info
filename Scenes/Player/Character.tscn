@@ -161,10 +161,6 @@ metadata/_custom_type_script = "uid://ca8wa4d6wsrqb"
 script = ExtResource("6_try8w")
 metadata/_custom_type_script = "uid://ca8wa4d6wsrqb"
 
-[node name="Crouching" type="Node" parent="StateMachine"]
-script = ExtResource("7_8qehs")
-metadata/_custom_type_script = "uid://ca8wa4d6wsrqb"
-
 [node name="Hooking" type="Node" parent="StateMachine"]
 script = ExtResource("13_1m0su")
 metadata/_custom_type_script = "uid://ca8wa4d6wsrqb"
@@ -188,6 +184,7 @@ position_smoothing_speed = 7.0
 
 [node name="DebugMenu" parent="CanvasLayer" instance=ExtResource("5_owfaj")]
 unique_name_in_owner = true
+visible = false
 
 [node name="CrouchCast" type="RayCast2D" parent="."]
 position = Vector2(-13, -16)
@@ -211,3 +208,7 @@ autoplay = "idle"
 frame = 3
 frame_progress = 1.0
 offset = Vector2(0.920864, -1.3813)
+
+[node name="Crouching" type="Node" parent="."]
+script = ExtResource("7_8qehs")
+metadata/_custom_type_script = "uid://ca8wa4d6wsrqb"

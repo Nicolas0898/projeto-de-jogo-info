@@ -16,7 +16,7 @@ func onPhysics(delta:float):
 	player.default_player_input()
 	player.default_move()
 	
-	if Input.is_action_pressed("down"): player.apply_gravity(delta)
+	#if Input.is_action_pressed("down"): player.apply_gravity(delta)
 	if player.is_on_floor(): stateMachine.requestStateChange("Running")
 
 func onStateEntered(oldState):
