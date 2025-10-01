@@ -1,8 +1,8 @@
-[gd_scene load_steps=33 format=3 uid="uid://brkn5mjfr67t4"]
+[gd_scene load_steps=35 format=3 uid="uid://brkn5mjfr67t4"]
 
+[ext_resource type="Shader" uid="uid://lk8vqo6nbyf3" path="res://Shaders/Character.gdshader" id="1_aeg27"]
 [ext_resource type="Script" uid="uid://bhahlqc4v651w" path="res://Scripts/Player/character.gd" id="1_d8n76"]
 [ext_resource type="Script" uid="uid://scaiw8eibd5v" path="res://Scripts/Player/GrapplingHook.gd" id="2_bx0bv"]
-[ext_resource type="Script" uid="uid://d0xnltbvtmvwv" path="res://Scripts/Components/Hurtbox.gd" id="2_mj1qn"]
 [ext_resource type="Script" uid="uid://lurpfwbx4y8w" path="res://Scripts/StateMachine/StateMachine.gd" id="2_xa38j"]
 [ext_resource type="Script" uid="uid://bwvlwfyg6aura" path="res://Scenes/Player/Idle.gd" id="3_aflf6"]
 [ext_resource type="Texture2D" uid="uid://6djjd8r45x53" path="res://Images/Player/hook_select.png" id="3_dc8lg"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://da55i10v01nie" path="res://Scripts/scenes/hook_select.gd" id="4_u5us2"]
 [ext_resource type="Script" uid="uid://m216pt8kh4te" path="res://Scenes/Player/jumping.gd" id="5_nwviy"]
 [ext_resource type="PackedScene" uid="uid://bxj8gcdynfh0a" path="res://Scenes/Debug/debug_menu.tscn" id="5_owfaj"]
+[ext_resource type="Script" uid="uid://0d7bnicgm37i" path="res://Scenes/Player/PlayerHurtbox.gd" id="6_aeg27"]
 [ext_resource type="Script" uid="uid://bub1gegedpdbu" path="res://Scenes/Player/falling.gd" id="6_try8w"]
 [ext_resource type="Script" uid="uid://dfc0mjbfa4jjx" path="res://Scenes/Player/crouching.gd" id="7_8qehs"]
 [ext_resource type="Script" uid="uid://1ughpmhhrew" path="res://Scripts/Components/HealthComponent.gd" id="9_scwnk"]
@@ -29,6 +30,11 @@
 [ext_resource type="Texture2D" uid="uid://cdtbxkwpfrmji" path="res://Images/Player/corrida/corrida12.png" id="19_qk417"]
 [ext_resource type="Texture2D" uid="uid://b0raral3iwuns" path="res://Images/Player/idle/personagem com capa6.png" id="20_um7yn"]
 [ext_resource type="Texture2D" uid="uid://dlghl7efhf7rm" path="res://Images/Player/idle/personagem com capa7.png" id="21_du3pq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qyni0"]
+shader = ExtResource("1_aeg27")
+shader_parameter/blink_color = Color(1, 0.604929, 0.535156, 1)
+shader_parameter/factor = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fhrm7"]
 size = Vector2(22, 40)
@@ -108,6 +114,8 @@ animations = [{
 }]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+material = SubResource("ShaderMaterial_qyni0")
+use_parent_material = true
 collision_layer = 4
 script = ExtResource("1_d8n76")
 
@@ -123,10 +131,10 @@ texture = ExtResource("3_dc8lg")
 script = ExtResource("4_u5us2")
 
 [node name="Hurtbox" type="Area2D" parent="." node_paths=PackedStringArray("health_component")]
-position = Vector2(0, -32)
+position = Vector2(-0.841728, 0)
 collision_layer = 16
 collision_mask = 0
-script = ExtResource("2_mj1qn")
+script = ExtResource("6_aeg27")
 health_component = NodePath("../HealthComponent")
 metadata/_custom_type_script = "uid://d0xnltbvtmvwv"
 
@@ -166,7 +174,7 @@ script = ExtResource("13_1m0su")
 metadata/_custom_type_script = "uid://ca8wa4d6wsrqb"
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
-position = Vector2(1, -24)
+position = Vector2(0.158272, 8)
 shape = SubResource("RectangleShape2D_aflf6")
 
 [node name="_" type="Polygon2D" parent="."]
@@ -175,7 +183,7 @@ position = Vector2(0, -32)
 polygon = PackedVector2Array(-16, 32, 16, 32, 16, -32, -16, -32)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, -90)
+position = Vector2(-0.841728, -58)
 zoom = Vector2(0.7, 0.7)
 position_smoothing_enabled = true
 position_smoothing_speed = 7.0
@@ -187,20 +195,22 @@ unique_name_in_owner = true
 visible = false
 
 [node name="CrouchCast" type="RayCast2D" parent="."]
-position = Vector2(-13, -16)
+position = Vector2(-13.8417, 16)
 enabled = false
 target_position = Vector2(0, -64)
 
 [node name="CrouchCast2" type="RayCast2D" parent="."]
-position = Vector2(15, -16)
+position = Vector2(14.1583, 16)
 enabled = false
 target_position = Vector2(0, -64)
 
 [node name="TopEdgeCast" type="RayCast2D" parent="."]
+position = Vector2(-0.841728, 32)
 target_position = Vector2(0, -64)
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -29)
+use_parent_material = true
+position = Vector2(-0.841728, 3)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_a0efk")
 animation = &"idle"

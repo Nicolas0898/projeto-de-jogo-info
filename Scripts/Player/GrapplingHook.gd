@@ -4,17 +4,17 @@ extends Node
 @onready var state_machine: StateMachine = $"../StateMachine"
 @onready var hook_select: Sprite2D = $HookSelect
 
-var max_distance := 300.0
+var max_distance := 250.0
 var selected_hook:GrappleNode
 var disabled_points = []
+var buffer_active = false
 
 func _input(event: InputEvent) -> void:
 	if state_machine.currentState.name == "Falling"\
-	and event.is_action_pressed("jump")\
-	and is_instance_valid(selected_hook):
-		state_machine.requestStateChange("Hooking",{"hook":selected_hook})
-		disabled_points.append(selected_hook)
-		
+	and event.is_action_pressed("jump"):
+		buffer_active = true
+	if event.is_action_released("jump"):
+		buffer_active = false
 
 func state_changed(new,old):
 	if old.name == "Hooking":
@@ -92,6 +92,11 @@ func _physics_process(delta: float) -> void:
 	
 	if hook_point!=selected_hook:
 		set_current_active_hook_point(hook_point)
+		
+	if buffer_active and is_instance_valid(selected_hook):
+		buffer_active = false
+		state_machine.requestStateChange("Hooking",{"hook":selected_hook})
+		disabled_points.append(selected_hook)
 
 func _process(delta: float) -> void:
 	if selected_hook:

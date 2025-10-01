@@ -22,7 +22,7 @@ func onStateEntered(_last):
 	
 	character.add_child(current_active_rope)
 	
-	current_active_rope.position = Vector2(0,-16)
+	#current_active_rope.position = Vector2(0,-16)
 	current_active_rope.target.global_position = stateData.hook.global_position
 	current_active_rope.start()
 	
