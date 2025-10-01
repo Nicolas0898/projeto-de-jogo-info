@@ -6,6 +6,7 @@ class_name PlayerCharacter
 @export var jump_power = 1
 var speed_multiplier = 1
 
+@onready var camera: Camera2D = $Camera2D
 @onready var state_machine: StateMachine = $StateMachine
 @onready var hitbox: CollisionShape2D = $Hitbox
 @onready var sprite: AnimatedSprite2D = $Sprite
@@ -65,4 +66,3 @@ func update_velocity():
 func default_move():
 	update_velocity()
 	move_and_slide()
-	
