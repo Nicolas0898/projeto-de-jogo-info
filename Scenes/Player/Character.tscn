@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://brkn5mjfr67t4"]
+[gd_scene load_steps=36 format=3 uid="uid://brkn5mjfr67t4"]
 
 [ext_resource type="Shader" uid="uid://lk8vqo6nbyf3" path="res://Shaders/Character.gdshader" id="1_aeg27"]
 [ext_resource type="Script" uid="uid://bhahlqc4v651w" path="res://Scripts/Player/character.gd" id="1_d8n76"]
@@ -30,6 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://cdtbxkwpfrmji" path="res://Images/Player/corrida/corrida12.png" id="19_qk417"]
 [ext_resource type="Texture2D" uid="uid://b0raral3iwuns" path="res://Images/Player/idle/personagem com capa6.png" id="20_um7yn"]
 [ext_resource type="Texture2D" uid="uid://dlghl7efhf7rm" path="res://Images/Player/idle/personagem com capa7.png" id="21_du3pq"]
+[ext_resource type="Script" uid="uid://xwxec44xl3lg" path="res://Scripts/Components/BaseWeapon.gd" id="31_qyni0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qyni0"]
 shader = ExtResource("1_aeg27")
@@ -221,3 +222,7 @@ offset = Vector2(0.920864, -1.3813)
 [node name="Crouching" type="Node" parent="."]
 script = ExtResource("7_8qehs")
 metadata/_custom_type_script = "uid://ca8wa4d6wsrqb"
+
+[node name="BaseWeapon" type="Node2D" parent="."]
+script = ExtResource("31_qyni0")
+metadata/_custom_type_script = "uid://xwxec44xl3lg"
