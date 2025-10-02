@@ -16,14 +16,17 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_released("jump"):
 		buffer_active = false
 
+func reset_hooks():
+	for i in disabled_points:
+		i.enabled = true
+		disabled_points.clear()
+
 func state_changed(new,old):
 	if old.name == "Hooking":
 		old.stateData.hook.enabled = false
 		disabled_points.append(old.stateData.hook)
 	if new.name != "Falling":
-		for i in disabled_points:
-			i.enabled = true
-		disabled_points.clear()
+		reset_hooks()
 
 func get_closest_hook_point():
 	var hookpoints = get_tree().get_nodes_in_group("GrappleNode")
