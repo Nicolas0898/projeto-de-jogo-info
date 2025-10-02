@@ -5,8 +5,10 @@ var current_active_rope:Node2D = null
 var start_distance = 0
 
 func onInput(event:InputEvent):
+	var character:PlayerCharacter= stateMachine.character
 	if event.is_action_released("jump"):
-
+		if stateData.hook.type == GrappleNode.SWING:
+			boost_character(-600)
 		stateMachine.requestStateChange("Falling")
 
 func onStateEntered(_last):
@@ -30,14 +32,15 @@ func onStateEntered(_last):
 	
 	print(start_distance)
 
-func onStateExit():
+func boost_character(y=-700):
 	var character:PlayerCharacter= stateMachine.character
-	current_active_rope.queue_free()
 	character.variable_velocity.y = 0
-	character.variable_velocity.y+=-700
+	character.variable_velocity.y+=y
 	character.variable_velocity += character.true_constant_velocity*1.3
-	
 
+func onStateExit():
+	current_active_rope.queue_free()
+	
 func onPhysics(delta:float):
 	if stateData.hook.type == GrappleNode.SWING:
 		swingPhysics(delta)
@@ -84,5 +87,6 @@ func pullPhysics(delta:float):
 	player.check_for_collisions()
 	if distance<30:
 		stateMachine.requestStateChange("Falling")
+		boost_character()
 	player.default_move()
 	
