@@ -33,6 +33,7 @@ folder_colors={
 "res://resource/": "red",
 "res://scenes/": "orange",
 "res://script/": "yellow",
+"res://sprites/": "purple",
 "res://testing/": "blue"
 }
 
@@ -62,3 +63,4 @@ i={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+viewport/hdr_2d=true
