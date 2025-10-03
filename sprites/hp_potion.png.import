@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://x0j0hc35oi1i"
-path="res://.godot/imported/bolha.png-d7822148477bebcedd8337a0e1d3fda6.ctex"
+uid="uid://phnmg3nkqvo7"
+path="res://.godot/imported/hp_potion.png-9a1de9944743c359bf8f06c12f0f07c9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/bolha.png"
-dest_files=["res://.godot/imported/bolha.png-d7822148477bebcedd8337a0e1d3fda6.ctex"]
+source_file="res://sprites/hp_potion.png"
+dest_files=["res://.godot/imported/hp_potion.png-9a1de9944743c359bf8f06c12f0f07c9.ctex"]
 
 [params]
 

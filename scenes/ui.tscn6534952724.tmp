@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://bu8krnugqph56" path="res://script/item_scripts/item.gd" id="5_wm3ai"]
 [ext_resource type="Resource" uid="uid://bkc1lpavt6c4c" path="res://resource/item/item01.tres" id="6_8dubc"]
 [ext_resource type="Resource" uid="uid://dgpov81f2hcdm" path="res://resource/item/item02.tres" id="7_p7vwb"]
-[ext_resource type="Resource" uid="uid://dhj1nx7sy3gd2" path="res://resource/item/Poção_cura.tres" id="8_cgfq5"]
+[ext_resource type="Resource" uid="uid://6q7l01gbkfpy" path="res://resource/item/item03.tres" id="8_ktti3"]
 [ext_resource type="Script" uid="uid://bynmlovsbvyqt" path="res://script/interact/confirm.gd" id="9_cgfq5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nt7q6"]
@@ -188,7 +188,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = SubResource("Theme_hj2ta")
 script = ExtResource("4_gdt2y")
-inventario = Array[ExtResource("5_wm3ai")]([ExtResource("6_8dubc"), ExtResource("7_p7vwb"), ExtResource("8_cgfq5")])
+inventario = Array[ExtResource("5_wm3ai")]([ExtResource("6_8dubc"), ExtResource("8_ktti3"), ExtResource("7_p7vwb")])
 
 [node name="Panel" type="Panel" parent="Inventory"]
 layout_mode = 1
@@ -262,7 +262,7 @@ scale = Vector2(0.210963, 0.75)
 points = PackedVector2Array(0, 0, 598, 0)
 width = 2.0
 
-[node name="status_label" type="Label" parent="Inventory/Panel/VBoxContainer/HBoxContainer/VBoxContainer/Panel/VBoxContainer"]
+[node name="Label2" type="Label" parent="Inventory/Panel/VBoxContainer/HBoxContainer/VBoxContainer/Panel/VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 text = "*Quantia dinheiro"

@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 InteractionSystem="*res://script/interact/InteractionSystem.gd"
 Ui="*res://scenes/ui.tscn"
+CharacterBody2d="*res://testing/character_body_2d.gd"
 
 [display]
 

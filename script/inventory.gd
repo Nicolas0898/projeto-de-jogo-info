@@ -13,26 +13,28 @@ var buttons : Array
 
 @onready var desc_tittle: Label = $Panel/VBoxContainer/HBoxContainer/Panel2/VBoxContainer/desc_tittle
 @onready var desc_text: Label = $Panel/VBoxContainer/HBoxContainer/Panel2/VBoxContainer/desc_text
-
+@onready var status_label: Label = $Panel/VBoxContainer/HBoxContainer/VBoxContainer/Panel/VBoxContainer/status_label
 
 func refreshing():
+	status_label.text = 'Vida: ' + str(CharacterBody2d.hp) + '\nDinheiro: \nEtc... (adicionar depois)'
+	
 	for i in range(len(inventario)):
 		if inventario[i].amount <= 0: #Caso seja removido do inventário
-			if inventario[i].type == 0: util.get_node(inventario[i].name).queue_free()
-			if inventario[i].type == 1: desc.get_node(inventario[i].name).queue_free()
+			if inventario[i].display == 0: util.get_node(inventario[i].name).queue_free()
+			if inventario[i].display == 1: desc.get_node(inventario[i].name).queue_free()
 			displaying[i] = null
 			inventario[i] = null
 			buttons[i] = null
 		else:
 			if inventario[i] in displaying:
-				if inventario[i].type == 0: util.get_node(inventario[i].name).amount.text = str(inventario[i].amount) #util
-				if inventario[i].type == 1: desc.get_node(inventario[i].name).amount.text = str(inventario[i].amount) #desc
+				if inventario[i].display == 0: util.get_node(inventario[i].name).amount.text = str(inventario[i].amount) #util
+				if inventario[i].display == 1: desc.get_node(inventario[i].name).amount.text = str(inventario[i].amount) #desc
 			else:
 				var display = item_display.instantiate()
 				display.i = inventario[i]
 				display.name = inventario[i].name
-				if inventario[i].type == 0: util.add_child(display) #util
-				if inventario[i].type == 1: desc.add_child(display) #desc
+				if inventario[i].display == 0: util.add_child(display) #util
+				if inventario[i].display == 1: desc.add_child(display) #desc
 				
 				display.sprite.texture = inventario[i].sprite
 				display.amount.text = str(inventario[i].amount)
@@ -49,15 +51,27 @@ func refresh_desc(i : Item):
 	desc_text.text = i.desc
 
 func interact():
+	if selected.i.display == 1: return
+	
 	if selected.i.confirm:
 		input()
 		Ui.confirm.called("Você deseja usar " + str(selected.i.name), self)
 	else:
 		use()
 
+
+#func find_button(item : Item):
+#	for i in range(len(displaying)):
+#		if displaying[i].i == item: return displaying[i]
+
+
 func use():
-	inventario[inventario.find(selected.i)].amount-=1
-	print(inventario[inventario.find(selected.i)].amount)
+	inventario[inventario.find(selected.i)].use()
+	if inventario[inventario.find(selected.i)].cooldown > 0:
+		Ui.cooldown(inventario[inventario.find(selected.i)].cooldown, selected.progress_bar)
+		
+		#Ui.cooldown(inventario[inventario.find(selected.i)].cooldown, )
+	
 	refreshing()
 	if len(buttons) > 0: selected = buttons[0]
 	selected.grab_focus()
@@ -66,6 +80,8 @@ func answer(a : bool): #0 = false, 1 = true
 	InteractionSystem.action = null
 	if(a == true): use()
 	input()
+
+
 
 func _ready():
 	refreshing()

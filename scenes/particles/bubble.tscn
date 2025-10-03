@@ -1,40 +1,61 @@
-[gd_scene load_steps=9 format=3 uid="uid://d4a8yqpry0tiv"]
+[gd_scene load_steps=10 format=3 uid="uid://d4a8yqpry0tiv"]
 
-[ext_resource type="Texture2D" uid="uid://x0j0hc35oi1i" path="res://sprites/bolha.png" id="1_ch7dl"]
+[ext_resource type="Texture2D" uid="uid://x0j0hc35oi1i" path="res://sprites/bubble.png" id="1_ch7dl"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ksa8n"]
+blend_mode = 1
 particles_animation = true
 particles_anim_h_frames = 4
 particles_anim_v_frames = 4
 particles_anim_loop = false
 
-[sub_resource type="Curve" id="Curve_10lyx"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.161765, 0.348315), 1.25522, 1.25522, 0, 0, Vector2(0.654412, 0.516854), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 4
-
-[sub_resource type="CurveTexture" id="CurveTexture_fb3n0"]
-curve = SubResource("Curve_10lyx")
+[sub_resource type="Curve" id="Curve_ch7dl"]
+_limits = [0.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="CurveTexture" id="CurveTexture_g25kj"]
+curve = SubResource("Curve_ch7dl")
 
 [sub_resource type="Gradient" id="Gradient_ch7dl"]
-offsets = PackedFloat32Array(0, 0.481818)
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+offsets = PackedFloat32Array(0, 0.654545, 1)
+colors = PackedColorArray(0.433112, 0.523279, 0.981927, 1, 0.2, 0.780392, 0.992157, 0, 0, 1, 1, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_ksa8n"]
 gradient = SubResource("Gradient_ch7dl")
 
+[sub_resource type="Curve" id="Curve_ksa8n"]
+_data = [Vector2(0, 1), 0.0, -1.52809, 0, 0, Vector2(0.558824, 0), -4.23163, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_10lyx"]
+curve = SubResource("Curve_ksa8n")
+
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_cp7id"]
 particle_flag_disable_z = true
+angle_min = -45.0
+angle_max = 45.0
+direction = Vector3(0, 500, 0)
+spread = 180.0
+initial_velocity_min = 10.0
+initial_velocity_max = 30.0
 gravity = Vector3(0, 0, 0)
+linear_accel_min = -120.0
+linear_accel_max = -74.65
+scale_min = 0.5
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_10lyx")
 color_ramp = SubResource("GradientTexture1D_ksa8n")
-anim_speed_min = 1.0
+anim_speed_min = 0.6
 anim_speed_max = 1.0
 anim_speed_curve = SubResource("CurveTexture_g25kj")
-anim_offset_curve = SubResource("CurveTexture_fb3n0")
 
 [node name="bubble" type="GPUParticles2D"]
+texture_filter = 1
 material = SubResource("CanvasItemMaterial_ksa8n")
-amount = 1
+scale = Vector2(2, 2)
+amount = 5
 texture = ExtResource("1_ch7dl")
+explosiveness = 1.0
+fixed_fps = 120
 process_material = SubResource("ParticleProcessMaterial_cp7id")
