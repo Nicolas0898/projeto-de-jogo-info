@@ -1,0 +1,60 @@
+[gd_scene load_steps=10 format=3 uid="uid://dv8vj3sg56vtp"]
+
+[ext_resource type="Shader" uid="uid://lk8vqo6nbyf3" path="res://Shaders/Character.gdshader" id="1_51ege"]
+[ext_resource type="Texture2D" uid="uid://c0d6utpb1kp0x" path="res://Images/dummy.png" id="2_wes3n"]
+[ext_resource type="Script" uid="uid://d0xnltbvtmvwv" path="res://Scripts/Components/Hurtbox.gd" id="3_lb43t"]
+[ext_resource type="Script" uid="uid://1ughpmhhrew" path="res://Scripts/Components/HealthComponent.gd" id="4_ah27q"]
+[ext_resource type="Script" uid="uid://lurpfwbx4y8w" path="res://Scripts/StateMachine/StateMachine.gd" id="5_lb43t"]
+[ext_resource type="Script" uid="uid://ca8wa4d6wsrqb" path="res://Scripts/StateMachine/State.gd" id="6_ah27q"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bpnk2"]
+shader = ExtResource("1_51ege")
+shader_parameter/blink_color = Color(1, 1, 1, 1)
+shader_parameter/factor = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ulpu"]
+size = Vector2(42, 58)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t1qad"]
+size = Vector2(42, 58)
+
+[node name="Dummy" type="CharacterBody2D"]
+z_index = -1
+material = SubResource("ShaderMaterial_bpnk2")
+collision_layer = 0
+
+[node name="Dummy" type="Sprite2D" parent="."]
+use_parent_material = true
+position = Vector2(0, -29)
+scale = Vector2(0.24375, 0.24375)
+texture = ExtResource("2_wes3n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -29)
+shape = SubResource("RectangleShape2D_8ulpu")
+
+[node name="Hurtbox" type="Area2D" parent="." node_paths=PackedStringArray("health_component")]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("3_lb43t")
+health_component = NodePath("../HealthComponent")
+metadata/_custom_type_script = "uid://d0xnltbvtmvwv"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(0, -29)
+shape = SubResource("RectangleShape2D_t1qad")
+debug_color = Color(0.900038, 0.251206, 0.477393, 0.42)
+
+[node name="HealthComponent" type="Node" parent="."]
+script = ExtResource("4_ah27q")
+max_health = 1e+17
+metadata/_custom_type_script = "uid://1ughpmhhrew"
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initialState")]
+script = ExtResource("5_lb43t")
+initialState = NodePath("Idle")
+metadata/_custom_type_script = "uid://lurpfwbx4y8w"
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("6_ah27q")
+metadata/_custom_type_script = "uid://ca8wa4d6wsrqb"

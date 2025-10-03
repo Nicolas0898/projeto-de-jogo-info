@@ -2,13 +2,8 @@ extends Hurtbox
 
 @onready var character: PlayerCharacter = $".."
 
-func upd(v):
-	var shader = character.material as ShaderMaterial
-	shader.set_shader_parameter("factor",v)
-
 func onHit(hitbox:Hitbox):
 	super(hitbox)
-	var shader = character.material as ShaderMaterial
 	
 	var pos = null
 	for node in hitbox.get_children():
@@ -25,13 +20,6 @@ func onHit(hitbox:Hitbox):
 	
 	if character.get_node("GrapplingHook"):
 		character.get_node("GrapplingHook").reset_hooks()
-	
-	if hitbox.damage>0:
-		shader.set_shader_parameter("blink_color",Color("#dc1b00"))
-		create_tween().tween_method(upd,0.5,0.0,0.3)
-	else:
-		create_tween().tween_method(upd,0.2,0.0,0.3)
-		shader.set_shader_parameter("blink_color",Color("#ffffff"))
 	
 	
 	

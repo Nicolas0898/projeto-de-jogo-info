@@ -19,6 +19,7 @@ var constant_velocity = {"input":Vector2(),"jump":Vector2.ZERO}
 var variable_velocity = Vector2()
 var true_constant_velocity = Vector2.ZERO
 var player_input = Vector2.ZERO
+var last_looked_at = Vector2(1,0)
 
 func _ready() -> void:
 	GameHandler.Player = self
@@ -29,6 +30,7 @@ func _ready() -> void:
 	%DebugMenu.watch(self,"speed_multiplier")
 	%DebugMenu.watch_as_vector(self,"velocity")
 	%DebugMenu.watch_as_vector(self,"player_input")
+	%DebugMenu.watch_as_vector(self,"last_looked_at")
 
 func default_player_input(local_mult=1):
 	var axis = Input.get_axis("left","right")
@@ -37,8 +39,16 @@ func default_player_input(local_mult=1):
 		sprite.flip_h = false
 	elif axis<0:
 		sprite.flip_h = true
+	
 	top_edge_cast.position.x = axis*13
-	player_input = Input.get_vector("left","right","up","down")*50
+	player_input = Input.get_vector("left","right","up","down")
+	
+	if player_input!=Vector2.ZERO:
+		last_looked_at = Vector2(1 if player_input.x>0 else -1,0)
+		if abs(player_input.y)>=0.7:
+			last_looked_at = Vector2(0,1 if player_input.y>0 and not is_on_floor() else -1)
+	if last_looked_at.y!=0 and player_input==Vector2.ZERO:
+		last_looked_at =  Vector2(-1 if sprite.flip_h else 1,0)
 
 func clear_player_input():
 	constant_velocity.input = Vector2(0,0)
