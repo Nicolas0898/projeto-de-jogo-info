@@ -5,8 +5,8 @@
 [ext_resource type="Script" uid="uid://c41v5wv6fa0vx" path="res://script/item_scripts/item_giver.gd" id="2_jcaq7"]
 [ext_resource type="Script" uid="uid://d2x57hvqb5tfh" path="res://testing/character_body_2d.gd" id="3_28b5m"]
 [ext_resource type="Resource" uid="uid://de0v2mqsnut7u" path="res://resource/dialogues/example.tres" id="4_n1a7b"]
-[ext_resource type="PackedScene" path="res://scenes/particles/impact_smoke.tscn" id="6_b15j2"]
-[ext_resource type="PackedScene" uid="uid://pbw8u0p8fm1h" path="res://scenes/particles/fogo.tscn" id="7_6g617"]
+[ext_resource type="PackedScene" uid="uid://dasfu8n7i6i6w" path="res://scenes/particles/impact_smoke.tscn" id="6_b15j2"]
+[ext_resource type="PackedScene" uid="uid://pbw8u0p8fm1h" path="res://scenes/particles/fire.tscn" id="7_6g617"]
 [ext_resource type="PackedScene" uid="uid://c27qk4jmji2pj" path="res://scenes/particles/walking_smoke.tscn" id="8_6g4hr"]
 
 [sub_resource type="Resource" id="Resource_b15j2"]
@@ -80,6 +80,6 @@ position = Vector2(1, -52)
 
 [node name="walking_smoke" parent="WorldEnvironment" instance=ExtResource("8_6g4hr")]
 material = SubResource("CanvasItemMaterial_6g4hr")
-position = Vector2(43, -56)
+position = Vector2(37, -55)
 scale = Vector2(0.2, 0.2)
 lifetime = 0.3

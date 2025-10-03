@@ -1,4 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://dasfu8n7i6i6w"]
+[gd_scene load_steps=8 format=3 uid="uid://dasfu8n7i6i6w"]
+
+[ext_resource type="Texture2D" uid="uid://hsmiytcrdm3q" path="res://sprites/smoke_spritesheet.png" id="1_r2t7m"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_iilxo"]
+particles_animation = true
+particles_anim_h_frames = 4
+particles_anim_v_frames = 4
+particles_anim_loop = true
 
 [sub_resource type="Gradient" id="Gradient_s8tqw"]
 offsets = PackedFloat32Array(0, 0.181818, 1)
@@ -18,19 +26,22 @@ curve = SubResource("Curve_ca0x4")
 particle_flag_disable_z = true
 angle_min = -1169.5
 angle_max = 720.0
-direction = Vector3(0, -10, 0)
+direction = Vector3(0, -50, 0)
 spread = 90.0
-initial_velocity_max = 22.99
+initial_velocity_max = 50.0
 linear_accel_min = -9.2
-linear_accel_max = -9.2
+linear_accel_max = 2.0
 scale_max = 2.0
 scale_curve = SubResource("CurveTexture_o88gx")
 color_ramp = SubResource("GradientTexture1D_niign")
+anim_speed_max = 1.0
 
 [node name="smoke_impact" type="GPUParticles2D"]
+material = SubResource("CanvasItemMaterial_iilxo")
 emitting = false
-amount = 20
+amount = 10
 amount_ratio = 0.5
+texture = ExtResource("1_r2t7m")
 lifetime = 0.5
 one_shot = true
 explosiveness = 1.0

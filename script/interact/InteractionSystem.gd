@@ -1,13 +1,10 @@
 extends Node
 
-@export var current_action : Interactable #parte pra testar mas talvez fique (pro area2d passar resource)
+@export var current_action : Interactable #Ação recebida pelo Area2D
 @export var current_area : Node
-@onready var action = null
+@onready var action = null #Ação que o jogador está executando
 # i = inventario
 # d = dialogo
-
-func _physics_process(delta: float) -> void:
-	Ui.debug.text = str(current_action)
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("up"):
@@ -21,7 +18,7 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("z"):
 		if action is Dialogue: Ui.dialogue.confirm()
 		if action is Confirm: Ui.confirm.input()
-		if action is Inventory: Ui.inventory.use()
+		if action is Inventory: Ui.inventory.interact()
 	
 	if event.is_action_pressed("i"): Ui.inventory.input()
 

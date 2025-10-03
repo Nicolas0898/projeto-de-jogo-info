@@ -10,4 +10,5 @@ desc = "Arma corpo a corpo"
 amount = 1
 type = 0
 sprite = ExtResource("2_cltjf")
+confirm = false
 metadata/_custom_type_script = "uid://bu8krnugqph56"

@@ -48,15 +48,24 @@ func refresh_desc(i : Item):
 	desc_tittle.text = i.name
 	desc_text.text = i.desc
 
-func use():
+func interact():
 	if selected.i.confirm:
-		input() 
+		input()
 		Ui.confirm.called("Você deseja usar " + str(selected.i.name), self)
 	else:
-		inventario[inventario.find(selected.i)].amount-=1
-		refreshing()
-		if len(buttons) > 0: selected = buttons[0]
-		selected.grab_focus()
+		use()
+
+func use():
+	inventario[inventario.find(selected.i)].amount-=1
+	print(inventario[inventario.find(selected.i)].amount)
+	refreshing()
+	if len(buttons) > 0: selected = buttons[0]
+	selected.grab_focus()
+
+func answer(a : bool): #0 = false, 1 = true
+	InteractionSystem.action = null
+	if(a == true): use()
+	input()
 
 func _ready():
 	refreshing()

@@ -6,6 +6,11 @@ var called_by : Node
 @onready var yes: Button = $Panel/VBoxContainer/HBoxContainer/yes
 @onready var no: Button = $Panel/VBoxContainer/HBoxContainer/no
 
+
+#AO USAR CONFIRMAÇÃO: Deve ter uma função no código original para a "answer()"
+# 0 = Recusou
+# 1 = Aceitou
+
 func called(q : String, node : Node):
 	InteractionSystem.action = self
 	called_by = node
@@ -18,11 +23,12 @@ func called(q : String, node : Node):
 func input(): #Quando ele escolhe
 	get_viewport().gui_get_focus_owner().button_down.emit()
 
-
 func _on_yes_button_down() -> void: #Confirmado
-	called_by.answer(1)
-	pass # Replace with function body.
+	get_viewport().gui_release_focus()
+	Ui.fade_out(self)
+	called_by.call_deferred("answer" ,true)
 
 func _on_no_button_down() -> void: #Recusado
-	called_by.answer(0)
-	pass # Replace with function body.
+	get_viewport().gui_release_focus()
+	called_by.call_deferred("answer" ,false)
+	Ui.fade_out(self)

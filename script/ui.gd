@@ -14,8 +14,9 @@ func _ready() -> void:
 	inventory.modulate = Color(1, 1, 1, 0)
 	confirm.modulate = Color(1, 1, 1, 0)
 
-#func _physics_process(delta: float) -> void:
-	#debug.text = str(inventory.inventario)
+func _physics_process(delta: float) -> void:
+	#print(inventory.displaying)
+	debug.text = str(inventory.inventario)
 
 func fade_in(p):
 	tween = create_tween()
