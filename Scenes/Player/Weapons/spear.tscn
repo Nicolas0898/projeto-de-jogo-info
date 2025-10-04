@@ -1,0 +1,68 @@
+[gd_scene load_steps=11 format=3 uid="uid://6m8cyfmng1we"]
+
+[ext_resource type="Texture2D" uid="uid://0yk1vy17wsuq" path="res://Images/weapons/spear.png" id="1_0hxvb"]
+[ext_resource type="Texture2D" uid="uid://c122ravveb2fl" path="res://Images/weapons/extra.png" id="2_cvv0t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cvv0t"]
+atlas = ExtResource("1_0hxvb")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vo2jx"]
+atlas = ExtResource("1_0hxvb")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lrx7n"]
+atlas = ExtResource("1_0hxvb")
+region = Rect2(128, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85ulv"]
+atlas = ExtResource("1_0hxvb")
+region = Rect2(192, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lj6qo"]
+atlas = ExtResource("1_0hxvb")
+region = Rect2(256, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_en0fd"]
+atlas = ExtResource("1_0hxvb")
+region = Rect2(320, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_raj00"]
+atlas = ExtResource("2_cvv0t")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_geur0"]
+animations = [{
+"frames": [{
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_cvv0t")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_vo2jx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lrx7n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_85ulv")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_lj6qo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_en0fd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_raj00")
+}],
+"loop": false,
+"name": &"default",
+"speed": 24.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+scale = Vector2(1.3, 1.3)
+sprite_frames = SubResource("SpriteFrames_geur0")
+frame = 6
+frame_progress = 1.0
+offset = Vector2(32, 0)

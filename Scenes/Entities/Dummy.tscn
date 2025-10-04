@@ -16,7 +16,7 @@ shader_parameter/factor = 0.0
 size = Vector2(42, 58)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t1qad"]
-size = Vector2(42, 58)
+size = Vector2(18, 58)
 
 [node name="Dummy" type="CharacterBody2D"]
 z_index = -1

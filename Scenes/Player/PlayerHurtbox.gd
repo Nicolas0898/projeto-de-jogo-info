@@ -4,7 +4,7 @@ extends Hurtbox
 
 func onHit(hitbox:Hitbox):
 	super(hitbox)
-	
+	Time.get_ticks_msec()
 	var pos = null
 	for node in hitbox.get_children():
 		if node is CollisionShape2D:
