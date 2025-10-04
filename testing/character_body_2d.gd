@@ -4,6 +4,10 @@ class_name PlayerCharacter
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 var  hp : float = 100
+var s = self
+
+#func _ready():
+	#if Ui.inventory.find_item("Poção de cura"): Ui.inventory.inventario[Ui.inventory.find_item("Poção de cura")].use(self, null)
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.

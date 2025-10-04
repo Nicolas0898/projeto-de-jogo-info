@@ -1,6 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://x8q88d37iv8d"]
+[gd_scene load_steps=13 format=3 uid="uid://x8q88d37iv8d"]
+
+[sub_resource type="Curve" id="Curve_nahnt"]
+_limits = [-360.0, 360.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="CurveTexture" id="CurveTexture_8vvo7"]
+curve = SubResource("Curve_nahnt")
 
 [sub_resource type="Gradient" id="Gradient_nahnt"]
 offsets = PackedFloat32Array(0, 0.287234, 0.648936, 1)

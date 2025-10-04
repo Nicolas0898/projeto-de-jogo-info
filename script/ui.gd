@@ -8,6 +8,8 @@ extends CanvasLayer
 
 var tween : Tween
 
+func _physics_process(delta: float) -> void:
+	debug.text = str(InteractionSystem.action)
 
 func _ready() -> void:
 	dialogue.modulate = Color(1, 1, 1, 0)
@@ -24,6 +26,11 @@ func fade_out(p):
 	tween = create_tween()
 	tween.tween_property(p,"modulate",Color(1,1,1,0),0.2)
 	#print("fadeout")
+	await tween.finished
+
+func new_tween(object : Object, property : String, new_value, time : float):
+	tween = create_tween()
+	tween.tween_property(object, property, new_value, time)
 	await tween.finished
 
 func cooldown(time : float, progress_bar : ProgressBar):

@@ -7,18 +7,9 @@ class_name ItemGiver
 var c : int = 1
 
 func activate():
-	if i in Ui.inventory.inventario:
-		Ui.inventory.inventario[Ui.inventory.inventario.find(i)].amount += quantity
-	elif quantity > 0:
-		i.amount+=quantity
-		Ui.inventory.inventario.append(i)
-	else: return
+	Ui.inventory.change_amount(i, quantity)
 	
-	Ui.inventory.refreshing()
-	
-	if interaction_amount == c:
-		InteractionSystem.current_area.queue_free()
-	else:
-		c+=1
+	if interaction_amount == c: InteractionSystem.current_area.queue_free()
+	else: c+=1
 	
 	

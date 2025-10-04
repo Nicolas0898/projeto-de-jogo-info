@@ -2,10 +2,11 @@ extends Control
 class_name Inventory
 
 var open : bool = false
-var selected : Button = null
-var displaying : Array
-var buttons : Array
-@export var inventario : Array[Item]
+var selected : Button = null #Botão selecionado
+var displaying : Array #Itens que estão dentro dos botões
+var buttons : Array #Botões que estão sendo mostrados
+var c : Array #Itens em cooldown
+@export var inventario : Array[Item] #Itens no inventário
 
 @onready var item_display = preload("res://scenes/item_display.tscn")
 @onready var desc: GridContainer = $Panel/VBoxContainer/HBoxContainer/VBoxContainer/Panel2/desc
@@ -20,6 +21,8 @@ func refreshing():
 	
 	for i in range(len(inventario)):
 		if inventario[i].amount <= 0: #Caso seja removido do inventário
+			if inventario[i] == selected.i: selected = buttons[i - 1] if i - 1 >= 0 else null
+			
 			if inventario[i].display == 0: util.get_node(inventario[i].name).queue_free()
 			if inventario[i].display == 1: desc.get_node(inventario[i].name).queue_free()
 			displaying[i] = null
@@ -29,6 +32,7 @@ func refreshing():
 			if inventario[i] in displaying:
 				if inventario[i].display == 0: util.get_node(inventario[i].name).amount.text = str(inventario[i].amount) #util
 				if inventario[i].display == 1: desc.get_node(inventario[i].name).amount.text = str(inventario[i].amount) #desc
+				if inventario[i] in c: Ui.cooldown(c[c.find(inventario[i])].t, buttons[i].progress_bar)
 			else:
 				var display = item_display.instantiate()
 				display.i = inventario[i]
@@ -40,6 +44,9 @@ func refreshing():
 				display.amount.text = str(inventario[i].amount)
 				displaying.append(inventario[i])
 				buttons.append(display)
+				
+				if inventario[i] in c: Ui.cooldown(c[c.find(inventario[i])].t, buttons[i].progress_bar)
+	
 	
 	if selected == null and len(buttons) > 0: selected = buttons[0]
 	while inventario.has(null): inventario.erase(null)
@@ -51,38 +58,31 @@ func refresh_desc(i : Item):
 	desc_text.text = i.desc
 
 func interact():
-	if selected.i.display == 1: return
-	if selected.progress_bar.value > 0: return
+	if selected.i.display == 1: return #Se for apenas um display
+	if selected.i in c: return #Se estiver no cooldown
 	
-	if selected.i.confirm:
-		input()
-		Ui.confirm.called("Você deseja usar " + str(selected.i.name), self)
-	else:
-		use()
+	selected.i.use(CharacterBody2d.s, self)
 
 func change_amount(i : Item, amount : int):
+	if not i in Ui.inventory.inventario and amount > 0: Ui.inventory.inventario.append(i)
+	
 	i.amount+=amount
-	refreshing()
-
-func use():
-	inventario[inventario.find(selected.i)].use()
-	if inventario[inventario.find(selected.i)].cooldown > 0:
-		Ui.cooldown(inventario[inventario.find(selected.i)].cooldown, selected.progress_bar)
+	if i.amount < 0: i.amount = 0
 	
 	refreshing()
-	if len(buttons) > 0: selected = buttons[0]
-	selected.grab_focus()
 
-func answer(a : bool): #0 = false, 1 = true
-	InteractionSystem.action = null
-	if(a == true): use()
-	input()
+
+func find_item(item_name : String): #Retorna o índice do item no inventário
+	for i in range(len(inventario)): if inventario[i].name == item_name: return i
+
 
 func input():
 	if InteractionSystem.action != null and not InteractionSystem.action is Inventory: return
 	
 	open = not open
 	InteractionSystem.action = self if InteractionSystem.action == null else null
+	
+	refreshing()
 	
 	if open:
 		selected.grab_focus()
@@ -91,7 +91,8 @@ func input():
 	
 	await Ui.fade_in(self) if open else await Ui.fade_out(self)
 
-
-
 func _ready():
 	refreshing()
+
+func _physics_process(delta: float) -> void:
+	print(selected)

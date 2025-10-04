@@ -3,6 +3,7 @@ class_name hp_potion
 
 @export var hp : float
 
-func use():
-	CharacterBody2d.hp+=hp
-	amount-=1
+func utilize():
+	node_used.hp+=hp
+	
+	if node_used is PlayerCharacter: Ui.inventory.change_amount(self, -1)
