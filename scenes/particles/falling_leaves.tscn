@@ -1,0 +1,62 @@
+[gd_scene load_steps=10 format=3 uid="uid://c5pik2cgvmlm4"]
+
+[ext_resource type="Texture2D" uid="uid://p784hetvi83d" path="res://sprites/leaf.png" id="1_8m7c2"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_227jg"]
+particles_animation = true
+particles_anim_h_frames = 4
+particles_anim_v_frames = 4
+particles_anim_loop = true
+
+[sub_resource type="Gradient" id="Gradient_fpf7a"]
+offsets = PackedFloat32Array(0, 0.229508, 0.778689, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_wck00"]
+gradient = SubResource("Gradient_fpf7a")
+
+[sub_resource type="Curve" id="Curve_fpf7a"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.539326), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_wck00"]
+texture_mode = 1
+curve = SubResource("Curve_fpf7a")
+
+[sub_resource type="Curve" id="Curve_ib0lt"]
+_data = [Vector2(0, 0.573034), 0.0, 0.0, 0, 0, Vector2(0.448529, 1), 0.0, 0.0, 0, 0, Vector2(0.823529, 0.898876), 0.0, 0.0, 0, 0, Vector2(1, 0.505618), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_goyaa"]
+curve = SubResource("Curve_ib0lt")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4mqy6"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(320, 200, 1)
+spread = 20.0
+initial_velocity_min = 20.0
+initial_velocity_max = 30.0
+angular_velocity_min = -1.60933e-05
+angular_velocity_max = 50.0
+gravity = Vector3(0, 10, 0)
+radial_accel_min = -2.23517e-06
+radial_accel_max = 18.46
+scale_min = 0.5
+scale_curve = SubResource("CurveTexture_goyaa")
+color_ramp = SubResource("GradientTexture1D_wck00")
+emission_curve = SubResource("CurveTexture_wck00")
+anim_speed_min = 0.38
+anim_speed_max = 0.38
+
+[node name="falling_leaves" type="GPUParticles2D"]
+modulate = Color(0.808277, 0.85674, 0.967322, 1)
+self_modulate = Color(1, 1.105, 1, 1)
+material = SubResource("CanvasItemMaterial_227jg")
+amount = 20
+texture = ExtResource("1_8m7c2")
+lifetime = 2.0
+speed_scale = 2.0
+randomness = 1.0
+fixed_fps = 120
+process_material = SubResource("ParticleProcessMaterial_4mqy6")

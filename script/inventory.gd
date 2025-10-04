@@ -52,6 +52,7 @@ func refresh_desc(i : Item):
 
 func interact():
 	if selected.i.display == 1: return
+	if selected.progress_bar.value > 0: return
 	
 	if selected.i.confirm:
 		input()
@@ -59,18 +60,14 @@ func interact():
 	else:
 		use()
 
-
-#func find_button(item : Item):
-#	for i in range(len(displaying)):
-#		if displaying[i].i == item: return displaying[i]
-
+func change_amount(i : Item, amount : int):
+	i.amount+=amount
+	refreshing()
 
 func use():
 	inventario[inventario.find(selected.i)].use()
 	if inventario[inventario.find(selected.i)].cooldown > 0:
 		Ui.cooldown(inventario[inventario.find(selected.i)].cooldown, selected.progress_bar)
-		
-		#Ui.cooldown(inventario[inventario.find(selected.i)].cooldown, )
 	
 	refreshing()
 	if len(buttons) > 0: selected = buttons[0]
@@ -80,11 +77,6 @@ func answer(a : bool): #0 = false, 1 = true
 	InteractionSystem.action = null
 	if(a == true): use()
 	input()
-
-
-
-func _ready():
-	refreshing()
 
 func input():
 	if InteractionSystem.action != null and not InteractionSystem.action is Inventory: return
@@ -98,3 +90,8 @@ func input():
 		get_viewport().gui_release_focus()
 	
 	await Ui.fade_in(self) if open else await Ui.fade_out(self)
+
+
+
+func _ready():
+	refreshing()

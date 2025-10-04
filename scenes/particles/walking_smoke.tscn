@@ -42,9 +42,11 @@ turbulence_enabled = true
 turbulence_noise_strength = 20.0
 
 [node name="walking_smoke" type="GPUParticles2D"]
+self_modulate = Color(1.105, 1, 1, 1)
 material = SubResource("CanvasItemMaterial_n5aet")
 amount = 3
 texture = ExtResource("1_xt3oc")
 lifetime = 0.6
 randomness = 1.0
+fixed_fps = 120
 process_material = SubResource("ParticleProcessMaterial_3shsw")

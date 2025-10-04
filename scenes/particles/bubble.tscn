@@ -51,6 +51,7 @@ anim_speed_max = 1.0
 anim_speed_curve = SubResource("CurveTexture_g25kj")
 
 [node name="bubble" type="GPUParticles2D"]
+self_modulate = Color(1, 1, 1.105, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_ksa8n")
 scale = Vector2(2, 2)

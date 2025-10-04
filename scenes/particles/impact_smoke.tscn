@@ -36,7 +36,8 @@ scale_curve = SubResource("CurveTexture_o88gx")
 color_ramp = SubResource("GradientTexture1D_niign")
 anim_speed_max = 1.0
 
-[node name="smoke_impact" type="GPUParticles2D"]
+[node name="impact_smoke" type="GPUParticles2D"]
+self_modulate = Color(1.105, 1, 1, 1)
 material = SubResource("CanvasItemMaterial_iilxo")
 emitting = false
 amount = 10
@@ -45,4 +46,5 @@ texture = ExtResource("1_r2t7m")
 lifetime = 0.5
 one_shot = true
 explosiveness = 1.0
+fixed_fps = 120
 process_material = SubResource("ParticleProcessMaterial_sl1eh")

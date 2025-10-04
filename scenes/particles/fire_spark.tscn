@@ -1,0 +1,67 @@
+[gd_scene load_steps=12 format=3 uid="uid://x8q88d37iv8d"]
+
+[sub_resource type="CurveTexture" id="CurveTexture_8vvo7"]
+
+[sub_resource type="Gradient" id="Gradient_nahnt"]
+offsets = PackedFloat32Array(0, 0.287234, 0.648936, 1)
+colors = PackedColorArray(1, 1, 1, 0, 0.928748, 0.460059, 0.36154, 1, 0.875294, 0.0680154, 0.0513147, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_kxwuw"]
+gradient = SubResource("Gradient_nahnt")
+
+[sub_resource type="Gradient" id="Gradient_2gb66"]
+offsets = PackedFloat32Array(0, 0.202128, 0.691489, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_gpqhw"]
+gradient = SubResource("Gradient_2gb66")
+
+[sub_resource type="CurveTexture" id="CurveTexture_owses"]
+
+[sub_resource type="Curve" id="Curve_16h3t"]
+_data = [Vector2(1e-05, 0), 0.0, 5.1863, 0, 0, Vector2(0.525, 1), 0.0, 0.0, 0, 0, Vector2(0.99999, 0), -2.86539, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_43oj6"]
+curve = SubResource("Curve_16h3t")
+
+[sub_resource type="Curve" id="Curve_8vvo7"]
+_limits = [-200.0, 200.0, 0.0, 1.0]
+_data = [Vector2(1e-05, -82.2581), 0.0, 0.0, 0, 0, Vector2(0.245347, 91.9355), 0.0, 0.0, 0, 0, Vector2(0.494078, -85.4839), 0.0, 0.0, 0, 0, Vector2(0.751269, 96.7742), 0.0, 0.0, 0, 0, Vector2(1, -101.613), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="CurveTexture" id="CurveTexture_nahnt"]
+curve = SubResource("Curve_8vvo7")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xma7c"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(320, 180, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+angle_min = 1.07288e-05
+angle_max = 30.0
+angle_curve = SubResource("CurveTexture_8vvo7")
+spread = 16.2
+initial_velocity_min = 60.0
+initial_velocity_max = 120.0
+gravity = Vector3(1, 1, 0)
+tangential_accel_min = -2.23517e-06
+tangential_accel_max = 5.0
+tangential_accel_curve = SubResource("CurveTexture_nahnt")
+scale_min = 0.5
+scale_max = 1.5
+scale_curve = SubResource("CurveTexture_43oj6")
+color_ramp = SubResource("GradientTexture1D_gpqhw")
+color_initial_ramp = SubResource("GradientTexture1D_kxwuw")
+emission_curve = SubResource("CurveTexture_owses")
+
+[node name="fire_spark" type="GPUParticles2D"]
+modulate = Color(0.994681, 0.411694, 0.353921, 1)
+self_modulate = Color(3.867, 1.2, 1, 1)
+amount = 30
+lifetime = 1.5
+randomness = 1.0
+fixed_fps = 120
+trail_enabled = true
+trail_lifetime = 0.1
+process_material = SubResource("ParticleProcessMaterial_xma7c")
