@@ -121,6 +121,7 @@ script = ExtResource("1_d8n76")
 
 [node name="Spear" type="Node2D" parent="."]
 script = ExtResource("31_qyni0")
+cooldown = 0.329
 metadata/_custom_type_script = "uid://xwxec44xl3lg"
 
 [node name="GrapplingHook" type="Node" parent="."]
@@ -196,7 +197,6 @@ position_smoothing_speed = 7.0
 
 [node name="DebugMenu" parent="CanvasLayer" instance=ExtResource("5_owfaj")]
 unique_name_in_owner = true
-visible = false
 
 [node name="CrouchCast" type="RayCast2D" parent="."]
 position = Vector2(-13.8417, 16)

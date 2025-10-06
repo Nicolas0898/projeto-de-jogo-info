@@ -1,12 +1,25 @@
 extends BaseWeapon
 const SPEAR = preload("res://Scenes/Player/Weapons/spear.tscn")
 
+var timer:Timer
+func setvelo(x):
+	character.constant_velocity.attack_knockback = Vector2(x,0)
+
+func _ready() -> void:
+	super()
+	timer = Timer.new()
+	add_child(timer)
+	timer.wait_time = 0.07
+	timer.one_shot = true
+	timer.timeout.connect(timeout)
+
 func use():
+	if on_cooldown: return
 	var size = Vector2(60,15)
 	var hitbox = Hitbox.from_rect(5,size)
 	
 	var sprite = SPEAR.instantiate()
-	
+	set_on_cooldown()
 	
 	hitbox.position = character.last_looked_at*size.x*0.7
 	sprite.position = character.last_looked_at
@@ -29,7 +42,10 @@ func use():
 	hitbox.onHit.connect(func(other):
 		var dir = other.global_position.direction_to(character.global_position)
 		character.variable_velocity *= Vector2.ONE-abs(hitdir)
-		character.variable_velocity += dir*500*abs(hitdir)*Vector2(1.3,1)
-		)
+		character.variable_velocity.y += (dir*500*abs(hitdir)).y
+		character.constant_velocity.attack_knockback = Vector2(dir.x*400,0)
+		timer.start()
+	)
 
-	
+func timeout():
+	create_tween().tween_method(setvelo,character.constant_velocity.attack_knockback.x,0,0.1)

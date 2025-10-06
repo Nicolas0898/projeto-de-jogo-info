@@ -90,6 +90,12 @@ position = Vector2(-12, -558)
 range = 403.0
 type = 1
 
+[node name="GrappleNode6" parent="." instance=ExtResource("6_d8yk5")]
+modulate = Color(0.74902, 0.992157, 1, 1)
+position = Vector2(2197, -345)
+range = 210.0
+type = 1
+
 [node name="GrappleNode3" parent="." instance=ExtResource("6_d8yk5")]
 position = Vector2(-962, -497)
 
