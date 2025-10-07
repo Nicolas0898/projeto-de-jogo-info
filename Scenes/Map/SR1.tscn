@@ -1,9 +1,106 @@
-[gd_scene load_steps=2 format=3 uid="uid://c7ofipch4giwq"]
+[gd_scene load_steps=7 format=4 uid="uid://i8w2xqbxvi5o"]
 
 [ext_resource type="PackedScene" uid="uid://brkn5mjfr67t4" path="res://Scenes/Player/Character.tscn" id="1_l0md1"]
+[ext_resource type="Texture2D" uid="uid://d21p6vp78u0fm" path="res://Images/tilemapswamp.png" id="2_r027e"]
+[ext_resource type="PackedScene" uid="uid://dv8vj3sg56vtp" path="res://Scenes/Entities/Dummy.tscn" id="3_kp8wh"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kp8wh"]
+texture = ExtResource("2_r027e")
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:0/0 = 0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:0/0 = 0
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:1/0 = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:1/0 = 0
+8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:2/0 = 0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:2/0 = 0
+5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:2/0 = 0
+6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:2/0 = 0
+7:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:2/0 = 0
+8:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:3/0 = 0
+4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:3/0 = 0
+5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:3/0 = 0
+6:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:3/0 = 0
+7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:3/0 = 0
+8:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_imis4"]
+physics_layer_0/collision_layer = 1
+sources/3 = SubResource("TileSetAtlasSource_kp8wh")
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_imis4"]
+distance = -20.0
 
 [node name="Node2D" type="Node2D"]
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_l0md1")]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(-1, 0)
+scale = Vector2(2, 2)
+tile_map_data = PackedByteArray("AAD5/wEAAwABAAAAAAD5/wIAAwABAAEAAAD6/wEAAwACAAAAAAD6/wIAAwACAAEAAAD7/wEAAwAFAAAAAAD7/wIAAwAFAAEAAAD8/wEAAwAGAAAAAAD8/wIAAwAGAAEAAAD9/wEAAwADAAAAAAD9/wIAAwADAAEAAAD+/wEAAwAEAAAAAAD+/wIAAwAEAAEAAAD//wEAAwADAAAAAAD//wIAAwADAAEAAAAAAAEAAwAFAAAAAAAAAAIAAwAFAAEAAAABAAEAAwAGAAAAAAABAAIAAwAGAAEAAAACAAEAAwAEAAAAAAACAAIAAwAEAAEAAAADAAEAAwADAAAAAAADAAIAAwADAAEAAAAEAAEAAwAEAAAAAAAEAAIAAwAEAAEAAAAFAAEAAwAFAAAAAAAFAAIAAwAFAAEAAAAGAAEAAwAGAAAAAAAGAAIAAwAGAAEAAAAHAAEAAwADAAAAAAAHAAIAAwADAAEAAAAIAAEAAwAEAAAAAAAIAAIAAwAEAAEAAAAJAAEAAwADAAAAAAAJAAIAAwADAAEAAAAKAAEAAwAEAAAAAAAKAAIAAwAEAAEAAAALAAEAAwAHAAAAAAALAAIAAwAHAAEAAAAMAAEAAwAIAAAAAAAMAAIAAwAIAAEAAAD5/wMAAwABAAIAAAD5/wQAAwABAAMAAAD6/wMAAwACAAIAAAD6/wQAAwACAAMAAAALAAMAAwAHAAIAAAALAAQAAwAHAAMAAAAMAAMAAwAIAAIAAAAMAAQAAwAIAAMAAAAJAAMAAwAFAAIAAAAJAAQAAwAFAAMAAAAKAAMAAwAGAAIAAAAKAAQAAwAGAAMAAAAFAAMAAwAFAAIAAAAFAAQAAwAFAAMAAAAGAAMAAwAGAAIAAAAGAAQAAwAGAAMAAAD7/wMAAwAFAAIAAAD7/wQAAwAFAAMAAAD8/wMAAwAGAAIAAAD8/wQAAwAGAAMAAAD//wMAAwAFAAIAAAD//wQAAwAFAAMAAAAAAAMAAwAGAAIAAAAAAAQAAwAGAAMAAAD9/wMAAwADAAIAAAD9/wQAAwADAAMAAAD+/wMAAwAEAAIAAAD+/wQAAwAEAAMAAAABAAMAAwADAAIAAAABAAQAAwADAAMAAAACAAMAAwAEAAIAAAACAAQAAwAEAAMAAAADAAMAAwADAAIAAAADAAQAAwADAAMAAAAEAAMAAwAEAAIAAAAEAAQAAwAEAAMAAAAHAAMAAwAFAAIAAAAHAAQAAwAFAAMAAAAIAAMAAwAGAAIAAAAIAAQAAwAGAAMAAAD7/wAAAwABAAQAAAD8/wAAAwACAAQAAAABAAAAAwADAAQAAAACAAAAAwAEAAQAAAD9/wAAAwADAAQAAAD+/wAAAwAEAAQAAAADAAAAAwAFAAQAAAAEAAAAAwAGAAQAAAAHAAAAAwAFAAQAAAAIAAAAAwAGAAQAAAALAAAAAwAHAAQAAAAMAAAAAwAIAAQAAAD5/wAAAwAHAAQAAAD6/wAAAwAIAAQAAAAFAAAAAwABAAQAAAAGAAAAAwACAAQAAAA=")
+tile_set = SubResource("TileSet_imis4")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1, 45)
+shape = SubResource("WorldBoundaryShape2D_imis4")
+
+[node name="Dummy" parent="." instance=ExtResource("3_kp8wh")]
+position = Vector2(127, 30)
