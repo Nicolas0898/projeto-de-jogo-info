@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dsaft7a5ut06v"]
+[gd_scene load_steps=13 format=3 uid="uid://dsaft7a5ut06v"]
 
 [ext_resource type="PackedScene" uid="uid://brkn5mjfr67t4" path="res://Scenes/Player/Character.tscn" id="1_7yamr"]
 [ext_resource type="Texture2D" uid="uid://bvw08myp2sjrb" path="res://Images/tilemap2.png" id="2_85qc2"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://blfwkqgeamobt" path="res://Scripts/Components/Hitbox.gd" id="3_r3tca"]
 [ext_resource type="PackedScene" uid="uid://dv8vj3sg56vtp" path="res://Scenes/Entities/Dummy.tscn" id="6_1e30r"]
 [ext_resource type="PackedScene" uid="uid://bvmugmme4p6nf" path="res://Scenes/Objects/grapple_node.tscn" id="6_d8yk5"]
+[ext_resource type="PackedScene" uid="uid://dfcki0ewl81yj" path="res://Scenes/Objects/coin.tscn" id="7_1e30r"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7yamr"]
 
@@ -93,7 +94,7 @@ type = 1
 [node name="GrappleNode6" parent="." instance=ExtResource("6_d8yk5")]
 modulate = Color(0.74902, 0.992157, 1, 1)
 position = Vector2(2197, -345)
-range = 210.0
+range = 300.0
 type = 1
 
 [node name="GrappleNode3" parent="." instance=ExtResource("6_d8yk5")]
@@ -112,3 +113,6 @@ position = Vector2(1713, -320)
 
 [node name="Dummy2" parent="." instance=ExtResource("6_1e30r")]
 position = Vector2(1855, -319)
+
+[node name="RigidBody2D" parent="." instance=ExtResource("7_1e30r")]
+position = Vector2(1712, -393)

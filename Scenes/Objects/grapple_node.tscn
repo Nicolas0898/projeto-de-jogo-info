@@ -6,6 +6,7 @@
 [node name="GrappleNode" type="Node2D" groups=["GrappleNode"]]
 modulate = Color(0.996078, 1, 0.658824, 1)
 z_index = 2
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_wkgti")
 range = 250.0
 

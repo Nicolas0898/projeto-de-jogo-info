@@ -21,7 +21,7 @@ size = Vector2(18, 58)
 [node name="Dummy" type="CharacterBody2D"]
 z_index = -1
 material = SubResource("ShaderMaterial_bpnk2")
-collision_layer = 0
+collision_layer = 2
 
 [node name="Dummy" type="Sprite2D" parent="."]
 use_parent_material = true

@@ -20,6 +20,7 @@ var variable_velocity = Vector2()
 var true_constant_velocity = Vector2.ZERO
 var player_input = Vector2.ZERO
 var last_looked_at = Vector2(1,0)
+var total_coins: int= 0
 
 func _ready() -> void:
 	GameHandler.Player = self
@@ -31,6 +32,7 @@ func _ready() -> void:
 	%DebugMenu.watch_as_vector(self,"velocity")
 	%DebugMenu.watch_as_vector(self,"player_input")
 	%DebugMenu.watch_as_vector(self,"last_looked_at")
+	%DebugMenu.watch(self,"total_coins")
 
 func default_player_input(local_mult=1):
 	var axis = Input.get_axis("left","right")
