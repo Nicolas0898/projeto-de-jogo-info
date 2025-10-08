@@ -97,7 +97,7 @@ tile_set = SubResource("TileSet_6tdgv")
 [node name="GrappleNode2" parent="." instance=ExtResource("3_qwvwv")]
 modulate = Color(0.74902, 0.992157, 1, 1)
 position = Vector2(340, -147)
-range = 403.0
+range = 148.0
 type = 1
 
 [node name="RigidBody2D" parent="." instance=ExtResource("4_nk1bh")]

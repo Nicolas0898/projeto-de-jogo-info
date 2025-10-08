@@ -1,12 +1,15 @@
 extends Area2D
 class_name Hitbox
 
+@export_category("Damage")
 @export var damage:float=0
-@export_category("knockback")
+@export var stun:bool = true
+@export_category("Knockback")
 @export var knockback:Vector2=Vector2(1,1)
 @export var override_direction:bool=false
 @export var direction:Vector2=Vector2.ZERO
 @export var one_hit:bool = false
+
 
 var ignore = []
 
