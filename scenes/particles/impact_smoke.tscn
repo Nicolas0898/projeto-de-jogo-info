@@ -24,6 +24,8 @@ curve = SubResource("Curve_ca0x4")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_sl1eh"]
 particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(10, 1, 1)
 angle_min = -1169.5
 angle_max = 720.0
 direction = Vector3(0, -50, 0)
