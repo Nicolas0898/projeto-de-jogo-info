@@ -17,6 +17,10 @@ func use():
 	if on_cooldown: return
 	var size = Vector2(40,15)
 	var hitbox = Hitbox.from_rect(5,size)
+	var center = Node2D.new()
+	center.position = Vector2(size.x/2,0);
+	center.name = "center"
+	hitbox.add_child(center)
 	
 	var sprite = SPEAR.instantiate()
 	set_on_cooldown()

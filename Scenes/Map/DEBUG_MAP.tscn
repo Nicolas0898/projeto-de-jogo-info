@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dsaft7a5ut06v"]
+[gd_scene load_steps=13 format=3 uid="uid://dsaft7a5ut06v"]
 
 [ext_resource type="PackedScene" uid="uid://brkn5mjfr67t4" path="res://Scenes/Player/Character.tscn" id="1_7yamr"]
 [ext_resource type="Texture2D" uid="uid://bvw08myp2sjrb" path="res://Images/tilemap2.png" id="2_85qc2"]
@@ -32,6 +32,9 @@ sources/0 = SubResource("TileSetAtlasSource_a0ayn")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_85qc2"]
 size = Vector2(95, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d8yk5"]
+size = Vector2(15, 29.1667)
 
 [node name="Node2D" type="Node2D"]
 
@@ -136,7 +139,20 @@ position = Vector2(-3194, -308)
 type = 1
 
 [node name="Dummy" parent="." instance=ExtResource("6_1e30r")]
+modulate = Color(0.183594, 0.0847029, 0.0831909, 1)
 position = Vector2(1713, -320)
+
+[node name="Hitbox" type="Area2D" parent="Dummy"]
+collision_layer = 0
+collision_mask = 16
+script = ExtResource("3_r3tca")
+damage = 5.0
+metadata/_custom_type_script = "uid://blfwkqgeamobt"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dummy/Hitbox"]
+position = Vector2(0, -13.75)
+shape = SubResource("RectangleShape2D_d8yk5")
+debug_color = Color(0.991395, 0, 0.266132, 0.42)
 
 [node name="Dummy2" parent="." instance=ExtResource("6_1e30r")]
 position = Vector2(1855, -319)

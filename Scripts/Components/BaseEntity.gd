@@ -8,7 +8,7 @@ var true_constant_velocity = Vector2.ZERO
 
 func apply_gravity(delta:float):
 	variable_velocity  += get_gravity()*delta
-	variable_velocity.x += -variable_velocity.normalized().x*30
+	variable_velocity.x += -variable_velocity.normalized().x*20
 
 func check_for_collisions(wall=true,floor=true,ceiling=true):
 	if wall and is_on_wall():

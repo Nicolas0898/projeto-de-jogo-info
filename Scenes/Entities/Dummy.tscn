@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dv8vj3sg56vtp"]
+[gd_scene load_steps=12 format=3 uid="uid://dv8vj3sg56vtp"]
 
 [ext_resource type="Shader" uid="uid://lk8vqo6nbyf3" path="res://Shaders/Character.gdshader" id="1_51ege"]
 [ext_resource type="Script" uid="uid://b4v73lx8blb1p" path="res://Scripts/Components/BaseEntity.gd" id="2_ah27q"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://1ughpmhhrew" path="res://Scripts/Components/HealthComponent.gd" id="4_ah27q"]
 [ext_resource type="Script" uid="uid://lurpfwbx4y8w" path="res://Scripts/StateMachine/StateMachine.gd" id="5_lb43t"]
 [ext_resource type="Script" uid="uid://cs5dlp1kmtf34" path="res://Scenes/Entities/Dummy/idle.gd" id="7_ah27q"]
+[ext_resource type="Script" uid="uid://b4s2bxlcya30p" path="res://Scenes/Entities/state.gd" id="8_bpnk2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bpnk2"]
 shader = ExtResource("1_51ege")
@@ -50,7 +51,7 @@ debug_color = Color(0.900038, 0.251206, 0.477393, 0.42)
 
 [node name="HealthComponent" type="Node" parent="."]
 script = ExtResource("4_ah27q")
-max_health = 1e+17
+max_health = 20.0
 metadata/_custom_type_script = "uid://1ughpmhhrew"
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initialState")]
@@ -60,4 +61,8 @@ metadata/_custom_type_script = "uid://lurpfwbx4y8w"
 
 [node name="Idle" type="Node" parent="StateMachine"]
 script = ExtResource("7_ah27q")
+metadata/_custom_type_script = "uid://ca8wa4d6wsrqb"
+
+[node name="Died" type="Node" parent="StateMachine"]
+script = ExtResource("8_bpnk2")
 metadata/_custom_type_script = "uid://ca8wa4d6wsrqb"

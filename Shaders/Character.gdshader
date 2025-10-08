@@ -15,7 +15,7 @@ void vertex() {
 }
 
 void fragment() {
-	vec4 pixel = texture(TEXTURE,UV);
+	vec4 pixel = COLOR;
 	float alpha = pixel.a;
 	
 	COLOR = lerpv4(vec4(1,1,1,alpha) * blink_color,pixel,1.0-factor);

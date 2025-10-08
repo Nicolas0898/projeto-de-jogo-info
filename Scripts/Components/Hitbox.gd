@@ -25,7 +25,7 @@ func onAreaEntered(other:Area2D):
 
 static func from_rect(damage,size:Vector2,lifetime=0.2,target=ENEMY) -> Hitbox:
 	var hitbox = Hitbox.new()
-	hitbox.damage = 10
+	hitbox.damage = damage
 	hitbox.one_hit = true
 
 	hitbox.set_collision_mask_value(target,true)

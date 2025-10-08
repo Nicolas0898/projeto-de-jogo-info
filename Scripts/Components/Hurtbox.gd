@@ -13,6 +13,7 @@ func onHit(hitbox:Hitbox):
 	print(damage)
 	health_component.takeDamage(damage)
 	print(health_component.health)
+	
 	var shader = get_parent().material as ShaderMaterial
 	if not get_parent().has_meta("isshaderunique"):
 		get_parent().material = shader.duplicate()

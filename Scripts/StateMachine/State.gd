@@ -3,7 +3,7 @@ class_name State
 
 var stateMachine:StateMachine 
 var stateData = {}
-var character = null
+var character:BaseEntity = null
 
 func _ready() -> void:
 	if get_parent() is not StateMachine:
