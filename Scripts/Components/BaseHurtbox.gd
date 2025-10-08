@@ -1,0 +1,22 @@
+extends Hurtbox
+class_name BaseHurtbox
+
+@onready var character:BaseEntity = $".."
+
+func onHit(hitbox:Hitbox):
+	super(hitbox)
+	print("MEOW")
+	Time.get_ticks_msec()
+	var pos = null
+	for node in hitbox.get_children():
+		if node is CollisionShape2D:
+			if not pos: pos=node.global_position
+			else: pos = (pos+node.global_position)/2
+		
+	character.variable_velocity = Vector2.ZERO
+	character.state_machine.requestStateChange("Falling")
+	var direction = pos.direction_to(character.global_position)
+	if hitbox.override_direction:
+		direction = hitbox.direction
+	character.variable_velocity += direction*600*hitbox.knockback
+	

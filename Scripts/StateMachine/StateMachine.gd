@@ -13,6 +13,7 @@ func _ready() -> void:
 	for i in get_children():
 		if i is State:
 			avaliableStates[i.name.to_lower()] = i
+			i.character = character
 	
 	currentState = initialState
 	initialState.onStateEntered(null)

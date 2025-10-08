@@ -3,6 +3,7 @@ class_name State
 
 var stateMachine:StateMachine 
 var stateData = {}
+var character = null
 
 func _ready() -> void:
 	if get_parent() is not StateMachine:
@@ -10,6 +11,7 @@ func _ready() -> void:
 		return
 	
 	stateMachine = get_parent()
+	
 	begin()
 
 func begin():

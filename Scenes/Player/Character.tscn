@@ -10,9 +10,9 @@
 [ext_resource type="Script" uid="uid://da55i10v01nie" path="res://Scripts/scenes/hook_select.gd" id="4_u5us2"]
 [ext_resource type="Script" uid="uid://m216pt8kh4te" path="res://Scenes/Player/jumping.gd" id="5_nwviy"]
 [ext_resource type="PackedScene" uid="uid://bxj8gcdynfh0a" path="res://Scenes/Debug/debug_menu.tscn" id="5_owfaj"]
-[ext_resource type="Script" uid="uid://0d7bnicgm37i" path="res://Scenes/Player/PlayerHurtbox.gd" id="6_aeg27"]
 [ext_resource type="Script" uid="uid://bub1gegedpdbu" path="res://Scenes/Player/falling.gd" id="6_try8w"]
 [ext_resource type="Script" uid="uid://dfc0mjbfa4jjx" path="res://Scenes/Player/crouching.gd" id="7_8qehs"]
+[ext_resource type="Script" uid="uid://b1cpv48cjcpkd" path="res://Scenes/Player/PlayerHurtbox.gd" id="7_qyni0"]
 [ext_resource type="Script" uid="uid://1ughpmhhrew" path="res://Scripts/Components/HealthComponent.gd" id="9_scwnk"]
 [ext_resource type="Texture2D" uid="uid://fu2g1kbm22vm" path="res://Images/Player/corrida/corrida1.png" id="11_2yp3h"]
 [ext_resource type="Texture2D" uid="uid://bj2h7m3qykdle" path="res://Images/Player/fall/pulo-descendo.1.png" id="11_qk417"]
@@ -119,6 +119,8 @@ material = SubResource("ShaderMaterial_qyni0")
 collision_layer = 4
 script = ExtResource("1_d8n76")
 speed = 150
+gravity_multiplier = null
+jump_power = null
 
 [node name="Spear" type="Node2D" parent="."]
 script = ExtResource("31_qyni0")
@@ -140,7 +142,7 @@ script = ExtResource("4_u5us2")
 position = Vector2(-0.841728, 0)
 collision_layer = 16
 collision_mask = 0
-script = ExtResource("6_aeg27")
+script = ExtResource("7_qyni0")
 health_component = NodePath("../HealthComponent")
 metadata/_custom_type_script = "uid://d0xnltbvtmvwv"
 
@@ -218,10 +220,8 @@ target_position = Vector2(0, -32)
 use_parent_material = true
 position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_a0efk")
-animation = &"idle"
+animation = &"fall"
 autoplay = "idle"
-frame = 3
-frame_progress = 1.0
 offset = Vector2(0.920864, -1.3813)
 
 [node name="Crouching" type="Node" parent="."]

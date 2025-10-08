@@ -1,4 +1,4 @@
-extends CharacterBody2D
+extends BaseEntity
 class_name PlayerCharacter
 
 @export var speed = 200
@@ -7,7 +7,6 @@ class_name PlayerCharacter
 var speed_multiplier = 1
 
 @onready var camera: Camera2D = $Camera2D
-@onready var state_machine: StateMachine = $StateMachine
 @onready var hitbox: CollisionShape2D = $Hitbox
 @onready var sprite: AnimatedSprite2D = $Sprite
 @onready var crouch_cast: RayCast2D = $CrouchCast
@@ -15,9 +14,7 @@ var speed_multiplier = 1
 @onready var top_edge_cast: RayCast2D = $TopEdgeCast
 @onready var hurtbox: Hurtbox = $Hurtbox
 
-var constant_velocity = {"input":Vector2(),"jump":Vector2.ZERO}
-var variable_velocity = Vector2()
-var true_constant_velocity = Vector2.ZERO
+
 var player_input = Vector2.ZERO
 var last_looked_at = Vector2(1,0)
 
@@ -52,27 +49,3 @@ func default_player_input(local_mult=1):
 
 func clear_player_input():
 	constant_velocity.input = Vector2(0,0)
-
-func apply_gravity(delta:float):
-	variable_velocity  += get_gravity()*delta
-	variable_velocity.x += -variable_velocity.normalized().x*40
-
-func check_for_collisions(wall=true,floor=true,ceiling=true):
-	if wall and is_on_wall():
-		variable_velocity.x = 0
-	
-	if floor and is_on_floor() and variable_velocity.y>0:
-		variable_velocity.y = 0
-	
-	if floor and is_on_ceiling() and variable_velocity.y<0:
-		variable_velocity.y = 0
-
-func update_velocity():
-	true_constant_velocity = Vector2.ZERO
-	for index in constant_velocity:
-		true_constant_velocity+=constant_velocity[index]
-	velocity = variable_velocity + true_constant_velocity
-
-func default_move():
-	update_velocity()
-	move_and_slide()

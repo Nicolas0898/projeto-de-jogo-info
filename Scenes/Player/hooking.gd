@@ -36,7 +36,7 @@ func boost_character(y=-400):
 	var character:PlayerCharacter= stateMachine.character
 	character.variable_velocity.y = 0
 	character.variable_velocity.y+=y
-	character.variable_velocity += character.true_constant_velocity*1.3
+	character.variable_velocity += character.true_constant_velocity*1.7
 
 func onStateExit():
 	current_active_rope.queue_free()
