@@ -15,7 +15,7 @@ func _ready() -> void:
 
 func use():
 	if on_cooldown: return
-	var size = Vector2(60,15)
+	var size = Vector2(40,15)
 	var hitbox = Hitbox.from_rect(5,size)
 	
 	var sprite = SPEAR.instantiate()
@@ -40,10 +40,10 @@ func use():
 		sprite.queue_free())
 	var hitdir = character.last_looked_at
 	hitbox.onHit.connect(func(other):
-		var dir = other.global_position.direction_to(character.global_position)
+		var dir = other.global_position.direction_to(character.global_position).normalized()
 		character.variable_velocity *= Vector2.ONE-abs(hitdir)
-		character.variable_velocity.y += (dir*500*abs(hitdir)).y
-		character.constant_velocity.attack_knockback = Vector2(dir.x*400,0)
+		character.variable_velocity.y += (dir*300*abs(hitdir)).y
+		character.constant_velocity.attack_knockback = Vector2(dir.x*170,0)
 		timer.start()
 	)
 

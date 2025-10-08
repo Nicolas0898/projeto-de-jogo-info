@@ -92,7 +92,7 @@ use_weapon={
 
 [physics]
 
-2d/default_gravity=1470.0
+2d/default_gravity=1102.5
 
 [rendering]
 

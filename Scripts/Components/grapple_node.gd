@@ -21,4 +21,4 @@ const pull_color = "#bffdff"
 
 func _draw() -> void:
 	if Engine.is_editor_hint():
-		draw_circle(Vector2.ZERO,range,Color.AQUAMARINE,false,2,true)
+		draw_circle(Vector2.ZERO,range/scale.x,Color.AQUAMARINE,false,2,true)

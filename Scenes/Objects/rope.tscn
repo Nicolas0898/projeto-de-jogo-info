@@ -11,6 +11,7 @@ texture = ExtResource("1_nww1f")
 texture_mode = 1
 script = ExtResource("1_ig1xv")
 n_points = 7
+distance = 5.0
 
 [node name="Target" type="Node2D" parent="."]
 top_level = true

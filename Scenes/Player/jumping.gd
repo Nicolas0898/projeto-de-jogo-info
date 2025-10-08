@@ -1,6 +1,6 @@
 extends State
 
-var max_jumptime = 0.3
+var max_jumptime = 0.3 
 var jumptime = 0
 
 func _ready() -> void:
@@ -9,7 +9,7 @@ func _ready() -> void:
 
 func onPhysics(delta:float):
 	var player:PlayerCharacter = stateMachine.character
-	player.constant_velocity.jump = Vector2(0,-500)
+	player.constant_velocity.jump = Vector2(0,-270)
 	player.check_for_collisions()
 	player.default_player_input()
 	player.default_move()
@@ -17,7 +17,7 @@ func onPhysics(delta:float):
 	jumptime+=delta
 	if jumptime>= max_jumptime:
 		stateMachine.requestStateChange("Falling")
-		player.variable_velocity.y = -400
+		player.variable_velocity.y = -170
 	
 	if player.top_edge_cast.get_collider():
 		stateMachine.requestStateChange("Falling")

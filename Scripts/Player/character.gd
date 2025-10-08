@@ -40,7 +40,7 @@ func default_player_input(local_mult=1):
 	elif axis<0:
 		sprite.flip_h = true
 	
-	top_edge_cast.position.x = axis*13
+	top_edge_cast.position.x = axis*6
 	player_input = Input.get_vector("left","right","up","down")
 	
 	if player_input!=Vector2.ZERO:

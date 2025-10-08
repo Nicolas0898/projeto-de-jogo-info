@@ -13,24 +13,25 @@ shader_parameter/blink_color = Color(1, 1, 1, 1)
 shader_parameter/factor = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ulpu"]
-size = Vector2(42, 58)
+size = Vector2(20, 28)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t1qad"]
-size = Vector2(18, 58)
+size = Vector2(8, 25)
 
 [node name="Dummy" type="CharacterBody2D"]
 z_index = -1
 material = SubResource("ShaderMaterial_bpnk2")
+scale = Vector2(1.2, 1.2)
 collision_layer = 0
 
 [node name="Dummy" type="Sprite2D" parent="."]
 use_parent_material = true
-position = Vector2(0, -29)
-scale = Vector2(0.24375, 0.24375)
+position = Vector2(0, -14)
+scale = Vector2(0.122, 0.122)
 texture = ExtResource("2_wes3n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -29)
+position = Vector2(0, -14)
 shape = SubResource("RectangleShape2D_8ulpu")
 
 [node name="Hurtbox" type="Area2D" parent="." node_paths=PackedStringArray("health_component")]
@@ -41,7 +42,7 @@ health_component = NodePath("../HealthComponent")
 metadata/_custom_type_script = "uid://d0xnltbvtmvwv"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
-position = Vector2(0, -29)
+position = Vector2(0, -12.5)
 shape = SubResource("RectangleShape2D_t1qad")
 debug_color = Color(0.900038, 0.251206, 0.477393, 0.42)
 

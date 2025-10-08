@@ -55,7 +55,7 @@ func set_hook_visibility(value):
 		hook_select.rotation_degrees=-45
 		hook_select.scale = Vector2(0,0)
 		t.parallel().tween_property(hook_select,"rotation_degrees",45,0.5)
-		t.parallel().tween_property(hook_select,"scale",Vector2(1,1),0.4)
+		t.parallel().tween_property(hook_select,"scale",Vector2(.8,0.8),0.4)
 	else:
 		hook_select.rotation_degrees=-45
 		hook_select.scale = Vector2(1,1)
