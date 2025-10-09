@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c85cws6uaamkk"]
+
+[ext_resource type="FontFile" uid="uid://b71f1nslp8bqt" path="res://fonts/BoldPixels.ttf" id="1_qrcxy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fxky5"]
+font = ExtResource("1_qrcxy")
+font_size = 14
+font_color = Color(1, 1, 1, 0.647059)
+
+[node name="question" type="Label"]
+custom_minimum_size = Vector2(300, 0)
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "*Alternativa 1"
+label_settings = SubResource("LabelSettings_fxky5")
+autowrap_mode = 3

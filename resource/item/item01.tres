@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://bkc1lpavt6c4c"]
+
+[ext_resource type="Script" uid="uid://bu8krnugqph56" path="res://script/item_scripts/item.gd" id="1_sx5dn"]
+
+[resource]
+script = ExtResource("1_sx5dn")
+name = "Espada"
+desc = ""
+metadata/_custom_type_script = "uid://bu8krnugqph56"
