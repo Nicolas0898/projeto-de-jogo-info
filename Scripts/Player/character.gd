@@ -49,3 +49,8 @@ func default_player_input(local_mult=1):
 
 func clear_player_input():
 	constant_velocity.input = Vector2(0,0)
+
+func _process(delta: float) -> void:
+	print("ah")
+	RenderingServer.global_shader_parameter_set("camera_pos",camera.global_position)
+	

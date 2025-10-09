@@ -329,6 +329,7 @@ texture = ExtResource("1_1pj75")
 8:4/0 = 0
 
 [resource]
+uv_clipping = true
 physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Ground"

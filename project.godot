@@ -99,3 +99,10 @@ use_weapon={
 textures/canvas_textures/default_texture_filter=0
 viewport/hdr_2d=true
 environment/defaults/default_clear_color=Color(0.169245, 0.169245, 0.169245, 1)
+
+[shader_globals]
+
+camera_pos={
+"type": "vec2",
+"value": Vector2(0, 0)
+}
