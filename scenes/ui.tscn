@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cc2qsjoqgcdqu"]
+[gd_scene load_steps=27 format=3 uid="uid://cc2qsjoqgcdqu"]
 
 [ext_resource type="Script" uid="uid://dfxy21hd8djmg" path="res://script/ui.gd" id="1_nt7q6"]
 [ext_resource type="Script" uid="uid://cffdhewqtjjw1" path="res://script/dialogue_scripts/dialogue_node.gd" id="2_yev5y"]
@@ -9,6 +9,7 @@
 [ext_resource type="Resource" uid="uid://dgpov81f2hcdm" path="res://resource/item/item02.tres" id="7_p7vwb"]
 [ext_resource type="Resource" uid="uid://dhj1nx7sy3gd2" path="res://resource/item/Poção_cura.tres" id="8_cgfq5"]
 [ext_resource type="Script" uid="uid://bynmlovsbvyqt" path="res://script/interact/confirm.gd" id="9_cgfq5"]
+[ext_resource type="Texture2D" uid="uid://dx6ickvyph0l3" path="res://Images/items/moneyInv.png" id="9_nt8jn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nt7q6"]
 bg_color = Color(0, 0, 0, 0.290196)
@@ -39,6 +40,17 @@ corner_radius_bottom_right = 25
 
 [sub_resource type="Theme" id="Theme_hj2ta"]
 Panel/styles/panel = SubResource("StyleBoxFlat_gdt2y")
+
+[sub_resource type="Resource" id="Resource_g0wmg"]
+script = ExtResource("5_wm3ai")
+name = "Plumérico"
+desc = "Dinheiro unificado da ilha, criado pelo Reino Branco"
+amount = 1
+cooldown = 0.0
+display = 1
+sprite = ExtResource("9_nt8jn")
+confirm = false
+metadata/_custom_type_script = "uid://bu8krnugqph56"
 
 [sub_resource type="LabelSettings" id="LabelSettings_yev5y"]
 font = ExtResource("3_gdt2y")
@@ -188,7 +200,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = SubResource("Theme_hj2ta")
 script = ExtResource("4_gdt2y")
-inventario = Array[ExtResource("5_wm3ai")]([ExtResource("6_8dubc"), ExtResource("7_p7vwb"), ExtResource("8_cgfq5")])
+inventario = Array[ExtResource("5_wm3ai")]([ExtResource("6_8dubc"), ExtResource("7_p7vwb"), ExtResource("8_cgfq5"), SubResource("Resource_g0wmg")])
 
 [node name="Panel" type="Panel" parent="Inventory"]
 layout_mode = 1

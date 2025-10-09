@@ -19,7 +19,7 @@ var c : Array #Itens em cooldown
 func refreshing():
 	if not GameHandler.Player: return
 	status_label.text = 'Vida: ' + str(GameHandler.Player.health_component.health)\
-	+ '\nDinheiro: \nEtc... (adicionar depois)'
+	+ '\nDinheiro: '+ str(GameHandler.total_coins)
 	
 	for i in range(len(inventario)):
 		if inventario[i].amount <= 0: #Caso seja removido do inventário

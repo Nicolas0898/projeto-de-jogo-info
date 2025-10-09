@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=4 uid="uid://cwrl44jwaopp4"]
+[gd_scene load_steps=9 format=4 uid="uid://cwrl44jwaopp4"]
 
 [ext_resource type="PackedScene" uid="uid://brkn5mjfr67t4" path="res://Scenes/Player/Character.tscn" id="1_l0md1"]
 [ext_resource type="TileSet" uid="uid://cyll24yrphmu5" path="res://Scenes/Map/JUNGLE_TILESET.tres" id="2_kp8wh"]
 [ext_resource type="PackedScene" uid="uid://dv8vj3sg56vtp" path="res://Scenes/Entities/Dummy.tscn" id="3_kp8wh"]
 [ext_resource type="Shader" uid="uid://b0vwl8qpm7kj2" path="res://Shaders/water.gdshader" id="4_47g53"]
 [ext_resource type="TileSet" uid="uid://bnjnwtobjhkof" path="res://Scenes/Map/WATER_JUNGLE.tres" id="4_imis4"]
+[ext_resource type="PackedScene" uid="uid://dfcki0ewl81yj" path="res://Scenes/Objects/coin.tscn" id="6_0y5pv"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_imis4"]
 distance = -7.0
@@ -34,7 +35,7 @@ position = Vector2(0, 29)
 shape = SubResource("WorldBoundaryShape2D_imis4")
 
 [node name="Dummy" parent="." instance=ExtResource("3_kp8wh")]
-position = Vector2(127, 30)
+position = Vector2(126, 17)
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
 modulate = Color(0.733005, 0.733005, 0.733005, 1)
@@ -42,3 +43,21 @@ z_index = 4
 material = SubResource("ShaderMaterial_0y5pv")
 tile_map_data = PackedByteArray("AAD4/wIAAQAAAAAAAAD3/wIAAQAAAAAAAAD2/wIAAQAAAAAAAAD1/wIAAQAAAAAAAAD0/wIAAQAAAAAAAADz/wIAAQAAAAAAAADy/wIAAQAAAAAAAADx/wIAAQAAAAAAAADw/wIAAQAAAAAAAADv/wIAAQAAAAAAAADu/wIAAQAAAAAAAADt/wIAAQAAAAAAAADs/wIAAQAAAAAAAADr/wIAAQAAAAAAAADq/wIAAQAAAAAAAADo/wIAAQAAAAAAAADo/wQAAgAAAAAAAADq/wQAAgAAAAAAAADr/wQAAgAAAAAAAADs/wQAAgAAAAAAAADu/wQAAgAAAAAAAADv/wQAAgAAAAAAAADw/wQAAgAAAAAAAADx/wQAAgAAAAAAAADy/wQAAgAAAAAAAAD0/wQAAgAAAAAAAAD1/wQAAgAAAAAAAAD2/wQAAgAAAAAAAAD3/wQAAgAAAAAAAAD4/wQAAgAAAAAAAAA=")
 tile_set = ExtResource("4_imis4")
+
+[node name="RigidBody2D" parent="." instance=ExtResource("6_0y5pv")]
+position = Vector2(47, -60)
+
+[node name="RigidBody2D2" parent="." instance=ExtResource("6_0y5pv")]
+position = Vector2(-29, -72)
+
+[node name="RigidBody2D3" parent="." instance=ExtResource("6_0y5pv")]
+position = Vector2(7, -57)
+
+[node name="RigidBody2D4" parent="." instance=ExtResource("6_0y5pv")]
+position = Vector2(-250, -69)
+
+[node name="RigidBody2D5" parent="." instance=ExtResource("6_0y5pv")]
+position = Vector2(-314, -43)
+
+[node name="RigidBody2D6" parent="." instance=ExtResource("6_0y5pv")]
+position = Vector2(-216, -43)
