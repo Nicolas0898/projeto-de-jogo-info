@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://dasfu8n7i6i6w"]
+
+[ext_resource type="Texture2D" uid="uid://hsmiytcrdm3q" path="res://sprites/smoke_spritesheet.png" id="1_r2t7m"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_iilxo"]
+particles_animation = true
+particles_anim_h_frames = 4
+particles_anim_v_frames = 4
+particles_anim_loop = true
+
+[sub_resource type="Gradient" id="Gradient_s8tqw"]
+offsets = PackedFloat32Array(0, 0.181818, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0.937255, 0.937255, 0.937255, 0.439216, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_niign"]
+gradient = SubResource("Gradient_s8tqw")
+
+[sub_resource type="Curve" id="Curve_ca0x4"]
+_data = [Vector2(0, 0.370787), 0.0, 8.86292, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_o88gx"]
+curve = SubResource("Curve_ca0x4")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_sl1eh"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(10, 1, 1)
+angle_min = -1169.5
+angle_max = 720.0
+direction = Vector3(0, -50, 0)
+spread = 90.0
+initial_velocity_max = 50.0
+linear_accel_min = -9.2
+linear_accel_max = 2.0
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_o88gx")
+color_ramp = SubResource("GradientTexture1D_niign")
+anim_speed_max = 1.0
+
+[node name="impact_smoke" type="GPUParticles2D"]
+self_modulate = Color(1.105, 1, 1, 1)
+material = SubResource("CanvasItemMaterial_iilxo")
+emitting = false
+amount = 10
+amount_ratio = 0.5
+texture = ExtResource("1_r2t7m")
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 120
+process_material = SubResource("ParticleProcessMaterial_sl1eh")

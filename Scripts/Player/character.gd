@@ -13,6 +13,7 @@ var speed_multiplier = 1
 @onready var crouch_cast_2: RayCast2D = $CrouchCast2
 @onready var top_edge_cast: RayCast2D = $TopEdgeCast
 @onready var hurtbox: Hurtbox = $Hurtbox
+@onready var health_component: HealthComponent = $HealthComponent
 
 
 var player_input = Vector2.ZERO
@@ -49,8 +50,4 @@ func default_player_input(local_mult=1):
 
 func clear_player_input():
 	constant_velocity.input = Vector2(0,0)
-
-func _process(delta: float) -> void:
-	print("ah")
-	RenderingServer.global_shader_parameter_set("camera_pos",camera.global_position)
 	

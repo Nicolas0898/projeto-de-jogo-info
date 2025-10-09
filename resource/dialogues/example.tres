@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="Dialogue" load_steps=15 format=3 uid="uid://de0v2mqsnut7u"]
 
 [ext_resource type="Script" uid="uid://bi0pwfqucqrqb" path="res://script/dialogue_scripts/Messages.gd" id="1_xvald"]
-[ext_resource type="Texture2D" uid="uid://dj18igomomhvl" path="res://testing/border.png" id="2_1apce"]
+[ext_resource type="Texture2D" uid="uid://dj18igomomhvl" path="res://sprites/primary_border.png" id="2_1apce"]
 [ext_resource type="Script" uid="uid://cs47kxe2lnqwp" path="res://script/interact/Choice.gd" id="2_d6nhr"]
-[ext_resource type="Texture2D" uid="uid://4x2jd0qevsju" path="res://icon.svg" id="2_yg4uy"]
+[ext_resource type="Texture2D" uid="uid://c8aurw5u3idxd" path="res://icon.svg" id="2_yg4uy"]
 [ext_resource type="Script" uid="uid://8err0wuw08y8" path="res://script/dialogue_scripts/Dialogue.gd" id="3_ro8ku"]
 [ext_resource type="Script" uid="uid://crbolew7dydjc" path="res://script/dialogue_scripts/Question.gd" id="4_04840"]
 

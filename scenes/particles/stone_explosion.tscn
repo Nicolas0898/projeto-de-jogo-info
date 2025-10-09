@@ -1,0 +1,64 @@
+[gd_scene load_steps=12 format=3 uid="uid://yjdw7q4abukx"]
+
+[ext_resource type="Texture2D" uid="uid://cy152bdu8s4gi" path="res://sprites/stone_pack.png" id="1_5bfco"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nd8f8"]
+particles_animation = true
+particles_anim_h_frames = 3
+particles_anim_v_frames = 2
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_5bfco"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.808989), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_lxnrk"]
+curve = SubResource("Curve_5bfco")
+
+[sub_resource type="Gradient" id="Gradient_828lp"]
+offsets = PackedFloat32Array(0, 0.154545, 0.754545, 0.990909)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0.533333, 0.537255, 0.756863, 0.27451, 0.737255, 0.737255, 1, 0.227451, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_abus7"]
+gradient = SubResource("Gradient_828lp")
+
+[sub_resource type="Curve" id="Curve_yqryh"]
+
+[sub_resource type="CurveTexture" id="CurveTexture_d40ag"]
+curve = SubResource("Curve_yqryh")
+
+[sub_resource type="Curve" id="Curve_fxwgi"]
+_data = [Vector2(0, 0.0898877), 0.0, 0.0, 0, 0, Vector2(0.161765, 0.977528), 0.0, 0.0, 0, 0, Vector2(0.904412, 0.595506), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_71lkd"]
+curve = SubResource("Curve_fxwgi")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_828lp"]
+particle_flag_disable_z = true
+angle_min = 1.07288e-05
+angle_max = 180.0
+angle_curve = SubResource("CurveTexture_lxnrk")
+direction = Vector3(0, -1, 0)
+spread = 60.0
+initial_velocity_min = 20.0
+initial_velocity_max = 70.0
+gravity = Vector3(0, 100, 0)
+linear_accel_min = -20.54
+linear_accel_max = -20.0
+linear_accel_curve = SubResource("CurveTexture_d40ag")
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_71lkd")
+color_ramp = SubResource("GradientTexture1D_abus7")
+anim_offset_max = 1.0
+
+[node name="stone_explosion" type="GPUParticles2D"]
+material = SubResource("CanvasItemMaterial_nd8f8")
+amount = 10
+texture = ExtResource("1_5bfco")
+lifetime = 0.8
+explosiveness = 1.0
+randomness = 1.0
+fixed_fps = 120
+draw_order = 0
+process_material = SubResource("ParticleProcessMaterial_828lp")

@@ -1,0 +1,102 @@
+[gd_scene load_steps=9 format=3 uid="uid://cfu0ryng2qboi"]
+
+[ext_resource type="Script" uid="uid://duhoam7unvbox" path="res://script/item_scripts/item_display.gd" id="1_qv0ky"]
+[ext_resource type="FontFile" uid="uid://b71f1nslp8bqt" path="res://fonts/BoldPixels.ttf" id="2_ho72g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qv0ky"]
+bg_color = Color(0.88389, 0.488669, 0.890304, 0.494118)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j3ar2"]
+bg_color = Color(0.136055, 0.135895, 0.178178, 0.494118)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 3
+
+[sub_resource type="Theme" id="Theme_qv0ky"]
+Button/styles/focus = SubResource("StyleBoxFlat_qv0ky")
+Button/styles/normal = SubResource("StyleBoxFlat_j3ar2")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ho72g"]
+bg_color = Color(0.6, 0.6, 0.6, 0.388235)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="Theme" id="Theme_j3ar2"]
+Panel/styles/panel = SubResource("StyleBoxFlat_ho72g")
+
+[sub_resource type="LabelSettings" id="LabelSettings_j3ar2"]
+font = ExtResource("2_ho72g")
+
+[node name="display" type="Button"]
+texture_filter = 1
+custom_minimum_size = Vector2(30, 30)
+offset_right = 30.0
+offset_bottom = 30.0
+theme = SubResource("Theme_qv0ky")
+script = ExtResource("1_qv0ky")
+
+[node name="sprite" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 3
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(20, 15)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -9.0
+offset_right = 12.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.8, 0.8)
+theme = SubResource("Theme_j3ar2")
+
+[node name="amount" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_j3ar2")
+horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+fill_mode = 3
+show_percentage = false
+
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]

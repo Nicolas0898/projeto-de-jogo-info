@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dj18igomomhvl"
-path="res://.godot/imported/border.png-7a5950ebf272a8b68ef2a1125534a59b.ctex"
+uid="uid://b8uve7u7srcye"
+path="res://.godot/imported/Iron_Sword_JE2_BE2.png-b4f278fb9d9f75daa005b8ec3c9d0994.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://testing/border.png"
-dest_files=["res://.godot/imported/border.png-7a5950ebf272a8b68ef2a1125534a59b.ctex"]
+source_file="res://testing/Iron_Sword_JE2_BE2.png"
+dest_files=["res://.godot/imported/Iron_Sword_JE2_BE2.png-b4f278fb9d9f75daa005b8ec3c9d0994.ctex"]
 
 [params]
 

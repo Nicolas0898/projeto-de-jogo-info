@@ -1,14 +1,9 @@
-[gd_scene load_steps=25 format=3 uid="uid://cc2qsjoqgcdqu"]
+[gd_scene load_steps=19 format=3 uid="uid://cc2qsjoqgcdqu"]
 
 [ext_resource type="Script" uid="uid://dfxy21hd8djmg" path="res://script/ui.gd" id="1_nt7q6"]
 [ext_resource type="Script" uid="uid://cffdhewqtjjw1" path="res://script/dialogue_scripts/dialogue_node.gd" id="2_yev5y"]
 [ext_resource type="FontFile" uid="uid://b71f1nslp8bqt" path="res://fonts/BoldPixels.ttf" id="3_gdt2y"]
 [ext_resource type="Script" uid="uid://ewrkrfl4tybb" path="res://script/inventory.gd" id="4_gdt2y"]
-[ext_resource type="Script" uid="uid://bu8krnugqph56" path="res://script/item_scripts/item.gd" id="5_wm3ai"]
-[ext_resource type="Resource" uid="uid://bkc1lpavt6c4c" path="res://resource/item/item01.tres" id="6_8dubc"]
-[ext_resource type="Resource" uid="uid://dgpov81f2hcdm" path="res://resource/item/item02.tres" id="7_p7vwb"]
-[ext_resource type="Resource" uid="uid://dhj1nx7sy3gd2" path="res://resource/item/Poção_cura.tres" id="8_cgfq5"]
-[ext_resource type="Script" uid="uid://bynmlovsbvyqt" path="res://script/interact/confirm.gd" id="9_cgfq5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nt7q6"]
 bg_color = Color(0, 0, 0, 0.290196)
@@ -84,9 +79,6 @@ font = ExtResource("3_gdt2y")
 font_size = 25
 
 [sub_resource type="LabelSettings" id="LabelSettings_ktti3"]
-font = ExtResource("3_gdt2y")
-
-[sub_resource type="LabelSettings" id="LabelSettings_cgfq5"]
 font = ExtResource("3_gdt2y")
 
 [node name="UI" type="CanvasLayer"]
@@ -188,7 +180,6 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = SubResource("Theme_hj2ta")
 script = ExtResource("4_gdt2y")
-inventario = Array[ExtResource("5_wm3ai")]([ExtResource("6_8dubc"), ExtResource("7_p7vwb"), ExtResource("8_cgfq5")])
 
 [node name="Panel" type="Panel" parent="Inventory"]
 layout_mode = 1
@@ -262,7 +253,7 @@ scale = Vector2(0.210963, 0.75)
 points = PackedVector2Array(0, 0, 598, 0)
 width = 2.0
 
-[node name="status_label" type="Label" parent="Inventory/Panel/VBoxContainer/HBoxContainer/VBoxContainer/Panel/VBoxContainer"]
+[node name="Label2" type="Label" parent="Inventory/Panel/VBoxContainer/HBoxContainer/VBoxContainer/Panel/VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 text = "*Quantia dinheiro"
@@ -342,103 +333,21 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
 
-[node name="desc_tittle" type="Label" parent="Inventory/Panel/VBoxContainer/HBoxContainer/Panel2/VBoxContainer"]
+[node name="Label" type="Label" parent="Inventory/Panel/VBoxContainer/HBoxContainer/Panel2/VBoxContainer"]
 layout_mode = 2
 text = "*Nome do item"
 label_settings = SubResource("LabelSettings_p7vwb")
 horizontal_alignment = 1
 
-[node name="Line2D" type="Line2D" parent="Inventory/Panel/VBoxContainer/HBoxContainer/Panel2/VBoxContainer/desc_tittle"]
+[node name="Line2D" type="Line2D" parent="Inventory/Panel/VBoxContainer/HBoxContainer/Panel2/VBoxContainer/Label"]
 position = Vector2(6.62126, 27)
 scale = Vector2(0.310631, 1)
 points = PackedVector2Array(0, 0, 561.369, 0)
 width = 2.0
 
-[node name="desc_text" type="Label" parent="Inventory/Panel/VBoxContainer/HBoxContainer/Panel2/VBoxContainer"]
+[node name="Label2" type="Label" parent="Inventory/Panel/VBoxContainer/HBoxContainer/Panel2/VBoxContainer"]
 custom_minimum_size = Vector2(1, 175)
 layout_mode = 2
 text = "*descrição - \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim "
 label_settings = SubResource("LabelSettings_ktti3")
 autowrap_mode = 3
-
-[node name="Confirm" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("9_cgfq5")
-
-[node name="Panel" type="Panel" parent="Confirm"]
-custom_minimum_size = Vector2(280, 100)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -140.0
-offset_top = -62.0
-offset_right = 140.0
-offset_bottom = 38.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Confirm/Panel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 6.0
-offset_top = 5.0
-offset_right = -8.0
-offset_bottom = -5.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Confirm/Panel/VBoxContainer"]
-custom_minimum_size = Vector2(0, 40)
-layout_mode = 2
-
-[node name="question" type="Label" parent="Confirm/Panel/VBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(1, 0)
-layout_mode = 2
-text = "Você deseja uma poção de cura?"
-label_settings = SubResource("LabelSettings_cgfq5")
-horizontal_alignment = 1
-autowrap_mode = 3
-
-[node name="Control" type="Control" parent="Confirm/Panel/VBoxContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Line2D" type="Line2D" parent="Confirm/Panel/VBoxContainer/VBoxContainer/Control"]
-position = Vector2(-1, -8.5)
-points = PackedVector2Array(259, 7, 8, 7)
-width = 1.0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Confirm/Panel/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 0
-theme_override_constants/separation = 15
-alignment = 1
-
-[node name="yes" type="Button" parent="Confirm/Panel/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_gdt2y")
-text = "Sim"
-
-[node name="no" type="Button" parent="Confirm/Panel/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_gdt2y")
-text = "Não"
-
-[node name="Control" type="Control" parent="Confirm/Panel/VBoxContainer"]
-layout_mode = 2
-
-[node name="debug" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
-
-[connection signal="button_down" from="Confirm/Panel/VBoxContainer/HBoxContainer/yes" to="Confirm" method="_on_yes_button_down"]
-[connection signal="button_down" from="Confirm/Panel/VBoxContainer/HBoxContainer/no" to="Confirm" method="_on_no_button_down"]

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://dgpov81f2hcdm"]
+
+[ext_resource type="Script" uid="uid://bu8krnugqph56" path="res://script/item_scripts/item.gd" id="1_m7i58"]
+[ext_resource type="Texture2D" uid="uid://baggdfnmxnte6" path="res://testing/Nameless_Blade_(MCD).png" id="2_cltjf"]
+
+[resource]
+script = ExtResource("1_m7i58")
+name = "Foice"
+desc = "Arma corpo a corpo"
+amount = 1
+cooldown = 0.0
+display = 1
+sprite = ExtResource("2_cltjf")
+confirm = false
+metadata/_custom_type_script = "uid://bu8krnugqph56"

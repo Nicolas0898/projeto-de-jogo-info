@@ -262,7 +262,7 @@ scale = Vector2(0.210963, 0.75)
 points = PackedVector2Array(0, 0, 598, 0)
 width = 2.0
 
-[node name="status_label" type="Label" parent="Inventory/Panel/VBoxContainer/HBoxContainer/VBoxContainer/Panel/VBoxContainer"]
+[node name="Label2" type="Label" parent="Inventory/Panel/VBoxContainer/HBoxContainer/VBoxContainer/Panel/VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 text = "*Quantia dinheiro"
