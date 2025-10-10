@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gwcevdfqbtfl"
-path="res://.godot/imported/galhos.png-a188ee416fcd033a5d9692f45fc948de.ctex"
+uid="uid://d21p6vp78u0fm"
+path="res://.godot/imported/tilemapswamp.png-25e56c8a3002c9049a305e8d84e044d5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/galhos.png"
-dest_files=["res://.godot/imported/galhos.png-a188ee416fcd033a5d9692f45fc948de.ctex"]
+source_file="res://Images/tilesets/tilemapswamp.png"
+dest_files=["res://.godot/imported/tilemapswamp.png-25e56c8a3002c9049a305e8d84e044d5.ctex"]
 
 [params]
 

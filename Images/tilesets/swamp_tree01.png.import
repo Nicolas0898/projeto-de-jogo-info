@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d21p6vp78u0fm"
-path="res://.godot/imported/tilemapswamp.png-45248ce1d717739264a83447e0702bef.ctex"
+uid="uid://3clhnqtembx3"
+path="res://.godot/imported/swamp_tree01.png-6866eb39472e20c188f322f8961a2104.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/tilemapswamp.png"
-dest_files=["res://.godot/imported/tilemapswamp.png-45248ce1d717739264a83447e0702bef.ctex"]
+source_file="res://Images/tilesets/swamp_tree01.png"
+dest_files=["res://.godot/imported/swamp_tree01.png-6866eb39472e20c188f322f8961a2104.ctex"]
 
 [params]
 
