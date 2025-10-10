@@ -30,7 +30,6 @@ func onStateEntered(_last):
 	
 	start_distance = plrpos.distance_to(hookpos)
 	
-	print(start_distance)
 
 func boost_character(y=-400):
 	var character:PlayerCharacter= stateMachine.character

@@ -52,5 +52,12 @@ func _input(event: InputEvent) -> void:
 
 func healthChanged(new,old):
 	if new<=0:
-		requestStateChange("Died")
-		lockstate = true
+		if has_state("Died"):
+			requestStateChange("Died")
+			lockstate = true
+	
+func has_state(name:String) -> bool:
+	for i in avaliableStates:
+		if i == name.to_lower():
+			return true
+	return false

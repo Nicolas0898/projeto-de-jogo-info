@@ -5,9 +5,14 @@ var constant_velocity = {"input":Vector2(),"jump":Vector2.ZERO}
 var variable_velocity = Vector2()
 var true_constant_velocity = Vector2.ZERO
 @onready var state_machine: StateMachine = $StateMachine
-
+@onready var shader = material as ShaderMaterial
+	
 func apply_gravity(delta:float):
 	variable_velocity  += get_gravity()*delta
+	variable_velocity.x += -variable_velocity.normalized().x*20
+
+func apply_air_friction():
+	variable_velocity.y += -variable_velocity.normalized().y*20
 	variable_velocity.x += -variable_velocity.normalized().x*20
 
 func check_for_collisions(wall=true,floor=true,ceiling=true):
@@ -26,6 +31,23 @@ func update_velocity():
 		true_constant_velocity+=constant_velocity[index]
 	velocity = variable_velocity + true_constant_velocity
 
+func clear_constant_velocity():
+	for index in constant_velocity:
+		constant_velocity[index] = Vector2.ZERO
+
 func default_move():
 	update_velocity()
 	move_and_slide()
+	
+func blink(duration=0.3,color="#dc1b00",strength=0.5):
+	if not has_meta("isshaderunique"):
+		material = shader.duplicate()
+		shader = material
+		set_meta("isshaderunique",true)
+		
+	shader.set_shader_parameter("blink_color",Color(color))
+	create_tween().tween_method(upd,strength,0.0,duration)
+		
+func upd(v):
+	shader.set_shader_parameter("factor",v)
+	

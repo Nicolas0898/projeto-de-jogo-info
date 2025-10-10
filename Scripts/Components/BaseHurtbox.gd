@@ -15,7 +15,8 @@ func onHit(hitbox:Hitbox):
 			else: pos = (pos+node.global_position)/2
 		
 	character.variable_velocity = Vector2.ZERO
-	character.state_machine.requestStateChange("Falling")
+	if character.state_machine.has_state("Falling"):
+		character.state_machine.requestStateChange("Falling")
 	if hitbox.has_node("center"):
 		pos = hitbox.get_node("center").global_position
 	var direction = pos.direction_to(character.global_position)
