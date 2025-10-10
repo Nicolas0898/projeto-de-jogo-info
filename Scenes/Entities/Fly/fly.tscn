@@ -1,0 +1,124 @@
+[gd_scene load_steps=20 format=3 uid="uid://dugkamrvn6d0g"]
+
+[ext_resource type="Shader" uid="uid://lk8vqo6nbyf3" path="res://Shaders/Character.gdshader" id="1_d6fad"]
+[ext_resource type="Script" uid="uid://b4v73lx8blb1p" path="res://Scripts/Components/BaseEntity.gd" id="1_x1axm"]
+[ext_resource type="Script" uid="uid://lurpfwbx4y8w" path="res://Scripts/StateMachine/StateMachine.gd" id="2_r4uh7"]
+[ext_resource type="Script" uid="uid://ca7v4quviloeb" path="res://Scenes/Entities/Fly/idle.gd" id="3_3pwra"]
+[ext_resource type="Script" uid="uid://1ughpmhhrew" path="res://Scripts/Components/HealthComponent.gd" id="4_brr4v"]
+[ext_resource type="Script" uid="uid://ct5q4k7vmxi7f" path="res://Scenes/Entities/Fly/Chase.gd" id="4_l553e"]
+[ext_resource type="Texture2D" uid="uid://dl852vlvi6i2x" path="res://Images/Fly/parada.png" id="5_3pwra"]
+[ext_resource type="Texture2D" uid="uid://dtcd3g1g38mpp" path="res://Images/Fly/voando.png" id="6_brr4v"]
+[ext_resource type="Script" uid="uid://0d7bnicgm37i" path="res://Scripts/Components/BaseHurtbox.gd" id="7_brr4v"]
+[ext_resource type="Script" uid="uid://blfwkqgeamobt" path="res://Scripts/Components/Hitbox.gd" id="8_xkxda"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cnhfl"]
+shader = ExtResource("1_d6fad")
+shader_parameter/blink_color = Color(1, 1, 1, 1)
+shader_parameter/factor = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xkxda"]
+atlas = ExtResource("5_3pwra")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l553e"]
+atlas = ExtResource("5_3pwra")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d6fad"]
+atlas = ExtResource("6_brr4v")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cnhfl"]
+atlas = ExtResource("6_brr4v")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yjmwn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xkxda")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l553e")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d6fad")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cnhfl")
+}],
+"loop": true,
+"name": &"Running",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ylf0o"]
+size = Vector2(29, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xkxda"]
+size = Vector2(27, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l553e"]
+size = Vector2(25, 18)
+
+[node name="Fly" type="CharacterBody2D"]
+material = SubResource("ShaderMaterial_cnhfl")
+collision_layer = 0
+script = ExtResource("1_x1axm")
+metadata/_custom_type_script = "uid://b4v73lx8blb1p"
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initialState")]
+script = ExtResource("2_r4uh7")
+initialState = NodePath("Idle")
+metadata/_custom_type_script = "uid://lurpfwbx4y8w"
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("3_3pwra")
+metadata/_custom_type_script = "uid://ca8wa4d6wsrqb"
+
+[node name="Chase" type="Node" parent="StateMachine"]
+script = ExtResource("4_l553e")
+metadata/_custom_type_script = "uid://ca8wa4d6wsrqb"
+
+[node name="HealthComponent" type="Node" parent="."]
+script = ExtResource("4_brr4v")
+metadata/_custom_type_script = "uid://1ughpmhhrew"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+use_parent_material = true
+sprite_frames = SubResource("SpriteFrames_yjmwn")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.125472
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_ylf0o")
+debug_color = Color(0, 0.6, 0.701961, 0.0745098)
+
+[node name="BaseHurtbox" type="Area2D" parent="." node_paths=PackedStringArray("health_component")]
+collision_layer = 9
+script = ExtResource("7_brr4v")
+health_component = NodePath("../HealthComponent")
+metadata/_custom_type_script = "uid://0d7bnicgm37i"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BaseHurtbox"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_xkxda")
+debug_color = Color(0.941176, 0.203922, 0.635294, 0.0980392)
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_mask = 16
+script = ExtResource("8_xkxda")
+damage = 10.0
+metadata/_custom_type_script = "uid://blfwkqgeamobt"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_l553e")
+debug_color = Color(0, 0, 0, 0.42)
