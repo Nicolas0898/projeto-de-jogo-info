@@ -46,7 +46,7 @@ func use():
 	hitbox.onHit.connect(func(other):
 		var dir = other.global_position.direction_to(character.global_position).normalized()
 		character.variable_velocity *= Vector2.ONE-abs(hitdir)
-		character.variable_velocity.y += (dir*300*abs(hitdir)).y
+		character.variable_velocity.y += min((dir*300*abs(hitdir)).y,0)
 		character.constant_velocity.attack_knockback = Vector2(dir.x*170,0)
 		timer.start()
 	)
