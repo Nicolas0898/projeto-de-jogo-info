@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bm0iuksylab7k"
-path="res://.godot/imported/waterswampfundo.png-fc5c48578f615c7ec332a80ec0d51080.ctex"
+uid="uid://d21p6vp78u0fm"
+path="res://.godot/imported/tilemapswamp.png-25e56c8a3002c9049a305e8d84e044d5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/waterswampfundo.png"
-dest_files=["res://.godot/imported/waterswampfundo.png-fc5c48578f615c7ec332a80ec0d51080.ctex"]
+source_file="res://Images/tilesets/tilemapswamp.png"
+dest_files=["res://.godot/imported/tilemapswamp.png-25e56c8a3002c9049a305e8d84e044d5.ctex"]
 
 [params]
 

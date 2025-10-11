@@ -1,7 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://d1qq5a1g2k3v"]
 
+
 [ext_resource type="Texture2D" uid="uid://3r7bq3e88kcl" path="res://Images/Fly/morrendo.png" id="1_be2x0"]
 [ext_resource type="Script" uid="uid://d4ak4hxt1n4rt" path="res://Scenes/Entities/Fly/corpse.gd" id="1_o6h1q"]
+
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_be2x0"]
 friction = 0.1

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gwcevdfqbtfl"
-path="res://.godot/imported/galhos.png-a188ee416fcd033a5d9692f45fc948de.ctex"
+uid="uid://dtcd3g1g38mpp"
+path="res://.godot/imported/voando.png-2c69775a76c334abed75bc95f55f63c0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/galhos.png"
-dest_files=["res://.godot/imported/galhos.png-a188ee416fcd033a5d9692f45fc948de.ctex"]
+source_file="res://Images/entities/Fly/voando.png"
+dest_files=["res://.godot/imported/voando.png-2c69775a76c334abed75bc95f55f63c0.ctex"]
 
 [params]
 
