@@ -13,8 +13,8 @@ func onStateEntered(_old):
 	await sprite.animation_finished
 	var body = FLY_BODY.instantiate()
 	body.global_position = sprite.global_position
-	body.linear_velocity = Vector2(randf_range(-100,100),-500)
-	body.angular_velocity = randf_range(-10,10)
+	body.linear_velocity = Vector2(randf_range(-100,100),-300)
+	body.angular_velocity = -10 if body.linear_velocity.x < 0 else 10
 	body.get_node("Sprite").flip_h = sprite.flip_h
 	get_tree().current_scene.add_child(body)
 	character.queue_free()

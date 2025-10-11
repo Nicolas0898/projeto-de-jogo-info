@@ -1,6 +1,6 @@
 [gd_scene load_steps=60 format=3 uid="uid://dlf7w31r5dugb"]
 
-[ext_resource type="PackedScene" uid="uid://dqiyuc6o8q627" path="res://scenes/interaction_area.tscn" id="1_yerwc"]
+[ext_resource type="PackedScene" uid="uid://dqiyuc6o8q627" path="res://Scenes/interaction_area.tscn" id="1_yerwc"]
 [ext_resource type="Resource" uid="uid://dhj1nx7sy3gd2" path="res://resource/item/Poção_cura.tres" id="2_6g4hr"]
 [ext_resource type="Script" uid="uid://c41v5wv6fa0vx" path="res://script/item_scripts/item_giver.gd" id="2_jcaq7"]
 [ext_resource type="Resource" uid="uid://de0v2mqsnut7u" path="res://resource/dialogues/example.tres" id="4_n1a7b"]
