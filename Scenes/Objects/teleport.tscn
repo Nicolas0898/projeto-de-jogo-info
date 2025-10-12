@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbcuecrtpmuuo"]
+
+[ext_resource type="Script" uid="uid://d0i1bvkhbo16p" path="res://Scripts/Components/teleport.gd" id="1_an64v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_trlrr"]
+size = Vector2(146, 140)
+
+[node name="teleport" type="Area2D"]
+collision_layer = 5
+collision_mask = 5
+script = ExtResource("1_an64v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, -19)
+shape = SubResource("RectangleShape2D_trlrr")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
