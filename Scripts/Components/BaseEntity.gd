@@ -15,6 +15,7 @@ func apply_air_friction():
 	variable_velocity.y += -variable_velocity.normalized().y*20
 	variable_velocity.x += -variable_velocity.normalized().x*20
 
+@warning_ignore("shadowed_global_identifier")
 func check_for_collisions(wall=true,floor=true,ceiling=true):
 	if wall and is_on_wall():
 		variable_velocity.x = 0
@@ -22,7 +23,7 @@ func check_for_collisions(wall=true,floor=true,ceiling=true):
 	if floor and is_on_floor() and variable_velocity.y>0:
 		variable_velocity.y = 0
 	
-	if floor and is_on_ceiling() and variable_velocity.y<0:
+	if ceiling and is_on_ceiling() and variable_velocity.y<0:
 		variable_velocity.y = 0
 
 func update_velocity():

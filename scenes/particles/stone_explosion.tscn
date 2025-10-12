@@ -16,7 +16,7 @@ point_count = 2
 curve = SubResource("Curve_5bfco")
 
 [sub_resource type="Gradient" id="Gradient_828lp"]
-offsets = PackedFloat32Array(0, 0.154545, 0.754545, 0.990909)
+offsets = PackedFloat32Array(0, 0.245902, 0.754545, 0.990909)
 colors = PackedColorArray(0, 0, 0, 0, 0, 0.533333, 0.537255, 0.756863, 0.27451, 0.737255, 0.737255, 1, 0.227451, 1, 1, 0)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_abus7"]
@@ -28,8 +28,8 @@ gradient = SubResource("Gradient_828lp")
 curve = SubResource("Curve_yqryh")
 
 [sub_resource type="Curve" id="Curve_fxwgi"]
-_data = [Vector2(0, 0.0898877), 0.0, 0.0, 0, 0, Vector2(0.161765, 0.977528), 0.0, 0.0, 0, 0, Vector2(0.904412, 0.595506), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 4
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.885135, 0.921348), 0.0, 0.0, 0, 0, Vector2(1, 0.808989), 0.0, 0.0, 0, 0]
+point_count = 3
 
 [sub_resource type="CurveTexture" id="CurveTexture_71lkd"]
 curve = SubResource("Curve_fxwgi")
@@ -40,23 +40,24 @@ angle_min = 1.07288e-05
 angle_max = 180.0
 angle_curve = SubResource("CurveTexture_lxnrk")
 direction = Vector3(0, -1, 0)
-spread = 60.0
-initial_velocity_min = 20.0
-initial_velocity_max = 70.0
-gravity = Vector3(0, 100, 0)
+spread = 27.64
+initial_velocity_min = 118.3
+initial_velocity_max = 168.3
+gravity = Vector3(0, 490, 0)
 linear_accel_min = -20.54
 linear_accel_max = -20.0
 linear_accel_curve = SubResource("CurveTexture_d40ag")
-scale_max = 2.0
 scale_curve = SubResource("CurveTexture_71lkd")
 color_ramp = SubResource("GradientTexture1D_abus7")
 anim_offset_max = 1.0
 
 [node name="stone_explosion" type="GPUParticles2D"]
 material = SubResource("CanvasItemMaterial_nd8f8")
+emitting = false
 amount = 10
 texture = ExtResource("1_5bfco")
 lifetime = 0.8
+one_shot = true
 explosiveness = 1.0
 randomness = 1.0
 fixed_fps = 120

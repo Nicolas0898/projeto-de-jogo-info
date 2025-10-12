@@ -35,5 +35,4 @@ func _on_yes_button_down() -> void: #Confirmado
 	cb.call_deferred("answer" ,true)
 
 func _on_no_button_down() -> void: #Recusado
-	
 	cb.call_deferred("answer" ,false)

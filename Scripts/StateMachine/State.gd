@@ -17,14 +17,14 @@ func _ready() -> void:
 func begin():
 	pass
 
-func onStateEntered(oldState:State):
+func onStateEntered(_oldState:State):
 	pass
 	
 func onStateExit():
 	pass
 
-func onPhysics(delta:float):
+func onPhysics(_delta:float):
 	pass
 
-func onInput(input:InputEvent):
+func onInput(_input:InputEvent):
 	pass

@@ -1,0 +1,15 @@
+extends State
+@onready var sprite: AnimatedSprite2D = $"../../AnimatedSprite2D"
+
+func onStateEntered(_old):
+	sprite.play("spawn")
+	sprite.pause()
+	sprite.frame = 0
+
+func onPhysics(delta):
+	var dist = character.global_position.distance_to(GameHandler.Player.global_position)
+	character.apply_air_friction()
+	
+	if dist < 140:
+		sprite.play("spawn")
+		stateMachine.requestStateChange("Idle")

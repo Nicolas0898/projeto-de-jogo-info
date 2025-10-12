@@ -30,8 +30,8 @@ func state_changed(new,old):
 
 func get_closest_hook_point():
 	var hookpoints = get_tree().get_nodes_in_group("GrappleNode")
-	var nearest_instance
-	var nearest_distance
+	var nearest_instance = null
+	var nearest_distance = null
 	
 	for hook in hookpoints:
 		var current_distance = hook.global_position.distance_to(character.global_position)

@@ -9,8 +9,8 @@ func onHit(hitbox:Hitbox):
 	var damage = hitbox.damage
 	health_component.takeDamage(damage)
 	
-	var char = get_parent() as BaseEntity
+	var character = get_parent() as BaseEntity
 	if damage>0:
-		char.blink()
+		character.blink()
 	else:
-		char.blink(0.2,"#ffffff",0.3)
+		character.blink(0.2,"#ffffff",0.3)

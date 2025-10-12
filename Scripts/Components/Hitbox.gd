@@ -26,6 +26,7 @@ func onAreaEntered(other:Area2D):
 		if one_hit:
 			ignore.push_back(other)
 
+@warning_ignore("shadowed_variable")
 static func from_rect(damage,size:Vector2,lifetime=0.2,target=ENEMY) -> Hitbox:
 	var hitbox = Hitbox.new()
 	hitbox.damage = damage

@@ -50,12 +50,13 @@ func _physics_process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	currentState.onInput(event)
 
-func healthChanged(new,old):
+func healthChanged(new,_old):
 	if new<=0:
 		if has_state("Died"):
 			requestStateChange("Died")
 			lockstate = true
-	
+
+@warning_ignore("shadowed_variable_base_class")
 func has_state(name:String) -> bool:
 	for i in avaliableStates:
 		if i == name.to_lower():
