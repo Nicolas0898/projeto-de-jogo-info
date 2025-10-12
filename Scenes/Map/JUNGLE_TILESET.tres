@@ -1,6 +1,26 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://cyll24yrphmu5"]
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://cyll24yrphmu5"]
 
 [ext_resource type="Texture2D" uid="uid://d21p6vp78u0fm" path="res://Images/tilesets/tilemapswamp.png" id="1_1pj75"]
+[ext_resource type="Texture2D" uid="uid://gwcevdfqbtfl" path="res://Images/tilesets/galhos.png" id="1_4ub4s"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s1502"]
+texture = ExtResource("1_4ub4s")
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -1.72593, 8, -2.84174, 8, 2.94424, -8, 3.85797)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -2.84271, 8, -4.06102, 8, 2.33816, -8, 2.94424)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4.02746, 8, -3.95689, 8, 2.33816, -8, 2.15831)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4.02746, 8, -3.95689, 8, 2.33816, -8, 2.15831)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4.02746, 8, -3.95689, 8, 2.33816, -8, 2.15831)
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4.02746, 8, -3.95689, 8, 2.33816, -8, 2.15831)
+6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4.02746, 8, -1.84592, 8, 2.33816, -8, 2.15831)
+7:1/0 = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -1.80055, 8, -0.710679, 8, 4.7717, -8, 2.36812)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l6rml"]
 texture = ExtResource("1_1pj75")
@@ -335,3 +355,4 @@ terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Ground"
 terrain_set_0/terrain_0/color = Color(0, 0.679546, 0.8125, 1)
 sources/3 = SubResource("TileSetAtlasSource_l6rml")
+sources/0 = SubResource("TileSetAtlasSource_s1502")

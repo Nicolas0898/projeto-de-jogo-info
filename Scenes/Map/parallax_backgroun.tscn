@@ -47,7 +47,7 @@ centered = false
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer2"]
-modulate = Color(1, 0.66, 0.66, 0.854902)
+modulate = Color(0.96, 0.672, 0.6768, 0.854902)
 self_modulate = Color(0.68, 0.68, 0.68, 0.882353)
 position = Vector2(70.75, 177)
 scale = Vector2(0.857713, 1.5)

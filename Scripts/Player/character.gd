@@ -4,6 +4,10 @@ class_name PlayerCharacter
 @export var speed = 200
 @export var gravity_multiplier = 1
 @export var jump_power = 1
+@export var cam_limit_r = 10000000
+@export var cam_limit_l = -10000000
+@export var cam_limit_t = -10000000
+@export var cam_limit_b = 10000000
 var speed_multiplier = 1
 
 @onready var camera: Camera2D = $Camera2D
@@ -29,6 +33,10 @@ func _ready() -> void:
 	%DebugMenu.watch_as_vector(self,"velocity")
 	%DebugMenu.watch_as_vector(self,"player_input")
 	%DebugMenu.watch_as_vector(self,"last_looked_at")
+	camera.limit_left = cam_limit_l
+	camera.limit_right = cam_limit_r
+	camera.limit_bottom = cam_limit_b
+	camera.limit_top = cam_limit_t
 
 func default_player_input(local_mult=1):
 	var axis = Input.get_axis("left","right")
@@ -50,4 +58,3 @@ func default_player_input(local_mult=1):
 
 func clear_player_input():
 	constant_velocity.input = Vector2(0,0)
-	

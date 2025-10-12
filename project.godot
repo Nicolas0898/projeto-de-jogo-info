@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 GameHandler="*res://Scripts/Global/GameHandler.gd"
 InteractionSystem="*res://script/interact/InteractionSystem.gd"
 Ui="*res://scenes/ui.tscn"
+NavigationManager="*res://Scripts/Global/NavigationManager.gd"
 
 [display]
 
