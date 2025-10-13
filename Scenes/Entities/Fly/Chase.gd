@@ -5,7 +5,7 @@ var can_charge = true
 func onPhysics(delta:float):
 	var plrChar:PlayerCharacter = GameHandler.Player
 	var dist = character.global_position.direction_to(plrChar.global_position + Vector2(0,-10))
-	character.constant_velocity.walk = character.constant_velocity.walk.lerp(dist*120,15*delta)
+	character.constant_velocity.walk = character.constant_velocity.walk.lerp(dist*100,15*delta)
 	character.apply_air_friction()
 	character.default_move()
 	

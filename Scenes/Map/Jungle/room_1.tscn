@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dv8vj3sg56vtp" path="res://Scenes/Entities/Dummy.tscn" id="6_icfgh"]
 [ext_resource type="Shader" uid="uid://b0vwl8qpm7kj2" path="res://Shaders/water.gdshader" id="7_42ogg"]
 [ext_resource type="TileSet" uid="uid://bnjnwtobjhkof" path="res://Scenes/Map/WATER_JUNGLE.tres" id="8_sdnuk"]
-[ext_resource type="PackedScene" uid="uid://dfcki0ewl81yj" path="res://Scenes/Objects/coin.tscn" id="9_2518j"]
+[ext_resource type="PackedScene" path="res://Scenes/Objects/coin.tscn" id="9_2518j"]
 [ext_resource type="PackedScene" uid="uid://6067j5q5yogl" path="res://Scenes/Map/parallax_backgroun (2).tscn" id="10_qdb55"]
 [ext_resource type="PackedScene" uid="uid://dugkamrvn6d0g" path="res://Scenes/Entities/Fly/fly.tscn" id="11_wgmna"]
 [ext_resource type="PackedScene" uid="uid://bvmugmme4p6nf" path="res://Scenes/Objects/grapple_node.tscn" id="12_li0yx"]
@@ -27,11 +27,15 @@ shader_parameter/wave_frequency = 1.0
 shader_parameter/wave_speed = 1.0
 shader_parameter/wave_amplitude = 1.0
 
-[sub_resource type="Gradient" id="Gradient_efyuc"]
+[sub_resource type="Gradient" id="Gradient_ib7rj"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.140625, 0.140625, 0.140625, 1, 0, 0, 0, 1)
+metadata/_snap_enabled = true
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ib7rj"]
-gradient = SubResource("Gradient_efyuc")
-fill_from = Vector2(0.284404, 0)
+gradient = SubResource("Gradient_ib7rj")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
 
 [node name="Node2D" type="Node2D"]
 script = SubResource("GDScript_no33e")
@@ -134,6 +138,7 @@ rotation = -0.801726
 scale = Vector2(18.7011, 1.21875)
 color = Color(0, 0.596588, 0.675781, 1)
 energy = 16.0
+range_z_max = 127
 range_layer_min = -512
 range_layer_max = 512
 texture = SubResource("GradientTexture2D_ib7rj")

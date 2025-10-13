@@ -50,7 +50,7 @@ position = Vector2(640, 230)
 texture = ExtResource("3_sg2l3")
 
 [node name="ParallaxLayer5" type="ParallaxLayer" parent="."]
-modulate = Color(0.517647, 0.517647, 0.517647, 1)
+modulate = Color(0.457031, 0.457031, 0.457031, 1)
 motion_scale = Vector2(0.5, 1)
 motion_mirroring = Vector2(1280, 0)
 

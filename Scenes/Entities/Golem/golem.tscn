@@ -221,7 +221,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_nr0ny")
 }, {
-"duration": 1.0,
+"duration": 2.0,
 "texture": SubResource("AtlasTexture_a3il2")
 }],
 "loop": false,
@@ -362,9 +362,9 @@ metadata/_custom_type_script = "uid://b4v73lx8blb1p"
 use_parent_material = true
 position = Vector2(-7, -25)
 sprite_frames = SubResource("SpriteFrames_c6a52")
-animation = &"throw"
-frame = 3
-frame_progress = 0.653226
+animation = &"roll_prepare"
+frame = 1
+frame_progress = 1.0
 
 [node name="walking_smoke" parent="AnimatedSprite2D" instance=ExtResource("3_po0ob")]
 modulate = Color(1, 1, 1, 0.129412)

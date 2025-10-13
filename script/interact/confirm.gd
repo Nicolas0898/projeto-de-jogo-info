@@ -32,7 +32,9 @@ func input(): #Quando ele escolhe
 
 
 func _on_yes_button_down() -> void: #Confirmado
-	cb.call_deferred("answer" ,true)
+	if cb!= null:
+		cb.call_deferred("answer" ,true)
 
 func _on_no_button_down() -> void: #Recusado
-	cb.call_deferred("answer" ,false)
+	if cb!= null:
+		cb.call_deferred("answer" ,false)

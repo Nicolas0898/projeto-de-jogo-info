@@ -2,10 +2,14 @@
 
 [sub_resource type="Environment" id="Environment_efyuc"]
 background_mode = 3
-tonemap_mode = 1
+ambient_light_source = 1
+ambient_light_color = Color(1, 0, 0, 1)
+ambient_light_energy = 16.0
 glow_enabled = true
 glow_intensity = 0.21
 glow_blend_mode = 1
+adjustment_brightness = 1.08
+adjustment_contrast = 4.65
 
 [node name="WorldEnvironment" type="WorldEnvironment"]
 environment = SubResource("Environment_efyuc")

@@ -47,10 +47,11 @@ texture = ExtResource("1_6ih71")
 centered = false
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+z_index = 128
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer2"]
-modulate = Color(0.96, 0.672, 0.6768, 0.854902)
-self_modulate = Color(0.68, 0.68, 0.68, 0.882353)
+modulate = Color(0.960784, 0.670588, 0.678431, 1)
+self_modulate = Color(0.678431, 0.678431, 0.678431, 1)
 position = Vector2(70.75, 196.5)
 scale = Vector2(0.857713, 1.62187)
 texture = ExtResource("3_1oon0")
@@ -95,7 +96,7 @@ scale = Vector2(0.25, 0.25)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer4"]
 modulate = Color(1, 0.79, 0.79, 1)
-self_modulate = Color(0.81, 0.81, 0.81, 0.827451)
+self_modulate = Color(0.811765, 0.811765, 0.811765, 1)
 position = Vector2(1544, -436)
 scale = Vector2(2.60625, 4.568)
 texture = ExtResource("2_fh6nt")

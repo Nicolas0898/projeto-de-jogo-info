@@ -86,6 +86,6 @@ func pullPhysics(delta:float):
 	player.check_for_collisions()
 	if distance<30:
 		stateMachine.requestStateChange("Falling")
-		boost_character()
+		boost_character(-300)
 	player.default_move()
 	
