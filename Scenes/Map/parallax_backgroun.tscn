@@ -84,7 +84,7 @@ scale = Vector2(0.25, 0.25)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer4"]
 modulate = Color(1, 0.79, 0.79, 1)
-self_modulate = Color(0.81, 0.81, 0.81, 0.827451)
+self_modulate = Color(0.81, 0.81, 0.81, 1)
 position = Vector2(1796, -208)
 scale = Vector2(2.0375, 3.376)
 texture = ExtResource("3_xts5i")
