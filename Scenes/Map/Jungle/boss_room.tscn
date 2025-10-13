@@ -24,7 +24,6 @@ gradient = SubResource("Gradient_efyuc")
 fill_from = Vector2(0, 1)
 fill_to = Vector2(0, 0)
 
-
 [node name="Node2D" type="Node2D"]
 script = SubResource("GDScript_no33e")
 
@@ -93,7 +92,6 @@ scroll_base_offset = Vector2(0, -450)
 
 [node name="WorldEnvironment" parent="." instance=ExtResource("11_l3onn")]
 
-<<<<<<< HEAD
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(647, -161)
 rotation = -0.801726
@@ -115,7 +113,7 @@ range_z_max = 127
 range_layer_min = -512
 range_layer_max = 512
 texture = SubResource("GradientTexture2D_l3onn")
-=======
+
 [node name="GrappleNode3" parent="." instance=ExtResource("4_w7aa7")]
 modulate = Color(0.74902, 0.992157, 1, 1)
 position = Vector2(737, -233)
@@ -123,4 +121,3 @@ range = 148.0
 type = 1
 
 [editable path="ParallaxBackground"]
->>>>>>> 6271a9c31b109f171375783aee0e55579e09aae3

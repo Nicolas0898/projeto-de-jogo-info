@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dv8vj3sg56vtp" path="res://Scenes/Entities/Dummy.tscn" id="4_oyeye"]
 [ext_resource type="Shader" uid="uid://b0vwl8qpm7kj2" path="res://Shaders/water.gdshader" id="5_u1yx5"]
 [ext_resource type="TileSet" uid="uid://bnjnwtobjhkof" path="res://Scenes/Map/WATER_JUNGLE.tres" id="6_7ebiy"]
-[ext_resource type="PackedScene" uid="uid://dfcki0ewl81yj" path="res://Scenes/Objects/coin.tscn" id="7_4wktd"]
+[ext_resource type="PackedScene" path="res://Scenes/Objects/coin.tscn" id="7_4wktd"]
 [ext_resource type="PackedScene" uid="uid://6067j5q5yogl" path="res://Scenes/Map/parallax_backgroun (2).tscn" id="8_w6xgs"]
 [ext_resource type="PackedScene" uid="uid://dugkamrvn6d0g" path="res://Scenes/Entities/Fly/fly.tscn" id="9_epbql"]
 [ext_resource type="PackedScene" uid="uid://bvmugmme4p6nf" path="res://Scenes/Objects/grapple_node.tscn" id="10_bonop"]
