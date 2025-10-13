@@ -111,9 +111,12 @@ position = Vector2(-470, -91)
 
 [node name="GrappleNode" parent="." instance=ExtResource("12_li0yx")]
 modulate = Color(0.74902, 0.992157, 1, 1)
-position = Vector2(-987, -110)
+position = Vector2(-947, -109)
 scale = Vector2(0.5, 0.5)
 type = 1
+
+[node name="Sprite2D" parent="GrappleNode" index="0"]
+scale = Vector2(1, 1)
 
 [node name="GrappleNode2" parent="." instance=ExtResource("12_li0yx")]
 position = Vector2(652, -218)
@@ -137,3 +140,16 @@ energy = 16.0
 range_layer_min = -512
 range_layer_max = 512
 texture = SubResource("GradientTexture2D_ib7rj")
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(1470, -966.001)
+rotation = -0.868958
+scale = Vector2(243.777, 48.3393)
+skew = -1.44057
+color = Color(0, 0.596588, 0.675781, 1)
+energy = 16.0
+range_layer_min = -512
+range_layer_max = 512
+texture = SubResource("GradientTexture2D_ib7rj")
+
+[editable path="GrappleNode"]

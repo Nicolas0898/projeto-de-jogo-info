@@ -111,6 +111,7 @@ font = ExtResource("3_gdt2y")
 font = ExtResource("3_gdt2y")
 
 [node name="UI" type="CanvasLayer"]
+layer = 100
 script = ExtResource("1_nt7q6")
 
 [node name="TextureRect" type="TextureRect" parent="."]
