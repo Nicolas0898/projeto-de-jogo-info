@@ -8,6 +8,7 @@ class_name PlayerCharacter
 @export var cam_limit_l = -10000000
 @export var cam_limit_t = -10000000
 @export var cam_limit_b = 10000000
+@export var zoom = Vector2(1.3,1.3)
 var speed_multiplier = 1
 
 @onready var camera: Camera2D = $Camera2D
@@ -37,6 +38,7 @@ func _ready() -> void:
 	camera.limit_right = cam_limit_r
 	camera.limit_bottom = cam_limit_b
 	camera.limit_top = cam_limit_t
+	camera.zoom = zoom
 
 func default_player_input(local_mult=1):
 	var axis = Input.get_axis("left","right")

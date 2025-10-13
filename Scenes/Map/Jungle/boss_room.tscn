@@ -14,12 +14,12 @@
 
 [sub_resource type="GDScript" id="GDScript_no33e"]
 
-[sub_resource type="Gradient" id="Gradient_efyuc"]
+[sub_resource type="Gradient" id="Gradient_l3onn"]
 offsets = PackedFloat32Array(0, 0.493506, 1)
 colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_3oyyy"]
-gradient = SubResource("Gradient_efyuc")
+gradient = SubResource("Gradient_l3onn")
 fill_from = Vector2(1, 1)
 
 [node name="Node2D" type="Node2D"]
@@ -47,12 +47,6 @@ tile_set = ExtResource("3_l3onn")
 [node name="GrappleNode2" parent="." instance=ExtResource("4_w7aa7")]
 modulate = Color(0.74902, 0.992157, 1, 1)
 position = Vector2(320, -160)
-range = 148.0
-type = 1
-
-[node name="GrappleNode2" parent="GrappleNode2" instance=ExtResource("4_w7aa7")]
-modulate = Color(0.74902, 0.992157, 1, 1)
-position = Vector2(417, -73)
 range = 148.0
 type = 1
 
@@ -114,5 +108,11 @@ texture = SubResource("GradientTexture2D_3oyyy")
 [node name="ParallaxBackground3" parent="." instance=ExtResource("10_svy1w")]
 
 [node name="WorldEnvironment" parent="." instance=ExtResource("11_l3onn")]
+
+[node name="GrappleNode3" parent="." instance=ExtResource("4_w7aa7")]
+modulate = Color(0.74902, 0.992157, 1, 1)
+position = Vector2(737, -233)
+range = 148.0
+type = 1
 
 [editable path="ParallaxBackground"]

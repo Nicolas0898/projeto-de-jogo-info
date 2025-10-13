@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://cwrl44jwaopp4"]
+[gd_scene load_steps=24 format=4 uid="uid://cwrl44jwaopp4"]
 
 [ext_resource type="TileSet" uid="uid://dctgdgbcalghh" path="res://Scenes/Map/JUNGLE_FOREGROUND.tres" id="1_efyuc"]
 [ext_resource type="PackedScene" uid="uid://brkn5mjfr67t4" path="res://Scenes/Player/Character.tscn" id="2_ib7rj"]
@@ -15,6 +15,9 @@
 [ext_resource type="PackedScene" uid="uid://bbcuecrtpmuuo" path="res://Scenes/Objects/teleport.tscn" id="13_xxwy6"]
 [ext_resource type="PackedScene" uid="uid://bhhvto6dt5454" path="res://Scenes/Map/JungleParallax.tscn" id="14_uks6v"]
 [ext_resource type="PackedScene" uid="uid://dwr4crb3vhg5b" path="res://Scenes/Map/world_environment.tscn" id="15_ib7rj"]
+[ext_resource type="Texture2D" uid="uid://dsiclaigb4dt4" path="res://Images/stone_assets/stone_asset01.png" id="16_am8xf"]
+[ext_resource type="Texture2D" uid="uid://cy333yi6jgg4q" path="res://Images/stone_assets/stone_asset02.png" id="17_y64e2"]
+[ext_resource type="Texture2D" uid="uid://dyd4tql0ih00t" path="res://Images/stone_assets/stone_asset05.png" id="18_y64e2"]
 
 [sub_resource type="GDScript" id="GDScript_no33e"]
 
@@ -151,5 +154,25 @@ energy = 16.0
 range_layer_min = -512
 range_layer_max = 512
 texture = SubResource("GradientTexture2D_ib7rj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(290, -22)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("16_am8xf")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(508, 106)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("16_am8xf")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(373, -20)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("17_y64e2")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(-31, 8)
+scale = Vector2(1.5, 1.275)
+texture = ExtResource("18_y64e2")
 
 [editable path="GrappleNode"]
