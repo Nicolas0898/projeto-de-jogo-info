@@ -8,6 +8,7 @@ func _ready() -> void:
 	set_collision_mask_value(3,true)
 
 func _on_body_entered(body: Node2D) -> void:
+	print("pires")
 	if body is PlayerCharacter: #SUBSTITUIR POR PLAYER
 		InteractionSystem.current_action = action
 		InteractionSystem.current_area = self

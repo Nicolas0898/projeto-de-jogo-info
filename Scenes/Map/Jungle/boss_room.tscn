@@ -32,6 +32,9 @@ layer = 10
 offset = Vector2(-400, -340)
 transform = Transform2D(1, 0, 0, 1, -400, -340)
 
+[node name="ParallaxLayer12" parent="ParallaxBackground" index="1"]
+visible = true
+
 [node name="Sprite2D" parent="ParallaxBackground/ParallaxLayer4" index="0"]
 position = Vector2(1152, -436)
 

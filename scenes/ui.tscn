@@ -1,9 +1,10 @@
-[gd_scene load_steps=27 format=3 uid="uid://cc2qsjoqgcdqu"]
+[gd_scene load_steps=28 format=3 uid="uid://cc2qsjoqgcdqu"]
 
 [ext_resource type="Script" uid="uid://dfxy21hd8djmg" path="res://script/ui.gd" id="1_nt7q6"]
 [ext_resource type="Script" uid="uid://cffdhewqtjjw1" path="res://script/dialogue_scripts/dialogue_node.gd" id="2_yev5y"]
 [ext_resource type="FontFile" uid="uid://b71f1nslp8bqt" path="res://fonts/BoldPixels.ttf" id="3_gdt2y"]
 [ext_resource type="Script" uid="uid://ewrkrfl4tybb" path="res://script/inventory.gd" id="4_gdt2y"]
+[ext_resource type="Texture2D" uid="uid://fp8t6q7nqasx" path="res://sprites/forgotten_dialogue.png" id="4_mmixe"]
 [ext_resource type="Script" uid="uid://bu8krnugqph56" path="res://script/item_scripts/item.gd" id="5_wm3ai"]
 [ext_resource type="Resource" uid="uid://dhj1nx7sy3gd2" path="res://resource/item/Poção_cura.tres" id="8_cgfq5"]
 [ext_resource type="Script" uid="uid://bynmlovsbvyqt" path="res://script/interact/confirm.gd" id="9_cgfq5"]
@@ -19,14 +20,17 @@ fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.5, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nt7q6"]
-bg_color = Color(0, 0, 0, 0.290196)
+bg_color = Color(0, 0, 0, 0.490196)
 border_width_left = 1
-border_width_top = 3
-border_width_right = 3
+border_width_top = 1
+border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0, 0, 0, 0.592157)
-corner_radius_top_left = 65
-corner_radius_bottom_right = 65
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 5
+corner_detail = 2
 
 [sub_resource type="Theme" id="Theme_x4jx1"]
 Panel/styles/panel = SubResource("StyleBoxFlat_nt7q6")
@@ -123,6 +127,7 @@ mouse_filter = 2
 texture = SubResource("GradientTexture2D_g0wmg")
 
 [node name="Dialogue" type="Control" parent="."]
+modulate = Color(1, 1, 1, 0.701961)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -186,9 +191,11 @@ theme_override_constants/margin_left = 13
 theme_override_constants/margin_right = 13
 
 [node name="Sprite" type="TextureRect" parent="Dialogue/Panel/MarginContainer"]
+self_modulate = Color(1, 1, 1, 0.431373)
 z_index = 1
 layout_mode = 2
 size_flags_horizontal = 4
+texture = ExtResource("4_mmixe")
 expand_mode = 3
 
 [node name="Border" type="TextureRect" parent="Dialogue/Panel/MarginContainer/Sprite"]
