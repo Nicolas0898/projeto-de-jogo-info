@@ -50,8 +50,8 @@ centered = false
 z_index = 128
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer2"]
-modulate = Color(0.960784, 0.670588, 0.678431, 1)
-self_modulate = Color(0.678431, 0.678431, 0.678431, 1)
+modulate = Color(1, 0.788235, 0.788235, 1)
+self_modulate = Color(0.74, 0.74, 0.74, 1)
 position = Vector2(70.75, 196.5)
 scale = Vector2(0.857713, 1.62187)
 texture = ExtResource("3_1oon0")
