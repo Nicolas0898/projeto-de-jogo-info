@@ -1,0 +1,96 @@
+[gd_scene load_steps=20 format=3 uid="uid://dsj80mrifqmuw"]
+
+[ext_resource type="Texture2D" uid="uid://lca50qv7wx4x" path="res://Images/entities/forgotten.png" id="1_8xwe6"]
+[ext_resource type="PackedScene" uid="uid://dqiyuc6o8q627" path="res://Scenes/interaction_area.tscn" id="2_wnayv"]
+[ext_resource type="Script" uid="uid://bi0pwfqucqrqb" path="res://script/dialogue_scripts/Messages.gd" id="3_jgsda"]
+[ext_resource type="Texture2D" uid="uid://dj18igomomhvl" path="res://sprites/primary_border.png" id="4_erka0"]
+[ext_resource type="Script" uid="uid://8err0wuw08y8" path="res://script/dialogue_scripts/Dialogue.gd" id="4_kxysw"]
+[ext_resource type="Texture2D" uid="uid://fp8t6q7nqasx" path="res://sprites/forgotten_dialogue.png" id="5_kxysw"]
+[ext_resource type="Script" uid="uid://cs47kxe2lnqwp" path="res://script/interact/Choice.gd" id="6_jpw6o"]
+[ext_resource type="Script" uid="uid://crbolew7dydjc" path="res://script/dialogue_scripts/Question.gd" id="7_x8eab"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k4r80"]
+atlas = ExtResource("1_8xwe6")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bfcwr"]
+atlas = ExtResource("1_8xwe6")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wnayv"]
+atlas = ExtResource("1_8xwe6")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jgsda"]
+atlas = ExtResource("1_8xwe6")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kxysw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k4r80")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bfcwr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wnayv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jgsda")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="Resource" id="Resource_erka0"]
+script = ExtResource("3_jgsda")
+text = "Meus cumprimentos, andarilho..."
+sprite_pos = 1
+sprite = ExtResource("5_kxysw")
+border = ExtResource("4_erka0")
+metadata/_custom_type_script = "uid://bi0pwfqucqrqb"
+
+[sub_resource type="Resource" id="Resource_15fdr"]
+script = ExtResource("6_jpw6o")
+question = "Usar 25 moedas"
+metadata/_custom_type_script = "uid://cs47kxe2lnqwp"
+
+[sub_resource type="Resource" id="Resource_npruu"]
+script = ExtResource("6_jpw6o")
+question = "Recusar"
+metadata/_custom_type_script = "uid://cs47kxe2lnqwp"
+
+[sub_resource type="Resource" id="Resource_bvlhd"]
+script = ExtResource("7_x8eab")
+questions = Array[ExtResource("6_jpw6o")]([SubResource("Resource_15fdr"), SubResource("Resource_npruu")])
+lock_dialogue = true
+text = "Vejo que está se aventurando neste perigoso pântano, deseja comprar uma de minhas poções?"
+sprite_pos = 0
+metadata/_custom_type_script = "uid://crbolew7dydjc"
+
+[sub_resource type="Resource" id="Resource_jgsda"]
+script = ExtResource("4_kxysw")
+messages = Array[ExtResource("3_jgsda")]([SubResource("Resource_erka0"), SubResource("Resource_bvlhd")])
+oneshot = false
+metadata/_custom_type_script = "uid://8err0wuw08y8"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kxysw"]
+radius = 31.0
+
+[node name="forgotten" type="CharacterBody2D"]
+collision_mask = 17
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_kxysw")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.0422677
+
+[node name="interaction_area" parent="." instance=ExtResource("2_wnayv")]
+action = SubResource("Resource_jgsda")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interaction_area"]
+shape = SubResource("CircleShape2D_kxysw")

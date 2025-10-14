@@ -23,14 +23,17 @@ fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.5, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nt7q6"]
-bg_color = Color(0, 0, 0, 0.290196)
+bg_color = Color(0, 0, 0, 0.490196)
 border_width_left = 1
-border_width_top = 3
-border_width_right = 3
+border_width_top = 1
+border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0, 0, 0, 0.592157)
-corner_radius_top_left = 65
-corner_radius_bottom_right = 65
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 5
+corner_detail = 2
 
 [sub_resource type="Theme" id="Theme_x4jx1"]
 Panel/styles/panel = SubResource("StyleBoxFlat_nt7q6")
@@ -124,6 +127,7 @@ texture = SubResource("GradientTexture2D_g0wmg")
 
 [node name="Dialogue" type="Control" parent="."]
 visible = false
+modulate = Color(1, 1, 1, 0.701961)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -187,9 +191,11 @@ theme_override_constants/margin_left = 13
 theme_override_constants/margin_right = 13
 
 [node name="Sprite" type="TextureRect" parent="Dialogue/Panel/MarginContainer"]
+self_modulate = Color(1, 1, 1, 0.431373)
 z_index = 1
 layout_mode = 2
 size_flags_horizontal = 4
+texture = ExtResource("4_mmixe")
 expand_mode = 3
 
 [node name="Border" type="TextureRect" parent="Dialogue/Panel/MarginContainer/Sprite"]

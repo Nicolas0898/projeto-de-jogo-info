@@ -8,18 +8,19 @@ extends Node
 
 func _input(event: InputEvent) -> void:
 	
-	
+	if event.is_action_pressed("up"):
+		if action is Dialogue: Ui.dialogue.question_handler(1)
 	if event.is_action_pressed("down"):
 		if action is Dialogue: Ui.dialogue.question_handler(0)
 	
 	if event.is_action_pressed("interact"):
 		if action is Dialogue:
 			Ui.dialogue.loadNextMessage()
+			#Ui.dialogue.confirm()
 		elif action == null:
 			active(current_action)
 			return
 			
-		if action is Dialogue: Ui.dialogue.confirm()
 		if action is Confirm: Ui.confirm.input()
 		if action is Inventory: Ui.inventory.interact()
 	
