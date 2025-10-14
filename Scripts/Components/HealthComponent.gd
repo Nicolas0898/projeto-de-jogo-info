@@ -7,12 +7,13 @@ signal healthChanged(new,old)
 var health:float
 
 func _ready() -> void:
-	health = max_health
-
+	health = GameHandler.player_health
+	
 
 func takeDamage(damage:float):
 	healthChanged.emit(health-damage,health)
 	health -= damage
+	GameHandler.player_health = health
 
 func heal(healing:float):
 	healthChanged.emit(health+healing,health)

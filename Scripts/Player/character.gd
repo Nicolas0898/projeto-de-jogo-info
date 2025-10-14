@@ -26,6 +26,7 @@ var last_looked_at = Vector2(1,0)
 
 func _ready() -> void:
 	GameHandler.Player = self
+	health_component.health = GameHandler.player_health
 	%DebugMenu.watch(self,"true_constant_velocity")
 	%DebugMenu.watch(self,"constant_velocity")
 	%DebugMenu.watch(self,"variable_velocity")

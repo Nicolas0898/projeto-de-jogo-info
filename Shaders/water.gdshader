@@ -11,7 +11,7 @@ void vertex() {
 }
 
 void fragment() {
-	vec4 water_color = texture(SCREEN,SCREEN_UV + vec2(sin(UV.y*6.0+TIME)/240.0 + 0.0005,0));
+	vec4 water_color = texture(SCREEN,SCREEN_UV + vec2(sin(UV.y*10.0+TIME)/240.0 + 0.0005,0));
 	COLOR = mix(COLOR,water_color,0.3);
 }
 

@@ -74,6 +74,7 @@ position = Vector2(129, -85)
 position = Vector2(-325, -18)
 actual_level = "Jungle/boss_room"
 destination_level = "Jungle/room_2"
+spawn_direction = "left"
 
 [node name="BaseEntity" parent="." instance=ExtResource("7_hvo8d")]
 position = Vector2(853, -103)
