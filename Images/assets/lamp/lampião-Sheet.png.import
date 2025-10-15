@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjc4n7kq7milk"
-path="res://.godot/imported/stone_asset04.png-e066e22afbaa4e6e5a7a02baed7e66df.ctex"
+uid="uid://c3qtafohx3xsk"
+path="res://.godot/imported/lampião-Sheet.png-e9b95e4c6efb04bc793f658e89fb49f5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/stone_assets/stone_asset04.png"
-dest_files=["res://.godot/imported/stone_asset04.png-e066e22afbaa4e6e5a7a02baed7e66df.ctex"]
+source_file="res://Images/assets/lamp/lampião-Sheet.png"
+dest_files=["res://.godot/imported/lampião-Sheet.png-e9b95e4c6efb04bc793f658e89fb49f5.ctex"]
 
 [params]
 

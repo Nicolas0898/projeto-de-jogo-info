@@ -2,17 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-
-uid="uid://dcsuekoxcvv5l"
-path="res://.godot/imported/swamp_map.png-6acdce4ffce8d05b085a4e1ae87f2b57.ctex"
+uid="uid://bnodwenqxsjmc"
+path="res://.godot/imported/stone_asset03.png-d0c6f3b027ae5e4638daef11947f23e0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/items/swamp_map.png"
-dest_files=["res://.godot/imported/swamp_map.png-6acdce4ffce8d05b085a4e1ae87f2b57.ctex"]
+source_file="res://Images/assets/stone_assets/stone_asset03.png"
+dest_files=["res://.godot/imported/stone_asset03.png-d0c6f3b027ae5e4638daef11947f23e0.ctex"]
 
 [params]
 

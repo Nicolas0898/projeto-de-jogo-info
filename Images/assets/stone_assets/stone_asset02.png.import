@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnodwenqxsjmc"
-path="res://.godot/imported/stone_asset03.png-7ff03f48f7752f762f48902db34a8420.ctex"
+uid="uid://cy333yi6jgg4q"
+path="res://.godot/imported/stone_asset02.png-dc32f5846b45ad662c25b899c446472e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/stone_assets/stone_asset03.png"
-dest_files=["res://.godot/imported/stone_asset03.png-7ff03f48f7752f762f48902db34a8420.ctex"]
+source_file="res://Images/assets/stone_assets/stone_asset02.png"
+dest_files=["res://.godot/imported/stone_asset02.png-dc32f5846b45ad662c25b899c446472e.ctex"]
 
 [params]
 
