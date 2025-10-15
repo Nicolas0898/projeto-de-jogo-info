@@ -9,14 +9,16 @@ extends Node
 func _input(event: InputEvent) -> void:
 	
 	if event.is_action_pressed("up"):
-		if action is Dialogue: Ui.dialogue.question_handler(1)
+		if action is Dialogue: 
+			if Ui.dialogue.is_question: Ui.dialogue.question_handler(1)
 	if event.is_action_pressed("down"):
-		if action is Dialogue: Ui.dialogue.question_handler(0)
+		if action is Dialogue: 
+			if Ui.dialogue.is_question: Ui.dialogue.question_handler(1)
 	
 	if event.is_action_pressed("interact"):
 		if action is Dialogue:
-			Ui.dialogue.loadNextMessage()
-			#Ui.dialogue.confirm()
+			if Ui.dialogue.is_question: Ui.dialogue.confirm()
+			else:  Ui.dialogue.loadNextMessage()
 		elif action == null:
 			active(current_action)
 			return

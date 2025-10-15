@@ -1,5 +1,5 @@
 extends Node
-var total_coins = 0
+var total_coins = 15
 
 var Player : PlayerCharacter
 var player_health = 100
