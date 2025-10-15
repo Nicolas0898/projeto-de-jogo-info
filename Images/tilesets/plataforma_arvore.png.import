@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcsuekoxcvv5l"
-path="res://.godot/imported/swamp_map.png-6acdce4ffce8d05b085a4e1ae87f2b57.ctex"
+uid="uid://e0a0exrt7kuo"
+path="res://.godot/imported/plataforma_arvore.png-0906d5063aa24180ed40df0980fc1137.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/items/swamp_map.png"
-dest_files=["res://.godot/imported/swamp_map.png-6acdce4ffce8d05b085a4e1ae87f2b57.ctex"]
+source_file="res://Images/tilesets/plataforma_arvore.png"
+dest_files=["res://.godot/imported/plataforma_arvore.png-0906d5063aa24180ed40df0980fc1137.ctex"]
 
 [params]
 
