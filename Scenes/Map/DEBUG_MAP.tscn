@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dugkamrvn6d0g" path="res://Scenes/Entities/Fly/fly.tscn" id="6_dx3si"]
 [ext_resource type="PackedScene" uid="uid://cn12v5ofbe1kg" path="res://Scenes/Entities/Golem/golem.tscn" id="7_1e30r"]
 [ext_resource type="PackedScene" uid="uid://dwr4crb3vhg5b" path="res://Scenes/Map/world_environment.tscn" id="7_dx3si"]
-[ext_resource type="PackedScene" uid="uid://vokqjyhjkv4a" path="res://Scenes/Objects/lamp.tscn" id="8_dx3si"]
+[ext_resource type="PackedScene" path="res://Scenes/Objects/lamp.tscn" id="8_dx3si"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7yamr"]
 
