@@ -7,7 +7,7 @@ signal healthChanged(new,old)
 var health:float
 
 func _ready() -> void:
-	health = GameHandler.player_health
+	health = max_health
 	
 
 func takeDamage(damage:float):

@@ -1,7 +1,11 @@
 extends BaseHurtbox
 
+func _ready() -> void:
+	set_collision_layer_value(3,true)
+
 func onHit(other:Hitbox):
 	super(other)
+	
 	if character.get_node("GrapplingHook"):
 		character.get_node("GrapplingHook").reset_hooks()
 		

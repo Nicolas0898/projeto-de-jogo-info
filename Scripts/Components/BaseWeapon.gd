@@ -5,6 +5,7 @@ class_name BaseWeapon
 @export var cooldown:float = 0.1
 var on_cooldown = false
 
+var read_from = "use_weapon"
 var cd_timer:Timer
 func _ready() -> void:
 	cd_timer = Timer.new()
@@ -17,9 +18,9 @@ func _input(event: InputEvent) -> void:
 	if not(character.state_machine.currentState.name in\
 	"FallingRunningIdleJumping"): return
 	
-	if event.is_action_pressed("use_weapon"):
+	if event.is_action_pressed(read_from):
 		use()
-	if event.is_action_released("use_weapon"):
+	if event.is_action_released(read_from):
 		use_end()
 
 func use():

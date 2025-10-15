@@ -4,6 +4,9 @@ class_name BaseHurtbox
 @onready var character:BaseEntity = $".."
 @export var knockback_multiplier = 1.0
 
+func _ready() -> void:
+	set_collision_layer_value(4,true)
+
 func onHit(hitbox:Hitbox):
 	super(hitbox)
 	
