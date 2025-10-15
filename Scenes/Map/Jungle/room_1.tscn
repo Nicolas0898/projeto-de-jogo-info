@@ -17,9 +17,9 @@
 [ext_resource type="PackedScene" uid="uid://bbcuecrtpmuuo" path="res://Scenes/Objects/teleport.tscn" id="13_j6ang"]
 [ext_resource type="PackedScene" uid="uid://bhhvto6dt5454" path="res://Scenes/Map/JungleParallax.tscn" id="14_s6ng1"]
 [ext_resource type="PackedScene" uid="uid://dwr4crb3vhg5b" path="res://Scenes/Map/world_environment.tscn" id="15_wf560"]
-[ext_resource type="Texture2D" uid="uid://dsiclaigb4dt4" path="res://Images/stone_assets/stone_asset01.png" id="16_fntxs"]
-[ext_resource type="Texture2D" uid="uid://cy333yi6jgg4q" path="res://Images/stone_assets/stone_asset02.png" id="17_6txsl"]
-[ext_resource type="Texture2D" uid="uid://dyd4tql0ih00t" path="res://Images/stone_assets/stone_asset05.png" id="18_skrw7"]
+[ext_resource type="Texture2D" uid="uid://dsiclaigb4dt4" path="res://Images/assets/stone_assets/stone_asset01.png" id="16_fntxs"]
+[ext_resource type="Texture2D" uid="uid://cy333yi6jgg4q" path="res://Images/assets/stone_assets/stone_asset02.png" id="17_6txsl"]
+[ext_resource type="Texture2D" uid="uid://dyd4tql0ih00t" path="res://Images/assets/stone_assets/stone_asset05.png" id="18_skrw7"]
 [ext_resource type="Texture2D" uid="uid://co3qg1bq3jwlu" path="res://Images/tilesets/stone01.png" id="19_qaxsv"]
 
 [sub_resource type="GDScript" id="GDScript_no33e"]
