@@ -126,7 +126,6 @@ mouse_filter = 2
 texture = SubResource("GradientTexture2D_g0wmg")
 
 [node name="Dialogue" type="Control" parent="."]
-visible = false
 modulate = Color(1, 1, 1, 0.701961)
 layout_mode = 3
 anchors_preset = 15

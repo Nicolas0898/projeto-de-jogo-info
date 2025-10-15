@@ -16,6 +16,9 @@ func onDialogueEnd():
 	oneshot = next_dialogue.oneshot
 	next_dialogue = next_dialogue.next_dialogue
 
-func question(q : Resource):
-	messages = q.messages
-	next_dialogue = q.next_dialogue
+func question(q):
+	if q.response == null and q.action == null: Ui.dialogue.dialogueEnd()
+	elif q.action != null: q.action.act()
+	else:
+		q.response.messages = q.messages
+		q.reponse.next_dialogue = q.next_dialogue

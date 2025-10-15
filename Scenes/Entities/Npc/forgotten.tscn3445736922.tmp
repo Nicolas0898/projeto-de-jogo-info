@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dsj80mrifqmuw"]
+[gd_scene load_steps=21 format=3 uid="uid://dsj80mrifqmuw"]
 
 [ext_resource type="Texture2D" uid="uid://lca50qv7wx4x" path="res://Images/entities/forgotten.png" id="1_8xwe6"]
 [ext_resource type="PackedScene" uid="uid://dqiyuc6o8q627" path="res://Scenes/interaction_area.tscn" id="2_wnayv"]
@@ -54,43 +54,15 @@ sprite = ExtResource("5_kxysw")
 border = ExtResource("4_erka0")
 metadata/_custom_type_script = "uid://bi0pwfqucqrqb"
 
-[sub_resource type="Resource" id="Resource_x8eab"]
-script = ExtResource("3_jgsda")
-text = ""
-sprite_pos = 2
-metadata/_custom_type_script = "uid://bi0pwfqucqrqb"
-
-[sub_resource type="Resource" id="Resource_swuuh"]
-script = ExtResource("4_kxysw")
-messages = Array[ExtResource("3_jgsda")]([SubResource("Resource_x8eab")])
-oneshot = false
-metadata/_custom_type_script = "uid://8err0wuw08y8"
-
 [sub_resource type="Resource" id="Resource_15fdr"]
 script = ExtResource("6_jpw6o")
 question = "Usar 15 moedas"
-response = SubResource("Resource_swuuh")
 action = ExtResource("7_15fdr")
 metadata/_custom_type_script = "uid://cs47kxe2lnqwp"
-
-[sub_resource type="Resource" id="Resource_w7ajm"]
-script = ExtResource("3_jgsda")
-text = "Bem, estarei aqui, cuide-se"
-sprite_pos = 0
-sprite = ExtResource("5_kxysw")
-border = ExtResource("4_erka0")
-metadata/_custom_type_script = "uid://bi0pwfqucqrqb"
-
-[sub_resource type="Resource" id="Resource_lt7uj"]
-script = ExtResource("4_kxysw")
-messages = Array[ExtResource("3_jgsda")]([SubResource("Resource_w7ajm")])
-oneshot = false
-metadata/_custom_type_script = "uid://8err0wuw08y8"
 
 [sub_resource type="Resource" id="Resource_npruu"]
 script = ExtResource("6_jpw6o")
 question = "Recusar"
-response = SubResource("Resource_lt7uj")
 metadata/_custom_type_script = "uid://cs47kxe2lnqwp"
 
 [sub_resource type="Resource" id="Resource_bvlhd"]
