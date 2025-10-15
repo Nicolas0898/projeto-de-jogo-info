@@ -203,7 +203,6 @@ spawn = {
 "jungle/room_1": NodePath("spawn"),
 "jungle/room_3": NodePath("spawn2")
 }
-metadata/_custom_type_script = "uid://xbqu3ca63qn6"
 
 [node name="spawn" type="Node2D" parent="SpawnLocation"]
 position = Vector2(-1013, -11)
