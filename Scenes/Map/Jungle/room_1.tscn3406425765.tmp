@@ -51,9 +51,9 @@ fill_to = Vector2(0, 0)
 [node name="Node2D" type="Node2D"]
 script = SubResource("GDScript_no33e")
 
-[node name="SpawnLocation" type="Node" parent="." node_paths=PackedStringArray("spawn")]
+[node name="SpawnLocation" type="Node" parent="." node_paths=PackedStringArray("spawns")]
 script = ExtResource("1_2518j")
-spawn = {
+spawns = {
 "jungle/room_2": NodePath("../spawn2")
 }
 metadata/_custom_type_script = "uid://xbqu3ca63qn6"

@@ -40,6 +40,16 @@ func _ready() -> void:
 	camera.limit_bottom = cam_limit_b
 	camera.limit_top = cam_limit_t
 	camera.zoom = zoom
+	
+	if GameHandler.spawnpoint!=null:
+		var spawn = get_tree().current_scene.find_child("SpawnLocation") as SpawnLocation
+		if spawn != null and spawn.spawn.has(GameHandler.spawnpoint):
+			global_position = spawn.spawn[GameHandler.spawnpoint].global_position
+			camera.global_position = global_position
+	
+	camera.reset_smoothing()
+	await get_tree().create_timer(0.05).timeout
+	Ui.set_transition(false)
 
 func default_player_input(local_mult=1):
 	var axis = Input.get_axis("left","right")

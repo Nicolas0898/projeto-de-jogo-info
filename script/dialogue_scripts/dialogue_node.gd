@@ -9,9 +9,10 @@ class_name dialogue_node
 @onready var v_box_container: VBoxContainer = $Panel/VBoxContainer
 var question_label = preload('res://scenes/question_label.tscn')
 var option = 0
+var is_question : bool = false
 
 var current_loaded_dialogue : Dialogue
-var c = 0
+var c : int = 0
 
 func updateText(label : Label ,newValue : String):
 	label.text = newValue
@@ -38,7 +39,6 @@ func question_handler(i : int):
 		else:
 			question_box.get_node("question" + str(option)).modulate = Color(1, 1, 1, 1)
 			option-=1
-	#print(question_box.get_node("question" + str(option)))
 	question_box.get_node("question" + str(option)).modulate = Color("#15ee00")
 
 func os():
@@ -57,6 +57,16 @@ func start(new_dialogue : Dialogue):
 		updateText(dialogue_text, current_loaded_dialogue.messages[c].text)
 		os()
 
+func dialogueEnd():
+	c=0
+	await Ui.fade_out(self)
+	updateText(dialogue_text, "")
+	current_loaded_dialogue.onDialogueEnd()
+	current_loaded_dialogue = null
+	InteractionSystem.action = null
+	is_question = false
+	return
+
 func loadNextMessage():
 	if current_loaded_dialogue.messages[c] is Question:
 		question_handler(1)
@@ -65,14 +75,7 @@ func loadNextMessage():
 	
 	c+=1
 	
-	if c>=len(current_loaded_dialogue.messages):
-		c=0
-		await Ui.fade_out(self)
-		updateText(dialogue_text, "")
-		current_loaded_dialogue.onDialogueEnd()
-		current_loaded_dialogue = null
-		InteractionSystem.action = null
-		return
+	if c>=len(current_loaded_dialogue.messages): dialogueEnd()
 	
 	Ui.fade_out(margin_container)
 	await Ui.fade_out(v_box_container)
@@ -84,13 +87,14 @@ func loadNextMessage():
 	updateSprite(border, current_loaded_dialogue.messages[c].border)
 	updateText(dialogue_text, current_loaded_dialogue.messages[c].text)
 	if current_loaded_dialogue.messages[c] is Question:
+		is_question = true
 		for i in range(len(current_loaded_dialogue.messages[c].questions)):
 			var q = question_label.instantiate()
 			q.text = current_loaded_dialogue.messages[c].questions[i].question
 			question_box.add_child(q)
 			q.name = "question" + str(i)
 		question_box.get_node("question" + str(option)).modulate = Color("#15ee00")
-	
+	else: is_question = false
 	# -visible ####################################
 	
 	Ui.fade_in(margin_container)
@@ -102,7 +106,7 @@ func confirm():
 		question_box.get_node("question" + str(i)).queue_free()
 	
 	if current_loaded_dialogue.messages[c].lock_dialogue == true:
-		current_loaded_dialogue.question(current_loaded_dialogue.messages[c].questions[option].response)
+		current_loaded_dialogue.question(current_loaded_dialogue.messages[c].questions[option])
 	else:
 		current_loaded_dialogue = current_loaded_dialogue.messages[c].questions[option].response
 		

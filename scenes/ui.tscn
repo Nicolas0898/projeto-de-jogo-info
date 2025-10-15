@@ -126,7 +126,6 @@ mouse_filter = 2
 texture = SubResource("GradientTexture2D_g0wmg")
 
 [node name="Dialogue" type="Control" parent="."]
-visible = false
 modulate = Color(1, 1, 1, 0.701961)
 layout_mode = 3
 anchors_preset = 15
@@ -504,6 +503,15 @@ layout_mode = 2
 visible = false
 offset_right = 40.0
 offset_bottom = 23.0
+
+[node name="Transition" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
 
 [connection signal="button_down" from="Confirm/Panel/VBoxContainer/HBoxContainer/yes" to="Confirm" method="_on_yes_button_down"]
 [connection signal="button_down" from="Confirm/Panel/VBoxContainer/HBoxContainer/no" to="Confirm" method="_on_no_button_down"]

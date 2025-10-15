@@ -4,6 +4,7 @@ extends CanvasLayer
 @onready var inventory: Control = $Inventory
 @onready var confirm: Confirm = $Confirm
 @onready var debug: Label = $debug
+@onready var transition: ColorRect = $Transition
 
 
 var tween : Tween
@@ -39,4 +40,11 @@ func cooldown(time : float, progress_bar : ProgressBar):
 	tween = create_tween()
 	tween.tween_property(progress_bar, "value", 0, time)
 	
+	await tween.finished
+
+func set_transition(value:bool):
+	var tween = create_tween()
+	if value:
+		tween.tween_property(transition,"modulate",Color(1,1,1,1),0.2)
+	else : tween.tween_property(transition,"modulate",Color(1,1,1,0),0.2)
 	await tween.finished
