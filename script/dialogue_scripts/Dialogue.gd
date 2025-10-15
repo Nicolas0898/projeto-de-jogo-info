@@ -16,9 +16,17 @@ func onDialogueEnd():
 	oneshot = next_dialogue.oneshot
 	next_dialogue = next_dialogue.next_dialogue
 
+func response(m, o, n):
+	messages = m
+	oneshot = o
+	next_dialogue = n
+
 func question(q):
-	if q.response == null and q.action == null: Ui.dialogue.dialogueEnd()
-	elif q.action != null: q.action.act()
-	else:
-		q.response.messages = q.messages
-		q.reponse.next_dialogue = q.next_dialogue
+	#print(q.response)
+	#print(q.response.messages[0].text)
+	#if q.response == null and q.action == null: Ui.dialogue.dialogueEnd()
+	#elif q.response == null: Ui.dialogue.dialogueEnd()
+	#if q.action != null: q.action.act()
+	#if q.response != null:
+	messages = q.response.messages
+	next_dialogue = q.response.next_dialogue

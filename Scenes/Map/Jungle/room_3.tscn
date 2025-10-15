@@ -9,7 +9,7 @@
 [ext_resource type="TileSet" uid="uid://dctgdgbcalghh" path="res://Scenes/Map/JUNGLE_FOREGROUND.tres" id="9_yj42n"]
 [ext_resource type="PackedScene" uid="uid://bhhvto6dt5454" path="res://Scenes/Map/JungleParallax.tscn" id="10_as1b8"]
 [ext_resource type="TileSet" uid="uid://bnjnwtobjhkof" path="res://Scenes/Map/WATER_JUNGLE.tres" id="10_cvwb8"]
-[ext_resource type="Script" uid="uid://xbqu3ca63qn6" path="res://Scripts/Components/SpawnLocation.gd" id="11_cvwb8"]
+[ext_resource type="Script" path="res://Scripts/Components/SpawnLocation.gd" id="11_cvwb8"]
 [ext_resource type="PackedScene" uid="uid://dwr4crb3vhg5b" path="res://Scenes/Map/world_environment.tscn" id="11_jnsv2"]
 
 [sub_resource type="GDScript" id="GDScript_no33e"]
@@ -30,7 +30,7 @@ shader_parameter/wave_frequency = 1.0
 shader_parameter/wave_speed = 1.0
 shader_parameter/wave_amplitude = 1.0
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 script = SubResource("GDScript_no33e")
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("1_cvwb8")]

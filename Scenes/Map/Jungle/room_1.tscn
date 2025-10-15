@@ -1,6 +1,6 @@
 [gd_scene load_steps=28 format=4 uid="uid://cwrl44jwaopp4"]
 
-[ext_resource type="Script" uid="uid://xbqu3ca63qn6" path="res://Scripts/Components/SpawnLocation.gd" id="1_2518j"]
+[ext_resource type="Script" path="res://Scripts/Components/SpawnLocation.gd" id="1_2518j"]
 [ext_resource type="TileSet" uid="uid://dctgdgbcalghh" path="res://Scenes/Map/JUNGLE_FOREGROUND.tres" id="1_seqh0"]
 [ext_resource type="PackedScene" uid="uid://brkn5mjfr67t4" path="res://Scenes/Player/Character.tscn" id="2_k84hv"]
 [ext_resource type="PackedScene" uid="uid://c5pik2cgvmlm4" path="res://Scenes/particles/falling_leaves.tscn" id="3_dpwlb"]
@@ -48,7 +48,7 @@ gradient = SubResource("Gradient_ib7rj")
 fill_from = Vector2(0, 1)
 fill_to = Vector2(0, 0)
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 script = SubResource("GDScript_no33e")
 
 [node name="SpawnLocation" type="Node" parent="." node_paths=PackedStringArray("spawn")]
