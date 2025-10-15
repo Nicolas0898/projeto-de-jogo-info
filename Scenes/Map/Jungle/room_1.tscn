@@ -48,7 +48,7 @@ gradient = SubResource("Gradient_ib7rj")
 fill_from = Vector2(0, 1)
 fill_to = Vector2(0, 0)
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 script = SubResource("GDScript_no33e")
 
 [node name="SpawnLocation" type="Node" parent="." node_paths=PackedStringArray("spawn")]

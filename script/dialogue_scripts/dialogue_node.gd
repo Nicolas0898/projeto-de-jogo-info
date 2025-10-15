@@ -56,6 +56,19 @@ func start(new_dialogue : Dialogue):
 		updateSprite(border, current_loaded_dialogue.messages[c].border)
 		updateText(dialogue_text, current_loaded_dialogue.messages[c].text)
 		os()
+		
+		if current_loaded_dialogue.messages[c] is Question:
+			is_question = true
+			for i in range(len(current_loaded_dialogue.messages[c].questions)):
+				var q = question_label.instantiate()
+				q.text = current_loaded_dialogue.messages[c].questions[i].question
+				question_box.add_child(q)
+				q.name = "question" + str(i)
+			question_box.get_node("question" + str(option)).modulate = Color("#15ee00")
+		else: is_question = false
+
+#func _physics_process(delta: float) -> void:
+	#print(selected)
 
 func dialogueEnd():
 	c=0
@@ -65,17 +78,18 @@ func dialogueEnd():
 	current_loaded_dialogue = null
 	InteractionSystem.action = null
 	is_question = false
-	return
 
 func loadNextMessage():
-	if current_loaded_dialogue.messages[c] is Question:
-		question_handler(1)
-		return
+	#if current_loaded_dialogue.messages[c] is Question:
+		#question_handler(1)
+		#return
 	if current_loaded_dialogue==null: return
 	
 	c+=1
 	
-	if c>=len(current_loaded_dialogue.messages): dialogueEnd()
+	if c>=len(current_loaded_dialogue.messages):
+		dialogueEnd()
+		return
 	
 	Ui.fade_out(margin_container)
 	await Ui.fade_out(v_box_container)
@@ -101,15 +115,26 @@ func loadNextMessage():
 	await Ui.fade_in(v_box_container)
 
 func confirm():
+	var arm
 	if current_loaded_dialogue.messages[c] is not Question: return
 	for i in range(len(current_loaded_dialogue.messages[c].questions)):
 		question_box.get_node("question" + str(i)).queue_free()
 	
+	arm = current_loaded_dialogue.messages[c]
 	if current_loaded_dialogue.messages[c].lock_dialogue == true:
-		current_loaded_dialogue.question(current_loaded_dialogue.messages[c].questions[option])
-	else:
 		current_loaded_dialogue = current_loaded_dialogue.messages[c].questions[option].response
+		#current_loaded_dialogue.question(current_loaded_dialogue.messages[c].questions[option])
+	else:
+		if current_loaded_dialogue.messages[c].questions[option].response == null:
+			dialogueEnd()
+			return
 		
+		var m = current_loaded_dialogue.messages[c].questions[option].response.messages
+		var o = current_loaded_dialogue.messages[c].questions[option].response.oneshot
+		var n = current_loaded_dialogue.messages[c].questions[option].response.next_dialogue
+		current_loaded_dialogue.response(m, o, n)
+	
+	if arm != null and arm is Question and arm.questions[option].action != null: arm.questions[option].action.act()
 	c = -1
 	loadNextMessage()
 
