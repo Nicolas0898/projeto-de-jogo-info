@@ -50,7 +50,7 @@ size = Vector2(80, 72)
 script = SubResource("GDScript_no33e")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_h3vtl")]
-position = Vector2(1, -36)
+position = Vector2(2, 40)
 cam_limit_r = 1054
 cam_limit_l = -100
 cam_limit_t = -100

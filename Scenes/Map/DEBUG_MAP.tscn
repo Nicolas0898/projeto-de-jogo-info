@@ -108,6 +108,3 @@ position = Vector2(1442, -331)
 
 [node name="AnimatedSprite2D" parent="." instance=ExtResource("8_dx3si")]
 position = Vector2(1853, -319)
-
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.878906, 0.878906, 0.878906, 1)

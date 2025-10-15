@@ -11,6 +11,7 @@ func _on_body_entered(body: Node2D) -> void:
 		body = body as PlayerCharacter
 		timer.start()
 		print("Entrou")
+		Ui.set_transition(true)
 
 func _on_timer_timeout() -> void:
 	NavigationManager.go_to_level(actual_level,destination_level)
