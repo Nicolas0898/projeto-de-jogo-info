@@ -62,3 +62,6 @@ func has_state(name:String) -> bool:
 		if i == name.to_lower():
 			return true
 	return false
+
+func get_current_state_name()->String:
+	return currentState.name.to_lower()

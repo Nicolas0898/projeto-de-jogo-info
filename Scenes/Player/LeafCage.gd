@@ -9,7 +9,7 @@ signal go(value)
 
 func returntoog():
 	if character.state_machine.currentState.name == "Core":
-		character.state_machine.requestStateChange("Falling")
+		character.remove_core(2)
 		
 func spritechanged():
 	if character.sprite.frame == 8:
@@ -22,7 +22,7 @@ func use():
 	go.emit(false)
 	character.sprite.animation_finished.disconnect(returntoog)
 	character.sprite.frame_changed.disconnect(spritechanged)
-	character.state_machine.requestStateChange("Core")
+	character.set_core(2)
 	character.sprite.play("cage")
 	
 	character.sprite.animation_finished.connect(returntoog)
@@ -35,7 +35,19 @@ func use():
 	
 	var dir = -1 if GameHandler.Player.sprite.flip_h else 1
 	var instance = LEAF_CAGE.instantiate()
-	instance.global_position = GameHandler.Player.global_position + Vector2(dir*100,10)
+	
+	var raycast = RayCast2D.new()
+	raycast.target_position = Vector2(dir*100,0)
+	raycast.global_position = GameHandler.Player.global_position
+	get_tree().current_scene.add_child(raycast)
+	raycast.force_raycast_update()
+	print(raycast.get_collision_point())
+	
+	if raycast.get_collider():
+		instance.global_position = raycast.get_collision_point() - Vector2(16*dir,0)
+	else:
+		instance.global_position = GameHandler.Player.global_position + Vector2(100*dir,10)
+	
 	
 	var area2D = Area2D.new()
 	var shape = CollisionShape2D.new()
@@ -80,10 +92,14 @@ func use():
 			if not is_instance_valid(body): return
 			if body.state_machine.currentState.name == "Stunned":
 				body.state_machine.requestStateChange(b)
-		
-		
+	
+	if not body:
+		instance.get_node("Hitbox").monitoring = false
+		instance.get_node("StaticBody2D").set_collision_layer_value(1,true)
+	
 	get_tree().current_scene.add_child(instance)
-	var timer = get_tree().create_timer(2)
+	var time = 2 if body else 6
+	var timer = get_tree().create_timer(time)
 	var destroyOnHit = func(_a,origin):
 		if origin!=instance.get_node("Hitbox"):
 			timer.time_left = 0
