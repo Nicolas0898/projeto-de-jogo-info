@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://cwrl44jwaopp4"]
+[gd_scene load_steps=34 format=4 uid="uid://cwrl44jwaopp4"]
 
 [ext_resource type="Script" uid="uid://xbqu3ca63qn6" path="res://Scripts/Components/SpawnLocation.gd" id="1_2518j"]
 [ext_resource type="TileSet" uid="uid://dctgdgbcalghh" path="res://Scenes/Map/JUNGLE_FOREGROUND.tres" id="1_seqh0"]
@@ -25,8 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://dqiyuc6o8q627" path="res://Scenes/interaction_area.tscn" id="23_li0yx"]
 [ext_resource type="Resource" uid="uid://ve3gjhnmurfr" path="res://resource/item/Mapa_pantano.tres" id="24_uc8id"]
 [ext_resource type="Script" uid="uid://c41v5wv6fa0vx" path="res://script/item_scripts/item_giver.gd" id="24_uks6v"]
-[ext_resource type="Texture2D" uid="uid://dmpplvyyow24l" path="res://Images/assets/swamp_map.png" id="24_xxwy6"]
-[ext_resource type="Script" uid="uid://qsuh4f4vfaje" path="res://indicator.gd" id="25_uks6v"]
+[ext_resource type="Texture2D" uid="uid://dbwi2if3cutgq" path="res://Images/assets/MAPA.png" id="26_xxwy6"]
 
 [sub_resource type="GDScript" id="GDScript_no33e"]
 script/source = "extends Node
@@ -58,7 +57,7 @@ script = ExtResource("24_uks6v")
 i = ExtResource("24_uc8id")
 quantity = 1
 interaction_amount = 1
-message = ""
+message = "*Você coletou o Mapa do pantano"
 metadata/_custom_type_script = "uid://c41v5wv6fa0vx"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uc8id"]
@@ -324,13 +323,8 @@ action = SubResource("Resource_uc8id")
 position = Vector2(-1044, -148)
 shape = SubResource("CircleShape2D_uc8id")
 
-[node name="Sprite2D" type="Sprite2D" parent="interaction_area"]
-position = Vector2(-1043, -137)
-rotation = 0.359538
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("24_xxwy6")
-script = ExtResource("25_uks6v")
-frequency = 0.04
-amplitude = 2.0
+[node name="Mapa" type="Sprite2D" parent="interaction_area"]
+position = Vector2(-1053, -137)
+texture = ExtResource("26_xxwy6")
 
 [editable path="GrappleNode"]

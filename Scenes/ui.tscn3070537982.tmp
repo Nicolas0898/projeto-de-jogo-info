@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://cc2qsjoqgcdqu"]
+[gd_scene load_steps=32 format=3 uid="uid://cc2qsjoqgcdqu"]
 
 [ext_resource type="Script" uid="uid://dfxy21hd8djmg" path="res://script/ui.gd" id="1_nt7q6"]
 [ext_resource type="Script" uid="uid://cffdhewqtjjw1" path="res://script/dialogue_scripts/dialogue_node.gd" id="2_yev5y"]
@@ -102,19 +102,8 @@ expand_margin_bottom = 5.0
 Button/styles/focus = SubResource("StyleBoxTexture_4vbiv")
 Button/styles/normal = SubResource("StyleBoxTexture_3r70p")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8fs27"]
-bg_color = Color(0.6, 0.6, 0.6, 0.0470588)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-
 [sub_resource type="Theme" id="Theme_whq80"]
-Panel/styles/panel = SubResource("StyleBoxFlat_8fs27")
+Panel/styles/panel = null
 
 [node name="UI" type="CanvasLayer"]
 layer = 100
