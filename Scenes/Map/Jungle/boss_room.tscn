@@ -140,7 +140,7 @@ position = Vector2(-199, 23)
 position = Vector2(1235, -74)
 
 [node name="teleport_room_2" parent="." instance=ExtResource("6_wk6xh")]
-position = Vector2(1337, -107)
+position = Vector2(1351, -111)
 actual_level = "Jungle/boss_room"
 destination_level = "Jungle/final_room"
 

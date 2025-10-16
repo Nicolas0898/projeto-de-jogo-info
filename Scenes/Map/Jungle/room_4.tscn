@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://7rxq03nbvsyf"]
+[gd_scene load_steps=31 format=4 uid="uid://7rxq03nbvsyf"]
 
 [ext_resource type="TileSet" uid="uid://dctgdgbcalghh" path="res://Scenes/Map/JUNGLE_FOREGROUND.tres" id="1_d1xrk"]
 [ext_resource type="PackedScene" uid="uid://brkn5mjfr67t4" path="res://Scenes/Player/Character.tscn" id="2_cd1nn"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://dfcki0ewl81yj" path="res://Scenes/Objects/coin.tscn" id="19_l4lii"]
 [ext_resource type="PackedScene" uid="uid://bc4vsdggdjydf" path="res://Scenes/Objects/aguaboia.tscn" id="20_x5xf7"]
 [ext_resource type="PackedScene" uid="uid://d1qq5a1g2k3v" path="res://Scenes/Entities/Fly/fly_body.tscn" id="21_sgctt"]
+[ext_resource type="PackedScene" uid="uid://vokqjyhjkv4a" path="res://Scenes/Objects/lamp.tscn" id="22_fwf8s"]
 
 [sub_resource type="GDScript" id="GDScript_no33e"]
 
@@ -34,36 +35,38 @@ shader_parameter/wave_amplitude = 1.0
 texture = ExtResource("5_d1xrk")
 texture_region_size = Vector2i(32, 32)
 1:1/0 = 0
-1:1/0/modulate = Color(0.82, 0.82, 0.82, 1)
+1:1/0/modulate = Color(0.564764, 0.548793, 0, 1)
 1:1/0/z_index = -2
 2:1/0 = 0
-2:1/0/modulate = Color(0.82, 0.82, 0.82, 1)
+2:1/0/modulate = Color(0.564764, 0.548793, 0, 1)
 2:1/0/z_index = -2
 2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -3, 12, -3, -8, 5)
 0:1/0 = 0
-0:1/0/modulate = Color(0.82, 0.82, 0.82, 1)
+0:1/0/modulate = Color(0.564764, 0.548793, 0, 1)
 0:1/0/z_index = -2
 1:0/0 = 0
-1:0/0/modulate = Color(0.82, 0.82, 0.82, 1)
+1:0/0/modulate = Color(0.564764, 0.548793, 0, 1)
 1:0/0/z_index = -2
 0:0/0 = 0
+0:0/0/modulate = Color(0.564764, 0.548793, 0, 1)
 0:0/0/z_index = -2
 2:0/0 = 0
+2:0/0/modulate = Color(0.564764, 0.548793, 0, 1)
 2:0/0/z_index = -2
 1:2/0 = 0
-1:2/0/modulate = Color(0.82, 0.82, 0.82, 1)
+1:2/0/modulate = Color(0.564764, 0.548793, 0, 1)
 1:2/0/z_index = -2
 1:3/0 = 0
-1:3/0/modulate = Color(0.82, 0.82, 0.82, 1)
+1:3/0/modulate = Color(0.564764, 0.548793, 0, 1)
 1:3/0/z_index = -2
 0:4/0 = 0
-0:4/0/modulate = Color(0.82, 0.82, 0.82, 1)
+0:4/0/modulate = Color(0.564764, 0.548793, 0, 1)
 0:4/0/z_index = -2
 1:4/0 = 0
-1:4/0/modulate = Color(0.82, 0.82, 0.82, 1)
+1:4/0/modulate = Color(0.564764, 0.548793, 0, 1)
 1:4/0/z_index = -2
 2:4/0 = 0
-2:4/0/modulate = Color(0.82, 0.82, 0.82, 1)
+2:4/0/modulate = Color(0.564764, 0.548793, 0, 1)
 2:4/0/z_index = -2
 3:1/0 = 0
 3:1/0/z_index = -1
@@ -94,12 +97,16 @@ texture_region_size = Vector2i(32, 32)
 texture = ExtResource("6_cd1nn")
 texture_region_size = Vector2i(32, 16)
 0:1/0 = 0
+0:1/0/modulate = Color(0.564764, 0.548793, 0, 1)
 0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -2, 16, -4, 15.942, 1.92982, -16, 3.5)
 1:1/0 = 0
+1:1/0/modulate = Color(0.564764, 0.548793, 0, 1)
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.5, -4, 16, -4, 16, 1, -16.5, 1)
 2:1/0 = 0
+2:1/0/modulate = Color(0.564764, 0.548793, 0, 1)
 2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -4, 16, -4, 16, 1, -16, 1)
 3:1/0 = 0
+3:1/0/modulate = Color(0.564764, 0.548793, 0, 1)
 3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -4, 16, -0.5, 16, 5, -16, 1)
 4:1/0 = 0
 5:1/0 = 0
@@ -264,7 +271,7 @@ actual_level = "Jungle/room_4"
 destination_level = "Jungle/boss_room"
 
 [node name="teleport" parent="." instance=ExtResource("13_gortm")]
-position = Vector2(-1109, -53)
+position = Vector2(-1143, -50)
 actual_level = "Jungle/room_4"
 destination_level = "Jungle/room_3"
 spawn_direction = "left"
@@ -381,7 +388,6 @@ position = Vector2(-136, -172)
 range = 243.0
 
 [node name="GrappleNode6" parent="GrappleNode6" instance=ExtResource("12_hx8g8")]
-modulate = Color(0.996078, 1, 0.658824, 1)
 z_index = 6
 position = Vector2(721, -59)
 range = 243.0
@@ -465,6 +471,24 @@ position = Vector2(443, -14)
 [node name="FlyBody" parent="." instance=ExtResource("21_sgctt")]
 position = Vector2(-944, -326)
 script = null
+
+[node name="lamp" parent="." instance=ExtResource("22_fwf8s")]
+position = Vector2(431, -162)
+
+[node name="lamp3" parent="lamp" instance=ExtResource("22_fwf8s")]
+position = Vector2(-1028, 64)
+
+[node name="lamp5" parent="lamp" instance=ExtResource("22_fwf8s")]
+position = Vector2(-273, -37)
+
+[node name="lamp6" parent="lamp" instance=ExtResource("22_fwf8s")]
+position = Vector2(-1191, 29)
+
+[node name="lamp2" parent="lamp" instance=ExtResource("22_fwf8s")]
+position = Vector2(498, 0)
+
+[node name="lamp" parent="lamp" instance=ExtResource("22_fwf8s")]
+position = Vector2(-581, -4)
 
 [editable path="ParallaxBackground2"]
 [editable path="ParallaxBackground3"]

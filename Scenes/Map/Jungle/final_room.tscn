@@ -44,7 +44,7 @@ tile_map_data = PackedByteArray("AAD5/wIAAwADAAAAAAD6/wIAAwACAAAAAAD7/wIAAwADAAA
 tile_set = ExtResource("3_tucf6")
 
 [node name="teleport_room_1" parent="." instance=ExtResource("6_wqx1s")]
-position = Vector2(-325, -18)
+position = Vector2(-345, -15)
 actual_level = "Jungle/final_room"
 destination_level = "Jungle/boss_room"
 spawn_direction = "left"
