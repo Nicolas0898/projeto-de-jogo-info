@@ -1,10 +1,13 @@
 extends BaseHurtbox
+@onready var iframe: Timer = $Iframe
 
 func _ready() -> void:
 	set_collision_layer_value(3,true)
 
 func onHit(other:Hitbox):
+	if not iframe.is_stopped(): return
 	super(other)
+	iframe.start()
 	
 	if character.get_node("GrapplingHook"):
 		character.get_node("GrapplingHook").reset_hooks()

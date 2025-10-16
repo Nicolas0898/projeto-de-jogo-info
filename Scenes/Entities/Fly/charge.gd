@@ -20,10 +20,12 @@ func onStateEntered(_old):
 	character.get_node("Sprite").play("Charge")
 	character.blink(0.5,"#ffffff",0.5)
 	await get_tree().create_timer(0.4).timeout
+	if stateMachine.currentState!= self: return
 	character.get_node("Sprite").play("Running")
 	var dir = character.global_position.direction_to(plrChar.global_position)
 	character.variable_velocity+=dir*530
 	await get_tree().create_timer(0.3).timeout
+	if stateMachine.currentState!= self: return
 	character.get_node("BaseHurtbox").knockback_multiplier = og
 	stateMachine.requestStateChange("Chase")
 

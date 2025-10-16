@@ -7,7 +7,7 @@ class_name Hurtbox
 func onHit(hitbox:Hitbox):
 	if not health_component : return
 	var damage = hitbox.damage
-	health_component.takeDamage(damage)
+	health_component.takeDamage(damage,hitbox)
 	
 	var character = get_parent() as BaseEntity
 	if damage>0:

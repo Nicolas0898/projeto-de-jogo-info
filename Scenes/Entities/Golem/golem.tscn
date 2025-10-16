@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://cn12v5ofbe1kg"]
+[gd_scene load_steps=64 format=3 uid="uid://cn12v5ofbe1kg"]
 
 [ext_resource type="Shader" uid="uid://lk8vqo6nbyf3" path="res://Shaders/Character.gdshader" id="1_7ob6n"]
 [ext_resource type="Texture2D" uid="uid://r0netu06hxfa" path="res://sprites/golem_spritesheet.png" id="2_25w2q"]
@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://cjp4qnql8sagg" path="res://Scenes/Entities/Golem/throw.gd" id="13_rtown"]
 [ext_resource type="Script" uid="uid://blfwkqgeamobt" path="res://Scripts/Components/Hitbox.gd" id="13_tbvup"]
 [ext_resource type="Script" uid="uid://b4s2bxlcya30p" path="res://Scenes/Entities/state.gd" id="14_uysif"]
+[ext_resource type="Script" uid="uid://co267qys8ureh" path="res://Scenes/Entities/Fly/stunned.gd" id="15_n1p4n"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1y50k"]
 shader = ExtResource("1_7ob6n")
@@ -354,7 +355,8 @@ size = Vector2(44, 68)
 
 [node name="BaseEntity" type="CharacterBody2D"]
 material = SubResource("ShaderMaterial_1y50k")
-collision_layer = 0
+position = Vector2(0, -39)
+collision_layer = 2
 script = ExtResource("2_rtown")
 metadata/_custom_type_script = "uid://b4v73lx8blb1p"
 
@@ -362,9 +364,7 @@ metadata/_custom_type_script = "uid://b4v73lx8blb1p"
 use_parent_material = true
 position = Vector2(-7, -25)
 sprite_frames = SubResource("SpriteFrames_c6a52")
-animation = &"roll_prepare"
-frame = 1
-frame_progress = 1.0
+animation = &"idle"
 
 [node name="walking_smoke" parent="AnimatedSprite2D" instance=ExtResource("3_po0ob")]
 modulate = Color(1, 1, 1, 0.129412)
@@ -426,6 +426,10 @@ metadata/_custom_type_script = "uid://ca8wa4d6wsrqb"
 [node name="Died" type="Node" parent="StateMachine"]
 script = ExtResource("14_uysif")
 metadata/_custom_type_script = "uid://b4s2bxlcya30p"
+
+[node name="Stunned" type="Node" parent="StateMachine"]
+script = ExtResource("15_n1p4n")
+metadata/_custom_type_script = "uid://co267qys8ureh"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 4.5)

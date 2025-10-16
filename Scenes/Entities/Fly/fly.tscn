@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://dugkamrvn6d0g"]
+[gd_scene load_steps=48 format=3 uid="uid://dugkamrvn6d0g"]
 
 [ext_resource type="Shader" uid="uid://lk8vqo6nbyf3" path="res://Shaders/Character.gdshader" id="1_d6fad"]
 [ext_resource type="Script" uid="uid://b4v73lx8blb1p" path="res://Scripts/Components/BaseEntity.gd" id="1_x1axm"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://ddw7ea2k6dy6d" path="res://Scenes/Entities/Fly/charge.gd" id="6_cnhfl"]
 [ext_resource type="Script" uid="uid://0d7bnicgm37i" path="res://Scripts/Components/BaseHurtbox.gd" id="7_brr4v"]
 [ext_resource type="Script" uid="uid://bus6gvan1wcw1" path="res://Scenes/Entities/Fly/died.gd" id="7_yjmwn"]
+[ext_resource type="Script" uid="uid://co267qys8ureh" path="res://Scenes/Entities/Fly/stunned.gd" id="8_12l6a"]
 [ext_resource type="Script" uid="uid://blfwkqgeamobt" path="res://Scripts/Components/Hitbox.gd" id="8_xkxda"]
 [ext_resource type="Texture2D" uid="uid://dg6ytmh86qth1" path="res://Images/Fly/parando.png" id="9_ylf0o"]
 [ext_resource type="Texture2D" uid="uid://3r7bq3e88kcl" path="res://Images/Fly/morrendo.png" id="10_w8lvy"]
@@ -243,7 +244,7 @@ size = Vector2(25, 18)
 
 [node name="Fly" type="CharacterBody2D"]
 material = SubResource("ShaderMaterial_cnhfl")
-collision_layer = 32
+collision_layer = 34
 collision_mask = 33
 script = ExtResource("1_x1axm")
 metadata/_custom_type_script = "uid://b4v73lx8blb1p"
@@ -271,6 +272,11 @@ metadata/_custom_type_script = "uid://ca8wa4d6wsrqb"
 
 [node name="Died" type="Node" parent="StateMachine"]
 script = ExtResource("7_yjmwn")
+metadata/_custom_type_script = "uid://ca8wa4d6wsrqb"
+
+[node name="Stunned" type="Node" parent="StateMachine"]
+script = ExtResource("8_12l6a")
+aerial = true
 metadata/_custom_type_script = "uid://ca8wa4d6wsrqb"
 
 [node name="HealthComponent" type="Node" parent="."]
