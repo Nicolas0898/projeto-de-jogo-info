@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://cc2qsjoqgcdqu"]
+[gd_scene load_steps=29 format=3 uid="uid://cc2qsjoqgcdqu"]
 
 [ext_resource type="Script" uid="uid://dfxy21hd8djmg" path="res://script/ui.gd" id="1_nt7q6"]
 [ext_resource type="Script" uid="uid://cffdhewqtjjw1" path="res://script/dialogue_scripts/dialogue_node.gd" id="2_yev5y"]
@@ -6,10 +6,10 @@
 [ext_resource type="Script" uid="uid://ewrkrfl4tybb" path="res://script/inventory.gd" id="4_gdt2y"]
 [ext_resource type="Texture2D" uid="uid://u2v7vikk56v2" path="res://Images/UI/square.png" id="4_mmixe"]
 [ext_resource type="Script" uid="uid://bu8krnugqph56" path="res://script/item_scripts/item.gd" id="5_wm3ai"]
+[ext_resource type="Resource" uid="uid://cijnx7iq50t2u" path="res://resource/item/Plumerico.tres" id="8_4vbiv"]
 [ext_resource type="Resource" uid="uid://dhj1nx7sy3gd2" path="res://resource/item/Poção_cura.tres" id="8_cgfq5"]
 [ext_resource type="Script" uid="uid://bynmlovsbvyqt" path="res://script/interact/confirm.gd" id="9_cgfq5"]
 [ext_resource type="StyleBox" uid="uid://5wvj2f2hfhom" path="res://Scenes/UI/inventory_ui.tres" id="9_g0wmg"]
-[ext_resource type="Texture2D" uid="uid://dx6ickvyph0l3" path="res://Images/items/moneyInv.png" id="9_nt8jn"]
 [ext_resource type="Texture2D" uid="uid://bug7slh0fa3wv" path="res://Images/UI/btn.png" id="12_8fs27"]
 [ext_resource type="Texture2D" uid="uid://ddtyrq47rmv2x" path="res://Images/UI/select.png" id="13_3r70p"]
 
@@ -52,17 +52,6 @@ region_rect = Rect2(0, 0, 32, 32)
 
 [sub_resource type="Theme" id="Theme_hj2ta"]
 Panel/styles/panel = SubResource("StyleBoxTexture_nt8jn")
-
-[sub_resource type="Resource" id="Resource_g0wmg"]
-script = ExtResource("5_wm3ai")
-name = "Plumérico"
-desc = "Dinheiro unificado da ilha, criado pelo Reino Branco"
-amount = 1
-cooldown = 0.0
-display = 1
-sprite = ExtResource("9_nt8jn")
-confirm = false
-metadata/_custom_type_script = "uid://bu8krnugqph56"
 
 [sub_resource type="LabelSettings" id="LabelSettings_yev5y"]
 font = ExtResource("3_gdt2y")
@@ -224,7 +213,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = SubResource("Theme_hj2ta")
 script = ExtResource("4_gdt2y")
-inventario = Array[ExtResource("5_wm3ai")]([ExtResource("8_cgfq5"), SubResource("Resource_g0wmg")])
+inventario = Array[ExtResource("5_wm3ai")]([ExtResource("8_cgfq5"), ExtResource("8_4vbiv")])
 
 [node name="Panel" type="Panel" parent="Inventory"]
 layout_mode = 1
