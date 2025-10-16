@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://dnaps1w06tdoe"]
+
+[ext_resource type="Script" uid="uid://bu8krnugqph56" path="res://script/item_scripts/item.gd" id="1_vd6sh"]
+[ext_resource type="Texture2D" uid="uid://du7kj0bblx1v1" path="res://Images/items/cordas_inv.png" id="2_satbi"]
+
+[resource]
+script = ExtResource("1_vd6sh")
+name = "Corda"
+desc = "Item criado por trepadores. Permite ao portador utilizar os pontos de corda"
+amount = 0
+cooldown = 0.0
+display = 1
+sprite = ExtResource("2_satbi")
+confirm = false
+metadata/_custom_type_script = "uid://bu8krnugqph56"

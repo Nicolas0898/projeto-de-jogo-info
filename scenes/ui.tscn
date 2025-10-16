@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bug7slh0fa3wv" path="res://Images/UI/btn.png" id="12_8fs27"]
 [ext_resource type="Texture2D" uid="uid://ddtyrq47rmv2x" path="res://Images/UI/select.png" id="13_3r70p"]
 [ext_resource type="Texture2D" uid="uid://btdealimdeqkh" path="res://Images/UI/swamp_map.png" id="13_8fs27"]
-[ext_resource type="Script" path="res://script/map.gd" id="13_whq80"]
+[ext_resource type="Script" uid="uid://u1s3fe4dct3e" path="res://script/map.gd" id="13_whq80"]
 
 [sub_resource type="Gradient" id="Gradient_nt8jn"]
 colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1)

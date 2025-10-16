@@ -163,6 +163,7 @@ visibility_layer = 5
 position = Vector2(-60, -219)
 cam_limit_r = 1085
 cam_limit_l = -1065
+cam_limit_t = -520
 cam_limit_b = 418
 
 [node name="falling_leaves" parent="CharacterBody2D" instance=ExtResource("3_gpl0a")]
@@ -336,7 +337,6 @@ visible = false
 [node name="WorldEnvironment" parent="." instance=ExtResource("15_ommup")]
 
 [node name="PointLight2D2" type="PointLight2D" parent="."]
-visible = false
 position = Vector2(666.469, 68.7512)
 rotation = 2.00713
 scale = Vector2(16.4432, 7.99533)
@@ -348,7 +348,6 @@ range_layer_max = 512
 texture = SubResource("GradientTexture2D_rmbuc")
 
 [node name="PointLight2D3" type="PointLight2D" parent="."]
-visible = false
 position = Vector2(-330.582, -74.7749)
 rotation = 2.00713
 scale = Vector2(17.4354, 7.99533)

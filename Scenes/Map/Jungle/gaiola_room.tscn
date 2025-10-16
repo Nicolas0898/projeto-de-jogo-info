@@ -30,7 +30,8 @@ fill_from = Vector2(1, 1)
 [sub_resource type="Resource" id="Resource_4cbs5"]
 script = ExtResource("11_h3vtl")
 i = ExtResource("10_nvjd3")
-quantity = 1
+quantity = 0
+interaction_amount = 1
 message = "*Você coletou Gaiola de folhas"
 metadata/_custom_type_script = "uid://c41v5wv6fa0vx"
 
