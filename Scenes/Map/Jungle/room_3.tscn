@@ -54,7 +54,8 @@ position = Vector2(9, 64)
 shape = SubResource("RectangleShape2D_3v6ad")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_5ekge")]
-position = Vector2(700, -33)
+position = Vector2(1747, -32)
+cam_limit_r = 1832
 cam_limit_l = -343
 cam_limit_b = 103
 
@@ -84,7 +85,7 @@ destination_level = "Jungle/room_2"
 [node name="teleport_room_2" parent="." instance=ExtResource("6_vbgow")]
 position = Vector2(1905, -47)
 actual_level = "Jungle/room_3"
-destination_level = "Jungle/boss_room"
+destination_level = "Jungle/room_4"
 
 [node name="ParallaxBackground3" parent="." instance=ExtResource("10_as1b8")]
 scroll_base_offset = Vector2(0, -450)
@@ -121,15 +122,15 @@ texture = SubResource("GradientTexture2D_l3onn")
 [node name="SpawnLocation" type="Node" parent="." node_paths=PackedStringArray("spawn")]
 script = ExtResource("11_cvwb8")
 spawn = {
-"jungle/boss_room": NodePath("spawn2"),
-"jungle/room_2": NodePath("spawn")
+"jungle/room_2": NodePath("spawn"),
+"jungle/room_4": NodePath("spawn2")
 }
 
 [node name="spawn" type="Node2D" parent="SpawnLocation"]
 position = Vector2(-331, -6)
 
 [node name="spawn2" type="Node2D" parent="SpawnLocation"]
-position = Vector2(1138, -6)
+position = Vector2(1792, -6)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
