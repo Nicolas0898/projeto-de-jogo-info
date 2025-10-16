@@ -89,6 +89,7 @@ func input():
 	if open:
 		selected.grab_focus()
 	else:
+		#GameHandler.Player.state_machine.requestStateChange("Running")
 		get_viewport().gui_release_focus()
 	
 	await Ui.fade_in(self) if open else await Ui.fade_out(self)

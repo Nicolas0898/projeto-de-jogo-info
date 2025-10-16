@@ -7,8 +7,8 @@ extends Node
 # d = dialogo
 
 func _input(event: InputEvent) -> void:
-	if action: GameHandler.Player.state_machine.requestStateChange("core")
-	else: GameHandler.Player.state_machine.requestStateChange("falling")
+	#if action: 
+		#GameHandler.Player.state_machine.requestStateChange("core")
 	
 	if event.is_action_pressed("up"):
 		if action is Dialogue: 
@@ -18,7 +18,8 @@ func _input(event: InputEvent) -> void:
 			if Ui.dialogue.is_question: Ui.dialogue.question_handler(1)
 	
 	if event.is_action_pressed("interact"):
-		if action is Map: Ui.map_node.deactivate()
+		if action is Map: 
+			Ui.map_node.deactivate()
 		if action is Dialogue:
 			if Ui.dialogue.is_question: Ui.dialogue.confirm()
 			else:  Ui.dialogue.loadNextMessage()
