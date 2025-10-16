@@ -406,9 +406,9 @@ target_position = Vector2(0, -32)
 use_parent_material = true
 position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_a0efk")
-animation = &"hook"
+animation = &"cage"
 autoplay = "idle"
-frame = 5
+frame = 9
 frame_progress = 1.0
 offset = Vector2(0.920864, -1.3813)
 

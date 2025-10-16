@@ -16,13 +16,12 @@ func spritechanged():
 		go.emit(true)
 		
 func use():
-	
 	if on_cooldown: return
+	set_on_cooldown()
 	
 	go.emit(false)
 	character.sprite.animation_finished.disconnect(returntoog)
 	character.sprite.frame_changed.disconnect(spritechanged)
-	set_on_cooldown()
 	character.state_machine.requestStateChange("Core")
 	character.sprite.play("cage")
 	
