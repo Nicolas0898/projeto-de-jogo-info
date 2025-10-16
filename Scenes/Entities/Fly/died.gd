@@ -6,6 +6,7 @@ func onPhysics(delta:float):
 
 
 func onStateEntered(_old):
+	stateMachine.lockstate = true
 	character.variable_velocity*=10
 	create_tween().tween_method(speed_t,character.constant_velocity.walk,Vector2.ZERO,2)
 	var sprite = character.get_node("Sprite") as AnimatedSprite2D

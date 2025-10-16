@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://cggtt882ti85n"]
+
+[ext_resource type="Texture2D" uid="uid://jb7iy2cdtt3s" path="res://Images/entities/firefly.png" id="1_t7o6m"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_a44ge"]
+particles_animation = true
+particles_anim_h_frames = 4
+particles_anim_v_frames = 1
+particles_anim_loop = true
+
+[sub_resource type="Gradient" id="Gradient_t7o6m"]
+offsets = PackedFloat32Array(0, 0.127273, 0.863636, 0.990909)
+colors = PackedColorArray(0, 0, 0, 0, 0.872727, 0.872727, 0.872727, 1, 0.956005, 0.956005, 0.956005, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_a44ge"]
+gradient = SubResource("Gradient_t7o6m")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_365wq"]
+particle_flag_disable_z = true
+initial_velocity_min = 50.0
+initial_velocity_max = 100.0
+gravity = Vector3(0, 2, 0)
+scale_min = 0.5
+color_ramp = SubResource("GradientTexture1D_a44ge")
+anim_speed_min = 40.0
+anim_speed_max = 50.0
+turbulence_enabled = true
+turbulence_noise_scale = 6.0
+
+[node name="firefly" type="GPUParticles2D"]
+self_modulate = Color(18.232, 13.259, 0.785, 1)
+material = SubResource("CanvasItemMaterial_a44ge")
+amount = 6
+texture = ExtResource("1_t7o6m")
+lifetime = 20.0
+randomness = 1.0
+use_fixed_seed = true
+seed = 3439003993
+fixed_fps = 120
+process_material = SubResource("ParticleProcessMaterial_365wq")
