@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://cwrl44jwaopp4"]
+[gd_scene load_steps=40 format=4 uid="uid://cwrl44jwaopp4"]
 
 [ext_resource type="Script" uid="uid://xbqu3ca63qn6" path="res://Scripts/Components/SpawnLocation.gd" id="1_2518j"]
 [ext_resource type="TileSet" uid="uid://dctgdgbcalghh" path="res://Scenes/Map/JUNGLE_FOREGROUND.tres" id="1_seqh0"]
@@ -67,6 +67,9 @@ metadata/_custom_type_script = "uid://c41v5wv6fa0vx"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uc8id"]
 radius = 29.1548
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_15me3"]
+size = Vector2(459, 8.5)
 
 [node name="Node2D3" type="Node2D"]
 script = SubResource("GDScript_no33e")
@@ -518,6 +521,22 @@ modulate = Color(1, 1, 1, 0.164706)
 position = Vector2(905, -15)
 scale = Vector2(2, 1.7)
 texture = ExtResource("17_6txsl")
+
+[node name="WaterBlock" type="StaticBody2D" parent="."]
+collision_layer = 34
+collision_mask = 34
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WaterBlock"]
+position = Vector2(-252, 35)
+shape = SubResource("RectangleShape2D_15me3")
+
+[node name="WaterBlock2" type="StaticBody2D" parent="."]
+collision_layer = 34
+collision_mask = 34
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WaterBlock2"]
+position = Vector2(659.5, 0.75)
+shape = SubResource("RectangleShape2D_15me3")
 
 [editable path="ParallaxBackground2"]
 [editable path="ParallaxBackground"]

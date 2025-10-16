@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://7rxq03nbvsyf"]
+[gd_scene load_steps=33 format=4 uid="uid://7rxq03nbvsyf"]
 
 [ext_resource type="TileSet" uid="uid://dctgdgbcalghh" path="res://Scenes/Map/JUNGLE_FOREGROUND.tres" id="1_d1xrk"]
 [ext_resource type="PackedScene" uid="uid://brkn5mjfr67t4" path="res://Scenes/Player/Character.tscn" id="2_cd1nn"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://bc4vsdggdjydf" path="res://Scenes/Objects/aguaboia.tscn" id="20_x5xf7"]
 [ext_resource type="PackedScene" uid="uid://d1qq5a1g2k3v" path="res://Scenes/Entities/Fly/fly_body.tscn" id="21_sgctt"]
 [ext_resource type="PackedScene" uid="uid://vokqjyhjkv4a" path="res://Scenes/Objects/lamp.tscn" id="22_fwf8s"]
+[ext_resource type="PackedScene" uid="uid://bgj5i6vxa07tq" path="res://Scenes/Entities/Piranha/piranha.tscn" id="23_b3gru"]
 
 [sub_resource type="GDScript" id="GDScript_no33e"]
 
@@ -130,6 +131,9 @@ metadata/_snap_enabled = true
 gradient = SubResource("Gradient_efyuc")
 fill_from = Vector2(0.00917431, 1)
 fill_to = Vector2(0, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fwf8s"]
+size = Vector2(1705, 4)
 
 [node name="Node2D" type="Node2D"]
 script = SubResource("GDScript_no33e")
@@ -263,9 +267,6 @@ visible = false
 offset = Vector2(0, -320)
 transform = Transform2D(1, 0, 0, 1, 0, -320)
 
-[node name="Fly" parent="." instance=ExtResource("11_3kbr4")]
-position = Vector2(-292, -103)
-
 [node name="teleport_boss_room" parent="." instance=ExtResource("13_gortm")]
 position = Vector2(1157, -67)
 actual_level = "Jungle/room_4"
@@ -381,14 +382,14 @@ position = Vector2(-972, -21)
 [node name="spawn2" type="Node2D" parent="."]
 position = Vector2(1050, -26)
 
+[node name="GrappleNode7" parent="." instance=ExtResource("12_hx8g8")]
+z_index = 6
+position = Vector2(585, -231)
+range = 243.0
+
 [node name="GrappleNode6" parent="." instance=ExtResource("12_hx8g8")]
 z_index = 6
 position = Vector2(-136, -172)
-range = 243.0
-
-[node name="GrappleNode6" parent="GrappleNode6" instance=ExtResource("12_hx8g8")]
-z_index = 6
-position = Vector2(721, -59)
 range = 243.0
 
 [node name="GrappleNode5" parent="." instance=ExtResource("12_hx8g8")]
@@ -461,11 +462,14 @@ position = Vector2(-999, -339)
 [node name="RigidBody2D21" parent="Coins" instance=ExtResource("19_l4lii")]
 position = Vector2(-1008, -320)
 
+[node name="Fly3" parent="." instance=ExtResource("11_3kbr4")]
+position = Vector2(564, -302)
+
 [node name="Fly2" parent="." instance=ExtResource("11_3kbr4")]
 position = Vector2(121, -288)
 
-[node name="Fly2" parent="Fly2" instance=ExtResource("11_3kbr4")]
-position = Vector2(443, -14)
+[node name="Fly" parent="." instance=ExtResource("11_3kbr4")]
+position = Vector2(-292, -103)
 
 [node name="FlyBody" parent="." instance=ExtResource("21_sgctt")]
 position = Vector2(-944, -326)
@@ -488,6 +492,32 @@ position = Vector2(498, 0)
 
 [node name="lamp" parent="lamp" instance=ExtResource("22_fwf8s")]
 position = Vector2(-581, -4)
+
+[node name="WaterBlock" type="StaticBody2D" parent="."]
+collision_layer = 32
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WaterBlock"]
+position = Vector2(123.5, 12)
+shape = SubResource("RectangleShape2D_fwf8s")
+
+[node name="Piranha" parent="." instance=ExtResource("23_b3gru")]
+position = Vector2(-374, 147)
+
+[node name="Piranha2" parent="." instance=ExtResource("23_b3gru")]
+position = Vector2(-635, 172)
+
+[node name="Piranha3" parent="." instance=ExtResource("23_b3gru")]
+position = Vector2(-879, 212)
+
+[node name="Piranha4" parent="." instance=ExtResource("23_b3gru")]
+position = Vector2(168, 109)
+
+[node name="Piranha5" parent="." instance=ExtResource("23_b3gru")]
+position = Vector2(520, 240)
+
+[node name="Piranha6" parent="." instance=ExtResource("23_b3gru")]
+position = Vector2(768, 79)
 
 [editable path="ParallaxBackground2"]
 [editable path="ParallaxBackground3"]
