@@ -60,7 +60,7 @@ func refresh_desc(i : Item):
 	desc_text.text = i.desc
 
 func interact():
-	if selected.i.display == 1: return #Se for apenas um display
+	#if selected.i.display == 1: return #Se for apenas um display
 	if selected.i in c: return #Se estiver no cooldown
 	
 	selected.i.use(GameHandler.Player, self)
