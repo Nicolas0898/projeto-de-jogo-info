@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://ckyg1bo3olhw0"]
+
+[ext_resource type="Script" uid="uid://bu8krnugqph56" path="res://script/item_scripts/item.gd" id="1_s1cro"]
+[ext_resource type="Texture2D" uid="uid://cyw1woq2weih" path="res://Images/weapons/gaiola_inv.png" id="2_0ynem"]
+
+[resource]
+script = ExtResource("1_s1cro")
+name = "Gaiola de folhas"
+desc = "Criado por magos do Reino Verde, prende inimigos no chão e pode ser usada como plataforma"
+amount = 0
+display = 1
+sprite = ExtResource("2_0ynem")
+metadata/_custom_type_script = "uid://bu8krnugqph56"

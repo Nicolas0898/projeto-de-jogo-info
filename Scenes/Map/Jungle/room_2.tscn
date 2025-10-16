@@ -173,7 +173,7 @@ destination_level = "Jungle/room_1"
 spawn_direction = "left"
 
 [node name="GrappleNode3" parent="." instance=ExtResource("10_bonop")]
-modulate = Color(0.74902, 0.992157, 1, 1)
+modulate = Color(0.7490196, 0.99215686, 1, 1)
 position = Vector2(-373, -123)
 range = 155.0
 type = 1
