@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cv65j1yo5s1ck"]
+
+[ext_resource type="Texture2D" uid="uid://fpk876g3t6ek" path="res://Images/assets/indicator.png" id="1_yiwa0"]
+[ext_resource type="Script" uid="uid://qsuh4f4vfaje" path="res://indicator.gd" id="2_3ixw7"]
+
+[node name="indicator" type="Sprite2D"]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_yiwa0")
+script = ExtResource("2_3ixw7")
