@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://ve3gjhnmurfr"]
+
+[ext_resource type="Script" uid="uid://bu8krnugqph56" path="res://script/item_scripts/item.gd" id="1_m5kpf"]
+[ext_resource type="Texture2D" uid="uid://dmpplvyyow24l" path="res://Images/assets/swamp_map.png" id="2_xqdha"]
+
+[resource]
+script = ExtResource("1_m5kpf")
+name = "Mapa do pântano"
+desc = "*colocar depois rsrs"
+amount = 0
+cooldown = 0.0
+display = 0
+sprite = ExtResource("2_xqdha")
+confirm = false
+metadata/_custom_type_script = "uid://bu8krnugqph56"

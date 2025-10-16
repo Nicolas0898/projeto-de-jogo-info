@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://bcqcys82msojd"]
+[gd_scene load_steps=23 format=4 uid="uid://bcqcys82msojd"]
 
 [ext_resource type="PackedScene" uid="uid://c5pik2cgvmlm4" path="res://Scenes/particles/falling_leaves.tscn" id="2_4cbs5"]
 [ext_resource type="PackedScene" uid="uid://brkn5mjfr67t4" path="res://Scenes/Player/Character.tscn" id="2_h3vtl"]
@@ -14,6 +14,8 @@
 [ext_resource type="Script" uid="uid://c41v5wv6fa0vx" path="res://script/item_scripts/item_giver.gd" id="11_h3vtl"]
 [ext_resource type="Texture2D" uid="uid://3clhnqtembx3" path="res://Images/tilesets/swamp_tree01.png" id="12_h3vtl"]
 [ext_resource type="Texture2D" uid="uid://jrlmcgj1ov4v" path="res://Images/tilesets/swamp_tree02.png" id="13_hqicp"]
+[ext_resource type="Script" uid="uid://qsuh4f4vfaje" path="res://indicator.gd" id="13_nvjd3"]
+[ext_resource type="PackedScene" uid="uid://cv65j1yo5s1ck" path="res://Scenes/Objects/indicator.tscn" id="13_xhwvu"]
 
 [sub_resource type="GDScript" id="GDScript_no33e"]
 
@@ -41,6 +43,7 @@ script = ExtResource("11_h3vtl")
 i = SubResource("Resource_hqicp")
 quantity = 1
 interaction_amount = 1
+message = "*Você coletou Gaiola de folhas"
 metadata/_custom_type_script = "uid://c41v5wv6fa0vx"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hqicp"]
@@ -50,7 +53,7 @@ size = Vector2(80, 72)
 script = SubResource("GDScript_no33e")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_h3vtl")]
-position = Vector2(2, 40)
+position = Vector2(823, -28)
 cam_limit_r = 1054
 cam_limit_l = -100
 cam_limit_t = -100
@@ -259,6 +262,21 @@ action = SubResource("Resource_4cbs5")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interaction_area"]
 position = Vector2(0, 7)
 shape = SubResource("RectangleShape2D_hqicp")
+
+[node name="Sprite2D" type="Sprite2D" parent="interaction_area"]
+position = Vector2(0, 13)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("11_4cbs5")
+script = ExtResource("13_nvjd3")
+frequency = 0.04
+amplitude = 2.0
+
+[node name="indicator" parent="interaction_area" instance=ExtResource("13_xhwvu")]
+light_mask = 2
+position = Vector2(0, -3.8)
+scale = Vector2(0.48, 0.48)
+frequency = 0.08
+amplitude = 5.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 self_modulate = Color(0.79, 0.57512, 0.4108, 1)

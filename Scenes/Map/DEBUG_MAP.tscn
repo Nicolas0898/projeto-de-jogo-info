@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dwr4crb3vhg5b" path="res://Scenes/Map/world_environment.tscn" id="7_dx3si"]
 [ext_resource type="PackedScene" uid="uid://vokqjyhjkv4a" path="res://Scenes/Objects/lamp.tscn" id="8_dx3si"]
 
+
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7yamr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_85qc2"]
@@ -107,5 +108,6 @@ position = Vector2(1442, -331)
 [node name="WorldEnvironment" parent="." instance=ExtResource("7_dx3si")]
 
 [node name="AnimatedSprite2D" parent="." instance=ExtResource("8_dx3si")]
-position = Vector2(1853, -319)
+position = Vector2(1851, -320)
 frame_progress = 0.0719289
+
