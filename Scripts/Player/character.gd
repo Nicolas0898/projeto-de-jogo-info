@@ -24,6 +24,7 @@ var speed_multiplier = 1
 
 var player_input = Vector2.ZERO
 var last_looked_at = Vector2(1,0)
+var current_core_priority = 0
 
 func _ready() -> void:
 	GameHandler.Player = self
@@ -46,7 +47,6 @@ func _ready() -> void:
 		var spawn = get_tree().current_scene.find_child("SpawnLocation") as SpawnLocation
 		if spawn != null and spawn.spawn.has(GameHandler.spawnpoint):
 			global_position = spawn.spawn[GameHandler.spawnpoint].global_position
-			camera.global_position = global_position
 	
 	camera.reset_smoothing()
 	await get_tree().create_timer(0.05).timeout
@@ -72,3 +72,13 @@ func default_player_input(local_mult=1):
 
 func clear_player_input():
 	constant_velocity.input = Vector2(0,0)
+	
+func set_core(priority):
+	if current_core_priority < priority:
+		state_machine.requestStateChange("Core")
+		current_core_priority = priority
+
+func remove_core(priority):
+	if current_core_priority <= priority:
+		state_machine.requestStateChange("Falling")
+		current_core_priority = 0

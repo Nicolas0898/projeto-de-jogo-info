@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://lnvnpmrvvsh7"]
+[gd_scene load_steps=35 format=3 uid="uid://lnvnpmrvvsh7"]
 
 [ext_resource type="Texture2D" uid="uid://dl1lgxdl2m7tl" path="res://Images/gaiola final-Sheet.png" id="1_uteat"]
 [ext_resource type="Script" uid="uid://blfwkqgeamobt" path="res://Scripts/Components/Hitbox.gd" id="2_dmrpf"]
@@ -205,6 +205,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3qehu"]
 size = Vector2(32, 32)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vgptt"]
+size = Vector2(32, 26)
+
 [node name="LeafCage" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_fbv3e")
 autoplay = "default"
@@ -236,4 +239,13 @@ texture = ExtResource("3_3qehu")
 texture_mode = 1
 
 [node name="Cast" type="RayCast2D" parent="."]
+position = Vector2(0, 1)
 target_position = Vector2(0, 10000)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -13)
+shape = SubResource("RectangleShape2D_vgptt")
+debug_color = Color(0, 0.6, 0.701961, 0)
