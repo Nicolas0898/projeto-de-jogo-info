@@ -35,13 +35,16 @@ func get_closest_hook_point():
 	
 	for hook in hookpoints:
 		var current_distance = hook.global_position.distance_to(character.global_position)
-
+		character.hook_cast.target_position = character.to_local(hook.global_position)
+		character.hook_cast.force_raycast_update()
+		
+		if character.hook_cast.get_collider(): continue
 		if current_distance>hook.range:continue
 		if hook.enabled == false:continue
 		if nearest_instance==null or nearest_distance >  current_distance:
 			nearest_instance = hook
 			nearest_distance = current_distance
-	
+
 	return nearest_instance
 	
 func set_hook_visibility(value):

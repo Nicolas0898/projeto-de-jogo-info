@@ -19,6 +19,7 @@ var speed_multiplier = 1
 @onready var top_edge_cast: RayCast2D = $TopEdgeCast
 @onready var hurtbox: Hurtbox = $Hurtbox
 @onready var health_component: HealthComponent = $HealthComponent
+@onready var hook_cast: RayCast2D = $HookCast
 
 
 var player_input = Vector2.ZERO

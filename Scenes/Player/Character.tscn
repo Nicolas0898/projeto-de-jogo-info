@@ -171,6 +171,7 @@ metadata/_custom_type_script = "uid://xwxec44xl3lg"
 
 [node name="LeafCage" type="Node2D" parent="."]
 script = ExtResource("4_anaxe")
+cooldown = 8.0
 metadata/_custom_type_script = "uid://xwxec44xl3lg"
 
 [node name="GrapplingHook" type="Node" parent="."]
@@ -284,3 +285,5 @@ autoplay = "idle"
 frame = 4
 frame_progress = 1.0
 offset = Vector2(0.920864, -1.3813)
+
+[node name="HookCast" type="RayCast2D" parent="."]

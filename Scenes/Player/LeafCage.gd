@@ -2,9 +2,12 @@ extends BaseWeapon
 const LEAF_CAGE = preload("res://Scenes/Player/Habilities/leaf_cage.tscn")
 
 func _ready() -> void:
+	super()
 	read_from = "magic1"
 
 func use():
+	if on_cooldown: return
+	#set_on_cooldown()
 	var dir = -1 if GameHandler.Player.sprite.flip_h else 1
 	var instance = LEAF_CAGE.instantiate()
 	instance.global_position = GameHandler.Player.global_position + Vector2(dir*100,10)
@@ -12,7 +15,7 @@ func use():
 	var area2D = Area2D.new()
 	var shape = CollisionShape2D.new()
 	var rectShape = RectangleShape2D.new()
-	rectShape.size = Vector2(500,200)
+	rectShape.size = Vector2(230,180)
 	shape.shape = rectShape
 	area2D.add_child(shape)
 	
@@ -26,6 +29,7 @@ func use():
 	await get_tree().physics_frame
 	var bodies = area2D.get_overlapping_bodies()
 	var body = null
+	var destun
 	print(bodies)
 	if bodies.size() > 0:
 		body = bodies[0] as BaseEntity
@@ -46,26 +50,28 @@ func use():
 		var b = body.state_machine.currentState.name
 		body.state_machine.requestStateChange("Stunned")
 			
-		var destun = func():
+		destun = func():
 			if not is_instance_valid(body): return
 			if body.state_machine.currentState.name == "Stunned":
 				body.state_machine.requestStateChange(b)
 		
 		
-		get_tree().current_scene.add_child(instance)
-		var timer = get_tree().create_timer(2)
-		var destroyOnHit = func(_a,origin):
-			if origin!=instance.get_node("Hitbox"):
-				timer.time_left = 0
-		
+	get_tree().current_scene.add_child(instance)
+	var timer = get_tree().create_timer(2)
+	var destroyOnHit = func(_a,origin):
+		if origin!=instance.get_node("Hitbox"):
+			timer.time_left = 0
+	
+	if body:
 		body.get_node("HealthComponent").damaged.connect(destroyOnHit)
-		
-		timer.timeout.connect(func():
-			if body: destun.call()
-			if is_instance_valid(body):
-				body.get_node("HealthComponent").damaged.disconnect(destroyOnHit)
-			create_tween().tween_property(instance,"modulate",Color(1,1,1,0),0.3)
-			await get_tree().create_timer(0.3).timeout
-			instance.queue_free()
-		)
+	
+	timer.timeout.connect(func():
+		if body: destun.call()
+		area2D.queue_free()
+		if is_instance_valid(body):
+			body.get_node("HealthComponent").damaged.disconnect(destroyOnHit)
+		create_tween().tween_property(instance,"modulate",Color(1,1,1,0),0.3)
+		await get_tree().create_timer(0.3).timeout
+		instance.queue_free()
+	)
 	
