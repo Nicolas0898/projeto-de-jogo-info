@@ -5,9 +5,35 @@ func _ready() -> void:
 	super()
 	read_from = "magic1"
 
+signal go(value)
+
+func returntoog():
+	if character.state_machine.currentState.name == "Core":
+		character.state_machine.requestStateChange("Falling")
+		
+func spritechanged():
+	if character.sprite.frame == 8:
+		go.emit(true)
+		
 func use():
+	
 	if on_cooldown: return
-	#set_on_cooldown()
+	
+	go.emit(false)
+	character.sprite.animation_finished.disconnect(returntoog)
+	character.sprite.frame_changed.disconnect(spritechanged)
+	set_on_cooldown()
+	character.state_machine.requestStateChange("Core")
+	character.sprite.play("cage")
+	
+	character.sprite.animation_finished.connect(returntoog)
+	
+	character.sprite.frame_changed.connect(spritechanged)
+	var a = await go
+	if not a:return
+	character.sprite.frame_changed.disconnect(spritechanged)
+	
+	
 	var dir = -1 if GameHandler.Player.sprite.flip_h else 1
 	var instance = LEAF_CAGE.instantiate()
 	instance.global_position = GameHandler.Player.global_position + Vector2(dir*100,10)
@@ -51,6 +77,7 @@ func use():
 		body.state_machine.requestStateChange("Stunned")
 			
 		destun = func():
+			print("ASDASDASDSA")
 			if not is_instance_valid(body): return
 			if body.state_machine.currentState.name == "Stunned":
 				body.state_machine.requestStateChange(b)
@@ -66,6 +93,7 @@ func use():
 		body.get_node("HealthComponent").damaged.connect(destroyOnHit)
 	
 	timer.timeout.connect(func():
+		character.sprite.animation_finished.disconnect(returntoog)
 		if body: destun.call()
 		area2D.queue_free()
 		if is_instance_valid(body):

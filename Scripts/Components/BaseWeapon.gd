@@ -13,6 +13,7 @@ func _ready() -> void:
 	cd_timer.wait_time = cooldown
 	cd_timer.one_shot = true
 	cd_timer.timeout.connect(cd_timeout)
+	character = $".."
 
 func _input(event: InputEvent) -> void:
 	if not(character.state_machine.currentState.name in\

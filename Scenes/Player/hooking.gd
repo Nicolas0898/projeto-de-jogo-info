@@ -12,6 +12,7 @@ func onInput(event:InputEvent):
 		stateMachine.requestStateChange("Falling")
 
 func onStateEntered(_last):
+	character.sprite.play("hook")
 	var character:PlayerCharacter= stateMachine.character
 	
 	var hookpos = stateData.hook.global_position
@@ -38,9 +39,19 @@ func boost_character(y=-400):
 	character.variable_velocity += character.true_constant_velocity*1.7
 
 func onStateExit():
+	character.sprite.rotation = PI/4
+	character.sprite.play_backwards("hook")
+	var t = create_tween()
+	t.set_ease(Tween.EASE_OUT)
+	t.set_trans(Tween.TRANS_BACK)
+	t.tween_property(character.sprite,"rotation",0,0.5)
 	current_active_rope.queue_free()
 	
 func onPhysics(delta:float):
+	character.sprite.rotation = (character.sprite.rotation+delta*10)
+	if character.sprite.rotation>2*PI:
+		character.sprite.rotation-= 2*PI
+	
 	if stateData.hook.type == GrappleNode.SWING:
 		swingPhysics(delta)
 	else:
