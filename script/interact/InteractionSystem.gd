@@ -7,8 +7,6 @@ extends Node
 # d = dialogo
 
 func _input(event: InputEvent) -> void:
-	#if action: 
-		#GameHandler.Player.state_machine.requestStateChange("core")
 	
 	if event.is_action_pressed("up"):
 		if action is Dialogue: 
@@ -16,6 +14,8 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("down"):
 		if action is Dialogue: 
 			if Ui.dialogue.is_question: Ui.dialogue.question_handler(1)
+	if event.is_action_pressed("use_weapon"):
+		if action is Inventory: Ui.inventory.interact()
 	
 	if event.is_action_pressed("interact"):
 		if action is Map: 
@@ -35,3 +35,4 @@ func _input(event: InputEvent) -> void:
 func active(resource : Resource):
 	if resource is Interactable:
 		resource.activate()
+	

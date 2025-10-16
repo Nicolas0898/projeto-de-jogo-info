@@ -13,6 +13,7 @@ var ni #next_interface (identifica a próxima tela após essa)
 # 1 = Aceitou
 
 func called(q : String, called_by, next_interface): #"r" = return_to
+	GameHandler.Player.set_core(1)
 	InteractionSystem.action = self
 	ni = next_interface
 	cb = called_by
@@ -34,7 +35,9 @@ func input(): #Quando ele escolhe
 func _on_yes_button_down() -> void: #Confirmado
 	if cb!= null:
 		cb.call_deferred("answer" ,true)
+		GameHandler.Player.remove_core(1)
 
 func _on_no_button_down() -> void: #Recusado
 	if cb!= null:
 		cb.call_deferred("answer" ,false)
+		GameHandler.Player.remove_core(1)

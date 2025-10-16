@@ -16,6 +16,7 @@
 [ext_resource type="Script" path="res://script/map.gd" id="13_whq80"]
 [ext_resource type="Script" uid="uid://b4tsgciqbhfi2" path="res://Scenes/player_ui.gd" id="15_lkjmk"]
 
+
 [sub_resource type="Gradient" id="Gradient_nt8jn"]
 colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1)
 
