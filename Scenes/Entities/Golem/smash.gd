@@ -13,6 +13,15 @@ signal spawn
 var effects = []
 var distance = 100
 
+func clearpart():
+	for i  in effects:
+		i = i as GPUParticles2D
+		i.emitting = false
+		get_tree().create_timer(2).timeout.connect(func():
+			if is_instance_valid(i):
+				i.queue_free())
+	effects.clear()
+
 func onStateEntered(_d):
 		character.rotate_to_plr()
 		sprite.play("smash")
@@ -27,14 +36,8 @@ func onStateEntered(_d):
 			effects.push_back(effect)
 		
 		await spawn
+		clearpart()
 		
-		
-		for i  in effects:
-			i = i as GPUParticles2D
-			i.emitting = false
-			get_tree().create_timer(2).timeout.connect(func():
-				i.queue_free())
-		effects.clear()
 		
 		for i in range(n_rocks):
 			var rock = STONE.instantiate() as RigidBody2D
@@ -47,7 +50,8 @@ func onStateEntered(_d):
 		stateMachine.requestStateChange("Idle")
 		
 		
-
+func onStateExit():
+	clearpart()
 
 func _frame_changed() -> void:
 	if sprite.frame==5:

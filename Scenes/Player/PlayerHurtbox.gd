@@ -9,6 +9,8 @@ func onHit(other:Hitbox):
 	super(other)
 	iframe.start()
 	
+	Ui.player_ui.update_health(GameHandler.Player.health_component.health)
+	
 	if character.get_node("GrapplingHook"):
 		character.get_node("GrapplingHook").reset_hooks()
 		

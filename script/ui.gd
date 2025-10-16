@@ -6,6 +6,7 @@ extends CanvasLayer
 @onready var map_node: Control = $Map
 @onready var debug: Label = $debug
 @onready var transition: ColorRect = $Transition
+@onready var player_ui: Control = $PlayerUI
 
 
 var tween : Tween

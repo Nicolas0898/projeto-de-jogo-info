@@ -105,27 +105,27 @@ region = Rect2(128, 0, 32, 32)
 atlas = ExtResource("17_ykpih")
 region = Rect2(160, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bgmj3"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_6higf"]
 atlas = ExtResource("22_4g8e6")
 region = Rect2(128, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_oogch"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_hu2ph"]
 atlas = ExtResource("22_4g8e6")
 region = Rect2(160, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nr0j4"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_74h6x"]
 atlas = ExtResource("22_4g8e6")
 region = Rect2(192, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ugitr"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_almq6"]
 atlas = ExtResource("22_4g8e6")
 region = Rect2(224, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fj0mu"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_q8glw"]
 atlas = ExtResource("22_4g8e6")
 region = Rect2(256, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_te78o"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ye7qs"]
 atlas = ExtResource("22_4g8e6")
 region = Rect2(288, 0, 32, 32)
 
@@ -196,26 +196,26 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bgmj3")
+"texture": SubResource("AtlasTexture_6higf")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_oogch")
+"texture": SubResource("AtlasTexture_hu2ph")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_nr0j4")
+"texture": SubResource("AtlasTexture_74h6x")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ugitr")
+"texture": SubResource("AtlasTexture_almq6")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fj0mu")
+"texture": SubResource("AtlasTexture_q8glw")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_te78o")
+"texture": SubResource("AtlasTexture_ye7qs")
 }],
 "loop": false,
 "name": &"hook",
-"speed": 12.0
+"speed": 24.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -406,9 +406,9 @@ target_position = Vector2(0, -32)
 use_parent_material = true
 position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_a0efk")
-animation = &"cage"
+animation = &"hook"
 autoplay = "idle"
-frame = 9
+frame = 5
 frame_progress = 1.0
 offset = Vector2(0.920864, -1.3813)
 

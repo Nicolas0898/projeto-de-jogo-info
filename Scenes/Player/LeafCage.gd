@@ -12,7 +12,7 @@ func returntoog():
 		character.remove_core(2)
 		
 func spritechanged():
-	if character.sprite.frame == 8:
+	if character.sprite.frame == 8 and character.sprite.animation == "cage":
 		go.emit(true)
 		
 func use():

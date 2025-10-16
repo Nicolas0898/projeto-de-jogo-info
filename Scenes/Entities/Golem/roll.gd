@@ -10,6 +10,7 @@ var ending = false
 var repeat = false
 
 func onStateEntered(_old):
+	character.blink(0.3,Color(1,1,1,1))
 	character.rotate_to_plr()
 	ending = false
 	started = false

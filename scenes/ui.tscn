@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://cc2qsjoqgcdqu"]
+[gd_scene load_steps=36 format=3 uid="uid://cc2qsjoqgcdqu"]
 
 [ext_resource type="Script" uid="uid://dfxy21hd8djmg" path="res://script/ui.gd" id="1_nt7q6"]
 [ext_resource type="Script" uid="uid://cffdhewqtjjw1" path="res://script/dialogue_scripts/dialogue_node.gd" id="2_yev5y"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://ddtyrq47rmv2x" path="res://Images/UI/select.png" id="13_3r70p"]
 [ext_resource type="Texture2D" uid="uid://btdealimdeqkh" path="res://Images/UI/swamp_map.png" id="13_8fs27"]
 [ext_resource type="Script" path="res://script/map.gd" id="13_whq80"]
+[ext_resource type="Script" uid="uid://b4tsgciqbhfi2" path="res://Scenes/player_ui.gd" id="15_lkjmk"]
 
 [sub_resource type="Gradient" id="Gradient_nt8jn"]
 colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1)
@@ -116,11 +117,22 @@ corner_radius_bottom_left = 10
 [sub_resource type="Theme" id="Theme_whq80"]
 Panel/styles/panel = SubResource("StyleBoxFlat_8fs27")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_whq80"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_whq80"]
+font = ExtResource("3_gdt2y")
+font_size = 9
+shadow_size = 6
+shadow_color = Color(0, 0, 0, 0.305882)
+shadow_offset = Vector2(0, 0)
+
 [node name="UI" type="CanvasLayer"]
 layer = 100
 script = ExtResource("1_nt7q6")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+visible = false
 modulate = Color(1, 1, 1, 0.266667)
 anchors_preset = 15
 anchor_right = 1.0
@@ -131,6 +143,7 @@ mouse_filter = 2
 texture = SubResource("GradientTexture2D_g0wmg")
 
 [node name="Dialogue" type="Control" parent="."]
+visible = false
 modulate = Color(1, 1, 1, 0.701961)
 layout_mode = 3
 anchors_preset = 15
@@ -213,6 +226,7 @@ grow_vertical = 2
 expand_mode = 3
 
 [node name="Inventory" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -427,6 +441,7 @@ offset_bottom = 46.0
 grow_horizontal = 2
 
 [node name="Confirm" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -519,6 +534,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Map" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -549,6 +565,54 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="PlayerUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("15_lkjmk")
+
+[node name="Panel" type="Panel" parent="PlayerUI"]
+layout_mode = 1
+offset_left = 20.0
+offset_top = 23.0
+offset_right = 149.0
+offset_bottom = 33.0
+theme_override_styles/panel = ExtResource("9_g0wmg")
+
+[node name="HealthBar" type="ProgressBar" parent="PlayerUI/Panel"]
+modulate = Color(0.596008, 0.847656, 0.800472, 1)
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 2.0
+offset_right = -3.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_whq80")
+value = 100.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="PlayerUI/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -12.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "100/100"
+label_settings = SubResource("LabelSettings_whq80")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="button_down" from="Confirm/Panel/VBoxContainer/HBoxContainer/yes" to="Confirm" method="_on_yes_button_down"]
 [connection signal="button_down" from="Confirm/Panel/VBoxContainer/HBoxContainer/no" to="Confirm" method="_on_no_button_down"]
