@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://bcqcys82msojd"]
+[gd_scene load_steps=22 format=4 uid="uid://bcqcys82msojd"]
 
 [ext_resource type="PackedScene" uid="uid://c5pik2cgvmlm4" path="res://Scenes/particles/falling_leaves.tscn" id="2_4cbs5"]
 [ext_resource type="PackedScene" uid="uid://brkn5mjfr67t4" path="res://Scenes/Player/Character.tscn" id="2_h3vtl"]
@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dl68pqvut2yto" path="res://Scenes/Map/parallax_backgroun.tscn" id="8_ofhd1"]
 [ext_resource type="PackedScene" uid="uid://dqiyuc6o8q627" path="res://Scenes/interaction_area.tscn" id="9_sqglm"]
 [ext_resource type="PackedScene" uid="uid://bhhvto6dt5454" path="res://Scenes/Map/JungleParallax.tscn" id="10_2ok4s"]
-[ext_resource type="Script" uid="uid://bu8krnugqph56" path="res://script/item_scripts/item.gd" id="10_os35y"]
+[ext_resource type="Resource" uid="uid://ckyg1bo3olhw0" path="res://resource/item/Gaiola.tres" id="10_nvjd3"]
 [ext_resource type="Texture2D" uid="uid://cyw1woq2weih" path="res://Images/weapons/gaiola_inv.png" id="11_4cbs5"]
 [ext_resource type="PackedScene" uid="uid://dwr4crb3vhg5b" path="res://Scenes/Map/world_environment.tscn" id="11_fci24"]
 [ext_resource type="Script" uid="uid://c41v5wv6fa0vx" path="res://script/item_scripts/item_giver.gd" id="11_h3vtl"]
@@ -27,22 +27,10 @@ colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1)
 gradient = SubResource("Gradient_efyuc")
 fill_from = Vector2(1, 1)
 
-[sub_resource type="Resource" id="Resource_hqicp"]
-script = ExtResource("10_os35y")
-name = "Gaiola de folhas"
-desc = "Criado por magos do Reino Verde, prende inimigos no chão"
-amount = 0
-cooldown = 0.0
-display = 1
-sprite = ExtResource("11_4cbs5")
-confirm = false
-metadata/_custom_type_script = "uid://bu8krnugqph56"
-
 [sub_resource type="Resource" id="Resource_4cbs5"]
 script = ExtResource("11_h3vtl")
-i = SubResource("Resource_hqicp")
+i = ExtResource("10_nvjd3")
 quantity = 1
-interaction_amount = 1
 message = "*Você coletou Gaiola de folhas"
 metadata/_custom_type_script = "uid://c41v5wv6fa0vx"
 
@@ -53,7 +41,7 @@ size = Vector2(80, 72)
 script = SubResource("GDScript_no33e")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_h3vtl")]
-position = Vector2(823, -28)
+position = Vector2(0, -14)
 cam_limit_r = 1054
 cam_limit_l = -100
 cam_limit_t = -100

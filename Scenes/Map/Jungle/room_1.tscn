@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://cwrl44jwaopp4"]
+[gd_scene load_steps=35 format=4 uid="uid://cwrl44jwaopp4"]
 
 [ext_resource type="Script" uid="uid://xbqu3ca63qn6" path="res://Scripts/Components/SpawnLocation.gd" id="1_2518j"]
 [ext_resource type="TileSet" uid="uid://dctgdgbcalghh" path="res://Scenes/Map/JUNGLE_FOREGROUND.tres" id="1_seqh0"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://b4icph11w17xq" path="res://Images/tilesets/swamp_grass01.png" id="13_dpwlb"]
 [ext_resource type="PackedScene" uid="uid://bbcuecrtpmuuo" path="res://Scenes/Objects/teleport.tscn" id="13_j6ang"]
 [ext_resource type="PackedScene" uid="uid://bhhvto6dt5454" path="res://Scenes/Map/JungleParallax.tscn" id="14_s6ng1"]
+[ext_resource type="Texture2D" uid="uid://dhiimtm8l1fph" path="res://Images/tilesets/swamp_grass02.png" id="14_uks6v"]
 [ext_resource type="PackedScene" uid="uid://dwr4crb3vhg5b" path="res://Scenes/Map/world_environment.tscn" id="15_wf560"]
 [ext_resource type="Texture2D" uid="uid://dsiclaigb4dt4" path="res://Images/assets/stone_assets/stone_asset01.png" id="16_fntxs"]
 [ext_resource type="Texture2D" uid="uid://cy333yi6jgg4q" path="res://Images/assets/stone_assets/stone_asset02.png" id="17_6txsl"]
@@ -56,7 +57,6 @@ fill_to = Vector2(0, 0)
 script = ExtResource("24_uks6v")
 i = ExtResource("24_uc8id")
 quantity = 1
-interaction_amount = 1
 message = "*Você coletou o Mapa do pantano"
 metadata/_custom_type_script = "uid://c41v5wv6fa0vx"
 
@@ -72,7 +72,7 @@ tile_map_data = PackedByteArray("AADw/wYAAAAEAAAAAADw/wcAAAAEAAEAAADx/wYAAAAFAAA
 tile_set = ExtResource("1_seqh0")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_k84hv")]
-position = Vector2(-872, -24)
+position = Vector2(331, -41)
 cam_limit_r = 1085
 cam_limit_l = -1065
 cam_limit_t = -300
@@ -182,11 +182,37 @@ layer = 0
 offset = Vector2(0, -320)
 transform = Transform2D(1, 0, 0, 1, 0, -320)
 
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5" index="1"]
+modulate = Color(0.358035, 0.776914, 0.995865, 0.776471)
+self_modulate = Color(0.41, 0.41, 0.41, 1)
+position = Vector2(3888, 3712)
+scale = Vector2(32.9302, 43.1781)
+texture = ExtResource("13_dpwlb")
+centered = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer17" index="1"]
+modulate = Color(0.79, 0.7031, 0.7031, 0.776471)
+position = Vector2(86016, 77056.01)
+scale = Vector2(557.589, 616.86786)
+texture = ExtResource("14_uks6v")
+centered = false
+
+[node name="ParallaxLayer19" type="ParallaxLayer" parent="ParallaxBackground"]
+scale = Vector2(0.00390625, 0.00390625)
+motion_scale = Vector2(0.95, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer19"]
+modulate = Color(0.79, 0.7031, 0.7031, 0.776471)
+position = Vector2(91392, 65536)
+scale = Vector2(386.849, 428.723)
+texture = ExtResource("14_uks6v")
+centered = false
+
 [node name="Fly" parent="." instance=ExtResource("11_jabb1")]
 position = Vector2(-470, -91)
 
 [node name="GrappleNode" parent="." instance=ExtResource("12_grfs7")]
-modulate = Color(0.74902, 0.992157, 1, 1)
+modulate = Color(0.7490196, 0.99215686, 1, 1)
 position = Vector2(-985, -113)
 scale = Vector2(0.5, 0.5)
 range = 107.0
@@ -327,4 +353,5 @@ shape = SubResource("CircleShape2D_uc8id")
 position = Vector2(-1053, -137)
 texture = ExtResource("26_xxwy6")
 
+[editable path="ParallaxBackground"]
 [editable path="GrappleNode"]

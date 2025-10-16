@@ -77,8 +77,10 @@ func change_amount(i : Item, amount : int):
 func find_item(item_name : String): #Retorna o índice do item no inventário
 	for i in range(len(inventario)): if inventario[i].name == item_name: return i
 
-
 func input():
+	if GameHandler.Player.state_machine.currentState.name != "Core": GameHandler.Player.state_machine.requestStateChange("core")
+	else: GameHandler.Player.state_machine.requestStateChange("falling")
+	
 	if InteractionSystem.action != null and not InteractionSystem.action is Inventory: return
 	
 	open = not open
@@ -98,4 +100,4 @@ func _ready():
 	refreshing()
 
 func _physics_process(_delta: float) -> void:
-	pass
+	print(GameHandler.Player.state_machine.currentState.name)

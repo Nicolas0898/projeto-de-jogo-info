@@ -32,8 +32,8 @@ func _input(event: InputEvent) -> void:
 	
 	if event.is_action_pressed("inventory"): Ui.inventory.input()
 
-func _physics_process(delta: float) -> void:
-	print(action)
+#func _physics_process(delta: float) -> void:
+	#print(action)
 
 func active(resource : Resource):
 	if resource is Interactable:

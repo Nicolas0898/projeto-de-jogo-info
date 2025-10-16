@@ -55,43 +55,43 @@ position = Vector2(1030, -390)
 range = 175.0
 
 [node name="GrappleNode7" parent="." instance=ExtResource("6_d8yk5")]
-modulate = Color(0.74902, 0.992157, 1, 1)
+modulate = Color(0.7490196, 0.99215686, 1, 1)
 position = Vector2(624, -286)
 range = 175.0
 type = 1
 
 [node name="GrappleNode2" parent="." instance=ExtResource("6_d8yk5")]
-modulate = Color(0.74902, 0.992157, 1, 1)
+modulate = Color(0.7490196, 0.99215686, 1, 1)
 position = Vector2(107, -286)
 range = 200.0
 type = 1
 
 [node name="GrappleNode10" parent="." instance=ExtResource("6_d8yk5")]
-modulate = Color(0.74902, 0.992157, 1, 1)
+modulate = Color(0.7490196, 0.99215686, 1, 1)
 position = Vector2(367, -288)
 range = 200.0
 type = 1
 
 [node name="GrappleNode8" parent="." instance=ExtResource("6_d8yk5")]
-modulate = Color(0.74902, 0.992157, 1, 1)
+modulate = Color(0.7490196, 0.99215686, 1, 1)
 position = Vector2(-41, -397)
 range = 200.0
 type = 1
 
 [node name="GrappleNode9" parent="." instance=ExtResource("6_d8yk5")]
-modulate = Color(0.74902, 0.992157, 1, 1)
+modulate = Color(0.7490196, 0.99215686, 1, 1)
 position = Vector2(-192, -497)
 range = 200.0
 type = 1
 
 [node name="GrappleNode6" parent="." instance=ExtResource("6_d8yk5")]
-modulate = Color(0.74902, 0.992157, 1, 1)
+modulate = Color(0.7490196, 0.99215686, 1, 1)
 position = Vector2(2006, -347)
 range = 210.0
 type = 1
 
 [node name="GrappleNode5" parent="." instance=ExtResource("6_d8yk5")]
-modulate = Color(0.74902, 0.992157, 1, 1)
+modulate = Color(0.7490196, 0.99215686, 1, 1)
 position = Vector2(-3194, -308)
 type = 1
 

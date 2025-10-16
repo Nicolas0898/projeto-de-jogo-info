@@ -47,6 +47,7 @@ func os():
 
 func start(new_dialogue : Dialogue):
 	if new_dialogue != current_loaded_dialogue:
+		GameHandler.Player.state_machine.requestStateChange("core")
 		InteractionSystem.action = new_dialogue
 		current_loaded_dialogue = new_dialogue
 		c = 0
@@ -78,6 +79,7 @@ func dialogueEnd():
 	current_loaded_dialogue = null
 	InteractionSystem.action = null
 	is_question = false
+	GameHandler.Player.state_machine.requestStateChange("falling")
 
 func loadNextMessage():
 	#if current_loaded_dialogue.messages[c] is Question:
