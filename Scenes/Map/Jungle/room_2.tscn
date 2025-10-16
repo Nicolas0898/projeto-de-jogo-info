@@ -44,6 +44,7 @@ position = Vector2(130, 0)
 cam_limit_r = 1085
 cam_limit_l = -1065
 cam_limit_t = -374
+cam_limit_b = 131
 
 [node name="falling_leaves" parent="CharacterBody2D" instance=ExtResource("3_oyeye")]
 modulate = Color(0.31131, 0.336668, 0.394531, 1)
