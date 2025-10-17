@@ -523,16 +523,16 @@ scale = Vector2(2, 1.7)
 texture = ExtResource("17_6txsl")
 
 [node name="WaterBlock" type="StaticBody2D" parent="."]
-collision_layer = 34
-collision_mask = 34
+collision_layer = 32
+collision_mask = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WaterBlock"]
 position = Vector2(-252, 35)
 shape = SubResource("RectangleShape2D_15me3")
 
 [node name="WaterBlock2" type="StaticBody2D" parent="."]
-collision_layer = 34
-collision_mask = 34
+collision_layer = 32
+collision_mask = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WaterBlock2"]
 position = Vector2(659.5, 0.75)

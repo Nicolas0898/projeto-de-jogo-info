@@ -13,9 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://bug7slh0fa3wv" path="res://Images/UI/btn.png" id="12_8fs27"]
 [ext_resource type="Texture2D" uid="uid://ddtyrq47rmv2x" path="res://Images/UI/select.png" id="13_3r70p"]
 [ext_resource type="Texture2D" uid="uid://btdealimdeqkh" path="res://Images/UI/swamp_map.png" id="13_8fs27"]
-[ext_resource type="Script" path="res://script/map.gd" id="13_whq80"]
+[ext_resource type="Script" uid="uid://u1s3fe4dct3e" path="res://script/map.gd" id="13_whq80"]
 [ext_resource type="Script" uid="uid://b4tsgciqbhfi2" path="res://Scenes/player_ui.gd" id="15_lkjmk"]
-
 
 [sub_resource type="Gradient" id="Gradient_nt8jn"]
 colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1)
@@ -133,7 +132,6 @@ layer = 100
 script = ExtResource("1_nt7q6")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-visible = false
 modulate = Color(1, 1, 1, 0.266667)
 anchors_preset = 15
 anchor_right = 1.0
@@ -144,7 +142,6 @@ mouse_filter = 2
 texture = SubResource("GradientTexture2D_g0wmg")
 
 [node name="Dialogue" type="Control" parent="."]
-visible = false
 modulate = Color(1, 1, 1, 0.701961)
 layout_mode = 3
 anchors_preset = 15
@@ -227,7 +224,6 @@ grow_vertical = 2
 expand_mode = 3
 
 [node name="Inventory" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -442,7 +438,6 @@ offset_bottom = 46.0
 grow_horizontal = 2
 
 [node name="Confirm" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -535,7 +530,6 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Map" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
