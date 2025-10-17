@@ -5,12 +5,13 @@
 
 [resource]
 script = ExtResource("1_hnl4v")
-hp = 20.0
+hp = 40.0
 name = "Poção de cura"
-desc = "Use para curar 20 pontos de vida"
+desc = "Use para curar 40 pontos de vida"
 amount = 1
 cooldown = 3.0
 display = 0
 sprite = ExtResource("2_5icuk")
 confirm = true
+hability_path = ""
 metadata/_custom_type_script = "uid://1a4nvri00rki"

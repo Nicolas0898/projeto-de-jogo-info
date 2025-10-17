@@ -14,7 +14,6 @@ func takeDamage(damage:float,origin=null):
 	healthChanged.emit(health-damage,health)
 	damaged.emit(damage,origin)
 	health -= damage
-	GameHandler.player_health = health
 
 func heal(healing:float):
 	healthChanged.emit(health+healing,health)

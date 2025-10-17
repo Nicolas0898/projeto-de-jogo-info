@@ -30,6 +30,7 @@ func _ready() -> void:
 	GameHandler.Player = self
 	
 	for i in GameHandler.player_habilities:
+		if i=="" : continue
 		add_child(load(i).instantiate())
 	
 	health_component.health = GameHandler.player_health
@@ -51,7 +52,8 @@ func _ready() -> void:
 		var spawn = get_tree().current_scene.find_child("SpawnLocation") as SpawnLocation
 		if spawn != null and spawn.spawn.has(GameHandler.spawnpoint):
 			global_position = spawn.spawn[GameHandler.spawnpoint].global_position
-	
+
+	Ui.player_ui.update_health(health_component.health)
 	camera.reset_smoothing()
 	await get_tree().create_timer(0.05).timeout
 	Ui.set_transition(false)
@@ -90,6 +92,14 @@ func remove_core(priority):
 		current_core_priority = 0
 
 func add_hability(path):
-	add_child(load(path).instantiate())
-	if not GameHandler.player_habilities.find(path):
-		GameHandler.player_habilities.push_back(path)
+	if path!= "":
+		add_child(load(path).instantiate())
+	GameHandler.player_habilities.push_back(path)
+	
+
+
+
+func _on_health_component_health_changed(new: Variant, old: Variant) -> void:
+	print((new))
+	GameHandler.player_health = new
+	Ui.player_ui.update_health(new)

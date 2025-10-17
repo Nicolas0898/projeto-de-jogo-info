@@ -31,5 +31,5 @@ func resetcoins() -> void:
 	GameHandler.roomswocoins.clear()
 
 
-func _on_button_3_toggled(toggled_on: bool) -> void:
+func scenereset() -> void:
 	get_tree().reload_current_scene()

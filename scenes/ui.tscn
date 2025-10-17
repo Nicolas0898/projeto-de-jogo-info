@@ -734,4 +734,4 @@ text = "Reload Current Scene"
 [connection signal="pressed" from="Admin/Panel/VBoxContainer/GridContainer2/Button3" to="Admin" method="_on_button_3_pressed"]
 [connection signal="pressed" from="Admin/Panel/VBoxContainer/GridContainer3/Button" to="Admin" method="_resetgolem"]
 [connection signal="pressed" from="Admin/Panel/VBoxContainer/GridContainer3/Button2" to="Admin" method="resetcoins"]
-[connection signal="toggled" from="Admin/Panel/VBoxContainer/GridContainer3/Button3" to="Admin" method="_on_button_3_toggled"]
+[connection signal="pressed" from="Admin/Panel/VBoxContainer/GridContainer3/Button3" to="Admin" method="scenereset"]

@@ -11,5 +11,5 @@ range = 250.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_repeat = 2
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.8, 0.8)
 texture = ExtResource("2_s474p")

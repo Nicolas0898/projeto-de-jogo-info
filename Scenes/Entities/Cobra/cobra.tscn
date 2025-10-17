@@ -447,6 +447,8 @@ position = Vector2(3, 2.5)
 shape = SubResource("RectangleShape2D_s5hvp")
 
 [node name="BaseHurtbox" type="Area2D" parent="." node_paths=PackedStringArray("health_component")]
+visible = false
+position = Vector2(-1, 0)
 collision_layer = 9
 script = ExtResource("15_s5hvp")
 health_component = NodePath("../HealthComponent")

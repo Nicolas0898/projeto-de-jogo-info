@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://bbghhxjenlnm"]
+[gd_scene load_steps=27 format=4 uid="uid://bbghhxjenlnm"]
 
 [ext_resource type="TileSet" uid="uid://dctgdgbcalghh" path="res://Scenes/Map/JUNGLE_FOREGROUND.tres" id="1_kj2b6"]
 [ext_resource type="PackedScene" uid="uid://brkn5mjfr67t4" path="res://Scenes/Player/Character.tscn" id="2_r6gg3"]
@@ -10,7 +10,6 @@
 [ext_resource type="TileSet" uid="uid://bnjnwtobjhkof" path="res://Scenes/Map/WATER_JUNGLE.tres" id="6_7ebiy"]
 [ext_resource type="PackedScene" uid="uid://ctbajdsjla0us" path="res://Scenes/Objects/coin.tscn" id="7_4wktd"]
 [ext_resource type="PackedScene" uid="uid://6067j5q5yogl" path="res://Scenes/Map/parallax_backgroun (2).tscn" id="8_w6xgs"]
-[ext_resource type="PackedScene" uid="uid://dugkamrvn6d0g" path="res://Scenes/Entities/Fly/fly.tscn" id="9_epbql"]
 [ext_resource type="PackedScene" uid="uid://bvmugmme4p6nf" path="res://Scenes/Objects/grapple_node.tscn" id="10_bonop"]
 [ext_resource type="PackedScene" uid="uid://b1ejde12cbfqd" path="res://Scenes/Entities/Cobra/cobra.tscn" id="11_ll84f"]
 [ext_resource type="PackedScene" uid="uid://bbcuecrtpmuuo" path="res://Scenes/Objects/teleport.tscn" id="11_ruubq"]
@@ -165,9 +164,6 @@ layer = 0
 offset = Vector2(0, -320)
 transform = Transform2D(1, 0, 0, 1, 0, -320)
 
-[node name="Fly" parent="." instance=ExtResource("9_epbql")]
-position = Vector2(-292, -103)
-
 [node name="GrappleNode2" parent="." instance=ExtResource("10_bonop")]
 position = Vector2(668, -201)
 scale = Vector2(0.7, 0.7)
@@ -276,9 +272,6 @@ position = Vector2(-35, 8)
 [node name="Piranha" parent="." instance=ExtResource("22_kfepi")]
 position = Vector2(-674, 53)
 
-[node name="Piranha2" parent="." instance=ExtResource("22_kfepi")]
-position = Vector2(-226, 40)
-
 [node name="Piranha3" parent="." instance=ExtResource("22_kfepi")]
 position = Vector2(642, 59)
 
@@ -291,6 +284,6 @@ position = Vector2(37, 14.0938)
 shape = SubResource("RectangleShape2D_ruubq")
 
 [node name="Cobra" parent="." instance=ExtResource("11_ll84f")]
-position = Vector2(364, -29)
+position = Vector2(965, -33)
 
 [editable path="ParallaxBackground2"]

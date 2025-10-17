@@ -300,7 +300,6 @@ debug_color = Color(0, 0.6, 0.701961, 0.0745098)
 [node name="BaseHurtbox" type="Area2D" parent="." node_paths=PackedStringArray("health_component")]
 collision_layer = 9
 script = ExtResource("7_brr4v")
-knockback_multiplier = 0.5
 health_component = NodePath("../HealthComponent")
 metadata/_custom_type_script = "uid://0d7bnicgm37i"
 

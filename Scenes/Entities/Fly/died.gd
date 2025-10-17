@@ -6,6 +6,7 @@ func onPhysics(delta:float):
 
 
 func onStateEntered(_old):
+	GameHandler.spawn_coins(character.global_position,5)
 	stateMachine.lockstate = true
 	character.variable_velocity*=10
 	create_tween().tween_method(speed_t,character.constant_velocity.walk,Vector2.ZERO,2)

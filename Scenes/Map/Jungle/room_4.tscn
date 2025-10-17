@@ -466,11 +466,8 @@ position = Vector2(-1008, -320)
 [node name="Fly3" parent="." instance=ExtResource("11_3kbr4")]
 position = Vector2(564, -302)
 
-[node name="Fly2" parent="." instance=ExtResource("11_3kbr4")]
-position = Vector2(121, -288)
-
 [node name="Fly" parent="." instance=ExtResource("11_3kbr4")]
-position = Vector2(-292, -103)
+position = Vector2(-312, -237)
 
 [node name="FlyBody" parent="." instance=ExtResource("21_sgctt")]
 position = Vector2(-944, -326)
@@ -505,17 +502,11 @@ shape = SubResource("RectangleShape2D_fwf8s")
 [node name="Piranha" parent="." instance=ExtResource("23_b3gru")]
 position = Vector2(-374, 147)
 
-[node name="Piranha2" parent="." instance=ExtResource("23_b3gru")]
-position = Vector2(-635, 172)
-
 [node name="Piranha3" parent="." instance=ExtResource("23_b3gru")]
 position = Vector2(-879, 212)
 
 [node name="Piranha4" parent="." instance=ExtResource("23_b3gru")]
 position = Vector2(168, 109)
-
-[node name="Piranha5" parent="." instance=ExtResource("23_b3gru")]
-position = Vector2(520, 240)
 
 [node name="Piranha6" parent="." instance=ExtResource("23_b3gru")]
 position = Vector2(768, 79)

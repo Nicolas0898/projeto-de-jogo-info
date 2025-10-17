@@ -18,7 +18,7 @@ func _input(event: InputEvent) -> void:
 		if action is Inventory: Ui.inventory.interact()
 	
 	if event.is_action_pressed("interact"):
-		if action is Map: 
+		if action is Map and Ui.map_node.is_open: 
 			Ui.map_node.deactivate()
 		if action is Dialogue:
 			if Ui.dialogue.is_question: Ui.dialogue.confirm()

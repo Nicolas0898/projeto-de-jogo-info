@@ -45,6 +45,7 @@ func use():
 		sprite.queue_free())
 	var hitdir = character.last_looked_at
 	hitbox.onHit.connect(func(other):
+		character.health_component.heal(1)
 		var dir = other.global_position.direction_to(character.global_position).normalized()
 		character.variable_velocity *= Vector2.ONE-abs(hitdir)
 		character.variable_velocity.y += min((dir*300*abs(hitdir)).y,0)

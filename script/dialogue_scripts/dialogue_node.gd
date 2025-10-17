@@ -72,11 +72,13 @@ func start(new_dialogue : Dialogue):
 	#print(selected)
 
 func dialogueEnd():
+	if not is_instance_valid(current_loaded_dialogue) : return
 	c=0
 	await Ui.fade_out(self)
 	updateText(dialogue_text, "")
-	current_loaded_dialogue.onDialogueEnd()
-	current_loaded_dialogue = null
+	if current_loaded_dialogue!=null:
+		current_loaded_dialogue.onDialogueEnd() #provavelmente o problema é se o player tentar iniciar o dialogo muito rapido depois de acabar ele
+		current_loaded_dialogue = null
 	InteractionSystem.action = null
 	is_question = false
 	GameHandler.Player.remove_core(1)

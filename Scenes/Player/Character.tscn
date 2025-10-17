@@ -393,3 +393,5 @@ frame_progress = 1.0
 offset = Vector2(0.920864, -1.3813)
 
 [node name="HookCast" type="RayCast2D" parent="."]
+
+[connection signal="healthChanged" from="HealthComponent" to="." method="_on_health_component_health_changed"]

@@ -295,7 +295,7 @@ texture = ExtResource("14_uks6v")
 centered = false
 
 [node name="Fly" parent="." instance=ExtResource("11_jabb1")]
-position = Vector2(-470, -91)
+position = Vector2(-600, -66)
 
 [node name="GrappleNode" parent="." instance=ExtResource("12_grfs7")]
 modulate = Color(0.74902, 0.992157, 1, 1)

@@ -11,7 +11,7 @@ func onHit(other:Hitbox):
 	
 	Ui.player_ui.update_health(GameHandler.Player.health_component.health)
 	
-	if character.get_node("GrapplingHook"):
+	if character.has_node("GrapplingHook"):
 		character.get_node("GrapplingHook").reset_hooks()
 		
 	if other.stun:
