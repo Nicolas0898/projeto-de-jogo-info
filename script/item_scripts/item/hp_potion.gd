@@ -5,5 +5,6 @@ class_name hp_potion
 
 func utilize():
 	node_used.get_node("HealthComponent").heal(hp)
+	Ui.player_ui.update_health(GameHandler.Player.health_component.health)
 	
 	if node_used is PlayerCharacter: Ui.inventory.change_amount(self, -1)

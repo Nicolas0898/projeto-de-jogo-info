@@ -39,7 +39,7 @@ metadata/_custom_type_script = "uid://c41v5wv6fa0vx"
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hqicp"]
 size = Vector2(80, 72)
 
-[node name="Node2D" type="Node2D"]
+[node name="gaiola_room" type="Node2D"]
 script = SubResource("GDScript_no33e")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_h3vtl")]

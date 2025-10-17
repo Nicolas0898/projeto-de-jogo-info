@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://cc2qsjoqgcdqu"]
+[gd_scene load_steps=37 format=3 uid="uid://cc2qsjoqgcdqu"]
 
 [ext_resource type="Script" uid="uid://dfxy21hd8djmg" path="res://script/ui.gd" id="1_nt7q6"]
 [ext_resource type="Script" uid="uid://cffdhewqtjjw1" path="res://script/dialogue_scripts/dialogue_node.gd" id="2_yev5y"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://btdealimdeqkh" path="res://Images/UI/swamp_map.png" id="13_8fs27"]
 [ext_resource type="Script" uid="uid://u1s3fe4dct3e" path="res://script/map.gd" id="13_whq80"]
 [ext_resource type="Script" uid="uid://b4tsgciqbhfi2" path="res://Scenes/player_ui.gd" id="15_lkjmk"]
+[ext_resource type="Script" uid="uid://b66lqor03c8rd" path="res://Scenes/admin.gd" id="16_kuui0"]
 
 [sub_resource type="Gradient" id="Gradient_nt8jn"]
 colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1)
@@ -522,6 +523,7 @@ offset_bottom = 23.0
 
 [node name="Transition" type="ColorRect" parent="."]
 modulate = Color(1, 1, 1, 0)
+z_index = 4096
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -609,5 +611,127 @@ label_settings = SubResource("LabelSettings_whq80")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Admin" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("16_kuui0")
+
+[node name="Panel" type="Panel" parent="Admin"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -616.0
+offset_top = 14.0
+offset_right = -11.0
+offset_bottom = 343.0
+grow_horizontal = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Admin/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Admin/Panel/VBoxContainer"]
+layout_mode = 2
+text = "TP"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="Admin/Panel/VBoxContainer"]
+layout_mode = 2
+columns = 3
+
+[node name="Button" type="Button" parent="Admin/Panel/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Jungle/room_1"
+
+[node name="Button2" type="Button" parent="Admin/Panel/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Jungle/room_2"
+
+[node name="Button3" type="Button" parent="Admin/Panel/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Jungle/room_3"
+
+[node name="Button4" type="Button" parent="Admin/Panel/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Jungle/room_4"
+
+[node name="Button5" type="Button" parent="Admin/Panel/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Jungle/gaiola_room"
+
+[node name="Button6" type="Button" parent="Admin/Panel/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Jungle/boss_room
+"
+
+[node name="Button7" type="Button" parent="Admin/Panel/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Jungle/final_room
+"
+
+[node name="Button8" type="Button" parent="Admin/Panel/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "debug_room
+"
+
+[node name="Label2" type="Label" parent="Admin/Panel/VBoxContainer"]
+layout_mode = 2
+text = "Habilities"
+horizontal_alignment = 1
+
+[node name="GridContainer2" type="GridContainer" parent="Admin/Panel/VBoxContainer"]
+layout_mode = 2
+columns = 3
+
+[node name="Button" type="Button" parent="Admin/Panel/VBoxContainer/GridContainer2"]
+layout_mode = 2
+text = "give cage"
+
+[node name="Button2" type="Button" parent="Admin/Panel/VBoxContainer/GridContainer2"]
+layout_mode = 2
+text = "give hook"
+
+[node name="Button3" type="Button" parent="Admin/Panel/VBoxContainer/GridContainer2"]
+layout_mode = 2
+text = "reset all"
+
+[node name="Label3" type="Label" parent="Admin/Panel/VBoxContainer"]
+layout_mode = 2
+text = "Progression
+"
+horizontal_alignment = 1
+
+[node name="GridContainer3" type="GridContainer" parent="Admin/Panel/VBoxContainer"]
+layout_mode = 2
+columns = 3
+
+[node name="Button" type="Button" parent="Admin/Panel/VBoxContainer/GridContainer3"]
+layout_mode = 2
+text = "Reset golem state"
+
+[node name="Button2" type="Button" parent="Admin/Panel/VBoxContainer/GridContainer3"]
+layout_mode = 2
+text = "Reset coins"
+
+[node name="Button3" type="Button" parent="Admin/Panel/VBoxContainer/GridContainer3"]
+layout_mode = 2
+text = "Reload Current Scene"
+
 [connection signal="button_down" from="Confirm/Panel/VBoxContainer/HBoxContainer/yes" to="Confirm" method="_on_yes_button_down"]
 [connection signal="button_down" from="Confirm/Panel/VBoxContainer/HBoxContainer/no" to="Confirm" method="_on_no_button_down"]
+[connection signal="pressed" from="Admin/Panel/VBoxContainer/GridContainer2/Button" to="Admin" method="_on_button_pressed"]
+[connection signal="pressed" from="Admin/Panel/VBoxContainer/GridContainer2/Button2" to="Admin" method="_on_button_2_pressed"]
+[connection signal="pressed" from="Admin/Panel/VBoxContainer/GridContainer2/Button3" to="Admin" method="_on_button_3_pressed"]
+[connection signal="pressed" from="Admin/Panel/VBoxContainer/GridContainer3/Button" to="Admin" method="_resetgolem"]
+[connection signal="pressed" from="Admin/Panel/VBoxContainer/GridContainer3/Button2" to="Admin" method="resetcoins"]
+[connection signal="toggled" from="Admin/Panel/VBoxContainer/GridContainer3/Button3" to="Admin" method="_on_button_3_toggled"]

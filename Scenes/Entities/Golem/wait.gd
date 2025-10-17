@@ -2,6 +2,8 @@ extends State
 @onready var sprite: AnimatedSprite2D = $"../../AnimatedSprite2D"
 
 func onStateEntered(_old):
+	if GameHandler.golem_dead:
+		character.queue_free()
 	sprite.play("spawn")
 	sprite.pause()
 	sprite.frame = 0

@@ -42,6 +42,7 @@ static func from_rect(damage,size:Vector2,lifetime=0.2,target=ENEMY) -> Hitbox:
 	
 	if lifetime>0:
 		GameHandler.get_tree().create_timer(lifetime).timeout.connect(func():
-			hitbox.queue_free())
+			if is_instance_valid(hitbox):
+				hitbox.queue_free())
 	
 	return hitbox

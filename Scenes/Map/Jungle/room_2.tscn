@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b25tt1a1iqfih" path="res://Scenes/particles/wind.tscn" id="4_u1yx5"]
 [ext_resource type="Shader" uid="uid://b0vwl8qpm7kj2" path="res://Shaders/water.gdshader" id="5_u1yx5"]
 [ext_resource type="TileSet" uid="uid://bnjnwtobjhkof" path="res://Scenes/Map/WATER_JUNGLE.tres" id="6_7ebiy"]
-[ext_resource type="PackedScene" uid="uid://dfcki0ewl81yj" path="res://Scenes/Objects/coin.tscn" id="7_4wktd"]
+[ext_resource type="PackedScene" uid="uid://ctbajdsjla0us" path="res://Scenes/Objects/coin.tscn" id="7_4wktd"]
 [ext_resource type="PackedScene" uid="uid://6067j5q5yogl" path="res://Scenes/Map/parallax_backgroun (2).tscn" id="8_w6xgs"]
 [ext_resource type="PackedScene" uid="uid://dugkamrvn6d0g" path="res://Scenes/Entities/Fly/fly.tscn" id="9_epbql"]
 [ext_resource type="PackedScene" uid="uid://bvmugmme4p6nf" path="res://Scenes/Objects/grapple_node.tscn" id="10_bonop"]
@@ -38,7 +38,7 @@ shader_parameter/wave_amplitude = 1.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ruubq"]
 size = Vector2(1758, 5.8125)
 
-[node name="Node2D" type="Node2D"]
+[node name="room_2" type="Node2D"]
 script = SubResource("GDScript_no33e")
 
 [node name="TileMapLayer3" type="TileMapLayer" parent="."]

@@ -54,7 +54,7 @@ metadata/_custom_type_script = "uid://c41v5wv6fa0vx"
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vaysl"]
 size = Vector2(80, 72)
 
-[node name="Node2D" type="Node2D"]
+[node name="room_3" type="Node2D"]
 script = SubResource("GDScript_no33e")
 
 [node name="Area2D" type="Area2D" parent="."]

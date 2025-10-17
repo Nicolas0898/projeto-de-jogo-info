@@ -14,7 +14,7 @@
 [ext_resource type="Script" uid="uid://yi04u6itiucc" path="res://Scenes/Entities/Golem/roll.gd" id="12_rtown"]
 [ext_resource type="Script" uid="uid://cjp4qnql8sagg" path="res://Scenes/Entities/Golem/throw.gd" id="13_rtown"]
 [ext_resource type="Script" uid="uid://blfwkqgeamobt" path="res://Scripts/Components/Hitbox.gd" id="13_tbvup"]
-[ext_resource type="Script" uid="uid://b4s2bxlcya30p" path="res://Scenes/Entities/state.gd" id="14_uysif"]
+[ext_resource type="Script" uid="uid://dulx1fqjmu1yc" path="res://Scenes/Entities/Golem/died.gd" id="14_n1p4n"]
 [ext_resource type="Script" uid="uid://co267qys8ureh" path="res://Scenes/Entities/Fly/stunned.gd" id="15_n1p4n"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1y50k"]
@@ -424,7 +424,7 @@ script = ExtResource("13_rtown")
 metadata/_custom_type_script = "uid://ca8wa4d6wsrqb"
 
 [node name="Died" type="Node" parent="StateMachine"]
-script = ExtResource("14_uysif")
+script = ExtResource("14_n1p4n")
 metadata/_custom_type_script = "uid://b4s2bxlcya30p"
 
 [node name="Stunned" type="Node" parent="StateMachine"]

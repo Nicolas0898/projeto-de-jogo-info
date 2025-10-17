@@ -28,6 +28,10 @@ var current_core_priority = 0
 
 func _ready() -> void:
 	GameHandler.Player = self
+	
+	for i in GameHandler.player_habilities:
+		add_child(load(i).instantiate())
+	
 	health_component.health = GameHandler.player_health
 	%DebugMenu.watch(self,"true_constant_velocity")
 	%DebugMenu.watch(self,"constant_velocity")
@@ -79,6 +83,13 @@ func set_core(priority):
 		current_core_priority = priority
 
 func remove_core(priority):
-	if current_core_priority <= priority:
+	if current_core_priority <= priority and state_machine.get_current_state_name()=="core":
 		state_machine.requestStateChange("Falling")
 		current_core_priority = 0
+	else:
+		current_core_priority = 0
+
+func add_hability(path):
+	add_child(load(path).instantiate())
+	if not GameHandler.player_habilities.find(path):
+		GameHandler.player_habilities.push_back(path)

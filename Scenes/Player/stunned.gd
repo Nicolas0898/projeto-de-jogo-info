@@ -2,7 +2,7 @@ extends State
 
 func onStateEntered(_o):
 	character = character as PlayerCharacter
-	character.remove_core(INF)
+	character.current_core_priority = 0
 
 func onPhysics(delta):
 	character = character as PlayerCharacter

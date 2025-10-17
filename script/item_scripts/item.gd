@@ -13,6 +13,7 @@ enum types{
 @export var display : types
 @export var sprite : Texture
 @export var confirm : bool
+@export var hability_path:String
 var node_used : Node #Quem usa o item
 var t : float: 
 	set(new_value):
@@ -21,7 +22,6 @@ var t : float:
 
 #USE => Ativa o item (confirmação e cooldown), é o que executa antes do UTILIZE
 #UTILIZE => O que o item faz
-
 
 func use(who_used : Node, next_interface):
 	node_used = who_used

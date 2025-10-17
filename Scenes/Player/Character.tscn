@@ -1,14 +1,10 @@
-[gd_scene load_steps=62 format=3 uid="uid://brkn5mjfr67t4"]
+[gd_scene load_steps=58 format=3 uid="uid://brkn5mjfr67t4"]
 
 [ext_resource type="Shader" uid="uid://lk8vqo6nbyf3" path="res://Shaders/Character.gdshader" id="1_aeg27"]
 [ext_resource type="Script" uid="uid://bhahlqc4v651w" path="res://Scripts/Player/character.gd" id="1_d8n76"]
-[ext_resource type="Script" uid="uid://scaiw8eibd5v" path="res://Scripts/Player/GrapplingHook.gd" id="2_bx0bv"]
 [ext_resource type="Script" uid="uid://lurpfwbx4y8w" path="res://Scripts/StateMachine/StateMachine.gd" id="2_xa38j"]
 [ext_resource type="Script" uid="uid://bwvlwfyg6aura" path="res://Scenes/Player/Idle.gd" id="3_aflf6"]
-[ext_resource type="Texture2D" uid="uid://6djjd8r45x53" path="res://Images/Player/hook_select.png" id="3_dc8lg"]
-[ext_resource type="Script" uid="uid://t820661hla0s" path="res://Scenes/Player/LeafCage.gd" id="4_anaxe"]
 [ext_resource type="Script" uid="uid://u7xe8kyvdrj3" path="res://Scenes/Player/running.gd" id="4_owfaj"]
-[ext_resource type="Script" uid="uid://da55i10v01nie" path="res://Scripts/scenes/hook_select.gd" id="4_u5us2"]
 [ext_resource type="Script" uid="uid://m216pt8kh4te" path="res://Scenes/Player/jumping.gd" id="5_nwviy"]
 [ext_resource type="PackedScene" uid="uid://bxj8gcdynfh0a" path="res://Scenes/Debug/debug_menu.tscn" id="5_owfaj"]
 [ext_resource type="Script" uid="uid://bub1gegedpdbu" path="res://Scenes/Player/falling.gd" id="6_try8w"]
@@ -289,22 +285,6 @@ speed = 150
 script = ExtResource("31_qyni0")
 cooldown = 0.329
 metadata/_custom_type_script = "uid://xwxec44xl3lg"
-
-[node name="LeafCage" type="Node2D" parent="."]
-script = ExtResource("4_anaxe")
-cooldown = 8.0
-metadata/_custom_type_script = "uid://xwxec44xl3lg"
-
-[node name="GrapplingHook" type="Node" parent="."]
-script = ExtResource("2_bx0bv")
-
-[node name="HookSelect" type="Sprite2D" parent="GrapplingHook"]
-modulate = Color(1, 1, 1, 0)
-top_level = true
-position = Vector2(0, -23)
-rotation = 0.785398
-texture = ExtResource("3_dc8lg")
-script = ExtResource("4_u5us2")
 
 [node name="Hurtbox" type="Area2D" parent="." node_paths=PackedStringArray("health_component")]
 visible = false

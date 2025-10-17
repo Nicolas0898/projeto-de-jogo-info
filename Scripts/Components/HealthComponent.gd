@@ -18,4 +18,4 @@ func takeDamage(damage:float,origin=null):
 
 func heal(healing:float):
 	healthChanged.emit(health+healing,health)
-	health += healing
+	health = min(health+healing,max_health)
