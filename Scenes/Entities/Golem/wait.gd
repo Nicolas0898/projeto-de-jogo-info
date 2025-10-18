@@ -4,6 +4,9 @@ extends State
 func onStateEntered(_old):
 	if GameHandler.golem_dead:
 		character.queue_free()
+		if get_tree().current_scene.has_node("DOOR"):
+			get_tree().current_scene.get_node("DOOR").enabled = false
+		return
 	sprite.play("spawn")
 	sprite.pause()
 	sprite.frame = 0

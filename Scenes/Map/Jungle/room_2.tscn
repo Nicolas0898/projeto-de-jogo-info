@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://bbghhxjenlnm"]
+[gd_scene load_steps=30 format=4 uid="uid://bbghhxjenlnm"]
 
 [ext_resource type="TileSet" uid="uid://dctgdgbcalghh" path="res://Scenes/Map/JUNGLE_FOREGROUND.tres" id="1_kj2b6"]
 [ext_resource type="PackedScene" uid="uid://brkn5mjfr67t4" path="res://Scenes/Player/Character.tscn" id="2_r6gg3"]
@@ -13,7 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://bvmugmme4p6nf" path="res://Scenes/Objects/grapple_node.tscn" id="10_bonop"]
 [ext_resource type="PackedScene" uid="uid://b1ejde12cbfqd" path="res://Scenes/Entities/Cobra/cobra.tscn" id="11_ll84f"]
 [ext_resource type="PackedScene" uid="uid://bbcuecrtpmuuo" path="res://Scenes/Objects/teleport.tscn" id="11_ruubq"]
+[ext_resource type="Texture2D" uid="uid://y8pmob1wtl2q" path="res://Images/sign.png" id="12_lnoy8"]
 [ext_resource type="PackedScene" uid="uid://bhhvto6dt5454" path="res://Scenes/Map/JungleParallax.tscn" id="12_r6gg3"]
+[ext_resource type="Texture2D" uid="uid://cyw1woq2weih" path="res://Images/weapons/gaiola_inv.png" id="13_1hyu7"]
 [ext_resource type="PackedScene" uid="uid://dwr4crb3vhg5b" path="res://Scenes/Map/world_environment.tscn" id="13_kawln"]
 [ext_resource type="PackedScene" uid="uid://dsj80mrifqmuw" path="res://Scenes/Entities/Npc/forgotten.tscn" id="16_7ebiy"]
 [ext_resource type="Script" uid="uid://xbqu3ca63qn6" path="res://Scripts/Components/SpawnLocation.gd" id="17_4wktd"]
@@ -22,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://vokqjyhjkv4a" path="res://Scenes/Objects/lamp.tscn" id="20_bonop"]
 [ext_resource type="PackedScene" uid="uid://bc4vsdggdjydf" path="res://Scenes/Objects/aguaboia.tscn" id="21_ruubq"]
 [ext_resource type="PackedScene" uid="uid://bgj5i6vxa07tq" path="res://Scenes/Entities/Piranha/piranha.tscn" id="22_kfepi"]
+[ext_resource type="Texture2D" uid="uid://c7jbun514lps5" path="res://Images/arrow.png" id="23_ll84f"]
 
 [sub_resource type="GDScript" id="GDScript_no33e"]
 
@@ -165,8 +168,30 @@ offset = Vector2(0, -320)
 transform = Transform2D(1, 0, 0, 1, 0, -320)
 
 [node name="GrappleNode2" parent="." instance=ExtResource("10_bonop")]
-position = Vector2(668, -201)
+position = Vector2(666, -105)
 scale = Vector2(0.7, 0.7)
+
+[node name="Sign" type="Sprite2D" parent="GrappleNode2"]
+modulate = Color(0.440002, 0.632813, 0.479167, 1)
+z_index = -1
+position = Vector2(-1571.43, -28.5715)
+rotation = -3.40339
+scale = Vector2(1.37231, 1.37231)
+texture = ExtResource("12_lnoy8")
+
+[node name="GaiolaInv" type="Sprite2D" parent="GrappleNode2/Sign"]
+modulate = Color(1, 0.566, 0.25, 0.895)
+position = Vector2(-0.521057, 2.17452)
+rotation = 3.14159
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("13_1hyu7")
+
+[node name="Arrow" type="Sprite2D" parent="GrappleNode2/Sign"]
+modulate = Color(1, 1, 1, 0.553)
+position = Vector2(6.21871, 2.16683)
+rotation = -4.71249
+scale = Vector2(0.24547, 0.24547)
+texture = ExtResource("23_ll84f")
 
 [node name="teleport_boss_room" parent="." instance=ExtResource("11_ruubq")]
 position = Vector2(1157, -67)
@@ -181,8 +206,8 @@ spawn_direction = "left"
 
 [node name="GrappleNode3" parent="." instance=ExtResource("10_bonop")]
 modulate = Color(0.74902, 0.992157, 1, 1)
-position = Vector2(-373, -123)
-range = 155.0
+position = Vector2(-413, -161)
+range = 175.0
 type = 1
 
 [node name="GrappleNode4" parent="." instance=ExtResource("10_bonop")]
@@ -239,7 +264,7 @@ position = Vector2(-723, -187)
 position = Vector2(-454, -300)
 
 [node name="lamp3" parent="." instance=ExtResource("20_bonop")]
-position = Vector2(-337, -90)
+position = Vector2(-462, -141)
 
 [node name="lamp4" parent="." instance=ExtResource("20_bonop")]
 position = Vector2(395, -15)

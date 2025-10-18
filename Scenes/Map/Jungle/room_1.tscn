@@ -299,7 +299,7 @@ position = Vector2(-600, -66)
 
 [node name="GrappleNode" parent="." instance=ExtResource("12_grfs7")]
 modulate = Color(0.74902, 0.992157, 1, 1)
-position = Vector2(-985, -113)
+position = Vector2(-990, -121)
 scale = Vector2(0.5, 0.5)
 range = 107.0
 type = 1
@@ -308,11 +308,12 @@ type = 1
 scale = Vector2(1, 1)
 
 [node name="GrappleNode2" parent="." instance=ExtResource("12_grfs7")]
-position = Vector2(653, -207)
+position = Vector2(632, -118)
 scale = Vector2(0.7, 0.7)
+range = 208.0
 
 [node name="teleport_room_2" parent="." instance=ExtResource("13_j6ang")]
-position = Vector2(1157, -67)
+position = Vector2(1187, -69)
 actual_level = "Jungle/room_1"
 destination_level = "Jungle/room_2"
 

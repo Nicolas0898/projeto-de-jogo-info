@@ -11,6 +11,8 @@ var ignore = null
 @onready var ignorelabel: Label = $"../../DEBUGINFO/ignore"
 
 func onStateEntered(old:State):
+	if get_tree().current_scene.has_node("DOOR"):
+			get_tree().current_scene.get_node("DOOR").enabled = true
 	if sprite.is_playing() and old != self and old.name != "Stunned":
 		print("WAITING FOR ANIMATION FINISH : " + str(old.name))
 		await sprite.animation_finished

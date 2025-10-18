@@ -6,7 +6,6 @@ func onPhysics(delta:float):
 
 
 func onStateEntered(_old):
-	GameHandler.spawn_coins(character.global_position,5)
 	stateMachine.lockstate = true
 	character.variable_velocity*=10
 	create_tween().tween_method(speed_t,character.constant_velocity.walk,Vector2.ZERO,2)
@@ -19,6 +18,7 @@ func onStateEntered(_old):
 	body.angular_velocity = -10 if body.linear_velocity.x < 0 else 10
 	body.get_node("Sprite").flip_h = sprite.flip_h
 	get_tree().current_scene.add_child(body)
+	GameHandler.spawn_coins(character.global_position,5)
 	character.queue_free()
 	
 func speed_t(v):

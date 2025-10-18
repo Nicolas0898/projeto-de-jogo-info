@@ -430,6 +430,7 @@ texture = ExtResource("1_1pj75")
 7:4/0/modulate = Color(0.64, 0.53248, 0.2816, 0.498039)
 8:4/0 = 0
 8:4/0/modulate = Color(0.64, 0.53248, 0.2816, 0.498039)
+0:0/0 = 0
 
 [resource]
 uv_clipping = true

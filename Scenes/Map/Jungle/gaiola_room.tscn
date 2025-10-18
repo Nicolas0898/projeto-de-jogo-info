@@ -1,8 +1,9 @@
-[gd_scene load_steps=23 format=4 uid="uid://bcqcys82msojd"]
+[gd_scene load_steps=24 format=4 uid="uid://bcqcys82msojd"]
 
 [ext_resource type="PackedScene" uid="uid://c5pik2cgvmlm4" path="res://Scenes/particles/falling_leaves.tscn" id="2_4cbs5"]
 [ext_resource type="PackedScene" uid="uid://brkn5mjfr67t4" path="res://Scenes/Player/Character.tscn" id="2_h3vtl"]
 [ext_resource type="TileSet" uid="uid://cyll24yrphmu5" path="res://Scenes/Map/JUNGLE_TILESET.tres" id="3_hqicp"]
+[ext_resource type="PackedScene" uid="uid://b25tt1a1iqfih" path="res://Scenes/particles/wind.tscn" id="3_ofhd1"]
 [ext_resource type="Texture2D" uid="uid://blhm6lvxly71a" path="res://Images/tilesets/swamp_leaves01.png" id="5_kqsfw"]
 [ext_resource type="PackedScene" uid="uid://bbcuecrtpmuuo" path="res://Scenes/Objects/teleport.tscn" id="6_nvjd3"]
 [ext_resource type="PackedScene" uid="uid://dl68pqvut2yto" path="res://Scenes/Map/parallax_backgroun.tscn" id="8_ofhd1"]
@@ -54,6 +55,11 @@ zoom = Vector2(1.8, 1.8)
 modulate = Color(0.31131, 0.336668, 0.394531, 1)
 amount = 100
 lifetime = 3.9
+
+[node name="wind" parent="CharacterBody2D" instance=ExtResource("3_ofhd1")]
+modulate = Color(1, 1, 1, 0.0156863)
+self_modulate = Color(1, 1.5, 1.15, 1)
+position = Vector2(-70, -27)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(-1, 0)

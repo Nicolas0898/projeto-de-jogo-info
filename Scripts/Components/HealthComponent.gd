@@ -16,5 +16,6 @@ func takeDamage(damage:float,origin=null):
 	health -= damage
 
 func heal(healing:float):
-	healthChanged.emit(health+healing,health)
-	health = min(health+healing,max_health)
+	var val = min(health+healing,max_health)
+	healthChanged.emit(val,health)
+	health = val

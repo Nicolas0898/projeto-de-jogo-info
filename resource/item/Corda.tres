@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_vd6sh")
 name = "Corda"
-desc = "Item criado por trepadores. Permite ao portador utilizar os pontos de corda"
+desc = "Item criado por trepadores. Permite ao portador utilizar os pontos de corda segurando <PULO> no ar"
 amount = 0
 cooldown = 0.0
 display = 1
