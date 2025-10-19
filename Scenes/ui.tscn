@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://ddtyrq47rmv2x" path="res://Images/UI/select.png" id="13_3r70p"]
 [ext_resource type="Texture2D" uid="uid://btdealimdeqkh" path="res://Images/UI/swamp_map.png" id="13_8fs27"]
 [ext_resource type="Script" uid="uid://u1s3fe4dct3e" path="res://Scripts/Interface/map.gd" id="13_whq80"]
-[ext_resource type="Script" uid="uid://b4tsgciqbhfi2" path="res://Scenes/UI/player_ui.gd" id="15_lkjmk"]
+[ext_resource type="Script" uid="uid://b4tsgciqbhfi2" path="res://Scenes/player_ui.gd" id="15_lkjmk"]
 [ext_resource type="Script" uid="uid://b66lqor03c8rd" path="res://Scenes/admin.gd" id="16_kuui0"]
 
 [sub_resource type="Gradient" id="Gradient_nt8jn"]

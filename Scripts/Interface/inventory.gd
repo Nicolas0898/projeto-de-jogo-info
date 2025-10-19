@@ -8,7 +8,7 @@ var buttons : Array #Botões que estão sendo mostrados
 var c : Array #Itens em cooldown
 @export var inventario : Array[Item] #Itens no inventário
 
-@onready var item_display = preload("res://scenes/item_display.tscn")
+@onready var item_display = preload("res://Scenes/item_display.tscn")
 @onready var desc: GridContainer = $Panel/VBoxContainer/HBoxContainer/VBoxContainer/Panel2/desc
 @onready var util: GridContainer = $Panel/VBoxContainer/HBoxContainer/Panel/VBoxContainer/util
 

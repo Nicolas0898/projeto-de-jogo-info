@@ -1,7 +1,7 @@
 extends Node
 
 static func act():
-	var item = load("res://resource/item/Poção_cura.tres")
+	var item = load("res://Resources/item/Poção_cura.tres")
 	#var dialogue = Dialogue.new()
 	#var message = Message.new()
 	
