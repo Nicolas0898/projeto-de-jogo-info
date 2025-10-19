@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bc4vsdggdjydf"]
 
-[ext_resource type="Texture2D" uid="uid://dwlce11b5aki2" path="res://Images/assets/vitoria regia.png" id="1_a57f0"]
+[ext_resource type="Texture2D" uid="uid://dwlce11b5aki2" path="res://Images/Assets/vitoria regia.png" id="1_a57f0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_68xg7"]
 size = Vector2(26, 4)

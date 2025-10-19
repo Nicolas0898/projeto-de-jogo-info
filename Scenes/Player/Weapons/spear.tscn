@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://6m8cyfmng1we"]
 
-[ext_resource type="Texture2D" uid="uid://0yk1vy17wsuq" path="res://Images/weapons/spear.png" id="1_0hxvb"]
-[ext_resource type="Texture2D" uid="uid://c122ravveb2fl" path="res://Images/weapons/extra.png" id="2_cvv0t"]
+[ext_resource type="Texture2D" uid="uid://0yk1vy17wsuq" path="res://Images/Weapons/spear.png" id="1_0hxvb"]
+[ext_resource type="Texture2D" uid="uid://c122ravveb2fl" path="res://Images/Weapons/extra.png" id="2_cvv0t"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cvv0t"]
 atlas = ExtResource("1_0hxvb")

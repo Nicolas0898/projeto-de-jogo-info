@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cggtt882ti85n"]
 
-[ext_resource type="Texture2D" uid="uid://jb7iy2cdtt3s" path="res://Images/entities/firefly.png" id="1_t7o6m"]
+[ext_resource type="Texture2D" uid="uid://jb7iy2cdtt3s" path="res://Images/Entities/firefly.png" id="1_t7o6m"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_a44ge"]
 particles_animation = true

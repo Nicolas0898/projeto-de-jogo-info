@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://yjdw7q4abukx"]
 
-[ext_resource type="Texture2D" uid="uid://cy152bdu8s4gi" path="res://sprites/stone_pack.png" id="1_5bfco"]
+[ext_resource type="Texture2D" uid="uid://cy152bdu8s4gi" path="res://Images/Particles/stone_pack.png" id="1_5bfco"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nd8f8"]
 particles_animation = true

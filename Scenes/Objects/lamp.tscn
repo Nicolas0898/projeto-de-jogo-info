@@ -1,9 +1,9 @@
 [gd_scene load_steps=21 format=3 uid="uid://vokqjyhjkv4a"]
 
 [ext_resource type="Shader" uid="uid://di767vatspuct" path="res://Shaders/glow_shaders.gdshader" id="1_fdyp4"]
-[ext_resource type="Texture2D" uid="uid://dmnob4wupaa1" path="res://Images/assets/lamp/fogo-sheet.png" id="2_ik31h"]
-[ext_resource type="Texture2D" uid="uid://c3qtafohx3xsk" path="res://Images/assets/lamp/lampião-Sheet.png" id="3_euixo"]
-[ext_resource type="Texture2D" uid="uid://jb7iy2cdtt3s" path="res://Images/entities/firefly.png" id="4_ik31h"]
+[ext_resource type="Texture2D" uid="uid://dmnob4wupaa1" path="res://Images/Assets/lamp/fogo-sheet.png" id="2_ik31h"]
+[ext_resource type="Texture2D" uid="uid://c3qtafohx3xsk" path="res://Images/Assets/lamp/lampião-Sheet.png" id="3_euixo"]
+[ext_resource type="Texture2D" uid="uid://jb7iy2cdtt3s" path="res://Images/Entities/firefly.png" id="4_ik31h"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lug6d"]
 shader = ExtResource("1_fdyp4")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bcba4k7p677vm"]
 
 [ext_resource type="Script" uid="uid://dfmtcaa1lck1a" path="res://Scenes/Entities/Golem/stone.gd" id="1_8kf6e"]
-[ext_resource type="Texture2D" uid="uid://dag3q1x5v02r1" path="res://Images/tilesets/stone02.png" id="1_snpxx"]
+[ext_resource type="Texture2D" uid="uid://dag3q1x5v02r1" path="res://Images/Tilesets/stone02.png" id="1_snpxx"]
 [ext_resource type="Script" uid="uid://blfwkqgeamobt" path="res://Scripts/Components/Hitbox.gd" id="2_8kf6e"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4rcde"]

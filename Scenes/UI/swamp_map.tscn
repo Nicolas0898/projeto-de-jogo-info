@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://d4eupohb8qufe"]
 
-[ext_resource type="Texture2D" uid="uid://dcsuekoxcvv5l" path="res://Images/items/swamp_map.png" id="1_vroys"]
+[ext_resource type="Texture2D" uid="uid://dcsuekoxcvv5l" path="res://Images/Items/swamp_map.png" id="1_vroys"]
 
 [node name="swamp_map" type="Sprite2D"]
 texture = ExtResource("1_vroys")

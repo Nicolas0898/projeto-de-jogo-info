@@ -1,0 +1,31 @@
+[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://bnjnwtobjhkof"]
+
+[ext_resource type="Texture2D" uid="uid://bc677t22o5t1k" path="res://Images/Tilesets/Jungle/waterswampmeio.png" id="1_ndwmn"]
+[ext_resource type="Texture2D" uid="uid://bouwbjldkmlym" path="res://Images/Tilesets/Jungle/waterswamp.png" id="1_o74d5"]
+[ext_resource type="Texture2D" uid="uid://bm0iuksylab7k" path="res://Images/Tilesets/Jungle/waterswampfundo.png" id="2_j1vmb"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4hlpu"]
+texture = ExtResource("1_ndwmn")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j1vmb"]
+texture = ExtResource("1_o74d5")
+texture_region_size = Vector2i(32, 32)
+0:0/animation_columns = 4
+0:0/animation_speed = 1.3
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ndwmn"]
+texture = ExtResource("2_j1vmb")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[resource]
+sources/1 = SubResource("TileSetAtlasSource_j1vmb")
+sources/2 = SubResource("TileSetAtlasSource_ndwmn")
+sources/0 = SubResource("TileSetAtlasSource_4hlpu")

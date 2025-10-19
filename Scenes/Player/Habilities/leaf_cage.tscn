@@ -1,9 +1,9 @@
 [gd_scene load_steps=35 format=3 uid="uid://lnvnpmrvvsh7"]
 
-[ext_resource type="Texture2D" uid="uid://dl1lgxdl2m7tl" path="res://Images/gaiola final-Sheet.png" id="1_uteat"]
+[ext_resource type="Texture2D" uid="uid://dl1lgxdl2m7tl" path="res://Images/Weapons/gaiola final-Sheet.png" id="1_uteat"]
 [ext_resource type="Script" uid="uid://blfwkqgeamobt" path="res://Scripts/Components/Hitbox.gd" id="2_dmrpf"]
 [ext_resource type="Script" uid="uid://cvi4lhvs8o04o" path="res://Scenes/Player/Habilities/leaf_cage_sprite.gd" id="2_vgptt"]
-[ext_resource type="Texture2D" uid="uid://1nmf0a3yqnf7" path="res://Images/corda (1).png" id="3_3qehu"]
+[ext_resource type="Texture2D" uid="uid://1nmf0a3yqnf7" path="res://Images/Items/corda (1).png" id="3_3qehu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lug6d"]
 atlas = ExtResource("1_uteat")

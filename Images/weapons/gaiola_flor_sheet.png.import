@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bkgygi7qkk5eh"
-path="res://.godot/imported/gaiola_flor_sheet.png-7e89c62a0d50ecb45c61776be1233afb.ctex"
+path="res://.godot/imported/gaiola_flor_sheet.png-0ef1c349b40cbfec42db7614a7a5331a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/weapons/gaiola_flor_sheet.png"
-dest_files=["res://.godot/imported/gaiola_flor_sheet.png-7e89c62a0d50ecb45c61776be1233afb.ctex"]
+source_file="res://Images/Weapons/gaiola_flor_sheet.png"
+dest_files=["res://.godot/imported/gaiola_flor_sheet.png-0ef1c349b40cbfec42db7614a7a5331a.ctex"]
 
 [params]
 

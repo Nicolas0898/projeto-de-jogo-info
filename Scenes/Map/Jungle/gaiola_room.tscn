@@ -1,21 +1,21 @@
 [gd_scene load_steps=24 format=4 uid="uid://bcqcys82msojd"]
 
-[ext_resource type="PackedScene" uid="uid://c5pik2cgvmlm4" path="res://Scenes/particles/falling_leaves.tscn" id="2_4cbs5"]
+[ext_resource type="PackedScene" uid="uid://c5pik2cgvmlm4" path="res://Scenes/Particles/falling_leaves.tscn" id="2_4cbs5"]
 [ext_resource type="PackedScene" uid="uid://brkn5mjfr67t4" path="res://Scenes/Player/Character.tscn" id="2_h3vtl"]
-[ext_resource type="TileSet" uid="uid://cyll24yrphmu5" path="res://Scenes/Map/JUNGLE_TILESET.tres" id="3_hqicp"]
-[ext_resource type="PackedScene" uid="uid://b25tt1a1iqfih" path="res://Scenes/particles/wind.tscn" id="3_ofhd1"]
-[ext_resource type="Texture2D" uid="uid://blhm6lvxly71a" path="res://Images/tilesets/swamp_leaves01.png" id="5_kqsfw"]
+[ext_resource type="TileSet" uid="uid://cyll24yrphmu5" path="res://Resources/tilesets/Jungle/JUNGLE_TILESET.tres" id="3_hqicp"]
+[ext_resource type="PackedScene" uid="uid://b25tt1a1iqfih" path="res://Scenes/Particles/wind.tscn" id="3_ofhd1"]
+[ext_resource type="Texture2D" uid="uid://blhm6lvxly71a" path="res://Images/Parallax/foreground/Jungle/swamp_leaves01.png" id="5_kqsfw"]
 [ext_resource type="PackedScene" uid="uid://bbcuecrtpmuuo" path="res://Scenes/Objects/teleport.tscn" id="6_nvjd3"]
-[ext_resource type="PackedScene" uid="uid://dl68pqvut2yto" path="res://Scenes/Map/parallax_backgroun.tscn" id="8_ofhd1"]
-[ext_resource type="PackedScene" uid="uid://dqiyuc6o8q627" path="res://Scenes/interaction_area.tscn" id="9_sqglm"]
-[ext_resource type="PackedScene" uid="uid://bhhvto6dt5454" path="res://Scenes/Map/JungleParallax.tscn" id="10_2ok4s"]
-[ext_resource type="Resource" uid="uid://ckyg1bo3olhw0" path="res://resource/item/Gaiola.tres" id="10_nvjd3"]
-[ext_resource type="Texture2D" uid="uid://cyw1woq2weih" path="res://Images/weapons/gaiola_inv.png" id="11_4cbs5"]
+[ext_resource type="PackedScene" uid="uid://dl68pqvut2yto" path="res://Scenes/Parallax/Foreground/Jungle/JungleBossForeground.tscn" id="8_ofhd1"]
+[ext_resource type="PackedScene" uid="uid://dqiyuc6o8q627" path="res://Scenes/Objects/interaction_area.tscn" id="9_sqglm"]
+[ext_resource type="PackedScene" uid="uid://bhhvto6dt5454" path="res://Scenes/Parallax/Background/Jungle/JungleParallax.tscn" id="10_2ok4s"]
+[ext_resource type="Resource" uid="uid://ckyg1bo3olhw0" path="res://Resources/item/Gaiola.tres" id="10_nvjd3"]
+[ext_resource type="Texture2D" uid="uid://cyw1woq2weih" path="res://Images/Weapons/gaiola_inv.png" id="11_4cbs5"]
 [ext_resource type="PackedScene" uid="uid://dwr4crb3vhg5b" path="res://Scenes/Map/world_environment.tscn" id="11_fci24"]
-[ext_resource type="Script" uid="uid://c41v5wv6fa0vx" path="res://script/item_scripts/item_giver.gd" id="11_h3vtl"]
-[ext_resource type="Texture2D" uid="uid://3clhnqtembx3" path="res://Images/tilesets/swamp_tree01.png" id="12_h3vtl"]
-[ext_resource type="Texture2D" uid="uid://jrlmcgj1ov4v" path="res://Images/tilesets/swamp_tree02.png" id="13_hqicp"]
-[ext_resource type="Script" uid="uid://qsuh4f4vfaje" path="res://indicator.gd" id="13_nvjd3"]
+[ext_resource type="Script" uid="uid://c41v5wv6fa0vx" path="res://Scripts/item_scripts/item_giver.gd" id="11_h3vtl"]
+[ext_resource type="Texture2D" uid="uid://3clhnqtembx3" path="res://Images/Parallax/foreground/Jungle/swamp_tree01.png" id="12_h3vtl"]
+[ext_resource type="Texture2D" uid="uid://jrlmcgj1ov4v" path="res://Images/Parallax/foreground/Jungle/swamp_tree02.png" id="13_hqicp"]
+[ext_resource type="Script" uid="uid://qsuh4f4vfaje" path="res://Scripts/Components/indicator.gd" id="13_nvjd3"]
 [ext_resource type="PackedScene" uid="uid://cv65j1yo5s1ck" path="res://Scenes/Objects/indicator.tscn" id="13_xhwvu"]
 [ext_resource type="PackedScene" uid="uid://vokqjyhjkv4a" path="res://Scenes/Objects/lamp.tscn" id="17_7ukwo"]
 
@@ -87,65 +87,25 @@ transform = Transform2D(1, 0, 0, 1, -50, -250)
 position = Vector2(262, -36)
 scale = Vector2(1.42857, 1.15702)
 
-[node name="Sprite2D" parent="ParallaxBackground2/ParallaxLayer13" index="0"]
-scale = Vector2(3.0989, 2.76033)
+[node name="Sprite2D5" parent="ParallaxBackground2/ParallaxLayer" index="4"]
+position = Vector2(708, -30)
 
-[node name="Sprite2D" parent="ParallaxBackground2/ParallaxLayer3" index="0"]
-position = Vector2(1532, -80)
-scale = Vector2(2.26374, 2.79339)
-
-[node name="Sprite2D" parent="ParallaxBackground2/ParallaxLayer18" index="0"]
-position = Vector2(1360, -68)
-scale = Vector2(2.15385, 2.16529)
-
-[node name="Sprite2D" parent="ParallaxBackground2/ParallaxLayer15" index="0"]
-position = Vector2(532, -34)
-scale = Vector2(1.37363, 1.29752)
-
-[node name="ParallaxLayer4" parent="ParallaxBackground2" index="6"]
+[node name="ParallaxLayer2" parent="ParallaxBackground2" index="1"]
 visible = false
 
-[node name="ParallaxLayer14" type="ParallaxLayer" parent="ParallaxBackground2"]
-scale = Vector2(0.25, 0.25)
-motion_scale = Vector2(0.9, 0.9)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer14"]
-modulate = Color(0.245371, 0.777775, 0.99979, 0.956863)
-self_modulate = Color(0.89, 0.89, 0.801, 1)
-position = Vector2(-312, -60)
-scale = Vector2(2.72527, 2.59504)
-texture = ExtResource("5_kqsfw")
-centered = false
-
-[node name="ParallaxLayer8" type="ParallaxLayer" parent="ParallaxBackground2"]
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground2"]
 scale = Vector2(0.5, 0.5)
 motion_scale = Vector2(0.9, 0.9)
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer8"]
-modulate = Color(0.0882, 0.861093, 0.98, 0.956863)
-self_modulate = Color(0.89, 0.89, 0.801, 1)
-position = Vector2(1336, -46)
-scale = Vector2(1.59341, 1.21488)
-texture = ExtResource("5_kqsfw")
-centered = false
-
-[node name="ParallaxLayer20" type="ParallaxLayer" parent="ParallaxBackground2"]
-scale = Vector2(0.25, 0.25)
-motion_scale = Vector2(0.9, 0.9)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer20"]
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer3"]
 modulate = Color(0.245371, 0.777775, 0.99979, 0.956863)
 self_modulate = Color(0.89, 0.89, 0.801, 1)
-position = Vector2(3404, -116)
-scale = Vector2(2.87912, 2.49587)
+position = Vector2(1702, -58)
+scale = Vector2(1.43956, 1.24794)
 texture = ExtResource("5_kqsfw")
 centered = false
 
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground2"]
-scale = Vector2(0.5, 0.5)
-motion_scale = Vector2(0.9, 0.9)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer2"]
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer3"]
 modulate = Color(0.0882, 0.861093, 0.98, 0.956863)
 self_modulate = Color(0.89, 0.89, 0.801, 1)
 position = Vector2(134, -32)
@@ -153,11 +113,23 @@ scale = Vector2(1.31868, 1.07438)
 texture = ExtResource("5_kqsfw")
 centered = false
 
-[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground2"]
-scale = Vector2(0.5, 0.5)
-motion_scale = Vector2(0.9, 0.9)
+[node name="Sprite2D3" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer3"]
+modulate = Color(0.245371, 0.777775, 0.99979, 0.956863)
+self_modulate = Color(0.89, 0.89, 0.801, 1)
+position = Vector2(-156, -30)
+scale = Vector2(1.36264, 1.29752)
+texture = ExtResource("5_kqsfw")
+centered = false
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer5"]
+[node name="Sprite2D4" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer3"]
+modulate = Color(0.0882, 0.861093, 0.98, 0.956863)
+self_modulate = Color(0.89, 0.89, 0.801, 1)
+position = Vector2(1336, -46)
+scale = Vector2(1.59341, 1.21488)
+texture = ExtResource("5_kqsfw")
+centered = false
+
+[node name="Sprite2D5" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer3"]
 modulate = Color(0.0882, 0.861093, 0.98, 0.956863)
 self_modulate = Color(0.89, 0.89, 0.801, 1)
 position = Vector2(834, -42)
@@ -165,11 +137,7 @@ scale = Vector2(1.37363, 1.19835)
 texture = ExtResource("5_kqsfw")
 centered = false
 
-[node name="ParallaxLayer10" type="ParallaxLayer" parent="ParallaxBackground2"]
-scale = Vector2(0.5, 0.5)
-motion_scale = Vector2(0.9, 0.9)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer10"]
+[node name="Sprite2D6" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer3"]
 modulate = Color(0.0882, 0.861093, 0.98, 0.956863)
 self_modulate = Color(0.89, 0.89, 0.801, 1)
 position = Vector2(-300, -24)
@@ -177,11 +145,7 @@ scale = Vector2(1.37363, 1.47934)
 texture = ExtResource("5_kqsfw")
 centered = false
 
-[node name="ParallaxLayer6" type="ParallaxLayer" parent="ParallaxBackground2"]
-scale = Vector2(0.5, 0.5)
-motion_scale = Vector2(0.9, 0.9)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer6"]
+[node name="Sprite2D7" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer3"]
 modulate = Color(0.0882, 0.861093, 0.98, 0.956863)
 self_modulate = Color(0.89, 0.89, 0.801, 1)
 position = Vector2(966, -40)
@@ -189,45 +153,29 @@ scale = Vector2(1.37363, 1.43802)
 texture = ExtResource("5_kqsfw")
 centered = false
 
-[node name="ParallaxLayer7" type="ParallaxLayer" parent="ParallaxBackground2"]
-scale = Vector2(0.25, 0.25)
-motion_scale = Vector2(0.9, 0.9)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer7"]
+[node name="Sprite2D8" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer3"]
 modulate = Color(0.0174, 0.77053, 0.87, 1)
-position = Vector2(2252, -84)
-scale = Vector2(2.04396, 2.21488)
+position = Vector2(1126, -42)
+scale = Vector2(1.02198, 1.10744)
 texture = ExtResource("5_kqsfw")
 centered = false
 
-[node name="ParallaxLayer9" type="ParallaxLayer" parent="ParallaxBackground2"]
-scale = Vector2(0.25, 0.25)
-motion_scale = Vector2(0.9, 0.9)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer9"]
+[node name="Sprite2D9" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer3"]
 modulate = Color(0.0174, 0.77053, 0.87, 1)
-position = Vector2(3748, -116)
-scale = Vector2(2.04396, 2.21488)
+position = Vector2(1874, -58)
+scale = Vector2(1.02198, 1.10744)
 texture = ExtResource("5_kqsfw")
 centered = false
 
-[node name="ParallaxLayer19" type="ParallaxLayer" parent="ParallaxBackground2"]
-scale = Vector2(0.25, 0.25)
-motion_scale = Vector2(0.9, 0.9)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer19"]
+[node name="Sprite2D10" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer3"]
 modulate = Color(0.245371, 0.777775, 0.99979, 0.956863)
 self_modulate = Color(0.89, 0.89, 0.801, 1)
-position = Vector2(808, -76)
-scale = Vector2(2.54945, 2.52893)
+position = Vector2(404, -38)
+scale = Vector2(1.27472, 1.26446)
 texture = ExtResource("5_kqsfw")
 centered = false
 
-[node name="ParallaxLayer16" type="ParallaxLayer" parent="ParallaxBackground2"]
-scale = Vector2(0.5, 0.5)
-motion_scale = Vector2(0.9, 0.9)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer16"]
+[node name="Sprite2D11" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer3"]
 modulate = Color(0.34, 0.791, 1, 0.956863)
 self_modulate = Color(0.89, 0.89, 0.801, 1)
 position = Vector2(1212, -44)
@@ -329,5 +277,7 @@ position = Vector2(610, 52)
 
 [node name="lamp4" parent="." instance=ExtResource("17_7ukwo")]
 position = Vector2(151, 71)
+
+[node name="Node2D" type="Node2D" parent="."]
 
 [editable path="ParallaxBackground2"]

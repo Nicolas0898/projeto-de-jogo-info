@@ -1,35 +1,32 @@
 [gd_scene load_steps=34 format=4 uid="uid://c5e0hmmeqihxq"]
 
 [ext_resource type="PackedScene" uid="uid://brkn5mjfr67t4" path="res://Scenes/Player/Character.tscn" id="2_5ekge"]
-[ext_resource type="TileSet" uid="uid://cyll24yrphmu5" path="res://Scenes/Map/JUNGLE_TILESET.tres" id="3_etday"]
-[ext_resource type="PackedScene" uid="uid://c5pik2cgvmlm4" path="res://Scenes/particles/falling_leaves.tscn" id="4_jelb2"]
-[ext_resource type="PackedScene" uid="uid://b25tt1a1iqfih" path="res://Scenes/particles/wind.tscn" id="5_spren"]
+[ext_resource type="TileSet" uid="uid://cyll24yrphmu5" path="res://Resources/tilesets/Jungle/JUNGLE_TILESET.tres" id="3_etday"]
+[ext_resource type="PackedScene" uid="uid://c5pik2cgvmlm4" path="res://Scenes/Particles/falling_leaves.tscn" id="4_jelb2"]
+[ext_resource type="PackedScene" uid="uid://b25tt1a1iqfih" path="res://Scenes/Particles/wind.tscn" id="5_spren"]
 [ext_resource type="PackedScene" uid="uid://bbcuecrtpmuuo" path="res://Scenes/Objects/teleport.tscn" id="6_vbgow"]
-[ext_resource type="PackedScene" uid="uid://bwv5gfph6ryn4" path="res://Scenes/Map/JungleParallaxWaterReflection.tscn" id="8_5ekge"]
+[ext_resource type="PackedScene" uid="uid://bwv5gfph6ryn4" path="res://Scenes/Parallax/Background/Jungle/JungleParallaxWaterReflection.tscn" id="8_5ekge"]
 [ext_resource type="Shader" uid="uid://b0vwl8qpm7kj2" path="res://Shaders/water.gdshader" id="9_ld4pq"]
-[ext_resource type="TileSet" uid="uid://dctgdgbcalghh" path="res://Scenes/Map/JUNGLE_FOREGROUND.tres" id="9_yj42n"]
-[ext_resource type="PackedScene" uid="uid://bhhvto6dt5454" path="res://Scenes/Map/JungleParallax.tscn" id="10_as1b8"]
-[ext_resource type="TileSet" uid="uid://bnjnwtobjhkof" path="res://Scenes/Map/WATER_JUNGLE.tres" id="10_cvwb8"]
-[ext_resource type="Texture2D" uid="uid://cidc6tj445o2h" path="res://Images/Background/Jungle/arvore.png" id="11_5ekge"]
+[ext_resource type="TileSet" uid="uid://dctgdgbcalghh" path="res://Resources/tilesets/Jungle/JUNGLE_FOREGROUND.tres" id="9_yj42n"]
+[ext_resource type="PackedScene" uid="uid://bhhvto6dt5454" path="res://Scenes/Parallax/Background/Jungle/JungleParallax.tscn" id="10_as1b8"]
+[ext_resource type="TileSet" uid="uid://bnjnwtobjhkof" path="res://Resources/tilesets/Jungle/WATER_JUNGLE.tres" id="10_cvwb8"]
+[ext_resource type="Texture2D" uid="uid://cidc6tj445o2h" path="res://Images/Parallax/background/Jungle/arvore.png" id="11_5ekge"]
 [ext_resource type="Script" uid="uid://xbqu3ca63qn6" path="res://Scripts/Components/SpawnLocation.gd" id="11_cvwb8"]
-[ext_resource type="Script" uid="uid://cxpc8ngflll21" path="res://Scenes/Objects/zoom.gd" id="11_etday"]
+[ext_resource type="Script" uid="uid://cxpc8ngflll21" path="res://Scripts/Objects/zoom.gd" id="11_etday"]
 [ext_resource type="PackedScene" uid="uid://dwr4crb3vhg5b" path="res://Scenes/Map/world_environment.tscn" id="11_jnsv2"]
 [ext_resource type="PackedScene" uid="uid://vokqjyhjkv4a" path="res://Scenes/Objects/lamp.tscn" id="13_etday"]
-[ext_resource type="PackedScene" uid="uid://dqiyuc6o8q627" path="res://Scenes/interaction_area.tscn" id="14_as1b8"]
-[ext_resource type="Resource" uid="uid://dnaps1w06tdoe" path="res://resource/item/Corda.tres" id="15_jnsv2"]
-[ext_resource type="Script" uid="uid://c41v5wv6fa0vx" path="res://script/item_scripts/item_giver.gd" id="16_hrp5m"]
-[ext_resource type="Texture2D" uid="uid://1nmf0a3yqnf7" path="res://Images/corda (1).png" id="17_ee60c"]
-[ext_resource type="Script" uid="uid://qsuh4f4vfaje" path="res://indicator.gd" id="18_0y4jq"]
-[ext_resource type="Texture2D" uid="uid://jaxb1txifvr5" path="res://Images/corda.png" id="19_jelb2"]
+[ext_resource type="PackedScene" uid="uid://dqiyuc6o8q627" path="res://Scenes/Objects/interaction_area.tscn" id="14_as1b8"]
+[ext_resource type="Resource" uid="uid://dnaps1w06tdoe" path="res://Resources/item/Corda.tres" id="15_jnsv2"]
+[ext_resource type="Script" uid="uid://c41v5wv6fa0vx" path="res://Scripts/item_scripts/item_giver.gd" id="16_hrp5m"]
+[ext_resource type="Texture2D" uid="uid://1nmf0a3yqnf7" path="res://Images/Items/corda (1).png" id="17_ee60c"]
+[ext_resource type="Script" uid="uid://qsuh4f4vfaje" path="res://Scripts/Components/indicator.gd" id="18_0y4jq"]
+[ext_resource type="Texture2D" uid="uid://jaxb1txifvr5" path="res://Images/Items/corda.png" id="19_jelb2"]
 [ext_resource type="PackedScene" uid="uid://cv65j1yo5s1ck" path="res://Scenes/Objects/indicator.tscn" id="20_spren"]
 [ext_resource type="PackedScene" uid="uid://bc4vsdggdjydf" path="res://Scenes/Objects/aguaboia.tscn" id="21_jnsv2"]
-[ext_resource type="PackedScene" uid="uid://cggtt882ti85n" path="res://Scenes/particles/firefly.tscn" id="22_hrp5m"]
+[ext_resource type="PackedScene" uid="uid://cggtt882ti85n" path="res://Scenes/Particles/firefly.tscn" id="22_hrp5m"]
 [ext_resource type="PackedScene" uid="uid://bvmugmme4p6nf" path="res://Scenes/Objects/grapple_node.tscn" id="23_ee60c"]
 
 [sub_resource type="GDScript" id="GDScript_no33e"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3v6ad"]
-size = Vector2(580, 740)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5ekge"]
 shader = ExtResource("9_ld4pq")
@@ -37,15 +34,8 @@ shader_parameter/wave_frequency = 1.0
 shader_parameter/wave_speed = 1.0
 shader_parameter/wave_amplitude = 1.0
 
-[sub_resource type="Gradient" id="Gradient_cvwb8"]
-offsets = PackedFloat32Array(0, 0.5, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0.140625, 0.140625, 0.140625, 1, 0, 0, 0, 1)
-metadata/_snap_enabled = true
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_l3onn"]
-gradient = SubResource("Gradient_cvwb8")
-fill_from = Vector2(0, 1)
-fill_to = Vector2(0, 0)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3v6ad"]
+size = Vector2(580, 740)
 
 [sub_resource type="Resource" id="Resource_rjg8x"]
 script = ExtResource("16_hrp5m")
@@ -58,43 +48,22 @@ metadata/_custom_type_script = "uid://c41v5wv6fa0vx"
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vaysl"]
 size = Vector2(80, 72)
 
+[sub_resource type="Gradient" id="Gradient_cvwb8"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.140625, 0.140625, 0.140625, 1, 0, 0, 0, 1)
+metadata/_snap_enabled = true
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_l3onn"]
+gradient = SubResource("Gradient_cvwb8")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_ee60c"]
 a = Vector2(1036, -833)
 b = Vector2(1036, -132)
 
 [node name="room_3" type="Node2D"]
 script = SubResource("GDScript_no33e")
-
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(722, -433)
-collision_layer = 4
-collision_mask = 4
-script = ExtResource("11_etday")
-
-[node name="Tree" type="Sprite2D" parent="Area2D"]
-self_modulate = Color(0.8352, 0.96, 0.95792, 0.588235)
-z_index = -6
-texture = ExtResource("11_5ekge")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-visible = false
-position = Vector2(9, 64)
-shape = SubResource("RectangleShape2D_3v6ad")
-
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_5ekge")]
-position = Vector2(564, -17)
-cam_limit_r = 2768
-cam_limit_l = -343
-cam_limit_b = 103
-
-[node name="falling_leaves" parent="CharacterBody2D" instance=ExtResource("4_jelb2")]
-modulate = Color(0.31131, 0.336668, 0.394531, 1)
-position = Vector2(147, -30)
-
-[node name="wind" parent="CharacterBody2D" instance=ExtResource("5_spren")]
-modulate = Color(1, 1, 1, 0.0156863)
-self_modulate = Color(1, 1.5, 1.15, 1)
-position = Vector2(-70, -27)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 z_index = 2
@@ -114,104 +83,81 @@ material = SubResource("ShaderMaterial_5ekge")
 tile_map_data = PackedByteArray("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AAAyAAEAAQAAAAAAAAAyAAMAAAAAAAAAAAAyAAUAAAAAAAAAAAAyAAYAAgAAAAAAAAAzAAEAAQAAAAAAAAAzAAMAAAAAAAAAAAAzAAUAAAAAAAAAAAAzAAYAAgAAAAAAAAA0AAEAAQAAAAAAAAA0AAMAAAAAAAAAAAA0AAUAAAAAAAAAAAA0AAYAAgAAAAAAAAA1AAEAAQAAAAAAAAA1AAMAAAAAAAAAAAA1AAUAAAAAAAAAAAA1AAYAAgAAAAAAAAA2AAEAAQAAAAAAAAA2AAMAAAAAAAAAAAA2AAUAAAAAAAAAAAA2AAYAAgAAAAAAAAA3AAEAAQAAAAAAAAA3AAMAAAAAAAAAAAA3AAUAAAAAAAAAAAA3AAYAAgAAAAAAAAA4AAEAAQAAAAAAAAA4AAMAAAAAAAAAAAA4AAUAAAAAAAAAAAA4AAYAAgAAAAAAAAA5AAEAAQAAAAAAAAA5AAMAAAAAAAAAAAA5AAUAAAAAAAAAAAA5AAYAAgAAAAAAAAA6AAEAAQAAAAAAAAA6AAMAAAAAAAAAAAA6AAUAAAAAAAAAAAA6AAYAAgAAAAAAAAA7AAEAAQAAAAAAAAA7AAMAAAAAAAAAAAA7AAUAAAAAAAAAAAA7AAYAAgAAAAAAAAA8AAEAAQAAAAAAAAA8AAMAAAAAAAAAAAA8AAUAAAAAAAAAAAA8AAYAAgAAAAAAAAA9AAEAAQAAAAAAAAA9AAMAAAAAAAAAAAA9AAUAAAAAAAAAAAA9AAYAAgAAAAAAAAA+AAEAAQAAAAAAAAA+AAMAAAAAAAAAAAA+AAUAAAAAAAAAAAA+AAYAAgAAAAAAAAA/AAEAAQAAAAAAAAA/AAMAAAAAAAAAAAA/AAUAAAAAAAAAAAA/AAYAAgAAAAAAAABAAAEAAQAAAAAAAABAAAMAAAAAAAAAAABAAAUAAAAAAAAAAABAAAYAAgAAAAAAAABBAAEAAQAAAAAAAABBAAMAAAAAAAAAAABBAAUAAAAAAAAAAABBAAYAAgAAAAAAAABCAAEAAQAAAAAAAABCAAMAAAAAAAAAAABCAAUAAAAAAAAAAABCAAYAAgAAAAAAAABDAAEAAQAAAAAAAABDAAMAAAAAAAAAAABDAAUAAAAAAAAAAABDAAYAAgAAAAAAAABEAAEAAQAAAAAAAABEAAMAAAAAAAAAAABEAAUAAAAAAAAAAABEAAYAAgAAAAAAAABFAAEAAQAAAAAAAABFAAMAAAAAAAAAAABFAAUAAAAAAAAAAABFAAYAAgAAAAAAAABGAAEAAQAAAAAAAABGAAMAAAAAAAAAAABGAAUAAAAAAAAAAABGAAYAAgAAAAAAAABHAAEAAQAAAAAAAABHAAMAAAAAAAAAAABHAAUAAAAAAAAAAABHAAYAAgAAAAAAAABJAAEAAQAAAAAAAABJAAMAAAAAAAAAAABJAAQAAAAAAAAAAABJAAYAAgAAAAAAAABKAAEAAQAAAAAAAABKAAMAAAAAAAAAAABKAAQAAAAAAAAAAABKAAYAAgAAAAAAAABLAAEAAQAAAAAAAABLAAMAAAAAAAAAAABLAAQAAAAAAAAAAABLAAYAAgAAAAAAAABMAAEAAQAAAAAAAABMAAMAAAAAAAAAAABMAAQAAAAAAAAAAABMAAYAAgAAAAAAAABNAAEAAQAAAAAAAABNAAMAAAAAAAAAAABNAAQAAAAAAAAAAABNAAYAAgAAAAAAAABOAAEAAQAAAAAAAABOAAMAAAAAAAAAAABOAAQAAAAAAAAAAABOAAYAAgAAAAAAAABPAAEAAQAAAAAAAABPAAMAAAAAAAAAAABPAAQAAAAAAAAAAABPAAYAAgAAAAAAAABQAAEAAQAAAAAAAABQAAMAAAAAAAAAAABQAAQAAAAAAAAAAABQAAYAAgAAAAAAAABRAAEAAQAAAAAAAABSAAEAAQAAAAAAAABTAAEAAQAAAAAAAABUAAEAAQAAAAAAAABVAAEAAQAAAAAAAABWAAEAAQAAAAAAAABXAAEAAQAAAAAAAABYAAEAAQAAAAAAAABZAAEAAQAAAAAAAABaAAEAAQAAAAAAAABbAAEAAQAAAAAAAABcAAEAAQAAAAAAAABdAAEAAQAAAAAAAABeAAEAAQAAAAAAAABfAAEAAQAAAAAAAABgAAEAAQAAAAAAAABhAAEAAQAAAAAAAABiAAEAAQAAAAAAAABjAAEAAQAAAAAAAABkAAEAAQAAAAAAAABlAAEAAQAAAAAAAABmAAEAAQAAAAAAAABnAAEAAQAAAAAAAABoAAEAAQAAAAAAAABpAAEAAQAAAAAAAABqAAEAAQAAAAAAAABrAAEAAQAAAAAAAABsAAEAAQAAAAAAAABtAAEAAQAAAAAAAABuAAEAAQAAAAAA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AAB7AAYAAgAAAAAAAAB8AAYAAgAAAAAAAAB/AAYAAgAAAAAAAACAAAYAAgAAAAAAAAAcAAYAAgAAAAAAAAAdAAYAAgAAAAAAAAAeAAYAAgAAAAAAAAAfAAYAAgAAAAAAAAAgAAYAAgAAAAAAAAAhAAYAAgAAAAAAAAAUAAEAAQAAAAAAAAAVAAEAAQAAAAAAAAAWAAEAAQAAAAAAAAAXAAEAAQAAAAAAAAAYAAEAAQAAAAAAAAAZAAEAAQAAAAAAAAAaAAEAAQAAAAAAAAAbAAEAAQAAAAAAAAAcAAEAAQAAAAAAAAAdAAEAAQAAAAAAAAAeAAEAAQAAAAAAAAAfAAEAAQAAAAAAAAAgAAEAAQAAAAAAAAAhAAEAAQAAAAAAAAAiAAEAAQAAAAAAAAAjAAEAAQAAAAAAAAAkAAEAAQAAAAAAAAAlAAEAAQAAAAAAAAAmAAEAAQAAAAAAAAAnAAEAAQAAAAAAAAAoAAEAAQAAAAAAAAAcAAMAAAAAAAAAAAAcAAQAAAAAAAAAAAAdAAMAAAAAAAAAAAAdAAQAAAAAAAAAAAAeAAMAAAAAAAAAAAAeAAQAAAAAAAAAAAAfAAMAAAAAAAAAAAAfAAQAAAAAAAAAAAAgAAMAAAAAAAAAAAAgAAQAAAAAAAAAAAAhAAMAAAAAAAAAAAAhAAQAAAAAAAAAAAAiAAQAAAAAAAAAAAAjAAQAAAAAAAAAAAAkAAQAAAAAAAAAAAAlAAQAAAAAAAAAAAAmAAQAAAAAAAAAAAAnAAQAAAAAAAAAAAAoAAQAAAAAAAAAAAApAAQAAAAAAAAAAAAqAAQAAAAAAAAAAAArAAQAAAAAAAAAAAB+AAYAAgAAAAAAAAB9AAYAAgAAAAAAAAB7AAQAAAAAAAAAAAB6AAQAAAAAAAAAAAB5AAQAAAAAAAAAAACBAAEAAQAAAAAAAACBAAMAAAAAAAAAAACBAAQAAAAAAAAAAACBAAYAAgAAAAAAAACCAAEAAQAAAAAAAACCAAMAAAAAAAAAAACCAAQAAAAAAAAAAACCAAYAAgAAAAAAAACDAAEAAQAAAAAAAACDAAMAAAAAAAAAAACDAAQAAAAAAAAAAACDAAYAAgAAAAAAAACEAAEAAQAAAAAAAACEAAMAAAAAAAAAAACEAAQAAAAAAAAAAACEAAYAAgAAAAAAAACFAAEAAQAAAAAAAACFAAMAAAAAAAAAAACFAAQAAAAAAAAAAACFAAYAAgAAAAAAAACGAAEAAQAAAAAAAACGAAMAAAAAAAAAAACGAAQAAAAAAAAAAACGAAYAAgAAAAAAAACHAAEAAQAAAAAAAACHAAMAAAAAAAAAAACHAAQAAAAAAAAAAACHAAYAAgAAAAAAAACIAAEAAQAAAAAAAACIAAMAAAAAAAAAAACIAAQAAAAAAAAAAACIAAYAAgAAAAAAAACJAAEAAQAAAAAAAACJAAMAAAAAAAAAAACJAAQAAAAAAAAAAACJAAYAAgAAAAAAAACKAAEAAQAAAAAAAACKAAMAAAAAAAAAAACKAAQAAAAAAAAAAACKAAYAAgAAAAAAAACLAAEAAQAAAAAAAACLAAMAAAAAAAAAAACLAAQAAAAAAAAAAACLAAYAAgAAAAAAAACMAAEAAQAAAAAAAACMAAMAAAAAAAAAAACMAAQAAAAAAAAAAACMAAYAAgAAAAAAAACNAAEAAQAAAAAAAACNAAMAAAAAAAAAAACNAAQAAAAAAAAAAACNAAYAAgAAAAAAAACOAAEAAQAAAAAAAACOAAMAAAAAAAAAAACOAAQAAAAAAAAAAACOAAYAAgAAAAAAAACPAAEAAQAAAAAAAACPAAMAAAAAAAAAAACPAAQAAAAAAAAAAACPAAYAAgAAAAAAAACQAAEAAQAAAAAAAACQAAMAAAAAAAAAAACQAAQAAAAAAAAAAACQAAYAAgAAAAAAAACRAAEAAQAAAAAAAACRAAMAAAAAAAAAAACRAAQAAAAAAAAAAACRAAYAAgAAAAAAAACSAAEAAQAAAAAAAACSAAMAAAAAAAAAAACSAAQAAAAAAAAAAACSAAYAAgAAAAAAAACTAAEAAQAAAAAAAACTAAMAAAAAAAAAAACTAAQAAAAAAAAAAACTAAYAAgAAAAAAAACUAAEAAQAAAAAAAACUAAMAAAAAAAAAAACUAAQAAAAAAAAAAACUAAYAAgAAAAAAAACVAAEAAQAAAAAAAACVAAMAAAAAAAAAAACVAAQAAAAAAAAAAACVAAYAAgAAAAAAAACWAAEAAQAAAAAAAACWAAMAAAAAAAAAAACWAAQAAAAAAAAAAACWAAYAAgAAAAAAAACXAAEAAQAAAAAAAACXAAMAAAAAAAAAAACXAAQAAAAAAAAAAACXAAYAAgAAAAAAAACYAAEAAQAAAAAAAACYAAMAAAAAAAAAAACYAAQAAAAAAAAAAACYAAYAAgAAAAAAAACZAAEAAQAAAAAAAACZAAMAAAAAAAAAAACZAAQAAAAAAAAAAACZAAYAAgAAAAAAAACaAAEAAQAAAAAAAACaAAMAAAAAAAAAAACaAAQAAAAAAAAAAACaAAYAAgAAAAAAAACbAAEAAQAAAAAAAACbAAMAAAAAAAAAAACbAAQAAAAAAAAAAACbAAYAAgAAAAAAAACcAAEAAQAAAAAAAACcAAMAAAAAAAAAAACcAAQAAAAAAAAAAACcAAYAAgAAAAAAAACdAAEAAQAAAAAAAACdAAMAAAAAAAAAAACdAAQAAAAAAAAAAACdAAYAAgAAAAAAAACeAAEAAQAAAAAAAACeAAMAAAAAAAAAAACeAAQAAAAAAAAAAACeAAYAAgAAAAAAAACfAAEAAQAAAAAAAACfAAMAAAAAAAAAAACfAAQAAAAAAAAAAACfAAYAAgAAAAAAAACgAAEAAQAAAAAAAACgAAMAAAAAAAAAAACgAAQAAAAAAAAAAACgAAYAAgAAAAAAAAChAAEAAQAAAAAAAAChAAMAAAAAAAAAAAChAAQAAAAAAAAAAAChAAYAAgAAAAAAAACiAAEAAQAAAAAAAACiAAMAAAAAAAAAAACiAAQAAAAAAAAAAACiAAYAAgAAAAAAAACjAAEAAQAAAAAAAACjAAMAAAAAAAAAAACjAAQAAAAAAAAAAACjAAYAAgAAAAAAAACkAAEAAQAAAAAAAACkAAMAAAAAAAAAAACkAAQAAAAAAAAAAACkAAYAAgAAAAAAAAClAAEAAQAAAAAAAAClAAMAAAAAAAAAAAClAAQAAAAAAAAAAAClAAYAAgAAAAAAAACmAAEAAQAAAAAAAACmAAMAAAAAAAAAAACmAAQAAAAAAAAAAACmAAYAAgAAAAAAAACnAAEAAQAAAAAAAACnAAMAAAAAAAAAAACnAAQAAAAAAAAAAACnAAYAAgAAAAAAAACoAAEAAQAAAAAAAACoAAMAAAAAAAAAAACoAAQAAAAAAAAAAACoAAYAAgAAAAAAAACpAAEAAQAAAAAAAACpAAMAAAAAAAAAAACpAAQAAAAAAAAAAACpAAYAAgAAAAAAAACqAAEAAQAAAAAAAACqAAMAAAAAAAAAAACqAAQAAAAAAAAAAACqAAYAAgAAAAAAAACrAAEAAQAAAAAAAACrAAMAAAAAAAAAAACrAAQAAAAAAAAAAACrAAYAAgAAAAAAAAA=")
 tile_set = ExtResource("10_cvwb8")
 
-[node name="teleport_room_1" parent="." instance=ExtResource("6_vbgow")]
-position = Vector2(-418, -17)
-actual_level = "Jungle/room_3"
-destination_level = "Jungle/room_2"
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_5ekge")]
+position = Vector2(564, -17)
+cam_limit_r = 2768
+cam_limit_l = -343
+cam_limit_b = 103
 
-[node name="teleport_room_2" parent="." instance=ExtResource("6_vbgow")]
-position = Vector2(2768, -47)
-actual_level = "Jungle/room_3"
-destination_level = "Jungle/room_4"
+[node name="falling_leaves" parent="CharacterBody2D" instance=ExtResource("4_jelb2")]
+modulate = Color(0.31131, 0.336668, 0.394531, 1)
+position = Vector2(147, -30)
+
+[node name="wind" parent="CharacterBody2D" instance=ExtResource("5_spren")]
+modulate = Color(1, 1, 1, 0.0156863)
+self_modulate = Color(1, 1.5, 1.15, 1)
+position = Vector2(-70, -27)
+
+[node name="BigTree" type="Area2D" parent="."]
+position = Vector2(722, -433)
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("11_etday")
+
+[node name="Tree" type="Sprite2D" parent="BigTree"]
+self_modulate = Color(0.8352, 0.96, 0.95792, 0.588235)
+z_index = -6
+texture = ExtResource("11_5ekge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BigTree"]
+visible = false
+position = Vector2(9, 64)
+shape = SubResource("RectangleShape2D_3v6ad")
+
+[node name="Corda" parent="." instance=ExtResource("14_as1b8")]
+visible = false
+position = Vector2(887, -57)
+action = SubResource("Resource_rjg8x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Corda"]
+position = Vector2(-214.2, -693.04)
+shape = SubResource("RectangleShape2D_vaysl")
+
+[node name="Sprite2D" type="Sprite2D" parent="Corda"]
+position = Vector2(-214, -686.92)
+rotation = 0.507891
+scale = Vector2(0.812502, 0.807501)
+texture = ExtResource("17_ee60c")
+script = ExtResource("18_0y4jq")
+frequency = 0.04
+amplitude = 2.0
+
+[node name="Sprite2D2" type="Sprite2D" parent="Corda"]
+position = Vector2(-213.743, -687.654)
+rotation = 2.66163
+scale = Vector2(0.911438, 1)
+skew = 0.00524652
+texture = ExtResource("19_jelb2")
+script = ExtResource("18_0y4jq")
+frequency = 0.04
+amplitude = 2.0
+
+[node name="indicator" parent="Corda" instance=ExtResource("20_spren")]
+light_mask = 2
+position = Vector2(-214.2, -703.84)
+scale = Vector2(0.48, 0.48)
+frequency = 0.08
+amplitude = 5.0
 
 [node name="ParallaxBackground3" parent="." instance=ExtResource("10_as1b8")]
 scroll_base_offset = Vector2(0, -450)
 
 [node name="Jungle" parent="." instance=ExtResource("8_5ekge")]
 layer = -99
-visible = false
 offset = Vector2(0, 300)
 transform = Transform2D(1, 0, 0, 1, 0, 300)
 
 [node name="WorldEnvironment" parent="." instance=ExtResource("11_jnsv2")]
-
-[node name="PointLight2D2" type="PointLight2D" parent="."]
-position = Vector2(1169.74, -161.893)
-rotation = 2.2489
-scale = Vector2(19.4692, 1.11347)
-color = Color(0, 0.596588, 0.675781, 1)
-energy = 10.0
-range_z_max = 127
-range_layer_min = -512
-range_layer_max = 512
-texture = SubResource("GradientTexture2D_l3onn")
-
-[node name="PointLight2D4" type="PointLight2D" parent="."]
-position = Vector2(1635, -110)
-rotation = 2.2489
-scale = Vector2(19.4692, 1.11347)
-color = Color(0, 0.596588, 0.675781, 1)
-energy = 10.0
-range_z_max = 127
-range_layer_min = -512
-range_layer_max = 512
-texture = SubResource("GradientTexture2D_l3onn")
-
-[node name="PointLight2D5" type="PointLight2D" parent="."]
-position = Vector2(1453, -86.0001)
-rotation = 2.2489
-scale = Vector2(19.4692, 1.11347)
-color = Color(0, 0.596588, 0.675781, 1)
-energy = 10.0
-range_z_max = 127
-range_layer_min = -512
-range_layer_max = 512
-texture = SubResource("GradientTexture2D_l3onn")
-
-[node name="PointLight2D6" type="PointLight2D" parent="."]
-position = Vector2(1996, -100)
-rotation = 2.2489
-scale = Vector2(19.4692, 1.11347)
-color = Color(0, 0.596588, 0.675781, 1)
-energy = 10.0
-range_z_max = 127
-range_layer_min = -512
-range_layer_max = 512
-texture = SubResource("GradientTexture2D_l3onn")
-
-[node name="PointLight2D7" type="PointLight2D" parent="."]
-position = Vector2(2199, -97.0001)
-rotation = 2.2489
-scale = Vector2(19.4692, 1.11347)
-color = Color(0, 0.596588, 0.675781, 1)
-energy = 10.0
-range_z_max = 127
-range_layer_min = -512
-range_layer_max = 512
-texture = SubResource("GradientTexture2D_l3onn")
-
-[node name="PointLight2D8" type="PointLight2D" parent="."]
-position = Vector2(418, -133)
-rotation = 2.2489
-scale = Vector2(19.4692, 1.11347)
-color = Color(0, 0.596588, 0.675781, 1)
-energy = 10.0
-range_z_max = 127
-range_layer_min = -512
-range_layer_max = 512
-texture = SubResource("GradientTexture2D_l3onn")
-
-[node name="PointLight2D3" type="PointLight2D" parent="."]
-visible = false
-position = Vector2(100.119, -14.8141)
-rotation = 1.5708
-scale = Vector2(4.9375, 13.7586)
-color = Color(0, 0.596588, 0.675781, 1)
-energy = 10.0
-range_z_max = 127
-range_layer_min = -512
-range_layer_max = 512
-texture = SubResource("GradientTexture2D_l3onn")
 
 [node name="SpawnLocation" type="Node" parent="." node_paths=PackedStringArray("spawn")]
 script = ExtResource("11_cvwb8")
@@ -226,176 +172,240 @@ position = Vector2(-331, -6)
 [node name="spawn2" type="Node2D" parent="SpawnLocation"]
 position = Vector2(2655, -6)
 
-[node name="lamp" parent="." instance=ExtResource("13_etday")]
+[node name="Fireflies" type="Node" parent="."]
+
+[node name="firefly" parent="Fireflies" instance=ExtResource("22_hrp5m")]
+position = Vector2(823, -141)
+
+[node name="firefly2" parent="Fireflies" instance=ExtResource("22_hrp5m")]
+position = Vector2(1324, -2)
+
+[node name="firefly3" parent="Fireflies" instance=ExtResource("22_hrp5m")]
+position = Vector2(1592, -108)
+
+[node name="firefly4" parent="Fireflies" instance=ExtResource("22_hrp5m")]
+position = Vector2(1888, -7)
+
+[node name="firefly5" parent="Fireflies" instance=ExtResource("22_hrp5m")]
+position = Vector2(2154, -326)
+
+[node name="firefly6" parent="Fireflies" instance=ExtResource("22_hrp5m")]
+position = Vector2(2253, -194)
+
+[node name="firefly7" parent="Fireflies" instance=ExtResource("22_hrp5m")]
+position = Vector2(644, -651)
+
+[node name="firefly8" parent="Fireflies" instance=ExtResource("22_hrp5m")]
+position = Vector2(832, -392)
+
+[node name="firefly9" parent="Fireflies" instance=ExtResource("22_hrp5m")]
+position = Vector2(68, 3)
+
+[node name="Teleport" type="Node" parent="."]
+
+[node name="teleport_room_1" parent="Teleport" instance=ExtResource("6_vbgow")]
+position = Vector2(-418, -17)
+actual_level = "Jungle/room_3"
+destination_level = "Jungle/room_2"
+
+[node name="teleport_room_2" parent="Teleport" instance=ExtResource("6_vbgow")]
+position = Vector2(2768, -47)
+actual_level = "Jungle/room_3"
+destination_level = "Jungle/room_4"
+
+[node name="Cordas" type="Node" parent="."]
+
+[node name="GrappleNode" parent="Cordas" instance=ExtResource("23_ee60c")]
+position = Vector2(662, -198)
+range = 160.0
+
+[node name="GrappleNode6" parent="Cordas" instance=ExtResource("23_ee60c")]
+modulate = Color(0.74902, 0.992157, 1, 1)
+position = Vector2(1136, -115)
+range = 151.0
+type = 1
+
+[node name="GrappleNode8" parent="Cordas" instance=ExtResource("23_ee60c")]
+modulate = Color(0.74902, 0.992157, 1, 1)
+position = Vector2(1742, -163)
+range = 151.0
+type = 1
+
+[node name="GrappleNode9" parent="Cordas" instance=ExtResource("23_ee60c")]
+modulate = Color(0.74902, 0.992157, 1, 1)
+position = Vector2(1886, -228)
+range = 151.0
+type = 1
+
+[node name="GrappleNode10" parent="Cordas" instance=ExtResource("23_ee60c")]
+modulate = Color(0.74902, 0.992157, 1, 1)
+position = Vector2(2012, -305)
+range = 151.0
+type = 1
+
+[node name="GrappleNode11" parent="Cordas" instance=ExtResource("23_ee60c")]
+modulate = Color(0.74902, 0.992157, 1, 1)
+position = Vector2(2137, -379)
+range = 151.0
+type = 1
+
+[node name="GrappleNode12" parent="Cordas" instance=ExtResource("23_ee60c")]
+modulate = Color(0.74902, 0.992157, 1, 1)
+position = Vector2(2283, -194)
+range = 151.0
+type = 1
+
+[node name="GrappleNode13" parent="Cordas" instance=ExtResource("23_ee60c")]
+modulate = Color(0.74902, 0.992157, 1, 1)
+position = Vector2(2226, -318)
+range = 99.0
+type = 1
+
+[node name="GrappleNode7" parent="Cordas" instance=ExtResource("23_ee60c")]
+position = Vector2(1405, -166)
+range = 165.0
+
+[node name="Lamps" type="Node" parent="."]
+
+[node name="lamp" parent="Lamps" instance=ExtResource("13_etday")]
 position = Vector2(655, -298)
 
-[node name="lamp2" parent="." instance=ExtResource("13_etday")]
+[node name="lamp2" parent="Lamps" instance=ExtResource("13_etday")]
 position = Vector2(647, -623)
 
-[node name="lamp3" parent="." instance=ExtResource("13_etday")]
+[node name="lamp3" parent="Lamps" instance=ExtResource("13_etday")]
 z_index = -1
 position = Vector2(751, -16)
 
-[node name="interaction_area" parent="." instance=ExtResource("14_as1b8")]
-position = Vector2(887, -57)
-action = SubResource("Resource_rjg8x")
+[node name="lamp4" parent="Lamps" instance=ExtResource("13_etday")]
+position = Vector2(1538, -79)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="interaction_area"]
-position = Vector2(-214.2, -693.04)
-shape = SubResource("RectangleShape2D_vaysl")
+[node name="lamp5" parent="Lamps" instance=ExtResource("13_etday")]
+position = Vector2(2251, -173)
 
-[node name="Sprite2D" type="Sprite2D" parent="interaction_area"]
-position = Vector2(-214, -686.92)
-rotation = 0.507891
-scale = Vector2(0.812502, 0.807501)
-texture = ExtResource("17_ee60c")
-script = ExtResource("18_0y4jq")
-frequency = 0.04
-amplitude = 2.0
+[node name="Lights" type="Node" parent="."]
 
-[node name="Sprite2D2" type="Sprite2D" parent="interaction_area"]
-position = Vector2(-213.743, -687.654)
-rotation = 2.66163
-scale = Vector2(0.911438, 1)
-skew = 0.00524652
-texture = ExtResource("19_jelb2")
-script = ExtResource("18_0y4jq")
-frequency = 0.04
-amplitude = 2.0
+[node name="PointLight2D" type="PointLight2D" parent="Lights"]
+position = Vector2(100.119, -14.8141)
+rotation = 1.5708
+scale = Vector2(4.9375, 13.7586)
+color = Color(0, 0.596588, 0.675781, 1)
+energy = 10.0
+range_z_max = 127
+range_layer_min = -512
+range_layer_max = 512
+texture = SubResource("GradientTexture2D_l3onn")
 
-[node name="indicator" parent="interaction_area" instance=ExtResource("20_spren")]
-light_mask = 2
-position = Vector2(-214.2, -703.84)
-scale = Vector2(0.48, 0.48)
-frequency = 0.08
-amplitude = 5.0
+[node name="PointLight2D2" type="PointLight2D" parent="Lights"]
+position = Vector2(1169.74, -161.893)
+rotation = 2.2489
+scale = Vector2(19.4692, 1.11347)
+color = Color(0, 0.596588, 0.675781, 1)
+energy = 10.0
+range_z_max = 127
+range_layer_min = -512
+range_layer_max = 512
+texture = SubResource("GradientTexture2D_l3onn")
 
-[node name="StaticBody2D" parent="." instance=ExtResource("21_jnsv2")]
+[node name="PointLight2D4" type="PointLight2D" parent="Lights"]
+position = Vector2(1635, -110)
+rotation = 2.2489
+scale = Vector2(19.4692, 1.11347)
+color = Color(0, 0.596588, 0.675781, 1)
+energy = 10.0
+range_z_max = 127
+range_layer_min = -512
+range_layer_max = 512
+texture = SubResource("GradientTexture2D_l3onn")
+
+[node name="PointLight2D5" type="PointLight2D" parent="Lights"]
+position = Vector2(1453, -86.0001)
+rotation = 2.2489
+scale = Vector2(19.4692, 1.11347)
+color = Color(0, 0.596588, 0.675781, 1)
+energy = 10.0
+range_z_max = 127
+range_layer_min = -512
+range_layer_max = 512
+texture = SubResource("GradientTexture2D_l3onn")
+
+[node name="PointLight2D6" type="PointLight2D" parent="Lights"]
+position = Vector2(1996, -100)
+rotation = 2.2489
+scale = Vector2(19.4692, 1.11347)
+color = Color(0, 0.596588, 0.675781, 1)
+energy = 10.0
+range_z_max = 127
+range_layer_min = -512
+range_layer_max = 512
+texture = SubResource("GradientTexture2D_l3onn")
+
+[node name="PointLight2D7" type="PointLight2D" parent="Lights"]
+position = Vector2(2199, -97.0001)
+rotation = 2.2489
+scale = Vector2(19.4692, 1.11347)
+color = Color(0, 0.596588, 0.675781, 1)
+energy = 10.0
+range_z_max = 127
+range_layer_min = -512
+range_layer_max = 512
+texture = SubResource("GradientTexture2D_l3onn")
+
+[node name="PointLight2D8" type="PointLight2D" parent="Lights"]
+position = Vector2(418, -133)
+rotation = 2.2489
+scale = Vector2(19.4692, 1.11347)
+color = Color(0, 0.596588, 0.675781, 1)
+energy = 10.0
+range_z_max = 127
+range_layer_min = -512
+range_layer_max = 512
+texture = SubResource("GradientTexture2D_l3onn")
+
+[node name="Aguaboias" type="Node" parent="."]
+
+[node name="StaticBody2D" parent="Aguaboias" instance=ExtResource("21_jnsv2")]
 position = Vector2(-179, 13)
 
-[node name="StaticBody2D2" parent="." instance=ExtResource("21_jnsv2")]
+[node name="StaticBody2D2" parent="Aguaboias" instance=ExtResource("21_jnsv2")]
 position = Vector2(-96, 13)
 
-[node name="StaticBody2D3" parent="." instance=ExtResource("21_jnsv2")]
+[node name="StaticBody2D3" parent="Aguaboias" instance=ExtResource("21_jnsv2")]
 position = Vector2(-25, 12)
 
-[node name="StaticBody2D4" parent="." instance=ExtResource("21_jnsv2")]
+[node name="StaticBody2D4" parent="Aguaboias" instance=ExtResource("21_jnsv2")]
 position = Vector2(65, 11)
 
-[node name="StaticBody2D5" parent="." instance=ExtResource("21_jnsv2")]
+[node name="StaticBody2D5" parent="Aguaboias" instance=ExtResource("21_jnsv2")]
 position = Vector2(145, 12)
 
-[node name="StaticBody2D6" parent="." instance=ExtResource("21_jnsv2")]
+[node name="StaticBody2D6" parent="Aguaboias" instance=ExtResource("21_jnsv2")]
 position = Vector2(225, 12)
 
-[node name="StaticBody2D7" parent="." instance=ExtResource("21_jnsv2")]
+[node name="StaticBody2D7" parent="Aguaboias" instance=ExtResource("21_jnsv2")]
 position = Vector2(303, 12)
 
-[node name="StaticBody2D8" parent="." instance=ExtResource("21_jnsv2")]
+[node name="StaticBody2D8" parent="Aguaboias" instance=ExtResource("21_jnsv2")]
 position = Vector2(403, 12)
 
-[node name="StaticBody2D10" parent="." instance=ExtResource("21_jnsv2")]
+[node name="StaticBody2D10" parent="Aguaboias" instance=ExtResource("21_jnsv2")]
 position = Vector2(1324, 6)
 
-[node name="StaticBody2D11" parent="." instance=ExtResource("21_jnsv2")]
+[node name="StaticBody2D11" parent="Aguaboias" instance=ExtResource("21_jnsv2")]
 position = Vector2(1504, 8)
 
-[node name="StaticBody2D12" parent="." instance=ExtResource("21_jnsv2")]
+[node name="StaticBody2D12" parent="Aguaboias" instance=ExtResource("21_jnsv2")]
 position = Vector2(1888, 6)
 
-[node name="StaticBody2D13" parent="." instance=ExtResource("21_jnsv2")]
+[node name="StaticBody2D13" parent="Aguaboias" instance=ExtResource("21_jnsv2")]
 position = Vector2(2070, 6)
-
-[node name="firefly" parent="." instance=ExtResource("22_hrp5m")]
-position = Vector2(823, -141)
-
-[node name="GrappleNode" parent="." instance=ExtResource("23_ee60c")]
-position = Vector2(662, -198)
-range = 160.0
 
 [node name="StaticBody2D9" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D9"]
 shape = SubResource("SegmentShape2D_ee60c")
 
-[node name="GrappleNode6" parent="." instance=ExtResource("23_ee60c")]
-modulate = Color(0.74902, 0.992157, 1, 1)
-position = Vector2(1136, -115)
-range = 151.0
-type = 1
-
-[node name="GrappleNode8" parent="." instance=ExtResource("23_ee60c")]
-modulate = Color(0.74902, 0.992157, 1, 1)
-position = Vector2(1742, -163)
-range = 151.0
-type = 1
-
-[node name="GrappleNode9" parent="." instance=ExtResource("23_ee60c")]
-modulate = Color(0.74902, 0.992157, 1, 1)
-position = Vector2(1886, -228)
-range = 151.0
-type = 1
-
-[node name="GrappleNode10" parent="." instance=ExtResource("23_ee60c")]
-modulate = Color(0.74902, 0.992157, 1, 1)
-position = Vector2(2012, -305)
-range = 151.0
-type = 1
-
-[node name="GrappleNode11" parent="." instance=ExtResource("23_ee60c")]
-modulate = Color(0.74902, 0.992157, 1, 1)
-position = Vector2(2137, -379)
-range = 151.0
-type = 1
-
-[node name="GrappleNode12" parent="." instance=ExtResource("23_ee60c")]
-modulate = Color(0.74902, 0.992157, 1, 1)
-position = Vector2(2283, -194)
-range = 151.0
-type = 1
-
-[node name="GrappleNode13" parent="." instance=ExtResource("23_ee60c")]
-modulate = Color(0.74902, 0.992157, 1, 1)
-position = Vector2(2226, -318)
-range = 99.0
-type = 1
-
-[node name="GrappleNode7" parent="." instance=ExtResource("23_ee60c")]
-modulate = Color(0.996078, 1, 0.658824, 1)
-position = Vector2(1405, -166)
-range = 165.0
-
-[node name="firefly2" parent="." instance=ExtResource("22_hrp5m")]
-position = Vector2(1324, -2)
-
-[node name="firefly3" parent="." instance=ExtResource("22_hrp5m")]
-position = Vector2(1592, -108)
-
-[node name="firefly4" parent="." instance=ExtResource("22_hrp5m")]
-position = Vector2(1888, -7)
-
-[node name="firefly5" parent="." instance=ExtResource("22_hrp5m")]
-position = Vector2(2154, -326)
-
-[node name="firefly6" parent="." instance=ExtResource("22_hrp5m")]
-position = Vector2(2253, -194)
-
-[node name="firefly7" parent="." instance=ExtResource("22_hrp5m")]
-position = Vector2(644, -651)
-
-[node name="firefly8" parent="." instance=ExtResource("22_hrp5m")]
-position = Vector2(832, -392)
-
-[node name="firefly9" parent="." instance=ExtResource("22_hrp5m")]
-position = Vector2(68, 3)
-
-[node name="lamp4" parent="." instance=ExtResource("13_etday")]
-position = Vector2(1538, -79)
-
-[node name="lamp5" parent="." instance=ExtResource("13_etday")]
-position = Vector2(2251, -173)
-
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
-[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="BigTree" to="BigTree" method="_on_body_entered"]
+[connection signal="body_exited" from="BigTree" to="BigTree" method="_on_body_exited"]
 
 [editable path="ParallaxBackground3"]

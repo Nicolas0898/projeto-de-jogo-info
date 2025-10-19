@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://0d7bnicgm37i" path="res://Scripts/Components/BaseHurtbox.gd" id="4_x8evn"]
 [ext_resource type="Script" uid="uid://c27qfpg5r355v" path="res://Scenes/Entities/Piranha/died.gd" id="5_2ag0k"]
 [ext_resource type="Script" uid="uid://blfwkqgeamobt" path="res://Scripts/Components/Hitbox.gd" id="5_m7vmk"]
-[ext_resource type="Texture2D" uid="uid://cs4dppu3iqr3g" path="res://Images/entities/piranha_spritesheet.png" id="6_73432"]
+[ext_resource type="Texture2D" uid="uid://cs4dppu3iqr3g" path="res://Images/Entities/piranha_spritesheet.png" id="6_73432"]
 [ext_resource type="Script" uid="uid://1ughpmhhrew" path="res://Scripts/Components/HealthComponent.gd" id="7_khkfl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ng0xu"]

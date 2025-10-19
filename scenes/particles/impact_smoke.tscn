@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dasfu8n7i6i6w"]
 
-[ext_resource type="Texture2D" uid="uid://hsmiytcrdm3q" path="res://sprites/smoke_spritesheet.png" id="1_r2t7m"]
+[ext_resource type="Texture2D" uid="uid://hsmiytcrdm3q" path="res://Images/Particles/smoke_spritesheet.png" id="1_r2t7m"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_iilxo"]
 particles_animation = true

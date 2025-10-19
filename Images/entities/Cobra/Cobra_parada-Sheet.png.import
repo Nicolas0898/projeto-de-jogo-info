@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://7d8q3113516e"
-path="res://.godot/imported/Cobra_parada-Sheet.png-39ee8b6c673d65fd48e38334eddd7caf.ctex"
+path="res://.godot/imported/Cobra_parada-Sheet.png-67069c97263bf009312aabc7553011be.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/entities/Cobra/Cobra_parada-Sheet.png"
-dest_files=["res://.godot/imported/Cobra_parada-Sheet.png-39ee8b6c673d65fd48e38334eddd7caf.ctex"]
+source_file="res://Images/Entities/Cobra/Cobra_parada-Sheet.png"
+dest_files=["res://.godot/imported/Cobra_parada-Sheet.png-67069c97263bf009312aabc7553011be.ctex"]
 
 [params]
 

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://cijnx7iq50t2u"]
+
+[ext_resource type="Script" uid="uid://bu8krnugqph56" path="res://Scripts/item_scripts/item.gd" id="1_ti2de"]
+[ext_resource type="Texture2D" uid="uid://dx6ickvyph0l3" path="res://Images/Items/moneyInv.png" id="2_pmpdu"]
+
+[resource]
+script = ExtResource("1_ti2de")
+name = "Plumérico"
+desc = "Dinheiro unificado da ilha, criado pelo Reino Branco"
+amount = 1
+cooldown = 0.0
+display = 1
+sprite = ExtResource("2_pmpdu")
+confirm = false
+metadata/_custom_type_script = "uid://bu8krnugqph56"

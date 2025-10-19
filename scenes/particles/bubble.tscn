@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://d4a8yqpry0tiv"]
 
-[ext_resource type="Texture2D" uid="uid://x0j0hc35oi1i" path="res://sprites/bubble.png" id="1_ch7dl"]
+[ext_resource type="Texture2D" uid="uid://x0j0hc35oi1i" path="res://Images/Particles/bubble.png" id="1_ch7dl"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ksa8n"]
 blend_mode = 1

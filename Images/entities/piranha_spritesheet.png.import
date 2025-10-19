@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cs4dppu3iqr3g"
-path="res://.godot/imported/piranha_spritesheet.png-237cf76d9375ec0033b1ded9942eb8d6.ctex"
+path="res://.godot/imported/piranha_spritesheet.png-5e42c017c2871cff90c087fe9413191d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/entities/piranha_spritesheet.png"
-dest_files=["res://.godot/imported/piranha_spritesheet.png-237cf76d9375ec0033b1ded9942eb8d6.ctex"]
+source_file="res://Images/Entities/piranha_spritesheet.png"
+dest_files=["res://.godot/imported/piranha_spritesheet.png-5e42c017c2871cff90c087fe9413191d.ctex"]
 
 [params]
 

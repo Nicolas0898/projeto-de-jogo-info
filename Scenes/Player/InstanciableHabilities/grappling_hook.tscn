@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://scaiw8eibd5v" path="res://Scripts/Player/GrapplingHook.gd" id="1_xx3k7"]
 [ext_resource type="Texture2D" uid="uid://6djjd8r45x53" path="res://Images/Player/hook_select.png" id="2_djo8x"]
-[ext_resource type="Script" uid="uid://da55i10v01nie" path="res://Scripts/scenes/hook_select.gd" id="3_ixec6"]
+[ext_resource type="Script" uid="uid://da55i10v01nie" path="res://Scripts/Scenes/hook_select.gd" id="3_ixec6"]
 
 [node name="GrapplingHook" type="Node"]
 script = ExtResource("1_xx3k7")

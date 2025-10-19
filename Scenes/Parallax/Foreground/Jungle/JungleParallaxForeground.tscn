@@ -1,0 +1,104 @@
+[gd_scene load_steps=6 format=3 uid="uid://6067j5q5yogl"]
+
+[ext_resource type="Texture2D" uid="uid://blhm6lvxly71a" path="res://Images/Parallax/foreground/Jungle/swamp_leaves01.png" id="1_6ih71"]
+[ext_resource type="Texture2D" uid="uid://jrlmcgj1ov4v" path="res://Images/Parallax/foreground/Jungle/swamp_tree02.png" id="2_fh6nt"]
+[ext_resource type="Texture2D" uid="uid://3clhnqtembx3" path="res://Images/Parallax/foreground/Jungle/swamp_tree01.png" id="3_1oon0"]
+[ext_resource type="Texture2D" uid="uid://b4icph11w17xq" path="res://Images/Parallax/foreground/Jungle/swamp_grass01.png" id="4_705rr"]
+[ext_resource type="Texture2D" uid="uid://dhiimtm8l1fph" path="res://Images/Parallax/foreground/Jungle/swamp_grass02.png" id="5_ayarn"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+scale = Vector2(0.5, 0.5)
+motion_scale = Vector2(0.9, 0.9)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+modulate = Color(0.0882, 0.861093, 0.98, 0.956863)
+self_modulate = Color(0.89, 0.89, 0.801, 1)
+position = Vector2(220, -108)
+scale = Vector2(1.13187, 1.19008)
+texture = ExtResource("1_6ih71")
+centered = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxLayer"]
+modulate = Color(0.245371, 0.777775, 0.99979, 0.956863)
+self_modulate = Color(0.89, 0.89, 0.801, 1)
+position = Vector2(138, -100)
+scale = Vector2(0.703295, 0.83471)
+texture = ExtResource("1_6ih71")
+centered = false
+
+[node name="Sprite2D3" type="Sprite2D" parent="ParallaxLayer"]
+modulate = Color(0.0174, 0.77053, 0.87, 1)
+position = Vector2(832, 0)
+scale = Vector2(0.967035, 0.96694)
+texture = ExtResource("1_6ih71")
+centered = false
+
+[node name="Sprite2D4" type="Sprite2D" parent="ParallaxLayer"]
+modulate = Color(0.245371, 0.777775, 0.99979, 0.956863)
+self_modulate = Color(0.89, 0.89, 0.801, 1)
+position = Vector2(702, -118)
+scale = Vector2(0.79121, 0.92562)
+texture = ExtResource("1_6ih71")
+centered = false
+
+[node name="Sprite2D5" type="Sprite2D" parent="ParallaxLayer"]
+modulate = Color(0.34, 0.791, 1, 0.956863)
+self_modulate = Color(0.89, 0.89, 0.801, 1)
+position = Vector2(810, -114)
+scale = Vector2(1.10989, 1.16529)
+texture = ExtResource("1_6ih71")
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+z_index = 128
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer2"]
+modulate = Color(1, 0.788235, 0.788235, 1)
+self_modulate = Color(0.74, 0.74, 0.74, 1)
+position = Vector2(70.75, 196.5)
+scale = Vector2(0.857713, 1.62187)
+texture = ExtResource("3_1oon0")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxLayer2"]
+modulate = Color(1, 0.79, 0.79, 1)
+self_modulate = Color(0.811765, 0.811765, 0.811765, 1)
+position = Vector2(386, -109)
+scale = Vector2(0.651563, 1.142)
+texture = ExtResource("2_fh6nt")
+centered = false
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+scale = Vector2(0.0625, 0.0625)
+motion_scale = Vector2(0.95, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer3"]
+modulate = Color(0.358035, 0.776914, 0.995865, 0.776471)
+self_modulate = Color(0.41, 0.41, 0.41, 1)
+position = Vector2(1200, 3184)
+scale = Vector2(32.9302, 43.1781)
+texture = ExtResource("4_705rr")
+centered = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxLayer3"]
+modulate = Color(0.79, 0.7031, 0.7031, 0.776471)
+position = Vector2(5712, 4096)
+scale = Vector2(24.1781, 26.7952)
+texture = ExtResource("5_ayarn")
+centered = false
+
+[node name="Sprite2D3" type="Sprite2D" parent="ParallaxLayer3"]
+modulate = Color(0.2407, 0.761248, 0.83, 0.776471)
+self_modulate = Color(0, 0.446925, 0.611635, 1)
+position = Vector2(6192, 3152)
+scale = Vector2(29.5814, 46.0274)
+texture = ExtResource("4_705rr")
+centered = false
+
+[node name="Sprite2D4" type="Sprite2D" parent="ParallaxLayer3"]
+modulate = Color(0.79, 0.7031, 0.7031, 0.776471)
+position = Vector2(2992, 3744)
+scale = Vector2(26.0822, 28.9157)
+texture = ExtResource("5_ayarn")
+centered = false
