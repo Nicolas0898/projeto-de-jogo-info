@@ -21,6 +21,17 @@ func updateSprite(sp : TextureRect, new : Texture):
 	if new != null and new != sp.texture:
 		sp.texture = new
 
+func generate_alternatives():
+	if current_loaded_dialogue.messages[c] is Question:
+		is_question = true
+		for i in range(len(current_loaded_dialogue.messages[c].questions)):
+			var q = question_label.instantiate()
+			q.text = current_loaded_dialogue.messages[c].questions[i].question
+			question_box.add_child(q)
+			q.name = "question" + str(i)
+		question_box.get_node("question" + str(option)).modulate = Color("#15ee00")
+	else: is_question = false
+
 func question_handler(i : int):
 	#0 = Down
 	#1 = Up
@@ -51,6 +62,9 @@ func start(new_dialogue : Dialogue):
 		InteractionSystem.action = new_dialogue
 		current_loaded_dialogue = new_dialogue
 		c = 0
+		
+		if current_loaded_dialogue.messages[c].action != null: current_loaded_dialogue.messages[c].action.act()
+		
 		Ui.fade_in(self)
 		anchor(current_loaded_dialogue.messages[c].sprite_pos)
 		updateSprite(sprite, current_loaded_dialogue.messages[c].sprite)
@@ -58,15 +72,7 @@ func start(new_dialogue : Dialogue):
 		updateText(dialogue_text, current_loaded_dialogue.messages[c].text)
 		os()
 		
-		if current_loaded_dialogue.messages[c] is Question:
-			is_question = true
-			for i in range(len(current_loaded_dialogue.messages[c].questions)):
-				var q = question_label.instantiate()
-				q.text = current_loaded_dialogue.messages[c].questions[i].question
-				question_box.add_child(q)
-				q.name = "question" + str(i)
-			question_box.get_node("question" + str(option)).modulate = Color("#15ee00")
-		else: is_question = false
+		generate_alternatives()
 
 #func _physics_process(delta: float) -> void:
 	#print(selected)
@@ -84,16 +90,14 @@ func dialogueEnd():
 	GameHandler.Player.remove_core(1)
 
 func loadNextMessage():
-	#if current_loaded_dialogue.messages[c] is Question:
-		#question_handler(1)
-		#return
 	if current_loaded_dialogue==null: return
-	
 	c+=1
 	
 	if c>=len(current_loaded_dialogue.messages):
 		dialogueEnd()
 		return
+	
+	if current_loaded_dialogue.messages[c].action != null: current_loaded_dialogue.messages[c].action.act()
 	
 	Ui.fade_out(margin_container)
 	await Ui.fade_out(v_box_container)
@@ -104,30 +108,31 @@ func loadNextMessage():
 	updateSprite(sprite, current_loaded_dialogue.messages[c].sprite)
 	updateSprite(border, current_loaded_dialogue.messages[c].border)
 	updateText(dialogue_text, current_loaded_dialogue.messages[c].text)
-	if current_loaded_dialogue.messages[c] is Question:
-		is_question = true
-		for i in range(len(current_loaded_dialogue.messages[c].questions)):
-			var q = question_label.instantiate()
-			q.text = current_loaded_dialogue.messages[c].questions[i].question
-			question_box.add_child(q)
-			q.name = "question" + str(i)
-		question_box.get_node("question" + str(option)).modulate = Color("#15ee00")
-	else: is_question = false
+	generate_alternatives()
 	# -visible ####################################
 	
 	Ui.fade_in(margin_container)
 	await Ui.fade_in(v_box_container)
 
+func create_message(text : String): #Apenas gera uma mensagem (pra não precisar criar um recurso toda hora)
+	var d = Dialogue.new()
+	var m = Message.new()
+	
+	m.text = text
+	d.messages.append(m)
+	current_loaded_dialogue = d
+
+func change_current_dialogue(d : Dialogue): #Se quiser mudar o diálogo por recurso (mais detalhado)
+	current_loaded_dialogue = d
+	c = 0
+
 func confirm():
-	var arm
 	if current_loaded_dialogue.messages[c] is not Question: return
 	for i in range(len(current_loaded_dialogue.messages[c].questions)):
 		question_box.get_node("question" + str(i)).queue_free()
 	
-	arm = current_loaded_dialogue.messages[c]
 	if current_loaded_dialogue.messages[c].lock_dialogue == true:
 		current_loaded_dialogue = current_loaded_dialogue.messages[c].questions[option].response
-		#current_loaded_dialogue.question(current_loaded_dialogue.messages[c].questions[option])
 	else:
 		if current_loaded_dialogue.messages[c].questions[option].response == null:
 			dialogueEnd()
@@ -138,9 +143,10 @@ func confirm():
 		var n = current_loaded_dialogue.messages[c].questions[option].response.next_dialogue
 		current_loaded_dialogue.response(m, o, n)
 	
-	if arm != null and arm is Question and arm.questions[option].action != null: arm.questions[option].action.act()
-	c = -1
+	c = -1 # Pra compensar o "dialogue start"
 	loadNextMessage()
+
+
 
 func anchor(pos):
 	# 0 = direita

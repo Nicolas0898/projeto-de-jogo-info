@@ -93,6 +93,7 @@ metadata/_custom_type_script = "uid://bi0pwfqucqrqb"
 script = ExtResource("3_jgsda")
 text = "*Poção de cura adicionada no inventário"
 sprite_pos = 2
+action = ExtResource("7_15fdr")
 metadata/_custom_type_script = "uid://bi0pwfqucqrqb"
 
 [sub_resource type="Resource" id="Resource_r428f"]
@@ -105,7 +106,6 @@ metadata/_custom_type_script = "uid://8err0wuw08y8"
 script = ExtResource("6_jpw6o")
 question = "> Gastar 15 moedas"
 response = SubResource("Resource_r428f")
-action = ExtResource("7_15fdr")
 metadata/_custom_type_script = "uid://cs47kxe2lnqwp"
 
 [sub_resource type="Resource" id="Resource_ob7r0"]
