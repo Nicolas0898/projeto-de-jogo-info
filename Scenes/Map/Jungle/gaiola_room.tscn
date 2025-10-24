@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://bcqcys82msojd"]
+[gd_scene load_steps=28 format=4 uid="uid://bcqcys82msojd"]
 
 [ext_resource type="PackedScene" uid="uid://c5pik2cgvmlm4" path="res://Scenes/particles/falling_leaves.tscn" id="2_4cbs5"]
 [ext_resource type="PackedScene" uid="uid://brkn5mjfr67t4" path="res://Scenes/Player/Character.tscn" id="2_h3vtl"]
@@ -17,7 +17,9 @@
 [ext_resource type="Texture2D" uid="uid://jrlmcgj1ov4v" path="res://Images/tilesets/swamp_tree02.png" id="13_hqicp"]
 [ext_resource type="Script" uid="uid://qsuh4f4vfaje" path="res://indicator.gd" id="13_nvjd3"]
 [ext_resource type="PackedScene" uid="uid://cv65j1yo5s1ck" path="res://Scenes/Objects/indicator.tscn" id="13_xhwvu"]
+[ext_resource type="Script" uid="uid://c58qj2ej0kuex" path="res://script/interact/interaction_area.gd" id="16_2ok4s"]
 [ext_resource type="PackedScene" uid="uid://vokqjyhjkv4a" path="res://Scenes/Objects/lamp.tscn" id="17_7ukwo"]
+[ext_resource type="Resource" uid="uid://cie3oybn72el8" path="res://resource/item/Bestiario.tres" id="17_fci24"]
 
 [sub_resource type="GDScript" id="GDScript_no33e"]
 
@@ -32,13 +34,24 @@ fill_from = Vector2(1, 1)
 [sub_resource type="Resource" id="Resource_4cbs5"]
 script = ExtResource("11_h3vtl")
 i = ExtResource("10_nvjd3")
-quantity = 0
+quantity = 1
 interaction_amount = 1
 message = "*Você coletou Gaiola de folhas"
 metadata/_custom_type_script = "uid://c41v5wv6fa0vx"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hqicp"]
 size = Vector2(80, 72)
+
+[sub_resource type="Resource" id="Resource_dknxn"]
+script = ExtResource("11_h3vtl")
+i = ExtResource("17_fci24")
+quantity = 1
+interaction_amount = 1
+message = "Você coletou um bestiário perdido"
+metadata/_custom_type_script = "uid://c41v5wv6fa0vx"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vgrbo"]
+radius = 95.0053
 
 [node name="gaiola_room" type="Node2D"]
 script = SubResource("GDScript_no33e")
@@ -273,6 +286,17 @@ position = Vector2(0, -3.8)
 scale = Vector2(0.48, 0.48)
 frequency = 0.08
 amplitude = 5.0
+
+[node name="InteractionArea" type="Area2D" parent="interaction_area"]
+collision_layer = 4
+collision_mask = 5
+script = ExtResource("16_2ok4s")
+action = SubResource("Resource_dknxn")
+metadata/_custom_type_script = "uid://c58qj2ej0kuex"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interaction_area/InteractionArea"]
+position = Vector2(1798, -342)
+shape = SubResource("CircleShape2D_vgrbo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 self_modulate = Color(0.79, 0.57512, 0.4108, 1)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://cc2qsjoqgcdqu"]
+[gd_scene load_steps=38 format=3 uid="uid://cc2qsjoqgcdqu"]
 
 [ext_resource type="Script" uid="uid://dfxy21hd8djmg" path="res://script/ui.gd" id="1_nt7q6"]
 [ext_resource type="Script" uid="uid://cffdhewqtjjw1" path="res://script/dialogue_scripts/dialogue_node.gd" id="2_yev5y"]
@@ -16,6 +16,7 @@
 [ext_resource type="Script" uid="uid://u1s3fe4dct3e" path="res://script/map.gd" id="13_whq80"]
 [ext_resource type="Script" uid="uid://b4tsgciqbhfi2" path="res://Scenes/player_ui.gd" id="15_lkjmk"]
 [ext_resource type="Script" uid="uid://b66lqor03c8rd" path="res://Scenes/admin.gd" id="16_kuui0"]
+[ext_resource type="Texture2D" uid="uid://b1ohlt1jytqyy" path="res://Images/UI/bestiary_menu.png" id="17_smy1h"]
 
 [sub_resource type="Gradient" id="Gradient_nt8jn"]
 colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1)
@@ -517,7 +518,6 @@ text = "Não"
 layout_mode = 2
 
 [node name="debug" type="Label" parent="."]
-visible = false
 offset_right = 40.0
 offset_bottom = 23.0
 
@@ -612,7 +612,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Admin" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -726,6 +725,26 @@ text = "Reset coins"
 [node name="Button3" type="Button" parent="Admin/Panel/VBoxContainer/GridContainer3"]
 layout_mode = 2
 text = "Reload Current Scene"
+
+[node name="Bestiary" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Bestiary"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("17_smy1h")
+expand_mode = 1
+stretch_mode = 5
 
 [connection signal="button_down" from="Confirm/Panel/VBoxContainer/HBoxContainer/yes" to="Confirm" method="_on_yes_button_down"]
 [connection signal="button_down" from="Confirm/Panel/VBoxContainer/HBoxContainer/no" to="Confirm" method="_on_no_button_down"]

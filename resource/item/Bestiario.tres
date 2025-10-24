@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://cie3oybn72el8"]
+
+[ext_resource type="Script" uid="uid://bu8krnugqph56" path="res://script/item_scripts/item.gd" id="1_1j5lr"]
+[ext_resource type="Texture2D" uid="uid://cej24or3kbicq" path="res://Images/assets/bestiary.png" id="2_1d7wy"]
+
+[resource]
+script = ExtResource("1_1j5lr")
+name = "Bestiário perdido"
+desc = "Um livro que permite armazenar informações dos inimigos derrotados"
+amount = 0
+cooldown = 0.0
+display = 1
+sprite = ExtResource("2_1d7wy")
+confirm = false
+hability_path = ""
+metadata/_custom_type_script = "uid://bu8krnugqph56"
