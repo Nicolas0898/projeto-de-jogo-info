@@ -4,6 +4,7 @@ extends CanvasLayer
 @onready var inventory: Control = $Inventory
 @onready var confirm: Confirm = $Confirm
 @onready var map_node: Control = $Map
+@onready var bestiary_node : Node = $Bestiary
 @onready var debug: Label = $debug
 @onready var transition: ColorRect = $Transition
 @onready var player_ui: Control = $PlayerUI
@@ -19,7 +20,7 @@ func _ready() -> void:
 	inventory.modulate = Color(1, 1, 1, 0)
 	confirm.modulate = Color(1, 1, 1, 0)
 	map_node.modulate = Color(1, 1, 1, 0)
-	
+	#bestiary_node.modulate = Color(1, 1, 1, 0)
 
 func fade_in(p):
 	tween = create_tween()

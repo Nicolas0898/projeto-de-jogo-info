@@ -1,0 +1,253 @@
+[gd_scene load_steps=15 format=3 uid="uid://l0hsw5wa4k11"]
+
+[ext_resource type="Texture2D" uid="uid://u2v7vikk56v2" path="res://Images/UI/square.png" id="1_14o23"]
+[ext_resource type="Script" uid="uid://ewrkrfl4tybb" path="res://script/inventory.gd" id="2_d513x"]
+[ext_resource type="Script" uid="uid://bu8krnugqph56" path="res://script/item_scripts/item.gd" id="3_2lqwa"]
+[ext_resource type="Resource" uid="uid://dhj1nx7sy3gd2" path="res://resource/item/Poção_cura.tres" id="4_v8bd3"]
+[ext_resource type="Resource" uid="uid://cijnx7iq50t2u" path="res://resource/item/Plumerico.tres" id="5_m06hg"]
+[ext_resource type="FontFile" uid="uid://b71f1nslp8bqt" path="res://fonts/BoldPixels.ttf" id="6_mnhd3"]
+[ext_resource type="StyleBox" uid="uid://5wvj2f2hfhom" path="res://Scenes/UI/inventory_ui.tres" id="7_or60b"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nt8jn"]
+texture = ExtResource("1_14o23")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 3.0
+region_rect = Rect2(0, 0, 32, 32)
+
+[sub_resource type="Theme" id="Theme_hj2ta"]
+Panel/styles/panel = SubResource("StyleBoxTexture_nt8jn")
+
+[sub_resource type="LabelSettings" id="LabelSettings_yev5y"]
+font = ExtResource("6_mnhd3")
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_gdt2y"]
+font = ExtResource("6_mnhd3")
+
+[sub_resource type="LabelSettings" id="LabelSettings_8dubc"]
+font = ExtResource("6_mnhd3")
+font_size = 13
+
+[sub_resource type="LabelSettings" id="LabelSettings_p7vwb"]
+font = ExtResource("6_mnhd3")
+font_size = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_ktti3"]
+font = ExtResource("6_mnhd3")
+
+[node name="Inventory" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_hj2ta")
+script = ExtResource("2_d513x")
+inventario = Array[ExtResource("3_2lqwa")]([ExtResource("4_v8bd3"), ExtResource("5_m06hg")])
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -150.0
+offset_right = 300.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Inventário"
+label_settings = SubResource("LabelSettings_yev5y")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(150, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = ExtResource("7_or60b")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.0
+offset_top = -46.0
+offset_right = 65.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/VBoxContainer/Panel/VBoxContainer"]
+layout_mode = 2
+text = "Status"
+label_settings = SubResource("LabelSettings_gdt2y")
+horizontal_alignment = 1
+
+[node name="status_label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/VBoxContainer/Panel/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+text = "*Quantia dinheiro"
+label_settings = SubResource("LabelSettings_8dubc")
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer/HBoxContainer/VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -69.0
+offset_top = 20.0
+offset_right = 69.0
+offset_bottom = 25.0
+grow_horizontal = 2
+
+[node name="Panel2" type="Panel" parent="Panel/VBoxContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(150, 130)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("7_or60b")
+
+[node name="desc" type="GridContainer" parent="Panel/VBoxContainer/HBoxContainer/VBoxContainer/Panel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 14.0
+offset_top = 10.0
+offset_right = -6.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 7
+columns = 3
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("7_or60b")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = 5.0
+offset_right = -10.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/Panel/VBoxContainer"]
+layout_mode = 2
+text = "Utilitários"
+label_settings = SubResource("LabelSettings_gdt2y")
+horizontal_alignment = 1
+
+[node name="util" type="GridContainer" parent="Panel/VBoxContainer/HBoxContainer/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 7
+columns = 5
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer/HBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -93.5
+offset_top = 20.0
+offset_right = 93.5
+offset_bottom = 25.0
+grow_horizontal = 2
+
+[node name="Panel2" type="Panel" parent="Panel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("7_or60b")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/Panel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = 9.0
+offset_right = -9.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="desc_tittle" type="Label" parent="Panel/VBoxContainer/HBoxContainer/Panel2/VBoxContainer"]
+layout_mode = 2
+text = "*Nome do item"
+label_settings = SubResource("LabelSettings_p7vwb")
+horizontal_alignment = 1
+
+[node name="desc_text" type="Label" parent="Panel/VBoxContainer/HBoxContainer/Panel2/VBoxContainer"]
+custom_minimum_size = Vector2(1, 175)
+layout_mode = 2
+text = "*descrição - \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim "
+label_settings = SubResource("LabelSettings_ktti3")
+autowrap_mode = 3
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer/HBoxContainer/Panel2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -93.0
+offset_top = 34.0
+offset_right = 94.0
+offset_bottom = 39.0
+grow_horizontal = 2
+
+[node name="Panel" type="Panel" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -285.0
+offset_top = 41.0
+offset_right = 285.0
+offset_bottom = 46.0
+grow_horizontal = 2

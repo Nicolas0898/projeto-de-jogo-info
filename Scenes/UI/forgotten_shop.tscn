@@ -1,0 +1,160 @@
+[gd_scene load_steps=19 format=3 uid="uid://bj3wngkasaca5"]
+
+[ext_resource type="Texture2D" uid="uid://dtinpj643u4m0" path="res://Images/UI/forgotten_shop.png" id="1_0fang"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_drtep"]
+atlas = ExtResource("1_0fang")
+region = Rect2(0, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2okk7"]
+atlas = ExtResource("1_0fang")
+region = Rect2(640, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ydig"]
+atlas = ExtResource("1_0fang")
+region = Rect2(1280, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4cv1"]
+atlas = ExtResource("1_0fang")
+region = Rect2(1920, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ku4i"]
+atlas = ExtResource("1_0fang")
+region = Rect2(2560, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hi262"]
+atlas = ExtResource("1_0fang")
+region = Rect2(3200, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jcaps"]
+atlas = ExtResource("1_0fang")
+region = Rect2(3840, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yxa8g"]
+atlas = ExtResource("1_0fang")
+region = Rect2(4480, 0, 640, 360)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6jloh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_drtep")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2okk7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ydig")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i4cv1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ku4i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hi262")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jcaps")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yxa8g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_hvyne"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_pb2t6"]
+gradient = SubResource("Gradient_hvyne")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.508547)
+
+[sub_resource type="Gradient" id="Gradient_yvdis"]
+offsets = PackedFloat32Array(0, 0.52439, 1)
+colors = PackedColorArray(0.208778, 0.592281, 0.651608, 1, 0.623529, 0.807843, 0.835294, 0.294118, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_v7uvn"]
+gradient = SubResource("Gradient_yvdis")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.478632, 0.0641026)
+
+[sub_resource type="Gradient" id="Gradient_wu4wo"]
+offsets = PackedFloat32Array(0, 0.479675, 1)
+colors = PackedColorArray(0.960784, 0, 0, 1, 0.976471, 0.411765, 0.411765, 0.486275, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1nf3q"]
+gradient = SubResource("Gradient_wu4wo")
+fill = 1
+fill_from = Vector2(0.504274, 0.478632)
+fill_to = Vector2(0.495726, 0.0982906)
+
+[sub_resource type="Gradient" id="Gradient_gwq3p"]
+colors = PackedColorArray(0.701961, 0, 0.576471, 0.839216, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_lah0j"]
+gradient = SubResource("Gradient_gwq3p")
+fill = 1
+fill_from = Vector2(0.521368, 0.504274)
+fill_to = Vector2(0.529915, 0.166667)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+position = Vector2(320, 180)
+sprite_frames = SubResource("SpriteFrames_6jloh")
+autoplay = "default"
+frame_progress = 0.860647
+
+[node name="glow" type="Node2D" parent="."]
+
+[node name="bg_shadow" type="PointLight2D" parent="glow"]
+position = Vector2(-0.5, 0)
+scale = Vector2(9.98438, 5.59375)
+texture = SubResource("GradientTexture2D_pb2t6")
+
+[node name="blue" type="PointLight2D" parent="glow"]
+position = Vector2(-76, -103)
+scale = Vector2(1.25, 1.20313)
+energy = 1.1
+texture = SubResource("GradientTexture2D_v7uvn")
+
+[node name="red" type="PointLight2D" parent="glow"]
+position = Vector2(40, -111)
+scale = Vector2(1.25, 1.20313)
+energy = 1.1
+texture = SubResource("GradientTexture2D_1nf3q")
+
+[node name="blue2" type="PointLight2D" parent="glow"]
+position = Vector2(123, -90)
+scale = Vector2(1.25, 1.20313)
+energy = 1.1
+texture = SubResource("GradientTexture2D_v7uvn")
+
+[node name="red2" type="PointLight2D" parent="glow"]
+position = Vector2(184, -58)
+scale = Vector2(1.25, 1.20313)
+energy = 1.1
+texture = SubResource("GradientTexture2D_1nf3q")
+
+[node name="red3" type="PointLight2D" parent="glow"]
+position = Vector2(-271, -17)
+scale = Vector2(1.25, 1.20313)
+energy = 1.1
+texture = SubResource("GradientTexture2D_1nf3q")
+
+[node name="purple" type="PointLight2D" parent="glow"]
+position = Vector2(-134, -62)
+scale = Vector2(1.25, 1.20313)
+energy = 1.1
+texture = SubResource("GradientTexture2D_lah0j")
+
+[node name="purple2" type="PointLight2D" parent="glow"]
+position = Vector2(261, -27)
+scale = Vector2(1.25, 1.20313)
+energy = 1.1
+texture = SubResource("GradientTexture2D_lah0j")
