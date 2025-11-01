@@ -1,21 +1,26 @@
-[gd_scene load_steps=39 format=3 uid="uid://cc2qsjoqgcdqu"]
+[gd_scene load_steps=43 format=3 uid="uid://cc2qsjoqgcdqu"]
 
 [ext_resource type="Script" uid="uid://dfxy21hd8djmg" path="res://script/ui.gd" id="1_nt7q6"]
 [ext_resource type="PackedScene" uid="uid://d0gxkspxt0ool" path="res://Scenes/UI/dialogue.tscn" id="2_ryf15"]
-[ext_resource type="FontFile" uid="uid://b71f1nslp8bqt" path="res://fonts/BoldPixels.ttf" id="3_gdt2y"]
 [ext_resource type="PackedScene" uid="uid://l0hsw5wa4k11" path="res://Scenes/UI/inventory.tscn" id="3_mmixe"]
+[ext_resource type="Script" uid="uid://bu8krnugqph56" path="res://script/item_scripts/item.gd" id="4_lkjmk"]
 [ext_resource type="PackedScene" uid="uid://cxp2vpoegee5d" path="res://Scenes/UI/confirm.tscn" id="4_nt8jn"]
+[ext_resource type="Resource" uid="uid://dhj1nx7sy3gd2" path="res://resource/item/Poção_cura.tres" id="5_d42i4"]
 [ext_resource type="PackedScene" uid="uid://dsmput310jl5v" path="res://Scenes/UI/map.tscn" id="5_g0wmg"]
 [ext_resource type="PackedScene" uid="uid://oabc24p02seh" path="res://Scenes/UI/player_ui.tscn" id="6_4vbiv"]
+[ext_resource type="Resource" uid="uid://cijnx7iq50t2u" path="res://resource/item/Plumerico.tres" id="6_fcexb"]
+[ext_resource type="Resource" uid="uid://dt1vt1g5o0n6n" path="res://resource/item/Bestiario.tres" id="7_v4f2e"]
 [ext_resource type="Script" uid="uid://c33xdx8i5vql3" path="res://Scripts/bestiary.gd" id="8_3r70p"]
-[ext_resource type="Script" uid="uid://cqkbc8kwvsfra" path="res://script/bestiary_entry.gd" id="9_8fs27"]
+[ext_resource type="Script" uid="uid://cslwexrneb8sn" path="res://script/double_page.gd" id="9_8fs27"]
 [ext_resource type="Texture2D" uid="uid://1qkbxphg5d5h" path="res://Images/UI/bestiary_paper.png" id="9_mmixe"]
-[ext_resource type="Texture2D" uid="uid://bembfapn6k3t5" path="res://Images/entities/golem.png" id="10_4vbiv"]
-[ext_resource type="Resource" uid="uid://6jy8mcvlwf8g" path="res://resource/bestiario/golem de terra.tres" id="10_whq80"]
-[ext_resource type="Texture2D" uid="uid://cnavrqrblwnej" path="res://Images/UI/skull_02.png" id="15_whq80"]
+[ext_resource type="Resource" uid="uid://djepib8yauktk" path="res://resource/bestiario/Cobra.tres" id="10_kuui0"]
+[ext_resource type="Script" uid="uid://dasuh6is0cd16" path="res://script/page.gd" id="10_whq80"]
+[ext_resource type="Resource" uid="uid://6jy8mcvlwf8g" path="res://resource/bestiario/golem de terra.tres" id="11_kuui0"]
+[ext_resource type="Resource" uid="uid://cetqeg5fq3ron" path="res://Images/UI/not_found.tres" id="16_fe2sg"]
 [ext_resource type="Script" uid="uid://b66lqor03c8rd" path="res://Scenes/admin.gd" id="16_kuui0"]
-[ext_resource type="Texture2D" uid="uid://bgevlad31rcdm" path="res://Images/UI/bestiary_deco.png" id="16_smy1h"]
 [ext_resource type="Texture2D" uid="uid://b1ohlt1jytqyy" path="res://Images/UI/bestiary_menu.png" id="17_smy1h"]
+[ext_resource type="Resource" uid="uid://l46ol1r3igyq" path="res://resource/bestiario/Piranha.tres" id="18_v4f2e"]
+[ext_resource type="Resource" uid="uid://6so10j2cym6y" path="res://resource/bestiario/Mosca.tres" id="19_fe2sg"]
 
 [sub_resource type="Gradient" id="Gradient_nt8jn"]
 colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1)
@@ -32,29 +37,48 @@ bg_color = Color(0.0588235, 0.0588235, 0.0588235, 0.886275)
 [sub_resource type="Theme" id="Theme_mmixe"]
 Panel/styles/panel = SubResource("StyleBoxFlat_ryf15")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mmixe"]
+[sub_resource type="Resource" id="Resource_d42i4"]
+script = ExtResource("9_8fs27")
+entries = Array[ExtResource("10_whq80")]([ExtResource("11_kuui0"), ExtResource("16_fe2sg")])
+metadata/_custom_type_script = "uid://cslwexrneb8sn"
+
+[sub_resource type="Resource" id="Resource_8fs27"]
+script = ExtResource("9_8fs27")
+entries = Array[ExtResource("10_whq80")]([ExtResource("10_kuui0"), ExtResource("18_v4f2e")])
+metadata/_custom_type_script = "uid://cslwexrneb8sn"
+
+[sub_resource type="Resource" id="Resource_whq80"]
+script = ExtResource("9_8fs27")
+entries = Array[ExtResource("10_whq80")]([ExtResource("19_fe2sg"), ExtResource("16_fe2sg")])
+metadata/_custom_type_script = "uid://cslwexrneb8sn"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nbcfj"]
 atlas = ExtResource("9_mmixe")
 region = Rect2(0, 0, 400, 400)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nt8jn"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4f2e"]
 atlas = ExtResource("9_mmixe")
 region = Rect2(400, 0, 400, 400)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_g0wmg"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_fe2sg"]
 atlas = ExtResource("9_mmixe")
 region = Rect2(800, 0, 400, 400)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4vbiv"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_jd57c"]
 atlas = ExtResource("9_mmixe")
 region = Rect2(1200, 0, 400, 400)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3r70p"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_85lyl"]
 atlas = ExtResource("9_mmixe")
 region = Rect2(1600, 0, 400, 400)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8fs27"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_mplvk"]
 atlas = ExtResource("9_mmixe")
 region = Rect2(2000, 0, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pmm21"]
+atlas = ExtResource("9_mmixe")
+region = Rect2(0, 0, 400, 400)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_whq80"]
 atlas = ExtResource("9_mmixe")
@@ -84,26 +108,34 @@ region = Rect2(0, 0, 400, 400)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mmixe")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nt8jn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_g0wmg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4vbiv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3r70p")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8fs27")
+"texture": SubResource("AtlasTexture_nbcfj")
 }],
 "loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v4f2e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fe2sg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jd57c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_85lyl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mplvk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pmm21")
+}],
+"loop": false,
 "name": &"page_left",
-"speed": 10.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -124,35 +156,16 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fcexb")
 }],
-"loop": true,
+"loop": false,
 "name": &"page_right",
-"speed": 10.0
+"speed": 15.0
 }]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4vbiv"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="Theme" id="Theme_3r70p"]
-Panel/styles/panel = SubResource("StyleBoxFlat_4vbiv")
-
-[sub_resource type="LabelSettings" id="LabelSettings_3r70p"]
-font = ExtResource("3_gdt2y")
-font_color = Color(0.345098, 0.345098, 0.345098, 0.615686)
-
-[sub_resource type="LabelSettings" id="LabelSettings_kuui0"]
-font = ExtResource("3_gdt2y")
-font_color = Color(0, 0, 0, 0.435294)
-
-[sub_resource type="LabelSettings" id="LabelSettings_8fs27"]
-font = ExtResource("3_gdt2y")
-font_color = Color(0.345098, 0.345098, 0.345098, 0.615686)
 
 [node name="UI" type="CanvasLayer"]
 layer = 100
 script = ExtResource("1_nt7q6")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-visible = false
 modulate = Color(1, 1, 1, 0.266667)
 anchors_preset = 15
 anchor_right = 1.0
@@ -163,20 +176,17 @@ mouse_filter = 2
 texture = SubResource("GradientTexture2D_g0wmg")
 
 [node name="Dialogue" parent="." instance=ExtResource("2_ryf15")]
-visible = false
 
 [node name="Inventory" parent="." instance=ExtResource("3_mmixe")]
+inventario = Array[ExtResource("4_lkjmk")]([ExtResource("5_d42i4"), ExtResource("6_fcexb"), ExtResource("7_v4f2e")])
 
 [node name="Confirm" parent="." instance=ExtResource("4_nt8jn")]
-visible = false
 
 [node name="debug" type="Label" parent="."]
-visible = false
 offset_right = 40.0
 offset_bottom = 23.0
 
 [node name="Transition" type="ColorRect" parent="."]
-visible = false
 modulate = Color(1, 1, 1, 0)
 z_index = 4096
 anchors_preset = 15
@@ -187,13 +197,10 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Map" parent="." instance=ExtResource("5_g0wmg")]
-visible = false
 
 [node name="PlayerUI" parent="." instance=ExtResource("6_4vbiv")]
-visible = false
 
 [node name="Admin" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -318,7 +325,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_mmixe")
 script = ExtResource("8_3r70p")
-entries = Array[ExtResource("9_8fs27")]([ExtResource("10_whq80")])
+pages = Array[ExtResource("9_8fs27")]([SubResource("Resource_d42i4"), SubResource("Resource_8fs27"), SubResource("Resource_whq80")])
 
 [node name="Panel" type="Panel" parent="Bestiary"]
 layout_mode = 1
@@ -337,196 +344,32 @@ texture = ExtResource("17_smy1h")
 [node name="page" type="AnimatedSprite2D" parent="Bestiary/Panel/book"]
 light_mask = 0
 sprite_frames = SubResource("SpriteFrames_v4f2e")
-animation = &"page_left"
-frame_progress = 0.76556
+autoplay = "default"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Bestiary/Panel/book"]
+[node name="Control" type="Control" parent="Bestiary/Panel/book"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -200.0
+offset_right = -200.0
+offset_bottom = -200.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Bestiary/Panel/book/Control"]
+layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -200.0
-offset_top = -312.0
-offset_right = -200.0
-offset_bottom = -103.0
+offset_top = -75.0
+offset_bottom = 75.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 15
 alignment = 1
-
-[node name="bestiary_left" type="Panel" parent="Bestiary/Panel/book/HBoxContainer"]
-custom_minimum_size = Vector2(150, 150)
-layout_mode = 2
-theme = SubResource("Theme_3r70p")
-
-[node name="sprite" type="TextureRect" parent="Bestiary/Panel/book/HBoxContainer/bestiary_left"]
-modulate = Color(1, 1, 1, 0.552941)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 32.7253
-offset_top = -9.61384
-offset_right = -37.2747
-offset_bottom = -138.614
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("10_4vbiv")
-expand_mode = 1
-
-[node name="border" type="TextureRect" parent="Bestiary/Panel/book/HBoxContainer/bestiary_left/sprite"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-expand_mode = 3
-
-[node name="name" type="Label" parent="Bestiary/Panel/book/HBoxContainer/bestiary_left"]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -2.43954
-offset_top = -133.311
-offset_right = -8.43954
-offset_bottom = -98.3112
-grow_horizontal = 2
-grow_vertical = 0
-text = "Golem de Terra"
-label_settings = SubResource("LabelSettings_3r70p")
-horizontal_alignment = 1
-autowrap_mode = 3
-
-[node name="subtitle" type="Label" parent="Bestiary/Panel/book/HBoxContainer/bestiary_left"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 30.5275
-offset_top = 90.6744
-offset_right = 15.5275
-offset_bottom = -92.3256
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.6, 0.6)
-text = "Derrotado X vezes"
-label_settings = SubResource("LabelSettings_kuui0")
-
-[node name="desc" type="Label" parent="Bestiary/Panel/book/HBoxContainer/bestiary_left"]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 0.857154
-offset_top = -86.049
-offset_right = 96.8571
-offset_bottom = 51.951
-grow_horizontal = 2
-grow_vertical = 0
-scale = Vector2(0.6, 0.6)
-text = "Dizem que o Golem de Terra é um dos seres mais poderosos de todo o pântano. Com seu corpo feito de pedra e sua harmonia com a natureza, o Golem mantém o pântano protegido."
-label_settings = SubResource("LabelSettings_8fs27")
-horizontal_alignment = 1
-autowrap_mode = 3
-
-[node name="TextureRect" type="TextureRect" parent="Bestiary/Panel/book/HBoxContainer/bestiary_left"]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -14.5275
-offset_top = -121.784
-offset_right = -124.527
-offset_bottom = -81.7839
-grow_horizontal = 2
-grow_vertical = 0
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("15_whq80")
-
-[node name="TextureRect2" type="TextureRect" parent="Bestiary/Panel/book/HBoxContainer/bestiary_left"]
-modulate = Color(0.912289, 0.912289, 0.912289, 1)
-layout_mode = 0
-offset_left = 16.2418
-offset_top = 102.202
-offset_right = 394.242
-offset_bottom = 144.202
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("16_smy1h")
-
-[node name="bestiary_right" type="Panel" parent="Bestiary/Panel/book/HBoxContainer"]
-custom_minimum_size = Vector2(150, 150)
-layout_mode = 2
-theme = SubResource("Theme_3r70p")
-
-[node name="sprite" type="TextureRect" parent="Bestiary/Panel/book/HBoxContainer/bestiary_right"]
-modulate = Color(1, 1, 1, 0.552941)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 32.7253
-offset_top = -2.69741
-offset_right = -37.2747
-offset_bottom = -131.697
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("10_4vbiv")
-expand_mode = 1
-
-[node name="border" type="TextureRect" parent="Bestiary/Panel/book/HBoxContainer/bestiary_right/sprite"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-expand_mode = 3
-
-[node name="name" type="Label" parent="Bestiary/Panel/book/HBoxContainer/bestiary_right"]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -2.43954
-offset_top = -126.395
-offset_right = -8.43954
-offset_bottom = -91.3948
-grow_horizontal = 2
-grow_vertical = 0
-text = "Golem de Terra"
-label_settings = SubResource("LabelSettings_3r70p")
-horizontal_alignment = 1
-autowrap_mode = 3
-
-[node name="Line2D" type="Line2D" parent="Bestiary/Panel/book/HBoxContainer/bestiary_right"]
-position = Vector2(2.47253, -3.85014)
-points = PackedVector2Array(3.87914, 111.816, 130.253, 111.816)
-width = 1.0
-default_color = Color(0.345098, 0.345098, 0.345098, 0.329412)
-
-[node name="desc" type="Label" parent="Bestiary/Panel/book/HBoxContainer/bestiary_right"]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 1.0
-offset_top = -91.0
-offset_right = 97.0
-offset_bottom = 47.0
-grow_horizontal = 2
-grow_vertical = 0
-scale = Vector2(0.6, 0.6)
-text = "Dizem que o Golem de Terra é um dos seres mais poderosos de todo o pântano. Com seu corpo feito de pedra e sua harmonia com a natureza, o Golem mantém o pântano protegido."
-label_settings = SubResource("LabelSettings_8fs27")
-horizontal_alignment = 1
-autowrap_mode = 3
 
 [connection signal="pressed" from="Admin/Panel/VBoxContainer/GridContainer2/Button" to="Admin" method="_on_button_pressed"]
 [connection signal="pressed" from="Admin/Panel/VBoxContainer/GridContainer2/Button2" to="Admin" method="_on_button_2_pressed"]

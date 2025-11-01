@@ -14,6 +14,11 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("down"):
 		if action is Dialogue: 
 			if Ui.dialogue.is_question: Ui.dialogue.question_handler(1)
+	if event.is_action_pressed("left"):
+		if action is Bestiary: Ui.bestiary_node.pass_page("left")
+	if event.is_action_pressed("right"):
+		if action is Bestiary: Ui.bestiary_node.pass_page("right")
+	
 	if event.is_action_pressed("use_weapon"):
 		if action is Inventory: Ui.inventory.interact()
 	

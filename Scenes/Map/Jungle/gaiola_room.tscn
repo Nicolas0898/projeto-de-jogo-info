@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://bcqcys82msojd"]
+[gd_scene load_steps=30 format=4 uid="uid://bcqcys82msojd"]
 
 [ext_resource type="PackedScene" uid="uid://c5pik2cgvmlm4" path="res://Scenes/particles/falling_leaves.tscn" id="2_4cbs5"]
 [ext_resource type="PackedScene" uid="uid://brkn5mjfr67t4" path="res://Scenes/Player/Character.tscn" id="2_h3vtl"]
@@ -19,7 +19,8 @@
 [ext_resource type="PackedScene" uid="uid://cv65j1yo5s1ck" path="res://Scenes/Objects/indicator.tscn" id="13_xhwvu"]
 [ext_resource type="Script" uid="uid://c58qj2ej0kuex" path="res://script/interact/interaction_area.gd" id="16_2ok4s"]
 [ext_resource type="PackedScene" uid="uid://vokqjyhjkv4a" path="res://Scenes/Objects/lamp.tscn" id="17_7ukwo"]
-[ext_resource type="Resource" uid="uid://cie3oybn72el8" path="res://resource/item/Bestiario.tres" id="17_fci24"]
+[ext_resource type="Script" uid="uid://bu8krnugqph56" path="res://script/item_scripts/item.gd" id="17_fci24"]
+[ext_resource type="Texture2D" uid="uid://cej24or3kbicq" path="res://Images/assets/bestiary.png" id="18_dknxn"]
 
 [sub_resource type="GDScript" id="GDScript_no33e"]
 
@@ -42,9 +43,21 @@ metadata/_custom_type_script = "uid://c41v5wv6fa0vx"
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hqicp"]
 size = Vector2(80, 72)
 
+[sub_resource type="Resource" id="Resource_v4gbd"]
+script = ExtResource("17_fci24")
+name = "Bestiário perdido"
+desc = "Um livro que permite armazenar informações dos inimigos derrotados"
+amount = 0
+cooldown = 0.0
+display = 1
+sprite = ExtResource("18_dknxn")
+confirm = false
+hability_path = ""
+metadata/_custom_type_script = "uid://bu8krnugqph56"
+
 [sub_resource type="Resource" id="Resource_dknxn"]
 script = ExtResource("11_h3vtl")
-i = ExtResource("17_fci24")
+i = SubResource("Resource_v4gbd")
 quantity = 1
 interaction_amount = 1
 message = "Você coletou um bestiário perdido"

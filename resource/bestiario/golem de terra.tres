@@ -7,6 +7,8 @@
 script = ExtResource("1_ff865")
 nome = "Golem de Terra"
 desc = "Dizem que o Golem de Terra é um dos seres mais poderosos de todo o pântano. Com seu corpo feito de pedra e sua harmonia com a natureza, o Golem mantém o pântano protegido."
-hp = 300.0
+hp = 0.0
+times_eliminated = 0
+indicator = 0
 image = ExtResource("1_wmlp3")
 metadata/_custom_type_script = "uid://cqkbc8kwvsfra"

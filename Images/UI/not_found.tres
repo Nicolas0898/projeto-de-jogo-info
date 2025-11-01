@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="bestiary_entry" load_steps=3 format=3 uid="uid://cetqeg5fq3ron"]
+
+[ext_resource type="Texture2D" uid="uid://cn17cgmcabkt6" path="res://Images/UI/bestiary_question_mark.png" id="1_yl5rv"]
+[ext_resource type="Script" uid="uid://cqkbc8kwvsfra" path="res://script/bestiary_entry.gd" id="2_qlh7k"]
+
+[resource]
+script = ExtResource("2_qlh7k")
+nome = "Desconhecido"
+desc = "Você ainda não encontrou este ser. Continue se aventurando para acha-lo"
+hp = 0.0
+times_eliminated = 0
+indicator = 0
+image = ExtResource("1_yl5rv")
+metadata/_custom_type_script = "uid://cqkbc8kwvsfra"

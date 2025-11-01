@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://sd0kged1xpp0"]
+
+[ext_resource type="FontFile" uid="uid://b71f1nslp8bqt" path="res://fonts/BoldPixels.ttf" id="1_onryy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4vbiv"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="Theme" id="Theme_3r70p"]
+Panel/styles/panel = SubResource("StyleBoxFlat_4vbiv")
+
+[sub_resource type="LabelSettings" id="LabelSettings_8fs27"]
+font = ExtResource("1_onryy")
+font_color = Color(0.345098, 0.345098, 0.345098, 0.615686)
+
+[node name="bestiary_label" type="Panel"]
+custom_minimum_size = Vector2(150, 234)
+theme = SubResource("Theme_3r70p")
+
+[node name="desc" type="Label" parent="."]
+custom_minimum_size = Vector2(250, 234)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -234.0
+offset_right = 110.0
+offset_bottom = 103.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.55, 0.55)
+text = "*Texto adicional de texto (que é opcional)
+
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+label_settings = SubResource("LabelSettings_8fs27")
+horizontal_alignment = 1
+autowrap_mode = 3

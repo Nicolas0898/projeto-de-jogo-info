@@ -20,15 +20,20 @@ func _ready() -> void:
 	inventory.modulate = Color(1, 1, 1, 0)
 	confirm.modulate = Color(1, 1, 1, 0)
 	map_node.modulate = Color(1, 1, 1, 0)
-	#bestiary_node.modulate = Color(1, 1, 1, 0)
+	bestiary_node.modulate = Color(1, 1, 1, 0)
 
-func fade_in(p):
+func fade_in(p): #PRE-SET DE 0.2s
 	tween = create_tween()
 	tween.tween_property(p,"modulate",Color(1,1,1,1),0.2)
 	#print("fadein")
 	await tween.finished
+	
+func opacity(p, opacity, time): #Opacity de 0 a 1
+	tween = create_tween()
+	tween.tween_property(p,"modulate",Color(1,1,1,opacity),time)
+	await tween.finished
 
-func fade_out(p):
+func fade_out(p):  #PRE-SET DE 0.2s
 	tween = create_tween()
 	tween.tween_property(p,"modulate",Color(1,1,1,0),0.2)
 	#print("fadeout")
