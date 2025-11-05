@@ -4,7 +4,10 @@ class_name Bestiary
 @onready var container: HBoxContainer = $Panel/book/Control/HBoxContainer
 @onready var page_sprite: AnimatedSprite2D = $Panel/book/page
 
-@export var pages : Array[double_page]
+@export var pages : Array[double_page] #TODAS as páginas (até as não encontradas)
+var visible_pages : Array[double_page] #Apenas as páginas encontradas
+var none = load("res://resource/bestiario/Não encontrado.tres")
+
 var is_open : bool = false
 var pos = 0
 
@@ -13,8 +16,8 @@ func load_pages():
 	for child in container.get_children():
 		child.queue_free()
 	
-	for i in range(len(pages[pos].entries)):
-		var e = pages[pos].entries[i]
+	for i in range(len(visible_pages[pos].entries)):
+		var e = visible_pages[pos].entries[i]
 		var scene = e.scene.instantiate()
 		
 		#Essa parte daria pra fazer um script separado cada, mas vou evitar pra não ter muitos arquivos
@@ -32,12 +35,13 @@ func load_pages():
 		container.add_child(scene)
 	await Ui.opacity(container, 1, 0.3)
 
-
 func pass_page(direction : String):
 	# "right" / "left"
 	
+	var arm = pos
+	
 	if direction == "right":
-		if pos < len(pages) - 1:
+		if pos < len(visible_pages) - 1:
 			pos = pos + 1
 			page_sprite.play("page_right")
 	if direction == "left":
@@ -46,7 +50,47 @@ func pass_page(direction : String):
 			page_sprite.play("page_left")
 	
 	print(pos)
-	load_pages()
+	if pos != arm:
+		load_pages()
+
+func _ready() -> void:
+	refresh()
+
+func refresh(): #Toda a parte lógica da organização
+	visible_pages = []
+	print("-----------------------")
+	
+	#print(pages[0])
+	
+	for i in range(len(pages)):
+		var showing = double_page.new()
+		var unique_pages = 0 #Pra verificar se deve ou não dar append
+		for entry in pages[i].entries:
+			if entry != null and entry.is_visible:
+				unique_pages+= 1
+				showing.entries.append(entry)
+			else:
+				showing.entries.append(none)
+		
+		if unique_pages > 0:
+			visible_pages.append(showing)
+	
+	if visible_pages == []: #Se ele achou nada até agora (não sei como)
+		var nenhum = load("res://resource/bestiario/Nenhum.tres")
+		visible_pages.append(nenhum)
+	
+	#for dp in range(len(visible_pages)):
+	#	for p in range(len(visible_pages[dp].entries)):
+	#		print(visible_pages[dp].entries[p].nome)
+	#print(visible_pages[0].entries[1].nome)
+	
+	
+	
+	print("-----------------------")
+	pass
+
+
+
 
 func open():
 	if InteractionSystem.action != null and not InteractionSystem.action is Bestiary: return
@@ -64,4 +108,4 @@ func open():
 	else:
 		pass
 	
-	await Ui.fade_in(self) if open else await Ui.fade_out(self)
+	await Ui.fade_in(self) if is_open else await Ui.fade_out(self)

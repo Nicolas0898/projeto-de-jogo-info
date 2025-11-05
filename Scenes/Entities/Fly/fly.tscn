@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://dugkamrvn6d0g"]
+[gd_scene load_steps=50 format=3 uid="uid://dugkamrvn6d0g"]
 
 [ext_resource type="Shader" uid="uid://lk8vqo6nbyf3" path="res://Shaders/Character.gdshader" id="1_d6fad"]
 [ext_resource type="Script" uid="uid://b4v73lx8blb1p" path="res://Scripts/Components/BaseEntity.gd" id="1_x1axm"]
@@ -14,7 +14,9 @@
 [ext_resource type="Script" uid="uid://co267qys8ureh" path="res://Scenes/Entities/Fly/stunned.gd" id="8_12l6a"]
 [ext_resource type="Script" uid="uid://blfwkqgeamobt" path="res://Scripts/Components/Hitbox.gd" id="8_xkxda"]
 [ext_resource type="Texture2D" uid="uid://dg6ytmh86qth1" path="res://Images/Fly/parando.png" id="9_ylf0o"]
+[ext_resource type="Script" uid="uid://b6mygu68dus13" path="res://Scripts/Components/BestiaryComponent.gd" id="10_qphnb"]
 [ext_resource type="Texture2D" uid="uid://3r7bq3e88kcl" path="res://Images/Fly/morrendo.png" id="10_w8lvy"]
+[ext_resource type="Resource" uid="uid://6so10j2cym6y" path="res://resource/bestiario/Mosca.tres" id="11_vjhpu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cnhfl"]
 shader = ExtResource("1_d6fad")
@@ -283,6 +285,10 @@ metadata/_custom_type_script = "uid://ca8wa4d6wsrqb"
 script = ExtResource("4_brr4v")
 max_health = 30.0
 metadata/_custom_type_script = "uid://1ughpmhhrew"
+
+[node name="BestiaryComponent" type="Node" parent="."]
+script = ExtResource("10_qphnb")
+entry = ExtResource("11_vjhpu")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 use_parent_material = true

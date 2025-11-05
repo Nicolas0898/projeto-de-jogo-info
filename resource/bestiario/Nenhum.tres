@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="double_page" load_steps=6 format=3 uid="uid://bs4wuaca6l7xs"]
+
+[ext_resource type="Script" uid="uid://dasuh6is0cd16" path="res://script/page.gd" id="1_yp0km"]
+[ext_resource type="Script" uid="uid://cvcbjk1q6vmty" path="res://script/bestiary_label.gd" id="2_k7udi"]
+[ext_resource type="Script" uid="uid://cslwexrneb8sn" path="res://script/double_page.gd" id="3_nmvhj"]
+
+[sub_resource type="Resource" id="Resource_f7cba"]
+script = ExtResource("2_k7udi")
+text = "Você precisa explorar mais, seu bobalhão"
+metadata/_custom_type_script = "uid://cvcbjk1q6vmty"
+
+[sub_resource type="Resource" id="Resource_8h2aj"]
+script = ExtResource("2_k7udi")
+text = " "
+metadata/_custom_type_script = "uid://cvcbjk1q6vmty"
+
+[resource]
+script = ExtResource("3_nmvhj")
+entries = Array[ExtResource("1_yp0km")]([SubResource("Resource_f7cba"), SubResource("Resource_8h2aj")])
+metadata/_custom_type_script = "uid://cslwexrneb8sn"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://cn12v5ofbe1kg"]
+[gd_scene load_steps=66 format=3 uid="uid://cn12v5ofbe1kg"]
 
 [ext_resource type="Shader" uid="uid://lk8vqo6nbyf3" path="res://Shaders/Character.gdshader" id="1_7ob6n"]
 [ext_resource type="Texture2D" uid="uid://r0netu06hxfa" path="res://sprites/golem_spritesheet.png" id="2_25w2q"]
@@ -16,6 +16,8 @@
 [ext_resource type="Script" uid="uid://blfwkqgeamobt" path="res://Scripts/Components/Hitbox.gd" id="13_tbvup"]
 [ext_resource type="Script" uid="uid://dulx1fqjmu1yc" path="res://Scenes/Entities/Golem/died.gd" id="14_n1p4n"]
 [ext_resource type="Script" uid="uid://co267qys8ureh" path="res://Scenes/Entities/Fly/stunned.gd" id="15_n1p4n"]
+[ext_resource type="Script" uid="uid://b6mygu68dus13" path="res://Scripts/Components/BestiaryComponent.gd" id="17_oj5ua"]
+[ext_resource type="Resource" uid="uid://6jy8mcvlwf8g" path="res://resource/bestiario/golem de terra.tres" id="18_m0ilg"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1y50k"]
 shader = ExtResource("1_7ob6n")
@@ -477,6 +479,11 @@ position = Vector2(0, 39)
 
 [node name="throwspawnpos" type="Node2D" parent="."]
 position = Vector2(5, -52)
+
+[node name="BestiaryComponent" type="Node" parent="."]
+script = ExtResource("17_oj5ua")
+entry = ExtResource("18_m0ilg")
+metadata/_custom_type_script = "uid://b6mygu68dus13"
 
 [connection signal="frame_changed" from="AnimatedSprite2D" to="StateMachine/Smash" method="_frame_changed"]
 [connection signal="frame_changed" from="AnimatedSprite2D" to="StateMachine/Throw" method="_frame_changed"]

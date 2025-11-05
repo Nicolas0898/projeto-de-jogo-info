@@ -1,19 +1,21 @@
-[gd_scene load_steps=33 format=3 uid="uid://bgj5i6vxa07tq"]
+[gd_scene load_steps=35 format=3 uid="uid://bgj5i6vxa07tq"]
 
-[ext_resource type="Shader" uid="uid://lk8vqo6nbyf3" path="res://Shaders/Character.gdshader" id="1_ac7or"]
-[ext_resource type="Script" uid="uid://b4v73lx8blb1p" path="res://Scripts/Components/BaseEntity.gd" id="1_b4ut0"]
-[ext_resource type="Script" uid="uid://lurpfwbx4y8w" path="res://Scripts/StateMachine/StateMachine.gd" id="2_5c722"]
-[ext_resource type="Script" uid="uid://dtyfcoog1vanl" path="res://Scenes/Entities/Piranha/idle.gd" id="3_2ag0k"]
-[ext_resource type="Script" uid="uid://co267qys8ureh" path="res://Scenes/Entities/Fly/stunned.gd" id="4_khkfl"]
-[ext_resource type="Script" uid="uid://c0vqgff2ud7w6" path="res://Scenes/Entities/Piranha/chase.gd" id="4_m2m30"]
-[ext_resource type="Script" uid="uid://0d7bnicgm37i" path="res://Scripts/Components/BaseHurtbox.gd" id="4_x8evn"]
-[ext_resource type="Script" uid="uid://c27qfpg5r355v" path="res://Scenes/Entities/Piranha/died.gd" id="5_2ag0k"]
-[ext_resource type="Script" uid="uid://blfwkqgeamobt" path="res://Scripts/Components/Hitbox.gd" id="5_m7vmk"]
-[ext_resource type="Texture2D" uid="uid://cs4dppu3iqr3g" path="res://Images/entities/piranha_spritesheet.png" id="6_73432"]
-[ext_resource type="Script" uid="uid://1ughpmhhrew" path="res://Scripts/Components/HealthComponent.gd" id="7_khkfl"]
+[ext_resource type="Shader" uid="uid://lk8vqo6nbyf3" path="res://Shaders/Character.gdshader" id="1_udoqd"]
+[ext_resource type="Script" uid="uid://b4v73lx8blb1p" path="res://Scripts/Components/BaseEntity.gd" id="2_u3g6e"]
+[ext_resource type="Script" uid="uid://lurpfwbx4y8w" path="res://Scripts/StateMachine/StateMachine.gd" id="3_uvyrn"]
+[ext_resource type="Script" uid="uid://dtyfcoog1vanl" path="res://Scenes/Entities/Piranha/idle.gd" id="4_t7p87"]
+[ext_resource type="Script" uid="uid://c0vqgff2ud7w6" path="res://Scenes/Entities/Piranha/chase.gd" id="5_2cqwc"]
+[ext_resource type="Script" uid="uid://c27qfpg5r355v" path="res://Scenes/Entities/Piranha/died.gd" id="6_fko1l"]
+[ext_resource type="Script" uid="uid://co267qys8ureh" path="res://Scenes/Entities/Fly/stunned.gd" id="7_x17uj"]
+[ext_resource type="Script" uid="uid://0d7bnicgm37i" path="res://Scripts/Components/BaseHurtbox.gd" id="8_eerxn"]
+[ext_resource type="Script" uid="uid://blfwkqgeamobt" path="res://Scripts/Components/Hitbox.gd" id="9_77voh"]
+[ext_resource type="Texture2D" uid="uid://cs4dppu3iqr3g" path="res://Images/entities/piranha_spritesheet.png" id="10_13tej"]
+[ext_resource type="Script" uid="uid://1ughpmhhrew" path="res://Scripts/Components/HealthComponent.gd" id="11_aflcy"]
+[ext_resource type="Script" uid="uid://b6mygu68dus13" path="res://Scripts/Components/BestiaryComponent.gd" id="12_6q28q"]
+[ext_resource type="Resource" uid="uid://l46ol1r3igyq" path="res://resource/bestiario/Piranha.tres" id="13_c0ved"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ng0xu"]
-shader = ExtResource("1_ac7or")
+shader = ExtResource("1_udoqd")
 shader_parameter/blink_color = Color(1, 1, 1, 1)
 shader_parameter/factor = 0.0
 
@@ -24,67 +26,67 @@ radius = 11.0454
 radius = 9.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ac7or"]
-atlas = ExtResource("6_73432")
+atlas = ExtResource("10_13tej")
 region = Rect2(128, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ng0xu"]
-atlas = ExtResource("6_73432")
+atlas = ExtResource("10_13tej")
 region = Rect2(160, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bmi00"]
-atlas = ExtResource("6_73432")
+atlas = ExtResource("10_13tej")
 region = Rect2(192, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8v57a"]
-atlas = ExtResource("6_73432")
+atlas = ExtResource("10_13tej")
 region = Rect2(224, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p2p20"]
-atlas = ExtResource("6_73432")
+atlas = ExtResource("10_13tej")
 region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bdy8n"]
-atlas = ExtResource("6_73432")
+atlas = ExtResource("10_13tej")
 region = Rect2(32, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6f8v1"]
-atlas = ExtResource("6_73432")
+atlas = ExtResource("10_13tej")
 region = Rect2(64, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t628v"]
-atlas = ExtResource("6_73432")
+atlas = ExtResource("10_13tej")
 region = Rect2(96, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vjbcl"]
-atlas = ExtResource("6_73432")
+atlas = ExtResource("10_13tej")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fbfol"]
-atlas = ExtResource("6_73432")
+atlas = ExtResource("10_13tej")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0jmvh"]
-atlas = ExtResource("6_73432")
+atlas = ExtResource("10_13tej")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nseln"]
-atlas = ExtResource("6_73432")
+atlas = ExtResource("10_13tej")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_23l3l"]
-atlas = ExtResource("6_73432")
+atlas = ExtResource("10_13tej")
 region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p5to0"]
-atlas = ExtResource("6_73432")
+atlas = ExtResource("10_13tej")
 region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eeh0i"]
-atlas = ExtResource("6_73432")
+atlas = ExtResource("10_13tej")
 region = Rect2(192, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a37hh"]
-atlas = ExtResource("6_73432")
+atlas = ExtResource("10_13tej")
 region = Rect2(224, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dn5xe"]
@@ -165,38 +167,38 @@ size = Vector2(18, 15)
 material = SubResource("ShaderMaterial_ng0xu")
 collision_layer = 34
 collision_mask = 33
-script = ExtResource("1_b4ut0")
+script = ExtResource("2_u3g6e")
 metadata/_custom_type_script = "uid://b4v73lx8blb1p"
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initialState")]
-script = ExtResource("2_5c722")
+script = ExtResource("3_uvyrn")
 initialState = NodePath("Idle")
 metadata/_custom_type_script = "uid://lurpfwbx4y8w"
 
 [node name="Idle" type="Node" parent="StateMachine"]
-script = ExtResource("3_2ag0k")
+script = ExtResource("4_t7p87")
 metadata/_custom_type_script = "uid://ca8wa4d6wsrqb"
 
 [node name="Chase" type="Node" parent="StateMachine"]
-script = ExtResource("4_m2m30")
+script = ExtResource("5_2cqwc")
 metadata/_custom_type_script = "uid://ca8wa4d6wsrqb"
 
 [node name="Timer" type="Timer" parent="StateMachine/Chase"]
 wait_time = 1.509
 
 [node name="Died" type="Node" parent="StateMachine"]
-script = ExtResource("5_2ag0k")
+script = ExtResource("6_fko1l")
 metadata/_custom_type_script = "uid://ca8wa4d6wsrqb"
 
 [node name="Stunned" type="Node" parent="StateMachine"]
-script = ExtResource("4_khkfl")
+script = ExtResource("7_x17uj")
 aerial = true
 metadata/_custom_type_script = "uid://co267qys8ureh"
 
 [node name="BaseHurtbox" type="Area2D" parent="." node_paths=PackedStringArray("health_component")]
 collision_layer = 0
 collision_mask = 8
-script = ExtResource("4_x8evn")
+script = ExtResource("8_eerxn")
 health_component = NodePath("../HealthComponent")
 metadata/_custom_type_script = "uid://0d7bnicgm37i"
 
@@ -206,7 +208,7 @@ debug_color = Color(0.92007, 0.125219, 0.621764, 0.42)
 
 [node name="Hitbox" type="Area2D" parent="."]
 collision_mask = 16
-script = ExtResource("5_m7vmk")
+script = ExtResource("9_77voh")
 damage = 5.0
 metadata/_custom_type_script = "uid://blfwkqgeamobt"
 
@@ -220,7 +222,7 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="HealthComponent" type="Node" parent="."]
-script = ExtResource("7_khkfl")
+script = ExtResource("11_aflcy")
 max_health = 25.0
 metadata/_custom_type_script = "uid://1ughpmhhrew"
 
@@ -228,3 +230,8 @@ metadata/_custom_type_script = "uid://1ughpmhhrew"
 position = Vector2(-1, 0.5)
 shape = SubResource("RectangleShape2D_73432")
 debug_color = Color(0.125205, 0.626562, 0.464328, 0.42)
+
+[node name="BestiaryComponent" type="Node" parent="."]
+script = ExtResource("12_6q28q")
+entry = ExtResource("13_c0ved")
+metadata/_custom_type_script = "uid://b6mygu68dus13"

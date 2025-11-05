@@ -10,11 +10,18 @@ var currentState:State
 var health_component:HealthComponent
 var lockstate = false
 
+#PARTES DO PIRES caso precisar deletar dps:
+var bestiary_component:BestiaryComponent
+signal bestiaryActivate()
+signal bestiaryDeactivate()
+
 func _ready() -> void:
 	character = get_parent()
 
 	if character.has_node("HealthComponent"):
 		health_component = character.get_node("HealthComponent")
+	if character.has_node("BestiaryComponent"):#pires
+		bestiary_component = character.get_node("BestiaryComponent")
 	
 	for i in get_children():
 		if i is State:
@@ -27,6 +34,8 @@ func _ready() -> void:
 	
 	if health_component:
 		health_component.healthChanged.connect(healthChanged)
+	if bestiary_component: #pires
+		bestiaryActivate.connect(bestiary_component.bestiaryActivate)
 
 func requestStateChange(newState:String,data={}):
 	if lockstate:return
@@ -53,6 +62,7 @@ func _input(event: InputEvent) -> void:
 func healthChanged(new,_old):
 	if new<=0:
 		if has_state("Died"):
+			bestiaryActivate.emit()
 			requestStateChange("Died")
 			lockstate = true
 

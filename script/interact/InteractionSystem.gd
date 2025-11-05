@@ -23,6 +23,8 @@ func _input(event: InputEvent) -> void:
 		if action is Inventory: Ui.inventory.interact()
 	
 	if event.is_action_pressed("interact"):
+		if action is Bestiary:
+			Ui.bestiary_node.open()
 		if action is Map and Ui.map_node.is_open: 
 			Ui.map_node.deactivate()
 		if action is Dialogue:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://b1ejde12cbfqd"]
+[gd_scene load_steps=65 format=3 uid="uid://b1ejde12cbfqd"]
 
 [ext_resource type="Script" uid="uid://b4v73lx8blb1p" path="res://Scripts/Components/BaseEntity.gd" id="1_deixm"]
 [ext_resource type="Shader" uid="uid://lk8vqo6nbyf3" path="res://Shaders/Character.gdshader" id="1_s5hvp"]
@@ -15,6 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://ccadwpqfhix4n" path="res://Images/entities/Cobra/Cobra_morrendo-Sheet.png" id="11_s5hvp"]
 [ext_resource type="Texture2D" uid="uid://ducqpgptxqqti" path="res://Images/entities/Cobra/Cobra_golpeada-Sheet.png" id="12_u6gf8"]
 [ext_resource type="Script" uid="uid://0d7bnicgm37i" path="res://Scripts/Components/BaseHurtbox.gd" id="15_s5hvp"]
+[ext_resource type="Script" uid="uid://b6mygu68dus13" path="res://Scripts/Components/BestiaryComponent.gd" id="16_pqgdr"]
+[ext_resource type="Resource" uid="uid://djepib8yauktk" path="res://resource/bestiario/Cobra.tres" id="17_oflq6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_u6gf8"]
 shader = ExtResource("1_s5hvp")
@@ -461,3 +463,8 @@ debug_color = Color(0.874726, 0.201634, 0.694703, 0.42)
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 target_position = Vector2(0, 0)
+
+[node name="BestiaryComponent" type="Node" parent="."]
+script = ExtResource("16_pqgdr")
+entry = ExtResource("17_oflq6")
+metadata/_custom_type_script = "uid://b6mygu68dus13"

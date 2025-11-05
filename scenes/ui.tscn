@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://cc2qsjoqgcdqu"]
+[gd_scene load_steps=42 format=3 uid="uid://cc2qsjoqgcdqu"]
 
 [ext_resource type="Script" uid="uid://dfxy21hd8djmg" path="res://script/ui.gd" id="1_nt7q6"]
 [ext_resource type="PackedScene" uid="uid://d0gxkspxt0ool" path="res://Scenes/UI/dialogue.tscn" id="2_ryf15"]
@@ -16,7 +16,6 @@
 [ext_resource type="Resource" uid="uid://djepib8yauktk" path="res://resource/bestiario/Cobra.tres" id="10_kuui0"]
 [ext_resource type="Script" uid="uid://dasuh6is0cd16" path="res://script/page.gd" id="10_whq80"]
 [ext_resource type="Resource" uid="uid://6jy8mcvlwf8g" path="res://resource/bestiario/golem de terra.tres" id="11_kuui0"]
-[ext_resource type="Resource" uid="uid://cetqeg5fq3ron" path="res://Images/UI/not_found.tres" id="16_fe2sg"]
 [ext_resource type="Script" uid="uid://b66lqor03c8rd" path="res://Scenes/admin.gd" id="16_kuui0"]
 [ext_resource type="Texture2D" uid="uid://b1ohlt1jytqyy" path="res://Images/UI/bestiary_menu.png" id="17_smy1h"]
 [ext_resource type="Resource" uid="uid://l46ol1r3igyq" path="res://resource/bestiario/Piranha.tres" id="18_v4f2e"]
@@ -39,17 +38,17 @@ Panel/styles/panel = SubResource("StyleBoxFlat_ryf15")
 
 [sub_resource type="Resource" id="Resource_d42i4"]
 script = ExtResource("9_8fs27")
-entries = Array[ExtResource("10_whq80")]([ExtResource("11_kuui0"), ExtResource("16_fe2sg")])
+entries = Array[ExtResource("10_whq80")]([ExtResource("19_fe2sg"), ExtResource("10_kuui0")])
 metadata/_custom_type_script = "uid://cslwexrneb8sn"
 
 [sub_resource type="Resource" id="Resource_8fs27"]
 script = ExtResource("9_8fs27")
-entries = Array[ExtResource("10_whq80")]([ExtResource("10_kuui0"), ExtResource("18_v4f2e")])
+entries = Array[ExtResource("10_whq80")]([ExtResource("18_v4f2e"), ExtResource("11_kuui0")])
 metadata/_custom_type_script = "uid://cslwexrneb8sn"
 
 [sub_resource type="Resource" id="Resource_whq80"]
 script = ExtResource("9_8fs27")
-entries = Array[ExtResource("10_whq80")]([ExtResource("19_fe2sg"), ExtResource("16_fe2sg")])
+entries = Array[ExtResource("10_whq80")]([ExtResource("11_kuui0"), null])
 metadata/_custom_type_script = "uid://cslwexrneb8sn"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nbcfj"]
@@ -183,6 +182,7 @@ inventario = Array[ExtResource("4_lkjmk")]([ExtResource("5_d42i4"), ExtResource(
 [node name="Confirm" parent="." instance=ExtResource("4_nt8jn")]
 
 [node name="debug" type="Label" parent="."]
+visible = false
 offset_right = 40.0
 offset_bottom = 23.0
 

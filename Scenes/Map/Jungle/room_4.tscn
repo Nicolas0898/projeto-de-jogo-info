@@ -22,7 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://bc4vsdggdjydf" path="res://Scenes/Objects/aguaboia.tscn" id="20_x5xf7"]
 [ext_resource type="PackedScene" uid="uid://d1qq5a1g2k3v" path="res://Scenes/Entities/Fly/fly_body.tscn" id="21_sgctt"]
 [ext_resource type="PackedScene" uid="uid://vokqjyhjkv4a" path="res://Scenes/Objects/lamp.tscn" id="22_fwf8s"]
-[ext_resource type="PackedScene" uid="uid://bgj5i6vxa07tq" path="res://Scenes/Entities/Piranha/piranha.tscn" id="23_b3gru"]
+[ext_resource type="PackedScene" uid="uid://bgj5i6vxa07tq" path="res://Scenes/Entities/piranha.tscn" id="23_b3gru"]
 [ext_resource type="PackedScene" uid="uid://b1ejde12cbfqd" path="res://Scenes/Entities/Cobra/cobra.tscn" id="24_js4g3"]
 [ext_resource type="PackedScene" uid="uid://cggtt882ti85n" path="res://Scenes/particles/firefly.tscn" id="25_3kbr4"]
 [ext_resource type="PackedScene" uid="uid://bq0bgr3kyeosf" path="res://Scenes/particles/bubble_ambient.tscn" id="26_3kbr4"]

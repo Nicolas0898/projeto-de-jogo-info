@@ -23,7 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://cggtt882ti85n" path="res://Scenes/particles/firefly.tscn" id="18_w6xgs"]
 [ext_resource type="PackedScene" uid="uid://vokqjyhjkv4a" path="res://Scenes/Objects/lamp.tscn" id="20_bonop"]
 [ext_resource type="PackedScene" uid="uid://bc4vsdggdjydf" path="res://Scenes/Objects/aguaboia.tscn" id="21_ruubq"]
-[ext_resource type="PackedScene" uid="uid://bgj5i6vxa07tq" path="res://Scenes/Entities/Piranha/piranha.tscn" id="22_kfepi"]
+[ext_resource type="PackedScene" uid="uid://bgj5i6vxa07tq" path="res://Scenes/Entities/piranha.tscn" id="22_kfepi"]
 [ext_resource type="Texture2D" uid="uid://c7jbun514lps5" path="res://Images/arrow.png" id="23_ll84f"]
 
 [sub_resource type="GDScript" id="GDScript_no33e"]
