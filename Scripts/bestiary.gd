@@ -25,9 +25,17 @@ func load_pages():
 			scene.get_node("sprite").texture = e.image
 			scene.get_node("sprite").get_node("border").texture = e.border
 			scene.get_node("name").text = e.nome
-			scene.get_node("subtitle_node").get_node("subtitle").text = "Derrotado " + str(e.times_eliminated) + " vez(es)"
+			if e.subtitle == "c": #Se for C então contar kills
+				scene.get_node("subtitle_node").get_node("subtitle").text = "Derrotado " + str(e.times_eliminated) + " vez(es)"
+			else:
+				scene.get_node("subtitle_node").get_node("subtitle").text = e.subtitle
 			scene.get_node("desc_node").get_node("desc").text = e.desc
-			#scene.get_node("indicator")
+			var texture = null
+			if e.indicator == 0: scene.get_node("HBoxContainer").get_node("icon_node").queue_free()
+			else:
+				if e.indicator == 1: texture = load("res://Images/UI/skull_01.png")
+				if e.indicator == 2: texture = load("res://Images/UI/skull_02.png")
+				scene.get_node("HBoxContainer").get_node("icon_node").get_node("icon").texture = texture
 		
 		if scene.name == "bestiary_label":
 			scene.get_node("desc").text = e.text
@@ -49,7 +57,7 @@ func pass_page(direction : String):
 			pos = pos - 1 
 			page_sprite.play("page_left")
 	
-	print(pos)
+	#print(pos)
 	if pos != arm:
 		load_pages()
 
@@ -80,8 +88,9 @@ func refresh(): #Toda a parte lógica da organização
 		visible_pages.append(nenhum)
 	
 	#for dp in range(len(visible_pages)):
-	#	for p in range(len(visible_pages[dp].entries)):
-	#		print(visible_pages[dp].entries[p].nome)
+		#for p in range(len(visible_pages[dp].entries)):
+			#if visible_pages[dp].entries[p] is bestiary_entry:
+				#print(visible_pages[dp].entries[p].nome)
 	#print(visible_pages[0].entries[1].nome)
 	
 	

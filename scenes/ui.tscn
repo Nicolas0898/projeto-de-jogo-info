@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://cc2qsjoqgcdqu"]
+[gd_scene load_steps=43 format=3 uid="uid://cc2qsjoqgcdqu"]
 
 [ext_resource type="Script" uid="uid://dfxy21hd8djmg" path="res://script/ui.gd" id="1_nt7q6"]
 [ext_resource type="PackedScene" uid="uid://d0gxkspxt0ool" path="res://Scenes/UI/dialogue.tscn" id="2_ryf15"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://b1ohlt1jytqyy" path="res://Images/UI/bestiary_menu.png" id="17_smy1h"]
 [ext_resource type="Resource" uid="uid://l46ol1r3igyq" path="res://resource/bestiario/Piranha.tres" id="18_v4f2e"]
 [ext_resource type="Resource" uid="uid://6so10j2cym6y" path="res://resource/bestiario/Mosca.tres" id="19_fe2sg"]
+[ext_resource type="Resource" uid="uid://b06dwr2chblgg" path="res://resource/bestiario/golem_label.tres" id="19_v4f2e"]
 
 [sub_resource type="Gradient" id="Gradient_nt8jn"]
 colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1)
@@ -43,12 +44,12 @@ metadata/_custom_type_script = "uid://cslwexrneb8sn"
 
 [sub_resource type="Resource" id="Resource_8fs27"]
 script = ExtResource("9_8fs27")
-entries = Array[ExtResource("10_whq80")]([ExtResource("18_v4f2e"), ExtResource("11_kuui0")])
+entries = Array[ExtResource("10_whq80")]([ExtResource("18_v4f2e"), null])
 metadata/_custom_type_script = "uid://cslwexrneb8sn"
 
 [sub_resource type="Resource" id="Resource_whq80"]
 script = ExtResource("9_8fs27")
-entries = Array[ExtResource("10_whq80")]([ExtResource("11_kuui0"), null])
+entries = Array[ExtResource("10_whq80")]([ExtResource("11_kuui0"), ExtResource("19_v4f2e")])
 metadata/_custom_type_script = "uid://cslwexrneb8sn"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nbcfj"]

@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="bestiary_entry" load_steps=4 format=3 uid="uid://6so10j2cym6y"]
+[gd_resource type="Resource" script_class="bestiary_entry" load_steps=5 format=3 uid="uid://6so10j2cym6y"]
 
 [ext_resource type="Script" uid="uid://cqkbc8kwvsfra" path="res://script/bestiary_entry.gd" id="1_1od0k"]
 [ext_resource type="Texture2D" uid="uid://cuclm2g1c74f0" path="res://Scenes/Entities/Fly/Mosca morrendo-Sheet.png" id="1_3y2ph"]
+[ext_resource type="Script" uid="uid://dasuh6is0cd16" path="res://script/page.gd" id="2_5j5h5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_neyaq"]
 atlas = ExtResource("1_3y2ph")
@@ -10,9 +11,12 @@ region = Rect2(0, 0, 32, 0)
 [resource]
 script = ExtResource("1_1od0k")
 nome = "Mosca gosmenta"
+subtitle = "c"
 desc = "Essas moscas enormes e insuportáveis estão em todo o lugar, elas parecem todas ter uma mesma origem e seus objetivos são simples, comer e acumular comida, dito isso, suas habilidades de ataque não combinam com seu objetivo simples. eu acho que essa pode ser a criatura mais mortal desse pântano"
 hp = 0.0
 times_eliminated = 0
 indicator = 0
 image = SubResource("AtlasTexture_neyaq")
+pages = Array[ExtResource("2_5j5h5")]([])
+is_visible = false
 metadata/_custom_type_script = "uid://cqkbc8kwvsfra"

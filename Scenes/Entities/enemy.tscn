@@ -1,0 +1,84 @@
+[gd_scene load_steps=13 format=3 uid="uid://bf6r3ecoob2o0"]
+
+[ext_resource type="Script" uid="uid://b4v73lx8blb1p" path="res://Scripts/Components/BaseEntity.gd" id="1_tx8ge"]
+[ext_resource type="Script" uid="uid://1ughpmhhrew" path="res://Scripts/Components/HealthComponent.gd" id="2_4ar56"]
+[ext_resource type="Script" uid="uid://lurpfwbx4y8w" path="res://Scripts/StateMachine/StateMachine.gd" id="3_hroqg"]
+[ext_resource type="Script" uid="uid://ca8wa4d6wsrqb" path="res://Scripts/StateMachine/State.gd" id="4_ny53q"]
+[ext_resource type="Texture2D" uid="uid://3ry8a1y46fp8" path="res://Images/entities/enemy.png" id="5_iaxvc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0ta7"]
+atlas = ExtResource("5_iaxvc")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cbtin"]
+atlas = ExtResource("5_iaxvc")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fu0go"]
+atlas = ExtResource("5_iaxvc")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qxuwl"]
+atlas = ExtResource("5_iaxvc")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gg7rt"]
+atlas = ExtResource("5_iaxvc")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ghwxj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0ta7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cbtin")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fu0go")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qxuwl")
+}],
+"loop": true,
+"name": &"dashing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gg7rt")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3am8q"]
+
+[node name="enemy" type="CharacterBody2D"]
+script = ExtResource("1_tx8ge")
+metadata/_custom_type_script = "uid://b4v73lx8blb1p"
+
+[node name="HealthComponent" type="Node" parent="."]
+script = ExtResource("2_4ar56")
+metadata/_custom_type_script = "uid://1ughpmhhrew"
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initialState")]
+script = ExtResource("3_hroqg")
+initialState = NodePath("idle")
+metadata/_custom_type_script = "uid://lurpfwbx4y8w"
+
+[node name="idle" type="Node" parent="StateMachine"]
+script = ExtResource("4_ny53q")
+metadata/_custom_type_script = "uid://ca8wa4d6wsrqb"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ghwxj")
+animation = &"dashing"
+frame_progress = 0.275899
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 5)
+scale = Vector2(0.829287, 1.12266)
+shape = SubResource("RectangleShape2D_3am8q")

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="bestiary_label" load_steps=2 format=3 uid="uid://b06dwr2chblgg"]
+
+[ext_resource type="Script" uid="uid://cvcbjk1q6vmty" path="res://script/bestiary_label.gd" id="1_cpmud"]
+
+[resource]
+script = ExtResource("1_cpmud")
+text = "Dizem que o Golem de Terra é um dos seres mais poderosos de todo o pântano. Com seu corpo feito de pedra e sua harmonia com a natureza, o Golem mantém o pântano protegido."
+is_visible = false
+metadata/_custom_type_script = "uid://cvcbjk1q6vmty"
