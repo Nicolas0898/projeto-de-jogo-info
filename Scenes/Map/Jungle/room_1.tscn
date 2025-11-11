@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=4 uid="uid://cwrl44jwaopp4"]
+[gd_scene load_steps=40 format=4 uid="uid://cwrl44jwaopp4"]
 
 [ext_resource type="Script" uid="uid://xbqu3ca63qn6" path="res://Scripts/Components/SpawnLocation.gd" id="1_2518j"]
 [ext_resource type="TileSet" uid="uid://dctgdgbcalghh" path="res://Scenes/Map/JUNGLE_FOREGROUND.tres" id="1_seqh0"]
@@ -31,7 +31,6 @@
 [ext_resource type="Script" uid="uid://qsuh4f4vfaje" path="res://indicator.gd" id="29_15me3"]
 [ext_resource type="PackedScene" uid="uid://vokqjyhjkv4a" path="res://Scenes/Objects/lamp.tscn" id="29_pty4f"]
 [ext_resource type="Texture2D" uid="uid://bnodwenqxsjmc" path="res://Images/assets/stone_assets/stone_asset03.png" id="30_15me3"]
-[ext_resource type="Texture2D" uid="uid://bft8ttyeb6hd2" path="res://Images/idk.png" id="32_0snd7"]
 
 [sub_resource type="GDScript" id="GDScript_no33e"]
 script/source = "extends Node
@@ -555,10 +554,6 @@ collision_mask = 32
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WaterBlock2"]
 position = Vector2(659.5, 0.75)
 shape = SubResource("RectangleShape2D_15me3")
-
-[node name="Idk" type="Sprite2D" parent="."]
-position = Vector2(254, -34)
-texture = ExtResource("32_0snd7")
 
 [editable path="ParallaxBackground2"]
 [editable path="ParallaxBackground"]

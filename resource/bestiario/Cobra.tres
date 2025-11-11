@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="bestiary_entry" load_steps=4 format=3 uid="uid://djepib8yauktk"]
+[gd_resource type="Resource" script_class="bestiary_entry" load_steps=5 format=3 uid="uid://djepib8yauktk"]
 
 [ext_resource type="Texture2D" uid="uid://7d8q3113516e" path="res://Images/entities/Cobra/Cobra_parada-Sheet.png" id="1_fcoku"]
 [ext_resource type="Script" uid="uid://cqkbc8kwvsfra" path="res://script/bestiary_entry.gd" id="1_qe6tn"]
+[ext_resource type="Script" uid="uid://dasuh6is0cd16" path="res://script/page.gd" id="2_g7xmx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g7xmx"]
 atlas = ExtResource("1_fcoku")
@@ -10,9 +11,12 @@ region = Rect2(0, 0, 32, 0)
 [resource]
 script = ExtResource("1_qe6tn")
 nome = "Cobra do pântano"
+subtitle = ""
 desc = "As cobras do pântano são maiores do que o normal e exibem uma coloração chamativa, o pântano é todo verde mas essa cobra é roxa contrastando com praticamente tudo, suspeito que isso signifique que ela seja venenosa, mas ela morreu antes de eu descobrir"
 hp = 0.0
 times_eliminated = 0
 indicator = 0
 image = SubResource("AtlasTexture_g7xmx")
+pages = Array[ExtResource("2_g7xmx")]([])
+is_visible = false
 metadata/_custom_type_script = "uid://cqkbc8kwvsfra"
