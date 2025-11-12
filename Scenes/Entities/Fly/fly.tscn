@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://dg6ytmh86qth1" path="res://Images/Fly/parando.png" id="9_ylf0o"]
 [ext_resource type="Script" uid="uid://b6mygu68dus13" path="res://Scripts/Components/BestiaryComponent.gd" id="10_qphnb"]
 [ext_resource type="Texture2D" uid="uid://3r7bq3e88kcl" path="res://Images/Fly/morrendo.png" id="10_w8lvy"]
-[ext_resource type="Resource" uid="uid://6so10j2cym6y" path="res://resource/bestiario/Mosca.tres" id="11_vjhpu"]
+[ext_resource type="Resource" uid="uid://6so10j2cym6y" path="res://Images/entities/resource/bestiario/Mosca.tres" id="11_vjhpu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cnhfl"]
 shader = ExtResource("1_d6fad")

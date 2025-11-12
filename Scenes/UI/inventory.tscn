@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://u2v7vikk56v2" path="res://Images/UI/square.png" id="1_14o23"]
 [ext_resource type="Script" uid="uid://ewrkrfl4tybb" path="res://script/inventory.gd" id="2_d513x"]
 [ext_resource type="Script" uid="uid://bu8krnugqph56" path="res://script/item_scripts/item.gd" id="3_2lqwa"]
-[ext_resource type="Resource" uid="uid://dhj1nx7sy3gd2" path="res://resource/item/Poção_cura.tres" id="4_v8bd3"]
-[ext_resource type="Resource" uid="uid://cijnx7iq50t2u" path="res://resource/item/Plumerico.tres" id="5_m06hg"]
+[ext_resource type="Resource" uid="uid://dhj1nx7sy3gd2" path="res://Images/entities/resource/item/Poção_cura.tres" id="4_v8bd3"]
+[ext_resource type="Resource" uid="uid://cijnx7iq50t2u" path="res://Images/entities/resource/item/Plumerico.tres" id="5_m06hg"]
 [ext_resource type="FontFile" uid="uid://b71f1nslp8bqt" path="res://fonts/BoldPixels.ttf" id="6_mnhd3"]
 [ext_resource type="StyleBox" uid="uid://5wvj2f2hfhom" path="res://Scenes/UI/inventory_ui.tres" id="7_or60b"]
 

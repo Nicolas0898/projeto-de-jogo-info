@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dl68pqvut2yto" path="res://Scenes/Map/parallax_backgroun.tscn" id="8_ofhd1"]
 [ext_resource type="PackedScene" uid="uid://dqiyuc6o8q627" path="res://Scenes/interaction_area.tscn" id="9_sqglm"]
 [ext_resource type="PackedScene" uid="uid://bhhvto6dt5454" path="res://Scenes/Map/JungleParallax.tscn" id="10_2ok4s"]
-[ext_resource type="Resource" uid="uid://ckyg1bo3olhw0" path="res://resource/item/Gaiola.tres" id="10_nvjd3"]
+[ext_resource type="Resource" uid="uid://ckyg1bo3olhw0" path="res://Images/entities/resource/item/Gaiola.tres" id="10_nvjd3"]
 [ext_resource type="Texture2D" uid="uid://cyw1woq2weih" path="res://Images/weapons/gaiola_inv.png" id="11_4cbs5"]
 [ext_resource type="PackedScene" uid="uid://dwr4crb3vhg5b" path="res://Scenes/Map/world_environment.tscn" id="11_fci24"]
 [ext_resource type="Script" uid="uid://c41v5wv6fa0vx" path="res://script/item_scripts/item_giver.gd" id="11_h3vtl"]
