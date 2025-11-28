@@ -6,7 +6,7 @@ class_name Bestiary
 
 @export var pages : Array[double_page] #TODAS as páginas (até as não encontradas)
 var visible_pages : Array[double_page] #Apenas as páginas encontradas
-var none = load("res://resource/bestiario/Não encontrado.tres")
+var none = load("res://Images/entities/resource/bestiario/Não encontrado.tres")
 
 var is_open : bool = false
 var pos = 0
@@ -63,6 +63,7 @@ func pass_page(direction : String):
 
 func _ready() -> void:
 	refresh()
+	#print(visible_pages)
 
 func refresh(): #Toda a parte lógica da organização
 	visible_pages = []
@@ -84,8 +85,9 @@ func refresh(): #Toda a parte lógica da organização
 			visible_pages.append(showing)
 	
 	if visible_pages == []: #Se ele achou nada até agora (não sei como)
-		var nenhum = load("res://resource/bestiario/Nenhum.tres")
+		var nenhum = load("res://Images/entities/resource/bestiario/Nenhum.tres")
 		visible_pages.append(nenhum)
+	
 	
 	#for dp in range(len(visible_pages)):
 		#for p in range(len(visible_pages[dp].entries)):
