@@ -7,70 +7,79 @@ func _ready() -> void:
 
 signal go(value)
 
-func returntoog():
-	if character.state_machine.currentState.name == "Core":
-		character.remove_core(2)
 		
 func spritechanged():
-	if character.sprite.frame == 8 and character.sprite.animation == "cage":
+	if character.sprite.frame == 4 and character.sprite.animation == "cage":
 		go.emit(true)
-		
+
+var isactive = false
+
 func use():
 	if on_cooldown: return
+	Crosshair.current.requestStateChange("Cast",2)
+	isactive = true
+	
+
+func use_end():
+	Crosshair.current.backToCore(2)
+	if on_cooldown or (not isactive): return
+	isactive = false
 	set_on_cooldown()
 	
 	go.emit(false)
-	character.sprite.animation_finished.disconnect(returntoog)
-	character.sprite.frame_changed.disconnect(spritechanged)
-	character.set_core(2)
-	character.sprite.play("cage")
 	
-	character.sprite.animation_finished.connect(returntoog)
+	character.sprite.frame_changed.disconnect(spritechanged)
+
+	character.set_core(2)
+	print(Crosshair.look.x<0)
+	character.sprite.flip_h = (Crosshair.look.x<0)
+	character.sprite.playAnimation("cage",1)
 	
 	character.sprite.frame_changed.connect(spritechanged)
+	
 	var a = await go
 	if not a:return
+	get_tree().create_timer(0.4).timeout.connect(func(): character.remove_core(2))
 	character.sprite.frame_changed.disconnect(spritechanged)
 	
 	
-	var dir = -1 if GameHandler.Player.sprite.flip_h else 1
 	var instance = LEAF_CAGE.instantiate()
 	
 	var raycast = RayCast2D.new()
-	raycast.target_position = Vector2(dir*100,0)
 	raycast.global_position = GameHandler.Player.global_position
+	raycast.target_position = Crosshair.look * raycast.global_position.distance_to(Crosshair.pos)
+	var dir = -1 if raycast.target_position.x<1 else 1
+	
 	get_tree().current_scene.add_child(raycast)
 	raycast.force_raycast_update()
-	print(raycast.get_collision_point())
 	
 	if raycast.get_collider():
 		instance.global_position = raycast.get_collision_point() - Vector2(16*dir,0)
 	else:
-		instance.global_position = GameHandler.Player.global_position + Vector2(100*dir,10)
-	
-	
-	var area2D = Area2D.new()
-	var shape = CollisionShape2D.new()
-	var rectShape = RectangleShape2D.new()
-	rectShape.size = Vector2(230,180)
-	shape.shape = rectShape
-	area2D.add_child(shape)
-	
-	area2D.global_position = GameHandler.Player.global_position + Vector2(rectShape.size.x/2,0)*dir
-	area2D.set_collision_mask_value(1,false)
-	area2D.set_collision_mask_value(2,true)
-	get_tree().current_scene.add_child(area2D)
-
-
-	await get_tree().physics_frame
-	await get_tree().physics_frame
-	var bodies = area2D.get_overlapping_bodies()
-	var body = null
-	var destun
-	print(bodies)
-	if bodies.size() > 0:
-		body = bodies[0] as BaseEntity
+		instance.global_position = Crosshair.pos + Vector2(0,16)
 		
+	raycast.queue_free()
+	
+	#var area2D = Area2D.new()
+	#var shape = CollisionShape2D.new()
+	#var rectShape = RectangleShape2D.new()
+	#rectShape.size = Vector2(230,180)
+	#shape.shape = rectShape
+	#area2D.add_child(shape)
+	
+	#area2D.global_position = GameHandler.Player.global_position + Vector2(rectShape.size.x/2,0)*dir
+	#area2D.set_collision_mask_value(1,false)
+	#area2D.set_collision_mask_value(2,true)
+	#get_tree().current_scene.add_child(area2D)
+
+
+	#await get_tree().physics_frame
+	#await get_tree().physics_frame
+	
+	var body = Crosshair.current.selectedTarget
+	var destun
+	
+	if body:
 		var sprite2d:AnimatedSprite2D
 		
 		for child in body.get_children():
@@ -88,7 +97,6 @@ func use():
 		body.state_machine.requestStateChange("Stunned")
 			
 		destun = func():
-			print("ASDASDASDSA")
 			if not is_instance_valid(body): return
 			if body.state_machine.currentState.name == "Stunned":
 				body.state_machine.requestStateChange(b)
@@ -108,9 +116,8 @@ func use():
 		body.get_node("HealthComponent").damaged.connect(destroyOnHit)
 	
 	timer.timeout.connect(func():
-		character.sprite.animation_finished.disconnect(returntoog)
 		if body: destun.call()
-		area2D.queue_free()
+		#area2D.queue_free()
 		if is_instance_valid(body):
 			body.get_node("HealthComponent").damaged.disconnect(destroyOnHit)
 		create_tween().tween_property(instance,"modulate",Color(1,1,1,0),0.3)

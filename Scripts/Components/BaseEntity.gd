@@ -6,7 +6,10 @@ var variable_velocity = Vector2()
 var true_constant_velocity = Vector2.ZERO
 @onready var state_machine: StateMachine = $StateMachine
 @onready var shader = material as ShaderMaterial
-	
+
+func _ready() -> void:
+	add_to_group("Enemy",true)
+
 func apply_gravity(delta:float):
 	variable_velocity  += get_gravity()*delta
 	variable_velocity.x += -variable_velocity.normalized().x*20

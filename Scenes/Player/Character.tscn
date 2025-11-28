@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://brkn5mjfr67t4"]
+[gd_scene load_steps=60 format=3 uid="uid://brkn5mjfr67t4"]
 
 [ext_resource type="Shader" uid="uid://lk8vqo6nbyf3" path="res://Shaders/Character.gdshader" id="1_aeg27"]
 [ext_resource type="Script" uid="uid://bhahlqc4v651w" path="res://Scripts/Player/character.gd" id="1_d8n76"]
@@ -33,7 +33,9 @@
 [ext_resource type="Texture2D" uid="uid://dlghl7efhf7rm" path="res://Images/Player/idle/personagem com capa7.png" id="21_du3pq"]
 [ext_resource type="Texture2D" uid="uid://b8rapwthjwyql" path="res://Images/Player/grapilling hook.png" id="22_4g8e6"]
 [ext_resource type="Script" uid="uid://cdh4rwxb1fesc" path="res://Scripts/Weapons/spear.gd" id="31_qyni0"]
+[ext_resource type="Texture2D" uid="uid://bp426a6nis68a" path="res://Images/Player/lança.png" id="34_anaxe"]
 [ext_resource type="PackedScene" uid="uid://h8k072i4ijxq" path="res://Scenes/Player/crosshair.tscn" id="34_fhm5h"]
+[ext_resource type="Script" uid="uid://qbdj0dpq2x65" path="res://Scenes/Player/sprite.gd" id="35_um7yn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qyni0"]
 shader = ExtResource("1_aeg27")
@@ -45,22 +47,6 @@ size = Vector2(8, 19)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aflf6"]
 size = Vector2(12, 21)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1u8v8"]
-atlas = ExtResource("19_du3pq")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wbe8h"]
-atlas = ExtResource("19_du3pq")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_knf1k"]
-atlas = ExtResource("19_du3pq")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_r743o"]
-atlas = ExtResource("19_du3pq")
-region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vv7ta"]
 atlas = ExtResource("19_du3pq")
@@ -126,21 +112,21 @@ region = Rect2(256, 0, 32, 32)
 atlas = ExtResource("22_4g8e6")
 region = Rect2(288, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_tmb06"]
+atlas = ExtResource("34_anaxe")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p3mbq"]
+atlas = ExtResource("34_anaxe")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yda57"]
+atlas = ExtResource("34_anaxe")
+region = Rect2(128, 0, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_a0efk"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1u8v8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wbe8h")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_knf1k")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_r743o")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vv7ta")
 }, {
@@ -273,6 +259,20 @@ animations = [{
 "loop": true,
 "name": &"run",
 "speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tmb06")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p3mbq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yda57")
+}],
+"loop": false,
+"name": &"spearattack",
+"speed": 12.0
 }]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
@@ -387,11 +387,12 @@ target_position = Vector2(0, -32)
 use_parent_material = true
 position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_a0efk")
-animation = &"hook"
+animation = &"cage"
 autoplay = "idle"
 frame = 5
 frame_progress = 1.0
 offset = Vector2(0.920864, -1.3813)
+script = ExtResource("35_um7yn")
 
 [node name="HookCast" type="RayCast2D" parent="."]
 

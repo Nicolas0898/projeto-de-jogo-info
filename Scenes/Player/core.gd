@@ -7,3 +7,4 @@ func onPhysics(delta:float):
 	player.apply_gravity(delta)
 	player.check_for_collisions()
 	player.default_move()
+	player.sprite.playAnimation("idle")

@@ -13,7 +13,7 @@ var speed_multiplier = 1
 
 @onready var camera: Camera2D = $Camera2D
 @onready var hitbox: CollisionShape2D = $Hitbox
-@onready var sprite: AnimatedSprite2D = $Sprite
+@onready var sprite: PriorityAnimatedSprite2D = $Sprite
 @onready var crouch_cast: RayCast2D = $CrouchCast
 @onready var crouch_cast_2: RayCast2D = $CrouchCast2
 @onready var top_edge_cast: RayCast2D = $TopEdgeCast

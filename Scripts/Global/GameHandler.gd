@@ -15,6 +15,7 @@ const COIN = preload("res://Scenes/Objects/coin.tscn")
 func spawn_coins(at_pos:Vector2,number):
 	for i in range(number):
 		var coin = COIN.instantiate()
-		get_tree().current_scene.add_child(coin)
+		get_tree().current_scene.add_child.call_deferred(coin)
 		coin.global_position = at_pos
-		coin.linear_velocity = Vector2(randf_range(-50,50),-400)
+		coin.linear_velocity = Vector2(randf_range(-50,50),randf_range(-450,-350))
+		

@@ -8,7 +8,7 @@ func onPhysics(delta:float):
 	player.check_for_collisions()
 	player.default_move()
 	
-	player.sprite.play("idle")
+	player.sprite.playAnimation("idle")
 	
 	if not player.is_on_floor() : stateMachine.requestStateChange("Falling")
 	if Input.is_action_pressed("jump"):stateMachine.requestStateChange("Jump")

@@ -6,6 +6,7 @@ extends Node
 
 var max_distance := 250.0
 var selected_hook:GrappleNode
+var visual_selected_hook:GrappleNode
 var disabled_points = []
 var buffer_active = false
 
@@ -32,6 +33,7 @@ func get_closest_hook_point():
 	var hookpoints = get_tree().get_nodes_in_group("GrappleNode")
 	var nearest_instance = null
 	var nearest_distance = null
+	var vsh
 	
 	for hook in hookpoints:
 		var current_distance = hook.global_position.distance_to(character.global_position)
@@ -39,6 +41,8 @@ func get_closest_hook_point():
 		character.hook_cast.target_position = character.to_local(hook.global_position)
 		character.hook_cast.force_raycast_update()
 		
+		if cursor_distance<=64:
+			vsh = hook
 		if character.hook_cast.get_collider(): continue
 		if current_distance>hook.range:continue
 		if cursor_distance>64:continue
@@ -47,6 +51,7 @@ func get_closest_hook_point():
 			nearest_instance = hook
 			nearest_distance = current_distance
 
+	visual_selected_hook = vsh
 	return nearest_instance
 	
 func set_hook_visibility(value):
@@ -108,11 +113,16 @@ func _physics_process(delta: float) -> void:
 
 func _process(delta: float) -> void:
 	if selected_hook:
-		Crosshair.current.requestStateChange("hook",1)
-		Crosshair.current.cache = {"hookpos":selected_hook.global_position}
 		hook_select.position = selected_hook.global_position
+
+	
+	if visual_selected_hook:
+		Crosshair.current.requestStateChange("hook",1)
+		Crosshair.current.cache = {"hookpos":visual_selected_hook.global_position,"able":selected_hook}
+		hook_select.position = visual_selected_hook.global_position
 	else:
-		Crosshair.current.requestStateChange("core",1)
+		Crosshair.current.backToCore(1)
+		
 
 func _ready() -> void:
 	state_machine.onStateChange.connect(state_changed)

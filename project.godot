@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Movimentação"
-run/main_scene="uid://cwrl44jwaopp4"
+run/main_scene="uid://dsaft7a5ut06v"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 

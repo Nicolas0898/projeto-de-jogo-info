@@ -12,7 +12,7 @@ func onInput(event:InputEvent):
 		stateMachine.requestStateChange("Falling")
 
 func onStateEntered(_last):
-	character.sprite.play("hook")
+	character.sprite.playAnimation("hook",1)
 	var character:PlayerCharacter= stateMachine.character
 	
 	var hookpos = stateData.hook.global_position
@@ -40,6 +40,7 @@ func boost_character(y=-400):
 
 func onStateExit():
 	character.sprite.rotation = PI/4
+	character.sprite.stopAnimation(1)
 	character.sprite.play_backwards("hook")
 	var t = create_tween()
 	t.set_ease(Tween.EASE_OUT)

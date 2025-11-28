@@ -4,9 +4,10 @@ class_name Crosshair
 static var current:Crosshair
 var state = "core":
 	set(_newval):
+		_newval = _newval.to_lower()
 		if has_method("entered_"+_newval) and state!=_newval:
 			call("entered_"+_newval)
-		state = _newval
+		state = _newval.to_lower()
 
 @onready var Cursor: Sprite2D = $Cursor
 @onready var line: Line2D = $Line
@@ -17,9 +18,11 @@ static var pos
 static var look
 var targetRotation = 0.0
 var cache = {}
+var selectedTarget:Node2D
 
 func _ready() -> void:
 	current = self
+	%DebugMenu.watch(self,"state")
 
 func _process(delta: float) -> void:
 	if !is_instance_valid(Cursor) : return
@@ -29,7 +32,12 @@ func _process(delta: float) -> void:
 		call(state.to_lower(),delta)
 	else:
 		push_warning("State "+state+" does not exist");
-		
+
+func lerp_color_to(color,delta):
+	circle.self_modulate = circle.self_modulate.lerp(color,7*delta)
+	line.self_modulate = line.self_modulate.lerp(color,7*delta)
+	Cursor.self_modulate = Cursor.self_modulate.lerp(color,7*delta)
+
 func setCircleSize(size:Vector2):
 	circle.texture.width = size.x
 	circle.texture.height = size.y
@@ -47,8 +55,7 @@ func core(delta:float):
 	basic(delta)
 	circle.scale = circle.scale.lerp(Vector2.ZERO,10*delta)
 	line.visible = false
-
-
+	lerp_color_to(Color(1,1,1),delta)
 
 func hook(delta:float):
 	basic(delta)
@@ -58,12 +65,56 @@ func hook(delta:float):
 	line.global_position = pos
 	line.set_point_position(1,line.to_local(cache.hookpos))
 	line.visible = true
+	if not cache.able: 
+		lerp_color_to(Color(1,0,0),delta)
+	else:
+		lerp_color_to(Color(1,1,1),delta)
 
 func entered_hook():
 	circle.scale = Vector2.ZERO
 	setCircleSize(Vector2(128,128))
 	
+func entered_cast():
+	circle.global_position = pos
+	circle.scale = Vector2.ZERO
+	setCircleSize(Vector2(40,40))
+
+func cast(delta:float):
+	selectedTarget = null
+	Cursor.global_position = pos
+	circle.scale = circle.scale.lerp(Vector2.ONE,10*delta)
+	circle.rotate(PI*delta)
+	
+	Cursor.rotation = lerp(Cursor.rotation,PI/4,5*delta)
+	
+	var targetpos = pos
+	line.global_position = pos
+	
+	var current
+	for node in get_tree().get_nodes_in_group("Enemy") :
+		var distance_to_enemy = node.global_position.distance_to(pos)
+		if distance_to_enemy>48 : continue
+		if current and current.global_position.distance_to(pos)<distance_to_enemy:continue
+		current = node
+		targetpos = node.global_position
+		selectedTarget = current
+	
+	if current:
+		lerp_color_to(Color(0,1,0),delta)
+	else:
+		lerp_color_to(Color(1,0.8,0.8),delta)
+	
+	circle.global_position = circle.global_position.lerp(targetpos,20*delta)
+	line.set_point_position(1,line.to_local(circle.global_position))
+	line.visible = true
+
 
 func requestStateChange(state,newPriority):
-	if currentStatePriority<=newPriority:
+	if newPriority>=currentStatePriority:
+		currentStatePriority = newPriority
 		self.state = state
+
+func backToCore(priority):
+	if priority>=currentStatePriority:
+		self.state = "core"
+		currentStatePriority = 0

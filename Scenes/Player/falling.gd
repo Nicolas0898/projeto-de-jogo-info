@@ -21,7 +21,7 @@ func onPhysics(delta:float):
 
 func onStateEntered(oldState):
 	var player:PlayerCharacter = stateMachine.character
-	player.sprite.play("fall")
+	player.sprite.playAnimation("fall")
 	if oldState.name.to_lower() == "running"\
 	or oldState.name.to_lower() == "idle"\
 	or oldState.name.to_lower() == "crouching":

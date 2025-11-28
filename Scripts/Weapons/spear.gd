@@ -15,6 +15,7 @@ func _ready() -> void:
 
 func use():
 	if on_cooldown: return
+	#character.sprite.playAnimation("spearattack",1)
 	var size = Vector2(40,15)
 	var hitbox = Hitbox.from_rect(5,size)
 	
@@ -36,8 +37,8 @@ func use():
 	sprite.play("default")
 	var t = create_tween()
 	sprite.modulate = Color(1,1,1,0)
-	t.tween_property(sprite,"modulate",Color(1,1,1,1),0.1)
-	t.tween_property(sprite,"modulate",Color(1,1,1,0),0.2)
+	t.tween_property(sprite,"modulate",Color(1,1,1,1),0.2)
+	t.tween_property(sprite,"modulate",Color(1,1,1,0),0.1)
 	
 	
 	sprite.animation_finished.connect(func():
