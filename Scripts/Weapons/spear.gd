@@ -26,8 +26,8 @@ func use():
 	var sprite = SPEAR.instantiate()
 	set_on_cooldown()
 	
-	hitbox.position = character.last_looked_at*size.x*0.7
-	sprite.position = character.last_looked_at
+	hitbox.position = Crosshair.look*size.x*0.7
+	sprite.position = Crosshair.look
 	add_child(hitbox)
 	add_child(sprite)
 	hitbox.look_at(character.global_position)
@@ -43,7 +43,7 @@ func use():
 	sprite.animation_finished.connect(func():
 		await t.finished
 		sprite.queue_free())
-	var hitdir = character.last_looked_at
+	var hitdir = Crosshair.look
 	hitbox.onHit.connect(func(other):
 		character.health_component.heal(1)
 		var dir = other.global_position.direction_to(character.global_position).normalized()

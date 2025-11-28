@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://brkn5mjfr67t4"]
+[gd_scene load_steps=59 format=3 uid="uid://brkn5mjfr67t4"]
 
 [ext_resource type="Shader" uid="uid://lk8vqo6nbyf3" path="res://Shaders/Character.gdshader" id="1_aeg27"]
 [ext_resource type="Script" uid="uid://bhahlqc4v651w" path="res://Scripts/Player/character.gd" id="1_d8n76"]
@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://dlghl7efhf7rm" path="res://Images/Player/idle/personagem com capa7.png" id="21_du3pq"]
 [ext_resource type="Texture2D" uid="uid://b8rapwthjwyql" path="res://Images/Player/grapilling hook.png" id="22_4g8e6"]
 [ext_resource type="Script" uid="uid://cdh4rwxb1fesc" path="res://Scripts/Weapons/spear.gd" id="31_qyni0"]
+[ext_resource type="PackedScene" uid="uid://h8k072i4ijxq" path="res://Scenes/Player/crosshair.tscn" id="34_fhm5h"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qyni0"]
 shader = ExtResource("1_aeg27")
@@ -393,5 +394,7 @@ frame_progress = 1.0
 offset = Vector2(0.920864, -1.3813)
 
 [node name="HookCast" type="RayCast2D" parent="."]
+
+[node name="Crosshair" parent="." instance=ExtResource("34_fhm5h")]
 
 [connection signal="healthChanged" from="HealthComponent" to="." method="_on_health_component_health_changed"]

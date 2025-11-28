@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://h8k072i4ijxq"]
+
+[ext_resource type="Texture2D" uid="uid://b0wdvrqwvdrsh" path="res://Images/Player/crosshair.png" id="1_lh4i7"]
+[ext_resource type="Script" uid="uid://dlx2pn2pvorv6" path="res://Scenes/Player/crosshair.gd" id="1_repo7"]
+[ext_resource type="Texture2D" uid="uid://jf8h0hbkp8vt" path="res://Images/Player/cursorline.png" id="3_1jrlo"]
+
+[sub_resource type="Gradient" id="Gradient_repo7"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.981286, 1)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1jrlo"]
+gradient = SubResource("Gradient_repo7")
+width = 192
+height = 192
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[node name="Crosshair" type="Node2D"]
+top_level = true
+z_index = 4096
+script = ExtResource("1_repo7")
+
+[node name="Cursor" type="Sprite2D" parent="."]
+scale = Vector2(0.203125, 0.210938)
+texture = ExtResource("1_lh4i7")
+
+[node name="Circle" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.055)
+scale = Vector2(0.203125, 0.210938)
+texture = SubResource("GradientTexture2D_1jrlo")
+
+[node name="Line" type="Line2D" parent="."]
+texture_repeat = 2
+points = PackedVector2Array(0, 0, 0, 0)
+width = 3.0
+texture = ExtResource("3_1jrlo")
+texture_mode = 1

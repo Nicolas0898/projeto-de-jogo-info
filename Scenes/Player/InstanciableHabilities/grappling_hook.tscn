@@ -8,6 +8,7 @@
 script = ExtResource("1_xx3k7")
 
 [node name="HookSelect" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(1, 1, 1, 0)
 top_level = true
 position = Vector2(0, -23)

@@ -35,11 +35,13 @@ func get_closest_hook_point():
 	
 	for hook in hookpoints:
 		var current_distance = hook.global_position.distance_to(character.global_position)
+		var cursor_distance = Crosshair.current.pos.distance_to(hook.global_position)
 		character.hook_cast.target_position = character.to_local(hook.global_position)
 		character.hook_cast.force_raycast_update()
 		
 		if character.hook_cast.get_collider(): continue
 		if current_distance>hook.range:continue
+		if cursor_distance>64:continue
 		if hook.enabled == false:continue
 		if nearest_instance==null or nearest_distance >  current_distance:
 			nearest_instance = hook
@@ -106,7 +108,11 @@ func _physics_process(delta: float) -> void:
 
 func _process(delta: float) -> void:
 	if selected_hook:
+		Crosshair.current.requestStateChange("hook",1)
+		Crosshair.current.cache = {"hookpos":selected_hook.global_position}
 		hook_select.position = selected_hook.global_position
+	else:
+		Crosshair.current.requestStateChange("core",1)
 
 func _ready() -> void:
 	state_machine.onStateChange.connect(state_changed)

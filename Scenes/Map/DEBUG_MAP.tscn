@@ -128,7 +128,7 @@ position = Vector2(1851, -320)
 frame_progress = 0.0719289
 
 [node name="interaction_area" parent="." instance=ExtResource("9_y1q2s")]
-position = Vector2(1816, -345)
+position = Vector2(3106, -191)
 action = SubResource("Resource_16kie")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interaction_area"]
