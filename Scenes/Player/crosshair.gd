@@ -108,6 +108,23 @@ func cast(delta:float):
 	line.set_point_position(1,line.to_local(circle.global_position))
 	line.visible = true
 
+func entered_charged_attack():
+	setCircleSize(Vector2(128,128))
+	circle.scale = Vector2.ONE*0.5
+	
+	var t = create_tween()
+	t.set_ease(Tween.EASE_OUT)
+	t.set_trans(Tween.TRANS_CUBIC)
+	t.tween_property(circle,"scale",Vector2.ZERO,cache.time)
+
+func charged_attack(delta:float):
+	basic(delta)
+	circle.global_position = pos
+	circle.visible = true
+	line.visible = true
+	Cursor.self_modulate = Cursor.self_modulate.lerp(Color(1,1,1,0.2),15*delta)
+	line.global_position = pos
+	line.set_point_position(1,line.to_local(GameHandler.Player.global_position))
 
 func requestStateChange(state,newPriority):
 	if newPriority>=currentStatePriority:

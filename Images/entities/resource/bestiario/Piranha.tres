@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="bestiary_entry" load_steps=5 format=3 uid="uid://l46ol1r3igyq"]
 
 [ext_resource type="Texture2D" uid="uid://cs4dppu3iqr3g" path="res://Images/entities/piranha_spritesheet.png" id="1_ah1f2"]
-[ext_resource type="Script" uid="uid://cqkbc8kwvsfra" path="res://script/bestiary_entry.gd" id="1_rxqq3"]
-[ext_resource type="Script" uid="uid://dasuh6is0cd16" path="res://script/page.gd" id="2_ca81j"]
+[ext_resource type="Script" path="res://script/bestiary_entry.gd" id="1_rxqq3"]
+[ext_resource type="Script" path="res://script/page.gd" id="2_ca81j"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ah1f2"]
 atlas = ExtResource("1_ah1f2")

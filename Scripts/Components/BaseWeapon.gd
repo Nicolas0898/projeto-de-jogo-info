@@ -7,6 +7,7 @@ var on_cooldown = false
 
 var read_from = "use_weapon"
 var cd_timer:Timer
+var active = false
 func _ready() -> void:
 	cd_timer = Timer.new()
 	add_child(cd_timer)
@@ -25,9 +26,11 @@ func _input(event: InputEvent) -> void:
 		use_end()
 
 func use():
+	active = true
 	pass
 
 func use_end():
+	active = false
 	pass
 
 func set_on_cooldown():
