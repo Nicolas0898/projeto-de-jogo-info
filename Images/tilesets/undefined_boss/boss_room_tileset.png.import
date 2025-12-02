@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddxtvwsluyhng"
-path="res://.godot/imported/spear.png-bd08957e7155884fae8c822e5ed3302b.ctex"
+uid="uid://dwlla1vsw12qg"
+path="res://.godot/imported/boss_room_tileset.png-a6157bfe1ec2ab7483380a0a95a1f0f2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/weapons/spear.png"
-dest_files=["res://.godot/imported/spear.png-bd08957e7155884fae8c822e5ed3302b.ctex"]
+source_file="res://Images/tilesets/undefined_boss/boss_room_tileset.png"
+dest_files=["res://.godot/imported/boss_room_tileset.png-a6157bfe1ec2ab7483380a0a95a1f0f2.ctex"]
 
 [params]
 

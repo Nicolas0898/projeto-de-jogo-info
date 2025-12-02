@@ -93,7 +93,7 @@ particles_anim_loop = true
 offsets = PackedFloat32Array(0, 0.3, 0.745455, 1)
 colors = PackedColorArray(0, 0, 0, 0, 0.3, 0.3, 0.3, 1, 0.663636, 0.663636, 0.663636, 1, 1, 1, 1, 0)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_euixo"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ik31h"]
 gradient = SubResource("Gradient_ik31h")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_nr33p"]
@@ -108,7 +108,7 @@ linear_accel_min = 2.0
 linear_accel_max = 2.0
 scale_min = 0.5
 color = Color(6.629, 1, 1, 1)
-color_ramp = SubResource("GradientTexture1D_euixo")
+color_ramp = SubResource("GradientTexture1D_ik31h")
 anim_speed_min = 5.55
 anim_speed_max = 5.55
 turbulence_enabled = true

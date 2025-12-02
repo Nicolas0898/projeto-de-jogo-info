@@ -461,7 +461,7 @@ z_index = -1
 position = Vector2(-1053, -137)
 texture = ExtResource("26_xxwy6")
 script = ExtResource("29_15me3")
-frequency = 0.04
+frequency = 0.02
 amplitude = 4.0
 
 [node name="fireflies" type="Node2D" parent="."]
