@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="bestiary_entry" load_steps=5 format=3 uid="uid://6so10j2cym6y"]
 
-[ext_resource type="Script" path="res://script/bestiary_entry.gd" id="1_1od0k"]
+[ext_resource type="Script" uid="uid://cqkbc8kwvsfra" path="res://script/bestiary_entry.gd" id="1_1od0k"]
 [ext_resource type="Texture2D" uid="uid://cuclm2g1c74f0" path="res://Scenes/Entities/Fly/Mosca morrendo-Sheet.png" id="1_3y2ph"]
-[ext_resource type="Script" path="res://script/page.gd" id="2_5j5h5"]
+[ext_resource type="Script" uid="uid://dasuh6is0cd16" path="res://script/page.gd" id="2_5j5h5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_neyaq"]
 atlas = ExtResource("1_3y2ph")
