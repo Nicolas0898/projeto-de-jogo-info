@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://jb7iy2cdtt3s" path="res://Images/entities/firefly.png" id="2_j7h4l"]
 [ext_resource type="Texture2D" uid="uid://dr2ke0jnjr8oo" path="res://Images/tilesets/undefined_boss/web.png" id="3_8ujtm"]
 [ext_resource type="PackedScene" uid="uid://dwr4crb3vhg5b" path="res://Scenes/Map/world_environment.tscn" id="4_uv0us"]
-[ext_resource type="Texture2D" uid="uid://c8wsofoh7nlg1" path="res://Images/entities/boss.png" id="5_mekpf"]
+[ext_resource type="Texture2D" uid="uid://c8wsofoh7nlg1" path="res://Images/entities/undefined boss/boss.png" id="5_mekpf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j7h4l"]
 texture = ExtResource("1_21gfr")
