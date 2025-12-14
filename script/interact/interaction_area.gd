@@ -14,7 +14,7 @@ func _on_body_entered(body: Node2D) -> void:
 	#if body is PlayerCharacter:
 		#body.interaction_node.resource = action
 
-func _on_body_exited(body: Node2D) -> void:
+func _on_body_exited(_body: Node2D) -> void:
 	if InteractionSystem.current_action == action:
 		InteractionSystem.current_action = null
 		InteractionSystem.current_area = null

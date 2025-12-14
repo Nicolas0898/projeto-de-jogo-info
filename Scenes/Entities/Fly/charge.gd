@@ -1,8 +1,8 @@
 extends State
 
-func onPhysics(delta:float):
+func onPhysics(_delta:float):
 	var plrChar:PlayerCharacter = GameHandler.Player
-	var dist = character.global_position.direction_to(plrChar.global_position)
+	#var dist = character.global_position.direction_to(plrChar.global_position)
 	#character.constant_velocity.walk = dist*120
 	character.apply_air_friction()
 	character.default_move()

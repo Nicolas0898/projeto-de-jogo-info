@@ -12,7 +12,6 @@ var is_open : bool = false
 var pos = 0
 
 func load_pages():
-	await Ui.opacity(container, 0, 0.1)
 	for child in container.get_children():
 		child.queue_free()
 	
@@ -41,7 +40,6 @@ func load_pages():
 			scene.get_node("desc").text = e.text
 		
 		container.add_child(scene)
-	await Ui.opacity(container, 1, 0.3)
 
 func pass_page(direction : String):
 	# "right" / "left"
@@ -101,22 +99,5 @@ func refresh(): #Toda a parte lógica da organização
 	pass
 
 
-
-
-func open():
-	if InteractionSystem.action != null and not InteractionSystem.action is Bestiary: return
-	
-	if GameHandler.Player.state_machine.currentState.name != "Core":
-		GameHandler.Player.set_core(1)
-	else:
-		GameHandler.Player.remove_core(1)
-	
-	is_open = not is_open
-	InteractionSystem.action = self if InteractionSystem.action == null else null
-	
-	if is_open:
-		load_pages()
-	else:
-		pass
-	
-	await Ui.fade_in(self) if is_open else await Ui.fade_out(self)
+func on_active():
+	load_pages()

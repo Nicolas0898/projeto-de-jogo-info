@@ -15,7 +15,7 @@
 [ext_resource type="Script" uid="uid://cxpc8ngflll21" path="res://Scenes/Objects/zoom.gd" id="11_etday"]
 [ext_resource type="PackedScene" uid="uid://dwr4crb3vhg5b" path="res://Scenes/Map/world_environment.tscn" id="11_jnsv2"]
 [ext_resource type="PackedScene" uid="uid://vokqjyhjkv4a" path="res://Scenes/Objects/lamp.tscn" id="13_etday"]
-[ext_resource type="PackedScene" uid="uid://dqiyuc6o8q627" path="res://Scenes/interaction_area.tscn" id="14_as1b8"]
+[ext_resource type="PackedScene" uid="uid://dqiyuc6o8q627" path="res://scenes/interaction_area.tscn" id="14_as1b8"]
 [ext_resource type="Resource" uid="uid://dnaps1w06tdoe" path="res://Images/entities/resource/item/Corda.tres" id="15_jnsv2"]
 [ext_resource type="Script" uid="uid://c41v5wv6fa0vx" path="res://script/item_scripts/item_giver.gd" id="16_hrp5m"]
 [ext_resource type="Texture2D" uid="uid://1nmf0a3yqnf7" path="res://Images/corda (1).png" id="17_ee60c"]

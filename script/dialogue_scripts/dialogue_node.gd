@@ -58,14 +58,16 @@ func os():
 
 func start(new_dialogue : Dialogue):
 	if new_dialogue != current_loaded_dialogue:
-		GameHandler.Player.set_core(1)
+		Ui.can_close = false
+		Ui.set_current_active("Dialogue")
+		
 		InteractionSystem.action = new_dialogue
 		current_loaded_dialogue = new_dialogue
 		c = 0
 		
 		if current_loaded_dialogue.messages[c].action != null: current_loaded_dialogue.messages[c].action.act()
 		
-		Ui.fade_in(self)
+		#Ui.fade_in(self)
 		anchor(current_loaded_dialogue.messages[c].sprite_pos)
 		updateSprite(sprite, current_loaded_dialogue.messages[c].sprite)
 		updateSprite(border, current_loaded_dialogue.messages[c].border)
@@ -78,9 +80,11 @@ func start(new_dialogue : Dialogue):
 	#print(selected)
 
 func dialogueEnd():
+	Ui.can_close = true
+	Ui.hide_all()
 	if not is_instance_valid(current_loaded_dialogue) : return
 	c=0
-	await Ui.fade_out(self)
+	#await Ui.fade_out(self)
 	updateText(dialogue_text, "")
 	if current_loaded_dialogue!=null:
 		current_loaded_dialogue.onDialogueEnd() #provavelmente o problema é se o player tentar iniciar o dialogo muito rapido depois de acabar ele
@@ -100,7 +104,7 @@ func loadNextMessage():
 	if current_loaded_dialogue.messages[c].action != null: current_loaded_dialogue.messages[c].action.act()
 	
 	Ui.fade_out(margin_container)
-	await Ui.fade_out(v_box_container)
+	#await Ui.fade_out(v_box_container)
 	
 	# -invis ####################################
 	
@@ -111,8 +115,9 @@ func loadNextMessage():
 	generate_alternatives()
 	# -visible ####################################
 	
-	Ui.fade_in(margin_container)
-	await Ui.fade_in(v_box_container)
+	
+	#Ui.fade_in(margin_container)
+	#await Ui.fade_in(v_box_container)
 
 func create_message(text : String): #Apenas gera uma mensagem (pra não precisar criar um recurso toda hora)
 	var d = Dialogue.new()

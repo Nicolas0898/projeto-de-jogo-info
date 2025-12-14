@@ -27,11 +27,11 @@ func use(who_used : Node, next_interface):
 	node_used = who_used
 	if self in Ui.inventory.c: return #Está em cooldown
 	
-	if confirm and InteractionSystem.action != null: #Se pedir confirmação
-		Ui.inventory.input()
+	if confirm: #Se pedir confirmação
+		Ui.set_current_active("Confirm")
 		Ui.confirm.called("Você deseja usar " + name, self, next_interface)
 	else:
-		utilize() 
+		utilize()
 		cooldown_handler()
 
 func cooldown_handler():
@@ -39,7 +39,8 @@ func cooldown_handler():
 		t = cooldown
 		 
 		Ui.inventory.c.append(self) #Comunica o inventário
-		Ui.new_tween(self, "t", 0, cooldown)
+		Ui.create_tween().tween_property(self,"t",0,cooldown)
+		#Ui.new_tween(self, "t", 0, cooldown)
 
 func answer(ans : int):
 	if ans: #Só continua o código normalmente

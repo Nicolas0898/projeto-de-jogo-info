@@ -1,6 +1,6 @@
 extends State
 const FLY_BODY = preload("res://Scenes/Entities/Fly/fly_body.tscn")
-func onPhysics(delta:float):
+func onPhysics(_delta:float):
 	character.apply_air_friction()
 	character.default_move()
 

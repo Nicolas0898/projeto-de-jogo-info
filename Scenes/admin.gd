@@ -3,7 +3,7 @@ extends Control
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("admin"):
-		visible = not visible
+		Ui.set_current_active("admin")
 
 func _ready() -> void:
 	for button:Button in grid_container.get_children():

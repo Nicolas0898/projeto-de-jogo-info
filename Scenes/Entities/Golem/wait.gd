@@ -11,7 +11,7 @@ func onStateEntered(_old):
 	sprite.pause()
 	sprite.frame = 0
 
-func onPhysics(delta):
+func onPhysics(_delta):
 	var dist = character.global_position.distance_to(GameHandler.Player.global_position)
 	character.apply_air_friction()
 	

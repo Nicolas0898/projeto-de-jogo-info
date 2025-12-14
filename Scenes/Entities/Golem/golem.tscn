@@ -16,7 +16,7 @@
 [ext_resource type="Script" uid="uid://blfwkqgeamobt" path="res://Scripts/Components/Hitbox.gd" id="13_tbvup"]
 [ext_resource type="Script" uid="uid://dulx1fqjmu1yc" path="res://Scenes/Entities/Golem/died.gd" id="14_n1p4n"]
 [ext_resource type="Script" uid="uid://co267qys8ureh" path="res://Scenes/Entities/Fly/stunned.gd" id="15_n1p4n"]
-[ext_resource type="Script" path="res://Scripts/Components/BestiaryComponent.gd" id="17_oj5ua"]
+[ext_resource type="Script" uid="uid://b6mygu68dus13" path="res://Scripts/Components/BestiaryComponent.gd" id="17_oj5ua"]
 [ext_resource type="Resource" uid="uid://6jy8mcvlwf8g" path="res://Images/entities/resource/bestiario/golem de terra.tres" id="18_m0ilg"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1y50k"]

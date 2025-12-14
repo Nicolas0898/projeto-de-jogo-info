@@ -11,12 +11,6 @@ region = Rect2(0, 0, 32, 0)
 [resource]
 script = ExtResource("1_qe6tn")
 nome = "Cobra do pântano"
-subtitle = ""
 desc = "As cobras do pântano são maiores do que o normal e exibem uma coloração chamativa, o pântano é todo verde mas essa cobra é roxa contrastando com praticamente tudo, suspeito que isso signifique que ela seja venenosa, mas ela morreu antes de eu descobrir"
-hp = 0.0
-times_eliminated = 0
-indicator = 0
 image = SubResource("AtlasTexture_g7xmx")
-pages = Array[ExtResource("2_g7xmx")]([])
-is_visible = false
 metadata/_custom_type_script = "uid://cqkbc8kwvsfra"

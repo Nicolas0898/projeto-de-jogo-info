@@ -19,25 +19,23 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("right"):
 		if action is Bestiary: Ui.bestiary_node.pass_page("right")
 	
-	if event.is_action_pressed("use_weapon"):
-		if action is Inventory: Ui.inventory.interact()
+	#if event.is_action_pressed("use_weapon"):
+		#if action is Inventory: Ui.inventory.interact()
 	
 	if event.is_action_pressed("interact"):
-		if action is Bestiary:
-			Ui.bestiary_node.open()
-		if action is Map and Ui.map_node.is_open: 
-			Ui.map_node.deactivate()
+		#if action is Bestiary:
+			#Ui.bestiary_node.open()
+		#if action is Map and Ui.map_node.is_open: 
+			#Ui.map_node.deactivate()
 		if action is Dialogue:
 			if Ui.dialogue.is_question: Ui.dialogue.confirm()
 			else:  Ui.dialogue.loadNextMessage()
 		elif action == null:
 			active(current_action)
 			return
-			
-		if action is Confirm: Ui.confirm.input()
-		if action is Inventory: Ui.inventory.interact()
-	
-	if event.is_action_pressed("inventory"): Ui.inventory.input()
+		
+		#if action is Confirm: Ui.confirm.input()
+		#if action is Inventory: Ui.inventory.interact()	
 
 func active(resource : Resource):
 	if resource is Interactable:

@@ -11,12 +11,6 @@ region = Rect2(0, 0, 32, 32)
 [resource]
 script = ExtResource("1_rxqq3")
 nome = "Piranha "
-subtitle = ""
 desc = "Piranhas, seres carnívoros e perseguidores com um fome quase infinita, como se não bastasse, graças a experimentos do povo das cavernas elas ficaram maiores, pelo menos agora não andam mais em grupo pois elas andam matando até suas companheiras"
-hp = 0.0
-times_eliminated = 0
-indicator = 0
 image = SubResource("AtlasTexture_ah1f2")
-pages = Array[ExtResource("2_ca81j")]([])
-is_visible = false
 metadata/_custom_type_script = "uid://cqkbc8kwvsfra"

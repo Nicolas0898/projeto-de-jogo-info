@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cn12v5ofbe1kg" path="res://Scenes/Entities/Golem/golem.tscn" id="7_1e30r"]
 [ext_resource type="PackedScene" uid="uid://dwr4crb3vhg5b" path="res://Scenes/Map/world_environment.tscn" id="7_dx3si"]
 [ext_resource type="PackedScene" uid="uid://vokqjyhjkv4a" path="res://Scenes/Objects/lamp.tscn" id="8_dx3si"]
-[ext_resource type="PackedScene" uid="uid://dqiyuc6o8q627" path="res://Scenes/interaction_area.tscn" id="9_y1q2s"]
+[ext_resource type="PackedScene" uid="uid://dqiyuc6o8q627" path="res://scenes/interaction_area.tscn" id="9_y1q2s"]
 [ext_resource type="Resource" uid="uid://dt1vt1g5o0n6n" path="res://Images/entities/resource/item/Bestiario.tres" id="10_jre01"]
 [ext_resource type="Script" uid="uid://c41v5wv6fa0vx" path="res://script/item_scripts/item_giver.gd" id="11_i2854"]
 [ext_resource type="Texture2D" uid="uid://cej24or3kbicq" path="res://Images/assets/bestiary.png" id="12_4lirm"]
@@ -24,7 +24,6 @@ size = Vector2(95, 32)
 script = ExtResource("11_i2854")
 i = ExtResource("10_jre01")
 quantity = 1
-interaction_amount = 1
 message = "*Você coletou o bestiário perdido."
 metadata/_custom_type_script = "uid://c41v5wv6fa0vx"
 
@@ -72,43 +71,43 @@ position = Vector2(1030, -390)
 range = 175.0
 
 [node name="GrappleNode7" parent="." instance=ExtResource("6_d8yk5")]
-modulate = Color(0.74902, 0.992157, 1, 1)
+modulate = Color(0.7490196, 0.99215686, 1, 1)
 position = Vector2(624, -286)
 range = 175.0
 type = 1
 
 [node name="GrappleNode2" parent="." instance=ExtResource("6_d8yk5")]
-modulate = Color(0.74902, 0.992157, 1, 1)
+modulate = Color(0.7490196, 0.99215686, 1, 1)
 position = Vector2(107, -286)
 range = 200.0
 type = 1
 
 [node name="GrappleNode10" parent="." instance=ExtResource("6_d8yk5")]
-modulate = Color(0.74902, 0.992157, 1, 1)
+modulate = Color(0.7490196, 0.99215686, 1, 1)
 position = Vector2(367, -288)
 range = 200.0
 type = 1
 
 [node name="GrappleNode8" parent="." instance=ExtResource("6_d8yk5")]
-modulate = Color(0.74902, 0.992157, 1, 1)
+modulate = Color(0.7490196, 0.99215686, 1, 1)
 position = Vector2(-41, -397)
 range = 200.0
 type = 1
 
 [node name="GrappleNode9" parent="." instance=ExtResource("6_d8yk5")]
-modulate = Color(0.74902, 0.992157, 1, 1)
+modulate = Color(0.7490196, 0.99215686, 1, 1)
 position = Vector2(-192, -497)
 range = 200.0
 type = 1
 
 [node name="GrappleNode6" parent="." instance=ExtResource("6_d8yk5")]
-modulate = Color(0.74902, 0.992157, 1, 1)
+modulate = Color(0.7490196, 0.99215686, 1, 1)
 position = Vector2(2006, -347)
 range = 210.0
 type = 1
 
 [node name="GrappleNode5" parent="." instance=ExtResource("6_d8yk5")]
-modulate = Color(0.74902, 0.992157, 1, 1)
+modulate = Color(0.7490196, 0.99215686, 1, 1)
 position = Vector2(-3194, -308)
 type = 1
 
@@ -116,7 +115,7 @@ type = 1
 position = Vector2(1288, -366)
 
 [node name="BaseEntity" parent="." instance=ExtResource("7_1e30r")]
-position = Vector2(2695, -198)
+position = Vector2(-841, -507)
 
 [node name="spawn1" type="Node2D" parent="."]
 position = Vector2(1442, -331)

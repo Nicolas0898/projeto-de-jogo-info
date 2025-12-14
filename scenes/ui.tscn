@@ -11,10 +11,10 @@
 [ext_resource type="Resource" uid="uid://cijnx7iq50t2u" path="res://Images/entities/resource/item/Plumerico.tres" id="6_fcexb"]
 [ext_resource type="Resource" uid="uid://dt1vt1g5o0n6n" path="res://Images/entities/resource/item/Bestiario.tres" id="7_v4f2e"]
 [ext_resource type="Script" uid="uid://c33xdx8i5vql3" path="res://Scripts/bestiary.gd" id="8_3r70p"]
-[ext_resource type="Script" path="res://script/double_page.gd" id="9_8fs27"]
+[ext_resource type="Script" uid="uid://cslwexrneb8sn" path="res://script/double_page.gd" id="9_8fs27"]
 [ext_resource type="Texture2D" uid="uid://1qkbxphg5d5h" path="res://Images/UI/bestiary_paper.png" id="9_mmixe"]
 [ext_resource type="Resource" uid="uid://djepib8yauktk" path="res://Images/entities/resource/bestiario/Cobra.tres" id="10_kuui0"]
-[ext_resource type="Script" path="res://script/page.gd" id="10_whq80"]
+[ext_resource type="Script" uid="uid://dasuh6is0cd16" path="res://script/page.gd" id="10_whq80"]
 [ext_resource type="Resource" uid="uid://6jy8mcvlwf8g" path="res://Images/entities/resource/bestiario/golem de terra.tres" id="11_kuui0"]
 [ext_resource type="Script" uid="uid://b66lqor03c8rd" path="res://Scenes/admin.gd" id="16_kuui0"]
 [ext_resource type="Texture2D" uid="uid://b1ohlt1jytqyy" path="res://Images/UI/bestiary_menu.png" id="17_smy1h"]
@@ -166,7 +166,6 @@ layer = 100
 script = ExtResource("1_nt7q6")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-visible = false
 modulate = Color(1, 1, 1, 0.266667)
 anchors_preset = 15
 anchor_right = 1.0
@@ -177,22 +176,17 @@ mouse_filter = 2
 texture = SubResource("GradientTexture2D_g0wmg")
 
 [node name="Dialogue" parent="." instance=ExtResource("2_ryf15")]
-visible = false
 
 [node name="Inventory" parent="." instance=ExtResource("3_mmixe")]
-visible = false
 inventario = Array[ExtResource("4_lkjmk")]([ExtResource("5_d42i4"), ExtResource("6_fcexb"), ExtResource("7_v4f2e")])
 
 [node name="Confirm" parent="." instance=ExtResource("4_nt8jn")]
-visible = false
 
 [node name="debug" type="Label" parent="."]
-visible = false
 offset_right = 40.0
 offset_bottom = 23.0
 
 [node name="Transition" type="ColorRect" parent="."]
-visible = false
 modulate = Color(1, 1, 1, 0)
 z_index = 4096
 anchors_preset = 15
@@ -204,13 +198,10 @@ mouse_filter = 1
 color = Color(0, 0, 0, 1)
 
 [node name="Map" parent="." instance=ExtResource("5_g0wmg")]
-visible = false
 
 [node name="PlayerUI" parent="." instance=ExtResource("6_4vbiv")]
-visible = false
 
 [node name="Admin" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -326,7 +317,6 @@ layout_mode = 2
 text = "Reload Current Scene"
 
 [node name="Bestiary" type="Control" parent="."]
-visible = false
 z_index = 20
 layout_mode = 3
 anchors_preset = 15

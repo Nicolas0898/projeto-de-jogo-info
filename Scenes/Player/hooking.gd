@@ -5,7 +5,7 @@ var current_active_rope:Node2D = null
 var start_distance = 0
 
 func onInput(event:InputEvent):
-	var character:PlayerCharacter= stateMachine.character
+	character = stateMachine.character
 	if event.is_action_released("jump"):
 		if stateData.hook.type == GrappleNode.SWING:
 			boost_character(-400)
@@ -13,7 +13,7 @@ func onInput(event:InputEvent):
 
 func onStateEntered(_last):
 	character.sprite.playAnimation("hook",1)
-	var character:PlayerCharacter= stateMachine.character
+	character = stateMachine.character
 	
 	var hookpos = stateData.hook.global_position
 	var plrpos = character.global_position
@@ -33,7 +33,7 @@ func onStateEntered(_last):
 	
 
 func boost_character(y=-400):
-	var character:PlayerCharacter= stateMachine.character
+	character = stateMachine.character
 	character.variable_velocity.y = 0
 	character.variable_velocity.y+=y
 	character.variable_velocity += character.true_constant_velocity*1.7
@@ -75,7 +75,7 @@ func swingPhysics(delta:float):
 	var nextpos = plrpos + player.velocity*delta
 	
 	var direction = nextpos.direction_to(hookpos).normalized()
-	var normal_v = player.velocity.normalized()
+	#var normal_v = player.velocity.normalized()
 	
 	if distance>start_distance:
 		player.variable_velocity += -player.variable_velocity
@@ -87,7 +87,7 @@ func swingPhysics(delta:float):
 	player.update_velocity()
 	player.move_and_slide()
 
-func pullPhysics(delta:float):
+func pullPhysics(_delta:float):
 	var player:PlayerCharacter = stateMachine.character
 	var hookpos = stateData.hook.global_position
 	var plrpos = player.global_position

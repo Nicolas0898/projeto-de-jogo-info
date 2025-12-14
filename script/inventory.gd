@@ -44,6 +44,8 @@ func refreshing():
 				
 				display.sprite.texture = inventario[i].sprite
 				display.amount.text = str(inventario[i].amount)
+				
+				display.pressed.connect(interact)
 				displaying.append(inventario[i])
 				buttons.append(display)
 				
@@ -60,7 +62,6 @@ func refresh_desc(i : Item):
 	desc_text.text = i.desc
 
 func interact():
-	#if selected.i.display == 1: return #Se for apenas um display
 	if selected.i in c: return #Se estiver no cooldown
 	
 	selected.i.use(GameHandler.Player, self)
@@ -77,26 +78,12 @@ func change_amount(i : Item, amount : int):
 func find_item(item_name : String): #Retorna o índice do item no inventário
 	for i in range(len(inventario)): if inventario[i].name == item_name: return i
 
-func input():
-	if InteractionSystem.action != null and not InteractionSystem.action is Inventory: return
-	
-	if GameHandler.Player.state_machine.currentState.name != "Core":
-		GameHandler.Player.set_core(1)
-	else:
-		GameHandler.Player.remove_core(1)
-	
-	open = not open
-	InteractionSystem.action = self if InteractionSystem.action == null else null
-	
+func on_active():
 	refreshing()
-	
-	if open:
-		selected.grab_focus()
-	else:
-		#GameHandler.Player.state_machine.requestStateChange("Running")
-		get_viewport().gui_release_focus()
-	
-	await Ui.fade_in(self) if open else await Ui.fade_out(self)
+	selected.grab_focus()
+
+func exit_active():
+	get_viewport().gui_release_focus()
 
 #func _physics_process(delta: float) -> void:
 	#print(GameHandler.Player.state_machine.get_current_state_name())

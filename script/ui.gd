@@ -1,5 +1,6 @@
 extends CanvasLayer
 
+# Nodes
 @onready var dialogue: Control = $Dialogue
 @onready var inventory: Control = $Inventory
 @onready var confirm: Confirm = $Confirm
@@ -9,52 +10,51 @@ extends CanvasLayer
 @onready var transition: ColorRect = $Transition
 @onready var player_ui: Control = $PlayerUI
 
-
-var tween : Tween
-
-func _physics_process(_delta: float) -> void:
-	debug.text = str(InteractionSystem.action)
+# Variables
+var window_cache:Dictionary[String,Control] = {}
+var current_active:Control
+var can_close = true
 
 func _ready() -> void:
-	dialogue.modulate = Color(1, 1, 1, 0)
-	inventory.modulate = Color(1, 1, 1, 0)
-	confirm.modulate = Color(1, 1, 1, 0)
-	map_node.modulate = Color(1, 1, 1, 0)
-	bestiary_node.modulate = Color(1, 1, 1, 0)
+	hide_all()
 
-func fade_in(p): #PRE-SET DE 0.2s
-	tween = create_tween()
-	tween.tween_property(p,"modulate",Color(1,1,1,1),0.2)
-	#print("fadein")
-	await tween.finished
+func set_current_active(window_name:String):
+	hide_all()
+	var window = window_cache[window_name.to_lower()]
 	
-func opacity(p, opacity, time): #Opacity de 0 a 1
-	tween = create_tween()
-	tween.tween_property(p,"modulate",Color(1,1,1,opacity),time)
-	await tween.finished
-
-func fade_out(p):  #PRE-SET DE 0.2s
-	tween = create_tween()
-	tween.tween_property(p,"modulate",Color(1,1,1,0),0.2)
-	#print("fadeout")
-	await tween.finished
-
-func new_tween(object : Object, property : String, new_value, time : float):
-	tween = create_tween()
-	tween.tween_property(object, property, new_value, time)
-	await tween.finished
-
-func cooldown(time : float, progress_bar : ProgressBar):
-	progress_bar.value = 100
+	if not window:
+		push_warning("Window "+window_name+ "Not found in UI")
+		return
 	
-	tween = create_tween()
-	tween.tween_property(progress_bar, "value", 0, time)
+	window.visible = true
+	current_active = window
 	
-	await tween.finished
+	if window.has_method("on_active"):
+		window.on_active()
+
+func hide_all():
+	current_active = null
+	for window in get_children():
+		if window is Control:
+			window_cache[window.name.to_lower()] = window
+			window.visible = false
+			
+			if window.has_method("exit_active"):
+				window.exit_active()
 
 func set_transition(value:bool):
+	transition.visible = true
 	var tween = create_tween()
 	if value:
 		tween.tween_property(transition,"modulate",Color(1,1,1,1),0.2)
 	else : tween.tween_property(transition,"modulate",Color(1,1,1,0),0.2)
 	await tween.finished
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("menu"):
+		if not current_active:
+			GameHandler.Player.set_core(1)
+			set_current_active("Inventory")
+		elif can_close:
+			GameHandler.Player.remove_core(1)
+			hide_all()

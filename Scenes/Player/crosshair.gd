@@ -5,9 +5,16 @@ static var current:Crosshair
 var state = "core":
 	set(_newval):
 		_newval = _newval.to_lower()
+		if state!=_newval: f=true
 		if has_method("entered_"+_newval) and state!=_newval:
 			call("entered_"+_newval)
+			rpi()
 		state = _newval.to_lower()
+
+func rpi():
+	Cursor.reset_physics_interpolation()
+	line.reset_physics_interpolation()
+	circle.reset_physics_interpolation()
 
 @onready var Cursor: Sprite2D = $Cursor
 @onready var line: Line2D = $Line
@@ -19,6 +26,7 @@ static var look
 var targetRotation = 0.0
 var cache = {}
 var selectedTarget:Node2D
+var f = true
 
 func _ready() -> void:
 	current = self
@@ -30,6 +38,9 @@ func _process(delta: float) -> void:
 	look = GameHandler.Player.get_local_mouse_position().normalized()
 	if has_method(state.to_lower()):
 		call(state.to_lower(),delta)
+		if f:
+			f = false
+			rpi()
 	else:
 		push_warning("State "+state+" does not exist");
 
@@ -90,16 +101,16 @@ func cast(delta:float):
 	var targetpos = pos
 	line.global_position = pos
 	
-	var current
+	var current_enemy = null
 	for node in get_tree().get_nodes_in_group("Enemy") :
 		var distance_to_enemy = node.global_position.distance_to(pos)
 		if distance_to_enemy>48 : continue
-		if current and current.global_position.distance_to(pos)<distance_to_enemy:continue
-		current = node
+		if current_enemy and current_enemy.global_position.distance_to(pos)<distance_to_enemy:continue
+		current_enemy = node
 		targetpos = node.global_position
-		selectedTarget = current
+		selectedTarget = current_enemy
 	
-	if current:
+	if current_enemy:
 		lerp_color_to(Color(0,1,0),delta)
 	else:
 		lerp_color_to(Color(1,0.8,0.8),delta)
@@ -126,10 +137,10 @@ func charged_attack(delta:float):
 	line.global_position = pos
 	line.set_point_position(1,line.to_local(GameHandler.Player.global_position))
 
-func requestStateChange(state,newPriority):
+func requestStateChange(newstate,newPriority):
 	if newPriority>=currentStatePriority:
 		currentStatePriority = newPriority
-		self.state = state
+		self.state = newstate
 
 func backToCore(priority):
 	if priority>=currentStatePriority:

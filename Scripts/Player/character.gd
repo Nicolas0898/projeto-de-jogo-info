@@ -55,10 +55,11 @@ func _ready() -> void:
 
 	Ui.player_ui.update_health(health_component.health)
 	camera.reset_smoothing()
+	camera.reset_physics_interpolation()
 	await get_tree().create_timer(0.05).timeout
 	Ui.set_transition(false)
 
-func default_player_input(local_mult=1):
+func default_player_input(local_mult:float=1.0):
 	var axis = Input.get_axis("left","right")
 	constant_velocity.input =  Vector2(axis*speed*speed_multiplier*local_mult,0)
 	if axis>0:
@@ -99,7 +100,7 @@ func add_hability(path):
 
 
 
-func _on_health_component_health_changed(new: Variant, old: Variant) -> void:
+func _on_health_component_health_changed(new: Variant, _old: Variant) -> void:
 	print((new))
 	GameHandler.player_health = new
 	Ui.player_ui.update_health(new)
