@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccmx4u5dw8mdo"]
+
+[ext_resource type="Script" uid="uid://dnjilntaejojr" path="res://arc.gd" id="1_x0kux"]
+
+[node name="arc" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_x0kux")
+arc_pos = 0

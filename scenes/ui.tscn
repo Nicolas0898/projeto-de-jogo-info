@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://cc2qsjoqgcdqu"]
+[gd_scene load_steps=44 format=3 uid="uid://cc2qsjoqgcdqu"]
 
 [ext_resource type="Script" uid="uid://dfxy21hd8djmg" path="res://script/ui.gd" id="1_nt7q6"]
 [ext_resource type="PackedScene" uid="uid://d0gxkspxt0ool" path="res://Scenes/UI/dialogue.tscn" id="2_ryf15"]
@@ -21,6 +21,7 @@
 [ext_resource type="Resource" uid="uid://l46ol1r3igyq" path="res://Images/entities/resource/bestiario/Piranha.tres" id="18_v4f2e"]
 [ext_resource type="Resource" uid="uid://6so10j2cym6y" path="res://Images/entities/resource/bestiario/Mosca.tres" id="19_fe2sg"]
 [ext_resource type="Resource" uid="uid://b06dwr2chblgg" path="res://Images/entities/resource/bestiario/golem_label.tres" id="19_v4f2e"]
+[ext_resource type="PackedScene" uid="uid://ccbp2216vmb24" path="res://Scenes/UI/radial_menu.tscn" id="22_kupmu"]
 
 [sub_resource type="Gradient" id="Gradient_nt8jn"]
 colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1)
@@ -372,6 +373,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 15
 alignment = 1
+
+[node name="RadialMenu" parent="." instance=ExtResource("22_kupmu")]
 
 [connection signal="pressed" from="Admin/Panel/VBoxContainer/GridContainer2/Button" to="Admin" method="_on_button_pressed"]
 [connection signal="pressed" from="Admin/Panel/VBoxContainer/GridContainer2/Button2" to="Admin" method="_on_button_2_pressed"]

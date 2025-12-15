@@ -1,9 +1,11 @@
 extends Control
 @onready var grid_container: GridContainer = $Panel/VBoxContainer/GridContainer
 
+var a = false
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("admin"):
-		Ui.set_current_active("admin")
+	if event.is_action_pressed("admin") and not a:
+		a = true
+		Ui.get_node("RadialMenu").add_option("Admin")
 
 func _ready() -> void:
 	for button:Button in grid_container.get_children():

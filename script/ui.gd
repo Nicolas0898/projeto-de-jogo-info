@@ -52,9 +52,12 @@ func set_transition(value:bool):
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("menu"):
-		if not current_active:
-			GameHandler.Player.set_core(1)
-			set_current_active("Inventory")
+		if not current_active or current_active.name.to_lower() == "playerui":
+			set_current_active("RadialMenu")
 		elif can_close:
 			GameHandler.Player.remove_core(1)
-			hide_all()
+			set_current_active("playerui")
+	if event.is_action_released("menu"):
+		if current_active.name.to_lower() == "radialmenu":
+			GameHandler.Player.set_core(1)
+			current_active.trigger()
