@@ -23,7 +23,11 @@ class option:
 		arc.width = 5
 		arc.points = 8
 		arc.arc_size = (2*PI)/count
-		arc.arc_pos = (2*PI)/count * index + PI/(count)
+		arc.arc_pos = (2*PI)/count * index
+		if count==3:
+			arc.arc_pos += PI/2
+		elif count==4:
+			arc.arc_pos += PI/4 
 	
 
 var options:Array[option] = []

@@ -25,6 +25,16 @@ func set_current_active(window_name:String):
 	if not window:
 		push_warning("Window "+window_name+ "Not found in UI")
 		return
+		
+	var t = create_tween()
+	
+	t.tween_property(
+				window,
+				"modulate",
+				Color(1,1,1,1),
+				0.1
+			)
+	
 	
 	window.visible = true
 	current_active = window
@@ -37,7 +47,19 @@ func hide_all():
 	for window in get_children():
 		if window is Control:
 			window_cache[window.name.to_lower()] = window
-			window.visible = false
+			var t = create_tween()
+			
+			t.tween_property(
+				window,
+				"modulate",
+				Color(1,1,1,0),
+				0.1
+			)
+			
+			t.finished.connect(func():
+				if not current_active or window.name!=current_active.name:
+					window.visible = false
+			)
 			
 			if window.has_method("exit_active"):
 				window.exit_active()
