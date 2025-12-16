@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://jb7iy2cdtt3s" path="res://Images/entities/firefly.png" id="2_j7h4l"]
 [ext_resource type="Texture2D" uid="uid://dr2ke0jnjr8oo" path="res://Images/tilesets/undefined_boss/web.png" id="3_8ujtm"]
 [ext_resource type="PackedScene" uid="uid://dwr4crb3vhg5b" path="res://Scenes/Map/world_environment.tscn" id="4_uv0us"]
-[ext_resource type="PackedScene" uid="uid://bbug2un1b21w3" path="res://Scenes/Entities/undefined_boss.tscn" id="6_uv0us"]
+[ext_resource type="PackedScene" uid="uid://bbug2un1b21w3" path="res://Scenes/Entities/undefined boss/undefined_boss.tscn" id="6_uv0us"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j7h4l"]
 texture = ExtResource("1_21gfr")
@@ -1439,6 +1439,9 @@ fill_to = Vector2(0, 0.224771)
 
 [node name="UndefinedRoom" type="Node2D"]
 
+[node name="center_target" type="Node2D" parent="."]
+position = Vector2(235, -102)
+
 [node name="visual" type="Node" parent="."]
 
 [node name="background" type="TileMapLayer" parent="visual"]
@@ -1639,6 +1642,10 @@ position = Vector2(236, 6)
 offset = Vector2(0, -20)
 
 [node name="Undefined_boss" parent="." instance=ExtResource("6_uv0us")]
-position = Vector2(348, 14)
+position = Vector2(500, -4)
+
+[node name="perfurar" parent="Undefined_boss/StateMachine" index="3" node_paths=PackedStringArray("center_target")]
+center_target = NodePath("../../../center_target")
 
 [editable path="CharacterBody2D"]
+[editable path="Undefined_boss"]
