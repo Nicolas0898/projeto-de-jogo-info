@@ -1,17 +1,17 @@
-[gd_scene load_steps=49 format=3 uid="uid://bbug2un1b21w3"]
+[gd_scene load_steps=51 format=3 uid="uid://bbug2un1b21w3"]
 
 [ext_resource type="Texture2D" uid="uid://ignud5ugkdcd" path="res://Images/entities/undefined boss/boss_throw.png" id="1_a37h1"]
 [ext_resource type="Shader" uid="uid://lk8vqo6nbyf3" path="res://Shaders/Character.gdshader" id="1_nxa2d"]
 [ext_resource type="Script" uid="uid://b4v73lx8blb1p" path="res://Scripts/Components/BaseEntity.gd" id="1_rhk1b"]
 [ext_resource type="Texture2D" uid="uid://dnu4gqpdwrcco" path="res://Images/entities/undefined boss/boss_dash.png" id="1_sxvv6"]
 [ext_resource type="Script" uid="uid://lurpfwbx4y8w" path="res://Scripts/StateMachine/StateMachine.gd" id="2_48y6b"]
-[ext_resource type="Texture2D" uid="uid://c8wsofoh7nlg1" path="res://Images/entities/undefined boss/boss.png" id="2_a37h1"]
 [ext_resource type="Script" uid="uid://ddj58sltjjtg3" path="res://Scenes/Entities/undefined boss/idle.gd" id="3_doanp"]
 [ext_resource type="Texture2D" uid="uid://mkmvw50egcpc" path="res://Images/entities/undefined boss/boss_smash.png" id="3_sexik"]
 [ext_resource type="Script" uid="uid://d1tf121f0wndh" path="res://Scenes/Entities/undefined boss/atirar.gd" id="5_luk5f"]
 [ext_resource type="Script" uid="uid://1ughpmhhrew" path="res://Scripts/Components/HealthComponent.gd" id="5_sexik"]
 [ext_resource type="Script" uid="uid://bfucsptpxamdi" path="res://Scenes/Entities/undefined boss/dash.gd" id="6_nxa2d"]
 [ext_resource type="Script" uid="uid://c5rb712ubch1x" path="res://Scenes/Entities/undefined boss/perfurar.gd" id="7_idkcx"]
+[ext_resource type="Texture2D" uid="uid://b380nwrqic381" path="res://Images/entities/undefined boss/boss_idle.png" id="11_pb1b7"]
 [ext_resource type="Script" uid="uid://blfwkqgeamobt" path="res://Scripts/Components/Hitbox.gd" id="13_idkcx"]
 [ext_resource type="Script" uid="uid://d0xnltbvtmvwv" path="res://Scripts/Components/Hurtbox.gd" id="14_pb1b7"]
 
@@ -100,9 +100,17 @@ region = Rect2(1024, 0, 128, 128)
 atlas = ExtResource("1_sxvv6")
 region = Rect2(1152, 0, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6yytc"]
-atlas = ExtResource("2_a37h1")
-region = Rect2(0, 0, 128, 96)
+[sub_resource type="AtlasTexture" id="AtlasTexture_y33qn"]
+atlas = ExtResource("11_pb1b7")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3f373"]
+atlas = ExtResource("11_pb1b7")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_euuho"]
+atlas = ExtResource("11_pb1b7")
+region = Rect2(256, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4f5km"]
 atlas = ExtResource("3_sexik")
@@ -148,13 +156,13 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_s4do7")
 }, {
-"duration": 1.0,
+"duration": 1.61,
 "texture": SubResource("AtlasTexture_706j3")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_x0fld")
 }],
-"loop": true,
+"loop": false,
 "name": &"atirar_01",
 "speed": 10.0
 }, {
@@ -180,7 +188,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ds3ix")
 }],
-"loop": true,
+"loop": false,
 "name": &"atirar_02",
 "speed": 10.0
 }, {
@@ -222,10 +230,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6yytc")
+"texture": SubResource("AtlasTexture_y33qn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3f373")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_euuho")
 }],
-"loop": false,
-"name": &"default",
+"loop": true,
+"name": &"idle",
 "speed": 5.0
 }, {
 "frames": [{
@@ -267,9 +281,8 @@ animations = [{
 radius = 29.0
 height = 77.5
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pb1b7"]
-radius = 30.0
-height = 80.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pb1b7"]
+size = Vector2(57.75, 63.5)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y33qn"]
 radius = 33.0
@@ -277,6 +290,7 @@ height = 90.0
 
 [node name="Undefined_boss" type="CharacterBody2D"]
 material = SubResource("ShaderMaterial_nxa2d")
+collision_layer = 2
 script = ExtResource("1_rhk1b")
 metadata/_custom_type_script = "uid://b4v73lx8blb1p"
 
@@ -288,7 +302,7 @@ process_material = SubResource("ParticleProcessMaterial_luk5f")
 
 [node name="HealthComponent" type="Node" parent="."]
 script = ExtResource("5_sexik")
-max_health = 500.0
+max_health = 300.0
 metadata/_custom_type_script = "uid://1ughpmhhrew"
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initialState")]
@@ -301,6 +315,7 @@ script = ExtResource("3_doanp")
 
 [node name="atirar" type="Node" parent="StateMachine"]
 script = ExtResource("5_luk5f")
+jump_height = -450.0
 
 [node name="dash" type="Node" parent="StateMachine"]
 script = ExtResource("6_nxa2d")
@@ -312,11 +327,13 @@ jump_height = -450.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 use_parent_material = true
 sprite_frames = SubResource("SpriteFrames_k5o2b")
-animation = &"dash_03"
-autoplay = "default"
+animation = &"atirar_01"
+autoplay = "idle"
+frame = 4
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 12)
+position = Vector2(0, 25)
 shape = SubResource("CapsuleShape2D_xt8r2")
 
 [node name="Hitbox" type="Area2D" parent="."]
@@ -327,9 +344,9 @@ knockback = Vector2(1.2, 1.2)
 metadata/_custom_type_script = "uid://blfwkqgeamobt"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(1, 22)
-shape = SubResource("CapsuleShape2D_pb1b7")
-debug_color = Color(0.8383469, 0.32866618, 0.52906746, 0.41960785)
+position = Vector2(0.125, 24.75)
+shape = SubResource("RectangleShape2D_pb1b7")
+debug_color = Color(0.6606645, 0.17680499, 0.43491146, 0.41960785)
 
 [node name="Hurtbox" type="Area2D" parent="." node_paths=PackedStringArray("health_component")]
 script = ExtResource("14_pb1b7")
@@ -346,3 +363,6 @@ position = Vector2(0, 40)
 
 [node name="spear_spawn" type="Node2D" parent="."]
 position = Vector2(0, 25)
+
+[node name="throw_spawn" type="Node2D" parent="."]
+position = Vector2(22, -28)

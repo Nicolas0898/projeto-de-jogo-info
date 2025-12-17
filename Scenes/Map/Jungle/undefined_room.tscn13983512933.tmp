@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://c7iuh60iqviyg"]
+[gd_scene load_steps=31 format=4 uid="uid://c7iuh60iqviyg"]
 
 [ext_resource type="Texture2D" uid="uid://dwlla1vsw12qg" path="res://Images/tilesets/undefined_boss/boss_room_tileset.png" id="1_21gfr"]
 [ext_resource type="PackedScene" uid="uid://bvmugmme4p6nf" path="res://Scenes/Objects/grapple_node.tscn" id="1_xgbdq"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dr2ke0jnjr8oo" path="res://Images/tilesets/undefined_boss/web.png" id="3_8ujtm"]
 [ext_resource type="PackedScene" uid="uid://dwr4crb3vhg5b" path="res://Scenes/Map/world_environment.tscn" id="4_uv0us"]
 [ext_resource type="PackedScene" uid="uid://bbug2un1b21w3" path="res://Scenes/Entities/undefined boss/undefined_boss.tscn" id="6_uv0us"]
+[ext_resource type="PackedScene" uid="uid://b161owx4r8uxd" path="res://Scenes/Player/InstanciableHabilities/grappling_hook.tscn" id="7_r2nsm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j7h4l"]
 texture = ExtResource("1_21gfr")
@@ -1442,19 +1443,18 @@ fill_to = Vector2(0, 0.224771)
 
 [node name="GrappleNode" parent="." instance=ExtResource("1_xgbdq")]
 modulate = Color(0.7490196, 0.99215686, 1, 1)
-z_as_relative = false
-position = Vector2(233, -100)
-range = 314.0
+position = Vector2(235, -150)
+range = 156.0
 type = 1
 
 [node name="center_target" type="Node2D" parent="."]
 position = Vector2(235, -102)
 
 [node name="left_target" type="Node2D" parent="."]
-position = Vector2(-60, 0)
+position = Vector2(-80, 0)
 
 [node name="right_target" type="Node2D" parent="."]
-position = Vector2(505, 0)
+position = Vector2(525, 0)
 
 [node name="visual" type="Node" parent="."]
 
@@ -1655,10 +1655,10 @@ position = Vector2(236, 6)
 [node name="Camera2D" parent="CharacterBody2D" index="6"]
 offset = Vector2(0, -20)
 
-[node name="Undefined_boss" parent="." instance=ExtResource("6_uv0us")]
+[node name="GrapplingHook" parent="CharacterBody2D" instance=ExtResource("7_r2nsm")]
 
-[node name="atirar" parent="Undefined_boss/StateMachine" index="1" node_paths=PackedStringArray("center_target")]
-center_target = NodePath("../../../center_target")
+[node name="Undefined_boss" parent="." instance=ExtResource("6_uv0us")]
+position = Vector2(500, -4)
 
 [node name="dash" parent="Undefined_boss/StateMachine" index="2" node_paths=PackedStringArray("left_target", "right_target")]
 left_target = NodePath("../../../left_target")
