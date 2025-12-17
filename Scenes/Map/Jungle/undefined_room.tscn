@@ -1442,6 +1442,12 @@ fill_to = Vector2(0, 0.224771)
 [node name="center_target" type="Node2D" parent="."]
 position = Vector2(235, -102)
 
+[node name="left_target" type="Node2D" parent="."]
+position = Vector2(-80, 0)
+
+[node name="right_target" type="Node2D" parent="."]
+position = Vector2(525, 0)
+
 [node name="visual" type="Node" parent="."]
 
 [node name="background" type="TileMapLayer" parent="visual"]
@@ -1642,7 +1648,11 @@ position = Vector2(236, 6)
 offset = Vector2(0, -20)
 
 [node name="Undefined_boss" parent="." instance=ExtResource("6_uv0us")]
-position = Vector2(500, -4)
+position = Vector2(100, -4)
+
+[node name="dash" parent="Undefined_boss/StateMachine" index="2" node_paths=PackedStringArray("left_target", "right_target")]
+left_target = NodePath("../../../left_target")
+right_target = NodePath("../../../right_target")
 
 [node name="perfurar" parent="Undefined_boss/StateMachine" index="3" node_paths=PackedStringArray("center_target")]
 center_target = NodePath("../../../center_target")

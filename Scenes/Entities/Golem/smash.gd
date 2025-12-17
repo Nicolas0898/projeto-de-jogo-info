@@ -23,7 +23,7 @@ func clearpart():
 	effects.clear()
 
 func onStateEntered(_d):
-		character.rotate_to_plr()
+		character.rotate_to_plr(sprite)
 		sprite.play("smash")
 		
 		var bottom_pos = rockspawnpos.global_position

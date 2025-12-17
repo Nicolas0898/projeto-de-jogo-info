@@ -1,6 +1,7 @@
-[gd_scene load_steps=43 format=3 uid="uid://bbug2un1b21w3"]
+[gd_scene load_steps=49 format=3 uid="uid://bbug2un1b21w3"]
 
 [ext_resource type="Texture2D" uid="uid://ignud5ugkdcd" path="res://Images/entities/undefined boss/boss_throw.png" id="1_a37h1"]
+[ext_resource type="Shader" uid="uid://lk8vqo6nbyf3" path="res://Shaders/Character.gdshader" id="1_nxa2d"]
 [ext_resource type="Script" uid="uid://b4v73lx8blb1p" path="res://Scripts/Components/BaseEntity.gd" id="1_rhk1b"]
 [ext_resource type="Texture2D" uid="uid://dnu4gqpdwrcco" path="res://Images/entities/undefined boss/boss_dash.png" id="1_sxvv6"]
 [ext_resource type="Script" uid="uid://lurpfwbx4y8w" path="res://Scripts/StateMachine/StateMachine.gd" id="2_48y6b"]
@@ -11,6 +12,13 @@
 [ext_resource type="Script" uid="uid://1ughpmhhrew" path="res://Scripts/Components/HealthComponent.gd" id="5_sexik"]
 [ext_resource type="Script" uid="uid://bfucsptpxamdi" path="res://Scenes/Entities/undefined boss/dash.gd" id="6_nxa2d"]
 [ext_resource type="Script" uid="uid://c5rb712ubch1x" path="res://Scenes/Entities/undefined boss/perfurar.gd" id="7_idkcx"]
+[ext_resource type="Script" uid="uid://blfwkqgeamobt" path="res://Scripts/Components/Hitbox.gd" id="13_idkcx"]
+[ext_resource type="Script" uid="uid://d0xnltbvtmvwv" path="res://Scripts/Components/Hurtbox.gd" id="14_pb1b7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nxa2d"]
+shader = ExtResource("1_nxa2d")
+shader_parameter/blink_color = Color(1, 1, 1, 1)
+shader_parameter/factor = 0.0
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_luk5f"]
 particle_flag_disable_z = true
@@ -182,15 +190,20 @@ animations = [{
 }, {
 "duration": 3.0,
 "texture": SubResource("AtlasTexture_isybn")
+}],
+"loop": false,
+"name": &"dash_01",
+"speed": 12.0
 }, {
+"frames": [{
 "duration": 1.5,
 "texture": SubResource("AtlasTexture_pfcm7")
 }, {
 "duration": 2.0,
 "texture": SubResource("AtlasTexture_j8004")
 }],
-"loop": true,
-"name": &"dash_01",
+"loop": false,
+"name": &"dash_02",
 "speed": 12.0
 }, {
 "frames": [{
@@ -203,9 +216,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_nnfur")
 }],
-"loop": true,
-"name": &"dash_02",
-"speed": 12.0
+"loop": false,
+"name": &"dash_03",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -254,7 +267,16 @@ animations = [{
 radius = 29.0
 height = 77.5
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pb1b7"]
+radius = 30.0
+height = 80.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y33qn"]
+radius = 33.0
+height = 90.0
+
 [node name="Undefined_boss" type="CharacterBody2D"]
+material = SubResource("ShaderMaterial_nxa2d")
 script = ExtResource("1_rhk1b")
 metadata/_custom_type_script = "uid://b4v73lx8blb1p"
 
@@ -288,12 +310,39 @@ script = ExtResource("7_idkcx")
 jump_height = -450.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+use_parent_material = true
 sprite_frames = SubResource("SpriteFrames_k5o2b")
-animation = &"perfurar_02"
+animation = &"dash_03"
 autoplay = "default"
-frame = 3
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 12)
 shape = SubResource("CapsuleShape2D_xt8r2")
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_mask = 16
+script = ExtResource("13_idkcx")
+damage = 20.0
+knockback = Vector2(1.2, 1.2)
+metadata/_custom_type_script = "uid://blfwkqgeamobt"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(1, 22)
+shape = SubResource("CapsuleShape2D_pb1b7")
+debug_color = Color(0.8383469, 0.32866618, 0.52906746, 0.41960785)
+
+[node name="Hurtbox" type="Area2D" parent="." node_paths=PackedStringArray("health_component")]
+script = ExtResource("14_pb1b7")
+health_component = NodePath("../HealthComponent")
+metadata/_custom_type_script = "uid://d0xnltbvtmvwv"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(0, 18)
+shape = SubResource("CapsuleShape2D_y33qn")
+debug_color = Color(0.4045277, 0.5646141, 0.624046, 0.41960785)
+
+[node name="impact_spawn" type="Node2D" parent="."]
+position = Vector2(0, 40)
+
+[node name="spear_spawn" type="Node2D" parent="."]
+position = Vector2(0, 25)

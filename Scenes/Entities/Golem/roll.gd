@@ -11,7 +11,7 @@ var repeat = false
 
 func onStateEntered(_old):
 	character.blink(0.3,Color(1,1,1,1))
-	character.rotate_to_plr()
+	character.rotate_to_plr(sprite)
 	ending = false
 	started = false
 	if not stateData.get("last"):
@@ -20,7 +20,7 @@ func onStateEntered(_old):
 		character.clear_constant_velocity()
 		repeat = false
 		await get_tree().create_timer(0.3).timeout
-	character.rotate_to_plr()
+	character.rotate_to_plr(sprite)
 	var plr = GameHandler.Player
 	sprite.play("roll_prepare")
 	await sprite.animation_finished

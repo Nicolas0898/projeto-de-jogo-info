@@ -14,7 +14,7 @@ func onStateEntered(_oldState:State):
 	if stateMachine.currentState != self: return
 	
 	#stateMachine.requestStateChange("perfurar")
-	stateMachine.requestStateChange(next_attack)
+	stateMachine.requestStateChange("dash")
 	ignore = next_attack
 	select_attack()
 

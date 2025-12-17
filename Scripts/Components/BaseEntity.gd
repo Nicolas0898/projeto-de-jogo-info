@@ -52,6 +52,13 @@ func blink(duration=0.3,color="#dc1b00",strength=0.5):
 	shader.set_shader_parameter("blink_color",Color(color))
 	create_tween().tween_method(upd,strength,0.0,duration)
 		
+
+func rotate_to_plr(sprite): #se quiserem melhorar isso rsrs - pires
+	var plr = GameHandler.Player
+	if plr.global_position.x > global_position.x:
+		sprite.flip_h = true
+	else : sprite.flip_h = false
+
 func upd(v):
 	shader.set_shader_parameter("factor",v)
 	

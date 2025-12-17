@@ -14,7 +14,7 @@ var effects = []
 var distance = 100
 
 func onStateEntered(_d):
-		character.rotate_to_plr()
+		character.rotate_to_plr(sprite)
 		sprite.play("throw")
 		
 		await spawn

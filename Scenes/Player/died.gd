@@ -1,5 +1,5 @@
 extends State
-
+	
 func onStateEntered(_old):
 	character = character as PlayerCharacter
 	character.sprite.character.sprite.playAnimation("death",2)
