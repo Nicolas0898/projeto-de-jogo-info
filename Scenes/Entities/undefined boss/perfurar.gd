@@ -2,6 +2,8 @@ extends State
 
 @onready var sprite : AnimatedSprite2D = $"../../AnimatedSprite2D"
 @onready var impact_spawn = $"../../impact_spawn"
+@onready var i01 = $"../../Particles/i01"
+@onready var i02 = $"../../Particles/i02"
 @onready var impact_hitbox = preload("res://Scenes/Entities/undefined boss/impact.tscn")
 @export var jump_height : float
 @export var center_target : Node2D
@@ -48,7 +50,8 @@ func onPhysics(_delta:float):
 		
 		hitbox = impact_hitbox.instantiate()
 		impact_spawn.add_child(hitbox)
-		
+		i01.emitting = true
+		i02.emitting = true
 		await get_tree().create_timer(0.3).timeout #Pausa pro impacto, sla
 		
 		impact = false

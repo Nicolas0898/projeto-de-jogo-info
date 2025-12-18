@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://bbug2un1b21w3"]
+[gd_scene load_steps=60 format=3 uid="uid://bbug2un1b21w3"]
 
 [ext_resource type="Texture2D" uid="uid://ignud5ugkdcd" path="res://Images/entities/undefined boss/boss_throw.png" id="1_a37h1"]
 [ext_resource type="Shader" uid="uid://lk8vqo6nbyf3" path="res://Shaders/Character.gdshader" id="1_nxa2d"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://lurpfwbx4y8w" path="res://Scripts/StateMachine/StateMachine.gd" id="2_48y6b"]
 [ext_resource type="Script" uid="uid://ddj58sltjjtg3" path="res://Scenes/Entities/undefined boss/idle.gd" id="3_doanp"]
 [ext_resource type="Texture2D" uid="uid://mkmvw50egcpc" path="res://Images/entities/undefined boss/boss_smash.png" id="3_sexik"]
+[ext_resource type="Texture2D" uid="uid://hsmiytcrdm3q" path="res://sprites/smoke_spritesheet.png" id="3_y33qn"]
 [ext_resource type="Script" uid="uid://d1tf121f0wndh" path="res://Scenes/Entities/undefined boss/atirar.gd" id="5_luk5f"]
 [ext_resource type="Script" uid="uid://1ughpmhhrew" path="res://Scripts/Components/HealthComponent.gd" id="5_sexik"]
 [ext_resource type="Script" uid="uid://bfucsptpxamdi" path="res://Scenes/Entities/undefined boss/dash.gd" id="6_nxa2d"]
@@ -20,9 +21,60 @@ shader = ExtResource("1_nxa2d")
 shader_parameter/blink_color = Color(1, 1, 1, 1)
 shader_parameter/factor = 0.0
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_luk5f"]
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_3f373"]
+particles_animation = true
+particles_anim_h_frames = 4
+particles_anim_v_frames = 4
+particles_anim_loop = true
+
+[sub_resource type="Gradient" id="Gradient_y33qn"]
+offsets = PackedFloat32Array(0, 0.8763441, 1)
+colors = PackedColorArray(0.36078432, 0.3764706, 1, 0, 0.9209572, 0.922897, 1, 0.8763441, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3f373"]
+gradient = SubResource("Gradient_y33qn")
+
+[sub_resource type="Curve" id="Curve_y33qn"]
+_data = [Vector2(0, 0.70786524), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_3f373"]
+curve_y = SubResource("Curve_y33qn")
+
+[sub_resource type="Curve" id="Curve_euuho"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.99999, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_m4rtf"]
+curve = SubResource("Curve_euuho")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_h7ml3"]
 particle_flag_disable_z = true
+emission_shape_scale = Vector3(370, 1, 1)
+spread = 5.0
+initial_velocity_min = -350.0
+initial_velocity_max = 350.0
+angular_velocity_min = -90.000015
+angular_velocity_max = 89.999985
+directional_velocity_min = -20.000015
+directional_velocity_max = -1.6093254e-05
+directional_velocity_curve = SubResource("CurveXYZTexture_3f373")
+gravity = Vector3(0, -100, 0)
+damping_min = 2.9850001
+damping_max = 2.9850001
+scale_max = 5.0
+scale_curve = SubResource("CurveTexture_m4rtf")
+color_ramp = SubResource("GradientTexture1D_3f373")
+anim_speed_max = 1.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_y33qn"]
+particle_flag_disable_z = true
+direction = Vector3(0, 0, 0)
+spread = 180.0
+initial_velocity_min = 700.0
+initial_velocity_max = 700.0
 gravity = Vector3(0, 0, 0)
+scale_max = 3.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sexik"]
 atlas = ExtResource("1_a37h1")
@@ -294,11 +346,29 @@ collision_layer = 2
 script = ExtResource("1_rhk1b")
 metadata/_custom_type_script = "uid://b4v73lx8blb1p"
 
-[node name="Particles" type="Node" parent="."]
+[node name="Particles" type="Node2D" parent="."]
 
-[node name="impact_01" type="GPUParticles2D" parent="Particles"]
+[node name="i01" type="GPUParticles2D" parent="Particles"]
+z_index = 3
+material = SubResource("CanvasItemMaterial_3f373")
 position = Vector2(0, 65)
-process_material = SubResource("ParticleProcessMaterial_luk5f")
+emitting = false
+amount = 100
+texture = ExtResource("3_y33qn")
+lifetime = 1.17
+one_shot = true
+explosiveness = 0.8
+randomness = 1.0
+fixed_fps = 120
+process_material = SubResource("ParticleProcessMaterial_h7ml3")
+
+[node name="i02" type="GPUParticles2D" parent="Particles"]
+z_index = 3
+emitting = false
+amount = 150
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_y33qn")
 
 [node name="HealthComponent" type="Node" parent="."]
 script = ExtResource("5_sexik")
@@ -316,6 +386,7 @@ script = ExtResource("3_doanp")
 [node name="atirar" type="Node" parent="StateMachine"]
 script = ExtResource("5_luk5f")
 jump_height = -450.0
+spear_velocity = 300.0
 
 [node name="dash" type="Node" parent="StateMachine"]
 script = ExtResource("6_nxa2d")

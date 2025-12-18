@@ -1,16 +1,51 @@
-[gd_scene load_steps=4 format=3 uid="uid://dldm42r7vqneo"]
+[gd_scene load_steps=11 format=3 uid="uid://dldm42r7vqneo"]
 
+[ext_resource type="Shader" uid="uid://lk8vqo6nbyf3" path="res://Shaders/Character.gdshader" id="1_7tanb"]
 [ext_resource type="Texture2D" uid="uid://bplco21qvogi1" path="res://Images/entities/undefined boss/spear.png" id="1_h2wtf"]
+[ext_resource type="Script" uid="uid://0cxcblxt1vt3" path="res://Scenes/Entities/undefined boss/spear.gd" id="2_7tanb"]
 [ext_resource type="Script" uid="uid://blfwkqgeamobt" path="res://Scripts/Components/Hitbox.gd" id="2_p6f1h"]
+[ext_resource type="Script" uid="uid://d0xnltbvtmvwv" path="res://Scripts/Components/Hurtbox.gd" id="2_s44fd"]
+[ext_resource type="Script" uid="uid://1ughpmhhrew" path="res://Scripts/Components/HealthComponent.gd" id="4_whjq5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4sbd0"]
+shader = ExtResource("1_7tanb")
+shader_parameter/blink_color = Color(1, 1, 1, 1)
+shader_parameter/factor = 0.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7tanb"]
+radius = 24.12
+height = 121.8
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h2wtf"]
-radius = 24.13
+radius = 17.07
 height = 118.87
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4sbd0"]
+size = Vector2(88, 20)
+
 [node name="Spear" type="CharacterBody2D"]
+material = SubResource("ShaderMaterial_4sbd0")
+collision_layer = 2
+script = ExtResource("2_7tanb")
+
+[node name="HealthComponent" type="Node" parent="."]
+script = ExtResource("4_whjq5")
+max_health = 15.0
+metadata/_custom_type_script = "uid://1ughpmhhrew"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+use_parent_material = true
 texture = ExtResource("1_h2wtf")
+
+[node name="Hurtbox" type="Area2D" parent="." node_paths=PackedStringArray("health_component")]
+script = ExtResource("2_s44fd")
+health_component = NodePath("../HealthComponent")
+metadata/_custom_type_script = "uid://d0xnltbvtmvwv"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_7tanb")
+debug_color = Color(0, 0.64565796, 0.26202035, 0.41960785)
 
 [node name="Hitbox" type="Area2D" parent="."]
 collision_mask = 16
@@ -21,3 +56,8 @@ metadata/_custom_type_script = "uid://blfwkqgeamobt"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_h2wtf")
+debug_color = Color(0.78624064, 0.37317798, 0.5769547, 0.41960785)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_4sbd0")
