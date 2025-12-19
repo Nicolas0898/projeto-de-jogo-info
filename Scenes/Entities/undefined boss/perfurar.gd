@@ -7,6 +7,7 @@ extends State
 @onready var impact_hitbox = preload("res://Scenes/Entities/undefined boss/impact.tscn")
 @export var jump_height : float
 @export var center_target : Node2D
+@export var roof_particles : GPUParticles2D
 var impact : bool = false
 var dir = null
 var dist = null
@@ -52,6 +53,10 @@ func onPhysics(_delta:float):
 		impact_spawn.add_child(hitbox)
 		i01.emitting = true
 		i02.emitting = true
+		if roof_particles != null:
+			roof_particles.emitting = true
+		GameHandler.Player.camera.screen_shake(30, 0.3)
+		
 		await get_tree().create_timer(0.3).timeout #Pausa pro impacto, sla
 		
 		impact = false
