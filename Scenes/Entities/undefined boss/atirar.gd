@@ -6,6 +6,7 @@ extends State
 @export var jump_height : float
 @export var center_target : Node2D
 @export var spear_velocity : float
+@export var roof_particles : GPUParticles2D
 var started = false
 var throw = false
 var falling = false
@@ -42,6 +43,7 @@ func onPhysics(_delta:float):
 		throw = true
 		character.variable_velocity.y = 2
 		var s = spear.instantiate()
+		s.roof_particles = roof_particles
 		
 		if dir == 1: 
 			s.rotation = 135
@@ -60,6 +62,7 @@ func onPhysics(_delta:float):
 		
 		var player_direction = character.global_position.direction_to(GameHandler.Player.global_position)
 		s.velocity = spear_velocity * player_direction
+		s.get_node("point").emitting = true
 		s.active = true
 		
 		falling = true

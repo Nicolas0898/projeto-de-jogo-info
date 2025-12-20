@@ -21,7 +21,7 @@ func _physics_process(delta: float) -> void:
 	
 	offset = Vector2(
 		noise.get_noise_2d(shake_time, 0) * shake_intensity,
-		noise.get_noise_2d(0, shake_time) * shake_intensity
+		noise.get_noise_2d(0, shake_time) * shake_intensity - 30
 		)
 	
 	if active_shake_time <= 0:

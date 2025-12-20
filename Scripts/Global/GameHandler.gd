@@ -2,7 +2,7 @@ extends Node
 var total_coins = 35
 
 var Player : PlayerCharacter
-var player_health = 100
+var player_health = 100 #original é 100 mas o pires mudou p teste
 var spawnpoint = null
 var player_habilities = []
 var golem_dead = false

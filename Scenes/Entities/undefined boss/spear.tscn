@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dldm42r7vqneo"]
+[gd_scene load_steps=16 format=3 uid="uid://dldm42r7vqneo"]
 
 [ext_resource type="Shader" uid="uid://lk8vqo6nbyf3" path="res://Shaders/Character.gdshader" id="1_7tanb"]
 [ext_resource type="Texture2D" uid="uid://bplco21qvogi1" path="res://Images/entities/undefined boss/spear.png" id="1_h2wtf"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://blfwkqgeamobt" path="res://Scripts/Components/Hitbox.gd" id="2_p6f1h"]
 [ext_resource type="Script" uid="uid://d0xnltbvtmvwv" path="res://Scripts/Components/Hurtbox.gd" id="2_s44fd"]
 [ext_resource type="Script" uid="uid://1ughpmhhrew" path="res://Scripts/Components/HealthComponent.gd" id="4_whjq5"]
+[ext_resource type="Texture2D" uid="uid://hsmiytcrdm3q" path="res://sprites/smoke_spritesheet.png" id="7_4sbd0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4sbd0"]
 shader = ExtResource("1_7tanb")
@@ -23,8 +24,32 @@ height = 118.87
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4sbd0"]
 size = Vector2(88, 20)
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ywshp"]
+particles_animation = true
+particles_anim_h_frames = 4
+particles_anim_v_frames = 4
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_7tanb"]
+offsets = PackedFloat32Array(0, 0.060606062, 0.76344085, 1)
+colors = PackedColorArray(0.7882353, 0.7882353, 0.7882353, 0, 0.78775924, 0.78775924, 0.78775924, 1, 0.47007585, 0.47007585, 0.47007585, 0.24705882, 0.7162962, 0.7162962, 0.7162962, 0.011764706)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_4sbd0"]
+gradient = SubResource("Gradient_7tanb")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7tanb"]
+particle_flag_disable_z = true
+direction = Vector3(0, 0, 0)
+initial_velocity_min = 200.0
+initial_velocity_max = 200.0
+gravity = Vector3(0, 0, 0)
+color_ramp = SubResource("GradientTexture1D_4sbd0")
+anim_speed_min = 1.0
+anim_speed_max = 1.0
+
 [node name="Spear" type="CharacterBody2D"]
 material = SubResource("ShaderMaterial_4sbd0")
+scale = Vector2(1.1, 1.1)
 collision_layer = 2
 script = ExtResource("2_7tanb")
 
@@ -61,3 +86,13 @@ debug_color = Color(0.78624064, 0.37317798, 0.5769547, 0.41960785)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_4sbd0")
+
+[node name="point" type="GPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_ywshp")
+position = Vector2(-55, 1)
+emitting = false
+amount = 100
+texture = ExtResource("7_4sbd0")
+lifetime = 0.3
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_7tanb")
