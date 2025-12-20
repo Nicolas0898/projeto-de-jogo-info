@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://cd26scyc4udl8"]
+
+[ext_resource type="Script" uid="uid://4yvd2c3juidy" path="res://Images/tilesets/undefined_boss/props/engrenagem.gd" id="1_e4pji"]
+[ext_resource type="Texture2D" uid="uid://c7sko8i0rbfd1" path="res://Images/tilesets/undefined_boss/engrenagem_06.png" id="2_e4pji"]
+[ext_resource type="Script" uid="uid://d0xnltbvtmvwv" path="res://Scripts/Components/Hurtbox.gd" id="3_df4ju"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k7vor"]
+radius = 17.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xbowy"]
+radius = 20.0
+
+[node name="Engrenagem06" type="Area2D"]
+collision_mask = 16
+script = ExtResource("1_e4pji")
+rpm = 10.0
+damage = 10.0
+metadata/_custom_type_script = "uid://4yvd2c3juidy"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_e4pji")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_k7vor")
+
+[node name="Hurtbox" type="Area2D" parent="."]
+script = ExtResource("3_df4ju")
+metadata/_custom_type_script = "uid://d0xnltbvtmvwv"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("CircleShape2D_xbowy")
+debug_color = Color(0.59658706, 0.5333151, 0.32761246, 0.41960785)

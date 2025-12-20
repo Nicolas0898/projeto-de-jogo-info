@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://brkn5mjfr67t4"]
+[gd_scene load_steps=62 format=3 uid="uid://brkn5mjfr67t4"]
 
 [ext_resource type="Shader" uid="uid://lk8vqo6nbyf3" path="res://Shaders/Character.gdshader" id="1_aeg27"]
 [ext_resource type="Script" uid="uid://bhahlqc4v651w" path="res://Scripts/Player/character.gd" id="1_d8n76"]
@@ -17,7 +17,6 @@
 [ext_resource type="Texture2D" uid="uid://bn6esusam6r6p" path="res://Images/Player/corrida/corrida6.png" id="13_cirso"]
 [ext_resource type="Texture2D" uid="uid://dy5rg4cdjpogl" path="res://Images/Player/corrida/corrida7.png" id="14_ustff"]
 [ext_resource type="Texture2D" uid="uid://cjj4wxh01hmq4" path="res://Images/Player/corrida/corrida8.png" id="15_bx0bv"]
-[ext_resource type="Script" uid="uid://cgspps0dvox6u" path="res://Scenes/Player/PlayerCamera.gd" id="15_du3pq"]
 [ext_resource type="Script" uid="uid://dneq3qu52mf0k" path="res://Scenes/Player/stunned.gd" id="15_ehkxx"]
 [ext_resource type="Texture2D" uid="uid://syaj0crblbiv" path="res://Images/Player/corrida/corrida9.png" id="16_63q1e"]
 [ext_resource type="Texture2D" uid="uid://ci5ly2a176jra" path="res://Images/Player/pulo/pulo-subindo5.png" id="16_aeg27"]
@@ -37,6 +36,7 @@
 [ext_resource type="Texture2D" uid="uid://bp426a6nis68a" path="res://Images/Player/lança.png" id="34_anaxe"]
 [ext_resource type="PackedScene" uid="uid://h8k072i4ijxq" path="res://Scenes/Player/crosshair.tscn" id="34_fhm5h"]
 [ext_resource type="Script" uid="uid://qbdj0dpq2x65" path="res://Scenes/Player/sprite.gd" id="35_um7yn"]
+[ext_resource type="Script" uid="uid://cgspps0dvox6u" path="res://Scenes/Player/PlayerCamera.gd" id="37_du3pq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qyni0"]
 shader = ExtResource("1_aeg27")
@@ -48,6 +48,9 @@ size = Vector2(8, 19)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aflf6"]
 size = Vector2(12, 21)
+
+[sub_resource type="SeparationRayShape2D" id="SeparationRayShape2D_du3pq"]
+length = 12.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vv7ta"]
 atlas = ExtResource("19_du3pq")
@@ -352,18 +355,18 @@ metadata/_custom_type_script = "uid://ca8wa4d6wsrqb"
 position = Vector2(2.38419e-07, -0.5)
 shape = SubResource("RectangleShape2D_aflf6")
 
+[node name="staircase_bugfix_l" type="CollisionShape2D" parent="."]
+position = Vector2(-9, -2)
+shape = SubResource("SeparationRayShape2D_du3pq")
+
+[node name="staircase_bugfix_r" type="CollisionShape2D" parent="."]
+position = Vector2(9, -2)
+shape = SubResource("SeparationRayShape2D_du3pq")
+
 [node name="_" type="Polygon2D" parent="."]
 visible = false
 position = Vector2(0, -32)
 polygon = PackedVector2Array(-16, 32, 16, 32, 16, -32, -16, -32)
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, -30)
-zoom = Vector2(1.3, 1.3)
-limit_smoothed = true
-position_smoothing_enabled = true
-position_smoothing_speed = 5.25
-script = ExtResource("15_du3pq")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -399,5 +402,13 @@ script = ExtResource("35_um7yn")
 [node name="HookCast" type="RayCast2D" parent="."]
 
 [node name="Crosshair" parent="." instance=ExtResource("34_fhm5h")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -30)
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 5.25
+script = ExtResource("37_du3pq")
+metadata/_custom_type_script = "uid://cgspps0dvox6u"
 
 [connection signal="healthChanged" from="HealthComponent" to="." method="_on_health_component_health_changed"]
