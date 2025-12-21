@@ -10,7 +10,6 @@ class_name Hitbox
 @export var direction:Vector2=Vector2.ZERO
 @export var one_hit:bool = false
 
-
 var ignore = []
 
 signal onHit(other:Area2D)

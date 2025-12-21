@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 [gd_scene load_steps=62 format=3 uid="uid://brkn5mjfr67t4"]
-=======
-[gd_scene load_steps=61 format=3 uid="uid://brkn5mjfr67t4"]
->>>>>>> ce831e7 (hurtbox signal)
 
 [ext_resource type="Shader" uid="uid://lk8vqo6nbyf3" path="res://Shaders/Character.gdshader" id="1_aeg27"]
 [ext_resource type="Script" uid="uid://bhahlqc4v651w" path="res://Scripts/Player/character.gd" id="1_d8n76"]
@@ -40,8 +36,7 @@
 [ext_resource type="Texture2D" uid="uid://bp426a6nis68a" path="res://Images/Player/lança.png" id="34_anaxe"]
 [ext_resource type="PackedScene" uid="uid://h8k072i4ijxq" path="res://Scenes/Player/crosshair.tscn" id="34_fhm5h"]
 [ext_resource type="Script" uid="uid://qbdj0dpq2x65" path="res://Scenes/Player/sprite.gd" id="35_um7yn"]
-[ext_resource type="Script" uid="uid://cgspps0dvox6u" path="res://Scenes/Player/PlayerCamera.gd" id="37_du3pq"]
-[ext_resource type="VideoStream" uid="uid://dl70but5xnr13" path="res://testing/foxy jumpscare fnaf 2 [r11mz5jvHaU].ogv" id="37_du3pq"]
+[ext_resource type="Script" uid="uid://cgspps0dvox6u" path="res://Scenes/Player/PlayerCamera.gd" id="38_4g8e6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qyni0"]
 shader = ExtResource("1_aeg27")
@@ -296,17 +291,6 @@ script = ExtResource("31_qyni0")
 cooldown = 0.329
 metadata/_custom_type_script = "uid://xwxec44xl3lg"
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Spear"]
-z_index = 4096
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-stream = ExtResource("37_du3pq")
-volume_db = 23.999994
-buffering_msec = 1000
-
 [node name="Hurtbox" type="Area2D" parent="." node_paths=PackedStringArray("health_component")]
 visible = false
 position = Vector2(-0.841728, 0)
@@ -424,7 +408,7 @@ position = Vector2(0, -30)
 limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 5.25
-script = ExtResource("37_du3pq")
+script = ExtResource("38_4g8e6")
 metadata/_custom_type_script = "uid://cgspps0dvox6u"
 
 [connection signal="healthChanged" from="HealthComponent" to="." method="_on_health_component_health_changed"]
