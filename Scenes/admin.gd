@@ -5,7 +5,7 @@ var a = false
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("admin") and not a:
 		a = true
-		Ui.get_node("RadialMenu").add_option("Admin")
+		Ui.get_node("RadialMenu").add_option("Admin","res://Images/assets/terminal.png"	)
 
 func _ready() -> void:
 	for button:Button in grid_container.get_children():

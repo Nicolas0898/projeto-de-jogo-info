@@ -1,11 +1,13 @@
 extends BaseHurtbox
 @onready var iframe: Timer = $Iframe
+signal on_hit(other:Hitbox)
 
 func _ready() -> void:
 	set_collision_layer_value(3,true)
 
 func onHit(other:Hitbox):
 	if not iframe.is_stopped(): return
+	on_hit.emit(other)
 	super(other)
 	iframe.start()
 	

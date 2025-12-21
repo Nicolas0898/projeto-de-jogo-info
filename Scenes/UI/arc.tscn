@@ -8,4 +8,4 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_x0kux")
-arc_pos = 0
+arc_size = 360.0

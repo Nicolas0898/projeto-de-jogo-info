@@ -8,6 +8,8 @@ var charged_start:Timer
 var is_charged = false
 func setvelo(x):
 	character.constant_velocity.attack_knockback = Vector2(x,0)
+@onready var video_stream_player: VideoStreamPlayer = $VideoStreamPlayer
+var f = false
 
 func _ready() -> void:
 	super()
@@ -93,6 +95,16 @@ func default_attack():
 		character.variable_velocity.y += min((dir*300*abs(hitdir)).y,0)*mult
 		character.constant_velocity.attack_knockback = Vector2(dir.x*170*mult,0)
 		timer.start()
+		
+		if randi_range(1,10) == 1:
+			if f == false : 
+				f = true
+				return
+			video_stream_player.visible = true
+			video_stream_player.stream_position = 0.8
+			video_stream_player.play()
+			await video_stream_player.finished
+			video_stream_player.visible = false
 	)
 
 func timeout():

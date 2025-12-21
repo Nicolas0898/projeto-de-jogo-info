@@ -17,7 +17,7 @@ func onPhysics(delta:float):
 	jumptime+=delta
 	if jumptime>= max_jumptime:
 		stateMachine.requestStateChange("Falling")
-		player.variable_velocity.y = -170
+		player.variable_velocity.y += -170
 	
 	if player.top_edge_cast.get_collider():
 		stateMachine.requestStateChange("Falling")
@@ -36,6 +36,6 @@ func onInput(event:InputEvent):
 	var player:PlayerCharacter = stateMachine.character
 	
 	if event.is_action_released("jump"):
-		player.variable_velocity.y = -200
+		player.variable_velocity.y += -200
 		stateMachine.requestStateChange("Falling")
 	

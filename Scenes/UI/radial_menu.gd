@@ -5,38 +5,49 @@ class option:
 	var target_window:String
 	var arc:arc_renderer
 	var index = 0
-	static var count = 0
+	var sprite:TextureRect
+	static var count = 0	
 	
-	func _init(parent:Control,target):
+	func _init(parent:Control,target,img=null):
 		index = count
 		count+=1
 		target_window = target
 		
+		
 		arc = arc_renderer.new()
 		arc.set_anchors_preset(Control.PRESET_CENTER)
 		parent.add_child(arc)
+		
+		if img!=null:
+			sprite = TextureRect.new()
+			sprite.texture = load(img)
+			arc.add_child(sprite)
 		
 		update_render()
 	
 	func update_render():
 		arc.radius = 80
 		arc.width = 5
-		arc.points = 8
+		arc.points = 4
 		arc.arc_size = (2*PI)/count
 		arc.arc_pos = (2*PI)/count * index
 		if count==3:
 			arc.arc_pos += PI/2
 		elif count==4:
 			arc.arc_pos += PI/4 
+		
+		if sprite:
+			print(arc.get_middle_point())
+			sprite.position = arc.get_middle_point() - sprite.size/2
 	
 
 var options:Array[option] = []
 var current_active:option
 
 func _ready() -> void:
-	add_option("Inventory")
-	add_option("Map")
-	add_option("Bestiary")
+	add_option("Inventory","res://Images/assets/backpack.png")
+	add_option("Map","res://Images/assets/MAPA.png")
+	add_option("Bestiary","res://Images/assets/bestiary.png")
 
 
 func _process(_delta: float) -> void:
@@ -47,14 +58,18 @@ func _process(_delta: float) -> void:
 	for i in options:
 		var inside = i.arc.is_angle_inside_arc(angle)
 		if inside:
-			i.arc.modulate = Color(.8,1,.8)
+			i.arc.self_modulate = Color(.8,1,.8)
+			if i.sprite:
+				i.sprite.modulate = Color(1,1,1)
 			label.text = str(i.target_window)
 			current_active = i
 		else:
-			i.arc.modulate = Color(0,0,0,0.5)
+			i.arc.self_modulate = Color(0,0,0,0.5)
+			if i.sprite:
+				i.sprite.modulate = Color(0,0,0,0.75)
 
-func add_option(window):
-	var new_option = option.new(self,window)
+func add_option(window,img=null):
+	var new_option = option.new(self,window,img)
 	options.push_back(new_option)
 	for i in options:
 		i.update_render()
