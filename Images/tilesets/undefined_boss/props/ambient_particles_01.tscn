@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://dxsansey0grty"]
+
+[sub_resource type="Gradient" id="Gradient_iyknp"]
+offsets = PackedFloat32Array(0, 0.2929293, 0.8181818, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.69100004, 1, 1, 1, 0.624, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_k72dk"]
+gradient = SubResource("Gradient_iyknp")
+
+[sub_resource type="Curve" id="Curve_iyknp"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.26415092, 1), 0.0, 0.0, 0, 0, Vector2(0.735849, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_k72dk"]
+curve = SubResource("Curve_iyknp")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_iyknp"]
+particle_flag_disable_z = true
+emission_shape = 6
+emission_ring_axis = Vector3(1, 1, 1)
+emission_ring_height = 1000.0
+emission_ring_radius = 1000.0
+emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 90.0
+angle_min = -720.0
+angle_max = 720.0
+spread = 180.0
+initial_velocity_min = 1.0
+initial_velocity_max = 3.0
+gravity = Vector3(0, 0, 0)
+scale_min = 3.0
+scale_max = 6.0
+scale_curve = SubResource("CurveTexture_k72dk")
+color_ramp = SubResource("GradientTexture1D_k72dk")
+
+[node name="ambient_particles_01" type="GPUParticles2D"]
+self_modulate = Color(4.415934, 4.415934, 4.415934, 1)
+z_index = 3
+amount = 100
+lifetime = 4.0
+preprocess = 1.0
+randomness = 1.0
+visibility_rect = Rect2(-800, -800, 1600, 1600)
+process_material = SubResource("ParticleProcessMaterial_iyknp")

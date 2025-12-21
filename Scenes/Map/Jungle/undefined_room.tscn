@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=4 uid="uid://c7iuh60iqviyg"]
+[gd_scene load_steps=48 format=4 uid="uid://c7iuh60iqviyg"]
 
 [ext_resource type="Texture2D" uid="uid://dwlla1vsw12qg" path="res://Images/tilesets/undefined_boss/boss_room_tileset.png" id="1_21gfr"]
 [ext_resource type="PackedScene" uid="uid://bvmugmme4p6nf" path="res://Scenes/Objects/grapple_node.tscn" id="1_xgbdq"]
@@ -8,10 +8,15 @@
 [ext_resource type="Texture2D" uid="uid://cy152bdu8s4gi" path="res://sprites/stone_pack.png" id="4_r2nsm"]
 [ext_resource type="PackedScene" uid="uid://dwr4crb3vhg5b" path="res://Scenes/Map/world_environment.tscn" id="4_uv0us"]
 [ext_resource type="PackedScene" uid="uid://bbug2un1b21w3" path="res://Scenes/Entities/undefined boss/undefined_boss.tscn" id="6_uv0us"]
+[ext_resource type="PackedScene" uid="uid://bxg6otiw1qxcq" path="res://Images/tilesets/undefined_boss/parallax/undefined_parallax.tscn" id="7_iapwv"]
+[ext_resource type="PackedScene" uid="uid://crcmsjfa1ri3d" path="res://Images/tilesets/undefined_boss/props/ambient_particles_02.tscn" id="8_8276r"]
 [ext_resource type="PackedScene" uid="uid://bbpcqvi7dv1nh" path="res://Images/tilesets/undefined_boss/props/engrenagem_02.tscn" id="8_s0n5r"]
 [ext_resource type="PackedScene" uid="uid://bympl5mdlhgsc" path="res://Images/tilesets/undefined_boss/props/engrenagem_03.tscn" id="9_1ewh3"]
 [ext_resource type="PackedScene" uid="uid://188ynpg05ct4" path="res://Images/tilesets/undefined_boss/props/engrenagem_04.tscn" id="10_hyvrf"]
 [ext_resource type="PackedScene" uid="uid://dfluhsjdqlt8m" path="res://Images/tilesets/undefined_boss/props/engrenagem_05.tscn" id="11_f2cnj"]
+[ext_resource type="PackedScene" uid="uid://dxsansey0grty" path="res://Images/tilesets/undefined_boss/props/ambient_particles_01.tscn" id="12_b46hy"]
+[ext_resource type="PackedScene" uid="uid://cdrw474gq1wxm" path="res://Images/tilesets/undefined_boss/props/bell.tscn" id="13_ske8f"]
+[ext_resource type="PackedScene" uid="uid://cgicfvk40ai02" path="res://Images/tilesets/undefined_boss/props/poste.tscn" id="14_f2cnj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j7h4l"]
 texture = ExtResource("1_21gfr")
@@ -1721,7 +1726,7 @@ texture = SubResource("GradientTexture2D_8ujtm")
 
 [node name="column" type="TileMapLayer" parent="visual"]
 z_index = -1
-tile_map_data = PackedByteArray("AAAAAPn/AAAVAAUAAAAAAPr/AAAVAAYAAAAAAPv/AAAVAAcAAAAAAPz/AAAVAAgAAAAAAP3/AAAVAAkAAAAAAP7/AAAVAAoAAAAAAP//AAAVAAsAAAAAAAAAAAAVAAwAAAAAAAEAAAAVAA0AAAAAAAIAAAAVAA4AAAAAAAMAAAAVAA8AAAABAPj/AAAWAAQAAAABAPn/AAAWAAUAAAABAPr/AAAWAAYAAAABAPv/AAAWAAcAAAABAPz/AAAWAAgAAAABAP3/AAAWAAkAAAABAP7/AAAWAAoAAAABAP//AAAWAAsAAAABAAAAAAAWAAwAAAABAAEAAAAWAA0AAAABAAIAAAAWAA4AAAABAAMAAAAWAA8AAAACAPn/AAAXAAUAAAACAPr/AAAXAAYAAAACAPv/AAAXAAcAAAACAPz/AAAXAAgAAAACAP3/AAAXAAkAAAACAP7/AAAXAAoAAAACAP//AAAXAAsAAAACAAAAAAAXAAwAAAACAAEAAAAXAA0AAAACAAIAAAAXAA4AAAACAAMAAAAXAA8AAAAZAPn/AAAVAAUAAAAZAPr/AAAVAAYAAAAZAPv/AAAVAAcAAAAZAPz/AAAVAAgAAAAZAP3/AAAVAAkAAAAZAP7/AAAVAAoAAAAZAP//AAAVAAsAAAAZAAAAAAAVAAwAAAAZAAEAAAAVAA0AAAAZAAIAAAAVAA4AAAAZAAMAAAAVAA8AAAAaAPj/AAAWAAQAAAAaAPn/AAAWAAUAAAAaAPr/AAAWAAYAAAAaAPv/AAAWAAcAAAAaAPz/AAAWAAgAAAAaAP3/AAAWAAkAAAAaAP7/AAAWAAoAAAAaAP//AAAWAAsAAAAaAAAAAAAWAAwAAAAaAAEAAAAWAA0AAAAaAAIAAAAWAA4AAAAaAAMAAAAWAA8AAAAbAPn/AAAXAAUAAAAbAPr/AAAXAAYAAAAbAPv/AAAXAAcAAAAbAPz/AAAXAAgAAAAbAP3/AAAXAAkAAAAbAP7/AAAXAAoAAAAbAP//AAAXAAsAAAAbAAAAAAAXAAwAAAAbAAEAAAAXAA0AAAAbAAIAAAAXAA4AAAAbAAMAAAAXAA8AAADv/wMAAAAVAAUAAADv/wQAAAAVAAYAAADv/wUAAAAVAAcAAADv/wYAAAAVAAgAAADv/wcAAAAVAAkAAADv/wgAAAAVAAoAAADv/wkAAAAVAAsAAADv/woAAAAVAAwAAADv/wsAAAAVAA0AAADv/wwAAAAVAA4AAADv/w0AAAAVAA8AAADw/wIAAAAWAAQAAADw/wMAAAAWAAUAAADw/wQAAAAWAAYAAADw/wUAAAAWAAcAAADw/wYAAAAWAAgAAADw/wcAAAAWAAkAAADw/wgAAAAWAAoAAADw/wkAAAAWAAsAAADw/woAAAAWAAwAAADw/wsAAAAWAA0AAADw/wwAAAAWAA4AAADw/w0AAAAWAA8AAADx/wMAAAAXAAUAAADx/wQAAAAXAAYAAADx/wUAAAAXAAcAAADx/wYAAAAXAAgAAADx/wcAAAAXAAkAAADx/wgAAAAXAAoAAADx/wkAAAAXAAsAAADx/woAAAAXAAwAAADx/wsAAAAXAA0AAADx/wwAAAAXAA4AAADx/w0AAAAXAA8AAAA=")
+tile_map_data = PackedByteArray("AAAAAPn/AAAVAAUAAAAAAPr/AAAVAAYAAAAAAPv/AAAVAAcAAAAAAPz/AAAVAAgAAAAAAP3/AAAVAAkAAAAAAP7/AAAVAAoAAAAAAP//AAAVAAsAAAAAAAAAAAAVAAwAAAAAAAEAAAAVAA0AAAAAAAIAAAAVAA4AAAAAAAMAAAAVAA8AAAABAPj/AAAWAAQAAAABAPn/AAAWAAUAAAABAPr/AAAWAAYAAAABAPv/AAAWAAcAAAABAPz/AAAWAAgAAAABAP3/AAAWAAkAAAABAP7/AAAWAAoAAAABAP//AAAWAAsAAAABAAAAAAAWAAwAAAABAAEAAAAWAA0AAAABAAIAAAAWAA4AAAABAAMAAAAWAA8AAAACAPn/AAAXAAUAAAACAPr/AAAXAAYAAAACAPv/AAAXAAcAAAACAPz/AAAXAAgAAAACAP3/AAAXAAkAAAACAP7/AAAXAAoAAAACAP//AAAXAAsAAAACAAAAAAAXAAwAAAACAAEAAAAXAA0AAAACAAIAAAAXAA4AAAACAAMAAAAXAA8AAAAZAPn/AAAVAAUAAAAZAPr/AAAVAAYAAAAZAPv/AAAVAAcAAAAZAPz/AAAVAAgAAAAZAP3/AAAVAAkAAAAZAP7/AAAVAAoAAAAZAP//AAAVAAsAAAAZAAAAAAAVAAwAAAAZAAEAAAAVAA0AAAAZAAIAAAAVAA4AAAAZAAMAAAAVAA8AAAAaAPj/AAAWAAQAAAAaAPn/AAAWAAUAAAAaAPr/AAAWAAYAAAAaAPv/AAAWAAcAAAAaAPz/AAAWAAgAAAAaAP3/AAAWAAkAAAAaAP7/AAAWAAoAAAAaAP//AAAWAAsAAAAaAAAAAAAWAAwAAAAaAAEAAAAWAA0AAAAaAAIAAAAWAA4AAAAaAAMAAAAWAA8AAAAbAPn/AAAXAAUAAAAbAPr/AAAXAAYAAAAbAPv/AAAXAAcAAAAbAPz/AAAXAAgAAAAbAP3/AAAXAAkAAAAbAP7/AAAXAAoAAAAbAP//AAAXAAsAAAAbAAAAAAAXAAwAAAAbAAEAAAAXAA0AAAAbAAIAAAAXAA4AAAAbAAMAAAAXAA8AAAA=")
 tile_set = SubResource("TileSet_uv0us")
 
 [node name="PointLight2D2" type="PointLight2D" parent="visual/column"]
@@ -1931,9 +1936,18 @@ texture = SubResource("GradientTexture2D_uv0us")
 
 [node name="bg gradient" type="Sprite2D" parent="visual"]
 z_index = -999
-position = Vector2(233, 2.0000038)
-scale = Vector2(23.851564, 22.71875)
+position = Vector2(325.49997, 66.50003)
+scale = Vector2(39.578125, 24.734375)
 texture = SubResource("GradientTexture2D_s0n5r")
+
+[node name="Undefined_parallax" parent="visual" instance=ExtResource("7_iapwv")]
+z_index = -5
+
+[node name="ambient_particles_02" parent="visual" instance=ExtResource("8_8276r")]
+position = Vector2(236, 74)
+
+[node name="ambient_particles" parent="visual" instance=ExtResource("12_b46hy")]
+position = Vector2(235, 75)
 
 [node name="props" type="Node" parent="."]
 
@@ -1971,8 +1985,14 @@ scale = Vector2(1.3, 1.3)
 position = Vector2(-129, -33)
 scale = Vector2(1.3, 1.3)
 
+[node name="poste" parent="props" instance=ExtResource("14_f2cnj")]
+position = Vector2(-241, 174)
+
+[node name="Engrenagem02" parent="props" instance=ExtResource("8_s0n5r")]
+position = Vector2(393, 285)
+
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_047gs")]
-position = Vector2(-131, 220)
+position = Vector2(-1, 253)
 
 [node name="Undefined_boss" parent="." instance=ExtResource("6_uv0us")]
 
@@ -1993,7 +2013,7 @@ visible = false
 position = Vector2(182, 0)
 zoom = Vector2(0.4, 0.4)
 
-[node name="Engrenagem02" parent="." instance=ExtResource("8_s0n5r")]
-position = Vector2(393, 285)
+[node name="Bell" parent="." instance=ExtResource("13_ske8f")]
+position = Vector2(102, 250)
 
 [editable path="Undefined_boss"]

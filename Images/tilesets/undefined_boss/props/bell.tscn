@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cdrw474gq1wxm"]
+[gd_scene load_steps=18 format=3 uid="uid://cdrw474gq1wxm"]
 
 [ext_resource type="Script" uid="uid://cmdnbpc58dmn7" path="res://Images/tilesets/undefined_boss/props/bell.gd" id="1_nn6f5"]
 [ext_resource type="Texture2D" uid="uid://crruvfx8lqfxm" path="res://Images/tilesets/undefined_boss/bell_spritesheet.png" id="2_2hx2u"]
@@ -10,9 +10,9 @@ radius = 15.0
 atlas = ExtResource("2_2hx2u")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4klgh"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_oj16l"]
 atlas = ExtResource("2_2hx2u")
-region = Rect2(0, 0, 32, 32)
+region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mvp6b"]
 atlas = ExtResource("2_2hx2u")
@@ -25,10 +25,6 @@ region = Rect2(64, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_w0rxo"]
 atlas = ExtResource("2_2hx2u")
 region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_oj16l"]
-atlas = ExtResource("2_2hx2u")
-region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_73pkq"]
 atlas = ExtResource("2_2hx2u")
@@ -54,7 +50,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4klgh")
+"texture": SubResource("AtlasTexture_oj16l")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_mvp6b")
@@ -121,7 +117,7 @@ shape = SubResource("CapsuleShape2D_nn6f5")
 sprite_frames = SubResource("SpriteFrames_dquo0")
 animation = &"moving"
 autoplay = "idle"
-frame_progress = 0.7409017
+frame_progress = 0.7533279
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 emitting = false

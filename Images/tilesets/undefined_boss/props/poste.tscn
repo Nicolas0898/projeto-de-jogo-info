@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://cgicfvk40ai02"]
+
+[ext_resource type="Texture2D" uid="uid://becfurjxu88oo" path="res://Images/tilesets/undefined_boss/poste.png" id="1_y7si6"]
+[ext_resource type="PackedScene" uid="uid://cggtt882ti85n" path="res://Scenes/particles/firefly.tscn" id="2_o1uhv"]
+
+[sub_resource type="Gradient" id="Gradient_y7si6"]
+colors = PackedColorArray(1, 0.4072413, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_o1uhv"]
+gradient = SubResource("Gradient_y7si6")
+fill = 1
+fill_from = Vector2(0.4957265, 0.47435898)
+fill_to = Vector2(0.41452992, 0)
+
+[node name="poste" type="Sprite2D"]
+texture = ExtResource("1_y7si6")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, -43)
+texture = SubResource("GradientTexture2D_o1uhv")
+
+[node name="firefly" parent="." instance=ExtResource("2_o1uhv")]
+position = Vector2(0, -43)
