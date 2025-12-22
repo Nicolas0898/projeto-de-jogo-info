@@ -15,9 +15,6 @@ func onStateEntered(_oldState:State):
 	
 	await get_tree().create_timer(0.9).timeout #Pausa entre ataques
 	
-	#APAGAR PQ É TESTE UWU >W<
-	GameHandler.Player.add_child(preload("res://Scenes/Player/InstanciableHabilities/grappling_hook.tscn").instantiate())
-	
 	if stateMachine.currentState != self: return
 	
 	stateMachine.requestStateChange("idle")

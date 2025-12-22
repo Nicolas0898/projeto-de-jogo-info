@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bv3ox18bk58nr"]
+
+[sub_resource type="Gradient" id="Gradient_gonu3"]
+offsets = PackedFloat32Array(0.042857144, 0.8238095)
+colors = PackedColorArray(0, 0, 0, 1, 0.9999996, 0.94592243, 0.9953852, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_lnad3"]
+gradient = SubResource("Gradient_gonu3")
+
+[sub_resource type="Environment" id="Environment_efyuc"]
+background_mode = 3
+ambient_light_source = 1
+ambient_light_color = Color(1, 0, 0, 1)
+ambient_light_energy = 16.0
+tonemap_exposure = 0.9
+glow_enabled = true
+glow_intensity = 0.21
+glow_blend_mode = 1
+adjustment_enabled = true
+adjustment_saturation = 1.1
+adjustment_color_correction = SubResource("GradientTexture1D_lnad3")
+
+[node name="Undefined_enviroment" type="WorldEnvironment"]
+environment = SubResource("Environment_efyuc")

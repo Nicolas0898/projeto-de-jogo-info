@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bxg6otiw1qxcq"]
+[gd_scene load_steps=3 format=3 uid="uid://bxg6otiw1qxcq"]
 
 [ext_resource type="Texture2D" uid="uid://bo4f0dwj113op" path="res://Images/tilesets/undefined_boss/parallax_01.png" id="1_pjxx7"]
+[ext_resource type="Texture2D" uid="uid://bqpwgaq4xbnqq" path="res://Images/tilesets/undefined_boss/parallax_02.png" id="2_wq7mw"]
 
 [node name="Undefined_parallax" type="Node2D"]
 modulate = Color(1, 1, 1, 0.674)
@@ -16,5 +17,11 @@ texture_repeat = 2
 texture = ExtResource("1_pjxx7")
 
 [node name="Parallax2D2" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.9, 0.9)
+repeat_size = Vector2(640, 360)
+autoscroll = Vector2(3, 2)
+repeat_times = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D2"]
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("2_wq7mw")
