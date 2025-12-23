@@ -1,19 +1,14 @@
-[gd_resource type="Resource" script_class="bestiary_entry" load_steps=5 format=3 uid="uid://6jy8mcvlwf8g"]
+[gd_resource type="Resource" script_class="bestiary_entry" load_steps=4 format=3 uid="uid://6jy8mcvlwf8g"]
 
 [ext_resource type="Script" uid="uid://cqkbc8kwvsfra" path="res://Scripts/ETC/bestiary_entry.gd" id="1_ff865"]
 [ext_resource type="Texture2D" uid="uid://bembfapn6k3t5" path="res://Images/etc/golem.png" id="1_wmlp3"]
 [ext_resource type="Script" uid="uid://dasuh6is0cd16" path="res://Scripts/ETC/page.gd" id="2_b4lyt"]
-[ext_resource type="Resource" uid="uid://b06dwr2chblgg" path="res://Images/entities/resource/bestiario/golem_label.tres" id="3_r86io"]
 
 [resource]
 script = ExtResource("1_ff865")
 nome = "Golem de Terra"
 subtitle = "Seu maior inimigo"
 desc = "A anos atrás, para se proteger de uma eventual guerra, o povo das cavernas criou um batalhão de golens e pôs eles para proteger as entradas e saídas do pântano. Eles foram \"acordados\" com energia dos fragmentos, e com o tempo, a mesma se dissipou e os golens apagaram, mas pelo visto um ainda ficou acordado."
-hp = 0.0
-times_eliminated = 0
 indicator = 1
 image = ExtResource("1_wmlp3")
-pages = Array[ExtResource("2_b4lyt")]([ExtResource("3_r86io")])
-is_visible = false
 metadata/_custom_type_script = "uid://cqkbc8kwvsfra"

@@ -5,12 +5,8 @@
 
 [resource]
 script = ExtResource("1_1d7wy")
-name = "Bestiário"
-desc = "Misterioso livro antigo, feito por caçadores. Elimine possíveis inimigos para preencher o bestiário."
-amount = 1
-cooldown = 0.0
 display = 1
 sprite = ExtResource("2_1d7wy")
-confirm = false
-hability_path = ""
+name = "Bestiário"
+desc = "Misterioso livro antigo, feito por caçadores. Elimine possíveis inimigos para preencher o bestiário."
 metadata/_custom_type_script = "uid://b1mb7f28nu8s0"

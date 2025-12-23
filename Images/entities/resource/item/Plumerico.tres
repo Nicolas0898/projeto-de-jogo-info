@@ -5,11 +5,8 @@
 
 [resource]
 script = ExtResource("1_ti2de")
-name = "Plumérico"
-desc = "Dinheiro unificado da ilha, criado pelo Reino Branco"
-amount = 1
-cooldown = 0.0
 display = 1
 sprite = ExtResource("2_pmpdu")
-confirm = false
+name = "Plumérico"
+desc = "Dinheiro unificado da ilha, criado pelo Reino Branco"
 metadata/_custom_type_script = "uid://bu8krnugqph56"
