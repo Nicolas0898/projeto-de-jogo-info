@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cdrw474gq1wxm"]
+[gd_scene load_steps=20 format=3 uid="uid://cdrw474gq1wxm"]
 
 [ext_resource type="Script" uid="uid://cmdnbpc58dmn7" path="res://Images/tilesets/undefined_boss/props/bell.gd" id="1_nn6f5"]
 [ext_resource type="Texture2D" uid="uid://crruvfx8lqfxm" path="res://Images/tilesets/undefined_boss/bell_spritesheet.png" id="2_2hx2u"]
@@ -104,10 +104,20 @@ linear_accel_max = 0.99999774
 linear_accel_curve = SubResource("CurveTexture_2hx2u")
 color_ramp = SubResource("GradientTexture1D_2hx2u")
 
+[sub_resource type="Gradient" id="Gradient_2hx2u"]
+offsets = PackedFloat32Array(0, 0.5608696, 1)
+colors = PackedColorArray(0.8787422, 0.27395758, 0, 1, 0.94669634, 0.681432, 0.56108564, 0.28800002, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_m4aap"]
+gradient = SubResource("Gradient_2hx2u")
+fill = 1
+fill_from = Vector2(0.52136755, 0.46153846)
+fill_to = Vector2(1, 0.45726496)
+
 [node name="Bell" type="Area2D"]
 script = ExtResource("1_nn6f5")
 cooldown = 2.5
-kb_intensity = 250.0
+kb_intensity = 500.0
 metadata/_custom_type_script = "uid://d0xnltbvtmvwv"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -115,9 +125,8 @@ shape = SubResource("CapsuleShape2D_nn6f5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dquo0")
-animation = &"moving"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.7533279
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 emitting = false
@@ -128,3 +137,6 @@ speed_scale = 2.0
 explosiveness = 1.0
 fixed_fps = 120
 process_material = SubResource("ParticleProcessMaterial_m4aap")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+texture = SubResource("GradientTexture2D_m4aap")
