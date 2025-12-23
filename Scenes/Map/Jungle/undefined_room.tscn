@@ -18,7 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://dxsansey0grty" path="res://Images/tilesets/undefined_boss/props/ambient_particles_01.tscn" id="12_b46hy"]
 [ext_resource type="PackedScene" uid="uid://cdrw474gq1wxm" path="res://Images/tilesets/undefined_boss/props/bell.tscn" id="13_ske8f"]
 [ext_resource type="PackedScene" uid="uid://cgicfvk40ai02" path="res://Images/tilesets/undefined_boss/props/poste.tscn" id="14_f2cnj"]
-[ext_resource type="PackedScene" uid="uid://cldc27rb3u4ip" path="res://Scenes/Objects/Obelisk.tscn" id="17_57brr"]
+[ext_resource type="PackedScene" uid="uid://c80gy3onphy83" path="res://Images/tilesets/undefined_boss/props/undefined_obelisk.tscn" id="17_57brr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j7h4l"]
 texture = ExtResource("1_21gfr")
@@ -2016,8 +2016,8 @@ position = Vector2(-241, 174)
 [node name="Bell" parent="props" instance=ExtResource("13_ske8f")]
 position = Vector2(194, 315)
 
-[node name="AnimatedSprite2D" parent="props" instance=ExtResource("17_57brr")]
-position = Vector2(36, 235)
+[node name="Undefined_obelisc" parent="props" instance=ExtResource("17_57brr")]
+position = Vector2(32, 261)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_047gs")]
 z_index = 2
