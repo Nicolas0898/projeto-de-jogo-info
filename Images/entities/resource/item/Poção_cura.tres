@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="hp_potion" load_steps=3 format=3 uid="uid://dhj1nx7sy3gd2"]
 
-[ext_resource type="Script" uid="uid://1a4nvri00rki" path="res://script/item_scripts/item/hp_potion.gd" id="1_hnl4v"]
-[ext_resource type="Texture2D" uid="uid://phnmg3nkqvo7" path="res://sprites/hp_potion.png" id="2_5icuk"]
+[ext_resource type="Script" uid="uid://1a4nvri00rki" path="res://Scripts/UI/item_scripts/item/hp_potion.gd" id="1_hnl4v"]
+[ext_resource type="Texture2D" uid="uid://phnmg3nkqvo7" path="res://Images/etc/hp_potion.png" id="2_5icuk"]
 
 [resource]
 script = ExtResource("1_hnl4v")

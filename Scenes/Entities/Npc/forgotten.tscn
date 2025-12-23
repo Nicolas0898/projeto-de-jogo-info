@@ -2,14 +2,14 @@
 
 [ext_resource type="Texture2D" uid="uid://lca50qv7wx4x" path="res://Images/entities/forgotten.png" id="1_8xwe6"]
 [ext_resource type="Texture2D" uid="uid://bp0xuae8jm25g" path="res://Images/entities/forgotten_lantern.png" id="2_15fdr"]
-[ext_resource type="PackedScene" uid="uid://dqiyuc6o8q627" path="res://Scenes/interaction_area.tscn" id="2_wnayv"]
-[ext_resource type="Script" uid="uid://bi0pwfqucqrqb" path="res://script/dialogue_scripts/Messages.gd" id="3_jgsda"]
-[ext_resource type="Texture2D" uid="uid://dj18igomomhvl" path="res://sprites/primary_border.png" id="4_erka0"]
-[ext_resource type="Script" uid="uid://8err0wuw08y8" path="res://script/dialogue_scripts/Dialogue.gd" id="4_kxysw"]
-[ext_resource type="Texture2D" uid="uid://fp8t6q7nqasx" path="res://sprites/forgotten_dialogue.png" id="5_kxysw"]
-[ext_resource type="Script" uid="uid://cs47kxe2lnqwp" path="res://script/interact/Choice.gd" id="6_jpw6o"]
-[ext_resource type="Script" uid="uid://bfyny7lmf01ea" path="res://script/actions/forgotten_potion.gd" id="7_15fdr"]
-[ext_resource type="Script" uid="uid://crbolew7dydjc" path="res://script/dialogue_scripts/Question.gd" id="7_x8eab"]
+[ext_resource type="PackedScene" uid="uid://dqiyuc6o8q627" path="res://Scenes/Objects/interaction_area.tscn" id="2_wnayv"]
+[ext_resource type="Script" uid="uid://bi0pwfqucqrqb" path="res://Scripts/UI/dialogue_scripts/Messages.gd" id="3_jgsda"]
+[ext_resource type="Texture2D" uid="uid://dj18igomomhvl" path="res://Images/etc/primary_border.png" id="4_erka0"]
+[ext_resource type="Script" uid="uid://8err0wuw08y8" path="res://Scripts/UI/dialogue_scripts/Dialogue.gd" id="4_kxysw"]
+[ext_resource type="Texture2D" uid="uid://fp8t6q7nqasx" path="res://Images/etc/forgotten_dialogue.png" id="5_kxysw"]
+[ext_resource type="Script" uid="uid://cs47kxe2lnqwp" path="res://Scripts/UI/interact/Choice.gd" id="6_jpw6o"]
+[ext_resource type="Script" uid="uid://bfyny7lmf01ea" path="res://Scripts/UI/dialogue_scripts/actions/forgotten_potion.gd" id="7_15fdr"]
+[ext_resource type="Script" uid="uid://crbolew7dydjc" path="res://Scripts/UI/dialogue_scripts/Question.gd" id="7_x8eab"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k4r80"]
 atlas = ExtResource("1_8xwe6")

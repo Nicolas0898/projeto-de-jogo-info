@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="bestiary_entry" load_steps=5 format=3 uid="uid://6jy8mcvlwf8g"]
 
-[ext_resource type="Script" uid="uid://cqkbc8kwvsfra" path="res://script/bestiary_entry.gd" id="1_ff865"]
-[ext_resource type="Texture2D" uid="uid://bembfapn6k3t5" path="res://sprites/golem.png" id="1_wmlp3"]
-[ext_resource type="Script" uid="uid://dasuh6is0cd16" path="res://script/page.gd" id="2_b4lyt"]
+[ext_resource type="Script" uid="uid://cqkbc8kwvsfra" path="res://Scripts/ETC/bestiary_entry.gd" id="1_ff865"]
+[ext_resource type="Texture2D" uid="uid://bembfapn6k3t5" path="res://Images/etc/golem.png" id="1_wmlp3"]
+[ext_resource type="Script" uid="uid://dasuh6is0cd16" path="res://Scripts/ETC/page.gd" id="2_b4lyt"]
 [ext_resource type="Resource" uid="uid://b06dwr2chblgg" path="res://Images/entities/resource/bestiario/golem_label.tres" id="3_r86io"]
 
 [resource]

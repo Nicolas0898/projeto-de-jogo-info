@@ -13,9 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://bvmugmme4p6nf" path="res://Scenes/Objects/grapple_node.tscn" id="10_bonop"]
 [ext_resource type="PackedScene" uid="uid://b1ejde12cbfqd" path="res://Scenes/Entities/Cobra/cobra.tscn" id="11_ll84f"]
 [ext_resource type="PackedScene" uid="uid://bbcuecrtpmuuo" path="res://Scenes/Objects/teleport.tscn" id="11_ruubq"]
-[ext_resource type="Texture2D" uid="uid://y8pmob1wtl2q" path="res://Images/sign.png" id="12_lnoy8"]
+[ext_resource type="Texture2D" uid="uid://y8pmob1wtl2q" path="res://Images/etc/sign.png" id="12_lnoy8"]
 [ext_resource type="PackedScene" uid="uid://bhhvto6dt5454" path="res://Scenes/Map/JungleParallax.tscn" id="12_r6gg3"]
-[ext_resource type="Texture2D" uid="uid://cyw1woq2weih" path="res://Images/weapons/gaiola_inv.png" id="13_1hyu7"]
+[ext_resource type="Texture2D" uid="uid://cyw1woq2weih" path="res://Images/Player/weapons/gaiola_inv.png" id="13_1hyu7"]
 [ext_resource type="PackedScene" uid="uid://dwr4crb3vhg5b" path="res://Scenes/Map/world_environment.tscn" id="13_kawln"]
 [ext_resource type="PackedScene" uid="uid://dsj80mrifqmuw" path="res://Scenes/Entities/Npc/forgotten.tscn" id="16_7ebiy"]
 [ext_resource type="Script" uid="uid://xbqu3ca63qn6" path="res://Scripts/Components/SpawnLocation.gd" id="17_4wktd"]
@@ -24,7 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://vokqjyhjkv4a" path="res://Scenes/Objects/lamp.tscn" id="20_bonop"]
 [ext_resource type="PackedScene" uid="uid://bc4vsdggdjydf" path="res://Scenes/Objects/aguaboia.tscn" id="21_ruubq"]
 [ext_resource type="PackedScene" uid="uid://bgj5i6vxa07tq" path="res://Scenes/Entities/piranha.tscn" id="22_kfepi"]
-[ext_resource type="Texture2D" uid="uid://c7jbun514lps5" path="res://Images/arrow.png" id="23_ll84f"]
+[ext_resource type="Texture2D" uid="uid://c7jbun514lps5" path="res://Images/etc/arrow.png" id="23_ll84f"]
 
 [sub_resource type="GDScript" id="GDScript_no33e"]
 

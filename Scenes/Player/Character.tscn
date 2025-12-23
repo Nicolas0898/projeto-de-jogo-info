@@ -1,42 +1,41 @@
-[gd_scene load_steps=62 format=3 uid="uid://brkn5mjfr67t4"]
+[gd_scene load_steps=61 format=3 uid="uid://brkn5mjfr67t4"]
 
 [ext_resource type="Shader" uid="uid://lk8vqo6nbyf3" path="res://Shaders/Character.gdshader" id="1_aeg27"]
-[ext_resource type="Script" uid="uid://bhahlqc4v651w" path="res://Scripts/Player/character.gd" id="1_d8n76"]
-[ext_resource type="Script" uid="uid://lurpfwbx4y8w" path="res://Scripts/StateMachine/StateMachine.gd" id="2_xa38j"]
-[ext_resource type="Script" uid="uid://bwvlwfyg6aura" path="res://Scenes/Player/Idle.gd" id="3_aflf6"]
-[ext_resource type="Script" uid="uid://u7xe8kyvdrj3" path="res://Scenes/Player/running.gd" id="4_owfaj"]
-[ext_resource type="Script" uid="uid://m216pt8kh4te" path="res://Scenes/Player/jumping.gd" id="5_nwviy"]
+[ext_resource type="Script" uid="uid://bhahlqc4v651w" path="res://Scripts/scenes/Player/character.gd" id="1_d8n76"]
+[ext_resource type="Script" uid="uid://lurpfwbx4y8w" path="res://Scripts/Components/StateMachine/StateMachine.gd" id="2_xa38j"]
+[ext_resource type="Script" uid="uid://bwvlwfyg6aura" path="res://Scenes/Player/Scripts/Idle.gd" id="3_aflf6"]
+[ext_resource type="Script" uid="uid://u7xe8kyvdrj3" path="res://Scenes/Player/Scripts/running.gd" id="4_owfaj"]
+[ext_resource type="Script" uid="uid://m216pt8kh4te" path="res://Scenes/Player/Scripts/jumping.gd" id="5_nwviy"]
 [ext_resource type="PackedScene" uid="uid://bxj8gcdynfh0a" path="res://Scenes/Debug/debug_menu.tscn" id="5_owfaj"]
-[ext_resource type="Script" uid="uid://bub1gegedpdbu" path="res://Scenes/Player/falling.gd" id="6_try8w"]
-[ext_resource type="Script" uid="uid://b1cpv48cjcpkd" path="res://Scenes/Player/PlayerHurtbox.gd" id="7_qyni0"]
+[ext_resource type="Script" uid="uid://bub1gegedpdbu" path="res://Scenes/Player/Scripts/falling.gd" id="6_try8w"]
+[ext_resource type="Script" uid="uid://b1cpv48cjcpkd" path="res://Scenes/Player/Scripts/PlayerHurtbox.gd" id="7_qyni0"]
 [ext_resource type="Script" uid="uid://1ughpmhhrew" path="res://Scripts/Components/HealthComponent.gd" id="9_scwnk"]
 [ext_resource type="Texture2D" uid="uid://fu2g1kbm22vm" path="res://Images/Player/corrida/corrida1.png" id="11_2yp3h"]
 [ext_resource type="Texture2D" uid="uid://bj2h7m3qykdle" path="res://Images/Player/fall/pulo-descendo.1.png" id="11_qk417"]
 [ext_resource type="Texture2D" uid="uid://vwt3ugjwdepk" path="res://Images/Player/corrida/corrida5.png" id="12_tfsh6"]
-[ext_resource type="Script" uid="uid://c0agjkctdihsd" path="res://Scenes/Player/hooking.gd" id="13_1m0su"]
+[ext_resource type="Script" uid="uid://c0agjkctdihsd" path="res://Scenes/Player/Scripts/hooking.gd" id="13_1m0su"]
 [ext_resource type="Texture2D" uid="uid://bn6esusam6r6p" path="res://Images/Player/corrida/corrida6.png" id="13_cirso"]
 [ext_resource type="Texture2D" uid="uid://dy5rg4cdjpogl" path="res://Images/Player/corrida/corrida7.png" id="14_ustff"]
 [ext_resource type="Texture2D" uid="uid://cjj4wxh01hmq4" path="res://Images/Player/corrida/corrida8.png" id="15_bx0bv"]
-[ext_resource type="Script" uid="uid://dneq3qu52mf0k" path="res://Scenes/Player/stunned.gd" id="15_ehkxx"]
+[ext_resource type="Script" uid="uid://dneq3qu52mf0k" path="res://Scenes/Player/Scripts/stunned.gd" id="15_ehkxx"]
 [ext_resource type="Texture2D" uid="uid://syaj0crblbiv" path="res://Images/Player/corrida/corrida9.png" id="16_63q1e"]
 [ext_resource type="Texture2D" uid="uid://ci5ly2a176jra" path="res://Images/Player/pulo/pulo-subindo5.png" id="16_aeg27"]
-[ext_resource type="Script" uid="uid://chag3uxm52o3q" path="res://Scenes/Player/died.gd" id="16_fhm5h"]
+[ext_resource type="Script" uid="uid://chag3uxm52o3q" path="res://Scenes/Player/Scripts/died.gd" id="16_fhm5h"]
 [ext_resource type="Texture2D" uid="uid://bq3o260x6k2uf" path="res://Images/Player/corrida/corrida10.png" id="17_dc8lg"]
 [ext_resource type="Texture2D" uid="uid://cnaxb2j18b7ao" path="res://Images/Player/pulo/pulo-subindo6.png" id="17_qyni0"]
 [ext_resource type="Texture2D" uid="uid://w0jx47g55pd0" path="res://Images/Player/death.png" id="17_ykpih"]
-[ext_resource type="Script" uid="uid://dudqt61g715lc" path="res://Scenes/Player/core.gd" id="18_4g8e6"]
+[ext_resource type="Script" uid="uid://dudqt61g715lc" path="res://Scenes/Player/Scripts/core.gd" id="18_4g8e6"]
 [ext_resource type="Texture2D" uid="uid://c1ujusenctm2s" path="res://Images/Player/idle/personagem com capa4.png" id="18_fhm5h"]
 [ext_resource type="Texture2D" uid="uid://68evddedjkva" path="res://Images/Player/corrida/corrida11.png" id="18_u5us2"]
-[ext_resource type="Texture2D" uid="uid://dy4s2jdhshmhc" path="res://Images/Player/chamadagaioladefolha.png" id="19_du3pq"]
+[ext_resource type="Texture2D" uid="uid://dy4s2jdhshmhc" path="res://Images/Player/weapons/chamadagaioladefolha.png" id="19_du3pq"]
 [ext_resource type="Texture2D" uid="uid://cdtbxkwpfrmji" path="res://Images/Player/corrida/corrida12.png" id="19_qk417"]
 [ext_resource type="Texture2D" uid="uid://b0raral3iwuns" path="res://Images/Player/idle/personagem com capa6.png" id="20_um7yn"]
 [ext_resource type="Texture2D" uid="uid://dlghl7efhf7rm" path="res://Images/Player/idle/personagem com capa7.png" id="21_du3pq"]
 [ext_resource type="Texture2D" uid="uid://b8rapwthjwyql" path="res://Images/Player/grapilling hook.png" id="22_4g8e6"]
-[ext_resource type="Script" uid="uid://cdh4rwxb1fesc" path="res://Scripts/Weapons/spear.gd" id="31_qyni0"]
-[ext_resource type="Texture2D" uid="uid://bp426a6nis68a" path="res://Images/Player/lança.png" id="34_anaxe"]
+[ext_resource type="Texture2D" uid="uid://bp426a6nis68a" path="res://Images/Player/weapons/lança.png" id="34_anaxe"]
 [ext_resource type="PackedScene" uid="uid://h8k072i4ijxq" path="res://Scenes/Player/crosshair.tscn" id="34_fhm5h"]
-[ext_resource type="Script" uid="uid://qbdj0dpq2x65" path="res://Scenes/Player/sprite.gd" id="35_um7yn"]
-[ext_resource type="Script" uid="uid://cgspps0dvox6u" path="res://Scenes/Player/PlayerCamera.gd" id="38_4g8e6"]
+[ext_resource type="Script" uid="uid://qbdj0dpq2x65" path="res://Scenes/Player/Scripts/sprite.gd" id="35_um7yn"]
+[ext_resource type="Script" uid="uid://cgspps0dvox6u" path="res://Scenes/Player/Scripts/PlayerCamera.gd" id="38_4g8e6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qyni0"]
 shader = ExtResource("1_aeg27")
@@ -286,11 +285,6 @@ collision_mask = 5
 script = ExtResource("1_d8n76")
 speed = 150
 
-[node name="Spear" type="Node2D" parent="."]
-script = ExtResource("31_qyni0")
-cooldown = 0.329
-metadata/_custom_type_script = "uid://xwxec44xl3lg"
-
 [node name="Hurtbox" type="Area2D" parent="." node_paths=PackedStringArray("health_component")]
 visible = false
 position = Vector2(-0.841728, 0)
@@ -358,10 +352,12 @@ shape = SubResource("RectangleShape2D_aflf6")
 [node name="staircase_bugfix_l" type="CollisionShape2D" parent="."]
 position = Vector2(-9, -2)
 shape = SubResource("SeparationRayShape2D_du3pq")
+one_way_collision_margin = 0.0
 
 [node name="staircase_bugfix_r" type="CollisionShape2D" parent="."]
 position = Vector2(9, -2)
 shape = SubResource("SeparationRayShape2D_du3pq")
+one_way_collision_margin = 0.0
 
 [node name="_" type="Polygon2D" parent="."]
 visible = false
@@ -409,6 +405,5 @@ limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 5.25
 script = ExtResource("38_4g8e6")
-metadata/_custom_type_script = "uid://cgspps0dvox6u"
 
 [connection signal="healthChanged" from="HealthComponent" to="." method="_on_health_component_health_changed"]

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://dnaps1w06tdoe"]
 
-[ext_resource type="Script" uid="uid://bu8krnugqph56" path="res://script/item_scripts/item.gd" id="1_vd6sh"]
+[ext_resource type="Script" uid="uid://bu8krnugqph56" path="res://Scripts/UI/item_scripts/item.gd" id="1_vd6sh"]
 [ext_resource type="Texture2D" uid="uid://du7kj0bblx1v1" path="res://Images/items/cordas_inv.png" id="2_satbi"]
 
 [resource]

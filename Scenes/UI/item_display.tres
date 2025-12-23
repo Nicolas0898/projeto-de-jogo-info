@@ -1,0 +1,44 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://cyb6ccp322tdy"]
+
+[ext_resource type="Texture2D" uid="uid://bpx6tteubmq5x" path="res://Images/UI/itemselect.png" id="1_8bbpk"]
+[ext_resource type="Texture2D" uid="uid://calinrdq8qu8g" path="res://Images/UI/item.png" id="2_tfbo8"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eq100"]
+texture = ExtResource("1_8bbpk")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8bbpk"]
+texture = ExtResource("2_tfbo8")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+modulate_color = Color(0.6649475, 0.6649475, 0.6649475, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b7sim"]
+texture = ExtResource("2_tfbo8")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[resource]
+Button/styles/focus = SubResource("StyleBoxTexture_eq100")
+Button/styles/hover = SubResource("StyleBoxTexture_8bbpk")
+Button/styles/normal = SubResource("StyleBoxTexture_b7sim")
+Button/styles/pressed = SubResource("StyleBoxTexture_b7sim")

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="LoadoutItem" load_steps=4 format=3 uid="uid://br5tlf52ooctl"]
+
+[ext_resource type="Script" uid="uid://jdogk2y4gmr4" path="res://Scripts/UI/item_scripts/loadout_item.gd" id="1_1vsje"]
+[ext_resource type="Script" uid="uid://t820661hla0s" path="res://Scripts/scenes/Player/Habilities/LeafCage.gd" id="1_qum5c"]
+[ext_resource type="Texture2D" uid="uid://cyw1woq2weih" path="res://Images/Player/weapons/gaiola_inv.png" id="3_0dpp4"]
+
+[resource]
+script = ExtResource("1_1vsje")
+instance = ExtResource("1_qum5c")
+damage = 5.0
+cooldown = 8.0
+sprite = ExtResource("3_0dpp4")
+name = "Gaiola"
+metadata/_custom_type_script = "uid://jdogk2y4gmr4"

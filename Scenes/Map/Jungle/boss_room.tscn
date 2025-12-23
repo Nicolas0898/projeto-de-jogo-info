@@ -14,8 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://bhhvto6dt5454" path="res://Scenes/Map/JungleParallax.tscn" id="10_svy1w"]
 [ext_resource type="PackedScene" uid="uid://dwr4crb3vhg5b" path="res://Scenes/Map/world_environment.tscn" id="11_l3onn"]
 [ext_resource type="Script" uid="uid://xbqu3ca63qn6" path="res://Scripts/Components/SpawnLocation.gd" id="12_w7aa7"]
-[ext_resource type="Texture2D" uid="uid://y8pmob1wtl2q" path="res://Images/sign.png" id="15_mbjl3"]
-[ext_resource type="Texture2D" uid="uid://cyw1woq2weih" path="res://Images/weapons/gaiola_inv.png" id="16_saehm"]
+[ext_resource type="Texture2D" uid="uid://y8pmob1wtl2q" path="res://Images/etc/sign.png" id="15_mbjl3"]
+[ext_resource type="Texture2D" uid="uid://cyw1woq2weih" path="res://Images/Player/weapons/gaiola_inv.png" id="16_saehm"]
 [ext_resource type="Shader" uid="uid://b0vwl8qpm7kj2" path="res://Shaders/water.gdshader" id="17_468b3"]
 [ext_resource type="TileSet" uid="uid://bnjnwtobjhkof" path="res://Scenes/Map/WATER_JUNGLE.tres" id="18_t1pbs"]
 

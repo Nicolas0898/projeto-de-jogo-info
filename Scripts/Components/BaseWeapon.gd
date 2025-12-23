@@ -3,12 +3,16 @@ class_name BaseWeapon
 
 @onready var character: PlayerCharacter = $".."
 @export var cooldown:float = 0.1
+
+
 var on_cooldown = false
 
+@export var damage = 0
 var read_from = "use_weapon"
 var cd_timer:Timer
 var active = false
 func _ready() -> void:
+	print(cooldown,damage)
 	cd_timer = Timer.new()
 	add_child(cd_timer)
 	cd_timer.wait_time = cooldown

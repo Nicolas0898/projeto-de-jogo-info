@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="LoadoutItem" load_steps=3 format=3 uid="uid://k36ginnnsxes"]
+
+[ext_resource type="Script" uid="uid://jdogk2y4gmr4" path="res://Scripts/UI/item_scripts/loadout_item.gd" id="1_8o8bp"]
+[ext_resource type="Texture2D" uid="uid://bu578evpkbdsi" path="res://Images/UI/remove.png" id="2_t7sjt"]
+
+[resource]
+script = ExtResource("1_8o8bp")
+sprite = ExtResource("2_t7sjt")
+name = "REMOVEIMAGE"
+metadata/_custom_type_script = "uid://jdogk2y4gmr4"

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ccmx4u5dw8mdo"]
 
-[ext_resource type="Script" uid="uid://dnjilntaejojr" path="res://arc.gd" id="1_x0kux"]
+[ext_resource type="Script" uid="uid://dnjilntaejojr" path="res://Scripts/UI/ETC/arc.gd" id="1_x0kux"]
 
 [node name="arc" type="Control"]
 layout_mode = 3

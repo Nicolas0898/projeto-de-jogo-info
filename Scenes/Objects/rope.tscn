@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bjbe2w6184ga5"]
 
 [ext_resource type="Script" uid="uid://ia6u1161s6bq" path="res://Scenes/Objects/rope.gd" id="1_ig1xv"]
-[ext_resource type="Texture2D" uid="uid://1nmf0a3yqnf7" path="res://Images/corda (1).png" id="1_nww1f"]
+[ext_resource type="Texture2D" uid="uid://1nmf0a3yqnf7" path="res://Images/etc/corda (1).png" id="1_nww1f"]
 
 [node name="Rope" type="Line2D"]
 z_index = -1

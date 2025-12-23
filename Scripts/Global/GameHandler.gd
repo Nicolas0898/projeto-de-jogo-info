@@ -1,6 +1,8 @@
 extends Node
 var total_coins = 35
 
+signal PlayerSpawned
+
 var Player : PlayerCharacter
 var player_health = 100 #original é 100 mas o pires mudou p teste
 var spawnpoint = null
@@ -19,3 +21,5 @@ func spawn_coins(at_pos:Vector2,number):
 		coin.global_position = at_pos
 		coin.linear_velocity = Vector2(randf_range(-50,50),randf_range(-450,-350))
 		
+func emit_player_spawn():
+	PlayerSpawned.emit()

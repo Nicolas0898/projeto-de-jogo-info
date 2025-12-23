@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://blfwkqgeamobt" path="res://Scripts/Components/Hitbox.gd" id="2_p6f1h"]
 [ext_resource type="Script" uid="uid://d0xnltbvtmvwv" path="res://Scripts/Components/Hurtbox.gd" id="2_s44fd"]
 [ext_resource type="Script" uid="uid://1ughpmhhrew" path="res://Scripts/Components/HealthComponent.gd" id="4_whjq5"]
-[ext_resource type="Texture2D" uid="uid://hsmiytcrdm3q" path="res://sprites/smoke_spritesheet.png" id="7_4sbd0"]
+[ext_resource type="Texture2D" uid="uid://hsmiytcrdm3q" path="res://Images/etc/smoke_spritesheet.png" id="7_4sbd0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4sbd0"]
 shader = ExtResource("1_7tanb")

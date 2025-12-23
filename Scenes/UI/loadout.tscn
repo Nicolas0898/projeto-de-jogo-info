@@ -1,0 +1,103 @@
+[gd_scene load_steps=8 format=3 uid="uid://capcd2ylwbid8"]
+
+[ext_resource type="Theme" uid="uid://cnoueif7hyb2x" path="res://Scenes/UI/inv_theme.tres" id="1_t4mhv"]
+[ext_resource type="Script" uid="uid://b1bf6jg1pxly2" path="res://Scenes/UI/Loadout.gd" id="2_x8lpm"]
+[ext_resource type="FontFile" uid="uid://b71f1nslp8bqt" path="res://Fonts/BoldPixels.ttf" id="3_y7tw6"]
+[ext_resource type="PackedScene" uid="uid://cc7ey273nnqe7" path="res://Scenes/UI/Loadout/button.tscn" id="4_ayhlg"]
+[ext_resource type="Texture2D" uid="uid://u2v7vikk56v2" path="res://Images/UI/square.png" id="4_ftmyl"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ayhlg"]
+font = ExtResource("3_y7tw6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7fq70"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+texture = ExtResource("4_ftmyl")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 3.0
+
+[node name="Loadout" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_t4mhv")
+script = ExtResource("2_x8lpm")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.78431374)
+
+[node name="hability" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 65.0
+offset_top = -99.0
+offset_right = 135.0
+offset_bottom = 99.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Label2" type="Label" parent="hability"]
+layout_mode = 2
+text = "HABILIDADES	"
+label_settings = SubResource("LabelSettings_ayhlg")
+
+[node name="weapon" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -135.0
+offset_top = -99.0
+offset_right = -65.0
+offset_bottom = 99.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Label" type="Label" parent="weapon"]
+layout_mode = 2
+text = "EQUIPAMENTO"
+label_settings = SubResource("LabelSettings_ayhlg")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+offset_right = 50.0
+offset_bottom = 192.82054
+theme_override_styles/panel = SubResource("StyleBoxTexture_7fq70")
+follow_focus = true
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme_override_constants/separation = 20
+
+[node name="Button" parent="ScrollContainer/VBoxContainer" instance=ExtResource("4_ayhlg")]
+layout_mode = 2
+size_flags_vertical = 4

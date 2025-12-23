@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://c5pik2cgvmlm4"]
 
-[ext_resource type="Texture2D" uid="uid://p784hetvi83d" path="res://sprites/leaf.png" id="1_8m7c2"]
+[ext_resource type="Texture2D" uid="uid://p784hetvi83d" path="res://Images/etc/leaf.png" id="1_8m7c2"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_227jg"]
 particles_animation = true

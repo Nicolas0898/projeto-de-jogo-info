@@ -2,7 +2,7 @@
 
 [ext_resource type="Shader" uid="uid://lk8vqo6nbyf3" path="res://Shaders/Character.gdshader" id="1_udoqd"]
 [ext_resource type="Script" uid="uid://b4v73lx8blb1p" path="res://Scripts/Components/BaseEntity.gd" id="2_u3g6e"]
-[ext_resource type="Script" uid="uid://lurpfwbx4y8w" path="res://Scripts/StateMachine/StateMachine.gd" id="3_uvyrn"]
+[ext_resource type="Script" uid="uid://lurpfwbx4y8w" path="res://Scripts/Components/StateMachine/StateMachine.gd" id="3_uvyrn"]
 [ext_resource type="Script" uid="uid://dtyfcoog1vanl" path="res://Scenes/Entities/Piranha/idle.gd" id="4_t7p87"]
 [ext_resource type="Script" uid="uid://c0vqgff2ud7w6" path="res://Scenes/Entities/Piranha/chase.gd" id="5_2cqwc"]
 [ext_resource type="Script" uid="uid://c27qfpg5r355v" path="res://Scenes/Entities/Piranha/died.gd" id="6_fko1l"]
@@ -11,7 +11,7 @@
 [ext_resource type="Script" uid="uid://blfwkqgeamobt" path="res://Scripts/Components/Hitbox.gd" id="9_77voh"]
 [ext_resource type="Texture2D" uid="uid://cs4dppu3iqr3g" path="res://Images/entities/piranha_spritesheet.png" id="10_13tej"]
 [ext_resource type="Script" uid="uid://1ughpmhhrew" path="res://Scripts/Components/HealthComponent.gd" id="11_aflcy"]
-[ext_resource type="Script" path="res://Scripts/Components/BestiaryComponent.gd" id="12_6q28q"]
+[ext_resource type="Script" uid="uid://b6mygu68dus13" path="res://Scripts/Components/BestiaryComponent.gd" id="12_6q28q"]
 [ext_resource type="Resource" uid="uid://l46ol1r3igyq" path="res://Images/entities/resource/bestiario/Piranha.tres" id="13_c0ved"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ng0xu"]

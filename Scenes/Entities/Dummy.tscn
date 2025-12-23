@@ -2,10 +2,10 @@
 
 [ext_resource type="Shader" uid="uid://lk8vqo6nbyf3" path="res://Shaders/Character.gdshader" id="1_51ege"]
 [ext_resource type="Script" uid="uid://b4v73lx8blb1p" path="res://Scripts/Components/BaseEntity.gd" id="2_ah27q"]
-[ext_resource type="Texture2D" uid="uid://c0d6utpb1kp0x" path="res://Images/dummy.png" id="2_wes3n"]
+[ext_resource type="Texture2D" uid="uid://c0d6utpb1kp0x" path="res://Images/etc/dummy.png" id="2_wes3n"]
 [ext_resource type="Script" uid="uid://0d7bnicgm37i" path="res://Scripts/Components/BaseHurtbox.gd" id="3_lb43t"]
 [ext_resource type="Script" uid="uid://1ughpmhhrew" path="res://Scripts/Components/HealthComponent.gd" id="4_ah27q"]
-[ext_resource type="Script" uid="uid://lurpfwbx4y8w" path="res://Scripts/StateMachine/StateMachine.gd" id="5_lb43t"]
+[ext_resource type="Script" uid="uid://lurpfwbx4y8w" path="res://Scripts/Components/StateMachine/StateMachine.gd" id="5_lb43t"]
 [ext_resource type="Script" uid="uid://cs5dlp1kmtf34" path="res://Scenes/Entities/Dummy/idle.gd" id="7_ah27q"]
 [ext_resource type="Script" uid="uid://b4s2bxlcya30p" path="res://Scenes/Entities/state.gd" id="8_bpnk2"]
 

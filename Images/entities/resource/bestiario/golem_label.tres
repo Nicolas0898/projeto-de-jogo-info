@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="bestiary_label" load_steps=2 format=3 uid="uid://b06dwr2chblgg"]
 
-[ext_resource type="Script" uid="uid://cvcbjk1q6vmty" path="res://script/bestiary_label.gd" id="1_cpmud"]
+[ext_resource type="Script" uid="uid://cvcbjk1q6vmty" path="res://Scripts/ETC/bestiary_label.gd" id="1_cpmud"]
 
 [resource]
 script = ExtResource("1_cpmud")

@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://oabc24p02seh"]
 
-[ext_resource type="Script" uid="uid://b4tsgciqbhfi2" path="res://Scenes/player_ui.gd" id="1_t3flm"]
+[ext_resource type="Script" uid="uid://b4tsgciqbhfi2" path="res://Scenes/UI/player_ui.gd" id="1_t3flm"]
 [ext_resource type="StyleBox" uid="uid://5wvj2f2hfhom" path="res://Scenes/UI/inventory_ui.tres" id="2_8n2hl"]
-[ext_resource type="FontFile" uid="uid://b71f1nslp8bqt" path="res://fonts/BoldPixels.ttf" id="3_c4arg"]
+[ext_resource type="FontFile" uid="uid://b71f1nslp8bqt" path="res://Fonts/BoldPixels.ttf" id="3_c4arg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_whq80"]
 bg_color = Color(1, 1, 1, 1)

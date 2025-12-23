@@ -2,7 +2,7 @@
 
 [ext_resource type="Shader" uid="uid://lk8vqo6nbyf3" path="res://Shaders/Character.gdshader" id="1_d6fad"]
 [ext_resource type="Script" uid="uid://b4v73lx8blb1p" path="res://Scripts/Components/BaseEntity.gd" id="1_x1axm"]
-[ext_resource type="Script" uid="uid://lurpfwbx4y8w" path="res://Scripts/StateMachine/StateMachine.gd" id="2_r4uh7"]
+[ext_resource type="Script" uid="uid://lurpfwbx4y8w" path="res://Scripts/Components/StateMachine/StateMachine.gd" id="2_r4uh7"]
 [ext_resource type="Script" uid="uid://ca7v4quviloeb" path="res://Scenes/Entities/Fly/idle.gd" id="3_3pwra"]
 [ext_resource type="Script" uid="uid://1ughpmhhrew" path="res://Scripts/Components/HealthComponent.gd" id="4_brr4v"]
 [ext_resource type="Script" uid="uid://ct5q4k7vmxi7f" path="res://Scenes/Entities/Fly/Chase.gd" id="4_l553e"]
@@ -14,7 +14,7 @@
 [ext_resource type="Script" uid="uid://co267qys8ureh" path="res://Scenes/Entities/Fly/stunned.gd" id="8_12l6a"]
 [ext_resource type="Script" uid="uid://blfwkqgeamobt" path="res://Scripts/Components/Hitbox.gd" id="8_xkxda"]
 [ext_resource type="Texture2D" uid="uid://dg6ytmh86qth1" path="res://Images/Fly/parando.png" id="9_ylf0o"]
-[ext_resource type="Script" path="res://Scripts/Components/BestiaryComponent.gd" id="10_qphnb"]
+[ext_resource type="Script" uid="uid://b6mygu68dus13" path="res://Scripts/Components/BestiaryComponent.gd" id="10_qphnb"]
 [ext_resource type="Texture2D" uid="uid://3r7bq3e88kcl" path="res://Images/Fly/morrendo.png" id="10_w8lvy"]
 [ext_resource type="Resource" uid="uid://6so10j2cym6y" path="res://Images/entities/resource/bestiario/Mosca.tres" id="11_vjhpu"]
 

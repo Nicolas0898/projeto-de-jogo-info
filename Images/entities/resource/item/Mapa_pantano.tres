@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="swamp_map" load_steps=4 format=3 uid="uid://ve3gjhnmurfr"]
 
-[ext_resource type="Script" uid="uid://wwgh6j52c8oh" path="res://script/item_scripts/item/swamp_map.gd" id="1_m5kpf"]
+[ext_resource type="Script" uid="uid://wwgh6j52c8oh" path="res://Scripts/UI/item_scripts/item/swamp_map.gd" id="1_m5kpf"]
 [ext_resource type="Texture2D" uid="uid://btdealimdeqkh" path="res://Images/UI/swamp_map.png" id="1_q05xr"]
 [ext_resource type="Texture2D" uid="uid://dmpplvyyow24l" path="res://Images/assets/swamp_map.png" id="2_xqdha"]
 

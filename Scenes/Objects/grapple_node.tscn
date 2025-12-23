@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bvmugmme4p6nf"]
 
 [ext_resource type="Script" uid="uid://dg1cm43xf2l0j" path="res://Scripts/Components/grapple_node.gd" id="1_wkgti"]
-[ext_resource type="Texture2D" uid="uid://drcf5t5l70dxw" path="res://Images/hookpoint.png" id="2_s474p"]
+[ext_resource type="Texture2D" uid="uid://drcf5t5l70dxw" path="res://Images/etc/hookpoint.png" id="2_s474p"]
 
 [node name="GrappleNode" type="Node2D" groups=["GrappleNode"]]
 modulate = Color(0.996078, 1, 0.658824, 1)

@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://b4v73lx8blb1p" path="res://Scripts/Components/BaseEntity.gd" id="1_tx8ge"]
 [ext_resource type="Script" uid="uid://1ughpmhhrew" path="res://Scripts/Components/HealthComponent.gd" id="2_4ar56"]
-[ext_resource type="Script" uid="uid://lurpfwbx4y8w" path="res://Scripts/StateMachine/StateMachine.gd" id="3_hroqg"]
-[ext_resource type="Script" uid="uid://ca8wa4d6wsrqb" path="res://Scripts/StateMachine/State.gd" id="4_ny53q"]
+[ext_resource type="Script" uid="uid://lurpfwbx4y8w" path="res://Scripts/Components/StateMachine/StateMachine.gd" id="3_hroqg"]
+[ext_resource type="Script" uid="uid://ca8wa4d6wsrqb" path="res://Scripts/Components/StateMachine/State.gd" id="4_ny53q"]
 [ext_resource type="Texture2D" uid="uid://3ry8a1y46fp8" path="res://Images/entities/Enemy/enemy_dash.png" id="5_iaxvc"]
 [ext_resource type="Texture2D" uid="uid://b4rcdmneh4gef" path="res://Images/entities/Enemy/enemy_death.png" id="5_qxuwl"]
 [ext_resource type="Script" uid="uid://0d7bnicgm37i" path="res://Scripts/Components/BaseHurtbox.gd" id="6_4ar56"]

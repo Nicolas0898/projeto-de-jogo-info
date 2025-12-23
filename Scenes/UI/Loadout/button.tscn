@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=3 uid="uid://cc7ey273nnqe7"]
+
+[ext_resource type="Theme" uid="uid://cyb6ccp322tdy" path="res://Scenes/UI/item_display.tres" id="1_0oky4"]
+[ext_resource type="Script" uid="uid://bn0j3w5bsjyn8" path="res://Scenes/UI/Loadout/button.gd" id="2_0oky4"]
+[ext_resource type="FontFile" uid="uid://b71f1nslp8bqt" path="res://Fonts/BoldPixels.ttf" id="3_pfbqc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ftmyl"]
+font = ExtResource("3_pfbqc")
+
+[node name="Button" type="Button"]
+custom_minimum_size = Vector2(28, 28)
+size_flags_horizontal = 4
+theme = ExtResource("1_0oky4")
+script = ExtResource("2_0oky4")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+
+[node name="LabelRight" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 7.0
+offset_top = -11.5
+offset_right = 74.0
+offset_bottom = 11.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "RMB"
+label_settings = SubResource("LabelSettings_ftmyl")
+vertical_alignment = 1
+
+[node name="LabelLeft" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -102.0
+offset_top = -11.5
+offset_right = -35.0
+offset_bottom = 11.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "RMB"
+label_settings = SubResource("LabelSettings_ftmyl")
+horizontal_alignment = 2
+vertical_alignment = 1

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://b4v73lx8blb1p" path="res://Scripts/Components/BaseEntity.gd" id="1_deixm"]
 [ext_resource type="Shader" uid="uid://lk8vqo6nbyf3" path="res://Shaders/Character.gdshader" id="1_s5hvp"]
 [ext_resource type="Script" uid="uid://1ughpmhhrew" path="res://Scripts/Components/HealthComponent.gd" id="2_gxdf2"]
-[ext_resource type="Script" uid="uid://lurpfwbx4y8w" path="res://Scripts/StateMachine/StateMachine.gd" id="3_xwjob"]
+[ext_resource type="Script" uid="uid://lurpfwbx4y8w" path="res://Scripts/Components/StateMachine/StateMachine.gd" id="3_xwjob"]
 [ext_resource type="Script" uid="uid://do0x2xswe6en3" path="res://Scenes/Entities/Cobra/died.gd" id="4_deixm"]
 [ext_resource type="Script" uid="uid://c2lcy13p8ah70" path="res://Scenes/Entities/Cobra/idle.gd" id="5_vl0h3"]
 [ext_resource type="Script" uid="uid://blfwkqgeamobt" path="res://Scripts/Components/Hitbox.gd" id="6_2kerb"]
@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://ccadwpqfhix4n" path="res://Images/entities/Cobra/Cobra_morrendo-Sheet.png" id="11_s5hvp"]
 [ext_resource type="Texture2D" uid="uid://ducqpgptxqqti" path="res://Images/entities/Cobra/Cobra_golpeada-Sheet.png" id="12_u6gf8"]
 [ext_resource type="Script" uid="uid://0d7bnicgm37i" path="res://Scripts/Components/BaseHurtbox.gd" id="15_s5hvp"]
-[ext_resource type="Script" path="res://Scripts/Components/BestiaryComponent.gd" id="16_pqgdr"]
+[ext_resource type="Script" uid="uid://b6mygu68dus13" path="res://Scripts/Components/BestiaryComponent.gd" id="16_pqgdr"]
 [ext_resource type="Resource" uid="uid://djepib8yauktk" path="res://Images/entities/resource/bestiario/Cobra.tres" id="17_oflq6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_u6gf8"]

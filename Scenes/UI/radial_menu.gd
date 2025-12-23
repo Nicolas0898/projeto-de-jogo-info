@@ -35,6 +35,8 @@ class option:
 			arc.arc_pos += PI/2
 		elif count==4:
 			arc.arc_pos += PI/4 
+		elif count==5:
+			arc.arc_pos += PI/10
 		
 		if sprite:
 			print(arc.get_middle_point())
@@ -48,6 +50,7 @@ func _ready() -> void:
 	add_option("Inventory","res://Images/assets/backpack.png")
 	add_option("Map","res://Images/assets/MAPA.png")
 	add_option("Bestiary","res://Images/assets/bestiary.png")
+	add_option("Loadout","res://Images/Player/corrida/corrida1.png")
 
 
 func _process(_delta: float) -> void:

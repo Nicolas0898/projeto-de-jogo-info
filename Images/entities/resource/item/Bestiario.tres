@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="bestiary_item" load_steps=3 format=3 uid="uid://dt1vt1g5o0n6n"]
 
-[ext_resource type="Script" uid="uid://b1mb7f28nu8s0" path="res://script/item_scripts/item/bestiary_item.gd" id="1_1d7wy"]
+[ext_resource type="Script" uid="uid://b1mb7f28nu8s0" path="res://Scripts/UI/item_scripts/item/bestiary_item.gd" id="1_1d7wy"]
 [ext_resource type="Texture2D" uid="uid://cej24or3kbicq" path="res://Images/assets/bestiary.png" id="2_1d7wy"]
 
 [resource]
