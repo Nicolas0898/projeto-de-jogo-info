@@ -1,7 +1,7 @@
 extends State
 
 @onready var sprite : AnimatedSprite2D = $"../../AnimatedSprite2D"
-var attacks = ["atirar", "dash", "perfurar"]
+var attacks = ["atirar", "dash", "perfurar", "trail"]
 var atirar_c = 0 #contador pra não repetir demais
 
 var ignore = null
@@ -17,7 +17,7 @@ func onStateEntered(_oldState:State):
 	
 	if stateMachine.currentState != self: return
 	
-	stateMachine.requestStateChange("idle")
+	stateMachine.requestStateChange("trail")
 	ignore = next_attack
 	select_attack()
 

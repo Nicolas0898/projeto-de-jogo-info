@@ -2019,7 +2019,7 @@ position = Vector2(-33, 260)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_047gs")]
 z_index = 2
-position = Vector2(453, 273)
+position = Vector2(114, 34)
 
 [node name="Undefined_boss" parent="." instance=ExtResource("6_uv0us")]
 z_index = 2

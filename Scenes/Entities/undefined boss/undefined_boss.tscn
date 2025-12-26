@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://bbug2un1b21w3"]
+[gd_scene load_steps=71 format=3 uid="uid://bbug2un1b21w3"]
 
 [ext_resource type="Texture2D" uid="uid://ignud5ugkdcd" path="res://Images/entities/undefined boss/boss_throw.png" id="1_a37h1"]
 [ext_resource type="Shader" uid="uid://lk8vqo6nbyf3" path="res://Shaders/Character.gdshader" id="1_nxa2d"]
@@ -12,8 +12,10 @@
 [ext_resource type="Script" uid="uid://1ughpmhhrew" path="res://Scripts/Components/HealthComponent.gd" id="5_sexik"]
 [ext_resource type="Script" uid="uid://bfucsptpxamdi" path="res://Scenes/Entities/undefined boss/dash.gd" id="6_nxa2d"]
 [ext_resource type="Script" uid="uid://c5rb712ubch1x" path="res://Scenes/Entities/undefined boss/perfurar.gd" id="7_idkcx"]
+[ext_resource type="Script" uid="uid://3jqm57ql417" path="res://Scenes/Entities/undefined boss/trail.gd" id="10_euuho"]
 [ext_resource type="Texture2D" uid="uid://b380nwrqic381" path="res://Images/entities/undefined boss/boss_idle.png" id="11_pb1b7"]
 [ext_resource type="Script" uid="uid://blfwkqgeamobt" path="res://Scripts/Components/Hitbox.gd" id="13_idkcx"]
+[ext_resource type="Texture2D" uid="uid://oh300towtyv6" path="res://Images/entities/undefined boss/boss_trail.png" id="14_3f373"]
 [ext_resource type="Script" uid="uid://d0xnltbvtmvwv" path="res://Scripts/Components/Hurtbox.gd" id="14_pb1b7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nxa2d"]
@@ -221,6 +223,26 @@ region = Rect2(896, 0, 128, 128)
 atlas = ExtResource("3_sexik")
 region = Rect2(1024, 0, 128, 128)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_h7ml3"]
+atlas = ExtResource("14_3f373")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yhyig"]
+atlas = ExtResource("14_3f373")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ihi8v"]
+atlas = ExtResource("14_3f373")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wyuo6"]
+atlas = ExtResource("14_3f373")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65uel"]
+atlas = ExtResource("14_3f373")
+region = Rect2(640, 0, 128, 128)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_k5o2b"]
 animations = [{
 "frames": [{
@@ -352,6 +374,26 @@ animations = [{
 "loop": false,
 "name": &"perfurar_02",
 "speed": 13.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h7ml3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yhyig")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ihi8v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wyuo6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65uel")
+}],
+"loop": false,
+"name": &"trail_01",
+"speed": 8.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xt8r2"]
@@ -430,13 +472,16 @@ script = ExtResource("6_nxa2d")
 script = ExtResource("7_idkcx")
 jump_height = -450.0
 
+[node name="trail" type="Node" parent="StateMachine"]
+script = ExtResource("10_euuho")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 use_parent_material = true
 sprite_frames = SubResource("SpriteFrames_k5o2b")
-animation = &"atirar_01"
+animation = &"trail_01"
 autoplay = "idle"
 frame = 4
-frame_progress = 1.0
+frame_progress = 0.25086105
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 25)
@@ -472,3 +517,6 @@ position = Vector2(0, 25)
 
 [node name="throw_spawn" type="Node2D" parent="."]
 position = Vector2(22, -28)
+
+[node name="trail_spawn" type="Node2D" parent="."]
+position = Vector2(-61, 8)
