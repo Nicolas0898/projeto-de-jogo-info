@@ -10,15 +10,20 @@ var state = "core":
 			call("entered_"+_newval)
 			rpi()
 		state = _newval.to_lower()
+		if state!="ui":
+			canvas_layer.visible = false
+			Cursor.visible = true
 
 func rpi():
 	Cursor.reset_physics_interpolation()
 	line.reset_physics_interpolation()
 	circle.reset_physics_interpolation()
 
-@onready var Cursor: Sprite2D = $CanvasLayer/Cursor
+@onready var Cursor: Sprite2D = $Cursor
 @onready var line: Line2D = $Line
 @onready var circle: Sprite2D = $Circle
+@onready var canvas_layer: CanvasLayer = $CanvasLayer
+@onready var canvas_layer_cursor: Sprite2D = $CanvasLayer/Cursor
 
 var currentStatePriority = 0
 static var pos
@@ -89,6 +94,15 @@ func entered_cast():
 	circle.global_position = pos
 	circle.scale = Vector2.ZERO
 	setCircleSize(Vector2(40,40))
+
+func entered_ui():
+	canvas_layer.visible = true
+	Cursor.visible = false
+
+func ui(delta:float):
+	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+	canvas_layer_cursor.rotation = lerp(Cursor.rotation,targetRotation,5*delta)
+	canvas_layer_cursor.position = GameHandler.Player.get_local_mouse_position()
 
 func cast(delta:float):
 	selectedTarget = null

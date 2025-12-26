@@ -4,7 +4,7 @@ extends Button
 
 func update(item:LoadoutItem):
 	var texture_rect: TextureRect = $TextureRect
-	if item.name == "REMOVEIMAGE": item = null
+	if item and item.name == "REMOVEIMAGE": item = null
 	if item:
 		texture_rect.texture = item.sprite
 	else:

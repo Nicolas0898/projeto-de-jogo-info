@@ -76,8 +76,10 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("menu"):
 		if not current_active or current_active.name.to_lower() == "playerui":
 			set_current_active("RadialMenu")
+			Crosshair.current.requestStateChange("ui",2)
 		elif can_close:
 			GameHandler.Player.remove_core(1)
+			Crosshair.current.backToCore(2)
 			set_current_active("playerui")
 	if event.is_action_released("menu"):
 		if current_active and current_active.name.to_lower() == "radialmenu":

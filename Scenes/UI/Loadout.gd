@@ -7,6 +7,7 @@ var hability_input = ["magic1","magic2","magic3"]
 var weapon_input = ["use_weapon"]
 var scroll_size
 var nodes = []
+var slots = []
 var active = null
 var tween_time = 0.1
 var loaded = {}
@@ -26,6 +27,7 @@ func create_button(parent,input):
 	parent.add_child(button)
 	button.set_meta("input",input)
 	nodes.push_back(button)
+	slots.push_back(button)
 	
 	button.pressed.connect(func():
 		if active:
@@ -39,7 +41,12 @@ func create_button(parent,input):
 			active = null
 		)
 
-
+func is_item_loaded(item):
+	for i in slots:
+		print(i, loaded.has(i))
+		if loaded.has(i) and loaded[i] == item:
+			return i
+	return false
 
 func hide_scroll(show_nodes):
 	var tween = create_tween()
@@ -52,7 +59,13 @@ func hide_scroll(show_nodes):
 	await tween.finished
 
 func load_item(item:LoadoutItem,node:Button):
-	if loaded.has(node):
+	var loaded_node = is_item_loaded(item)
+	if loaded_node:
+		loaded[loaded_node].unequip()
+		loaded[loaded_node] = null
+		loaded_node.update(null)
+		
+	if loaded.has(node) and loaded[node]:
 		loaded[node].unequip()
 	
 	node.update(item)

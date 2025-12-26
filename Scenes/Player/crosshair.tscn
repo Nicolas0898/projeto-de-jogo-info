@@ -23,7 +23,6 @@ z_index = 4096
 script = ExtResource("1_repo7")
 
 [node name="Cursor" type="Sprite2D" parent="."]
-visible = false
 scale = Vector2(0.203125, 0.210938)
 texture = ExtResource("1_lh4i7")
 
@@ -41,7 +40,7 @@ texture_mode = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 100
-follow_viewport_enabled = true
+visible = false
 
 [node name="Cursor" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(92.99999, 72)
