@@ -11,6 +11,7 @@ func _ready() -> void:
 	health = max_health
 	
 func takeDamage(damage:float,origin=null):
+	print(health)
 	healthChanged.emit(health-damage,health)
 	damaged.emit(damage,origin)
 	health -= damage

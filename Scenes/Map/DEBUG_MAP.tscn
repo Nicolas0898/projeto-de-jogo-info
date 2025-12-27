@@ -1,11 +1,10 @@
-[gd_scene load_steps=20 format=4 uid="uid://dsaft7a5ut06v"]
+[gd_scene load_steps=19 format=4 uid="uid://dsaft7a5ut06v"]
 
 [ext_resource type="PackedScene" uid="uid://brkn5mjfr67t4" path="res://Scenes/Player/Character.tscn" id="1_7yamr"]
 [ext_resource type="TileSet" uid="uid://cyll24yrphmu5" path="res://Scenes/Map/JUNGLE_TILESET.tres" id="2_a0ayn"]
 [ext_resource type="Script" uid="uid://blfwkqgeamobt" path="res://Scripts/Components/Hitbox.gd" id="3_r3tca"]
 [ext_resource type="PackedScene" uid="uid://bvmugmme4p6nf" path="res://Scenes/Objects/grapple_node.tscn" id="6_d8yk5"]
 [ext_resource type="PackedScene" uid="uid://dugkamrvn6d0g" path="res://Scenes/Entities/Fly/fly.tscn" id="6_dx3si"]
-[ext_resource type="PackedScene" uid="uid://bbug2un1b21w3" path="res://Scenes/Entities/undefined boss/undefined_boss.tscn" id="6_v4gbd"]
 [ext_resource type="PackedScene" uid="uid://cn12v5ofbe1kg" path="res://Scenes/Entities/Golem/golem.tscn" id="7_1e30r"]
 [ext_resource type="PackedScene" uid="uid://dwr4crb3vhg5b" path="res://Scenes/Map/world_environment.tscn" id="7_dx3si"]
 [ext_resource type="PackedScene" uid="uid://vokqjyhjkv4a" path="res://Scenes/Objects/lamp.tscn" id="8_dx3si"]
@@ -13,7 +12,7 @@
 [ext_resource type="Resource" uid="uid://dt1vt1g5o0n6n" path="res://Images/entities/resource/item/Bestiario.tres" id="10_jre01"]
 [ext_resource type="Script" uid="uid://c41v5wv6fa0vx" path="res://Scripts/UI/item_scripts/item_giver.gd" id="11_i2854"]
 [ext_resource type="Texture2D" uid="uid://cej24or3kbicq" path="res://Images/assets/bestiary.png" id="12_4lirm"]
-[ext_resource type="Script" uid="uid://qsuh4f4vfaje" path="res://Scripts/Components/indicator.gd" id="13_xe74d"]
+[ext_resource type="Script" path="res://Scripts/Components/indicator.gd" id="13_xe74d"]
 [ext_resource type="Texture2D" uid="uid://fpk876g3t6ek" path="res://Images/assets/indicator.png" id="14_v4gbd"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7yamr"]
@@ -151,6 +150,3 @@ texture = ExtResource("14_v4gbd")
 script = ExtResource("13_xe74d")
 frequency = 0.05
 amplitude = 0.8
-
-[node name="Undefined_boss" parent="." instance=ExtResource("6_v4gbd")]
-position = Vector2(-1239, -480)

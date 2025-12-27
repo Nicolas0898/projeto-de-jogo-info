@@ -11,7 +11,7 @@ func onStateEntered(_oldState:State):
 	var rng = RandomNumberGenerator.new()
 	trail_amount = rng.randi_range(7, 13)
 	
-	character.blink(0.4,Color(1.523, 1.046, 1.5, 1.0))
+	character.blink(0.4,Color(1.18, 0.807, 1.162, 1.0))
 	await get_tree().create_timer(0.4).timeout #Começa a tocar o sprite
 	
 	sprite.play("trail_01")

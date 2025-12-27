@@ -82,8 +82,8 @@ radius = 6.0
 radius = 14.0
 
 [sub_resource type="Gradient" id="Gradient_cip1d"]
-offsets = PackedFloat32Array(0, 0.16161616, 0.6060606, 1)
-colors = PackedColorArray(1, 1, 1, 0, 1, 0.5573358, 1, 1, 1, 0.4366271, 0.6196782, 0.97200006, 1, 1, 1, 0)
+offsets = PackedFloat32Array(0, 0.16161616, 0.73655915)
+colors = PackedColorArray(1, 1, 1, 0, 1, 0.5573358, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_tvom2"]
 gradient = SubResource("Gradient_cip1d")
