@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://6itq3v3mqj7a"]
+
+[ext_resource type="Texture2D" uid="uid://ctf48c4xivfvw" path="res://Images/etc/pullparticle.png" id="1_0o1ho"]
+
+[sub_resource type="Gradient" id="Gradient_ah5qx"]
+offsets = PackedFloat32Array(0, 0.036144577)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ispy0"]
+gradient = SubResource("Gradient_ah5qx")
+
+[sub_resource type="Curve" id="Curve_65ldm"]
+_data = [Vector2(0, 1), 0.0, 1.0514259e-06, 0, 0, Vector2(1, 0), -1.2469879, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_u2cpn"]
+curve = SubResource("Curve_65ldm")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qc1mw"]
+particle_flag_disable_z = true
+angle_min = -270.0
+angle_max = 720.0
+angular_velocity_min = -192.44002
+angular_velocity_max = 145.31998
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_u2cpn")
+color_ramp = SubResource("GradientTexture1D_ispy0")
+
+[node name="GPUParticles2D" type="GPUParticles2D"]
+modulate = Color(8.134, 13.296, 5.238, 1)
+self_modulate = Color(0.05490196, 0.15294118, 0.14901961, 1)
+amount = 5
+texture = ExtResource("1_0o1ho")
+lifetime = 0.4
+fixed_fps = 160
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_qc1mw")

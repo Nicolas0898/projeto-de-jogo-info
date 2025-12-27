@@ -17,5 +17,5 @@ func playAnimation(anim:StringName,priority:int=0,speed:=1.0,reverses:=false):
 	
 func stopAnimation(priority:=0):
 	if priority<currentPriority:return
-	priority = 0
+	currentPriority = 0
 	stop()

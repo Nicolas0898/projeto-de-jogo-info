@@ -16,15 +16,16 @@ func update_health(newval):
 		var factor = min(0.5,(diff*1.5/health_bar.max_value))
 		vin_2.modulate = Color("#ff000044")
 		vin_2.self_modulate = Color(1,1,1,factor)
+		
 		create_tween().tween_property(vin_2,"self_modulate",Color(1,1,1,0),0.2 + pow(factor,2))
 	health_bar.value = newval
 	label.text = str(newval)+"/100"
 
-func register_hit():
+func register_hit(intensity:=0.005):
 	vin_3.modulate = Color("#ffffff44")
-	vin_3.self_modulate = Color(1,1,1,0.005)
+	vin_3.self_modulate = Color(1,1,1,intensity)
 	create_tween().tween_property(vin_3,"self_modulate",Color(1,1,1,0),0.2)
-	PlayerCamera.screen_shake(1.5,0.1)
+	PlayerCamera.screen_shake(0.5,0.1)
 
 func show_cooldown(s,image=null):
 	var newcd = HABILITY_RENDER.instantiate()

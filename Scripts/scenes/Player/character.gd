@@ -20,6 +20,8 @@ var speed_multiplier = 1
 @onready var hurtbox: Hurtbox = $Hurtbox
 @onready var health_component: HealthComponent = $HealthComponent
 @onready var hook_cast: RayCast2D = $HookCast
+@onready var stairraycast: RayCast2D = $stairraycast
+@onready var stair: CollisionShape2D = $stair
 
 
 var player_input = Vector2.ZERO
@@ -68,8 +70,13 @@ func default_player_input(local_mult:float=1.0):
 	elif axis<0:
 		sprite.flip_h = true
 	
+	stairraycast.target_position.x = axis*10
+	stair.position.x = axis*9
+	stair.disabled = stairraycast.get_collider()!=null
+	
 	top_edge_cast.position.x = axis*6
 	player_input = Input.get_vector("left","right","up","down")
+	
 	
 	if player_input!=Vector2.ZERO:
 		last_looked_at = Vector2(1 if player_input.x>0 else -1,0)

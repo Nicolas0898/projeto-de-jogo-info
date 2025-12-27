@@ -6,7 +6,11 @@ func _ready() -> void:
 
 func onHit(other:Hitbox):
 	if not iframe.is_stopped(): return
-	super(other)
+	if character.has_node("thornshield"):
+		character.get_node("thornshield").emit_parry(other)
+		return
+	else:
+		super(other)
 	iframe.start()
 	
 	Ui.player_ui.update_health(GameHandler.Player.health_component.health)

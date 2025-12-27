@@ -23,3 +23,9 @@ func spawn_coins(at_pos:Vector2,number):
 		
 func emit_player_spawn():
 	PlayerSpawned.emit()
+
+func play_particle_one(particle:GPUParticles2D):
+	particle.emitting = true
+	particle.finished.connect(func():
+		particle.queue_free()
+		)

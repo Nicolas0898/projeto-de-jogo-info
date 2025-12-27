@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="LoadoutItem" load_steps=4 format=3 uid="uid://c7dwdhr0b7p2o"]
+
+[ext_resource type="Script" uid="uid://jdogk2y4gmr4" path="res://Scripts/UI/item_scripts/loadout_item.gd" id="1_4flmo"]
+[ext_resource type="Script" uid="uid://h8mqovhaqojl" path="res://Scripts/scenes/Player/Habilities/ThornShield.gd" id="1_op6j4"]
+[ext_resource type="Texture2D" uid="uid://bdhl2id2y3wth" path="res://Testing/template_item_sprite.webp" id="3_l1sms"]
+
+[resource]
+script = ExtResource("1_4flmo")
+instance = ExtResource("1_op6j4")
+damage = 5.0
+cooldown = 5.0
+sprite = ExtResource("3_l1sms")
+metadata/_custom_type_script = "uid://jdogk2y4gmr4"

@@ -1,5 +1,8 @@
 extends BaseWeapon
 const LEAF_CAGE = preload("res://Scenes/Player/Habilities/leaf_cage.tscn")
+const LEAFCAGESTART = preload("uid://6itq3v3mqj7a")
+const LEAFEND = preload("uid://cghncduvt5j7w")
+const LEAFSPAWN = preload("uid://biu2r6yljqxur")
 
 signal go(value)
 
@@ -8,10 +11,19 @@ func spritechanged():
 		go.emit(true)
 
 var isactive = false
+var vfx
 
 func use():
 	if on_cooldown: return
 	Crosshair.current.requestStateChange("Cast",2)
+	
+	vfx = LEAFCAGESTART.instantiate()
+	character.add_child(vfx)
+	vfx.emitting = true
+	vfx.finished.connect(func(): 
+		vfx.queue_free()
+		vfx = null)
+	
 	isactive = true
 	
 
@@ -21,7 +33,15 @@ func use_end():
 	isactive = false
 	set_on_cooldown()
 	
+	vfx.emitting = false
+	
+	var part = LEAFEND.instantiate()
+	character.add_child(part)
+	GameHandler.play_particle_one(part)
+	
 	go.emit(false)
+	
+	
 	
 	character.sprite.frame_changed.disconnect(spritechanged)
 
@@ -52,7 +72,16 @@ func use_end():
 		instance.global_position = raycast.get_collision_point() - Vector2(16*dir,0)
 	else:
 		instance.global_position = Crosshair.pos + Vector2(0,16)
-		
+	
+	var part2 = LEAFSPAWN.instantiate()
+	instance.add_child(part2)
+	part2.position = Vector2(0,-16)
+	part2.emitting = true
+	part2.get_node("a").finished.connect(func():
+		part2.queue_free()
+		)
+	GameHandler.play_particle_one(part2.get_node("a"))
+	
 	raycast.queue_free()
 	
 	#var area2D = Area2D.new()
@@ -75,6 +104,7 @@ func use_end():
 	var destun
 	
 	if body:
+		Ui.player_ui.register_hit(0.0075)
 		var sprite2d:AnimatedSprite2D
 		
 		

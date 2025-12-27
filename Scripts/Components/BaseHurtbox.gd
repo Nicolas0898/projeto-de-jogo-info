@@ -10,8 +10,7 @@ func _ready() -> void:
 func onHit(hitbox:Hitbox):
 	super(hitbox)
 	
-	Time.get_ticks_msec()
-	var pos = null
+	var pos = hitbox.global_position
 	for node in hitbox.get_children():
 		if node is CollisionShape2D:
 			if not pos: pos=node.global_position

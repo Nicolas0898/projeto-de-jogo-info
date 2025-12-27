@@ -88,11 +88,18 @@ func default_attack():
 	hitbox.onHit.connect(func(other):
 		if other is Bell: return
 		
-		Ui.player_ui.register_hit()
+		
 		character.health_component.heal(1)
 		var dir = other.global_position.direction_to(character.global_position).normalized()
 		var mult = 1
-		if is_charged: mult = 2
+		if is_charged:
+			mult = 2
+			Engine.time_scale = 0.5
+			Ui.player_ui.register_hit(0.02)
+			create_tween().tween_property(Engine,"time_scale",1,0.2)
+		else:
+			Ui.player_ui.register_hit()
+			
 		character.variable_velocity *= Vector2.ONE-abs(hitdir)*mult
 		character.variable_velocity.y += min((dir*300*abs(hitdir)).y,0)*mult
 		character.constant_velocity.attack_knockback = Vector2(dir.x*170*mult,0)

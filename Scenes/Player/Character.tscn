@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://brkn5mjfr67t4"]
+[gd_scene load_steps=64 format=3 uid="uid://brkn5mjfr67t4"]
 
 [ext_resource type="Shader" uid="uid://lk8vqo6nbyf3" path="res://Shaders/Character.gdshader" id="1_aeg27"]
 [ext_resource type="Script" uid="uid://bhahlqc4v651w" path="res://Scripts/scenes/Player/character.gd" id="1_d8n76"]
@@ -114,6 +114,10 @@ region = Rect2(256, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_ye7qs"]
 atlas = ExtResource("22_4g8e6")
 region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1u8v8"]
+atlas = ExtResource("22_4g8e6")
+region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tmb06"]
 atlas = ExtResource("34_anaxe")
@@ -233,6 +237,14 @@ animations = [{
 "loop": false,
 "name": &"jump",
 "speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1u8v8")
+}],
+"loop": false,
+"name": &"parry",
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -358,14 +370,10 @@ metadata/_custom_type_script = "uid://ca8wa4d6wsrqb"
 position = Vector2(2.38419e-07, -0.5)
 shape = SubResource("RectangleShape2D_aflf6")
 
-[node name="staircase_bugfix_l" type="CollisionShape2D" parent="."]
+[node name="stair" type="CollisionShape2D" parent="."]
 position = Vector2(-7, -2)
 shape = SubResource("SeparationRayShape2D_du3pq")
-one_way_collision_margin = 0.0
-
-[node name="staircase_bugfix_r" type="CollisionShape2D" parent="."]
-position = Vector2(7, -2)
-shape = SubResource("SeparationRayShape2D_du3pq")
+disabled = true
 one_way_collision_margin = 0.0
 
 [node name="_" type="Polygon2D" parent="."]
@@ -379,16 +387,6 @@ polygon = PackedVector2Array(-16, 32, 16, 32, 16, -32, -16, -32)
 unique_name_in_owner = true
 visible = false
 
-[node name="CrouchCast" type="RayCast2D" parent="."]
-position = Vector2(-6, 10)
-enabled = false
-target_position = Vector2(0, -64)
-
-[node name="CrouchCast2" type="RayCast2D" parent="."]
-position = Vector2(6, 10)
-enabled = false
-target_position = Vector2(0, -64)
-
 [node name="TopEdgeCast" type="RayCast2D" parent="."]
 position = Vector2(0, 10)
 target_position = Vector2(0, -32)
@@ -397,14 +395,14 @@ target_position = Vector2(0, -32)
 use_parent_material = true
 position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_a0efk")
-animation = &"run"
+animation = &"parry"
 autoplay = "idle"
-frame = 5
-frame_progress = 0.2558705
+frame_progress = 1.0
 offset = Vector2(0.920864, -1.3813)
 script = ExtResource("35_um7yn")
 
 [node name="HookCast" type="RayCast2D" parent="."]
+target_position = Vector2(0, 0)
 
 [node name="Crosshair" parent="." instance=ExtResource("34_fhm5h")]
 
@@ -423,5 +421,8 @@ texture_filter = 2
 scale = Vector2(2.875, 2.8749998)
 energy = 0.5
 texture = SubResource("GradientTexture2D_du3pq")
+
+[node name="stairraycast" type="RayCast2D" parent="."]
+target_position = Vector2(-8, 0)
 
 [connection signal="healthChanged" from="HealthComponent" to="." method="_on_health_component_health_changed"]

@@ -26,7 +26,7 @@ func onStateEntered(_old):
 	var plr = GameHandler.Player
 	sprite.play("roll_prepare")
 	await sprite.animation_finished
-	shake = PlayerCamera.screen_shake(5,1000,)
+	shake = PlayerCamera.screen_shake(5,5)
 	sprite.play("roll_action")
 	smoke.emitting = true
 	hitbox.monitoring = true
@@ -37,7 +37,8 @@ func onStateExit():
 	hitbox.monitoring = false
 	smoke.emitting = false
 	sprite.play_backwards("roll_prepare")
-	shake.stop()
+	if is_instance_valid(shake):
+		shake.stop()
 	character.clear_constant_velocity()
 
 func onPhysics(delta):

@@ -8,12 +8,15 @@ var weapon_input = ["use_weapon"]
 var scroll_size
 var nodes = []
 var slots = []
+var labels:Array[Label] = []
 var active = null
 var tween_time = 0.1
 var loaded = {}
 
+var convertTable = {"Right Mouse Button":"RMB","Left Mouse Button":"LMB"}
+
 var weapons:Array[LoadoutItem] = [preload("uid://k36ginnnsxes"),preload("uid://bm57sdw1t1isi")]
-var habilities:Array[LoadoutItem] = [preload("uid://k36ginnnsxes"),preload("uid://br5tlf52ooctl")]
+var habilities:Array[LoadoutItem] = [preload("uid://k36ginnnsxes"),preload("uid://br5tlf52ooctl"),preload("uid://c7dwdhr0b7p2o")]
 
 # Nodes
 @onready var hability_node: VBoxContainer = $hability
@@ -28,6 +31,17 @@ func create_button(parent,input):
 	button.set_meta("input",input)
 	nodes.push_back(button)
 	slots.push_back(button)
+	
+	var value = InputMap.action_get_events(input)[0].as_text()
+	var label = button.label_right if parent == hability_node else button.label_left
+	
+	labels.push_back(label)
+
+	
+	label.visible = true
+	label.text = value.split(" (Physical)")[0]
+	if convertTable.has(label.text):
+		label.text = convertTable[label.text]
 	
 	button.pressed.connect(func():
 		if active:
@@ -50,6 +64,9 @@ func is_item_loaded(item):
 
 func hide_scroll(show_nodes):
 	var tween = create_tween()
+	
+	for i in labels:
+		i.visible = true
 	
 	if show_nodes:
 		for i in nodes:
@@ -75,6 +92,9 @@ func load_item(item:LoadoutItem,node:Button):
 
 func show_scroll(node:Button):
 	scroll_container.position = node.global_position - Vector2(scroll_container.size.x/2 - node.size.x/2,scroll_container.size.y/2 - node.size.y/2)
+	
+	for i in labels:
+		i.visible = false
 	
 	for i in list.get_children():
 			i.queue_free()
@@ -108,6 +128,7 @@ func show_scroll(node:Button):
 	tween.parallel().tween_property(scroll_container,"modulate",Color(1,1,1,1),tween_time) 
 
 func _ready() -> void:
+	GameHandler.PlayerSpawned.connect(spawn)
 	scroll_size = scroll_container.size
 	for i in hability_input:
 		create_button(hability_node,i)
@@ -119,4 +140,13 @@ func _ready() -> void:
 	nodes.push_back($weapon/Label)
 	
 	load_item(weapons[1],nodes[3])
+		
 	
+func spawn():
+	for index in loaded:
+		var item:LoadoutItem = loaded[index]
+		item.equip(index.get_meta("input"))
+
+func on_active():
+	active = null
+	hide_scroll(true)

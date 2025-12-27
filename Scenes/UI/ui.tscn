@@ -301,7 +301,6 @@ layout_mode = 2
 text = "Reload Current Scene"
 
 [node name="Bestiary" type="Control" parent="."]
-visible = false
 z_index = 20
 layout_mode = 3
 anchors_preset = 15
@@ -315,16 +314,17 @@ pages = Array[ExtResource("13_llrls")]([SubResource("Resource_d42i4"), SubResour
 
 [node name="Panel" type="Panel" parent="Bestiary"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
 [node name="book" type="Sprite2D" parent="Bestiary/Panel"]
 light_mask = 0
-position = Vector2(321, 168.5)
 scale = Vector2(0.91, 0.8675)
 texture = ExtResource("20_6xe4j")
 
@@ -357,6 +357,16 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 15
 alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="Bestiary"]
+z_index = -4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.85700005)
 
 [node name="RadialMenu" parent="." instance=ExtResource("22_gpq8t")]
 visible = false
