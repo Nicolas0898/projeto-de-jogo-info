@@ -1,0 +1,191 @@
+[gd_scene load_steps=29 format=3 uid="uid://oiyn3lbmrhbu"]
+
+[ext_resource type="Texture2D" uid="uid://bq2thcjto2i1o" path="res://Images/entities/undefined boss/trail_bite.png" id="1_dv7iu"]
+[ext_resource type="Script" uid="uid://dhylyfwtu7gak" path="res://Scenes/Entities/undefined boss/trail_bite.gd" id="1_jn4kr"]
+[ext_resource type="Texture2D" uid="uid://d3wmo2l3q8506" path="res://Images/entities/undefined boss/trail_portal.png" id="2_n8yyx"]
+[ext_resource type="Texture2D" uid="uid://6q5uegdtyxsm" path="res://Images/entities/undefined boss/trail_effect.png" id="4_1nxpr"]
+[ext_resource type="Script" uid="uid://blfwkqgeamobt" path="res://Scripts/Components/Hitbox.gd" id="5_slgq4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n8yyx"]
+atlas = ExtResource("1_dv7iu")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jn4kr"]
+atlas = ExtResource("1_dv7iu")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1nxpr"]
+atlas = ExtResource("1_dv7iu")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_slgq4"]
+atlas = ExtResource("1_dv7iu")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tvom2"]
+atlas = ExtResource("1_dv7iu")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rl8b0"]
+atlas = ExtResource("1_dv7iu")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_02mg6"]
+atlas = ExtResource("1_dv7iu")
+region = Rect2(288, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r817l"]
+atlas = ExtResource("1_dv7iu")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i1tfg"]
+atlas = ExtResource("1_dv7iu")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ulib4"]
+atlas = ExtResource("1_dv7iu")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u30fj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n8yyx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jn4kr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1nxpr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_slgq4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tvom2")
+}],
+"loop": false,
+"name": &"bite_01",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rl8b0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_02mg6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r817l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i1tfg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ulib4")
+}],
+"loop": false,
+"name": &"bite_02",
+"speed": 9.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_jn4kr"]
+offsets = PackedFloat32Array(0, 0.21212122, 0.82828283, 1)
+colors = PackedColorArray(1, 1, 1, 0, 0.96457094, 0.55917, 0.5562217, 1, 1, 0.7629983, 0.7629983, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_1nxpr"]
+gradient = SubResource("Gradient_jn4kr")
+
+[sub_resource type="Curve" id="Curve_slgq4"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.7783019, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_tvom2"]
+curve = SubResource("Curve_slgq4")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rl8b0"]
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = 13.0
+initial_velocity_max = 13.0
+gravity = Vector3(0, 0, 0)
+scale_min = 4.0
+scale_max = 6.0
+scale_curve = SubResource("CurveTexture_tvom2")
+color_ramp = SubResource("GradientTexture1D_1nxpr")
+
+[sub_resource type="Gradient" id="Gradient_slgq4"]
+offsets = PackedFloat32Array(0, 0.16161616, 0.6060606, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0.97200006, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_tvom2"]
+gradient = SubResource("Gradient_slgq4")
+
+[sub_resource type="CurveTexture" id="CurveTexture_slgq4"]
+
+[sub_resource type="Curve" id="Curve_rl8b0"]
+_data = [Vector2(0, 1), 0.0, 4.867612, 0, 0, Vector2(1, 0.28089893), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_02mg6"]
+curve = SubResource("Curve_rl8b0")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_tvom2"]
+particle_flag_disable_z = true
+direction = Vector3(0, 0, 0)
+spread = 180.0
+initial_velocity_min = 82.03
+initial_velocity_max = 91.74
+gravity = Vector3(0, 0, 0)
+linear_accel_curve = SubResource("CurveTexture_slgq4")
+scale_min = 3.0
+scale_max = 5.0
+scale_curve = SubResource("CurveTexture_02mg6")
+color_ramp = SubResource("GradientTexture1D_tvom2")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tvom2"]
+radius = 23.0
+
+[node name="trail_bite" type="Node2D"]
+script = ExtResource("1_jn4kr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_u30fj")
+animation = &"bite_01"
+frame = 4
+frame_progress = 1.0
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatedSprite2D"]
+z_index = -1
+texture = ExtResource("2_n8yyx")
+
+[node name="Sprite2D2" type="Sprite2D" parent="AnimatedSprite2D"]
+z_index = -1
+texture = ExtResource("4_1nxpr")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+modulate = Color(1.5795683, 1.5795683, 1.5795683, 0.22700001)
+z_index = -1
+amount = 20
+preprocess = 0.2
+process_material = SubResource("ParticleProcessMaterial_rl8b0")
+
+[node name="impact" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 20
+lifetime = 0.3
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 120
+process_material = SubResource("ParticleProcessMaterial_tvom2")
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_mask = 0
+monitoring = false
+script = ExtResource("5_slgq4")
+damage = 10.0
+metadata/_custom_type_script = "uid://blfwkqgeamobt"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("CircleShape2D_tvom2")

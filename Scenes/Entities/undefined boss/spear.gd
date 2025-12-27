@@ -5,7 +5,7 @@ var randomness : float
 var active : bool = false
 @onready var hp_component : Node = $HealthComponent
 @onready var sprite_2d: Sprite2D = $Sprite2D
-@export var roof_particles : GPUParticles2D
+#@export var roof_particles : GPUParticles2D
 
 func _ready():
 	pass
@@ -25,7 +25,7 @@ func _physics_process(delta: float) -> void:
 	if collision:
 		GameHandler.Player.camera.screen_shake(10, 0.5)
 		#roof_particles.restart()
-		roof_particles.emitting = true
+		#roof_particles.emitting = true
 		
 		var tween = create_tween()
 		sprite_2d.scale = Vector2(0.1, 0.1)

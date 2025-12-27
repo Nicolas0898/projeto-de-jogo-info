@@ -3,10 +3,15 @@ extends State
 @onready var sprite : AnimatedSprite2D = $"../../AnimatedSprite2D"
 @onready var throw_spawn : Node2D = $"../../throw_spawn"
 @onready var spear = preload("res://Scenes/Entities/undefined boss/spear.tscn")
+@onready var soul = preload("res://Scenes/Entities/undefined boss/soul/soul.tscn")
+@onready var a_01: GPUParticles2D = $"../../Particles/a01"
+@onready var glow: Sprite2D = $"../../glow"
 @export var jump_height : float
 @export var center_target : Node2D
 @export var spear_velocity : float
-@export var roof_particles : GPUParticles2D
+@export var black_bg : Sprite2D
+@export var soul_spawn : Node
+#@export var roof_particles : GPUParticles2D
 var started = false
 var throw = false
 var falling = false
@@ -14,7 +19,7 @@ var dist
 var dir
 
 func onStateEntered(_oldState:State):
-	character.blink(0.4,Color(0.0, 0.747, 0.752, 1.0))
+	character.blink(0.4,Color(0.0, 0.988, 0.995, 1.0))
 	if center_target != null: #Sprite virando pro centro
 		if center_target.global_position.x > character.global_position.x: sprite.flip_h = true
 		else : sprite.flip_h = false
@@ -43,7 +48,7 @@ func onPhysics(_delta:float):
 		throw = true
 		character.variable_velocity.y = 2
 		var s = spear.instantiate()
-		s.roof_particles = roof_particles
+		#s.roof_particles = roof_particles
 		
 		if dir == 1: 
 			s.rotation = 135
@@ -53,6 +58,9 @@ func onPhysics(_delta:float):
 			throw_spawn.position.x = +22
 			
 		throw_spawn.add_child(s)
+		
+		var t = create_tween()
+		t.tween_property(black_bg, "modulate", Color(1, 1, 1, 0.475), 2)
 		await get_tree().create_timer(1.5).timeout #TEMPO QUE ELE FICA PARADO
 		
 		var spear_pos = s.global_position #pra lança sair do node do boss
@@ -68,6 +76,16 @@ func onPhysics(_delta:float):
 		falling = true
 		
 		sprite.play("atirar_02")
+		
+		await get_tree().create_timer(0.4).timeout #Parte que ele fica com o escudo
+		
+		for node in soul_spawn.get_children():
+			var so = soul.instantiate()
+			node.add_child(so)
+		
+		glow.modulate = Color(1, 1, 1, 1)
+		a_01.emitting = true
+		sprite.play("atirar_03")
 	
 	
 	#35 graus a lança p esquerda

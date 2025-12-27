@@ -1,0 +1,172 @@
+[gd_scene load_steps=29 format=3 uid="uid://dl57hu7hewk85"]
+
+[ext_resource type="Shader" uid="uid://lk8vqo6nbyf3" path="res://Shaders/Character.gdshader" id="1_cip1d"]
+[ext_resource type="Script" uid="uid://b4v73lx8blb1p" path="res://Scripts/Components/BaseEntity.gd" id="1_k7og3"]
+[ext_resource type="Script" uid="uid://lurpfwbx4y8w" path="res://Scripts/Components/StateMachine/StateMachine.gd" id="1_yy704"]
+[ext_resource type="Script" uid="uid://betbdkxvb8yka" path="res://Scenes/Entities/undefined boss/soul/idle.gd" id="2_i412g"]
+[ext_resource type="Script" uid="uid://w5ccc2dbndty" path="res://Scenes/Entities/undefined boss/soul/died.gd" id="3_k7og3"]
+[ext_resource type="Script" uid="uid://1ughpmhhrew" path="res://Scripts/Components/HealthComponent.gd" id="4_cip1d"]
+[ext_resource type="Texture2D" uid="uid://lxyt77vajowk" path="res://Images/tilesets/undefined_boss/obelisk_particle_02.png" id="5_gxjpu"]
+[ext_resource type="Script" uid="uid://d28l31d4n87o0" path="res://Scenes/Entities/undefined boss/soul/hurtbox.gd" id="8_cip1d"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gxjpu"]
+shader = ExtResource("1_cip1d")
+shader_parameter/blink_color = Color(1, 1, 1, 1)
+shader_parameter/factor = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7symo"]
+atlas = ExtResource("5_gxjpu")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j0c13"]
+atlas = ExtResource("5_gxjpu")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jmyuf"]
+atlas = ExtResource("5_gxjpu")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yf7y4"]
+atlas = ExtResource("5_gxjpu")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sbkul"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7symo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j0c13")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jmyuf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yf7y4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_tu6mk"]
+offsets = PackedFloat32Array(0, 0.35858586, 0.7020202, 1)
+colors = PackedColorArray(1, 1, 1, 0, 0.9807814, 0.51972044, 0.6852644, 1, 0.6944852, 0.1604107, 0.22979024, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_h7ml3"]
+gradient = SubResource("Gradient_tu6mk")
+
+[sub_resource type="Curve" id="Curve_hr658"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.24056603, 1), 5.0147834, 5.0147834, 0, 0, Vector2(0.759434, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_ihi8v"]
+curve = SubResource("Curve_hr658")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1hqr7"]
+particle_flag_disable_z = true
+direction = Vector3(0, 0, 0)
+spread = 180.0
+initial_velocity_min = 25.0
+initial_velocity_max = 25.0
+gravity = Vector3(0, 0, 0)
+scale_max = 3.0
+scale_curve = SubResource("CurveTexture_ihi8v")
+color_ramp = SubResource("GradientTexture1D_h7ml3")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cip1d"]
+radius = 6.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k7og3"]
+radius = 14.0
+
+[sub_resource type="Gradient" id="Gradient_cip1d"]
+offsets = PackedFloat32Array(0, 0.16161616, 0.6060606, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 0.5573358, 1, 1, 1, 0.4366271, 0.6196782, 0.97200006, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_tvom2"]
+gradient = SubResource("Gradient_cip1d")
+
+[sub_resource type="Curve" id="Curve_gxjpu"]
+_limits = [-200.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 408.14084, 0, 0, Vector2(1, -200), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_slgq4"]
+curve = SubResource("Curve_gxjpu")
+
+[sub_resource type="Curve" id="Curve_sdck1"]
+_data = [Vector2(0, 1), 0.0, 4.867612, 0, 0, Vector2(1, 0.28089893), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_02mg6"]
+curve = SubResource("Curve_sdck1")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_uia2j"]
+particle_flag_disable_z = true
+direction = Vector3(0, 0, 0)
+spread = 180.0
+initial_velocity_min = 82.03
+initial_velocity_max = 91.74
+gravity = Vector3(0, 0, 0)
+linear_accel_curve = SubResource("CurveTexture_slgq4")
+scale_min = 3.0
+scale_max = 5.0
+scale_curve = SubResource("CurveTexture_02mg6")
+color_ramp = SubResource("GradientTexture1D_tvom2")
+
+[node name="soul" type="CharacterBody2D"]
+modulate = Color(1, 1, 1, 0)
+material = SubResource("ShaderMaterial_gxjpu")
+scale = Vector2(1e-05, 1e-05)
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_k7og3")
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initialState")]
+script = ExtResource("1_yy704")
+initialState = NodePath("idle")
+metadata/_custom_type_script = "uid://lurpfwbx4y8w"
+
+[node name="idle" type="Node" parent="StateMachine"]
+script = ExtResource("2_i412g")
+
+[node name="Died" type="Node" parent="StateMachine"]
+script = ExtResource("3_k7og3")
+
+[node name="HealthComponent" type="Node" parent="."]
+script = ExtResource("4_cip1d")
+max_health = 15.0
+metadata/_custom_type_script = "uid://1ughpmhhrew"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(1.5229772, 1.1072099, 1.5229772, 1)
+use_parent_material = true
+sprite_frames = SubResource("SpriteFrames_sbkul")
+frame_progress = 0.90751964
+
+[node name="t01" type="GPUParticles2D" parent="."]
+amount = 40
+lifetime = 0.8
+trail_lifetime = 0.05
+process_material = SubResource("ParticleProcessMaterial_1hqr7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_cip1d")
+
+[node name="Hurtbox" type="Area2D" parent="." node_paths=PackedStringArray("health_component")]
+script = ExtResource("8_cip1d")
+health_component = NodePath("../HealthComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("CircleShape2D_k7og3")
+
+[node name="impact" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 20
+lifetime = 0.3
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 120
+process_material = SubResource("ParticleProcessMaterial_uia2j")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=4 uid="uid://c7iuh60iqviyg"]
+[gd_scene load_steps=49 format=4 uid="uid://c7iuh60iqviyg"]
 
 [ext_resource type="Texture2D" uid="uid://dwlla1vsw12qg" path="res://Images/tilesets/undefined_boss/boss_room_tileset.png" id="1_21gfr"]
 [ext_resource type="PackedScene" uid="uid://bvmugmme4p6nf" path="res://Scenes/Objects/grapple_node.tscn" id="1_xgbdq"]
@@ -18,12 +18,6 @@
 [ext_resource type="PackedScene" uid="uid://cdrw474gq1wxm" path="res://Images/tilesets/undefined_boss/props/bell.tscn" id="13_ske8f"]
 [ext_resource type="PackedScene" uid="uid://cgicfvk40ai02" path="res://Images/tilesets/undefined_boss/props/poste.tscn" id="14_f2cnj"]
 [ext_resource type="PackedScene" uid="uid://c80gy3onphy83" path="res://Images/tilesets/undefined_boss/props/undefined_obelisk.tscn" id="17_57brr"]
-
-[sub_resource type="Gradient" id="Gradient_pt5ht"]
-colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_57brr"]
-gradient = SubResource("Gradient_pt5ht")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j7h4l"]
 texture = ExtResource("1_21gfr")
@@ -1730,17 +1724,6 @@ position = Vector2(-20, 0)
 [node name="right_target" type="Node2D" parent="."]
 position = Vector2(465, 0)
 
-[node name="soul_spawn" type="Node" parent="."]
-
-[node name="Node2D" type="Node2D" parent="soul_spawn"]
-position = Vector2(24, -68)
-
-[node name="Node2D2" type="Node2D" parent="soul_spawn"]
-position = Vector2(424, -68)
-
-[node name="Node2D3" type="Node2D" parent="soul_spawn"]
-position = Vector2(234, -77)
-
 [node name="visual" type="Node" parent="."]
 
 [node name="Blur" parent="visual" instance=ExtResource("2_pt5ht")]
@@ -1749,13 +1732,6 @@ offset_left = -949.0
 offset_top = -605.0
 offset_right = 1592.0
 offset_bottom = 852.0
-
-[node name="black_bg" type="Sprite2D" parent="visual"]
-modulate = Color(1, 1, 1, 0)
-z_index = 999
-position = Vector2(300.5001, 154.49997)
-scale = Vector2(10.644532, 1597)
-texture = SubResource("GradientTexture1D_57brr")
 
 [node name="WorldEnvironment" parent="visual" instance=ExtResource("10_pt5ht")]
 
@@ -2048,10 +2024,9 @@ position = Vector2(114, 34)
 [node name="Undefined_boss" parent="." instance=ExtResource("6_uv0us")]
 z_index = 2
 
-[node name="atirar" parent="Undefined_boss/StateMachine" index="1" node_paths=PackedStringArray("center_target", "black_bg", "soul_spawn")]
+[node name="atirar" parent="Undefined_boss/StateMachine" index="1" node_paths=PackedStringArray("center_target", "roof_particles")]
 center_target = NodePath("../../../center_target")
-black_bg = NodePath("../../../visual/black_bg")
-soul_spawn = NodePath("../../../soul_spawn")
+roof_particles = NodePath("../../../visual/roof/GPUParticles2D")
 
 [node name="dash" parent="Undefined_boss/StateMachine" index="2" node_paths=PackedStringArray("left_target", "right_target")]
 left_target = NodePath("../../../left_target")

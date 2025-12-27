@@ -24,7 +24,7 @@ func onStateEntered(_oldState:State):
 	dir = 1 if dist.x>0 else -1
 	sprite.flip_h = true if dist.x>0 else false
 	
-	character.blink(0.3,Color(0.749, 0.241, 0.408, 1.0))
+	character.blink(0.3,Color(0.99, 0.329, 0.548, 1.0))
 	sprite.play("dash_01")
 	await get_tree().create_timer(0.7).timeout
 	

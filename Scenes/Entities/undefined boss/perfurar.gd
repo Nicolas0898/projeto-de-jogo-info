@@ -15,7 +15,7 @@ var started = false
 var hitbox = null
 
 func onStateEntered(_oldState:State):
-	character.blink(0.4,Color(1.0, 1.0, 1.0, 1.0))
+	character.blink(0.4,Color(1.579, 1.579, 1.579, 1.0))
 	if center_target != null: #Sprite virando pro centro
 		if center_target.global_position.x > character.global_position.x: sprite.flip_h = true
 		else : sprite.flip_h = false

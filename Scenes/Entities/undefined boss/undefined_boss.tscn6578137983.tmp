@@ -1,4 +1,4 @@
-[gd_scene load_steps=101 format=3 uid="uid://bbug2un1b21w3"]
+[gd_scene load_steps=71 format=3 uid="uid://bbug2un1b21w3"]
 
 [ext_resource type="Texture2D" uid="uid://ignud5ugkdcd" path="res://Images/entities/undefined boss/boss_throw.png" id="1_a37h1"]
 [ext_resource type="Shader" uid="uid://lk8vqo6nbyf3" path="res://Shaders/Character.gdshader" id="1_nxa2d"]
@@ -8,17 +8,14 @@
 [ext_resource type="Script" uid="uid://ddj58sltjjtg3" path="res://Scenes/Entities/undefined boss/idle.gd" id="3_doanp"]
 [ext_resource type="Texture2D" uid="uid://mkmvw50egcpc" path="res://Images/entities/undefined boss/boss_smash.png" id="3_sexik"]
 [ext_resource type="Texture2D" uid="uid://hsmiytcrdm3q" path="res://Images/etc/smoke_spritesheet.png" id="3_y33qn"]
-[ext_resource type="Texture2D" uid="uid://lxyt77vajowk" path="res://Images/tilesets/undefined_boss/obelisk_particle_02.png" id="4_h7ml3"]
 [ext_resource type="Script" uid="uid://d1tf121f0wndh" path="res://Scenes/Entities/undefined boss/atirar.gd" id="5_luk5f"]
 [ext_resource type="Script" uid="uid://1ughpmhhrew" path="res://Scripts/Components/HealthComponent.gd" id="5_sexik"]
 [ext_resource type="Script" uid="uid://bfucsptpxamdi" path="res://Scenes/Entities/undefined boss/dash.gd" id="6_nxa2d"]
 [ext_resource type="Script" uid="uid://c5rb712ubch1x" path="res://Scenes/Entities/undefined boss/perfurar.gd" id="7_idkcx"]
 [ext_resource type="Script" uid="uid://3jqm57ql417" path="res://Scenes/Entities/undefined boss/trail.gd" id="10_euuho"]
 [ext_resource type="Texture2D" uid="uid://b380nwrqic381" path="res://Images/entities/undefined boss/boss_idle.png" id="11_pb1b7"]
-[ext_resource type="Script" uid="uid://colhe2rngr55" path="res://Scenes/Entities/undefined boss/died.gd" id="12_yhyig"]
 [ext_resource type="Script" uid="uid://blfwkqgeamobt" path="res://Scripts/Components/Hitbox.gd" id="13_idkcx"]
 [ext_resource type="Texture2D" uid="uid://oh300towtyv6" path="res://Images/entities/undefined boss/boss_trail.png" id="14_3f373"]
-[ext_resource type="Texture2D" uid="uid://bfwe13a1e6bfg" path="res://Images/entities/undefined boss/boss_shield.png" id="14_ihi8v"]
 [ext_resource type="Script" uid="uid://d0xnltbvtmvwv" path="res://Scripts/Components/Hurtbox.gd" id="14_pb1b7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nxa2d"]
@@ -106,108 +103,6 @@ color_ramp = SubResource("GradientTexture1D_euuho")
 anim_speed_min = 1.0
 anim_speed_max = 1.0
 
-[sub_resource type="Gradient" id="Gradient_euuho"]
-offsets = PackedFloat32Array(0, 0.35858586, 0.7020202, 1)
-colors = PackedColorArray(1, 1, 1, 0, 0.9807814, 0.51972044, 0.6852644, 1, 0.6944852, 0.1604107, 0.22979024, 1, 1, 1, 1, 0)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_ihi8v"]
-gradient = SubResource("Gradient_euuho")
-
-[sub_resource type="Curve" id="Curve_yhyig"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.24056603, 1), 5.0147834, 5.0147834, 0, 0, Vector2(0.759434, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 4
-
-[sub_resource type="CurveTexture" id="CurveTexture_wyuo6"]
-curve = SubResource("Curve_yhyig")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_euuho"]
-particle_flag_disable_z = true
-direction = Vector3(0, 0, 0)
-spread = 180.0
-initial_velocity_min = 25.0
-initial_velocity_max = 25.0
-gravity = Vector3(0, 0, 0)
-scale_max = 3.0
-scale_curve = SubResource("CurveTexture_wyuo6")
-color_ramp = SubResource("GradientTexture1D_ihi8v")
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_81yk4"]
-atlas = ExtResource("4_h7ml3")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qlc3j"]
-atlas = ExtResource("4_h7ml3")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_58yr8"]
-atlas = ExtResource("4_h7ml3")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wm1ng"]
-atlas = ExtResource("4_h7ml3")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_d0mrd"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_81yk4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qlc3j")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_58yr8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wm1ng")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 7.0
-}]
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ihi8v"]
-particles_animation = true
-particles_anim_h_frames = 4
-particles_anim_v_frames = 1
-particles_anim_loop = false
-
-[sub_resource type="Gradient" id="Gradient_65uel"]
-colors = PackedColorArray(1, 0.3355136, 0.26959568, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_nj4aj"]
-gradient = SubResource("Gradient_65uel")
-
-[sub_resource type="Gradient" id="Gradient_wyuo6"]
-offsets = PackedFloat32Array(0, 0.22727273, 0.74242425, 1)
-colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 0.52508664, 0.671152, 1, 1, 1, 1, 1, 0)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_65uel"]
-gradient = SubResource("Gradient_wyuo6")
-
-[sub_resource type="Curve" id="Curve_wyuo6"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.25, 1), 2.5521665, 2.5521665, 0, 0, Vector2(0.754717, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 4
-
-[sub_resource type="CurveTexture" id="CurveTexture_65uel"]
-curve = SubResource("Curve_wyuo6")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_nj4aj"]
-particle_flag_disable_z = true
-direction = Vector3(0, 0, 0)
-spread = 180.0
-initial_velocity_min = 15.0
-initial_velocity_max = 35.0
-gravity = Vector3(0, 0, 0)
-scale_min = 0.19999999
-scale_max = 0.39999998
-scale_curve = SubResource("CurveTexture_65uel")
-color_ramp = SubResource("GradientTexture1D_65uel")
-color_initial_ramp = SubResource("GradientTexture1D_nj4aj")
-anim_speed_min = 0.59999996
-anim_speed_max = 1.0
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_sexik"]
 atlas = ExtResource("1_a37h1")
 region = Rect2(128, 0, 128, 128)
@@ -255,22 +150,6 @@ region = Rect2(1408, 0, 128, 128)
 [sub_resource type="AtlasTexture" id="AtlasTexture_ds3ix"]
 atlas = ExtResource("1_a37h1")
 region = Rect2(1536, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_d0mrd"]
-atlas = ExtResource("14_ihi8v")
-region = Rect2(0, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_swoj2"]
-atlas = ExtResource("14_ihi8v")
-region = Rect2(128, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sqe3j"]
-atlas = ExtResource("14_ihi8v")
-region = Rect2(256, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fg0n7"]
-atlas = ExtResource("14_ihi8v")
-region = Rect2(384, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_48y6b"]
 atlas = ExtResource("1_sxvv6")
@@ -364,18 +243,6 @@ region = Rect2(512, 0, 128, 128)
 atlas = ExtResource("14_3f373")
 region = Rect2(640, 0, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nj4aj"]
-atlas = ExtResource("14_3f373")
-region = Rect2(384, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_j4y1u"]
-atlas = ExtResource("14_3f373")
-region = Rect2(256, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_af041"]
-atlas = ExtResource("14_3f373")
-region = Rect2(128, 0, 128, 128)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_k5o2b"]
 animations = [{
 "frames": [{
@@ -423,23 +290,6 @@ animations = [{
 "loop": false,
 "name": &"atirar_02",
 "speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_d0mrd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_swoj2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sqe3j")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fg0n7")
-}],
-"loop": true,
-"name": &"atirar_03",
-"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.5,
@@ -544,20 +394,6 @@ animations = [{
 "loop": false,
 "name": &"trail_01",
 "speed": 8.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nj4aj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_j4y1u")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_af041")
-}],
-"loop": false,
-"name": &"trail_02",
-"speed": 8.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xt8r2"]
@@ -570,16 +406,6 @@ size = Vector2(57.75, 63.5)
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y33qn"]
 radius = 33.0
 height = 90.0
-
-[sub_resource type="Gradient" id="Gradient_ihi8v"]
-offsets = PackedFloat32Array(0, 0.7695652, 1)
-colors = PackedColorArray(0, 0.56665117, 0.76924175, 0.49800003, 0.83060086, 1, 0.9607386, 0.08800001, 1, 1, 1, 0)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_wyuo6"]
-gradient = SubResource("Gradient_ihi8v")
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(0.9188034, 0.5)
 
 [node name="Undefined_boss" type="CharacterBody2D"]
 material = SubResource("ShaderMaterial_nxa2d")
@@ -621,33 +447,6 @@ texture = ExtResource("3_y33qn")
 lifetime = 0.53
 process_material = SubResource("ParticleProcessMaterial_3f373")
 
-[node name="t01" type="GPUParticles2D" parent="Particles"]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(-61, 8)
-emitting = false
-amount = 40
-lifetime = 0.8
-trail_lifetime = 0.05
-process_material = SubResource("ParticleProcessMaterial_euuho")
-
-[node name="cube" type="AnimatedSprite2D" parent="Particles/t01"]
-modulate = Color(2.3464565, 1.8197759, 2.3464565, 1)
-scale = Vector2(1e-05, 1e-05)
-sprite_frames = SubResource("SpriteFrames_d0mrd")
-animation = &"idle"
-frame_progress = 0.92551076
-
-[node name="a01" type="GPUParticles2D" parent="Particles"]
-modulate = Color(1.2623323, 2.0331757, 2.0331757, 1)
-z_index = 1
-material = SubResource("CanvasItemMaterial_ihi8v")
-position = Vector2(0, 17)
-emitting = false
-amount = 20
-texture = ExtResource("4_h7ml3")
-randomness = 1.0
-process_material = SubResource("ParticleProcessMaterial_nj4aj")
-
 [node name="HealthComponent" type="Node" parent="."]
 script = ExtResource("5_sexik")
 max_health = 300.0
@@ -676,14 +475,13 @@ jump_height = -450.0
 [node name="trail" type="Node" parent="StateMachine"]
 script = ExtResource("10_euuho")
 
-[node name="Died" type="Node" parent="StateMachine"]
-script = ExtResource("12_yhyig")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 use_parent_material = true
 sprite_frames = SubResource("SpriteFrames_k5o2b")
-animation = &"atirar_02"
+animation = &"trail_01"
 autoplay = "idle"
+frame = 4
+frame_progress = 0.25086105
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 25)
@@ -715,13 +513,10 @@ debug_color = Color(0.4045277, 0.5646141, 0.624046, 0.41960785)
 position = Vector2(0, 40)
 
 [node name="spear_spawn" type="Node2D" parent="."]
-position = Vector2(0, 22)
+position = Vector2(0, 25)
 
 [node name="throw_spawn" type="Node2D" parent="."]
 position = Vector2(22, -28)
 
-[node name="glow" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(2, 21)
-scale = Vector2(1.7343749, 1.8750001)
-texture = SubResource("GradientTexture2D_wyuo6")
+[node name="trail_spawn" type="Node2D" parent="."]
+position = Vector2(-61, 8)

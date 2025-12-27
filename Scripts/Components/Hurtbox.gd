@@ -5,12 +5,15 @@ class_name Hurtbox
 signal on_hit(other:Hitbox)
 
 func onHit(hitbox:Hitbox):
+	print("aaaa")
 	if not health_component : return
 	on_hit.emit(hitbox)
 	var damage = hitbox.damage
 	health_component.takeDamage(damage,hitbox)
 	
 	var character = get_parent() as BaseEntity
+	print(character)
+	
 	if damage>0:
 		character.blink()
 	else:
