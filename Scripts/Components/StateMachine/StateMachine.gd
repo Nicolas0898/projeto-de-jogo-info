@@ -51,6 +51,10 @@ func requestStateChange(newState:String,data={}):
 	currentState.stateData = data
 	currentState.onStateEntered(oldState)
 	
+	if not currentState.f:
+		currentState.f = true
+		currentState.first()
+	
 	onStateChange.emit(currentState,oldState)
 
 func _physics_process(delta: float) -> void:

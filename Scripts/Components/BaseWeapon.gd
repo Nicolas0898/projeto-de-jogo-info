@@ -3,6 +3,7 @@ class_name BaseWeapon
 
 @onready var character: PlayerCharacter = $".."
 @export var cooldown:float = 0.1
+var image
 
 
 var on_cooldown = false
@@ -40,6 +41,7 @@ func use_end():
 func set_on_cooldown():
 	on_cooldown = true
 	cd_timer.start()
+	Ui.player_ui.show_cooldown(cooldown,image)
 
 func cd_timeout():
 	on_cooldown = false

@@ -4,6 +4,7 @@ class_name State
 var stateMachine:StateMachine 
 var stateData = {}
 var character:BaseEntity = null
+var f = false
 
 func _ready() -> void:
 	if get_parent() is not StateMachine:
@@ -27,4 +28,7 @@ func onPhysics(_delta:float):
 	pass
 
 func onInput(_input:InputEvent):
+	pass
+
+func first():
 	pass

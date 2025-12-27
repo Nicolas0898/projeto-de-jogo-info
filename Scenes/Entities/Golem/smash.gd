@@ -36,6 +36,7 @@ func onStateEntered(_d):
 			effects.push_back(effect)
 		
 		await spawn
+		PlayerCamera.screen_shake(20,0.2)
 		clearpart()
 		
 		

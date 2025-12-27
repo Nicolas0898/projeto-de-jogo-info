@@ -1,4 +1,5 @@
 extends State
+const JUMP = preload("uid://bqwi4vmu04dmo")
 
 var max_jumptime = 0.3 
 var jumptime = 0
@@ -27,6 +28,14 @@ func onStateEntered(_old):
 	player.sprite.playAnimation("jump")
 	player.variable_velocity.y = 0
 	jumptime = 0
+	
+	var p:GPUParticles2D = JUMP.instantiate()
+	character.add_child(p)
+	p.global_position = character.get_node("ParticleSpawnPoint").global_position
+	p.emitting = true
+	p.finished.connect(func():
+		p.queue_free()
+		)
 
 func onStateExit():
 	var player:PlayerCharacter = stateMachine.character

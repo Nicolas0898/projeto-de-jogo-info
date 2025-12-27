@@ -1,0 +1,80 @@
+[gd_scene load_steps=6 format=3 uid="uid://skuxd5l3pjlr"]
+
+[ext_resource type="Script" uid="uid://bb0j4howkipxp" path="res://Scenes/UI/playerUi/hability_render.gd" id="1_iw6mt"]
+[ext_resource type="Texture2D" uid="uid://d2p81mosej6kr" path="res://Images/UI/circle.png" id="1_ny8hy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c4arg"]
+bg_color = Color(0, 0, 0, 0.7019608)
+corner_radius_top_left = 1000
+corner_radius_top_right = 1000
+corner_radius_bottom_right = 1000
+corner_radius_bottom_left = 1000
+corner_detail = 3
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ny8hy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iw6mt"]
+bg_color = Color(1, 1, 1, 1)
+anti_aliasing = false
+
+[node name="Hability" type="Panel"]
+custom_minimum_size = Vector2(32, 32)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -12.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_c4arg")
+script = ExtResource("1_iw6mt")
+
+[node name="Border" type="TextureRect" parent="."]
+z_index = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ny8hy")
+
+[node name="image" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.0
+offset_top = -7.0
+offset_right = 7.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+modulate = Color(0.3359375, 0, 0, 0.105882354)
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = -5.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxEmpty_ny8hy")
+theme_override_styles/fill = SubResource("StyleBoxFlat_iw6mt")
+value = 100.0
+fill_mode = 3
+show_percentage = false

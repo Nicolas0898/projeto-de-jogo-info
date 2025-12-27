@@ -48,7 +48,7 @@ func default_attack():
 	var size = Vector2(40,15)
 	
 	var damagemult = 1
-	if is_charged: damagemult = 1.5
+	if is_charged: damagemult = 3
 		
 	
 	var hitbox = Hitbox.from_rect(damage*damagemult,size)
@@ -76,6 +76,9 @@ func default_attack():
 	
 	if is_charged:
 		character.variable_velocity += character.get_local_mouse_position().normalized()*500
+		
+	else:
+		character.variable_velocity += character.get_local_mouse_position().normalized()*200*Vector2(1,0)
 	
 	
 	sprite.animation_finished.connect(func():
@@ -84,6 +87,8 @@ func default_attack():
 	var hitdir = Crosshair.look
 	hitbox.onHit.connect(func(other):
 		if other is Bell: return
+		
+		Ui.player_ui.register_hit()
 		character.health_component.heal(1)
 		var dir = other.global_position.direction_to(character.global_position).normalized()
 		var mult = 1

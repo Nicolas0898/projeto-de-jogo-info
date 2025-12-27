@@ -6,7 +6,7 @@ class option:
 	var arc:arc_renderer
 	var index = 0
 	var sprite:TextureRect
-	static var count = 0	
+	static var count = 0
 	
 	func _init(parent:Control,target,img=null):
 		index = count
@@ -57,8 +57,11 @@ func _process(_delta: float) -> void:
 	var mousedir = (get_local_mouse_position() - size/2).normalized()
 	var angle = atan2(mousedir.y,mousedir.x)
 	if angle<0: angle+=2*PI
+	position = position.lerp(mousedir*5,10*_delta)
+	
 
 	for i in options:
+		i.arc.rotation = lerp(i.arc.rotation,mousedir.x/20,10*_delta) 
 		var inside = i.arc.is_angle_inside_arc(angle)
 		if inside:
 			i.arc.self_modulate = Color(.8,1,.8)

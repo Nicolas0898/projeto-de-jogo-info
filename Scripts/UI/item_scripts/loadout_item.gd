@@ -14,6 +14,7 @@ func equip(input="use_weapon"):
 	_node.read_from = input
 	_node.damage = damage
 	_node.cooldown = cooldown
+	_node.image = sprite
 	
 	print("CD:",cooldown," Damage:",damage)
 

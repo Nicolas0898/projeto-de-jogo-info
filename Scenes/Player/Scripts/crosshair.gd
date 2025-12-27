@@ -102,7 +102,7 @@ func entered_ui():
 func ui(delta:float):
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	canvas_layer_cursor.rotation = lerp(Cursor.rotation,targetRotation,5*delta)
-	canvas_layer_cursor.position = GameHandler.Player.get_local_mouse_position()
+	canvas_layer_cursor.position = get_viewport().get_mouse_position()
 
 func cast(delta:float):
 	selectedTarget = null

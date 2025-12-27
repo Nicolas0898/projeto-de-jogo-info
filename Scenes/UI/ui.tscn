@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://cc2qsjoqgcdqu"]
+[gd_scene load_steps=43 format=3 uid="uid://cc2qsjoqgcdqu"]
 
 [ext_resource type="Script" uid="uid://dfxy21hd8djmg" path="res://Scripts/ETC/ui.gd" id="1_vhchw"]
 [ext_resource type="PackedScene" uid="uid://d0gxkspxt0ool" path="res://Scenes/UI/dialogue.tscn" id="2_jx4bj"]
@@ -23,15 +23,6 @@
 [ext_resource type="Texture2D" uid="uid://1qkbxphg5d5h" path="res://Images/UI/bestiary_paper.png" id="21_x47be"]
 [ext_resource type="PackedScene" uid="uid://ccbp2216vmb24" path="res://Scenes/UI/radial_menu.tscn" id="22_gpq8t"]
 [ext_resource type="PackedScene" uid="uid://capcd2ylwbid8" path="res://Scenes/UI/loadout.tscn" id="23_khanp"]
-
-[sub_resource type="Gradient" id="Gradient_nt8jn"]
-colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_g0wmg"]
-gradient = SubResource("Gradient_nt8jn")
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(0.5, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ryf15"]
 bg_color = Color(0.0588235, 0.0588235, 0.0588235, 0.886275)
@@ -166,18 +157,6 @@ animations = [{
 [node name="UI" type="CanvasLayer"]
 layer = 100
 script = ExtResource("1_vhchw")
-
-[node name="TextureRect" type="TextureRect" parent="."]
-modulate = Color(1, 1, 1, 0.266667)
-texture_filter = 2
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-texture = SubResource("GradientTexture2D_g0wmg")
-metadata/Ignore = true
 
 [node name="Dialogue" parent="." instance=ExtResource("2_jx4bj")]
 visible = false

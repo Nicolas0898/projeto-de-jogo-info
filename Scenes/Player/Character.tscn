@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://brkn5mjfr67t4"]
+[gd_scene load_steps=63 format=3 uid="uid://brkn5mjfr67t4"]
 
 [ext_resource type="Shader" uid="uid://lk8vqo6nbyf3" path="res://Shaders/Character.gdshader" id="1_aeg27"]
 [ext_resource type="Script" uid="uid://bhahlqc4v651w" path="res://Scripts/scenes/Player/character.gd" id="1_d8n76"]
@@ -278,6 +278,15 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="Gradient" id="Gradient_um7yn"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_du3pq"]
+gradient = SubResource("Gradient_um7yn")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 material = SubResource("ShaderMaterial_qyni0")
 collision_layer = 4
@@ -350,12 +359,12 @@ position = Vector2(2.38419e-07, -0.5)
 shape = SubResource("RectangleShape2D_aflf6")
 
 [node name="staircase_bugfix_l" type="CollisionShape2D" parent="."]
-position = Vector2(-9, -2)
+position = Vector2(-7, -2)
 shape = SubResource("SeparationRayShape2D_du3pq")
 one_way_collision_margin = 0.0
 
 [node name="staircase_bugfix_r" type="CollisionShape2D" parent="."]
-position = Vector2(9, -2)
+position = Vector2(7, -2)
 shape = SubResource("SeparationRayShape2D_du3pq")
 one_way_collision_margin = 0.0
 
@@ -388,10 +397,10 @@ target_position = Vector2(0, -32)
 use_parent_material = true
 position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_a0efk")
-animation = &"cage"
+animation = &"run"
 autoplay = "idle"
 frame = 5
-frame_progress = 1.0
+frame_progress = 0.2558705
 offset = Vector2(0.920864, -1.3813)
 script = ExtResource("35_um7yn")
 
@@ -405,5 +414,14 @@ limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 5.25
 script = ExtResource("38_4g8e6")
+
+[node name="ParticleSpawnPoint" type="Node2D" parent="."]
+position = Vector2(0, 10)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+texture_filter = 2
+scale = Vector2(2.875, 2.8749998)
+energy = 0.5
+texture = SubResource("GradientTexture2D_du3pq")
 
 [connection signal="healthChanged" from="HealthComponent" to="." method="_on_health_component_health_changed"]

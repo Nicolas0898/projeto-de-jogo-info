@@ -16,7 +16,7 @@ var current_active:Control
 var can_close = true
 
 func _ready() -> void:
-	hide_all()
+	set_current_active("playerui")
 
 func set_current_active(window_name:String):
 	hide_all()

@@ -1,21 +1,27 @@
-[gd_scene load_steps=5 format=3 uid="uid://ctbajdsjla0us"]
+[gd_scene load_steps=6 format=3 uid="uid://ctbajdsjla0us"]
 
 [ext_resource type="Script" uid="uid://cd60oarfa73qs" path="res://Scenes/Objects/coin.gd" id="1_1uvbc"]
 [ext_resource type="Texture2D" uid="uid://c4t7wc4l4a8sf" path="res://Images/items/floormoney.png" id="1_d5gmh"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1uvbc"]
-size = Vector2(8, 6)
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1uvbc"]
+friction = 0.2
+bounce = 0.2
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1uvbc"]
+radius = 4.11
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mk2m6"]
 size = Vector2(10, 8)
 
 [node name="RigidBody2D" type="RigidBody2D"]
 collision_layer = 0
+mass = 0.1
+physics_material_override = SubResource("PhysicsMaterial_1uvbc")
 script = ExtResource("1_1uvbc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_1uvbc")
+shape = SubResource("CircleShape2D_1uvbc")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 4

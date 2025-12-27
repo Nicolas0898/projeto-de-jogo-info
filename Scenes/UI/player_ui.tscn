@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://oabc24p02seh"]
+[gd_scene load_steps=8 format=3 uid="uid://oabc24p02seh"]
 
 [ext_resource type="Script" uid="uid://b4tsgciqbhfi2" path="res://Scenes/UI/player_ui.gd" id="1_t3flm"]
 [ext_resource type="StyleBox" uid="uid://5wvj2f2hfhom" path="res://Scenes/UI/inventory_ui.tres" id="2_8n2hl"]
-[ext_resource type="FontFile" uid="uid://b71f1nslp8bqt" path="res://Fonts/BoldPixels.ttf" id="3_c4arg"]
+[ext_resource type="FontFile" uid="uid://b5t0flub2diqg" path="res://Fonts/BoldPixels.ttf" id="3_c4arg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_whq80"]
 bg_color = Color(1, 1, 1, 1)
@@ -14,6 +14,15 @@ shadow_size = 6
 shadow_color = Color(0, 0, 0, 0.305882)
 shadow_offset = Vector2(0, 0)
 
+[sub_resource type="Gradient" id="Gradient_nt8jn"]
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_t3flm"]
+gradient = SubResource("Gradient_nt8jn")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
 [node name="PlayerUI" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -21,6 +30,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(320, 180)
 script = ExtResource("1_t3flm")
 
 [node name="Panel" type="Panel" parent="."]
@@ -41,7 +51,7 @@ anchor_bottom = 1.0
 offset_left = 3.0
 offset_top = 2.0
 offset_right = -3.0
-offset_bottom = -3.0
+offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/fill = SubResource("StyleBoxFlat_whq80")
@@ -49,6 +59,7 @@ value = 100.0
 show_percentage = false
 
 [node name="Label" type="Label" parent="Panel"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -61,3 +72,63 @@ text = "100/100"
 label_settings = SubResource("LabelSettings_whq80")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="cdlist" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 36.0
+offset_right = 147.0
+offset_bottom = 76.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 0.26666668)
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -28.444458
+offset_top = -16.0
+offset_right = 28.444458
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_t3flm")
+metadata/Ignore = true
+
+[node name="vin2" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.26666668)
+self_modulate = Color(1, 1, 1, 0)
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -28.444458
+offset_top = -16.0
+offset_right = 28.444458
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_t3flm")
+metadata/Ignore = true
+
+[node name="vin3" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.26666668)
+self_modulate = Color(1, 1, 1, 0)
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -28.444458
+offset_top = -16.0
+offset_right = 28.444458
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_t3flm")
+metadata/Ignore = true
