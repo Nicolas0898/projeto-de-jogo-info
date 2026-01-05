@@ -195,11 +195,19 @@ curve = SubResource("Curve_wyuo6")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_nj4aj"]
 particle_flag_disable_z = true
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 0.0
+emission_ring_radius = 50.0
+emission_ring_inner_radius = 47.25
+emission_ring_cone_angle = 90.0
+angle_min = -720.0
+angle_max = 720.0
 direction = Vector3(0, 0, 0)
 spread = 0.0
 gravity = Vector3(0, 0, 0)
 scale_min = 0.19999999
-scale_max = 0.39999998
+scale_max = 0.7
 scale_curve = SubResource("CurveTexture_65uel")
 color_ramp = SubResource("GradientTexture1D_65uel")
 color_initial_ramp = SubResource("GradientTexture1D_nj4aj")
@@ -749,12 +757,12 @@ animation = &"idle"
 frame_progress = 0.92551076
 
 [node name="a01" type="GPUParticles2D" parent="Particles"]
-modulate = Color(1.2623323, 2.0331757, 2.0331757, 1)
+modulate = Color(1.2623323, 2.0331757, 2.0331757, 0.41400003)
 z_index = 1
 material = SubResource("CanvasItemMaterial_ihi8v")
-position = Vector2(0, 17)
+position = Vector2(0, 37)
 emitting = false
-amount = 20
+amount = 50
 texture = ExtResource("4_h7ml3")
 randomness = 1.0
 process_material = SubResource("ParticleProcessMaterial_nj4aj")
@@ -831,7 +839,6 @@ metadata/_custom_type_script = "uid://d0xnltbvtmvwv"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
 position = Vector2(0, 18)
 shape = SubResource("CapsuleShape2D_y33qn")
-debug_color = Color(0.4045277, 0.5646141, 0.624046, 0.41960785)
 
 [node name="impact_spawn" type="Node2D" parent="."]
 position = Vector2(0, 40)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://oiyn3lbmrhbu"]
+[gd_scene load_steps=30 format=3 uid="uid://oiyn3lbmrhbu"]
 
 [ext_resource type="Texture2D" uid="uid://bq2thcjto2i1o" path="res://Images/entities/undefined boss/trail_bite.png" id="1_dv7iu"]
 [ext_resource type="Script" uid="uid://dhylyfwtu7gak" path="res://Scenes/Entities/undefined boss/trail_bite.gd" id="1_jn4kr"]
@@ -121,7 +121,13 @@ colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0.97200006, 1, 1, 1, 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_tvom2"]
 gradient = SubResource("Gradient_slgq4")
 
+[sub_resource type="Curve" id="Curve_tvom2"]
+_limits = [-200.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
 [sub_resource type="CurveTexture" id="CurveTexture_slgq4"]
+curve = SubResource("Curve_tvom2")
 
 [sub_resource type="Curve" id="Curve_rl8b0"]
 _data = [Vector2(0, 1), 0.0, 4.867612, 0, 0, Vector2(1, 0.28089893), 0.0, 0.0, 0, 0]
@@ -150,7 +156,6 @@ radius = 23.0
 script = ExtResource("1_jn4kr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_u30fj")
 animation = &"bite_01"
 frame = 4
@@ -165,6 +170,7 @@ z_index = -1
 texture = ExtResource("4_1nxpr")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+visible = false
 modulate = Color(1.5795683, 1.5795683, 1.5795683, 0.22700001)
 z_index = -1
 amount = 20

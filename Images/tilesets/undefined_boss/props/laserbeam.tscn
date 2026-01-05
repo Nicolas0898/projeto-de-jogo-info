@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://2bvegjotwlnt"]
+
+[ext_resource type="Script" uid="uid://bd6ble6s8ma7r" path="res://Images/tilesets/undefined_boss/props/script/laserbeam.gd" id="1_ggsts"]
+
+[sub_resource type="Curve" id="Curve_ggsts"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.43939397, 0.1862123), 0.0, 0.0, 0, 0, Vector2(0.49999997, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o44j2"]
+size = Vector2(20, 298)
+
+[sub_resource type="Gradient" id="Gradient_ggsts"]
+offsets = PackedFloat32Array(0, 0.53913045, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.99062747, 0.45959884, 0.58642983, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_b603f"]
+gradient = SubResource("Gradient_ggsts")
+fill_from = Vector2(0.8504273, 0)
+fill_to = Vector2(0.20940171, 0)
+
+[node name="Laserbeam" type="Area2D"]
+collision_mask = 16
+script = ExtResource("1_ggsts")
+time = 2.0
+trajectory = SubResource("Curve_ggsts")
+damage = 10.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_o44j2")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(9.536743e-07, -1.0000038)
+scale = Vector2(0.34375, 4.703125)
+energy = 11.0
+texture = SubResource("GradientTexture2D_b603f")

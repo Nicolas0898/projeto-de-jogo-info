@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=3 uid="uid://cdrw474gq1wxm"]
 
-[ext_resource type="Script" uid="uid://cmdnbpc58dmn7" path="res://Images/tilesets/undefined_boss/props/bell.gd" id="1_nn6f5"]
+[ext_resource type="Script" uid="uid://cmdnbpc58dmn7" path="res://Images/tilesets/undefined_boss/props/script/bell.gd" id="1_nn6f5"]
 [ext_resource type="Texture2D" uid="uid://crruvfx8lqfxm" path="res://Images/tilesets/undefined_boss/bell_spritesheet.png" id="2_2hx2u"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nn6f5"]

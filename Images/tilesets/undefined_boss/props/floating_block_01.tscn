@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://kaagdemwjn57"]
+
+[ext_resource type="Script" uid="uid://fe0wl0b8gip7" path="res://Images/tilesets/undefined_boss/props/script/floating_block.gd" id="1_x362n"]
+[ext_resource type="Texture2D" uid="uid://bo4f0dwj113op" path="res://Images/tilesets/undefined_boss/parallax_01.png" id="2_pqi66"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vpww"]
+atlas = ExtResource("2_pqi66")
+region = Rect2(7.0988464, 244.97507, 126.04703, 108.661255)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mq4r0"]
+size = Vector2(87.66008, 67.69347)
+
+[node name="floating_block_01" type="StaticBody2D"]
+rotation = -0.2635447
+script = ExtResource("1_x362n")
+frequency = 0.06
+amplitude = 0.4
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_6vpww")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-13.078064, 6.6124783)
+rotation = 0.43633235
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_mq4r0")

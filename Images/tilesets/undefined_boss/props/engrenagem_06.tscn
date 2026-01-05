@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cd26scyc4udl8"]
 
-[ext_resource type="Script" uid="uid://4yvd2c3juidy" path="res://Images/tilesets/undefined_boss/props/engrenagem.gd" id="1_e4pji"]
+[ext_resource type="Script" uid="uid://4yvd2c3juidy" path="res://Images/tilesets/undefined_boss/props/script/engrenagem.gd" id="1_e4pji"]
 [ext_resource type="Texture2D" uid="uid://c7sko8i0rbfd1" path="res://Images/tilesets/undefined_boss/engrenagem_06.png" id="2_e4pji"]
 [ext_resource type="Script" uid="uid://d0xnltbvtmvwv" path="res://Scripts/Components/Hurtbox.gd" id="3_df4ju"]
 
