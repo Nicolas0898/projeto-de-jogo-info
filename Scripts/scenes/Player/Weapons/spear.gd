@@ -75,10 +75,10 @@ func default_attack():
 	t.tween_property(sprite,"modulate",Color(1,1,1,0),0.1)
 	
 	if is_charged:
-		character.variable_velocity += character.get_local_mouse_position().normalized()*500
+		character.variable_velocity += Crosshair.look*500
 		
 	else:
-		character.variable_velocity += character.get_local_mouse_position().normalized()*200*Vector2(1,0)
+		character.variable_velocity += Crosshair.look*200*Vector2(1,0)
 	
 	
 	sprite.animation_finished.connect(func():

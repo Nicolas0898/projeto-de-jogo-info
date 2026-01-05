@@ -9,6 +9,7 @@ var target = Vector2.ZERO:
 	
 func _draw() -> void:
 	size = Vector2(100,100)
+	if target == null : return
 	var draw_target = target
 	if draw_target.length()>50:
 		draw_target = draw_target.normalized()*50
