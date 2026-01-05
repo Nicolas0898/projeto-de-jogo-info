@@ -20,38 +20,45 @@ func _input(event: InputEvent) -> void:
 func reset_hooks():
 	for i in disabled_points:
 		i.enabled = true
-		disabled_points.clear()
+	disabled_points.clear()
 
 func state_changed(new,old):
 	if old.name == "Hooking":
 		old.stateData.hook.enabled = false
 		disabled_points.append(old.stateData.hook)
-	if new.name != "Falling":
+	if new.name != "Falling" and new.name != "Hooking" and new.name != "Core":
 		reset_hooks()
 
 func get_closest_hook_point():
 	var hookpoints = get_tree().get_nodes_in_group("GrappleNode")
-	var nearest_instance = null
 	var nearest_distance = null
+	var nearest_instance = null
 	var vsh
 	
 	for hook in hookpoints:
 		var current_distance = hook.global_position.distance_to(character.global_position)
 		var cursor_distance = Crosshair.current.pos.distance_to(hook.global_position)
+		if Crosshair.current.controller:
+			cursor_distance = current_distance
 		character.hook_cast.target_position = character.to_local(hook.global_position)
 		character.hook_cast.force_raycast_update()
 		
-		if cursor_distance<=64:
+		if cursor_distance<=64 and not Crosshair.current.controller:
 			vsh = hook
 		if character.hook_cast.get_collider(): continue
 		if current_distance>hook.range:continue
-		if cursor_distance>64:continue
+		
+		if cursor_distance>64 and not Crosshair.current.controller:continue
+			
 		if hook.enabled == false:continue
 		if nearest_instance==null or nearest_distance >  current_distance:
 			nearest_instance = hook
 			nearest_distance = current_distance
 
-	visual_selected_hook = vsh
+	if not Crosshair.current.controller:
+		visual_selected_hook = vsh
+	else:
+		visual_selected_hook = nearest_instance
 	return nearest_instance
 	
 func set_hook_visibility(value):

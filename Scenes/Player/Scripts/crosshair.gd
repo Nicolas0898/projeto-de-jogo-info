@@ -12,7 +12,8 @@ var state = "core":
 		state = _newval.to_lower()
 		if state!="ui":
 			canvas_layer.visible = false
-			Cursor.visible = true
+			if not controller:
+				Cursor.visible = true
 
 func rpi():
 	Cursor.reset_physics_interpolation()
@@ -33,14 +34,31 @@ var cache = {}
 var selectedTarget:Node2D
 var f = true
 
+var controller = false
+var c_input = Vector2.ZERO
+
 func _ready() -> void:
 	current = self
+	%DebugMenu.watch_as_vector(self,"look")
+	
 	
 
 func _process(delta: float) -> void:
-	if !is_instance_valid(Cursor) : return
-	pos = get_global_mouse_position()
-	look = GameHandler.Player.get_local_mouse_position().normalized()
+	if !is_instance_valid(Cursor): return
+	
+	if not controller:
+		pos = get_global_mouse_position()
+		look = GameHandler.Player.get_local_mouse_position().normalized()
+	else:
+		c_input = Vector2(Input.get_axis("left","right"),0)
+		if(abs(Input.get_axis("up","down")) > 0.7):
+			c_input = Vector2(0,Input.get_axis("up","down"))
+
+		
+		
+		pos = GameHandler.Player.global_position + c_input*50
+		look = c_input
+	
 	if has_method(state.to_lower()):
 		call(state.to_lower(),delta)
 		if f:
@@ -59,7 +77,15 @@ func setCircleSize(size:Vector2):
 	circle.texture.height = size.y
 
 func _input(event: InputEvent) -> void:
+	if event is InputEventJoypadMotion:
+		controller = true
+		canvas_layer_cursor.visible = false
+
+		
 	if event is InputEventMouseMotion:
+		controller = false
+		canvas_layer_cursor.visible = true
+		
 		Cursor.rotation += event.relative.x/100
 
 func basic(delta:float):
@@ -71,6 +97,10 @@ func core(delta:float):
 	basic(delta)
 	circle.scale = circle.scale.lerp(Vector2.ZERO,10*delta)
 	line.visible = false
+	if controller:
+		Cursor.visible = false
+	else:
+		Cursor.visible = true
 	lerp_color_to(Color(1,1,1),delta)
 
 func hook(delta:float):
@@ -78,8 +108,14 @@ func hook(delta:float):
 	circle.global_position = cache.hookpos
 	circle.scale = circle.scale.lerp(Vector2.ONE,10*delta)
 	circle.rotate(PI*delta)
-	line.global_position = pos
-	line.set_point_position(1,line.to_local(cache.hookpos))
+	if controller:
+		pos = cache.hookpos
+		line.global_position = GameHandler.Player.global_position
+		line.set_point_position(1,line.to_local(cache.hookpos))
+	else:
+		line.global_position = cache.hookpos
+		line.set_point_position(1,line.to_local(pos))
+	
 	line.visible = true
 	if not cache.able: 
 		lerp_color_to(Color(1,0,0),delta)
@@ -102,7 +138,10 @@ func entered_ui():
 func ui(delta:float):
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	canvas_layer_cursor.rotation = lerp(Cursor.rotation,targetRotation,5*delta)
-	canvas_layer_cursor.position = get_viewport().get_mouse_position()
+	if not controller:
+		canvas_layer_cursor.position = get_viewport().get_mouse_position()
+	else:
+		canvas_layer_cursor.position += Input.get_vector("left","right","up","down")*1.2
 
 func cast(delta:float):
 	selectedTarget = null
@@ -141,15 +180,27 @@ func entered_charged_attack():
 	t.set_ease(Tween.EASE_OUT)
 	t.set_trans(Tween.TRANS_CUBIC)
 	t.tween_property(circle,"scale",Vector2.ZERO,cache.time)
+	
+	if not controller:
+		circle.global_position = pos
+	else:
+		circle.global_position = GameHandler.Player.global_position
+	
 
 func charged_attack(delta:float):
 	basic(delta)
-	circle.global_position = pos
+	if not controller:
+		circle.global_position = pos
+	else:
+		circle.global_position = GameHandler.Player.global_position
 	circle.visible = true
-	line.visible = true
+	if not controller:
+		line.visible = true
+	else:
+		line.visible = false
 	Cursor.self_modulate = Cursor.self_modulate.lerp(Color(1,1,1,0.2),15*delta)
-	line.global_position = pos
-	line.set_point_position(1,line.to_local(GameHandler.Player.global_position))
+	line.global_position = GameHandler.Player.global_position 
+	line.set_point_position(1,line.to_local(pos))
 
 func requestStateChange(newstate,newPriority):
 	if newPriority>=currentStatePriority:

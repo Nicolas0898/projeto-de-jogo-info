@@ -23,6 +23,7 @@ var habilities:Array[LoadoutItem] = [preload("uid://k36ginnnsxes"),preload("uid:
 @onready var weapon_node: VBoxContainer = $weapon
 @onready var scroll_container: ScrollContainer = $ScrollContainer
 @onready var list: VBoxContainer = $ScrollContainer/VBoxContainer
+var last_called = null
 
 
 func create_button(parent,input):
@@ -64,6 +65,8 @@ func is_item_loaded(item):
 
 func hide_scroll(show_nodes):
 	var tween = create_tween()
+	if last_called:
+		last_called.grab_focus()
 	
 	for i in labels:
 		i.visible = true
@@ -93,6 +96,8 @@ func load_item(item:LoadoutItem,node:Button):
 func show_scroll(node:Button):
 	scroll_container.position = node.global_position - Vector2(scroll_container.size.x/2 - node.size.x/2,scroll_container.size.y/2 - node.size.y/2)
 	
+	last_called = node
+	
 	for i in labels:
 		i.visible = false
 	
@@ -117,7 +122,10 @@ func show_scroll(node:Button):
 			active = null
 			)
 		
+		
 		list.add_child(itemframe)
+		itemframe.grab_focus()
+	
 	
 	var tween = create_tween()
 	
@@ -149,4 +157,5 @@ func spawn():
 
 func on_active():
 	active = null
+	nodes[0].grab_focus()
 	hide_scroll(true)

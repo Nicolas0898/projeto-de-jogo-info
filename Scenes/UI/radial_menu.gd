@@ -54,7 +54,13 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-	var mousedir = (get_local_mouse_position() - size/2).normalized()
+	var mousedir
+	
+	if Crosshair.current.controller:
+		mousedir = Input.get_vector("left","right","up","down")
+	else:
+		mousedir = (get_local_mouse_position() - size/2).normalized()
+		
 	var angle = atan2(mousedir.y,mousedir.x)
 	if angle<0: angle+=2*PI
 	position = position.lerp(mousedir*5,10*_delta)

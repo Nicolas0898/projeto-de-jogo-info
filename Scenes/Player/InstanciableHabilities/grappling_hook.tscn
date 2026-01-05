@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://b161owx4r8uxd"]
+[gd_scene load_steps=3 format=3 uid="uid://b161owx4r8uxd"]
 
 [ext_resource type="Script" uid="uid://scaiw8eibd5v" path="res://Scripts/scenes/Player/GrapplingHook.gd" id="1_xx3k7"]
 [ext_resource type="Texture2D" uid="uid://6djjd8r45x53" path="res://Images/Player/hook_select.png" id="2_djo8x"]
-[ext_resource type="Script" uid="uid://da55i10v01nie" path="res://Scripts/scenes/hook_select.gd" id="3_ixec6"]
 
 [node name="GrapplingHook" type="Node"]
 script = ExtResource("1_xx3k7")
@@ -14,4 +13,3 @@ top_level = true
 position = Vector2(0, -23)
 rotation = 0.785398
 texture = ExtResource("2_djo8x")
-script = ExtResource("3_ixec6")

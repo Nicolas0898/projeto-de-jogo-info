@@ -25,7 +25,8 @@ func set_current_active(window_name:String):
 	if not window:
 		push_warning("Window "+window_name+ "Not found in UI")
 		return
-		
+	
+	
 	var t = create_tween()
 	
 	t.tween_property(
@@ -76,6 +77,10 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("menu"):
 		if not current_active or current_active.name.to_lower() == "playerui":
 			set_current_active("RadialMenu")
+			
+			if Crosshair.current.controller:
+				GameHandler.Player.set_core(1)
+				
 			Crosshair.current.requestStateChange("ui",2)
 		elif can_close:
 			GameHandler.Player.remove_core(1)
