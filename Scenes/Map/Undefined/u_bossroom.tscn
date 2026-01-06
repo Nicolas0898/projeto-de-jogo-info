@@ -1,23 +1,24 @@
-[gd_scene load_steps=51 format=4 uid="uid://c7iuh60iqviyg"]
+[gd_scene load_steps=52 format=4 uid="uid://c7iuh60iqviyg"]
 
-[ext_resource type="Texture2D" uid="uid://dwlla1vsw12qg" path="res://Images/tilesets/undefined_boss/boss_room_tileset.png" id="1_21gfr"]
-[ext_resource type="PackedScene" uid="uid://bvmugmme4p6nf" path="res://Scenes/Objects/grapple_node.tscn" id="1_xgbdq"]
-[ext_resource type="PackedScene" uid="uid://brkn5mjfr67t4" path="res://Scenes/Player/Character.tscn" id="2_047gs"]
-[ext_resource type="Texture2D" uid="uid://jb7iy2cdtt3s" path="res://Images/entities/firefly.png" id="2_j7h4l"]
-[ext_resource type="PackedScene" uid="uid://c37goj05i7pqb" path="res://Images/tilesets/undefined_boss/parallax/blur.tscn" id="2_pt5ht"]
-[ext_resource type="Texture2D" uid="uid://dr2ke0jnjr8oo" path="res://Images/tilesets/undefined_boss/web.png" id="3_8ujtm"]
-[ext_resource type="PackedScene" uid="uid://bbug2un1b21w3" path="res://Scenes/Entities/undefined boss/undefined_boss.tscn" id="6_uv0us"]
-[ext_resource type="PackedScene" uid="uid://bxg6otiw1qxcq" path="res://Images/tilesets/undefined_boss/parallax/undefined_parallax.tscn" id="7_iapwv"]
-[ext_resource type="PackedScene" uid="uid://crcmsjfa1ri3d" path="res://Images/tilesets/undefined_boss/props/ambient_particles_02.tscn" id="8_8276r"]
-[ext_resource type="PackedScene" uid="uid://bbpcqvi7dv1nh" path="res://Images/tilesets/undefined_boss/props/engrenagem_02.tscn" id="8_s0n5r"]
-[ext_resource type="PackedScene" uid="uid://bympl5mdlhgsc" path="res://Images/tilesets/undefined_boss/props/engrenagem_03.tscn" id="9_1ewh3"]
-[ext_resource type="PackedScene" uid="uid://188ynpg05ct4" path="res://Images/tilesets/undefined_boss/props/engrenagem_04.tscn" id="10_hyvrf"]
-[ext_resource type="PackedScene" uid="uid://bv3ox18bk58nr" path="res://Images/tilesets/undefined_boss/parallax/undefined_environment.tscn" id="10_pt5ht"]
-[ext_resource type="PackedScene" uid="uid://dfluhsjdqlt8m" path="res://Images/tilesets/undefined_boss/props/engrenagem_05.tscn" id="11_f2cnj"]
-[ext_resource type="PackedScene" uid="uid://dxsansey0grty" path="res://Images/tilesets/undefined_boss/props/ambient_particles_01.tscn" id="12_b46hy"]
-[ext_resource type="PackedScene" uid="uid://cdrw474gq1wxm" path="res://Images/tilesets/undefined_boss/props/bell.tscn" id="13_ske8f"]
-[ext_resource type="PackedScene" uid="uid://cgicfvk40ai02" path="res://Images/tilesets/undefined_boss/props/poste.tscn" id="14_f2cnj"]
-[ext_resource type="PackedScene" uid="uid://c80gy3onphy83" path="res://Images/tilesets/undefined_boss/props/undefined_obelisk.tscn" id="17_57brr"]
+[ext_resource type="PackedScene" uid="uid://bvmugmme4p6nf" path="res://Scenes/Objects/grapple_node.tscn" id="1_cydi1"]
+[ext_resource type="Script" uid="uid://cftfwywlblf5s" path="res://Scenes/Map/Undefined/undefined.gd" id="1_mx76k"]
+[ext_resource type="PackedScene" uid="uid://c37goj05i7pqb" path="res://Images/tilesets/undefined_boss/parallax/blur.tscn" id="2_mx76k"]
+[ext_resource type="PackedScene" uid="uid://bv3ox18bk58nr" path="res://Images/tilesets/undefined_boss/parallax/undefined_environment.tscn" id="3_l82dm"]
+[ext_resource type="Texture2D" uid="uid://dwlla1vsw12qg" path="res://Images/tilesets/undefined_boss/boss_room_tileset.png" id="4_ebpe5"]
+[ext_resource type="Texture2D" uid="uid://jb7iy2cdtt3s" path="res://Images/entities/firefly.png" id="5_l882u"]
+[ext_resource type="Texture2D" uid="uid://dr2ke0jnjr8oo" path="res://Images/tilesets/undefined_boss/web.png" id="6_pukkn"]
+[ext_resource type="PackedScene" uid="uid://bxg6otiw1qxcq" path="res://Images/tilesets/undefined_boss/parallax/undefined_parallax.tscn" id="7_2atxm"]
+[ext_resource type="PackedScene" uid="uid://crcmsjfa1ri3d" path="res://Images/tilesets/undefined_boss/props/ambient_particles_02.tscn" id="8_rgsu7"]
+[ext_resource type="PackedScene" uid="uid://dxsansey0grty" path="res://Images/tilesets/undefined_boss/props/ambient_particles_01.tscn" id="9_1fn1e"]
+[ext_resource type="PackedScene" uid="uid://bbpcqvi7dv1nh" path="res://Images/tilesets/undefined_boss/props/engrenagem_02.tscn" id="10_k1cnn"]
+[ext_resource type="PackedScene" uid="uid://bympl5mdlhgsc" path="res://Images/tilesets/undefined_boss/props/engrenagem_03.tscn" id="11_rn2cw"]
+[ext_resource type="PackedScene" uid="uid://dfluhsjdqlt8m" path="res://Images/tilesets/undefined_boss/props/engrenagem_05.tscn" id="12_g3tbg"]
+[ext_resource type="PackedScene" uid="uid://188ynpg05ct4" path="res://Images/tilesets/undefined_boss/props/engrenagem_04.tscn" id="13_iukpb"]
+[ext_resource type="PackedScene" uid="uid://cgicfvk40ai02" path="res://Images/tilesets/undefined_boss/props/poste.tscn" id="14_w5p4b"]
+[ext_resource type="PackedScene" uid="uid://cdrw474gq1wxm" path="res://Images/tilesets/undefined_boss/props/bell.tscn" id="15_08pju"]
+[ext_resource type="PackedScene" uid="uid://c80gy3onphy83" path="res://Images/tilesets/undefined_boss/props/undefined_obelisk.tscn" id="16_ryclr"]
+[ext_resource type="PackedScene" uid="uid://brkn5mjfr67t4" path="res://Scenes/Player/Character.tscn" id="17_loeny"]
+[ext_resource type="PackedScene" uid="uid://bbug2un1b21w3" path="res://Scenes/Entities/undefined boss/undefined_boss.tscn" id="18_lg5x6"]
 
 [sub_resource type="Gradient" id="Gradient_pt5ht"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
@@ -26,7 +27,7 @@ colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
 gradient = SubResource("Gradient_pt5ht")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j7h4l"]
-texture = ExtResource("1_21gfr")
+texture = ExtResource("4_ebpe5")
 15:4/0 = 0
 16:4/0 = 0
 17:4/0 = 0
@@ -298,7 +299,7 @@ texture = ExtResource("1_21gfr")
 sources/0 = SubResource("TileSetAtlasSource_j7h4l")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8ujtm"]
-texture = ExtResource("1_21gfr")
+texture = ExtResource("4_ebpe5")
 15:4/0 = 0
 16:4/0 = 0
 17:4/0 = 0
@@ -521,7 +522,7 @@ fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(1, 0.5)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mekpf"]
-texture = ExtResource("1_21gfr")
+texture = ExtResource("4_ebpe5")
 15:4/0 = 0
 16:4/0 = 0
 17:4/0 = 0
@@ -774,7 +775,7 @@ turbulence_influence_min = 0.087
 turbulence_influence_max = 0.779
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uv0us"]
-texture = ExtResource("1_21gfr")
+texture = ExtResource("4_ebpe5")
 15:4/0 = 0
 16:4/0 = 0
 17:4/0 = 0
@@ -1184,7 +1185,7 @@ color_ramp = SubResource("GradientTexture1D_p8h1u")
 anim_offset_max = 1.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_047gs"]
-texture = ExtResource("1_21gfr")
+texture = ExtResource("4_ebpe5")
 15:4/0 = 0
 16:4/0 = 0
 17:4/0 = 0
@@ -1713,8 +1714,9 @@ fill_from = Vector2(0.46581197, 0.051282052)
 fill_to = Vector2(0.53418803, 1)
 
 [node name="UndefinedRoom" type="Node2D"]
+script = ExtResource("1_mx76k")
 
-[node name="GrappleNode" parent="." instance=ExtResource("1_xgbdq")]
+[node name="GrappleNode" parent="." instance=ExtResource("1_cydi1")]
 modulate = Color(0.7490196, 0.99215686, 1, 1)
 z_as_relative = false
 position = Vector2(233, -100)
@@ -1743,7 +1745,7 @@ position = Vector2(234, -77)
 
 [node name="visual" type="Node" parent="."]
 
-[node name="Blur" parent="visual" instance=ExtResource("2_pt5ht")]
+[node name="Blur" parent="visual" instance=ExtResource("2_mx76k")]
 z_index = -1
 offset_left = -949.0
 offset_top = -605.0
@@ -1757,7 +1759,7 @@ position = Vector2(300.5001, 154.49997)
 scale = Vector2(10.644532, 1597)
 texture = SubResource("GradientTexture1D_57brr")
 
-[node name="WorldEnvironment" parent="visual" instance=ExtResource("10_pt5ht")]
+[node name="WorldEnvironment" parent="visual" instance=ExtResource("3_l82dm")]
 
 [node name="background" type="TileMapLayer" parent="visual"]
 z_index = -3
@@ -1817,7 +1819,7 @@ material = SubResource("CanvasItemMaterial_8ujtm")
 position = Vector2(25, -45)
 scale = Vector2(2.10889, 1.60693)
 amount = 4
-texture = ExtResource("2_j7h4l")
+texture = ExtResource("5_l882u")
 speed_scale = 0.4
 explosiveness = 0.26
 randomness = 1.0
@@ -1829,7 +1831,7 @@ z_index = 9
 material = SubResource("CanvasItemMaterial_8ujtm")
 position = Vector2(425, -46)
 amount = 4
-texture = ExtResource("2_j7h4l")
+texture = ExtResource("5_l882u")
 speed_scale = 0.4
 explosiveness = 0.26
 randomness = 1.0
@@ -1940,14 +1942,14 @@ modulate = Color(1, 1, 1, 0.34902)
 z_index = 1
 position = Vector2(52, -142)
 scale = Vector2(0.791667, 0.875)
-texture = ExtResource("3_8ujtm")
+texture = ExtResource("6_pukkn")
 
 [node name="Web2" type="Sprite2D" parent="visual/floor"]
 modulate = Color(1, 1, 1, 0.34902)
 z_index = 1
 position = Vector2(397, -145)
 scale = Vector2(0.791667, 0.875)
-texture = ExtResource("3_8ujtm")
+texture = ExtResource("6_pukkn")
 flip_h = true
 
 [node name="Web3" type="Sprite2D" parent="visual/floor"]
@@ -1955,7 +1957,7 @@ modulate = Color(1, 1, 1, 0.34902)
 z_index = 1
 position = Vector2(-100, -142)
 scale = Vector2(0.791667, 0.875)
-texture = ExtResource("3_8ujtm")
+texture = ExtResource("6_pukkn")
 flip_h = true
 
 [node name="Web4" type="Sprite2D" parent="visual/floor"]
@@ -1963,7 +1965,7 @@ modulate = Color(1, 1, 1, 0.34902)
 z_index = 1
 position = Vector2(549, -145)
 scale = Vector2(0.791667, 0.875)
-texture = ExtResource("3_8ujtm")
+texture = ExtResource("6_pukkn")
 
 [node name="PointLight2D6" type="PointLight2D" parent="visual"]
 position = Vector2(469, 666)
@@ -1983,69 +1985,69 @@ position = Vector2(325.49997, 66.50003)
 scale = Vector2(39.578125, 24.734375)
 texture = SubResource("GradientTexture2D_s0n5r")
 
-[node name="Undefined_parallax" parent="visual" instance=ExtResource("7_iapwv")]
+[node name="Undefined_parallax" parent="visual" instance=ExtResource("7_2atxm")]
 z_index = -5
 
-[node name="ambient_particles_02" parent="visual" instance=ExtResource("8_8276r")]
+[node name="ambient_particles_02" parent="visual" instance=ExtResource("8_rgsu7")]
 position = Vector2(236, 74)
 
-[node name="ambient_particles" parent="visual" instance=ExtResource("12_b46hy")]
+[node name="ambient_particles" parent="visual" instance=ExtResource("9_1fn1e")]
 position = Vector2(235, 75)
 
 [node name="props" type="Node" parent="."]
 
-[node name="Engrenagem07" parent="props" instance=ExtResource("8_s0n5r")]
+[node name="Engrenagem07" parent="props" instance=ExtResource("10_k1cnn")]
 position = Vector2(617, 302)
 rpm = 3.0
 
-[node name="Engrenagem08" parent="props" instance=ExtResource("8_s0n5r")]
+[node name="Engrenagem08" parent="props" instance=ExtResource("10_k1cnn")]
 position = Vector2(-174, 298)
 
-[node name="Engrenagem09" parent="props" instance=ExtResource("9_1ewh3")]
+[node name="Engrenagem09" parent="props" instance=ExtResource("11_rn2cw")]
 position = Vector2(641, 223)
 
-[node name="Engrenagem10" parent="props" instance=ExtResource("9_1ewh3")]
+[node name="Engrenagem10" parent="props" instance=ExtResource("11_rn2cw")]
 position = Vector2(-192, 225)
 
-[node name="Engrenagem11" parent="props" instance=ExtResource("8_s0n5r")]
+[node name="Engrenagem11" parent="props" instance=ExtResource("10_k1cnn")]
 position = Vector2(-13, 162)
 
-[node name="Engrenagem12" parent="props" instance=ExtResource("11_f2cnj")]
+[node name="Engrenagem12" parent="props" instance=ExtResource("12_g3tbg")]
 position = Vector2(-79, 283)
 scale = Vector2(1.6, 1.6)
 
-[node name="Engrenagem13" parent="props" instance=ExtResource("8_s0n5r")]
+[node name="Engrenagem13" parent="props" instance=ExtResource("10_k1cnn")]
 position = Vector2(497, -165)
 
-[node name="Engrenagem14" parent="props" instance=ExtResource("8_s0n5r")]
+[node name="Engrenagem14" parent="props" instance=ExtResource("10_k1cnn")]
 position = Vector2(-47, -165)
 
-[node name="Engrenagem15" parent="props" instance=ExtResource("10_hyvrf")]
+[node name="Engrenagem15" parent="props" instance=ExtResource("13_iukpb")]
 position = Vector2(-134, 109)
 scale = Vector2(1.3, 1.3)
 
-[node name="Engrenagem16" parent="props" instance=ExtResource("10_hyvrf")]
+[node name="Engrenagem16" parent="props" instance=ExtResource("13_iukpb")]
 position = Vector2(-129, -33)
 scale = Vector2(1.3, 1.3)
 
-[node name="Engrenagem02" parent="props" instance=ExtResource("8_s0n5r")]
+[node name="Engrenagem02" parent="props" instance=ExtResource("10_k1cnn")]
 position = Vector2(393, 285)
 
-[node name="poste" parent="props" instance=ExtResource("14_f2cnj")]
+[node name="poste" parent="props" instance=ExtResource("14_w5p4b")]
 z_index = 2
 position = Vector2(-241, 174)
 
-[node name="Bell" parent="props" instance=ExtResource("13_ske8f")]
+[node name="Bell" parent="props" instance=ExtResource("15_08pju")]
 position = Vector2(194, 315)
 
-[node name="Undefined_obelisc" parent="props" instance=ExtResource("17_57brr")]
+[node name="Undefined_obelisc" parent="props" instance=ExtResource("16_ryclr")]
 position = Vector2(-33, 260)
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_047gs")]
+[node name="CharacterBody2D" parent="." instance=ExtResource("17_loeny")]
 z_index = 2
-position = Vector2(114, 34)
+position = Vector2(31, 266)
 
-[node name="Undefined_boss" parent="." instance=ExtResource("6_uv0us")]
+[node name="Undefined_boss" parent="." instance=ExtResource("18_lg5x6")]
 z_index = 2
 
 [node name="atirar" parent="Undefined_boss/StateMachine" index="1" node_paths=PackedStringArray("center_target", "black_bg", "soul_spawn")]

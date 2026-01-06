@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://brdhe3os3hphn"]
+
+[ext_resource type="Texture2D" uid="uid://3s7b17xslb5v" path="res://Images/tilesets/undefined_boss/area_tileset.png" id="1_gmxi3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oh070"]
+atlas = ExtResource("1_gmxi3")
+region = Rect2(48.093727, 0.6605444, 48.11779, 78.759964)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pfr4x"]
+size = Vector2(40, 20)
+
+[node name="well" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_oh070")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 29)
+shape = SubResource("RectangleShape2D_pfr4x")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-23, -21, -15, -38, 14, -38, 23, -18)

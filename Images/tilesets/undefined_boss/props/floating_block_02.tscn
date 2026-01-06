@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://bjg2rbwc0glun"]
+
+[ext_resource type="Script" uid="uid://fe0wl0b8gip7" path="res://Images/tilesets/undefined_boss/props/script/floating_block.gd" id="1_s04g2"]
+[ext_resource type="Texture2D" uid="uid://bn1n6mj1iu87i" path="res://Images/tilesets/undefined_boss/floating_platform_02.png" id="2_qov50"]
+[ext_resource type="PackedScene" uid="uid://cggtt882ti85n" path="res://Scenes/particles/firefly.tscn" id="3_imn1k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_imn1k"]
+size = Vector2(63, 20)
+
+[sub_resource type="Gradient" id="Gradient_qov50"]
+colors = PackedColorArray(0.8987799, 0.81178766, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_imn1k"]
+gradient = SubResource("Gradient_qov50")
+fill = 1
+fill_from = Vector2(0.5, 0.48290598)
+fill_to = Vector2(1, 0.53418803)
+
+[node name="floating_block_02" type="StaticBody2D"]
+script = ExtResource("1_s04g2")
+frequency = 0.03
+amplitude = 0.6
+metadata/_custom_type_script = "uid://fe0wl0b8gip7"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_qov50")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.5, 28)
+shape = SubResource("RectangleShape2D_imn1k")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-6, -61)
+texture = SubResource("GradientTexture2D_imn1k")
+
+[node name="firefly" parent="." instance=ExtResource("3_imn1k")]
+position = Vector2(-5, -61)

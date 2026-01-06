@@ -2,7 +2,7 @@ extends BaseEntity
 class_name PlayerCharacter
 
 @export var speed = 200
-@export var gravity_multiplier = 1
+#@export var gravity_multiplier = 1
 @export var jump_power = 1
 @export var cam_limit_r = 10000000
 @export var cam_limit_l = -10000000

@@ -4,6 +4,7 @@ class_name BaseEntity
 var constant_velocity = {"input":Vector2(),"jump":Vector2.ZERO}
 var variable_velocity = Vector2()
 var true_constant_velocity = Vector2.ZERO
+@export var gravity_multiplier = 1
 @onready var state_machine: StateMachine = $StateMachine
 @onready var shader = material as ShaderMaterial
 
@@ -11,7 +12,7 @@ func _ready() -> void:
 	add_to_group("Enemy",true)
 
 func apply_gravity(delta:float):
-	variable_velocity  += get_gravity()*delta
+	variable_velocity  += get_gravity()*delta*gravity_multiplier
 	variable_velocity.x += -variable_velocity.normalized().x*20
 
 func apply_air_friction():
