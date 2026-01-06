@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://du671wyu8vq2j"]
+
+[ext_resource type="Script" uid="uid://blfwkqgeamobt" path="res://Scripts/Components/Hitbox.gd" id="1_aov80"]
+[ext_resource type="Texture2D" uid="uid://3s7b17xslb5v" path="res://Images/tilesets/undefined_boss/area_tileset.png" id="2_ettak"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jnrh8"]
+size = Vector2(16, 3)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bx10h"]
+atlas = ExtResource("2_ettak")
+region = Rect2(191.99548, 282.96747, 16.042358, 5.0106506)
+
+[node name="spikes" type="Area2D"]
+position = Vector2(0, 5.4)
+collision_mask = 16
+script = ExtResource("1_aov80")
+damage = 10.0
+metadata/_custom_type_script = "uid://blfwkqgeamobt"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_jnrh8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(9.536743e-07, 0)
+texture = SubResource("AtlasTexture_bx10h")

@@ -420,6 +420,7 @@ position = Vector2(0, 10)
 texture_filter = 2
 scale = Vector2(2.875, 2.8749998)
 energy = 0.5
+shadow_enabled = true
 texture = SubResource("GradientTexture2D_du3pq")
 
 [node name="stairraycast" type="RayCast2D" parent="."]

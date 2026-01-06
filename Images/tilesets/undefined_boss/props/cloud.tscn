@@ -1,24 +1,132 @@
-[gd_scene load_steps=4 format=3 uid="uid://csw4oqc4jl7a2"]
+[gd_scene load_steps=18 format=3 uid="uid://csw4oqc4jl7a2"]
 
 [ext_resource type="Script" uid="uid://cswatbx46byns" path="res://Images/tilesets/undefined_boss/props/script/cloud.gd" id="1_we6rc"]
 [ext_resource type="Texture2D" uid="uid://c1ipponaubb6f" path="res://Images/tilesets/undefined_boss/cloud.png" id="2_ac5i1"]
+[ext_resource type="Texture2D" uid="uid://hsmiytcrdm3q" path="res://Images/etc/smoke_spritesheet.png" id="3_ac5i1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cc4tu"]
 size = Vector2(47, 5)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_we6rc"]
+atlas = ExtResource("2_ac5i1")
+region = Rect2(0, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ac5i1"]
+atlas = ExtResource("2_ac5i1")
+region = Rect2(48, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cc4tu"]
+atlas = ExtResource("2_ac5i1")
+region = Rect2(96, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7fwav"]
+atlas = ExtResource("2_ac5i1")
+region = Rect2(144, 0, 48, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gqb8x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_we6rc")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_ac5i1")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_cc4tu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7fwav")
+}],
+"loop": false,
+"name": &"jumping",
+"speed": 13.0
+}]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_cc4tu"]
+particles_animation = true
+particles_anim_h_frames = 4
+particles_anim_v_frames = 4
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_7fwav"]
+offsets = PackedFloat32Array(0, 0.35353535, 0.5707071, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_gqb8x"]
+gradient = SubResource("Gradient_7fwav")
+
+[sub_resource type="Curve" id="Curve_xlu28"]
+_data = [Vector2(1e-05, 0), 0.0, 2.473841, 0, 0, Vector2(0.5660377, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_gxelm"]
+curve = SubResource("Curve_xlu28")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qomgp"]
+particle_flag_disable_z = true
+direction = Vector3(0, 0, 0)
+spread = 20.0
+initial_velocity_min = -200.0
+initial_velocity_max = 200.0
+gravity = Vector3(0, -70, 0)
+scale_max = 1.3
+scale_curve = SubResource("CurveTexture_gxelm")
+color = Color(1, 0.9443291, 1, 0.558)
+color_ramp = SubResource("GradientTexture1D_gqb8x")
+anim_speed_min = 0.099999994
+anim_speed_max = 1.0
+
+[sub_resource type="Gradient" id="Gradient_ac5i1"]
+colors = PackedColorArray(1, 1, 0.5021107, 1, 0, 0, 0, 0.35300002)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cc4tu"]
+gradient = SubResource("Gradient_ac5i1")
+fill = 1
+fill_from = Vector2(0.517094, 0.4871795)
+fill_to = Vector2(1, 0.47863248)
+
 [node name="Cloud" type="Area2D"]
 z_index = -1
+scale = Vector2(1.3, 1.3)
 collision_mask = 16
 script = ExtResource("1_we6rc")
+frequency = 0.01
+amplitude = 5.0
 knockback = Vector2(1, 1.9)
 override_direction = true
 direction = Vector2(0, -1)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_ac5i1")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 9)
 shape = SubResource("RectangleShape2D_cc4tu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_gqb8x")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="i01" type="GPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_cc4tu")
+position = Vector2(0, 7)
+emitting = false
+amount = 12
+texture = ExtResource("3_ac5i1")
+lifetime = 0.3
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 120
+process_material = SubResource("ParticleProcessMaterial_qomgp")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(2.3841858e-07, -0.76923084)
+scale = Vector2(0.6105769, 0.58653843)
+energy = 0.7
+texture = SubResource("GradientTexture2D_cc4tu")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
