@@ -307,7 +307,6 @@ script = ExtResource("1_d8n76")
 speed = 150
 
 [node name="Hurtbox" type="Area2D" parent="." node_paths=PackedStringArray("health_component")]
-visible = false
 position = Vector2(-0.841728, 0)
 collision_layer = 16
 collision_mask = 0

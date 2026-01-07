@@ -879,11 +879,11 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_cjhxh")
 sources/1 = SubResource("TileSetScenesCollectionSource_bxw8i")
 
-[sub_resource type="Gradient" id="Gradient_ma5rj"]
+[sub_resource type="Gradient" id="Gradient_4to76"]
 colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_v2cux"]
-gradient = SubResource("Gradient_ma5rj")
+gradient = SubResource("Gradient_4to76")
 fill = 1
 fill_from = Vector2(0.517094, 0.46581197)
 fill_to = Vector2(1, 0.4957265)
@@ -910,14 +910,14 @@ fill = 1
 fill_from = Vector2(0.47863248, 0)
 fill_to = Vector2(0.51282054, 0.51282054)
 
-[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_4kj67"]
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_akpqh"]
 scenes/1/scene = ExtResource("8_4kj67")
 scenes/2/scene = ExtResource("9_4vvsa")
 scenes/3/scene = ExtResource("10_4to76")
 scenes/4/scene = ExtResource("11_akpqh")
 
 [sub_resource type="TileSet" id="TileSet_d4nm0"]
-sources/0 = SubResource("TileSetScenesCollectionSource_4kj67")
+sources/0 = SubResource("TileSetScenesCollectionSource_akpqh")
 
 [node name="U01" type="Node2D"]
 script = ExtResource("1_2567l")
@@ -1021,7 +1021,7 @@ texture = SubResource("GradientTexture2D_4kj67")
 
 [node name="spikes" type="TileMapLayer" parent="Visual"]
 z_index = 1
-tile_map_data = PackedByteArray("AAD+/xIAAAAAAAAABAD+/xMAAAAAAAAABAD+/xQAAAAAAAAABAD0/w0AAAAAAAAABAD0/w4AAAAAAAAABAD0/w8AAAAAAAAABAD0/xAAAAAAAAAABAD1/xEAAAAAAAAAAwD2/xEAAAAAAAAAAwAQAOr/AAAAAAAAAgARAOr/AAAAAAAAAgASAOr/AAAAAAAAAgATAOr/AAAAAAAAAgAOAOL/AAAAAAAAAgAPAOL/AAAAAAAAAgAOANz/AAAAAAAAAgAPANz/AAAAAAAAAgAOAOH/AAAAAAAAAwAPAOH/AAAAAAAAAwAOAOf/AAAAAAAAAwAPAOf/AAAAAAAAAwD+/+f/AAAAAAAAAgD//+f/AAAAAAAAAgAAAOf/AAAAAAAAAgABAOf/AAAAAAAAAgD3/9T/AAAAAAAAAgD4/9T/AAAAAAAAAgDW/9T/AAAAAAAAAQDW/9X/AAAAAAAAAQDW/9b/AAAAAAAAAQDW/9f/AAAAAAAAAQA=")
+tile_map_data = PackedByteArray("AAD+/xIAAAAAAAAABAD+/xMAAAAAAAAABAD+/xQAAAAAAAAABAD0/w0AAAAAAAAABAD0/w4AAAAAAAAABAD0/w8AAAAAAAAABAD0/xAAAAAAAAAABAD1/xEAAAAAAAAAAwD2/xEAAAAAAAAAAwAQAOr/AAAAAAAAAgARAOr/AAAAAAAAAgASAOr/AAAAAAAAAgATAOr/AAAAAAAAAgAOAOL/AAAAAAAAAgAPAOL/AAAAAAAAAgAOANz/AAAAAAAAAgAPANz/AAAAAAAAAgAOAOH/AAAAAAAAAwAPAOH/AAAAAAAAAwAOAOf/AAAAAAAAAwAPAOf/AAAAAAAAAwD3/9T/AAAAAAAAAgD4/9T/AAAAAAAAAgDW/9T/AAAAAAAAAQDW/9X/AAAAAAAAAQDW/9b/AAAAAAAAAQDW/9f/AAAAAAAAAQA=")
 tile_set = SubResource("TileSet_d4nm0")
 
 [node name="floor" type="TileMapLayer" parent="Visual"]
@@ -1108,8 +1108,14 @@ position = Vector2(65, -771)
 [node name="Engrenagem14" parent="Props" instance=ExtResource("8_p0ia6")]
 position = Vector2(-40, -657)
 
+[node name="Engrenagem15" parent="Props" instance=ExtResource("8_p0ia6")]
+position = Vector2(157, -658)
+
+[node name="Engrenagem16" parent="Props" instance=ExtResource("14_ma5rj")]
+position = Vector2(84, -390)
+
 [node name="CharacterBody2D" parent="." instance=ExtResource("6_cjhxh")]
-position = Vector2(0, -879)
+position = Vector2(202, 516)
 cam_limit_r = 950
 cam_limit_l = -950
 cam_limit_t = -950
