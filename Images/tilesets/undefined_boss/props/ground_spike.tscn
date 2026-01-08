@@ -6,8 +6,8 @@
 [ext_resource type="Script" uid="uid://d0xnltbvtmvwv" path="res://Scripts/Components/Hurtbox.gd" id="4_fc578"]
 
 [sub_resource type="Curve" id="Curve_sld1d"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.21969697, 0), 0.0, 0.0, 0, 0, Vector2(0.34848484, 1), 0.0, 0.0, 0, 0, Vector2(0.61742425, 1), 0.0, 0.0, 0, 0, Vector2(0.7462121, 0), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 6
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kv482"]
 atlas = ExtResource("2_sld1d")
@@ -94,6 +94,7 @@ size = Vector2(32, 13.5)
 size = Vector2(32, 8)
 
 [node name="ground_spike" type="Area2D"]
+modulate = Color(1, 0.8580836, 1, 1)
 script = ExtResource("1_gk4bn")
 time = 2.0
 trajectory = SubResource("Curve_sld1d")
