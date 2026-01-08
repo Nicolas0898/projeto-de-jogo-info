@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d3wmo2l3q8506"
-path="res://.godot/imported/trail_portal.png-c24e8c267259f8e41fb0a26f7f686c73.ctex"
+path="res://.godot/imported/trail_portal.png-7ac11d5d7054d133901ef91f8255ff6a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Entities/undefined boss/trail_portal.png"
-dest_files=["res://.godot/imported/trail_portal.png-c24e8c267259f8e41fb0a26f7f686c73.ctex"]
+source_file="res://Images/entities/undefined boss/trail_portal.png"
+dest_files=["res://.godot/imported/trail_portal.png-7ac11d5d7054d133901ef91f8255ff6a.ctex"]
 
 [params]
 

@@ -1,9 +1,9 @@
 [gd_resource type="TileSet" load_steps=9 format=3 uid="uid://cyll24yrphmu5"]
 
-[ext_resource type="Texture2D" uid="uid://d21p6vp78u0fm" path="res://Images/Tilesets/tilemapswamp.png" id="1_1pj75"]
-[ext_resource type="Texture2D" uid="uid://gwcevdfqbtfl" path="res://Images/Tilesets/galhos.png" id="1_4ub4s"]
-[ext_resource type="Texture2D" uid="uid://e0a0exrt7kuo" path="res://Images/Tilesets/plataforma_arvore.png" id="2_s1502"]
-[ext_resource type="Texture2D" uid="uid://b3bum13iu3mb3" path="res://Images/Tilesets/plataforma_folha_arvore.png" id="3_w7clf"]
+[ext_resource type="Texture2D" uid="uid://d21p6vp78u0fm" path="res://Images/tilesets/tilemapswamp.png" id="1_1pj75"]
+[ext_resource type="Texture2D" uid="uid://gwcevdfqbtfl" path="res://Images/tilesets/galhos.png" id="1_4ub4s"]
+[ext_resource type="Texture2D" uid="uid://e0a0exrt7kuo" path="res://Images/tilesets/plataforma_arvore.png" id="2_s1502"]
+[ext_resource type="Texture2D" uid="uid://b3bum13iu3mb3" path="res://Images/tilesets/plataforma_folha_arvore.png" id="3_w7clf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s1502"]
 texture = ExtResource("1_4ub4s")

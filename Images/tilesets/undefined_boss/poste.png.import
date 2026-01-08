@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://becfurjxu88oo"
-path="res://.godot/imported/poste.png-d853d0948f57a8430462764ddd7d2bf0.ctex"
+path="res://.godot/imported/poste.png-ed1ff34fd65bd5ecc348c9c03ad3e8de.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Tilesets/undefined_boss/poste.png"
-dest_files=["res://.godot/imported/poste.png-d853d0948f57a8430462764ddd7d2bf0.ctex"]
+source_file="res://Images/tilesets/undefined_boss/poste.png"
+dest_files=["res://.godot/imported/poste.png-ed1ff34fd65bd5ecc348c9c03ad3e8de.ctex"]
 
 [params]
 

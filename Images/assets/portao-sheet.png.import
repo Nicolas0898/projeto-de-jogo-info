@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dqxt0t6v8ts2v"
-path="res://.godot/imported/portao-sheet.png-9d742d6405663e2d45fe4bcfc95c85c2.ctex"
+path="res://.godot/imported/portao-sheet.png-43c35fd91067387bfcba7b690c552a46.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Assets/portao-sheet.png"
-dest_files=["res://.godot/imported/portao-sheet.png-9d742d6405663e2d45fe4bcfc95c85c2.ctex"]
+source_file="res://Images/assets/portao-sheet.png"
+dest_files=["res://.godot/imported/portao-sheet.png-43c35fd91067387bfcba7b690c552a46.ctex"]
 
 [params]
 

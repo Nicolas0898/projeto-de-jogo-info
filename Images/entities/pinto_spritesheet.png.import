@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://biy2giumlbfeh"
-path="res://.godot/imported/pinto_spritesheet.png-19459610c90b2735f1e3784b03ddc7b9.ctex"
+path="res://.godot/imported/pinto_spritesheet.png-3875166b4e793486910af17cee10f839.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Entities/pinto_spritesheet.png"
-dest_files=["res://.godot/imported/pinto_spritesheet.png-19459610c90b2735f1e3784b03ddc7b9.ctex"]
+source_file="res://Images/entities/pinto_spritesheet.png"
+dest_files=["res://.godot/imported/pinto_spritesheet.png-3875166b4e793486910af17cee10f839.ctex"]
 
 [params]
 

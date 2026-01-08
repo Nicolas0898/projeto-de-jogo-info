@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ignud5ugkdcd"
-path="res://.godot/imported/boss_throw.png-560260ba4365bc19d578e3280019e8f7.ctex"
+path="res://.godot/imported/boss_throw.png-84239548cb5d7c8e52edffb51e4aa890.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Entities/undefined boss/boss_throw.png"
-dest_files=["res://.godot/imported/boss_throw.png-560260ba4365bc19d578e3280019e8f7.ctex"]
+source_file="res://Images/entities/undefined boss/boss_throw.png"
+dest_files=["res://.godot/imported/boss_throw.png-84239548cb5d7c8e52edffb51e4aa890.ctex"]
 
 [params]
 

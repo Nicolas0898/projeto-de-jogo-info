@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b3bum13iu3mb3"
-path="res://.godot/imported/plataforma_folha_arvore.png-8092347c2ceb9b4b21bc3ae41f74513e.ctex"
+path="res://.godot/imported/plataforma_folha_arvore.png-4e9003d665e5cd5b5b86993988ab6392.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Tilesets/plataforma_folha_arvore.png"
-dest_files=["res://.godot/imported/plataforma_folha_arvore.png-8092347c2ceb9b4b21bc3ae41f74513e.ctex"]
+source_file="res://Images/tilesets/plataforma_folha_arvore.png"
+dest_files=["res://.godot/imported/plataforma_folha_arvore.png-4e9003d665e5cd5b5b86993988ab6392.ctex"]
 
 [params]
 

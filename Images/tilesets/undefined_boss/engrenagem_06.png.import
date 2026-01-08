@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c7sko8i0rbfd1"
-path="res://.godot/imported/engrenagem_06.png-a3e2c17d4f2370e5938e8b226c2740b1.ctex"
+path="res://.godot/imported/engrenagem_06.png-8acc53b3822123bf2a8cb284aa435952.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Tilesets/undefined_boss/engrenagem_06.png"
-dest_files=["res://.godot/imported/engrenagem_06.png-a3e2c17d4f2370e5938e8b226c2740b1.ctex"]
+source_file="res://Images/tilesets/undefined_boss/engrenagem_06.png"
+dest_files=["res://.godot/imported/engrenagem_06.png-8acc53b3822123bf2a8cb284aa435952.ctex"]
 
 [params]
 

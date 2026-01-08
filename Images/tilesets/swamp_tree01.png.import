@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://3clhnqtembx3"
-path="res://.godot/imported/swamp_tree01.png-bbf2a563b833a5d2888ae6f0b294b9da.ctex"
+path="res://.godot/imported/swamp_tree01.png-6866eb39472e20c188f322f8961a2104.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Tilesets/swamp_tree01.png"
-dest_files=["res://.godot/imported/swamp_tree01.png-bbf2a563b833a5d2888ae6f0b294b9da.ctex"]
+source_file="res://Images/tilesets/swamp_tree01.png"
+dest_files=["res://.godot/imported/swamp_tree01.png-6866eb39472e20c188f322f8961a2104.ctex"]
 
 [params]
 
