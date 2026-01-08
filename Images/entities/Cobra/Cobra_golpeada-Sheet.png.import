@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ducqpgptxqqti"
-path="res://.godot/imported/Cobra_golpeada-Sheet.png-a0a3d93a2fb9125ecd8d3e7266fcbbb3.ctex"
+path="res://.godot/imported/Cobra_golpeada-Sheet.png-1dce7581e9456af575bf2553bc16682e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/entities/Cobra/Cobra_golpeada-Sheet.png"
-dest_files=["res://.godot/imported/Cobra_golpeada-Sheet.png-a0a3d93a2fb9125ecd8d3e7266fcbbb3.ctex"]
+source_file="res://Images/Entities/Cobra/Cobra_golpeada-Sheet.png"
+dest_files=["res://.godot/imported/Cobra_golpeada-Sheet.png-1dce7581e9456af575bf2553bc16682e.ctex"]
 
 [params]
 

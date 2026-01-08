@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bouwbjldkmlym"
-path="res://.godot/imported/waterswamp.png-0af43e9be43bff8012def19743c60e23.ctex"
+path="res://.godot/imported/waterswamp.png-b575de6a8833e9200d38422085cf5b50.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/tilesets/waterswamp.png"
-dest_files=["res://.godot/imported/waterswamp.png-0af43e9be43bff8012def19743c60e23.ctex"]
+source_file="res://Images/Tilesets/waterswamp.png"
+dest_files=["res://.godot/imported/waterswamp.png-b575de6a8833e9200d38422085cf5b50.ctex"]
 
 [params]
 

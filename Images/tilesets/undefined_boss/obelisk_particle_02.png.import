@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://lxyt77vajowk"
-path="res://.godot/imported/obelisk_particle_02.png-c4df8f827dbf4c1a1d15f4f0ddd7bab9.ctex"
+path="res://.godot/imported/obelisk_particle_02.png-df0d578542350eb1d775aae1ab7d13d0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/tilesets/undefined_boss/obelisk_particle_02.png"
-dest_files=["res://.godot/imported/obelisk_particle_02.png-c4df8f827dbf4c1a1d15f4f0ddd7bab9.ctex"]
+source_file="res://Images/Tilesets/undefined_boss/obelisk_particle_02.png"
+dest_files=["res://.godot/imported/obelisk_particle_02.png-df0d578542350eb1d775aae1ab7d13d0.ctex"]
 
 [params]
 

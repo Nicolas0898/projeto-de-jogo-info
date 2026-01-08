@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://guise463wm44"
-path="res://.godot/imported/raiz-Sheet.png-b56deb7f1cb23d11b58726d1fd75d36a.ctex"
+path="res://.godot/imported/raiz-Sheet.png-843c3bbc28a77453e66717abfec0ed24.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/tilesets/raiz-Sheet.png"
-dest_files=["res://.godot/imported/raiz-Sheet.png-b56deb7f1cb23d11b58726d1fd75d36a.ctex"]
+source_file="res://Images/Tilesets/raiz-Sheet.png"
+dest_files=["res://.godot/imported/raiz-Sheet.png-843c3bbc28a77453e66717abfec0ed24.ctex"]
 
 [params]
 

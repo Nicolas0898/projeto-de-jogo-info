@@ -1,29 +1,30 @@
-[gd_scene load_steps=32 format=4 uid="uid://cox5hgusf3wbh"]
+[gd_scene load_steps=33 format=4 uid="uid://cox5hgusf3wbh"]
 
 [ext_resource type="Script" uid="uid://cftfwywlblf5s" path="res://Scenes/Map/Undefined/undefined.gd" id="1_657us"]
-[ext_resource type="PackedScene" uid="uid://c37goj05i7pqb" path="res://Images/tilesets/undefined_boss/parallax/blur.tscn" id="1_wv7j5"]
+[ext_resource type="PackedScene" uid="uid://c37goj05i7pqb" path="res://Images/Tilesets/undefined_boss/parallax/blur.tscn" id="1_wv7j5"]
 [ext_resource type="PackedScene" uid="uid://bbcuecrtpmuuo" path="res://Scenes/Objects/teleport.tscn" id="2_310m6"]
-[ext_resource type="PackedScene" uid="uid://bv3ox18bk58nr" path="res://Images/tilesets/undefined_boss/parallax/undefined_environment.tscn" id="2_657us"]
-[ext_resource type="PackedScene" uid="uid://bxg6otiw1qxcq" path="res://Images/tilesets/undefined_boss/parallax/undefined_parallax.tscn" id="3_310m6"]
-[ext_resource type="PackedScene" uid="uid://dxsansey0grty" path="res://Images/tilesets/undefined_boss/props/ambient_particles_01.tscn" id="4_qdvel"]
-[ext_resource type="PackedScene" uid="uid://crcmsjfa1ri3d" path="res://Images/tilesets/undefined_boss/props/ambient_particles_02.tscn" id="5_bhjp2"]
-[ext_resource type="Texture2D" uid="uid://3s7b17xslb5v" path="res://Images/tilesets/undefined_boss/area_tileset.png" id="6_ot82k"]
+[ext_resource type="PackedScene" uid="uid://bv3ox18bk58nr" path="res://Images/Tilesets/undefined_boss/parallax/undefined_environment.tscn" id="2_657us"]
+[ext_resource type="Script" uid="uid://xbqu3ca63qn6" path="res://Scripts/Components/SpawnLocation.gd" id="2_k8myv"]
+[ext_resource type="PackedScene" uid="uid://bxg6otiw1qxcq" path="res://Images/Tilesets/undefined_boss/parallax/undefined_parallax.tscn" id="3_310m6"]
+[ext_resource type="PackedScene" uid="uid://dxsansey0grty" path="res://Images/Tilesets/undefined_boss/props/ambient_particles_01.tscn" id="4_qdvel"]
+[ext_resource type="PackedScene" uid="uid://crcmsjfa1ri3d" path="res://Images/Tilesets/undefined_boss/props/ambient_particles_02.tscn" id="5_bhjp2"]
+[ext_resource type="Texture2D" uid="uid://3s7b17xslb5v" path="res://Images/Tilesets/undefined_boss/area_tileset.png" id="6_ot82k"]
 [ext_resource type="PackedScene" uid="uid://brkn5mjfr67t4" path="res://Scenes/Player/Character.tscn" id="7_ein4k"]
-[ext_resource type="PackedScene" uid="uid://du671wyu8vq2j" path="res://Images/tilesets/undefined_boss/props/spikes_0.tscn" id="9_1y4nb"]
-[ext_resource type="PackedScene" uid="uid://2bvegjotwlnt" path="res://Images/tilesets/undefined_boss/props/laserbeam.tscn" id="9_qdvel"]
-[ext_resource type="PackedScene" uid="uid://bbpcqvi7dv1nh" path="res://Images/tilesets/undefined_boss/props/engrenagem_02.tscn" id="10_bhjp2"]
-[ext_resource type="PackedScene" uid="uid://c5nfiwepos02n" path="res://Images/tilesets/undefined_boss/props/spikes_90.tscn" id="10_pkmk8"]
-[ext_resource type="PackedScene" uid="uid://bympl5mdlhgsc" path="res://Images/tilesets/undefined_boss/props/engrenagem_03.tscn" id="11_ein4k"]
-[ext_resource type="PackedScene" uid="uid://cvgslpjau706f" path="res://Images/tilesets/undefined_boss/props/spikes_180.tscn" id="11_pcije"]
-[ext_resource type="PackedScene" uid="uid://bqmb5rg7jqknr" path="res://Images/tilesets/undefined_boss/props/spikes_270.tscn" id="12_6mixd"]
-[ext_resource type="PackedScene" uid="uid://csw4oqc4jl7a2" path="res://Images/tilesets/undefined_boss/props/cloud.tscn" id="13_u01r5"]
-[ext_resource type="PackedScene" uid="uid://d2l2c3ejvj5g0" path="res://Images/tilesets/undefined_boss/props/engrenagem_01.tscn" id="16_pkmk8"]
-[ext_resource type="PackedScene" uid="uid://bjg2rbwc0glun" path="res://Images/tilesets/undefined_boss/props/floating_block_02.tscn" id="18_pcije"]
-[ext_resource type="PackedScene" uid="uid://d3pp660a1ys57" path="res://Images/tilesets/undefined_boss/props/ground_spike.tscn" id="19_6mixd"]
+[ext_resource type="PackedScene" uid="uid://du671wyu8vq2j" path="res://Images/Tilesets/undefined_boss/props/spikes_0.tscn" id="9_1y4nb"]
+[ext_resource type="PackedScene" uid="uid://2bvegjotwlnt" path="res://Images/Tilesets/undefined_boss/props/laserbeam.tscn" id="9_qdvel"]
+[ext_resource type="PackedScene" uid="uid://bbpcqvi7dv1nh" path="res://Images/Tilesets/undefined_boss/props/engrenagem_02.tscn" id="10_bhjp2"]
+[ext_resource type="PackedScene" uid="uid://c5nfiwepos02n" path="res://Images/Tilesets/undefined_boss/props/spikes_90.tscn" id="10_pkmk8"]
+[ext_resource type="PackedScene" uid="uid://bympl5mdlhgsc" path="res://Images/Tilesets/undefined_boss/props/engrenagem_03.tscn" id="11_ein4k"]
+[ext_resource type="PackedScene" uid="uid://cvgslpjau706f" path="res://Images/Tilesets/undefined_boss/props/spikes_180.tscn" id="11_pcije"]
+[ext_resource type="PackedScene" uid="uid://bqmb5rg7jqknr" path="res://Images/Tilesets/undefined_boss/props/spikes_270.tscn" id="12_6mixd"]
+[ext_resource type="PackedScene" uid="uid://csw4oqc4jl7a2" path="res://Images/Tilesets/undefined_boss/props/cloud.tscn" id="13_u01r5"]
+[ext_resource type="PackedScene" uid="uid://d2l2c3ejvj5g0" path="res://Images/Tilesets/undefined_boss/props/engrenagem_01.tscn" id="16_pkmk8"]
+[ext_resource type="PackedScene" uid="uid://bjg2rbwc0glun" path="res://Images/Tilesets/undefined_boss/props/floating_block_02.tscn" id="18_pcije"]
+[ext_resource type="PackedScene" uid="uid://d3pp660a1ys57" path="res://Images/Tilesets/undefined_boss/props/ground_spike.tscn" id="19_6mixd"]
 [ext_resource type="PackedScene" uid="uid://bvmugmme4p6nf" path="res://Scenes/Objects/grapple_node.tscn" id="21_fd1t6"]
-[ext_resource type="PackedScene" uid="uid://188ynpg05ct4" path="res://Images/tilesets/undefined_boss/props/engrenagem_04.tscn" id="22_yo8ea"]
-[ext_resource type="PackedScene" uid="uid://dfluhsjdqlt8m" path="res://Images/tilesets/undefined_boss/props/engrenagem_05.tscn" id="23_k4xls"]
-[ext_resource type="PackedScene" uid="uid://cd26scyc4udl8" path="res://Images/tilesets/undefined_boss/props/engrenagem_06.tscn" id="24_k8myv"]
+[ext_resource type="PackedScene" uid="uid://188ynpg05ct4" path="res://Images/Tilesets/undefined_boss/props/engrenagem_04.tscn" id="22_yo8ea"]
+[ext_resource type="PackedScene" uid="uid://dfluhsjdqlt8m" path="res://Images/Tilesets/undefined_boss/props/engrenagem_05.tscn" id="23_k4xls"]
+[ext_resource type="PackedScene" uid="uid://cd26scyc4udl8" path="res://Images/Tilesets/undefined_boss/props/engrenagem_06.tscn" id="24_k8myv"]
 
 [sub_resource type="Gradient" id="Gradient_p8h1u"]
 colors = PackedColorArray(0, 0, 0.15686275, 1, 1, 1, 1, 1)
@@ -796,10 +797,35 @@ sources/0 = SubResource("TileSetScenesCollectionSource_fd1t6")
 [node name="U02" type="Node2D"]
 script = ExtResource("1_657us")
 
+[node name="SpawnLocation" type="Node" parent="." node_paths=PackedStringArray("spawn")]
+script = ExtResource("2_k8myv")
+spawn = {
+"undefined/u_01": NodePath("../spawn1"),
+"undefined/u_03": NodePath("../spawn2"),
+"undefined/u_04": NodePath("../spawn3")
+}
+metadata/_custom_type_script = "uid://xbqu3ca63qn6"
+
+[node name="spawn1" type="Node2D" parent="."]
+position = Vector2(200, 540)
+
+[node name="spawn2" type="Node2D" parent="."]
+position = Vector2(-700, 40)
+
+[node name="spawn3" type="Node2D" parent="."]
+position = Vector2(300, -430)
+
 [node name="teleport" parent="." instance=ExtResource("2_310m6")]
 position = Vector2(289, 688)
 actual_level = "Undefined/u_02"
 destination_level = "Undefined/u_01"
+
+[node name="teleport3" parent="." instance=ExtResource("2_310m6")]
+position = Vector2(409.00012, -685.00006)
+scale = Vector2(1.44, 1.44)
+actual_level = "Undefined/u_02"
+destination_level = "Undefined/u_04"
+spawn_direction = "top"
 
 [node name="teleport2" parent="." instance=ExtResource("2_310m6")]
 position = Vector2(-817, 14)
@@ -823,7 +849,7 @@ z_index = -5
 
 [node name="bg gradient" type="Sprite2D" parent="Visual"]
 z_index = -999
-position = Vector2(325.49997, 66.50003)
+position = Vector2(308, 69)
 scale = Vector2(39.578125, 24.734375)
 texture = SubResource("GradientTexture2D_lm7ot")
 
@@ -1022,3 +1048,6 @@ position = Vector2(-580, 158)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("7_ein4k")]
 position = Vector2(202, 533)
+cam_limit_l = -729
+cam_limit_t = -610
+cam_limit_b = 653

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://pdjohw0tx1il"
-path="res://.godot/imported/U_leveldesign.png-03528b4e6bb6ed9d04c4050752380c90.ctex"
+path="res://.godot/imported/U_leveldesign.png-92e0ef6c38a30ec3188820b0354f4400.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/tilesets/undefined_boss/U_leveldesign.png"
-dest_files=["res://.godot/imported/U_leveldesign.png-03528b4e6bb6ed9d04c4050752380c90.ctex"]
+source_file="res://Images/Tilesets/undefined_boss/U_leveldesign.png"
+dest_files=["res://.godot/imported/U_leveldesign.png-92e0ef6c38a30ec3188820b0354f4400.ctex"]
 
 [params]
 

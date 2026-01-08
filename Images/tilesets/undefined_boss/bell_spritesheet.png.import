@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://crruvfx8lqfxm"
-path="res://.godot/imported/bell_spritesheet.png-ffbf44cf51efb29780bc25a2a82f8dac.ctex"
+path="res://.godot/imported/bell_spritesheet.png-d4eb4585f40725f16393c054281f0d2c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/tilesets/undefined_boss/bell_spritesheet.png"
-dest_files=["res://.godot/imported/bell_spritesheet.png-ffbf44cf51efb29780bc25a2a82f8dac.ctex"]
+source_file="res://Images/Tilesets/undefined_boss/bell_spritesheet.png"
+dest_files=["res://.godot/imported/bell_spritesheet.png-d4eb4585f40725f16393c054281f0d2c.ctex"]
 
 [params]
 
