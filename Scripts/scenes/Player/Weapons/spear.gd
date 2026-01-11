@@ -1,5 +1,6 @@
 extends BaseWeapon
 const SPEAR = preload("res://Scenes/Player/Weapons/spear.tscn")
+const SMEAR_FRAMES = preload("uid://cm3ri7qyxtw8v")
 
 var timer:Timer
 var charged_start:Timer
@@ -76,6 +77,24 @@ func default_attack():
 	
 	if is_charged:
 		character.variable_velocity += Crosshair.look*500
+		var smear:AnimatedSprite2D = SMEAR_FRAMES.instantiate()
+		var targetpos = Crosshair.current.pos
+		smear.global_position = character.global_position
+		get_tree().current_scene.add_child(smear)
+		smear.look_at(targetpos)
+		smear.scale.x = character.global_position.distance_to(targetpos)/128
+		hitbox.rotation = smear.rotation
+		hitbox.global_position = smear.global_position
+		hitbox.scale.x = character.global_position.distance_to(targetpos)/40 
+		
+		print(smear.rotation)
+		if abs(smear.rotation)>=(PI/2):
+			smear.flip_v = true
+		smear.reset_physics_interpolation()
+		character.global_position = targetpos
+		#create_tween().tween_property(character,"global_position",targetpos,0.05)
+		
+		
 		
 	else:
 		character.variable_velocity += Crosshair.look*200*Vector2(1,0)
@@ -93,10 +112,13 @@ func default_attack():
 		var dir = other.global_position.direction_to(character.global_position).normalized()
 		var mult = 1
 		if is_charged:
-			mult = 2
-			Engine.time_scale = 0.5
-			Ui.player_ui.register_hit(0.02)
-			create_tween().tween_property(Engine,"time_scale",1,0.2)
+			mult = 0
+			Engine.time_scale = 0.1
+			Ui.player_ui.register_hit(0.07)
+			var t2 = create_tween()
+			t2.set_trans(Tween.TRANS_BACK)
+			t2.set_ease(Tween.EASE_OUT)
+			t2.tween_property(Engine,"time_scale",1,0.25)
 		else:
 			Ui.player_ui.register_hit()
 			

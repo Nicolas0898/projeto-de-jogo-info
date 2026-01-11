@@ -26,7 +26,9 @@ func onStateEntered(_old):
 	var plr = GameHandler.Player
 	sprite.play("roll_prepare")
 	await sprite.animation_finished
-	shake = PlayerCamera.screen_shake(5,5)
+	if is_instance_valid(shake):
+		shake.stop()
+	shake = PlayerCamera.screen_shake(5,2)
 	sprite.play("roll_action")
 	smoke.emitting = true
 	hitbox.monitoring = true
