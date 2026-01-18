@@ -30,7 +30,6 @@ func _ready() -> void:
 	
 	currentState = initialState
 	initialState.onStateEntered(null)
-	print(avaliableStates)
 	
 	if health_component:
 		health_component.healthChanged.connect(healthChanged)

@@ -13,7 +13,6 @@ var read_from = "use_weapon"
 var cd_timer:Timer
 var active = false
 func _ready() -> void:
-	print(cooldown,damage)
 	cd_timer = Timer.new()
 	add_child(cd_timer)
 	cd_timer.wait_time = cooldown

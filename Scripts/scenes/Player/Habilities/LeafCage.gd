@@ -15,6 +15,7 @@ var vfx
 
 func use():
 	if on_cooldown: return
+	Crosshair.atkrange = Vector2(300,200)
 	Crosshair.current.requestStateChange("Cast",2)
 	
 	vfx = LEAFCAGESTART.instantiate()
@@ -46,7 +47,7 @@ func use_end():
 	character.sprite.frame_changed.disconnect(spritechanged)
 
 	character.set_core(2)
-	print(Crosshair.look.x<0)
+	#print(Crosshair.look.x<0)
 	character.sprite.flip_h = (Crosshair.look.x<0)
 	character.sprite.playAnimation("cage",1)
 	
@@ -102,6 +103,7 @@ func use_end():
 	
 	var body = Crosshair.current.selectedTarget
 	var destun
+	#print(body)
 	
 	if body:
 		Ui.player_ui.register_hit(0.0075)

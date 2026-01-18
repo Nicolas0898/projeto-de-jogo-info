@@ -13,5 +13,6 @@ func onPhysics(delta):
 	
 	for child in character.get_children():
 		if child is AnimatedSprite2D:
-			child.play("idle")
+			if child.sprite_frames.has_animation("idle"):
+				child.play("idle")
 			break

@@ -13,7 +13,7 @@ var active = null
 var tween_time = 0.1
 var loaded = {}
 
-var convertTable = {"Right Mouse Button":"RMB","Left Mouse Button":"LMB"}
+
 
 var weapons:Array[LoadoutItem] = [preload("uid://k36ginnnsxes"),preload("uid://bm57sdw1t1isi")]
 var habilities:Array[LoadoutItem] = [preload("uid://k36ginnnsxes"),preload("uid://br5tlf52ooctl"),preload("uid://c7dwdhr0b7p2o")]
@@ -33,16 +33,9 @@ func create_button(parent,input):
 	nodes.push_back(button)
 	slots.push_back(button)
 	
-	var value = InputMap.action_get_events(input)[0].as_text()
-	var label = button.label_right if parent == hability_node else button.label_left
-	
-	labels.push_back(label)
-
-	
-	label.visible = true
-	label.text = value.split(" (Physical)")[0]
-	if convertTable.has(label.text):
-		label.text = convertTable[label.text]
+	button.inputname = input
+	button.right = (parent == hability_node)
+	button.update_keybind()
 	
 	button.pressed.connect(func():
 		if active:
@@ -58,7 +51,6 @@ func create_button(parent,input):
 
 func is_item_loaded(item):
 	for i in slots:
-		print(i, loaded.has(i))
 		if loaded.has(i) and loaded[i] == item:
 			return i
 	return false

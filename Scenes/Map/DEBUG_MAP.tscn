@@ -12,7 +12,7 @@
 [ext_resource type="Resource" uid="uid://dt1vt1g5o0n6n" path="res://Images/entities/resource/item/Bestiario.tres" id="10_jre01"]
 [ext_resource type="Script" uid="uid://c41v5wv6fa0vx" path="res://Scripts/UI/item_scripts/item_giver.gd" id="11_i2854"]
 [ext_resource type="Texture2D" uid="uid://cej24or3kbicq" path="res://Images/assets/bestiary.png" id="12_4lirm"]
-[ext_resource type="Script" path="res://Scripts/Components/indicator.gd" id="13_xe74d"]
+[ext_resource type="Script" uid="uid://qsuh4f4vfaje" path="res://Scripts/Components/indicator.gd" id="13_xe74d"]
 [ext_resource type="Texture2D" uid="uid://fpk876g3t6ek" path="res://Images/assets/indicator.png" id="14_v4gbd"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7yamr"]
@@ -67,7 +67,6 @@ color = Color(1, 1, 1, 0.588235)
 polygon = PackedVector2Array(-16, 16, 80, 16, 80, -16, -16, -16)
 
 [node name="GrappleNode" parent="." instance=ExtResource("6_d8yk5")]
-modulate = Color(0.99607843, 1, 0.65882355, 1)
 position = Vector2(1030, -390)
 range = 175.0
 

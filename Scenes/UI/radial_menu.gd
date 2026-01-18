@@ -6,13 +6,14 @@ class option:
 	var arc:arc_renderer
 	var index = 0
 	var sprite:TextureRect
+	var alias
 	static var count = 0
 	
-	func _init(parent:Control,target,img=null):
+	func _init(parent:Control,target,aka,img=null):
 		index = count
 		count+=1
 		target_window = target
-		
+		alias = aka
 		
 		arc = arc_renderer.new()
 		arc.set_anchors_preset(Control.PRESET_CENTER)
@@ -39,7 +40,6 @@ class option:
 			arc.arc_pos += PI/10
 		
 		if sprite:
-			print(arc.get_middle_point())
 			sprite.position = arc.get_middle_point() - sprite.size/2
 	
 
@@ -47,10 +47,10 @@ var options:Array[option] = []
 var current_active:option
 
 func _ready() -> void:
-	add_option("Inventory","res://Images/assets/backpack.png")
-	add_option("Map","res://Images/assets/MAPA.png")
-	add_option("Bestiary","res://Images/assets/bestiary.png")
-	add_option("Loadout","res://Images/Player/corrida/corrida1.png")
+	add_option("Inventory","Inventário","res://Images/assets/backpack.png")
+	add_option("Map","Mapa","res://Images/assets/MAPA.png")
+	add_option("Bestiary","Bestiário","res://Images/assets/bestiary.png")
+	add_option("Loadout","Equipamento","res://Images/Player/corrida/corrida1.png")
 
 
 func _process(_delta: float) -> void:
@@ -73,15 +73,15 @@ func _process(_delta: float) -> void:
 			i.arc.self_modulate = Color(.8,1,.8)
 			if i.sprite:
 				i.sprite.modulate = Color(1,1,1)
-			label.text = str(i.target_window)
+			label.text = str(i.alias)
 			current_active = i
 		else:
 			i.arc.self_modulate = Color(0,0,0,0.5)
 			if i.sprite:
 				i.sprite.modulate = Color(0,0,0,0.75)
 
-func add_option(window,img=null):
-	var new_option = option.new(self,window,img)
+func add_option(window,aka,img=null):
+	var new_option = option.new(self,window,aka,img)
 	options.push_back(new_option)
 	for i in options:
 		i.update_render()

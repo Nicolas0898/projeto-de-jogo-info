@@ -25,8 +25,12 @@ func rpi():
 @onready var circle: Sprite2D = $Circle
 @onready var canvas_layer: CanvasLayer = $CanvasLayer
 @onready var canvas_layer_cursor: Sprite2D = $CanvasLayer/Cursor
+@onready var entity_raycast: RayCast2D = $EntityRaycast
+@onready var entity_area: Area2D = $EntityArea
+@onready var collision: CollisionShape2D = $EntityArea/Collision
 
 var currentStatePriority = 0
+static var atkrange = Vector2(100,200)
 static var pos
 static var look
 var targetRotation = 0.0
@@ -40,9 +44,16 @@ var c_input = Vector2.ZERO
 func _ready() -> void:
 	current = self
 	%DebugMenu.watch_as_vector(self,"look")
-	
-	
 
+func get_closest_enemy_from_area():
+	var closest = null
+	var closest_dist = null
+	for hurtbox:Hurtbox in entity_area.get_overlapping_areas():
+		var dist = hurtbox.global_position.distance_to(GameHandler.Player.global_position)
+		if not closest or closest_dist>dist:
+			closest = hurtbox
+			closest_dist = dist
+	return closest
 func _process(delta: float) -> void:
 	if !is_instance_valid(Cursor): return
 	
@@ -80,13 +91,30 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventJoypadMotion:
 		controller = true
 		canvas_layer_cursor.visible = false
+		GameHandler.emit_game_input_changed(true)
 
 		
-	if event is InputEventMouseMotion:
+	if event is InputEventMouseMotion and controller:
+		GameHandler.emit_game_input_changed(false)
 		controller = false
 		canvas_layer_cursor.visible = true
 		
 		Cursor.rotation += event.relative.x/100
+
+func atkcheck():
+	if is_instance_valid(GameHandler.Player):
+		entity_area.global_position = GameHandler.Player.global_position
+		entity_raycast.global_position = GameHandler.Player.global_position
+		
+		var localpos = entity_raycast.to_local(pos)
+		var dist = localpos.length()
+		if controller: dist = atkrange.x
+		var true_dist = min(dist,atkrange.x) 
+		var tp = localpos.normalized() * true_dist 
+		entity_raycast.target_position = tp
+		entity_area.look_at(pos) 
+		collision.shape.size  = Vector2(true_dist,atkrange.y)
+		collision.position = Vector2(true_dist/2,0)
 
 func basic(delta:float):
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
@@ -144,6 +172,7 @@ func ui(delta:float):
 		canvas_layer_cursor.position += Input.get_vector("left","right","up","down")*1.2
 
 func cast(delta:float):
+	atkcheck()
 	selectedTarget = null
 	Cursor.global_position = pos
 	circle.scale = circle.scale.lerp(Vector2.ONE,10*delta)
@@ -151,18 +180,28 @@ func cast(delta:float):
 	
 	Cursor.rotation = lerp(Cursor.rotation,PI/4,5*delta)
 	
-	var targetpos = pos
-	line.global_position = pos
-	
 	var current_enemy = null
-	for node in get_tree().get_nodes_in_group("Enemy") :
-		var distance_to_enemy = node.global_position.distance_to(pos)
-		if distance_to_enemy>48 : continue
-		if current_enemy and current_enemy.global_position.distance_to(pos)<distance_to_enemy:continue
-		current_enemy = node
-		targetpos = node.global_position
-		selectedTarget = current_enemy
 	
+	var targetpos = pos
+	if not controller:
+		line.global_position = pos
+	else:
+		line.global_position = GameHandler.Player.global_position
+	
+	if not controller:
+		for node in get_tree().get_nodes_in_group("Enemy") :
+			var distance_to_enemy = node.global_position.distance_to(pos)
+			if distance_to_enemy>48 : continue
+			if current_enemy and current_enemy.global_position.distance_to(pos)<distance_to_enemy:continue
+			current_enemy = node
+			targetpos = node.global_position
+	else:
+		current_enemy = get_closest_enemy_from_area()
+		if current_enemy :
+			current_enemy = current_enemy.get_parent()
+			targetpos = current_enemy.global_position
+		
+	selectedTarget = current_enemy
 	if current_enemy:
 		lerp_color_to(Color(0,1,0),delta)
 	else:
@@ -188,6 +227,7 @@ func entered_charged_attack():
 	
 
 func charged_attack(delta:float):
+	atkcheck()
 	basic(delta)
 	if not controller:
 		circle.global_position = pos

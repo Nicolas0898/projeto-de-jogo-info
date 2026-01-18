@@ -16,7 +16,7 @@ func equip(input="use_weapon"):
 	_node.cooldown = cooldown
 	_node.image = sprite
 	
-	print("CD:",cooldown," Damage:",damage)
+	#print("CD:",cooldown," Damage:",damage)
 
 	if not GameHandler.Player:
 		await GameHandler.PlayerSpawned

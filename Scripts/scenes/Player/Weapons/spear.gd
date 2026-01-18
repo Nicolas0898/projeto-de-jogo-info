@@ -25,6 +25,7 @@ func _ready() -> void:
 func charged_start_timeout ():
 	if not active: return
 	Crosshair.current.cache = {"time":0.6}
+	Crosshair.atkrange = Vector2(200,200)
 	Crosshair.current.requestStateChange("charged_attack",2)
 	character.blink(0.3,"#ffffff")
 	is_charged = true
@@ -76,9 +77,15 @@ func default_attack():
 	t.tween_property(sprite,"modulate",Color(1,1,1,0),0.1)
 	
 	if is_charged:
-		character.variable_velocity += Crosshair.look*500
+		var target = Crosshair.current.get_closest_enemy_from_area()
+		
+		character.variable_velocity += Crosshair.look*500*Vector2(1,0.1)
 		var smear:AnimatedSprite2D = SMEAR_FRAMES.instantiate()
-		var targetpos = Crosshair.current.pos
+		var targetpos
+		if target:
+			targetpos = target.global_position + character.global_position.direction_to(target.global_position).normalized() * 20
+		else:
+			targetpos = character.to_global(Crosshair.look*20)
 		smear.global_position = character.global_position
 		get_tree().current_scene.add_child(smear)
 		smear.look_at(targetpos)
@@ -87,7 +94,7 @@ func default_attack():
 		hitbox.global_position = smear.global_position
 		hitbox.scale.x = character.global_position.distance_to(targetpos)/40 
 		
-		print(smear.rotation)
+		#print(smear.rotation)
 		if abs(smear.rotation)>=(PI/2):
 			smear.flip_v = true
 		smear.reset_physics_interpolation()
@@ -118,7 +125,7 @@ func default_attack():
 			var t2 = create_tween()
 			t2.set_trans(Tween.TRANS_BACK)
 			t2.set_ease(Tween.EASE_OUT)
-			t2.tween_property(Engine,"time_scale",1,0.25)
+			t2.tween_property(Engine,"time_scale",1,0.5)
 		else:
 			Ui.player_ui.register_hit()
 			
