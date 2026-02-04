@@ -1,10 +1,13 @@
 extends BaseWeapon
 const SPEAR = preload("res://Scenes/Player/Weapons/spear.tscn")
 const SMEAR_FRAMES = preload("uid://cm3ri7qyxtw8v")
+const CHARGE = preload("uid://6itq3v3mqj7a")
+const HEAVYHIT = preload("uid://dvwauk2vkbf5f")
 
 var timer:Timer
 var charged_start:Timer
 var is_charged = false
+var vfx = null
 func setvelo(x):
 	character.constant_velocity.attack_knockback = Vector2(x,0)
 
@@ -28,6 +31,9 @@ func charged_start_timeout ():
 	Crosshair.atkrange = Vector2(200,200)
 	Crosshair.current.requestStateChange("charged_attack",2)
 	character.blink(0.3,"#ffffff")
+	vfx = CHARGE.instantiate()
+	GameHandler.play_particle_one(vfx)
+	character.add_child(vfx)
 	is_charged = true
 		
 func use():
@@ -43,6 +49,9 @@ func use_end():
 	if not active: return
 	active = false
 	if is_charged:
+		if vfx : 
+			vfx.emitting = false
+			vfx = null
 		default_attack()
 
 func default_attack():
@@ -126,6 +135,7 @@ func default_attack():
 			t2.set_trans(Tween.TRANS_BACK)
 			t2.set_ease(Tween.EASE_OUT)
 			t2.tween_property(Engine,"time_scale",1,0.5)
+			GameHandler.spawn_particle(HEAVYHIT,other.global_position)
 		else:
 			Ui.player_ui.register_hit()
 			

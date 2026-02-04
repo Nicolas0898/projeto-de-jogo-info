@@ -19,6 +19,7 @@ func use():
 	Crosshair.current.requestStateChange("Cast",2)
 	
 	vfx = LEAFCAGESTART.instantiate()
+	vfx.self_modulate = Color("#0e2726")
 	character.add_child(vfx)
 	vfx.emitting = true
 	vfx.finished.connect(func(): 

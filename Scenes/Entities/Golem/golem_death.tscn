@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctuqqvilh3v2g"]
+
+[ext_resource type="Texture2D" uid="uid://bembfapn6k3t5" path="res://Images/etc/golem.png" id="1_hhqi8"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hhqi8"]
+bounce = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hhqi8"]
+
+[node name="GolemDeath" type="RigidBody2D"]
+collision_layer = 0
+collision_mask = 0
+physics_material_override = SubResource("PhysicsMaterial_hhqi8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_hhqi8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_hhqi8")
+hframes = 4
+vframes = 4
+region_rect = Rect2(19.427406, 22.286812, 40.293465, 31.202866)

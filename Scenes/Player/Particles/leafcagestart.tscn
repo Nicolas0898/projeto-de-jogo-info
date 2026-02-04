@@ -28,7 +28,6 @@ color_ramp = SubResource("GradientTexture1D_ispy0")
 
 [node name="GPUParticles2D" type="GPUParticles2D"]
 modulate = Color(8.134, 13.296, 5.238, 1)
-self_modulate = Color(0.05490196, 0.15294118, 0.14901961, 1)
 amount = 5
 texture = ExtResource("1_0o1ho")
 lifetime = 0.4

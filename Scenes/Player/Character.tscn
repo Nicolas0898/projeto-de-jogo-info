@@ -381,10 +381,12 @@ position = Vector2(0, -32)
 polygon = PackedVector2Array(-16, 32, 16, 32, 16, -32, -16, -32)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 1115
 
 [node name="DebugMenu" parent="CanvasLayer" instance=ExtResource("5_owfaj")]
 unique_name_in_owner = true
-visible = false
+z_index = 4096
+mouse_filter = 2
 
 [node name="TopEdgeCast" type="RayCast2D" parent="."]
 position = Vector2(0, 10)

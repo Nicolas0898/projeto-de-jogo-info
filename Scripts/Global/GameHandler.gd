@@ -32,8 +32,27 @@ func emit_game_input_changed(controller:bool):
 	GameInputChanged.emit()
 	
 
+func spawn_particle(scene:PackedScene,Position:Vector2=Vector2.ZERO,parent:Node=get_tree().current_scene):
+	var part = scene.instantiate()
+	parent.add_child(part)
+	part.position = Position
+	
+	play_particle_one(part)
+
 func play_particle_one(particle:GPUParticles2D):
 	particle.emitting = true
-	particle.finished.connect(func():
+	var longest = particle.lifetime
+	var longest_inst = particle
+	
+	for i in particle.get_children():
+		if not (i is GPUParticles2D) : continue
+		i = i as GPUParticles2D
+		i.emitting = true
+		if i.lifetime>longest:
+			longest = i.lifetime
+			longest_inst = i
+	
+	
+	longest_inst.finished.connect(func():
 		particle.queue_free()
 		)

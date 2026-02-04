@@ -1,5 +1,6 @@
 extends BaseEntity
 
+
 var spear_velocity : float
 var randomness : float
 var active : bool = false
@@ -12,6 +13,7 @@ var scale_tween : Tween
 var modulate_tween : Tween
 var trail_modulate : Tween
 var trail : GPUParticles2D
+var vfx = null
 @onready var sprite_2d: Sprite2D = $Sprite2D
 #@export var roof_particles : GPUParticles2D
 

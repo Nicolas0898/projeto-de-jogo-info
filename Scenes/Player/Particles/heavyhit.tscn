@@ -1,0 +1,67 @@
+[gd_scene load_steps=9 format=3 uid="uid://dvwauk2vkbf5f"]
+
+[sub_resource type="Curve" id="Curve_6l8j4"]
+_data = [Vector2(0, 1), 0.0, 3.6042604, 0, 0, Vector2(1, 0.004085779), 0.26557687, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_2apqk"]
+curve = SubResource("Curve_6l8j4")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jvank"]
+particle_flag_disable_z = true
+angle_min = -720.0
+angle_max = 720.0
+direction = Vector3(0, -1, 0)
+spread = 180.0
+initial_velocity_min = 416.25998
+initial_velocity_max = 478.46
+gravity = Vector3(0, 980, 0)
+scale_min = 0.29999998
+scale_curve = SubResource("CurveTexture_2apqk")
+
+[sub_resource type="Gradient" id="Gradient_ii066"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3wqob"]
+gradient = SubResource("Gradient_ii066")
+
+[sub_resource type="Curve" id="Curve_fabo1"]
+_data = [Vector2(0, 1), 0.0, 3.6042604, 0, 0, Vector2(1, 0.004085779), 0.26557687, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_75nvx"]
+curve = SubResource("Curve_fabo1")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qx75g"]
+particle_flag_disable_z = true
+angle_min = -720.0
+angle_max = 720.0
+direction = Vector3(0, -1, 0)
+spread = 40.15
+initial_velocity_min = 531.1
+initial_velocity_max = 593.3
+gravity = Vector3(0, 980, 0)
+scale_min = 0.099999994
+scale_max = 0.29999998
+scale_curve = SubResource("CurveTexture_75nvx")
+color_ramp = SubResource("GradientTexture1D_3wqob")
+
+[node name="GPUParticles2D" type="GPUParticles2D"]
+modulate = Color(1, 0.11764706, 0.11764706, 0.5647059)
+emitting = false
+amount = 20
+lifetime = 0.6
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 0
+process_material = SubResource("ParticleProcessMaterial_jvank")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+amount = 10
+lifetime = 6.0
+one_shot = true
+explosiveness = 0.99
+fixed_fps = 0
+trail_enabled = true
+trail_lifetime = 0.02
+process_material = SubResource("ParticleProcessMaterial_qx75g")
