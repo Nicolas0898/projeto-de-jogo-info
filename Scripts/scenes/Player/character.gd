@@ -61,8 +61,10 @@ func _ready() -> void:
 	await get_tree().create_timer(0.05).timeout
 	Ui.set_transition(false)
 
-func default_player_input(local_mult:float=1.0):
-	var axis = Input.get_axis("left","right")
+var axis
+
+func default_player_input(delta:float,local_mult:float=1.0):
+	axis = Input.get_axis("left","right")
 	constant_velocity.input =  Vector2(axis*speed*speed_multiplier*local_mult,0)
 	if axis>0:
 		sprite.flip_h = false
@@ -72,6 +74,8 @@ func default_player_input(local_mult:float=1.0):
 	stairraycast.target_position.x = axis*10
 	stair.position.x = axis*9
 	stair.disabled = stairraycast.get_collider()!=null
+	
+	camera.position.x = lerp(camera.position.x,axis*5,6*delta)
 	
 	top_edge_cast.position.x = axis*6
 	player_input = Input.get_vector("left","right","up","down")

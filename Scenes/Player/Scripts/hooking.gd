@@ -52,7 +52,8 @@ func onPhysics(delta:float):
 	character.sprite.rotation = (character.sprite.rotation+delta*10)
 	if character.sprite.rotation>2*PI:
 		character.sprite.rotation-= 2*PI
-	
+		
+	current_active_rope.target.global_position = stateData.hook.global_position
 	if stateData.hook.type == GrappleNode.SWING:
 		swingPhysics(delta)
 	else:
@@ -67,7 +68,7 @@ func swingPhysics(delta:float):
 	
 	var distance = plrpos.distance_to(hookpos)
 	
-	player.default_player_input(1.7)
+	player.default_player_input(delta,1.7)
 	player.apply_gravity(delta)
 	player.check_for_collisions()
 	

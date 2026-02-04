@@ -88,7 +88,7 @@ func setCircleSize(size:Vector2):
 	circle.texture.height = size.y
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventJoypadMotion:
+	if event is InputEventJoypadMotion and not controller:
 		controller = true
 		canvas_layer_cursor.visible = false
 		GameHandler.emit_game_input_changed(true)
@@ -186,6 +186,7 @@ func cast(delta:float):
 	if not controller:
 		line.global_position = pos
 	else:
+		targetpos = GameHandler.Player.global_position
 		line.global_position = GameHandler.Player.global_position
 	
 	if not controller:

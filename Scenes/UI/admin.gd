@@ -4,7 +4,7 @@ extends Control
 var a = false
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("admin") and not a:
-		#a = true
+		a = true
 		Ui.get_node("RadialMenu").add_option("Admin","Admin","res://Images/assets/terminal.png"	)
 
 func _ready() -> void:

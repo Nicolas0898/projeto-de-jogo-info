@@ -13,7 +13,7 @@ func onPhysics(delta:float):
 	var player:PlayerCharacter = stateMachine.character
 	player.apply_gravity(delta)
 	player.check_for_collisions()
-	player.default_player_input()
+	player.default_player_input(delta)
 	player.default_move()
 	
 	#if Input.is_action_pressed("down"): player.apply_gravity(delta)

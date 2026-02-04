@@ -71,7 +71,8 @@ var array = []
 func _ready() -> void:
 	PlayerCamera.current = self
 
-func _physics_process(delta: float) -> void:
+func _process(delta: float) -> void:
+	RenderingServer.global_shader_parameter_set("camera_pos",global_position)
 	if not active: return
 	
 	offset = Vector2.ZERO

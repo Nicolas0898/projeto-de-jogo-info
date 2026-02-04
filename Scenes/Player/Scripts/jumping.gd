@@ -12,7 +12,7 @@ func onPhysics(delta:float):
 	var player:PlayerCharacter = stateMachine.character
 	player.constant_velocity.jump = Vector2(0,-270)
 	player.check_for_collisions()
-	player.default_player_input()
+	player.default_player_input(delta)
 	player.default_move()
 	
 	jumptime+=delta
