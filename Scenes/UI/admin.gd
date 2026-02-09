@@ -32,6 +32,8 @@ func resetcoins() -> void:
 	GameHandler.total_coins = 0
 	GameHandler.roomswocoins.clear()
 
-
 func scenereset() -> void:
 	get_tree().reload_current_scene()
+
+func on_active():
+	grab_focus()

@@ -1,0 +1,79 @@
+[gd_scene load_steps=7 format=3 uid="uid://bp3o2i8u5huij"]
+
+[ext_resource type="FontFile" uid="uid://b5t0flub2diqg" path="res://Fonts/BoldPixels.ttf" id="1_44ju4"]
+[ext_resource type="Texture2D" uid="uid://cr2cvvn7ta6u4" path="res://Images/Keybinds/Controller/X.png" id="2_umcpn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_umcpn"]
+bg_color = Color(0, 0, 0, 0.12100001)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_detail = 3
+shadow_size = 5
+anti_aliasing = false
+
+[sub_resource type="Theme" id="Theme_s8dnb"]
+Panel/styles/panel = SubResource("StyleBoxFlat_umcpn")
+
+[sub_resource type="GDScript" id="GDScript_s8dnb"]
+resource_name = "Change"
+script/source = "extends Panel
+@onready var controller: TextureRect = $controller
+@onready var label: Label = $Label
+
+func _ready() -> void:
+	update()
+	GameHandler.GameInputChanged.connect(update)
+
+func update():
+	if GameHandler.controller:
+		self_modulate = Color(1,1,1,0)
+		controller.visible = true
+		label.visible = false
+	else:
+		self_modulate = Color(1,1,1,1)
+		controller.visible = false
+		label.visible = true
+"
+
+[sub_resource type="LabelSettings" id="LabelSettings_ufmvm"]
+font = ExtResource("1_44ju4")
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 0.80600005)
+shadow_offset = Vector2(0, 1)
+
+[node name="Panel" type="Panel"]
+offset_right = 25.0
+offset_bottom = 25.0
+pivot_offset = Vector2(12.5, 12.5)
+theme = SubResource("Theme_s8dnb")
+script = SubResource("GDScript_s8dnb")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "W"
+label_settings = SubResource("LabelSettings_ufmvm")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="controller" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_umcpn")
+expand_mode = 1

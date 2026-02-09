@@ -9,4 +9,4 @@ func _ready() -> void:
 	
 func _process(_delta: float) -> void:
 	if ogpos==null:return
-	global_position = ogpos + Vector2(0,sin(Engine.get_process_frames() * frequency) * amplitude)
+	global_position = ogpos + Vector2(0,sin(Engine.get_physics_frames() * frequency) * amplitude )

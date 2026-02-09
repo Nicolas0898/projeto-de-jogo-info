@@ -382,6 +382,7 @@ polygon = PackedVector2Array(-16, 32, 16, 32, 16, -32, -16, -32)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 1115
+visible = false
 
 [node name="DebugMenu" parent="CanvasLayer" instance=ExtResource("5_owfaj")]
 unique_name_in_owner = true

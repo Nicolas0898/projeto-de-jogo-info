@@ -1,6 +1,8 @@
 extends Area2D
 class_name InteractionArea
 
+var active_panel
+
 @export var action : Interactable
 var player_inside = false;
 

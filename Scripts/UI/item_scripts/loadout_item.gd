@@ -20,7 +20,9 @@ func equip(input="use_weapon"):
 
 	if not GameHandler.Player:
 		await GameHandler.PlayerSpawned
-	GameHandler.Player.add_child(_node)
+	
+	if _node.get_parent()==null:
+		GameHandler.Player.add_child(_node)
 
 func unequip():
 	if _node:
