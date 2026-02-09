@@ -25,7 +25,7 @@ size = Vector2(95, 32)
 script = ExtResource("11_i2854")
 i = ExtResource("10_jre01")
 quantity = 1
-message = "*Você coletou o bestiário perdido."
+message = "[center]Você coletou [color=#aaaaff][b]o bestiário perdido.[/b][/color][/center]"
 metadata/_custom_type_script = "uid://c41v5wv6fa0vx"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y1q2s"]

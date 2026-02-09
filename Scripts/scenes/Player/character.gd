@@ -75,7 +75,7 @@ func default_player_input(delta:float,local_mult:float=1.0):
 	stair.position.x = axis*9
 	stair.disabled = stairraycast.get_collider()!=null
 	
-	camera.position.x = lerp(camera.position.x,axis*5,6*delta)
+	camera.position.x = lerp(camera.position.x,axis*6.7,12*delta)
 	
 	top_edge_cast.position.x = axis*6
 	player_input = Input.get_vector("left","right","up","down")

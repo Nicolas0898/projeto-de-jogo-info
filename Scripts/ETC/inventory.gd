@@ -67,6 +67,7 @@ func interact():
 	selected.i.use(GameHandler.Player, self)
 
 func change_amount(i : Item, amount : int):
+	return
 	if not i in Ui.inventory.inventario and amount > 0: Ui.inventory.inventario.append(i)
 	
 	i.amount+=amount

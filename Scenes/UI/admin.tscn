@@ -1,6 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://5xfklwpa47u2"]
+[gd_scene load_steps=4 format=3 uid="uid://5xfklwpa47u2"]
 
 [ext_resource type="Script" uid="uid://b66lqor03c8rd" path="res://Scenes/UI/admin.gd" id="1_l2km6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l2km6"]
+bg_color = Color(0, 0, 0, 0.354)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+shadow_size = 10
+
+[sub_resource type="Theme" id="Theme_cp2de"]
+Button/styles/normal = null
+Panel/styles/panel = SubResource("StyleBoxFlat_l2km6")
 
 [node name="Admin" type="Control"]
 layout_mode = 3
@@ -9,6 +25,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_cp2de")
 script = ExtResource("1_l2km6")
 
 [node name="Panel" type="Panel" parent="."]

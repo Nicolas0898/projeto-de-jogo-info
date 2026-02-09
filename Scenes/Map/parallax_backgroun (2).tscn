@@ -9,6 +9,7 @@
 [node name="ParallaxBackground" type="ParallaxBackground"]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+modulate = Color(0.30934143, 0.37890625, 0.34466732, 1)
 scale = Vector2(0.5, 0.5)
 motion_scale = Vector2(0.9, 0.9)
 
@@ -22,6 +23,7 @@ centered = false
 
 [node name="ParallaxLayer12" type="ParallaxLayer" parent="."]
 visible = false
+modulate = Color(0.30934143, 0.37890625, 0.34466732, 1)
 z_index = -10
 scale = Vector2(0.0625, 0.0625)
 motion_scale = Vector2(0.9, 0.9)
@@ -35,6 +37,7 @@ texture = ExtResource("2_fh6nt")
 centered = false
 
 [node name="ParallaxLayer13" type="ParallaxLayer" parent="."]
+modulate = Color(0.30934143, 0.37890625, 0.34466732, 1)
 scale = Vector2(0.25, 0.25)
 motion_scale = Vector2(0.9, 0.9)
 
@@ -47,6 +50,7 @@ texture = ExtResource("1_6ih71")
 centered = false
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+modulate = Color(0.30934143, 0.37890625, 0.34466732, 1)
 z_index = 128
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer2"]
@@ -57,6 +61,7 @@ scale = Vector2(0.857713, 1.62187)
 texture = ExtResource("3_1oon0")
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+modulate = Color(0.30934143, 0.37890625, 0.34466732, 1)
 scale = Vector2(0.25, 0.25)
 motion_scale = Vector2(0.9, 0.9)
 
@@ -68,6 +73,7 @@ texture = ExtResource("1_6ih71")
 centered = false
 
 [node name="ParallaxLayer18" type="ParallaxLayer" parent="."]
+modulate = Color(0.30934143, 0.37890625, 0.34466732, 1)
 scale = Vector2(0.25, 0.25)
 motion_scale = Vector2(0.9, 0.9)
 
@@ -80,6 +86,7 @@ texture = ExtResource("1_6ih71")
 centered = false
 
 [node name="ParallaxLayer15" type="ParallaxLayer" parent="."]
+modulate = Color(0.30934143, 0.37890625, 0.34466732, 1)
 scale = Vector2(0.5, 0.5)
 motion_scale = Vector2(0.9, 0.9)
 
@@ -92,6 +99,7 @@ texture = ExtResource("1_6ih71")
 centered = false
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="."]
+modulate = Color(0.30934143, 0.37890625, 0.34466732, 1)
 scale = Vector2(0.25, 0.25)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer4"]
@@ -103,6 +111,7 @@ texture = ExtResource("2_fh6nt")
 centered = false
 
 [node name="ParallaxLayer5" type="ParallaxLayer" parent="."]
+modulate = Color(0.30934143, 0.37890625, 0.34466732, 1)
 scale = Vector2(0.0625, 0.0625)
 motion_scale = Vector2(0.95, 1)
 
@@ -115,6 +124,7 @@ texture = ExtResource("4_705rr")
 centered = false
 
 [node name="ParallaxLayer16" type="ParallaxLayer" parent="."]
+modulate = Color(0.30934143, 0.37890625, 0.34466732, 1)
 scale = Vector2(0.00390625, 0.00390625)
 motion_scale = Vector2(0.95, 1)
 
@@ -126,6 +136,7 @@ texture = ExtResource("5_ayarn")
 centered = false
 
 [node name="ParallaxLayer6" type="ParallaxLayer" parent="."]
+modulate = Color(0.30934143, 0.37890625, 0.34466732, 1)
 scale = Vector2(0.00390625, 0.00390625)
 motion_scale = Vector2(0.95, 1)
 
@@ -138,6 +149,7 @@ texture = ExtResource("4_705rr")
 centered = false
 
 [node name="ParallaxLayer17" type="ParallaxLayer" parent="."]
+modulate = Color(0.30934143, 0.37890625, 0.34466732, 1)
 scale = Vector2(0.00390625, 0.00390625)
 motion_scale = Vector2(0.95, 1)
 

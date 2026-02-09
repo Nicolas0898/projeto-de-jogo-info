@@ -25,4 +25,5 @@ enum Posicoes{
 @export var sprite : Texture
 @export var border : Texture
 @export var action : Script
+@export var name : String
 #@export var border : Bordas

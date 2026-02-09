@@ -9,7 +9,8 @@
 scroll_base_offset = Vector2(0, -400)
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
-modulate = Color(0.517647, 0.517647, 0.517647, 1)
+modulate = Color(0.169281, 0.50390625, 0, 1)
+z_index = -2
 motion_scale = Vector2(0, 1)
 motion_mirroring = Vector2(1280, 460)
 
@@ -37,6 +38,33 @@ texture = ExtResource("2_6jdu6")
 region_enabled = true
 
 [node name="Bg4" type="Sprite2D" parent="ParallaxLayer2"]
+modulate = Color(0.717773, 0.875, 0.798769, 1)
+position = Vector2(839, 230)
+texture = ExtResource("2_6jdu6")
+flip_h = true
+region_enabled = true
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="."]
+modulate = Color(0.517647, 0.517647, 0.517647, 1)
+z_index = -1
+motion_scale = Vector2(0.4, 1)
+motion_offset = Vector2(0.7, 20)
+motion_mirroring = Vector2(1280, 0)
+
+[node name="Bg2" type="Sprite2D" parent="ParallaxLayer6"]
+modulate = Color(0.717773, 0.875, 0.798769, 1)
+position = Vector2(640, 230)
+texture = ExtResource("2_6jdu6")
+region_enabled = true
+region_rect = Rect2(0, 0, 1280, 460)
+
+[node name="Bg3" type="Sprite2D" parent="ParallaxLayer6"]
+modulate = Color(0.717773, 0.875, 0.798769, 1)
+position = Vector2(751, 230)
+texture = ExtResource("2_6jdu6")
+region_enabled = true
+
+[node name="Bg4" type="Sprite2D" parent="ParallaxLayer6"]
 modulate = Color(0.717773, 0.875, 0.798769, 1)
 position = Vector2(839, 230)
 texture = ExtResource("2_6jdu6")

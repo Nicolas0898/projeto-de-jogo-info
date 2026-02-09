@@ -27,6 +27,7 @@ texture_region_size = Vector2i(32, 32)
 
 [resource]
 tile_size = Vector2i(32, 32)
+navigation_layer_0/layers = 1
 sources/1 = SubResource("TileSetAtlasSource_j1vmb")
 sources/2 = SubResource("TileSetAtlasSource_ndwmn")
 sources/0 = SubResource("TileSetAtlasSource_4hlpu")

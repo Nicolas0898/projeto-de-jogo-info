@@ -17,7 +17,7 @@ func onStateEntered(_old):
 		a.get_node("Sprite2D").frame = i
 		create_tween().tween_property(a,"modulate",Color(1,1,1,0),2)
 		get_tree().current_scene.add_child(a)
-		get_tree().create_timer(4).timeout.connect(func(): a.queue_free())
+		get_tree().create_timer(4).timeout.connect(func(): if is_instance_valid(a):  a.queue_free())
 	
 	if get_tree().current_scene.has_node("DOOR"):
 		get_tree().current_scene.get_node("DOOR").enabled = false

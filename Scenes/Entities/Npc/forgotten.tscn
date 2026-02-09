@@ -86,7 +86,7 @@ animations = [{
 [sub_resource type="Resource" id="Resource_bvlhd"]
 script = ExtResource("3_jgsda")
 text = "Bem... sair andando neste perigoso pântano pode custar sua vida"
-sprite_pos = 0
+name = "????"
 metadata/_custom_type_script = "uid://bi0pwfqucqrqb"
 
 [sub_resource type="Resource" id="Resource_lt7uj"]
@@ -94,12 +94,12 @@ script = ExtResource("3_jgsda")
 text = "*Poção de cura adicionada no inventário"
 sprite_pos = 2
 action = ExtResource("7_15fdr")
+name = "????"
 metadata/_custom_type_script = "uid://bi0pwfqucqrqb"
 
 [sub_resource type="Resource" id="Resource_r428f"]
 script = ExtResource("4_kxysw")
 messages = Array[ExtResource("3_jgsda")]([SubResource("Resource_lt7uj")])
-oneshot = false
 metadata/_custom_type_script = "uid://8err0wuw08y8"
 
 [sub_resource type="Resource" id="Resource_y0f15"]
@@ -111,13 +111,12 @@ metadata/_custom_type_script = "uid://cs47kxe2lnqwp"
 [sub_resource type="Resource" id="Resource_ob7r0"]
 script = ExtResource("3_jgsda")
 text = "Bem... estarei aqui, boa sorte em sua jornada"
-sprite_pos = 0
+name = "????"
 metadata/_custom_type_script = "uid://bi0pwfqucqrqb"
 
 [sub_resource type="Resource" id="Resource_tjnrq"]
 script = ExtResource("4_kxysw")
 messages = Array[ExtResource("3_jgsda")]([SubResource("Resource_ob7r0")])
-oneshot = false
 metadata/_custom_type_script = "uid://8err0wuw08y8"
 
 [sub_resource type="Resource" id="Resource_r3dm7"]
@@ -131,13 +130,12 @@ script = ExtResource("7_x8eab")
 questions = Array[ExtResource("6_jpw6o")]([SubResource("Resource_y0f15"), SubResource("Resource_r3dm7")])
 lock_dialogue = true
 text = "Para auxiliar em sua jornada, deseja comprar uma de minhas poções de cura?"
-sprite_pos = 0
+name = "????"
 metadata/_custom_type_script = "uid://crbolew7dydjc"
 
 [sub_resource type="Resource" id="Resource_w7ajm"]
 script = ExtResource("4_kxysw")
 messages = Array[ExtResource("3_jgsda")]([SubResource("Resource_bvlhd"), SubResource("Resource_swuuh")])
-oneshot = false
 metadata/_custom_type_script = "uid://8err0wuw08y8"
 
 [sub_resource type="Resource" id="Resource_x8eab"]
@@ -149,17 +147,15 @@ metadata/_custom_type_script = "uid://cs47kxe2lnqwp"
 [sub_resource type="Resource" id="Resource_15fdr"]
 script = ExtResource("7_x8eab")
 questions = Array[ExtResource("6_jpw6o")]([SubResource("Resource_x8eab")])
-lock_dialogue = false
 text = "Meus cumprimentos, andarilho... O que faz aqui?"
-sprite_pos = 0
 sprite = ExtResource("5_kxysw")
 border = ExtResource("4_erka0")
+name = "????"
 metadata/_custom_type_script = "uid://crbolew7dydjc"
 
 [sub_resource type="Resource" id="Resource_npruu"]
 script = ExtResource("4_kxysw")
 messages = Array[ExtResource("3_jgsda")]([SubResource("Resource_15fdr")])
-oneshot = false
 metadata/_custom_type_script = "uid://8err0wuw08y8"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kxysw"]
@@ -180,6 +176,7 @@ sprite_frames = SubResource("SpriteFrames_lt7uj")
 autoplay = "default"
 
 [node name="interaction_area" parent="." instance=ExtResource("2_wnayv")]
+position = Vector2(0, -12)
 action = SubResource("Resource_npruu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interaction_area"]

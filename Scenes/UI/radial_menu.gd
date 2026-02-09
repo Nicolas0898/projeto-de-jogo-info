@@ -56,7 +56,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	var mousedir
 	
-	if Crosshair.current.controller:
+	if GameHandler.controller:
 		mousedir = Input.get_vector("left","right","up","down")
 	else:
 		mousedir = (get_local_mouse_position() - size/2).normalized()

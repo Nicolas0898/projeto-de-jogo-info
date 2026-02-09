@@ -1,9 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://bc4vsdggdjydf"]
+[gd_scene load_steps=5 format=3 uid="uid://bc4vsdggdjydf"]
 
+[ext_resource type="Shader" uid="uid://diu3868l81qnl" path="res://Scenes/Objects/aguaboia.gdshader" id="1_68xg7"]
 [ext_resource type="Texture2D" uid="uid://dwlce11b5aki2" path="res://Images/assets/vitoria regia.png" id="1_a57f0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_68xg7"]
 size = Vector2(26, 4)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ind5v"]
+shader = ExtResource("1_68xg7")
+shader_parameter/wave_frequency = 1.0
+shader_parameter/wave_speed = 1.0
+shader_parameter/wave_amplitude = 1.0
 
 [node name="StaticBody2D" type="StaticBody2D"]
 z_index = 4
@@ -13,5 +20,6 @@ position = Vector2(1, 2)
 shape = SubResource("RectangleShape2D_68xg7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_ind5v")
 position = Vector2(2, 0)
 texture = ExtResource("1_a57f0")

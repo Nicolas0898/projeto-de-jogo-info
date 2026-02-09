@@ -11,7 +11,7 @@ const INTERACTION_PANEL = preload("uid://bp3o2i8u5huij")
 			get_tree().current_scene.add_child(panel)
 		current_area = n
 		if n!=null:
-			panel.global_position = n.global_position + Vector2(-panel.size.x/2.0 * panel.scale.x,-15)
+			panel.global_position = n.global_position + Vector2(-panel.size.x/2.0 * panel.scale.x,-20)
 			get_tree().create_tween().tween_property(panel,"modulate",Color(1,1,1,1),0.2)
 		else:
 			get_tree().create_tween().tween_property(panel,"modulate",Color(1,1,1,0),0.2)

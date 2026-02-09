@@ -1,11 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://d0gxkspxt0ool"]
+[gd_scene load_steps=10 format=3 uid="uid://d0gxkspxt0ool"]
 
 [ext_resource type="Script" uid="uid://cffdhewqtjjw1" path="res://Scripts/UI/dialogue_scripts/dialogue_node.gd" id="1_0nvb7"]
-[ext_resource type="FontFile" uid="uid://b71f1nslp8bqt" path="res://Fonts/BoldPixels.ttf" id="2_15aj3"]
+[ext_resource type="FontFile" uid="uid://b5t0flub2diqg" path="res://Fonts/BoldPixels.ttf" id="2_15aj3"]
 [ext_resource type="Texture2D" uid="uid://u2v7vikk56v2" path="res://Images/UI/square.png" id="3_tg5y5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nt7q6"]
-bg_color = Color(0, 0, 0, 0.490196)
+bg_color = Color(0, 0, 0, 0.707)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
@@ -15,10 +15,29 @@ corner_radius_top_left = 15
 corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 5
-corner_detail = 2
+corner_detail = 20
+shadow_size = 5
+anti_aliasing = false
+
+[sub_resource type="FontVariation" id="FontVariation_0nvb7"]
+base_font = ExtResource("2_15aj3")
+variation_embolden = 0.5
+
+[sub_resource type="FontVariation" id="FontVariation_15aj3"]
+base_font = ExtResource("2_15aj3")
+variation_embolden = 0.5
+variation_transform = Transform2D(1, 0.295, 0, 1, 0, 0)
+
+[sub_resource type="FontVariation" id="FontVariation_tg5y5"]
+base_font = ExtResource("2_15aj3")
+variation_transform = Transform2D(1, 0.295, 0, 1, 0, 0)
 
 [sub_resource type="Theme" id="Theme_x4jx1"]
 Panel/styles/panel = SubResource("StyleBoxFlat_nt7q6")
+RichTextLabel/fonts/bold_font = SubResource("FontVariation_0nvb7")
+RichTextLabel/fonts/bold_italics_font = SubResource("FontVariation_15aj3")
+RichTextLabel/fonts/italics_font = SubResource("FontVariation_tg5y5")
+RichTextLabel/fonts/normal_font = ExtResource("2_15aj3")
 
 [sub_resource type="LabelSettings" id="LabelSettings_wm3ai"]
 font = ExtResource("2_15aj3")
@@ -41,25 +60,33 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 62.0
+offset_left = 130.0
 offset_top = -143.0
-offset_right = -48.0
+offset_right = -116.0
 offset_bottom = -21.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+[node name="Box" type="HBoxContainer" parent="Panel"]
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -50.5
-offset_right = 365.0
-offset_bottom = 50.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 11.0
+offset_right = -16.0
+offset_bottom = -11.0
+grow_horizontal = 2
 grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/Box"]
+layout_mode = 2
+size_flags_horizontal = 3
 theme_override_constants/separation = 5
 
-[node name="DialogueText" type="Label" parent="Panel/VBoxContainer"]
+[node name="qm é vc?" type="Label" parent="Panel/Box/VBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(1, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -68,35 +95,43 @@ text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
 label_settings = SubResource("LabelSettings_wm3ai")
 autowrap_mode = 3
 
-[node name="question_box" type="VBoxContainer" parent="Panel/VBoxContainer"]
+[node name="Name" type="RichTextLabel" parent="Panel/Box/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+bbcode_enabled = true
+text = "- ????"
+fit_content = true
+visible_characters_behavior = 1
+
+[node name="DialogueText" type="RichTextLabel" parent="Panel/Box/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+bbcode_enabled = true
+text = "opa sopa [b]NEGRITOO[/b] [i]italico[/i] [b][i]NEGRITO E ITALICO MUAHAHA[/i][/b] [color=#ff0000]E SANGUE MUAHAHAHAHAH[/color]
+[right]forgotten live reaction: [img width=20]res://Images/etc/forgotten_dialogue.png[/img][/right]"
+fit_content = true
+visible_characters_behavior = 1
+
+[node name="question_box" type="VBoxContainer" parent="Panel/Box/VBoxContainer"]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="Panel"]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -154.0
-offset_top = -64.0
-offset_bottom = 64.0
-grow_horizontal = 0
-grow_vertical = 2
-scale = Vector2(0.75, 0.75)
-pivot_offset = Vector2(64, 64)
+[node name="MarginContainer" type="MarginContainer" parent="Panel/Box"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_constants/margin_left = 13
 theme_override_constants/margin_right = 13
 
-[node name="Sprite" type="TextureRect" parent="Panel/MarginContainer"]
+[node name="Sprite" type="TextureRect" parent="Panel/Box/MarginContainer"]
 self_modulate = Color(1, 1, 1, 0.431373)
 z_index = 1
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 texture = ExtResource("3_tg5y5")
 expand_mode = 3
 
-[node name="Border" type="TextureRect" parent="Panel/MarginContainer/Sprite"]
+[node name="Border" type="TextureRect" parent="Panel/Box/MarginContainer/Sprite"]
 z_index = 2
 layout_mode = 1
 anchors_preset = 15
@@ -104,4 +139,5 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("3_tg5y5")
 expand_mode = 3
