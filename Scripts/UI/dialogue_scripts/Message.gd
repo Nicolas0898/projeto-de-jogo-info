@@ -26,4 +26,4 @@ enum Posicoes{
 @export var border : Texture
 @export var action : Script
 @export var name : String
-#@export var border : Bordas
+#@export var border : Bordas'

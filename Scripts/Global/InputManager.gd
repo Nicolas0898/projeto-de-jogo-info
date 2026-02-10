@@ -17,20 +17,26 @@ class InputGroup:
 		
 		active = true
 		for node in nodes:
-			node.set_process_input(true)
+			if is_instance_valid(node):
+				node.set_process_input(true)
 		print_rich("[color=#aaffaa]→ InputGroup "+name+" ("+str(nodes.size())+" nodes) SENDO ATIVADO[/color]")
 
 	func deactivateGroup():
-		print_rich("[color=#ffaaaa]← GRUPO "+name+" SENDO DESATIVADO[/color]")
+		#print_rich("[color=#ffaaaa]← GRUPO "+name+" SENDO DESATIVADO[/color]")
 		active = false
 		for node in nodes:
-			node.set_process_input(false)
+			if is_instance_valid(node):
+				node.set_process_input(false)
 	
 	func addNode(node:Node):
-		print_rich("[color=#aaffff]Adding node "+str(node)+" To group "+name+ " Active : "+ str(active)+"[/color]")
+		#print_rich("[color=#aaffff]Adding node "+str(node)+" To group "+name+ " Active : "+ str(active)+"[/color]")
 		nodes.push_back(node)
 		if not active:
-			node.set_process_input(false)
+			if is_instance_valid(node):
+				node.set_process_input(false)
+		node.tree_exiting.connect(func():
+			nodes.erase(node)
+			)
 	
 	static func getGroup(group_name) -> InputGroup:
 		if not Groups.has(group_name):

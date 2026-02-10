@@ -1,0 +1,123 @@
+[gd_scene load_steps=7 format=3 uid="uid://gfco8lj1c8jc"]
+
+[ext_resource type="Script" uid="uid://c3v24hqlqeqq2" path="res://addons/DialogueCreator/grid.gd" id="1_75c4p"]
+[ext_resource type="Script" uid="uid://due2kaytkfo7x" path="res://addons/DialogueCreator/EditorResourcePicker.gd" id="2_eat1m"]
+
+[sub_resource type="Theme" id="Theme_75c4p"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_eat1m"]
+device = -1
+ctrl_pressed = true
+keycode = 83
+unicode = 115
+
+[sub_resource type="Shortcut" id="Shortcut_qrbbr"]
+events = [SubResource("InputEventKey_eat1m")]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eat1m"]
+bg_color = Color(0, 0, 0, 0.53000003)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_75c4p")
+script = ExtResource("1_75c4p")
+
+[node name="GraphEdit" type="GraphEdit" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+grid_pattern = 1
+right_disconnects = true
+
+[node name="debug" type="Label" parent="."]
+layout_mode = 0
+offset_left = 304.0
+offset_top = 4.0
+offset_right = 367.0
+offset_bottom = 20.0
+text = "(0.0, 0.0)"
+
+[node name="HFlowContainer" type="HFlowContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 24.0
+grow_horizontal = 2
+
+[node name="FoldableContainer" type="FoldableContainer" parent="HFlowContainer"]
+z_index = 10
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+folded = true
+title = "File"
+title_text_direction = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HFlowContainer/FoldableContainer"]
+visible = false
+layout_mode = 2
+
+[node name="save" type="Button" parent="HFlowContainer/FoldableContainer/VBoxContainer"]
+layout_mode = 2
+shortcut = SubResource("Shortcut_qrbbr")
+text = "Save"
+alignment = 0
+
+[node name="save2" type="Button" parent="HFlowContainer/FoldableContainer/VBoxContainer"]
+layout_mode = 2
+text = "Save as"
+alignment = 0
+
+[node name="Panel" type="Panel" parent="HFlowContainer/FoldableContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_eat1m")
+
+[node name="load_from_selection" type="Button" parent="HFlowContainer/FoldableContainer/VBoxContainer"]
+layout_mode = 2
+text = "Load Dialogue from selection"
+alignment = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HFlowContainer/FoldableContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="load_from_file" type="Button" parent="HFlowContainer/FoldableContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Load Dialogue from file"
+alignment = 0
+
+[node name="AddonResourcePicker" type="EditorResourcePicker" parent="HFlowContainer/FoldableContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+base_type = "Dialogue"
+script = ExtResource("2_eat1m")
+metadata/_custom_type_script = "uid://due2kaytkfo7x"
+
+[node name="Panel2" type="Panel" parent="HFlowContainer/FoldableContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_eat1m")
+
+[node name="Button" type="Button" parent="HFlowContainer/FoldableContainer/VBoxContainer"]
+layout_mode = 2
+text = "New"
+
+[connection signal="connection_drag_started" from="GraphEdit" to="." method="_on_graph_edit_connection_drag_started"]
+[connection signal="connection_from_empty" from="GraphEdit" to="." method="_on_graph_edit_connection_from_empty"]
+[connection signal="connection_request" from="GraphEdit" to="." method="_on_graph_edit_connection_request"]
+[connection signal="connection_to_empty" from="GraphEdit" to="." method="_on_graph_edit_connection_to_empty"]
+[connection signal="delete_nodes_request" from="GraphEdit" to="." method="_on_graph_edit_delete_nodes_request"]
+[connection signal="pressed" from="HFlowContainer/FoldableContainer/VBoxContainer/save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="HFlowContainer/FoldableContainer/VBoxContainer/HBoxContainer/load_from_file" to="." method="_on_load_from_file_pressed"]

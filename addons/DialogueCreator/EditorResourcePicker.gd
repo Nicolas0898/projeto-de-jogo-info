@@ -1,0 +1,3 @@
+@tool
+extends EditorResourcePicker
+class_name AddonResourcePicker

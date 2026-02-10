@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://lca50qv7wx4x" path="res://Images/entities/forgotten.png" id="1_8xwe6"]
 [ext_resource type="Texture2D" uid="uid://bp0xuae8jm25g" path="res://Images/entities/forgotten_lantern.png" id="2_15fdr"]
 [ext_resource type="PackedScene" uid="uid://dqiyuc6o8q627" path="res://Scenes/Objects/interaction_area.tscn" id="2_wnayv"]
-[ext_resource type="Script" uid="uid://bi0pwfqucqrqb" path="res://Scripts/UI/dialogue_scripts/Messages.gd" id="3_jgsda"]
+[ext_resource type="Script" uid="uid://bi0pwfqucqrqb" path="res://Scripts/UI/dialogue_scripts/Message.gd" id="3_jgsda"]
 [ext_resource type="Texture2D" uid="uid://dj18igomomhvl" path="res://Images/etc/primary_border.png" id="4_erka0"]
 [ext_resource type="Script" uid="uid://8err0wuw08y8" path="res://Scripts/UI/dialogue_scripts/Dialogue.gd" id="4_kxysw"]
 [ext_resource type="Texture2D" uid="uid://fp8t6q7nqasx" path="res://Images/etc/forgotten_dialogue.png" id="5_kxysw"]
@@ -83,13 +83,13 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Resource" id="Resource_bvlhd"]
+[sub_resource type="Resource" id="Resource_15fdr"]
 script = ExtResource("3_jgsda")
 text = "Bem... sair andando neste perigoso pântano pode custar sua vida"
 name = "????"
 metadata/_custom_type_script = "uid://bi0pwfqucqrqb"
 
-[sub_resource type="Resource" id="Resource_lt7uj"]
+[sub_resource type="Resource" id="Resource_npruu"]
 script = ExtResource("3_jgsda")
 text = "*Poção de cura adicionada no inventário"
 sprite_pos = 2
@@ -97,65 +97,65 @@ action = ExtResource("7_15fdr")
 name = "????"
 metadata/_custom_type_script = "uid://bi0pwfqucqrqb"
 
-[sub_resource type="Resource" id="Resource_r428f"]
+[sub_resource type="Resource" id="Resource_bvlhd"]
 script = ExtResource("4_kxysw")
-messages = Array[ExtResource("3_jgsda")]([SubResource("Resource_lt7uj")])
+messages = Array[ExtResource("3_jgsda")]([SubResource("Resource_npruu")])
 metadata/_custom_type_script = "uid://8err0wuw08y8"
 
-[sub_resource type="Resource" id="Resource_y0f15"]
+[sub_resource type="Resource" id="Resource_swuuh"]
 script = ExtResource("6_jpw6o")
 question = "> Gastar 15 moedas"
-response = SubResource("Resource_r428f")
+response = SubResource("Resource_bvlhd")
 metadata/_custom_type_script = "uid://cs47kxe2lnqwp"
 
-[sub_resource type="Resource" id="Resource_ob7r0"]
+[sub_resource type="Resource" id="Resource_w7ajm"]
 script = ExtResource("3_jgsda")
 text = "Bem... estarei aqui, boa sorte em sua jornada"
 name = "????"
 metadata/_custom_type_script = "uid://bi0pwfqucqrqb"
 
-[sub_resource type="Resource" id="Resource_tjnrq"]
+[sub_resource type="Resource" id="Resource_lt7uj"]
 script = ExtResource("4_kxysw")
-messages = Array[ExtResource("3_jgsda")]([SubResource("Resource_ob7r0")])
+messages = Array[ExtResource("3_jgsda")]([SubResource("Resource_w7ajm")])
 metadata/_custom_type_script = "uid://8err0wuw08y8"
 
-[sub_resource type="Resource" id="Resource_r3dm7"]
+[sub_resource type="Resource" id="Resource_r428f"]
 script = ExtResource("6_jpw6o")
 question = "> Recusar oferta"
-response = SubResource("Resource_tjnrq")
+response = SubResource("Resource_lt7uj")
 metadata/_custom_type_script = "uid://cs47kxe2lnqwp"
 
-[sub_resource type="Resource" id="Resource_swuuh"]
+[sub_resource type="Resource" id="Resource_y0f15"]
 script = ExtResource("7_x8eab")
-questions = Array[ExtResource("6_jpw6o")]([SubResource("Resource_y0f15"), SubResource("Resource_r3dm7")])
+questions = Array[ExtResource("6_jpw6o")]([SubResource("Resource_swuuh"), SubResource("Resource_r428f")])
 lock_dialogue = true
 text = "Para auxiliar em sua jornada, deseja comprar uma de minhas poções de cura?"
 name = "????"
 metadata/_custom_type_script = "uid://crbolew7dydjc"
 
-[sub_resource type="Resource" id="Resource_w7ajm"]
+[sub_resource type="Resource" id="Resource_r3dm7"]
 script = ExtResource("4_kxysw")
-messages = Array[ExtResource("3_jgsda")]([SubResource("Resource_bvlhd"), SubResource("Resource_swuuh")])
+messages = Array[ExtResource("3_jgsda")]([SubResource("Resource_15fdr"), SubResource("Resource_y0f15")])
 metadata/_custom_type_script = "uid://8err0wuw08y8"
 
-[sub_resource type="Resource" id="Resource_x8eab"]
+[sub_resource type="Resource" id="Resource_ob7r0"]
 script = ExtResource("6_jpw6o")
 question = "> Estou apenas explorando..."
-response = SubResource("Resource_w7ajm")
+response = SubResource("Resource_r3dm7")
 metadata/_custom_type_script = "uid://cs47kxe2lnqwp"
 
-[sub_resource type="Resource" id="Resource_15fdr"]
+[sub_resource type="Resource" id="Resource_tjnrq"]
 script = ExtResource("7_x8eab")
-questions = Array[ExtResource("6_jpw6o")]([SubResource("Resource_x8eab")])
+questions = Array[ExtResource("6_jpw6o")]([SubResource("Resource_ob7r0")])
 text = "Meus cumprimentos, andarilho... O que faz aqui?"
 sprite = ExtResource("5_kxysw")
 border = ExtResource("4_erka0")
 name = "????"
 metadata/_custom_type_script = "uid://crbolew7dydjc"
 
-[sub_resource type="Resource" id="Resource_npruu"]
+[sub_resource type="Resource" id="Resource_arebv"]
 script = ExtResource("4_kxysw")
-messages = Array[ExtResource("3_jgsda")]([SubResource("Resource_15fdr")])
+messages = Array[ExtResource("3_jgsda")]([SubResource("Resource_tjnrq")])
 metadata/_custom_type_script = "uid://8err0wuw08y8"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kxysw"]
@@ -177,7 +177,7 @@ autoplay = "default"
 
 [node name="interaction_area" parent="." instance=ExtResource("2_wnayv")]
 position = Vector2(0, -12)
-action = SubResource("Resource_npruu")
+action = SubResource("Resource_arebv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interaction_area"]
 shape = SubResource("CircleShape2D_kxysw")
