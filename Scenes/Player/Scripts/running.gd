@@ -27,5 +27,5 @@ func onPhysics(delta:float):
 		stateMachine.requestStateChange("Idle")
 		
 	if not player.is_on_floor() : stateMachine.requestStateChange("Falling")
-	if Input.is_action_pressed("jump"):stateMachine.requestStateChange("Jump")
+	if Input.is_action_pressed("jump") and stateMachine.is_processing_input() :stateMachine.requestStateChange("Jump")
 	#if Input.is_action_pressed("down"):stateMachine.requestStateChange("Crouching")

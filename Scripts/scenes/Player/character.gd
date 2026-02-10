@@ -28,6 +28,9 @@ var last_looked_at = Vector2(1,0)
 var current_core_priority = 0
 
 func _ready() -> void:
+	InputManager.addNodeToGroup(self,"Player")
+	InputManager.setActiveGroup("Player")
+	
 	GameHandler.Player = self
 	GameHandler.emit_player_spawn()
 	
@@ -64,6 +67,7 @@ func _ready() -> void:
 var axis
 
 func default_player_input(delta:float,local_mult:float=1.0):
+	if not is_processing_input() : return
 	axis = Input.get_axis("left","right")
 	constant_velocity.input =  Vector2(axis*speed*speed_multiplier*local_mult,0)
 	if axis>0:

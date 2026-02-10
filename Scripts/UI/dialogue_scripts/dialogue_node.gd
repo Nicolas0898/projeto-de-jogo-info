@@ -17,6 +17,9 @@ var current_loaded_dialogue : Dialogue
 var current_message : Message
 var c : int = 0
 
+func _ready() -> void:
+	InputManager.addNodeToGroup(self,"Dialogue")
+
 func _input(event: InputEvent) -> void:
 	if not current_loaded_dialogue: return
 	
@@ -80,6 +83,7 @@ func os():
 func start(new_dialogue : Dialogue):
 	if new_dialogue != current_loaded_dialogue:
 		Ui.can_close = false
+		InputManager.setActiveGroup("Dialogue")
 		Ui.set_current_active("Dialogue")
 		GameHandler.Player.set_core(2)
 		
@@ -112,7 +116,7 @@ func updateMessageRender():
 
 func dialogueEnd():
 	Ui.can_close = true
-	Ui.hide_all()
+	Ui.set_current_active("PlayerUI")
 	if not is_instance_valid(current_loaded_dialogue) : return
 	c=0
 	#await Ui.fade_out(self)
@@ -123,6 +127,9 @@ func dialogueEnd():
 	InteractionSystem.action = null
 	is_question = false
 	GameHandler.Player.remove_core(2)
+	
+	#call_deferred pro player não pular no final do frame
+	InputManager.setActiveGroup("Player")
 
 func loadNextMessage():
 	if current_loaded_dialogue==null: return

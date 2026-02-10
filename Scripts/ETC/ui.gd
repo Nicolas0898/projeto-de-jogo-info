@@ -16,6 +16,7 @@ var current_active:Control
 var can_close = true
 
 func _ready() -> void:
+	InputManager.addNodeToGroup(self,"Player")
 	set_current_active("playerui")
 
 func set_current_active(window_name:String):

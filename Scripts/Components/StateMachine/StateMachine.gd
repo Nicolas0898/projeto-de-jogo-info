@@ -50,6 +50,7 @@ func requestStateChange(newState:String,data={}):
 	currentState.stateData = data
 	currentState.onStateEntered(oldState)
 	
+	
 	if not currentState.f:
 		currentState.f = true
 		currentState.first()

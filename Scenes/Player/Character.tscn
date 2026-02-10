@@ -2,7 +2,6 @@
 
 [ext_resource type="Shader" uid="uid://lk8vqo6nbyf3" path="res://Shaders/Character.gdshader" id="1_aeg27"]
 [ext_resource type="Script" uid="uid://bhahlqc4v651w" path="res://Scripts/scenes/Player/character.gd" id="1_d8n76"]
-[ext_resource type="Script" uid="uid://lurpfwbx4y8w" path="res://Scripts/Components/StateMachine/StateMachine.gd" id="2_xa38j"]
 [ext_resource type="Script" uid="uid://bwvlwfyg6aura" path="res://Scenes/Player/Scripts/Idle.gd" id="3_aflf6"]
 [ext_resource type="Script" uid="uid://u7xe8kyvdrj3" path="res://Scenes/Player/Scripts/running.gd" id="4_owfaj"]
 [ext_resource type="Script" uid="uid://m216pt8kh4te" path="res://Scenes/Player/Scripts/jumping.gd" id="5_nwviy"]
@@ -44,6 +43,15 @@ shader_parameter/factor = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fhrm7"]
 size = Vector2(8, 19)
+
+[sub_resource type="GDScript" id="GDScript_anaxe"]
+resource_name = "InputGroup"
+script/source = "extends StateMachine
+
+func _ready() -> void:
+	super()
+	InputManager.addNodeToGroup(self,\"Player\")
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aflf6"]
 size = Vector2(12, 21)
@@ -329,7 +337,7 @@ script = ExtResource("9_scwnk")
 metadata/_custom_type_script = "uid://1ughpmhhrew"
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initialState")]
-script = ExtResource("2_xa38j")
+script = SubResource("GDScript_anaxe")
 initialState = NodePath("Idle")
 metadata/_custom_type_script = "uid://lurpfwbx4y8w"
 

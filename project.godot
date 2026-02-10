@@ -21,6 +21,7 @@ GameHandler="*res://Scripts/Global/GameHandler.gd"
 InteractionSystem="*res://Scripts/UI/interact/InteractionSystem.gd"
 Ui="*res://Scenes/UI/ui.tscn"
 NavigationManager="*res://Scripts/Global/NavigationManager.gd"
+InputManager="*res://Scripts/Global/InputManager.gd"
 
 [display]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bp3o2i8u5huij"]
+[gd_scene load_steps=8 format=3 uid="uid://bp3o2i8u5huij"]
 
 [ext_resource type="FontFile" uid="uid://b5t0flub2diqg" path="res://Fonts/BoldPixels.ttf" id="1_44ju4"]
 [ext_resource type="Texture2D" uid="uid://cr2cvvn7ta6u4" path="res://Images/Keybinds/Controller/X.png" id="2_umcpn"]
@@ -44,6 +44,14 @@ shadow_size = 2
 shadow_color = Color(0, 0, 0, 0.80600005)
 shadow_offset = Vector2(0, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s8dnb"]
+draw_center = false
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+shadow_size = 7
+
 [node name="Panel" type="Panel"]
 offset_right = 25.0
 offset_bottom = 25.0
@@ -77,3 +85,17 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_umcpn")
 expand_mode = 1
+
+[node name="Panel" type="Panel" parent="controller"]
+z_index = -2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 5.0
+offset_right = -6.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s8dnb")
