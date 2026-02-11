@@ -14,8 +14,21 @@ func _get_plugin_name() -> String:
 
 func _enter_tree() -> void:
 	grid = load("res://addons/DialogueCreator/Grid.tscn").instantiate()
+	grid.plugin = self
 	grid.history = get_undo_redo()
 	add_control_to_bottom_panel(grid,"Dialogue Editor")
+
+	#scene_saved.connect(func(_a):
+		#pass
+		#grid.saveDialogue()
+		#)
+	#NOTIFICATION_EDITOR_PRE_SAVE
+#
+#func _notification(what: int) -> void:
+	#if what == NOTIFICATION_EDITOR_PRE_SAVE:
+		#print("WE ARE SAVING BOYS!!!")
+		#grid.saveDialogue()
+
 
 
 func _exit_tree() -> void:

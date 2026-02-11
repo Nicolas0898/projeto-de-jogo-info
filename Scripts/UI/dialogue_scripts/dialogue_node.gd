@@ -129,7 +129,7 @@ func dialogueEnd():
 	GameHandler.Player.remove_core(2)
 	
 	#call_deferred pro player não pular no final do frame
-	InputManager.setActiveGroup("Player")
+	#InputManager.setActiveGroupS("Player")
 
 func loadNextMessage():
 	if current_loaded_dialogue==null: return

@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dqiyuc6o8q627" path="res://Scenes/Objects/interaction_area.tscn" id="1_yerwc"]
 [ext_resource type="Resource" uid="uid://dhj1nx7sy3gd2" path="res://Images/entities/resource/item/Poção_cura.tres" id="2_6g4hr"]
 [ext_resource type="Script" uid="uid://c41v5wv6fa0vx" path="res://Scripts/UI/item_scripts/item_giver.gd" id="2_jcaq7"]
-[ext_resource type="Resource" uid="uid://de0v2mqsnut7u" path="res://Images/entities/resource/dialogues/example.tres" id="4_n1a7b"]
+[ext_resource type="Resource" uid="uid://de0v2mqsnut7u" path="res://Resources/Dialogues/example.tres" id="4_n1a7b"]
 [ext_resource type="PackedScene" uid="uid://b25tt1a1iqfih" path="res://Scenes/particles/wind.tscn" id="6_ntn60"]
 [ext_resource type="PackedScene" uid="uid://pbw8u0p8fm1h" path="res://Scenes/particles/fire.tscn" id="7_6g617"]
 [ext_resource type="PackedScene" uid="uid://x8q88d37iv8d" path="res://Scenes/particles/fire_spark.tscn" id="7_mavmf"]

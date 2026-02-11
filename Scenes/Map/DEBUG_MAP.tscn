@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=4 uid="uid://dsaft7a5ut06v"]
+[gd_scene load_steps=32 format=4 uid="uid://dsaft7a5ut06v"]
 
 [ext_resource type="PackedScene" uid="uid://brkn5mjfr67t4" path="res://Scenes/Player/Character.tscn" id="1_7yamr"]
 [ext_resource type="TileSet" uid="uid://cyll24yrphmu5" path="res://Scenes/Map/JUNGLE_TILESET.tres" id="2_a0ayn"]
@@ -42,46 +42,35 @@ shader_parameter/wave_frequency = 1.0
 shader_parameter/wave_speed = 1.0
 shader_parameter/wave_amplitude = 0.70000001043084
 
-[sub_resource type="Resource" id="Resource_db874"]
+[sub_resource type="Resource" id="Resource_g27y4"]
 script = ExtResource("17_xe74d")
-text = "Bom dia!"
+text = "[pulse freq=3.0 ease=-2]Pisca![/pulse]
+[tornado radius=10.0 freq=2.0]AAAAAAAAAAAAA[/tornado]
+[shake rate=20.0 level=3]BBBBBBBBBBBBB[/shake]
+[rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]woahhhhh[/rainbow]
+Opa sopa! como vai?
+eba!!
+DEU CERTOO"
 sprite = ExtResource("17_g27y4")
+name = "Golim"
+
+[sub_resource type="Resource" id="Resource_db874"]
+script = ExtResource("18_g27y4")
 
 [sub_resource type="Resource" id="Resource_yt6cq"]
-script = ExtResource("17_xe74d")
-text = "eba :)"
+script = ExtResource("18_16kie")
+question = "Sim!"
+response = SubResource("Resource_db874")
 
 [sub_resource type="Resource" id="Resource_t3a4b"]
-script = ExtResource("18_g27y4")
-messages = Array[ExtResource("17_xe74d")]([SubResource("Resource_yt6cq")])
+script = ExtResource("19_db874")
+questions = Array[ExtResource("18_16kie")]([SubResource("Resource_yt6cq")])
+lock_dialogue = true
+name = "Golim"
 
 [sub_resource type="Resource" id="Resource_pdrp3"]
-script = ExtResource("18_16kie")
-question = "bem"
-response = SubResource("Resource_t3a4b")
-
-[sub_resource type="Resource" id="Resource_iuk5m"]
-script = ExtResource("17_xe74d")
-text = "aff :("
-
-[sub_resource type="Resource" id="Resource_qhav7"]
 script = ExtResource("18_g27y4")
-messages = Array[ExtResource("17_xe74d")]([SubResource("Resource_iuk5m")])
-
-[sub_resource type="Resource" id="Resource_sjb84"]
-script = ExtResource("18_16kie")
-question = "mal"
-response = SubResource("Resource_qhav7")
-
-[sub_resource type="Resource" id="Resource_s6rnm"]
-script = ExtResource("19_db874")
-questions = Array[ExtResource("18_16kie")]([SubResource("Resource_pdrp3"), SubResource("Resource_sjb84")])
-lock_dialogue = true
-text = "Como vc ta?"
-
-[sub_resource type="Resource" id="Resource_2nato"]
-script = ExtResource("18_g27y4")
-messages = Array[ExtResource("17_xe74d")]([SubResource("Resource_db874"), SubResource("Resource_s6rnm")])
+messages = Array[ExtResource("17_xe74d")]([SubResource("Resource_g27y4"), SubResource("Resource_t3a4b")])
 metadata/_custom_type_script = "uid://8err0wuw08y8"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yt6cq"]
@@ -205,8 +194,8 @@ tile_map_data = PackedByteArray("AAAMAPj/AQAAAAAAAAALAPj/AQAAAAAAAAAKAPj/AQAAAAA
 tile_set = ExtResource("16_1t66k")
 
 [node name="interaction_area2" parent="." instance=ExtResource("9_y1q2s")]
-position = Vector2(2744, -192)
-action = SubResource("Resource_2nato")
+position = Vector2(2739, -192)
+action = SubResource("Resource_pdrp3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interaction_area2"]
 shape = SubResource("CircleShape2D_yt6cq")

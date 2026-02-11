@@ -104,6 +104,7 @@ fit_content = true
 visible_characters_behavior = 1
 
 [node name="DialogueText" type="RichTextLabel" parent="Panel/Box/VBoxContainer"]
+clip_contents = false
 layout_mode = 2
 size_flags_vertical = 4
 bbcode_enabled = true
