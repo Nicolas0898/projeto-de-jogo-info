@@ -1,8 +1,13 @@
 extends State
 const ROPE = preload("res://Scenes/Objects/rope.tscn")
 var current_active_rope:Node2D = null
+const GRAPPLING_HOOK_LEAFS = preload("uid://7hyu1u2s2ekx")
+const BASEIMPACT = preload("uid://qflm7bpdrk3m")
+const LEAFCAGESTART = preload("uid://6itq3v3mqj7a")
 
 var start_distance = 0
+var leaf_particle:GPUParticles2D
+var active_particle:GPUParticles2D
 
 func onInput(event:InputEvent):
 	character = stateMachine.character
@@ -22,6 +27,10 @@ func onStateEntered(_last):
 	
 	if stateData.hook.type == GrappleNode.PULL:
 		current_active_rope.n_points = 5
+		leaf_particle = GameHandler.spawn_particle(GRAPPLING_HOOK_LEAFS,Vector2.ZERO,character)
+		GameHandler.spawn_particle(BASEIMPACT,Vector2.ZERO,stateData.hook)
+	else:
+		active_particle = GameHandler.spawn_particle(LEAFCAGESTART,hookpos)
 	
 	character.add_child(current_active_rope)
 	
@@ -29,7 +38,11 @@ func onStateEntered(_last):
 	current_active_rope.target.global_position = stateData.hook.global_position
 	current_active_rope.start()
 	
+	
+	
 	start_distance = plrpos.distance_to(hookpos)
+	
+
 	
 
 func boost_character(y=-400):
@@ -39,6 +52,20 @@ func boost_character(y=-400):
 	character.variable_velocity += character.true_constant_velocity*1.7
 
 func onStateExit():
+	if leaf_particle:
+		leaf_particle.emitting = false
+		var ref = leaf_particle.get_instance_id()
+		get_tree().create_timer(leaf_particle.lifetime).timeout.connect(func():
+			instance_from_id(ref).queue_free())
+		leaf_particle = null
+	if active_particle:
+		GameHandler.spawn_particle(BASEIMPACT,Vector2.ZERO,stateData.hook)
+		active_particle.emitting = false
+		var ref = active_particle.get_instance_id()
+		get_tree().create_timer(active_particle.lifetime).timeout.connect(func():
+			instance_from_id(ref).queue_free())
+		active_particle = null
+		
 	character.sprite.rotation = PI/4
 	character.sprite.stopAnimation(1)
 	character.sprite.play_backwards("hook")

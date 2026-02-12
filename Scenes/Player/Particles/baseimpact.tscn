@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://qflm7bpdrk3m"]
+
+[sub_resource type="Curve" id="Curve_4lrfb"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_inlak"]
+curve = SubResource("Curve_4lrfb")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ojjn2"]
+particle_flag_disable_z = true
+angle_min = -720.0
+angle_max = 720.0
+spread = 180.0
+initial_velocity_min = 170.65
+initial_velocity_max = 191.12999
+gravity = Vector3(0, 0, 0)
+scale_min = 0.5
+scale_curve = SubResource("CurveTexture_inlak")
+
+[node name="GPUParticles2D" type="GPUParticles2D"]
+modulate = Color(8.134, 13.296, 5.238, 1)
+emitting = false
+amount = 7
+lifetime = 0.37
+one_shot = true
+explosiveness = 0.97
+fixed_fps = 0
+process_material = SubResource("ParticleProcessMaterial_ojjn2")

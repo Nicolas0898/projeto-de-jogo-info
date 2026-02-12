@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://7hyu1u2s2ekx"]
+
+[ext_resource type="Texture2D" uid="uid://bdrl3ebg3kel0" path="res://Images/etc/leafspritesheet.png" id="1_idj7a"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_yfurj"]
+particles_animation = true
+particles_anim_h_frames = 3
+particles_anim_v_frames = 2
+particles_anim_loop = true
+
+[sub_resource type="Curve" id="Curve_svof4"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.24452557, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.4126513, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_gy7wi"]
+curve = SubResource("Curve_svof4")
+
+[sub_resource type="Curve" id="Curve_16usq"]
+_data = [Vector2(0, 0.48650438), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_xcayb"]
+curve = SubResource("Curve_16usq")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_y5ylx"]
+particle_flag_disable_z = true
+angle_min = -21.29999
+angle_max = 21.30001
+direction = Vector3(1, 0.2, 0)
+spread = 180.0
+initial_velocity_min = 58.03
+initial_velocity_max = 78.509995
+gravity = Vector3(0, 60, 0)
+scale_min = 0.099999994
+scale_max = 0.7
+scale_curve = SubResource("CurveTexture_gy7wi")
+hue_variation_min = 0.009999977
+hue_variation_max = 0.17999998
+anim_speed_min = 0.82
+anim_speed_max = 0.82
+anim_offset_max = 0.1741
+turbulence_enabled = true
+turbulence_noise_strength = 1.27
+turbulence_influence_min = 0.0
+turbulence_influence_max = 0.009000001
+turbulence_influence_over_life = SubResource("CurveTexture_xcayb")
+
+[node name="GPUParticles2D" type="GPUParticles2D"]
+modulate = Color(1, 1, 1, 0.254)
+material = SubResource("CanvasItemMaterial_yfurj")
+amount = 10
+texture = ExtResource("1_idj7a")
+lifetime = 0.8
+fixed_fps = 0
+process_material = SubResource("ParticleProcessMaterial_y5ylx")

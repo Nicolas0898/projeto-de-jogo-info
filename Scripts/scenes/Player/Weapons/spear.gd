@@ -3,6 +3,7 @@ const SPEAR = preload("res://Scenes/Player/Weapons/spear.tscn")
 const SMEAR_FRAMES = preload("uid://cm3ri7qyxtw8v")
 const CHARGE = preload("uid://6itq3v3mqj7a")
 const HEAVYHIT = preload("uid://dvwauk2vkbf5f")
+const BASEIMPACT = preload("uid://qflm7bpdrk3m")
 
 var timer:Timer
 var charged_start:Timer
@@ -52,6 +53,7 @@ func use_end():
 		if vfx : 
 			vfx.emitting = false
 			vfx = null
+		GameHandler.spawn_particle(BASEIMPACT,Vector2.ZERO,character)
 		default_attack()
 
 func default_attack():

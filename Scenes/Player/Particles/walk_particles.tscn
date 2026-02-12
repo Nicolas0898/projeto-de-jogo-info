@@ -45,7 +45,6 @@ anim_speed_max = 1.0
 turbulence_noise_strength = 20.0
 
 [node name="walkParticles" type="GPUParticles2D"]
-modulate = Color(1, 1, 1, 0.6156863)
 z_index = 11
 material = SubResource("CanvasItemMaterial_du3pq")
 emitting = false

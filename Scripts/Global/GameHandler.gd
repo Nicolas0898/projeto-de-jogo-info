@@ -32,12 +32,13 @@ func emit_game_input_changed(controller:bool):
 	GameInputChanged.emit()
 	
 
-func spawn_particle(scene:PackedScene,Position:Vector2=Vector2.ZERO,parent:Node=get_tree().current_scene):
+func spawn_particle(scene:PackedScene,Position:Vector2=Vector2.ZERO,parent:Node=get_tree().current_scene) -> GPUParticles2D:
 	var part = scene.instantiate()
 	parent.add_child(part)
 	part.position = Position
 	
 	play_particle_one(part)
+	return part
 
 func play_particle_one(particle:GPUParticles2D):
 	particle.emitting = true
