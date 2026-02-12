@@ -53,7 +53,7 @@ func use_end():
 		if vfx : 
 			vfx.emitting = false
 			vfx = null
-		GameHandler.spawn_particle(BASEIMPACT,Vector2.ZERO,character)
+		
 		default_attack()
 
 func default_attack():
@@ -96,6 +96,7 @@ func default_attack():
 		if target:
 			targetpos = target.global_position + character.global_position.direction_to(target.global_position).normalized() * 20
 		else:
+			GameHandler.spawn_particle(BASEIMPACT,Vector2.ZERO,character)
 			targetpos = character.to_global(Crosshair.look*20)
 		smear.global_position = character.global_position
 		get_tree().current_scene.add_child(smear)

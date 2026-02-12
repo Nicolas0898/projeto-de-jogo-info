@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://dugkamrvn6d0g"]
+[gd_scene load_steps=51 format=3 uid="uid://dugkamrvn6d0g"]
 
 [ext_resource type="Shader" uid="uid://lk8vqo6nbyf3" path="res://Shaders/Character.gdshader" id="1_d6fad"]
 [ext_resource type="Script" uid="uid://b4v73lx8blb1p" path="res://Scripts/Components/BaseEntity.gd" id="1_x1axm"]
@@ -244,6 +244,10 @@ size = Vector2(27, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l553e"]
 size = Vector2(25, 18)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_vjhpu"]
+cull_mode = 1
+polygon = PackedVector2Array(-13, -7, -13, 3, -11, 3, -11, 4, -10, 4, -10, 5, 5, 5, 5, 4, 8, 4, 8, 3, 9, 3, 9, 2, 10, 2, 10, 1, 11, 1, 11, 0, 12, 0, 12, -8, 11, -8, 11, -10, 9, -10, 9, -11, 7, -11, 7, -12, -5, -12, -5, -11, -7, -11, -7, -10, -9, -10, -9, -9, -12, -9, -12, -8, -13, -8)
+
 [node name="Fly" type="CharacterBody2D"]
 material = SubResource("ShaderMaterial_cnhfl")
 collision_layer = 34
@@ -324,5 +328,8 @@ metadata/_custom_type_script = "uid://blfwkqgeamobt"
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_l553e")
 debug_color = Color(0, 0, 0, 0.42)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_vjhpu")
 
 [connection signal="timeout" from="StateMachine/Chase/Cooldown" to="StateMachine/Chase" method="timeout"]

@@ -25,9 +25,10 @@ InputManager="*res://Scripts/Global/InputManager.gd"
 
 [display]
 
-window/size/viewport_width=860
+window/size/viewport_width=640
 window/size/viewport_height=360
 window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 window/vsync/vsync_mode=0
 window/canvas_textures/default_texture_filter=0
 
@@ -204,7 +205,7 @@ common/physics_interpolation=true
 
 textures/canvas_textures/default_texture_filter=0
 viewport/hdr_2d=true
-environment/defaults/default_clear_color=Color(0.0392157, 0.14902, 0.141176, 1)
+environment/defaults/default_clear_color=Color(0.003843702, 0.024343444, 0.023062212, 1)
 
 [shader_globals]
 
