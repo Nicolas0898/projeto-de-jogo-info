@@ -423,6 +423,13 @@ position_smoothing_enabled = true
 position_smoothing_speed = 5.25
 script = ExtResource("38_4g8e6")
 
+[node name="Label" type="Label" parent="Camera2D"]
+offset_left = -27.0
+offset_right = 27.0
+offset_bottom = 16.0
+text = "CAMERA"
+horizontal_alignment = 1
+
 [node name="ParticleSpawnPoint" type="Node2D" parent="."]
 position = Vector2(0, 10)
 

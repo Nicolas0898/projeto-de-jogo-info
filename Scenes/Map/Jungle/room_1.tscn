@@ -536,7 +536,7 @@ position = Vector2(659.5, 0.75)
 shape = SubResource("RectangleShape2D_15me3")
 
 [node name="BaseJungle" parent="." instance=ExtResource("30_pty4f")]
-position = Vector2(0, 100)
+position = Vector2(0, 95)
 
 [editable path="ParallaxBackground2"]
 [editable path="ParallaxBackground"]

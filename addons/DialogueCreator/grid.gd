@@ -10,6 +10,9 @@ enum Type {Message,Dialogue}
 @onready var foldable_container: FoldableContainer = $HFlowContainer/FoldableContainer
 @onready var menu_button: MenuButton = $HFlowContainer/MenuButton
 
+# TODO:
+# Sprite position
+# Save dialogue properties
 
 var history : EditorUndoRedoManager
 var RootResource:Dialogue
@@ -19,8 +22,10 @@ var RootNode:DialogueNode
 var plugin:EditorPlugin
 
 const vertical_spacing = 750
+const xgap = 120
 
 func loadFromResource(dialogue:Dialogue):
+	history.clear_history()
 	DialogueNode.nodes.clear()
 	print(dialogue)
 	for i in graph_edit.get_children(false):
@@ -29,14 +34,16 @@ func loadFromResource(dialogue:Dialogue):
 	
 	RootResource = dialogue.duplicate(true)
 	RootNode = DialogueNode.new(graph_edit,history)
-	RootNode.currentResource = RootResource
+	RootNode.node.title = "Root"
+	RootNode.CurrentResource = RootResource
 	
 	iterateMessages(RootNode.node.name,0,RootResource.messages)
 
 func iterateMessages(last_node,connect_from,Messages:Array[Message]):
+	print("ITERATE : ",last_node," | ",connect_from," | ",Messages)
 	for message in Messages:
 		var lastnode = graph_edit.get_node(NodePath(last_node))
-		var msgn = MessageNode.new(graph_edit,history,lastnode.position_offset + Vector2(lastnode.size.x,0) + Vector2(120,0) )
+		var msgn = MessageNode.new(graph_edit,history,lastnode.position_offset + Vector2(lastnode.size.x,0) + Vector2(xgap,0) )
 		msgn.CurrentResource = message
 		
 		msgn.Text.text = message.text
@@ -44,10 +51,11 @@ func iterateMessages(last_node,connect_from,Messages:Array[Message]):
 		msgn.Border.edited_resource = message.border
 		msgn.Action.edited_resource = message.action
 		msgn.Sprite.edited_resource = message.sprite
-		lastnode.get_meta("Class").Next = msgn
-		msgn.Last = lastnode.get_meta("Class")
+		#lastnode.get_meta("Class").Next = msgn
+		#msgn.Last = lastnode.get_meta("Class")
 		
-		graph_edit.connect_node(last_node,connect_from,msgn.node.name,0)
+		dialogue_connect_node(last_node,connect_from,msgn.node.name,0)
+		#graph_edit.connect_node(last_node,connect_from,msgn.node.name,0)
 		last_node = msgn.node.name
 		connect_from = 0
 		
@@ -57,16 +65,19 @@ func iterateMessages(last_node,connect_from,Messages:Array[Message]):
 			msgn.CurrentResource.lock_dialogue = message.lock_dialogue
 			msgn.toggleOption(true)
 			for quest:Choice in message.questions:
+				if quest == null : continue
 				var opt = msgn.addOption()
 				opt.res = quest
 				if quest!=null: 
 					opt.response.text = quest.question
 				if quest.response:
 					var dial_node = DialogueNode.new(graph_edit,history,msgn.node.position_offset + Vector2(520,vertical_spacing*connect_from))
-					dial_node.currentResource = quest.response
-					graph_edit.connect_node(last_node,connect_from,dial_node.node.name,0)
-					dial_node.fromOption = connect_from
-					dial_node.Last = msgn
+					dial_node.CurrentResource = quest.response
+					
+					dialogue_connect_node(last_node,connect_from,dial_node.node.name,0)
+					#graph_edit.connect_node(last_node,connect_from,dial_node.node.name,0)
+					#dial_node.fromOption = connect_from
+					#dial_node.Last = msgn
 					iterateMessages(dial_node.node.name,0,quest.response.messages)
 				
 				connect_from += 1
@@ -78,7 +89,7 @@ class DialogueNode:
 	var node = GraphNode.new()
 	var Next:MessageNode
 	var Last:MessageNode
-	var currentResource = Dialogue.new()
+	var CurrentResource = Dialogue.new()
 	var fromOption:int
 	
 	func _init(graph_edit:GraphEdit,history:EditorUndoRedoManager,pos:Vector2=Vector2.ZERO):
@@ -116,7 +127,11 @@ class DialogueNode:
 		history.commit_action()
 	
 	func compileOrder(current_array:Array[Message]=[],node:MessageNode=Next) -> Array[Message]:
+		
 		if node!= null:
+			if node == node.Next:
+				push_error("INFINITE RECURSION DETECTED!!!")
+				return []
 			current_array.push_back(node.CurrentResource)
 		else:
 			return current_array
@@ -346,18 +361,74 @@ class MessageNode:
 		node.resource_changed.connect(func(new): CurrentResource.set(property,new))
 		pass
 
+func dialogue_connect_node(from_node: StringName, from_port: int, to_node: StringName, to_port: int,commit_action:=true):
+	var origin_node:GraphNode = graph_edit.get_node(NodePath(from_node)) 
+	var next_node:GraphNode = graph_edit.get_node(NodePath(to_node))
+	print(from_node," | ",from_port," | ",to_node," | ",to_port)
+	if commit_action : 
+		history.create_action("Connected Node",UndoRedo.MERGE_ALL)
+	else:
+		history.create_action("Deleted node(s)",UndoRedo.MERGE_ALL)
+	history.add_do_method(graph_edit,"connect_node",from_node,from_port,to_node,to_port)
+	history.add_undo_method(graph_edit,"disconnect_node",from_node,from_port,to_node,to_port)
+	
+	var origin_class = origin_node.get_meta("Class")
+	var next_class = next_node.get_meta("Class")
+	
+	#origin_node.get_meta("Class").Next = node
+	history.add_do_property(origin_class,"Next",next_class)
+	history.add_undo_property(origin_class,"Next",null)
+	
+	#node.Last = origin_class
+	history.add_do_property(next_node.get_meta("Class"),"Last",origin_class)
+	history.add_undo_property(next_node.get_meta("Class"),"Last",null)
+	
+	if origin_node.get_output_port_type(from_port) == Type.Dialogue:
+			history.add_do_property(origin_class,"fromOption",from_port)
+			history.add_undo_property(origin_class,"fromOption",null)
+			if "options" in origin_class:
+				history.add_do_property(origin_class.options[from_port].res,"response",next_class.CurrentResource)
+				history.add_undo_property(origin_class.options[from_port].res,"response",null)
+			#origin_class.fromOption = from_port
+			
+	history.commit_action()
+
+func dialogue_disconnect_node(from_node: StringName, from_port: int, to_node: StringName, to_port: int,commit_action:=true):
+	if commit_action : 
+		history.create_action("Disconnected Node")
+	else:
+		history.create_action("Deleted node(s)",UndoRedo.MERGE_ALL)
+	history.add_do_method(graph_edit,"disconnect_node",from_node,from_port,to_node,to_port)
+	history.add_undo_method(graph_edit,"connect_node",from_node,from_port,to_node,to_port)
+	var originNode = graph_edit.get_node(NodePath(from_node))
+	var nextNode = graph_edit.get_node(NodePath(to_node))
+	
+	var origin_class = originNode.get_meta("Class")
+	var next_class = nextNode.get_meta("Class")
+	
+	if origin_class:
+		history.add_do_property(origin_class,"Next",null)
+		history.add_undo_property(origin_class,"Next",next_class)
+		
+		history.add_do_property(next_class,"Last",null)
+		history.add_undo_property(next_class,"Last",origin_class)
+		
+		#.Next = next_class
+		if originNode.get_output_port_type(from_port) == Type.Dialogue:
+			history.add_do_property(origin_class,"fromOption",null)
+			history.add_undo_property(origin_class,"fromOption",from_port)
+			if "options" in origin_class:
+				history.add_undo_property(origin_class.options[from_port].res,"response",next_class.CurrentResource)
+				history.add_do_property(origin_class.options[from_port].res,"response",null)
+			#origin_class.fromOption = from_port
+			
+	history.commit_action()
+
 # GRAPH CONTROL
 func _on_graph_edit_connection_request(from_node: StringName, from_port: int, to_node: StringName, to_port: int) -> void:
 	debug.text = str(from_node) + " "+ str(from_port) + " " + str(to_node) + " " + str(to_port)
 	#graph_edit.connect_node(from_node,from_port,to_node,to_port)
-	history.create_action("Connected Node",UndoRedo.MERGE_ALL)
-	history.add_do_method(graph_edit,"connect_node",from_node,from_port,to_node,to_port)
-	history.add_undo_method(graph_edit,"disconnect_node",from_node,from_port,to_node,to_port)
-	history.commit_action()
-	var originNode = graph_edit.get_node(NodePath(from_node))
-	var nextNode = graph_edit.get_node(NodePath(to_node))
-	if originNode.has_meta("Class"):
-		originNode.get_meta("Class").Next = nextNode.get_meta("Class")
+	dialogue_connect_node(from_node,from_port,to_node,to_port)
 
 
 func _on_graph_edit_connection_to_empty(from_node: StringName, from_port: int, release_position: Vector2) -> void:
@@ -365,60 +436,49 @@ func _on_graph_edit_connection_to_empty(from_node: StringName, from_port: int, r
 	var origin_node:GraphNode = graph_edit.get_node(NodePath(from_node)) 
 	
 	if origin_node.get_output_port_type(from_port) == Type.Message:
-		var node = MessageNode.new(graph_edit,history,graph_edit.scroll_offset+release_position)
-		#graph_edit.connect_node(from_node,from_port,node.node.name,0)
-		
-		history.create_action("Created Node",UndoRedo.MERGE_ALL)
-		history.add_do_method(graph_edit,"connect_node",from_node,from_port,node.node.name,0)
-		history.add_undo_method(graph_edit,"disconnect_node",from_node,from_port,node.node.name,0)
-		history.commit_action()
-		
-		origin_node.get_meta("Class").Next = node
-		
-		node.Last = origin_node.get_meta("Class")
+		var node = MessageNode.new(graph_edit,history,origin_node.position_offset + Vector2(xgap + origin_node.size.x,0))
+		dialogue_connect_node(from_node,from_port,node.node.name,0)
 
 	else: # QUANDO TYPE = DIALOGUE
-		var node = DialogueNode.new(graph_edit,history,graph_edit.scroll_offset+release_position)
-		#graph_edit.connect_node(from_node,from_port,node.node.name,0)
-		
-		history.create_action("Created Node",UndoRedo.MERGE_ALL)
-		history.add_do_method(graph_edit,"connect_node",from_node,from_port,node.node.name,0)
-		history.add_undo_method(graph_edit,"disconnect_node",from_node,from_port,node.node.name,0)
-		history.commit_action()
-		
-		debug.text = "Type : Dialogue, Port : "+str(from_port)
-		var origin_class = origin_node.get_meta("Class")
-		if origin_class is MessageNode:
-			origin_class.options[from_port].res.response = node.currentResource
-			node.fromOption = from_port
-			node.Last = origin_class
-		print(origin_class.options[from_port].res.response)
+		var node = DialogueNode.new(graph_edit,history,origin_node.position_offset + Vector2(xgap + origin_node.size.x,release_position.y + graph_edit.scroll_offset.y))
+		dialogue_connect_node(from_node,from_port,node.node.name,0)
+		#print(origin_class.options[from_port].res.response)
 
 func _on_graph_edit_delete_nodes_request(nodes: Array[StringName]) -> void:
 	history.create_action("Deleted node(s)")
 	
 	for i in nodes:
+		if i == RootNode.node.name : continue
 		var node:GraphNode = graph_edit.get_node(NodePath(i))
 		var nodeclass = node.get_meta("Class")
-		history.add_do_method(graph_edit,"remove_child",node)
 		history.add_undo_reference(node)
-		print(nodeclass.get_property_list())
+		var port = 0
 		if "fromOption" in nodeclass:
 			print("I SHOULD BE DELETING A DIALOG HERE!!! 1.0 ",nodeclass.Last)
 			if nodeclass.Last != null:
 				history.add_undo_property(nodeclass.Last,"options",nodeclass.Last.options.duplicate())
 				nodeclass.Last.options[nodeclass.fromOption].res = null
+				port = nodeclass.fromOption
 				nodeclass.Last.compileOptions()
-				print("I SHOULD BE DELETING A DIALOG HERE!!!")
 				history.add_do_property(nodeclass.Last,"options",nodeclass.Last.options.duplicate())
 		if nodeclass.get("Last"):
 			history.add_do_property(nodeclass.Last,"Next",null)
 			history.add_undo_property(nodeclass.Last,"Next",nodeclass.Last)
+			dialogue_disconnect_node(nodeclass.Last.node.name,port,i,0,false)
 			#nodeclass.Last.Next = null
 		history.add_undo_method(graph_edit,"add_child",node)
-	
+		#history.add_undo_method(self,"dialogue_connect_node",nodeclass.Last.node.name,port,i,0,false)
+		#history.add_do_method(self,"dialogue_disconnect_node",nodeclass.Last.node.name,port,i,0,false)
+		history.add_do_method(graph_edit,"remove_child",node)
 	history.commit_action()
+	
 
+
+func _on_graph_edit_disconnection_request(from_node: StringName, from_port: int, to_node: StringName, to_port: int) -> void:
+	debug.text = str(from_node) + " "+ str(from_port) + " " + str(to_node) + " " + str(to_port)
+	#graph_edit.connect_node(from_node,from_port,to_node,to_port)
+	dialogue_disconnect_node(from_node,from_port,to_node,to_port)
+	
 func saveDialogue() -> void:
 	print("SAVING!!!!")
 	foldable_container.folded = true
@@ -426,12 +486,12 @@ func saveDialogue() -> void:
 	for i in DialogueNode.nodes:
 		var order = i.compileOrder()
 		print("ORDERRR → ",order)
-		i.currentResource.messages = order
-		print(i.currentResource.messages) 
+		i.CurrentResource.messages = order
+		print(i.CurrentResource.messages) 
 		
 	if Selection:
-		Selection.action = RootResource
-		loadFromSelection()
+		Selection.action = RootResource.duplicate_deep(Resource.DEEP_DUPLICATE_ALL)
+
 	if ActivePath:
 		var error = ResourceSaver.save(RootResource,ActivePath,ResourceSaver.FLAG_BUNDLE_RESOURCES)
 		print(error)
@@ -439,6 +499,7 @@ func saveDialogue() -> void:
 		
 
 func _ready() -> void:
+	
 	menu_button.get_popup().id_pressed.connect(onPress)
 	var saveshortcut = Shortcut.new()
 	var event = InputEventKey.new()
@@ -463,6 +524,7 @@ func loadFromSelection() -> void:
 	loadFromResource(selected.action)
 
 func newDialogue():
+	history.clear_history()
 	Selection = null
 	loadFromResource(Dialogue.new())
 
@@ -492,3 +554,16 @@ func onPress(id:int):
 		2: pass
 		3: loadFromSelection()
 		4: loadFromFile()
+
+
+func _on_graph_edit_node_selected(node: Node) -> void:
+	debug.text = ""
+	debug.text = "← " + str(node.get_meta("Class").Last.node if node.get_meta("Class").Last != null else "<null>") + " "+ str(node.get_meta("Class").Next.node if node.get_meta("Class").Next != null else "<null>") + " →"
+	#var c:RefCounted = node.get_meta("Class")
+	#for i in c.get_property_list():
+		#debug.text += i.name + "=" + str( c.get(i.name) ) +"\n"
+	#
+	#if "options" in c:
+		#debug.text += "---options---\n"
+		#for i in c.options:
+			#debug.text += str(i.res) + " → " + str(i.res.response) + "\n"

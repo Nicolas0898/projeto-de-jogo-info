@@ -56,6 +56,13 @@ func use_end():
 		
 		default_attack()
 
+func cancelled():
+	if is_charged:
+		Crosshair.current.backToCore(2)
+		if vfx : 
+			vfx.emitting = false
+			vfx = null
+
 func default_attack():
 	#character.sprite.playAnimation("spearattack",1)
 	var size = Vector2(40,15)

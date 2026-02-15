@@ -58,11 +58,11 @@ right_disconnects = true
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
+offset_left = 84.0
 offset_top = 11.0
 offset_bottom = 27.0
 grow_horizontal = 2
 text = "(0.0, 0.0)"
-horizontal_alignment = 1
 
 [node name="HFlowContainer" type="HFlowContainer" parent="."]
 layout_mode = 1
@@ -160,5 +160,7 @@ text = "New"
 [connection signal="connection_request" from="GraphEdit" to="." method="_on_graph_edit_connection_request"]
 [connection signal="connection_to_empty" from="GraphEdit" to="." method="_on_graph_edit_connection_to_empty"]
 [connection signal="delete_nodes_request" from="GraphEdit" to="." method="_on_graph_edit_delete_nodes_request"]
+[connection signal="disconnection_request" from="GraphEdit" to="." method="_on_graph_edit_disconnection_request"]
+[connection signal="node_selected" from="GraphEdit" to="." method="_on_graph_edit_node_selected"]
 [connection signal="pressed" from="HFlowContainer/FoldableContainer/VBoxContainer/save" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="HFlowContainer/FoldableContainer/VBoxContainer/HBoxContainer/load_from_file" to="." method="_on_load_from_file_pressed"]

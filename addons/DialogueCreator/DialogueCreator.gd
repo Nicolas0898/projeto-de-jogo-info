@@ -13,7 +13,7 @@ func _get_plugin_name() -> String:
 	return "Dialogue Editor"
 
 func _enter_tree() -> void:
-	grid = load("res://addons/DialogueCreator/Grid.tscn").instantiate()
+	grid = preload("res://addons/DialogueCreator/Grid.tscn").instantiate()
 	grid.plugin = self
 	grid.history = get_undo_redo()
 	add_control_to_bottom_panel(grid,"Dialogue Editor")

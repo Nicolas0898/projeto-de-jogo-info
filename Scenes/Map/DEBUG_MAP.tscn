@@ -14,11 +14,8 @@
 [ext_resource type="Script" uid="uid://qsuh4f4vfaje" path="res://Scripts/Components/indicator.gd" id="13_xe74d"]
 [ext_resource type="Shader" uid="uid://b0vwl8qpm7kj2" path="res://Shaders/water.gdshader" id="15_y1q2s"]
 [ext_resource type="TileSet" uid="uid://bnjnwtobjhkof" path="res://Scenes/Map/WATER_JUNGLE.tres" id="16_1t66k"]
-[ext_resource type="Texture2D" uid="uid://c8aurw5u3idxd" path="res://icon.svg" id="17_g27y4"]
 [ext_resource type="Script" uid="uid://bi0pwfqucqrqb" path="res://Scripts/UI/dialogue_scripts/Message.gd" id="17_xe74d"]
-[ext_resource type="Script" uid="uid://cs47kxe2lnqwp" path="res://Scripts/UI/interact/Choice.gd" id="18_16kie"]
 [ext_resource type="Script" uid="uid://8err0wuw08y8" path="res://Scripts/UI/dialogue_scripts/Dialogue.gd" id="18_g27y4"]
-[ext_resource type="Script" uid="uid://crbolew7dydjc" path="res://Scripts/UI/dialogue_scripts/Question.gd" id="19_db874"]
 [ext_resource type="PackedScene" uid="uid://blqspd6bb0650" path="res://Scenes/Map/Jungle/BaseJungle.tscn" id="20_g27y4"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7yamr"]
@@ -42,35 +39,30 @@ shader_parameter/wave_frequency = 1.0
 shader_parameter/wave_speed = 1.0
 shader_parameter/wave_amplitude = 0.70000001043084
 
+[sub_resource type="Resource" id="Resource_1t66k"]
+script = ExtResource("17_xe74d")
+
+[sub_resource type="Resource" id="Resource_wj16t"]
+script = ExtResource("17_xe74d")
+
+[sub_resource type="Resource" id="Resource_xe74d"]
+script = ExtResource("17_xe74d")
+
 [sub_resource type="Resource" id="Resource_g27y4"]
 script = ExtResource("17_xe74d")
-text = "[pulse freq=3.0 ease=-2]Pisca![/pulse]
-[tornado radius=10.0 freq=2.0]AAAAAAAAAAAAA[/tornado]
-[shake rate=20.0 level=3]BBBBBBBBBBBBB[/shake]
-[rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]woahhhhh[/rainbow]
-Opa sopa! como vai?
-eba!!
-DEU CERTOO"
-sprite = ExtResource("17_g27y4")
-name = "Golim"
 
 [sub_resource type="Resource" id="Resource_db874"]
-script = ExtResource("18_g27y4")
+script = ExtResource("17_xe74d")
 
 [sub_resource type="Resource" id="Resource_yt6cq"]
-script = ExtResource("18_16kie")
-question = "Sim!"
-response = SubResource("Resource_db874")
+script = ExtResource("17_xe74d")
 
 [sub_resource type="Resource" id="Resource_t3a4b"]
-script = ExtResource("19_db874")
-questions = Array[ExtResource("18_16kie")]([SubResource("Resource_yt6cq")])
-lock_dialogue = true
-name = "Golim"
+script = ExtResource("17_xe74d")
 
 [sub_resource type="Resource" id="Resource_pdrp3"]
 script = ExtResource("18_g27y4")
-messages = Array[ExtResource("17_xe74d")]([SubResource("Resource_g27y4"), SubResource("Resource_t3a4b")])
+messages = Array[ExtResource("17_xe74d")]([SubResource("Resource_1t66k"), SubResource("Resource_wj16t"), SubResource("Resource_xe74d"), SubResource("Resource_g27y4"), SubResource("Resource_db874"), SubResource("Resource_yt6cq"), SubResource("Resource_t3a4b")])
 metadata/_custom_type_script = "uid://8err0wuw08y8"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yt6cq"]
@@ -168,11 +160,11 @@ position = Vector2(-502, -533)
 position = Vector2(1442, -331)
 
 [node name="AnimatedSprite2D" parent="." instance=ExtResource("8_dx3si")]
-position = Vector2(1851, -320)
+position = Vector2(1851, -325)
 frame_progress = 0.0719289
 
 [node name="interaction_area" parent="." instance=ExtResource("9_y1q2s")]
-position = Vector2(3106, -191)
+position = Vector2(3114, -201)
 action = SubResource("Resource_16kie")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interaction_area"]
@@ -195,6 +187,7 @@ tile_set = ExtResource("16_1t66k")
 [node name="interaction_area2" parent="." instance=ExtResource("9_y1q2s")]
 position = Vector2(2739, -192)
 action = SubResource("Resource_pdrp3")
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interaction_area2"]
 shape = SubResource("CircleShape2D_yt6cq")

@@ -23,7 +23,9 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if not(character.state_machine.currentState.name in\
-	"FallingRunningIdleJumping"): return
+	"FallingRunningIdleJumping") and (event.is_action_pressed(read_from) or event.is_action_released(read_from)): 
+		cancelled()
+		return
 	
 	if event.is_action_pressed(read_from):
 		use()
@@ -32,6 +34,10 @@ func _input(event: InputEvent) -> void:
 
 func use():
 	active = true
+	pass
+
+
+func cancelled():
 	pass
 
 func use_end():
