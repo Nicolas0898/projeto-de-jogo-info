@@ -13,7 +13,11 @@ config_version=5
 config/name="Movimentação"
 run/main_scene="uid://dsaft7a5ut06v"
 config/features=PackedStringArray("4.5", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0.13784814, 0.20703125, 0.08572388, 1)
+boot_splash/fullsize=false
+boot_splash/use_filter=false
+boot_splash/image="uid://vcwabpyqe50s"
+config/icon="uid://vcwabpyqe50s"
 
 [autoload]
 
